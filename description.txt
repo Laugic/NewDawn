@@ -1,1 +1,1 @@
-Enigma New Dawn is a pretty cool mod, it does...this. Modify this file with a description of your mod.
+Adds a new Alchemistry system, where power is gained by extracting magical energy from the world in various ways. Infuse this energy into equipment, objects, and even yourself!
