@@ -12,7 +12,10 @@ namespace NewDawn.Items.AnimaCrystals
 {
     public abstract class AnimaCrystal : ModItem
     {
-        public abstract void SetCrystalDefaults();
+        public virtual void SetCrystalDefaults()
+        {
+
+        }
         public sealed override void SetDefaults()
         {
             item.useStyle = ItemUseStyleID.HoldingUp;
@@ -30,22 +33,23 @@ namespace NewDawn.Items.AnimaCrystals
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            tooltips.Insert(tooltips.Count, new TooltipLine(mod, "ListEssences", GetEssences()));
+            tooltips.Add(new TooltipLine(mod, "ListEssences", GetEssenceTooltips()));
         }
 
-        private string GetEssences()
+        private string GetEssenceTooltips()
         {
             string tip = "";
             int numEssences = Essences.Count;
+
             if (numEssences < EssenceCapacity)
                 tip = "Can hold " + (EssenceCapacity - numEssences) + " more Essences";
+
             if (numEssences > 0)
             {
                 foreach (Essence essence in Essences)
-                {
                     tip += "\n" + essence.EffectDescription;
-                }
             }
+
             return tip;
         }
 
@@ -60,8 +64,8 @@ namespace NewDawn.Items.AnimaCrystals
             }
         }
 
-        public int EssenceCapacity { get; set; }
+        public abstract int EssenceCapacity { get; }
         public List<Essence> Essences { get; set; } = new List<Essence>();
-        public Essence.Levels MaxEssenceLevel { get; set; }
+        public abstract Essence.Levels MaxEssenceLevel { get; }
     }
 }

@@ -16,12 +16,8 @@ namespace NewDawn.Items.AnimaCrystals.SpecifiedCrystals
             DisplayName.SetDefault("Aqua Crystal");
             Tooltip.SetDefault("Primal\nStores Essence");
         }
-
-        public override void SetCrystalDefaults()
-        {
-            EssenceCapacity = 1;
-            MaxEssenceLevel = Essence.Levels.PRIMAL;
-            Essences.Add(new AquaEssence());
-        }
+        
+        public override int EssenceCapacity => 1;
+        public override Essence.Levels MaxEssenceLevel => Essence.Levels.PRIMAL;
     }
 }
