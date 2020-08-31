@@ -3,6 +3,6 @@ obj
 *.user
 .sin/
 .vs/
-.sln
+*.sln
 libs/
 NewDawn.sln
