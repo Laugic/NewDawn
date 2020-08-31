@@ -6,34 +6,32 @@ using NewDawn.Essences;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.ModLoader.IO;
 
 
 namespace NewDawn.Items.AnimaCrystals
 {
     public abstract class AnimaCrystal : ModItem
     {
-        public virtual void SetCrystalDefaults()
-        {
-
-        }
         public sealed override void SetDefaults()
         {
             item.useStyle = ItemUseStyleID.HoldingUp;
             item.useTime = item.useAnimation = 30;
             item.accessory = true;
             item.rare = ItemRarityID.Blue;
+
             SetCrystalDefaults();
         }
 
-        public void AddEssence(Essence essence)
+        public virtual void SetCrystalDefaults()
         {
-            if (Essences.Count < EssenceCapacity && essence.Level < MaxEssenceLevel)
-                Essences.Add(essence);
         }
 
-        public override void ModifyTooltips(List<TooltipLine> tooltips)
+
+        public void AddEssence(Essence essence)
         {
-            tooltips.Add(new TooltipLine(mod, "ListEssences", GetEssenceTooltips()));
+            if (Essences.Count < EssenceCapacity && essence.Level <= MaxEssenceLevel)
+                Essences.Add(essence);
         }
 
         private string GetEssenceTooltips()
@@ -53,6 +51,11 @@ namespace NewDawn.Items.AnimaCrystals
             return tip;
         }
 
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            tooltips.Add(new TooltipLine(mod, "ListEssences", GetEssenceTooltips()));
+        }
+
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             if (Essences.Count > 0)
@@ -63,6 +66,7 @@ namespace NewDawn.Items.AnimaCrystals
                 }
             }
         }
+
 
         public abstract int EssenceCapacity { get; }
         public List<Essence> Essences { get; set; } = new List<Essence>();

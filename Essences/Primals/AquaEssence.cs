@@ -15,6 +15,7 @@ namespace NewDawn.Essences.Primals
             Level = Levels.PRIMAL;
         }
 
+
         public override void Effect(Player player)
         {
             player.statDefense += 4;
