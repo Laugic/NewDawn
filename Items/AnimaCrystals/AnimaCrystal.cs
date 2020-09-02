@@ -31,6 +31,7 @@ namespace NewDawn.Items.AnimaCrystals
             item.useTime = item.useAnimation = 30;
             item.accessory = true;
             item.rare = ItemRarityID.Blue;
+            item.uniqueStack = true;
             Essences = new List<Essence>();
 
             SetCrystalDefaults();
