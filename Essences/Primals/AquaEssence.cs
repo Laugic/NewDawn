@@ -9,16 +9,17 @@ namespace NewDawn.Essences.Primals
     {
         public AquaEssence()
         {
-            Description = "The essence of water.";
-            EffectDescription = "Count as wet.";
-            EssenceColor = Color.Blue;
+            Name = "Aqua";
+            Description = "The essence of water";
+            EffectDescription = "'Fluidity'";
+            EssenceColor = new Color(0f, .75f, 1f);
             Level = Levels.PRIMAL;
         }
 
 
         public override void Effect(Player player)
         {
-            player.statDefense += 4;
+            player.gills = true;
         }
     }
 }
