@@ -19,7 +19,7 @@ namespace NewDawn.Items.AnimaCrystals.Greaters
         public GreaterCrystal() : base(new [] 
             {
                 (GameCulture.English, "Rough Crystal", "Greater"),
-                (GameCulture.French, "Cristal Grossier", "Supérieur"),
+                (GameCulture.French, "Cristal Rugueux", "Supérieur"),
             },
             WIDTH, HEIGHT)
         {
