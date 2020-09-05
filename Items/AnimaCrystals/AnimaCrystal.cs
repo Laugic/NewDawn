@@ -16,7 +16,7 @@ using WebmilioCommons.Items.Standard;
 
 namespace NewDawn.Items.AnimaCrystals
 {
-    public abstract class AnimaCrystal : StandardAccessory
+    public abstract class AnimaCrystal : StandardItem
     {
         private Texture2D _texture;
         private string _specificTexture = "";
@@ -47,8 +47,8 @@ namespace NewDawn.Items.AnimaCrystals
         {
             if (Essences.Count < EssenceCapacity && essence.Level <= MaxEssenceLevel)
             {
-                item.accessory = true;
                 Essences.Add(essence);
+                item.accessory = true;
             }
 
             if (Essences.Count == EssenceCapacity)
@@ -57,11 +57,23 @@ namespace NewDawn.Items.AnimaCrystals
             //item.
         }
 
+        public bool RemoveEssence(Essence essence)
+        {
+            bool result = Essences.Remove(essence);
+
+            if (Essences.Count == 0)
+                item.accessory = false;
+
+            return result;
+        }
+
+
         private string GetRemainingEssences()
         {
             string tip = "";
             int numEssences = Essences.Count;
             int slotsLeft = (EssenceCapacity - numEssences);
+
             if (slotsLeft > 0)
                 tip = "Can hold " + slotsLeft + " more Essence" + ((slotsLeft != 1) ? "s" : "");
 
@@ -73,15 +85,15 @@ namespace NewDawn.Items.AnimaCrystals
             if (GetRemainingEssences() != "")
                 tooltips.Add(new TooltipLine(mod, "ListEssences", GetRemainingEssences()));
 
-            for (int i = 0; i < Essences.Count; i++)
+            foreach (var essence in Essences)
             {
-                tooltips.Add(new TooltipLine(mod, "ListEssences", "-" + Essences[i].Name + "-")
+                tooltips.Add(new TooltipLine(mod, "ListEssences", "-" + essence.Name + "-")
                 {
-                    overrideColor = Essences[i].EssenceColor
+                    overrideColor = essence.EssenceColor
                 });
-                tooltips.Add(new TooltipLine(mod, "ListEssences", Essences[i].EffectDescription)
+                tooltips.Add(new TooltipLine(mod, "ListEssences", essence.EffectDescription)
                 {
-                    overrideColor = Essences[i].EssenceColor
+                    overrideColor = essence.EssenceColor
                 });
             }
         }
@@ -147,9 +159,12 @@ namespace NewDawn.Items.AnimaCrystals
             if (_texture == null)
             {
                 GetSpecificTexture();
+
                 _texture = GetType().GetTexture();
+                
                 if (mod.TextureExists(_specificTexture))
                     _texture = mod.GetTexture(_specificTexture);
+                
                 _glowmask = mod.GetTexture(GetType().GetPath() + "_glowmask");
             }
 
