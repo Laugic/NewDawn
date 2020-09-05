@@ -1,24 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using NewDawn.Essences;
+using System;
+using System.Collections.Generic;
 using System.Linq;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using NewDawn.Essences;
-using Terraria;
-using Terraria.ID;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace NewDawn.Items.AnimaCrystals
+namespace NewDawn.Items.AnimaCrystals.Primals
 {
-    public class ImpureCrystal : AnimaCrystal
+    public class PrimalCrystal : AnimaCrystal
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Impure Crystal");
+            DisplayName.SetDefault("Primal Crystal");
             Tooltip.SetDefault("Primal");
         }
 
-
         public override int EssenceCapacity => 1;
-        
         public override Essence.Levels MaxEssenceLevel => Essence.Levels.PRIMAL;
 
         public new List<Essence> Essences = new List<Essence>();

@@ -5,9 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NewDawn.Items.AnimaCrystals
+namespace NewDawn.Items.AnimaCrystals.Greaters
 {
-    public class RoughCrystal : AnimaCrystal
+    public class GreaterCrystal : AnimaCrystal
     {
         public override void SetStaticDefaults()
         {

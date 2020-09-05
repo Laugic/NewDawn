@@ -27,11 +27,10 @@ namespace NewDawn.Items.AnimaCrystals
 
         public sealed override void SetDefaults()
         {
-            item.useStyle = ItemUseStyleID.HoldingUp;
+            item.useStyle = ItemUseStyleID.SwingThrow;
             item.useTime = item.useAnimation = 30;
-            item.accessory = true;
             item.rare = ItemRarityID.Blue;
-            item.uniqueStack = false;
+            item.consumable = true;
             Essences = new List<Essence>();
 
             SetCrystalDefaults();
@@ -45,10 +44,15 @@ namespace NewDawn.Items.AnimaCrystals
         public void AddEssence(Essence essence)
         {
             if (Essences.Count < EssenceCapacity && essence.Level <= MaxEssenceLevel)
+            {
+                item.accessory = true;
                 Essences.Add(essence);
+            }
 
             if (Essences.Count == EssenceCapacity)
-                GetPotionCrystalTexture();
+                GetSpecificTexture();
+
+            //item.
         }
 
         private string GetRemainingEssences()
@@ -131,15 +135,16 @@ namespace NewDawn.Items.AnimaCrystals
             var essenceNames = tag.GetList<string>("Essences");
             Essences = new List<Essence>(essenceNames.Count);
 
-
             essenceNames.Do(en => Essences.Add(EssenceLoader.Instance.New(en)));
+            if (Essences.Count > 0)
+                item.accessory = true;
         }
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)
         {
             if (_texture == null)
             {
-                GetPotionCrystalTexture();
+                GetSpecificTexture();
                 _texture = GetType().GetTexture();
                 if (mod.TextureExists(_specificTexture))
                     _texture = mod.GetTexture(_specificTexture);
@@ -160,7 +165,7 @@ namespace NewDawn.Items.AnimaCrystals
             return false;
         }
 
-        private void GetPotionCrystalTexture()
+        private void GetSpecificTexture()
         {
             StringBuilder sb = new StringBuilder(GetType().GetRootPath() + "/SpecificCrystals/");
             List<Essence> tempEss = Essences;

@@ -32,6 +32,7 @@ namespace NewDawn.Commands
                         essence += "Essence";
                 }
                 essence = char.ToUpper(essence[0]) + essence.Substring(1);
+                //if(EssenceLoader.Instance.UnlocalizedNames.Has)
                 try { ac.AddEssence(EssenceLoader.Instance.New(essence)); }
                 catch (Exception e) { }
             }
