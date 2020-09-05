@@ -23,11 +23,13 @@ namespace NewDawn.Items.AnimaCrystals.Greaters
             },
             WIDTH, HEIGHT)
         {
+
         }
 
 
         protected GreaterCrystal((GameCulture culture, string displayName, string tooltip)[] strings, int width, int height, int value = 0, int defense = 0, int rarity = ItemRarityID.White, int maxStack = 1) : base(strings, width, height, value, defense, rarity, maxStack)
         {
+
         }
 
 

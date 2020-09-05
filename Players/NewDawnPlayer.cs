@@ -12,7 +12,6 @@ namespace NewDawn.Players
 {
     public sealed class NewDawnPlayer : ModPlayer
     {
-
         public override void CatchFish(Item fishingRod, Item bait, int power, int liquidType, int poolSize, int worldLayer, int questFish, ref int caughtType, ref bool junk)
         {
             if(player.ZoneMeteor)
@@ -29,6 +28,5 @@ namespace NewDawn.Players
                 }
             }
         }
-
     }
 }

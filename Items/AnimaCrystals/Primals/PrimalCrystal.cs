@@ -24,10 +24,12 @@ namespace NewDawn.Items.AnimaCrystals.Primals
             },
             WIDTH, HEIGHT)
         {
+
         }
 
         public PrimalCrystal((GameCulture culture, string displayName, string tooltip)[] strings, int width, int height, int value = 0, int defense = 0, int rarity = ItemRarityID.White, int maxStack = 1) : base(strings, width, height, value, defense, rarity, maxStack)
         {
+
         }
 
 

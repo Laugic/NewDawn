@@ -13,6 +13,7 @@ namespace NewDawn.Commands
     {
         public AddEssenceCommand() : base("nd_addess", CommandType.Chat)
         {
+
         }
 
 
@@ -32,11 +33,9 @@ namespace NewDawn.Commands
                         essence += "Essence";
                 }
                 essence = char.ToUpper(essence[0]) + essence.Substring(1);
-                //if(EssenceLoader.Instance.UnlocalizedNames.Has)
-                try { ac.AddEssence(EssenceLoader.Instance.New(essence)); }
-                catch (Exception e) { }
+                if(EssenceLoader.Instance.Has(essence))
+                    ac.AddEssence(EssenceLoader.Instance.New(essence));
             }
-
         }
     }
 }

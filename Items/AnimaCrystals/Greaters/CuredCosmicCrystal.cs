@@ -16,6 +16,7 @@ namespace NewDawn.Items.AnimaCrystals.Greaters
             },
             WIDTH, HEIGHT)
         {
+
         }
     }
 }

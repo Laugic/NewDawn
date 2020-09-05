@@ -19,6 +19,7 @@ namespace NewDawn.Items.AnimaCrystals.Primals
             },
             WIDTH, HEIGHT)
         {
+
         }
 
 

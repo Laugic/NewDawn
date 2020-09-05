@@ -25,6 +25,7 @@ namespace NewDawn.Items.AnimaCrystals
 
         protected AnimaCrystal((GameCulture culture, string displayName, string tooltip)[] strings, int width, int height, int value = 0, int defense = 0, int rarity = ItemRarityID.White, int maxStack = 1) : base(strings, width, height, value, defense, rarity, maxStack)
         {
+
         }
 
 
@@ -40,6 +41,7 @@ namespace NewDawn.Items.AnimaCrystals
 
         public virtual void SetCrystalDefaults()
         {
+
         }
 
 
@@ -53,8 +55,6 @@ namespace NewDawn.Items.AnimaCrystals
 
             if (Essences.Count == EssenceCapacity)
                 GetSpecificTexture();
-
-            //item.
         }
 
         public bool RemoveEssence(Essence essence)
@@ -197,7 +197,6 @@ namespace NewDawn.Items.AnimaCrystals
         public override ModItem Clone(Item item)
         {
             ModItem newItem = item.modItem;
-            //((AnimaCrystal)newItem).Essences = ((AnimaCrystal)item.modItem).Essences;
 
             return newItem;
         }
