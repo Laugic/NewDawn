@@ -7,29 +7,31 @@ using Microsoft.Xna.Framework.Graphics;
 using NewDawn.Essences;
 using Terraria;
 using Terraria.ID;
+using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using WebmilioCommons;
 using WebmilioCommons.Extensions;
+using WebmilioCommons.Items.Standard;
 
 namespace NewDawn.Items.AnimaCrystals
 {
-    public abstract class AnimaCrystal : ModItem
+    public abstract class AnimaCrystal : StandardAccessory
     {
         private Texture2D _texture;
         private string _specificTexture = "";
         private Texture2D _glowmask;
 
-        public override void SetStaticDefaults()
-        {
 
+        protected AnimaCrystal((GameCulture culture, string displayName, string tooltip)[] strings, int width, int height, int value = 0, int defense = 0, int rarity = ItemRarityID.White, int maxStack = 1) : base(strings, width, height, value, defense, rarity, maxStack)
+        {
         }
 
-        public sealed override void SetDefaults()
+
+        public sealed override void PostSetDefaults()
         {
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.useTime = item.useAnimation = 30;
-            item.rare = ItemRarityID.Blue;
             item.consumable = true;
             Essences = new List<Essence>();
 
@@ -124,7 +126,7 @@ namespace NewDawn.Items.AnimaCrystals
 
             TagCompound tag = new TagCompound
             {
-                {"Essences", essenceNames}
+                { "Essences", essenceNames }
             };
 
             return tag;
@@ -158,10 +160,10 @@ namespace NewDawn.Items.AnimaCrystals
             newPos.Y += heightDiff;
 
             spriteBatch.Draw(_texture, newPos, new Rectangle(0, 0, _texture.Width, _texture.Height), drawColor, 0, origin, scale, SpriteEffects.None, 0);
-            
+
             if (!mod.TextureExists(_specificTexture) || Essences.Count < EssenceCapacity)
                 spriteBatch.Draw(_glowmask, position, frame, GetEssenceColor(), 0, origin, scale, SpriteEffects.None, 0);
-                
+
             return false;
         }
 
@@ -169,10 +171,10 @@ namespace NewDawn.Items.AnimaCrystals
         {
             StringBuilder sb = new StringBuilder(GetType().GetRootPath() + "/SpecificCrystals/");
             List<Essence> tempEss = Essences;
-            
+
             tempEss.Sort();
             tempEss.Do(es => sb.Append(es.Name));
-            
+
             _specificTexture = sb.ToString();
             _texture = null;
         }

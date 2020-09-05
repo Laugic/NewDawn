@@ -4,15 +4,30 @@ using NewDawn.Essences;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.ID;
+using Terraria.Localization;
 
 namespace NewDawn.Items.AnimaCrystals.Greaters
 {
     public class GreaterCrystal : AnimaCrystal
     {
-        public override void SetStaticDefaults()
+        public const int
+            WIDTH = 20,
+            HEIGHT = 28;
+
+
+        public GreaterCrystal() : base(new [] 
+            {
+                (GameCulture.English, "Rough Crystal", "Greater"),
+                (GameCulture.French, "Cristal Grossier", "Supérieur"),
+            },
+            WIDTH, HEIGHT)
         {
-            DisplayName.SetDefault("Rough Crystal");
-            Tooltip.SetDefault("Greater");
+        }
+
+
+        protected GreaterCrystal((GameCulture culture, string displayName, string tooltip)[] strings, int width, int height, int value = 0, int defense = 0, int rarity = ItemRarityID.White, int maxStack = 1) : base(strings, width, height, value, defense, rarity, maxStack)
+        {
         }
 
 

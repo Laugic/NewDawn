@@ -3,15 +3,19 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Terraria.Localization;
 
 namespace NewDawn.Items.AnimaCrystals.Greaters
 {
     public class CuredCosmicCrystal : GreaterCrystal
     {
-        public override void SetStaticDefaults()
+        public CuredCosmicCrystal() : base(new []
+            {
+                (GameCulture.English, "Cured Cosmic Crystal", "Crystalized space rock infused with Stellar energy\nGreater"),
+                (GameCulture.French, "Cristal Cosmic Traité", "Roche spatiale cristallisée infuse d'énergie stellaire\nSupérieur")
+            },
+            WIDTH, HEIGHT)
         {
-            DisplayName.SetDefault("Cured Cosmic Crystal");
-            Tooltip.SetDefault("Crystalized space rock infused with Stellar energy\nGreater");
         }
     }
 }
