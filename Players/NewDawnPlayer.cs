@@ -1,4 +1,4 @@
-﻿using NewDawn.Items.AnimaCrystals.Primals;
+﻿using NewDawn.Items.Alchemistry.AnimaCrystals.Primals;
 using System;
 using System.Collections.Generic;
 using System.Linq;

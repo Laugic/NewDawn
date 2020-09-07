@@ -8,7 +8,7 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
-namespace NewDawn.Items.AnimaCrystals.Primals
+namespace NewDawn.Items.Alchemistry.AnimaCrystals.Primals
 {
     public class CrackedCosmicCrystal : PrimalCrystal
     {

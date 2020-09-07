@@ -14,7 +14,7 @@ using WebmilioCommons;
 using WebmilioCommons.Extensions;
 using WebmilioCommons.Items.Standard;
 
-namespace NewDawn.Items.AnimaCrystals
+namespace NewDawn.Items.Alchemistry.AnimaCrystals
 {
     public abstract class AnimaCrystal : StandardItem
     {

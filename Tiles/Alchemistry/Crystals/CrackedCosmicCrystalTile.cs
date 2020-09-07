@@ -9,10 +9,11 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using WebmilioCommons.Tiles;
 
 namespace NewDawn.Tiles.Alchemistry.Crystals
 {
-    public class CrackedCosmicCrystalTile : ModTile
+    public class CrackedCosmicCrystalTile : StandardTile
     {
         public override void SetDefaults()
         {
@@ -21,7 +22,7 @@ namespace NewDawn.Tiles.Alchemistry.Crystals
             Main.tileLighted[Type] = true;
 
             //dustType = ModContent.DustType<Magma>();
-            drop = ModContent.ItemType<Items.AnimaCrystals.Primals.CrackedCosmicCrystal>();
+            drop = ModContent.ItemType<Items.Alchemistry.AnimaCrystals.Primals.CrackedCosmicCrystal>();
 
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Cracked Cosmic Crystal");
@@ -37,10 +38,10 @@ namespace NewDawn.Tiles.Alchemistry.Crystals
             TileObjectData.addTile(Type);
         }
 
-        public override void RandomUpdate(int i, int j)
+        /*public override void Update(int i, int j)
         {
             Main.tile[i, j].type = (ushort)ModContent.TileType<CuredCosmicCrystalTile>();
-        }
+        }*/
 
         public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
         {

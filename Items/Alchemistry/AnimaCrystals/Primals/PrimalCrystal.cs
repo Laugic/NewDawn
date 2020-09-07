@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Terraria.ID;
 using Terraria.Localization;
 
-namespace NewDawn.Items.AnimaCrystals.Primals
+namespace NewDawn.Items.Alchemistry.AnimaCrystals.Primals
 {
     public class PrimalCrystal : AnimaCrystal
     {

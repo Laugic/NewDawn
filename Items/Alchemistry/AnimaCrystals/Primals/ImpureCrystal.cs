@@ -7,7 +7,7 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 
-namespace NewDawn.Items.AnimaCrystals.Primals
+namespace NewDawn.Items.Alchemistry.AnimaCrystals.Primals
 {
     public class ImpureCrystal : PrimalCrystal
     {

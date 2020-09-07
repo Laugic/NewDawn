@@ -7,15 +7,14 @@ using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
 
-namespace NewDawn.Items.AnimaCrystals.Primals
+namespace NewDawn.Items.Alchemistry.AnimaCrystals.Primals
 {
-    public class FracturedCrystal : PrimalCrystal
+    public class JaggedCrystal : PrimalCrystal
     {
-        public FracturedCrystal() : base(
-            new[]
+        public JaggedCrystal() : base(new [] 
             {
-                (GameCulture.English, "Fractured Crystal", "Primal"),
-                (GameCulture.French, "Cristal Fracturé", "Primitif")
+                (GameCulture.English, "Jagged Crystal", "Primal"),
+                (GameCulture.French, "Cristal Déchiqueté", "Primitif")
             },
             WIDTH, HEIGHT)
         {

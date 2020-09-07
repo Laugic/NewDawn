@@ -5,14 +5,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using NewDawn.Items.Alchemistry.AnimaCrystals.Greaters;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
+using WebmilioCommons.Tiles;
 
 namespace NewDawn.Tiles.Alchemistry.Crystals
 {
-    public class CuredCosmicCrystalTile : ModTile
+    public class CuredCosmicCrystalTile : StandardTile
     {
         public override void SetDefaults()
         {
@@ -21,7 +23,7 @@ namespace NewDawn.Tiles.Alchemistry.Crystals
             Main.tileLighted[Type] = true;
 
             //dustType = ModContent.DustType<Magma>();
-            drop = ModContent.ItemType<Items.AnimaCrystals.Greaters.CuredCosmicCrystal>();
+            drop = ModContent.ItemType<CuredCosmicCrystal>();
 
             ModTranslation name = CreateMapEntryName();
             name.SetDefault("Cured Cosmic Crystal");

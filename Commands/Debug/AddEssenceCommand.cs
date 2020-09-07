@@ -1,7 +1,7 @@
 ﻿using NewDawn.Essences;
 using NewDawn.Essences.PotionEssences;
 using NewDawn.Essences.Primals;
-using NewDawn.Items.AnimaCrystals;
+using NewDawn.Items.Alchemistry.AnimaCrystals;
 using System;
 using Terraria;
 using Terraria.ModLoader;

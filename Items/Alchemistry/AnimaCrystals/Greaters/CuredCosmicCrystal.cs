@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Terraria.Localization;
 
-namespace NewDawn.Items.AnimaCrystals.Greaters
+namespace NewDawn.Items.Alchemistry.AnimaCrystals.Greaters
 {
     public class CuredCosmicCrystal : GreaterCrystal
     {

@@ -19,7 +19,8 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Items\AnimaCrystals\Grands\" />
-    <Folder Include="Items\AnimaCrystals\Supers\" />
+    <Folder Include="Items\Alchemistry\AnimaCrystals\Grands\" />
+    <Folder Include="Items\Alchemistry\AnimaCrystals\Primals\Supers\" />
+    <Folder Include="Dusts\" />
   </ItemGroup>
 </Project>

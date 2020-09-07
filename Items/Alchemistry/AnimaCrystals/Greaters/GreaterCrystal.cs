@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using Terraria.ID;
 using Terraria.Localization;
 
-namespace NewDawn.Items.AnimaCrystals.Greaters
+namespace NewDawn.Items.Alchemistry.AnimaCrystals.Greaters
 {
     public class GreaterCrystal : AnimaCrystal
     {
