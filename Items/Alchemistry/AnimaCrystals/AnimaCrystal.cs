@@ -34,6 +34,8 @@ namespace NewDawn.Items.Alchemistry.AnimaCrystals
             item.useStyle = ItemUseStyleID.SwingThrow;
             item.useTime = item.useAnimation = 30;
             item.consumable = true;
+            item.maxStack = 99;
+            item.autoReuse = true;
             Essences = new List<Essence>();
 
             SetCrystalDefaults();
@@ -47,10 +49,11 @@ namespace NewDawn.Items.Alchemistry.AnimaCrystals
 
         public void AddEssence(Essence essence)
         {
-            if (Essences.Count < EssenceCapacity && essence.Level <= MaxEssenceLevel)
+            if (Essences.Count < EssenceCapacity && essence.Level <= MaxEssenceLevel && item.stack < 2)
             {
                 Essences.Add(essence);
                 item.accessory = true;
+                item.maxStack = 1;
             }
 
             if (Essences.Count == EssenceCapacity)
@@ -62,7 +65,9 @@ namespace NewDawn.Items.Alchemistry.AnimaCrystals
             bool result = Essences.Remove(essence);
 
             if (Essences.Count == 0)
-                item.accessory = false;
+            {
+                PostSetDefaults();
+            }
 
             return result;
         }
@@ -82,7 +87,7 @@ namespace NewDawn.Items.Alchemistry.AnimaCrystals
 
         public override void ModifyTooltips(List<TooltipLine> tooltips)
         {
-            if (GetRemainingEssences() != "")
+            if (GetRemainingEssences() != "" && item.stack == 1)
                 tooltips.Add(new TooltipLine(mod, "ListEssences", GetRemainingEssences()));
 
             foreach (var essence in Essences)
@@ -151,7 +156,10 @@ namespace NewDawn.Items.Alchemistry.AnimaCrystals
 
             essenceNames.Do(en => Essences.Add(EssenceLoader.Instance.New(en)));
             if (Essences.Count > 0)
+            {
                 item.accessory = true;
+                item.maxStack = 1;
+            }
         }
 
         public override bool PreDrawInInventory(SpriteBatch spriteBatch, Vector2 position, Rectangle frame, Color drawColor, Color itemColor, Vector2 origin, float scale)

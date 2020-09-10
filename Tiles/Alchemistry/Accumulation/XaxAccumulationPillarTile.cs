@@ -36,11 +36,12 @@ namespace NewDawn.Tiles.Alchemistry.Accumulation
 
             var iPos = (i - Main.tile[i, j].frameX / 16) * 16;
             var jPos = (j - 1 - Main.tile[i, j].frameY / 16) * 16 + 4;
-            var targetPos = new Vector2(crystals[crystal].X * 16, crystals[crystal].Y * 16);
             if (crystals.Count > 0)
             {
+                var targetPos = new Vector2(crystals[crystal].X * 16, crystals[crystal].Y * 16);
                 var dust = Dust.NewDust(new Vector2(iPos, jPos), 16, 8, ModContent.DustType<White>());
                 Main.dust[dust].velocity = new Vector2(GetSpeedX(iPos, jPos, targetPos, White.maxLife), GetSpeedY(iPos, jPos, targetPos, White.maxLife));
+                GlobalCrystalTile.Grow((int)crystals[crystal].X, (int)crystals[crystal].Y, (ushort)ModContent.TileType<CuredCosmicCrystalTile>());
             }
         }
 

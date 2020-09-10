@@ -1,5 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Worlds;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,7 @@ using WebmilioCommons.Tiles;
 
 namespace NewDawn.Tiles.Alchemistry.Crystals
 {
-    public class CrackedCosmicCrystalTile : StandardTile
+    public class CrackedCosmicCrystalTile : GlobalCrystalTile
     {
         public override void SetDefaults()
         {
@@ -37,11 +38,6 @@ namespace NewDawn.Tiles.Alchemistry.Crystals
             };
             TileObjectData.addTile(Type);
         }
-
-        /*public override void Update(int i, int j)
-        {
-            Main.tile[i, j].type = (ushort)ModContent.TileType<CuredCosmicCrystalTile>();
-        }*/
 
         public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
         {
@@ -72,5 +68,7 @@ namespace NewDawn.Tiles.Alchemistry.Crystals
             g = .4f;
             b = .4f;
         }
+
+        public override ushort GrowType { get => GrowType; set => GrowType = (ushort)ModContent.TileType<CuredCosmicCrystalTile>(); }
     }
 }
