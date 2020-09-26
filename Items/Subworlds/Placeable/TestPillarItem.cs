@@ -3,7 +3,7 @@ using Terraria.ModLoader;
 using WebmilioCommons.Items.Standard;
 using NewDawn.Tiles.Subworlds.MoldyrTemple;
 
-namespace Laugicality.Items.Placeable
+namespace NewDawn.Items.Subworlds.Placeable
 {
     public class TestPillarItem : ModItem
     {
