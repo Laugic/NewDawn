@@ -1,4 +1,4 @@
 displayName = Enigma New Dawn
 author = Laugic
 version = 0.1
-modReferences = WebmilioCommons@0.1.13.3
+modReferences = WebmilioCommons@0.1.13.3,SubworldLibrary
