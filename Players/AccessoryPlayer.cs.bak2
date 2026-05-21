@@ -1,0 +1,44 @@
+﻿using Terraria.ModLoader;
+using Terraria;
+using Terraria.ID;
+
+namespace NewDawn.Players
+{
+    public class AccessoryPlayer : ModPlayer
+    {
+        public bool SetOnFire { get; set; } = false;
+        public int BonusHealFromHearts { get; set; } = 0;
+        public float SnowDamage { get; set; } = 1f;
+        public override void Initialize()
+        {
+            base.Initialize();
+        }
+
+        public override void ResetEffects()
+        {
+            SetOnFire = false;
+            BonusHealFromHearts = 0;
+            SnowDamage = 1f;
+            base.ResetEffects();
+        }
+
+        public override void ModifyWeaponDamage(Item item, ref StatModifier damage)
+        {
+            if (/*item.ammo == AmmoID.Snowball || */item.useAmmo == AmmoID.Snowball)
+                damage *= SnowDamage;
+
+            base.ModifyWeaponDamage(item, ref damage);
+        }
+
+        public override void OnHitNPCWithItem(Item item, NPC target, int damage, float knockback, bool crit)
+        {
+            InflictDebuffs(item, target, damage, knockback, crit);
+        }
+
+        private void InflictDebuffs(Item item, NPC target, int damage, float knockback, bool crit)
+        {
+            if (SetOnFire)
+                target.AddBuff(BuffID.OnFire, (int)((5 * 60 + Main.rand.Next(60))));
+        }
+    }
+}

@@ -1,0 +1,60 @@
+﻿using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Projectiles.Ranged
+{
+    public class Blessedball : ModProjectile
+    {
+        public override void SetDefaults()
+        {
+            Projectile.width = 14;
+            Projectile.height = 14;
+            Projectile.friendly = true;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.penetrate = 2;
+            Projectile.timeLeft = 600;
+        }
+
+        public override void AI()
+        {
+            var multiplier = Math.Min(600 - Projectile.timeLeft, 45) / 45f;
+            Projectile.velocity.Y += .3f * multiplier;
+            Projectile.velocity.X *= 1 - .02f * multiplier;
+        }
+
+        public override bool OnTileCollide(Vector2 oldVelocity)
+        {
+            Projectile.ai[0]++;
+            if (Projectile.ai[0] >= 2)
+                Projectile.Kill();
+            else
+            {
+                if (Projectile.velocity.X != oldVelocity.X)
+                {
+                    Projectile.velocity.X = -oldVelocity.X;
+                }
+                if (Projectile.velocity.Y != oldVelocity.Y)
+                {
+                    Projectile.velocity.Y = -oldVelocity.Y;
+                }
+                Projectile.velocity.X *= 0.95f;
+                Projectile.velocity.Y *= 1.5f;
+                SoundEngine.PlaySound(SoundID.Item50, Projectile.position);
+            }
+            return false;
+        }
+
+        public override void Kill(int timeLeft)
+        {
+            SoundEngine.PlaySound(SoundID.Item51, Projectile.position);
+        }
+    }
+}

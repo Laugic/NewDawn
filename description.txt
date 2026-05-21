@@ -1,0 +1,14 @@
+Enigma New Dawn
+--------
+-Adds new unique alchemy system to craft wearable Potion Crystals and more!
+-Extract and infuse Essences to make powerful accessories
+-Extends Snowball subclass to be viable through the whole game
+
+Much much more planned!
+--------
+Coming "Soon"(TM):
+-Procedural Roguelike Dungeon
+-Mystic Class
+-New Dimension
+-Steampunk Stuff
+-Boss Fights

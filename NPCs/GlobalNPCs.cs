@@ -1,0 +1,58 @@
+﻿using NewDawn.Items.Accessories;
+using NewDawn.Items.Materials;
+using NewDawn.Items.Weapons.Snowball;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.NPCs
+{
+    public class GlobalNPCs : GlobalNPC
+    {
+        public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
+        {
+            var wadidget = new Wagidget();
+            if(npc.type == NPCID.GoblinTinkerer)
+            {
+                int i = 0;
+                bool found = false;
+                while(i < items.Length && !found)
+                {
+                    if (items[i].stack == 0)
+                        items[i].SetDefaults(ModContent.ItemType<Wagidget>());
+                }
+            }
+        }
+        public override void OnKill(NPC npc)
+        {
+            GetWeaponAndAccDrops(npc);
+            GetMaterialDrops(npc);
+        }
+
+        private void GetMaterialDrops(NPC npc)
+        {
+            if(Main.player[npc.FindClosestPlayer()].ZoneSnow && Main.rand.NextBool(20))
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Frostpetal>(), 1);
+
+            if (Main.player[npc.FindClosestPlayer()].ZoneUnderworldHeight && Main.rand.NextBool(40))
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LavaGem>(), 1);
+
+            if (Main.player[npc.FindClosestPlayer()].ZoneDungeon && Main.rand.NextBool(10))
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ArcaneShard>(), Main.rand.Next(2, 4));
+        }
+
+        private void GetWeaponAndAccDrops(NPC npc)
+        {
+            if ((npc.type == NPCID.SnowmanGangsta) && Main.rand.NextBool(40))
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Baller>(), 1);
+
+            if ((npc.type == NPCID.IceQueen) && Main.rand.NextBool(Main.expertMode?13:22))
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<IceCrown>(), 1);
+        }
+    }
+}

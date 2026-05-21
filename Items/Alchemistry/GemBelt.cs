@@ -1,0 +1,125 @@
+﻿using Microsoft.Xna.Framework;
+using NewDawn.Abstracts;
+using NewDawn.Items.Alchemistry.Crystals;
+using NewDawn.Tiles;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Items.Alchemistry
+{
+    public class GemBelt : AbstractStorageItem
+    {
+        //TODO:
+        //PREVENT RIGHT CLICKING TO EQUIP CUZ IT BREAKS STUFF
+        public override Item[] Items { get; set; } = new Item[3];
+
+        public override void SetStaticDefaults()
+        {
+            // Tooltip.SetDefault("Can hold multiple Potion Crystals");
+        }
+
+        public override void SetDefaults()
+        {
+            Item.width = 20;
+            Item.height = 20;
+            Item.value = Item.sellPrice(silver: 50);
+            Item.rare = ItemRarityID.Green;
+            Item.accessory = true;
+            Item.useAnimation = Item.useTime = 15;
+            Item.useStyle = ItemUseStyleID.HoldUp;
+            if (Items[0] == null)
+                AbstractStorage.GenerateClearStorage(this);
+        }
+
+        public override void ModifyTooltips(List<TooltipLine> tooltips)
+        {
+            base.ModifyTooltips(tooltips);
+            for (int i = 0; i < Items.Length; i++)
+            {
+                if (Items[i] != null && Items[i].stack > 0 && Items[i].ModItem is PotionCrystal)
+                {
+                    for (int j = 0; j < Items[i].ToolTip.Lines; j++)
+                    {
+                        string tip = Items[i].ToolTip.GetLine(j);
+                        if (tip != "")
+                            tooltips.Add(new TooltipLine(Mod, "Stored Item Tooltips", tip));
+                    }
+                }
+            }
+        }
+
+        public override void RightClick(Player player)
+        {
+            if (player.whoAmI == Main.myPlayer)
+                AbstractStorage.TriggerUI(this);
+
+            Item.stack++;
+        }
+
+        public override bool CanRightClick()
+        {
+            return true;
+        }
+
+        public override bool? UseItem(Player player)
+        {
+            if (player.whoAmI == Main.myPlayer && player.itemAnimation == player.itemAnimationMax && Main.mouseItem.type != ModContent.ItemType<GemBelt>())
+                AbstractStorage.TriggerUI(this);
+
+            return null;
+        }
+
+        public override void UpdateInventory(Player player)
+        {
+            base.UpdateInventory(player);
+            Item.defense = 0;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                if (Items[i] != null && Items[i].stack > 0 && Items[i].ModItem is PotionCrystal)
+                {
+                    Items[i].ModItem.UpdateInventory(player);
+                    if (Items[i].defense > 0)
+                        Item.defense += Items[i].defense;
+                }
+            }
+        }
+
+        public override void UpdateEquip(Player player)
+        {
+            base.UpdateEquip(player);
+            Item.defense= 0;
+            for (int i = 0; i < Items.Length; i++)
+            {
+                if (Items[i] != null && Items[i].stack > 0 && Items[i].ModItem is PotionCrystal)
+                {
+                    Items[i].ModItem.UpdateEquip(player);
+                    if (Items[i].defense > 0)
+                        Item.defense += Items[i].defense;
+                }
+            }
+        }
+
+        public override bool FilterCheck(Item item, int slot)
+        {
+            //Check that the same item type isn't in the inventory, unless it's in the slot you're trying to click
+            for (int i = 0; i < Items.Length; i++)
+            {
+                if (Items[i].type == item.type && i != slot)
+                    return false;
+            }
+            return item.ModItem is PotionCrystal;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.Silk, 12);
+            recipe.AddIngredient(ItemID.MeteoriteBar, 8);
+            recipe.AddIngredient(ItemID.ManaCrystal, 3);
+            recipe.AddTile(null, Crystallizer.name);
+            recipe.Register();
+        }
+    }
+}

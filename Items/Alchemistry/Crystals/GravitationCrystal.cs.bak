@@ -1,0 +1,47 @@
+﻿using NewDawn.Tiles;
+using Terraria;
+using Terraria.ID;
+using NewDawn.Items.Materials;
+using Terraria.ModLoader;
+using NewDawn.Tiles.Alchemistry;
+using NewDawn.Items.Alchemistry.Essences;
+
+namespace NewDawn.Items.Alchemistry.Crystals
+{
+    public class GravitationCrystal : PotionCrystal
+    {
+        public override void SetStaticDefaults()
+        {
+            Tooltip.SetDefault("Allows the control of gravity");
+        }
+
+        public override void CustomDefaults()
+        {
+            Item.createTile = ModContent.TileType<GravitationTile>();
+        }
+
+        public override void UpdateEquip(Player player)
+        {
+            player.gravControl = true;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.GravitationPotion, 4);
+            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(null, Crystallizer.name);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<AirEssence>());
+            recipe.AddIngredient(this);
+            recipe.AddCondition(Demystify);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<ChaosEssence>());
+            recipe.AddIngredient(this);
+            recipe.AddCondition(Demystify);
+            recipe.Register();
+        }
+    }
+}

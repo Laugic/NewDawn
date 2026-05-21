@@ -1,0 +1,14 @@
+
+<Project Sdk="Microsoft.NET.Sdk">
+  <Import Project="..\tModLoader.targets" />
+  <PropertyGroup>
+    <AssemblyName>NewDawn</AssemblyName>
+    <LangVersion>latest</LangVersion>
+    <TargetFramework>net10.0</TargetFramework>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="SubworldLibrary">
+      <HintPath>..\Dependencies\SubworldLibrary.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+</Project>

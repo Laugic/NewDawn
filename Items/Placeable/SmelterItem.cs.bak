@@ -1,0 +1,34 @@
+using NewDawn.Tiles;
+using Terraria;
+using Terraria.Enums;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Items.Placeable
+{
+    public class SmelterItem : ModItem
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Smelter");
+            Tooltip.SetDefault("Melts items you place inside");
+        }
+
+        public override void SetDefaults()
+        {
+            Item.DefaultToPlaceableTile(ModContent.TileType<Smelter>());
+
+            // Another shorthand method that will set the rarity and how much the item is worth.
+            Item.SetShopValues(ItemRarityColor.Orange3, Terraria.Item.buyPrice(gold: 4));
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddTile(null, "LaugicalWorkbench");
+            recipe.AddTile(TileID.Hellforge);
+            recipe.AddIngredient(ItemID.HellstoneBar, 16);
+            recipe.Register();
+        }
+    }
+}

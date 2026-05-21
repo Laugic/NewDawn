@@ -1,0 +1,535 @@
+Biomes: {
+	TempleBiome: {
+		DisplayName: Temple Biome
+		TownNPCDialogueName: the Temple Biome
+	}
+}
+
+Tiles: {
+	Crystallizer.MapEntry: Crystallizer
+	Demyst.MapEntry: Demyst
+	LaugicalWorkbench.MapEntry: Laugical Workbench
+	Smelter.MapEntry: Smelter
+	TempleEntrance.MapEntry: Temple Entrance
+	TestTriggerTile.MapEntry: Test Trigger Tile
+	KeystoneTile.MapEntry: Keystone Tile
+	ExitStairs.MapEntry: Exit Stairs
+}
+
+Items: {
+	IceCrown: {
+		DisplayName: Ice Crown
+		Tooltip: "7% increased melee and ranged critical strike chance\n7% increased melee and ranged damage\n7% increased snowball damage\n'The authority of the snow'"
+	}
+
+	Alabaster: {
+		DisplayName: Alabaster
+		Tooltip: ""
+	}
+
+	AmmoReservationCrystal: {
+		DisplayName: Ammo Reservation Crystal
+		Tooltip: ""
+	}
+
+	ArcheryCrystal: {
+		DisplayName: Archery Crystal
+		Tooltip: ""
+	}
+
+	BattleCrystal: {
+		DisplayName: Battle Crystal
+		Tooltip: ""
+	}
+
+	BuilderCrystal: {
+		DisplayName: Builder Crystal
+		Tooltip: ""
+	}
+
+	CalmingCrystal: {
+		DisplayName: Calming Crystal
+		Tooltip: ""
+	}
+
+	CrateCrystal: {
+		DisplayName: Crate Crystal
+		Tooltip: ""
+	}
+
+	DangersenseCrystal: {
+		DisplayName: Dangersense Crystal
+		Tooltip: ""
+	}
+
+	EnduranceCrystal: {
+		DisplayName: Endurance Crystal
+		Tooltip: ""
+	}
+
+	FeatherfallCrystal: {
+		DisplayName: Featherfall Crystal
+		Tooltip: ""
+	}
+
+	FishingCrystal: {
+		DisplayName: Fishing Crystal
+		Tooltip: ""
+	}
+
+	FlipperCrystal: {
+		DisplayName: Flipper Crystal
+		Tooltip: ""
+	}
+
+	GillsCrystal: {
+		DisplayName: Gills Crystal
+		Tooltip: ""
+	}
+
+	GravitationCrystal: {
+		DisplayName: Gravitation Crystal
+		Tooltip: ""
+	}
+
+	HeartreachCrystal: {
+		DisplayName: Heartreach Crystal
+		Tooltip: ""
+	}
+
+	HunterCrystal: {
+		DisplayName: Hunter Crystal
+		Tooltip: ""
+	}
+
+	InfernoCrystal: {
+		DisplayName: Inferno Crystal
+		Tooltip: ""
+	}
+
+	InvisibilityCrystal: {
+		DisplayName: Invisibility Crystal
+		Tooltip: ""
+	}
+
+	IronskinCrystal: {
+		DisplayName: Ironskin Crystal
+		Tooltip: ""
+	}
+
+	LifeforceCrystal: {
+		DisplayName: Lifeforce Crystal
+		Tooltip: ""
+	}
+
+	MagicPowerCrystal: {
+		DisplayName: Magic Power Crystal
+		Tooltip: ""
+	}
+
+	ManaRegenerationCrystal: {
+		DisplayName: Mana Regeneration Crystal
+		Tooltip: ""
+	}
+
+	MiningCrystal: {
+		DisplayName: Mining Crystal
+		Tooltip: ""
+	}
+
+	NightOwlCrystal: {
+		DisplayName: Night Owl Crystal
+		Tooltip: ""
+	}
+
+	ObsidianSkinCrystal: {
+		DisplayName: Obsidian Skin Crystal
+		Tooltip: ""
+	}
+
+	RageCrystal: {
+		DisplayName: Rage Crystal
+		Tooltip: ""
+	}
+
+	RegenerationCrystal: {
+		DisplayName: Regeneration Crystal
+		Tooltip: ""
+	}
+
+	ShineCrystal: {
+		DisplayName: Shine Crystal
+		Tooltip: ""
+	}
+
+	SonarCrystal: {
+		DisplayName: Sonar Crystal
+		Tooltip: ""
+	}
+
+	SpelunkerCrystal: {
+		DisplayName: Spelunker Crystal
+		Tooltip: ""
+	}
+
+	SummoningCrystal: {
+		DisplayName: Summoning Crystal
+		Tooltip: ""
+	}
+
+	SwiftnessCrystal: {
+		DisplayName: Swiftness Crystal
+		Tooltip: ""
+	}
+
+	ThornsCrystal: {
+		DisplayName: Thorns Crystal
+		Tooltip: ""
+	}
+
+	TitanCrystal: {
+		DisplayName: Titan Crystal
+		Tooltip: ""
+	}
+
+	WarmthCrystal: {
+		DisplayName: Warmth Crystal
+		Tooltip: ""
+	}
+
+	WaterWalkingCrystal: {
+		DisplayName: Water Walking Crystal
+		Tooltip: ""
+	}
+
+	WrathCrystal: {
+		DisplayName: Wrath Crystal
+		Tooltip: ""
+	}
+
+	AirEssence: {
+		DisplayName: Air Essence
+		Tooltip: ""
+	}
+
+	AirInfusion: {
+		DisplayName: Air Infusion
+		Tooltip: ""
+	}
+
+	ChaosEssence: {
+		DisplayName: Chaos Essence
+		Tooltip: ""
+	}
+
+	ChaosInfusion: {
+		DisplayName: Chaos Infusion
+		Tooltip: ""
+	}
+
+	EarthEssence: {
+		DisplayName: Earth Essence
+		Tooltip: ""
+	}
+
+	EarthInfusion: {
+		DisplayName: Earth Infusion
+		Tooltip: ""
+	}
+
+	FireEssence: {
+		DisplayName: Fire Essence
+		Tooltip: ""
+	}
+
+	FireInfusion: {
+		DisplayName: Fire Infusion
+		Tooltip: ""
+	}
+
+	ForceEssence: {
+		DisplayName: Force Essence
+		Tooltip: ""
+	}
+
+	ForceInfusion: {
+		DisplayName: Force Infusion
+		Tooltip: ""
+	}
+
+	LightEssence: {
+		DisplayName: Light Essence
+		Tooltip: ""
+	}
+
+	LightInfusion: {
+		DisplayName: Light Infusion
+		Tooltip: ""
+	}
+
+	SoulEssence: {
+		DisplayName: Soul Essence
+		Tooltip: ""
+	}
+
+	SoulInfusion: {
+		DisplayName: Soul Infusion
+		Tooltip: ""
+	}
+
+	WaterEssence: {
+		DisplayName: Water Essence
+		Tooltip: ""
+	}
+
+	WaterInfusion: {
+		DisplayName: Water Infusion
+		Tooltip: ""
+	}
+
+	GemBelt: {
+		DisplayName: Gem Belt
+		Tooltip: ""
+	}
+
+	InfusionCrystal: {
+		DisplayName: Infusion Crystal
+		Tooltip: ""
+	}
+
+	ShroomiteHood: {
+		DisplayName: Shroomite Hood
+		Tooltip: ""
+	}
+
+	ArcaneShard: {
+		DisplayName: Arcane Shard
+		Tooltip: ""
+	}
+
+	Frostpetal: {
+		DisplayName: Frostpetal
+		Tooltip: ""
+	}
+
+	LavaGem: {
+		DisplayName: Lava Gem
+		Tooltip: ""
+	}
+
+	Vitasilk: {
+		DisplayName: Vitasilk
+		Tooltip: ""
+	}
+
+	Wagidget: {
+		DisplayName: Wagidget
+		Tooltip: ""
+	}
+
+	CrystallizerItem: {
+		DisplayName: Crystallizer Item
+		Tooltip: ""
+	}
+
+	DemystBlock: {
+		DisplayName: Demyst Block
+		Tooltip: ""
+	}
+
+	LaugicalWorkbench: {
+		DisplayName: Laugical Workbench
+		Tooltip: ""
+	}
+
+	SmelterItem: {
+		DisplayName: Smelter Item
+		Tooltip: ""
+	}
+
+	TempleEntrance: {
+		DisplayName: Temple Entrance
+		Tooltip: ""
+	}
+
+	AncientTempleKey: {
+		DisplayName: Ancient Temple Key
+		Tooltip: ""
+	}
+
+	WarpPearl: {
+		DisplayName: Warp Pearl
+		Tooltip: ""
+	}
+
+	SnowScoop: {
+		DisplayName: Snow Scoop
+		Tooltip: ""
+	}
+
+	DarkIceball: {
+		DisplayName: Dark Iceball
+		Tooltip: ""
+	}
+
+	Hiveball: {
+		DisplayName: Hiveball
+		Tooltip: ""
+	}
+
+	Pearlsandball: {
+		DisplayName: Pearlsandball
+		Tooltip: ""
+	}
+
+	SnowPile: {
+		DisplayName: Snow Pile
+		Tooltip: ""
+	}
+
+	Sootball: {
+		DisplayName: Sootball
+		Tooltip: ""
+	}
+
+	Spiritball: {
+		DisplayName: Spiritball
+		Tooltip: ""
+	}
+
+	YellowSnowball: {
+		DisplayName: Yellow Snowball
+		Tooltip: ""
+	}
+
+	AbsoluteZero: {
+		DisplayName: Absolute Zero
+		Tooltip: ""
+	}
+
+	Avalanche: {
+		DisplayName: Avalanche
+		Tooltip: ""
+	}
+
+	Baller: {
+		DisplayName: Baller
+		Tooltip: ""
+	}
+
+	Blizzard: {
+		DisplayName: Blizzard
+		Tooltip: ""
+	}
+
+	FractalEngine: {
+		DisplayName: Fractal Engine
+		Tooltip: ""
+	}
+
+	FrostThrower: {
+		DisplayName: Frost Thrower
+		Tooltip: ""
+	}
+
+	GoldHandcrank: {
+		DisplayName: Gold Handcrank
+		Tooltip: ""
+	}
+
+	Gravitron9000: {
+		DisplayName: Gravitron9000
+		Tooltip: ""
+	}
+
+	Hailmaker: {
+		DisplayName: Hailmaker
+		Tooltip: ""
+	}
+
+	PlatinumHandcrank: {
+		DisplayName: Platinum Handcrank
+		Tooltip: ""
+	}
+
+	Slinger: {
+		DisplayName: Slinger
+		Tooltip: ""
+	}
+
+	Slynger: {
+		DisplayName: Slynger
+		Tooltip: ""
+	}
+
+	SMG: {
+		DisplayName: S. M. G.
+		Tooltip: ""
+	}
+
+	Snobbler: {
+		DisplayName: Snobbler
+		Tooltip: ""
+	}
+
+	SnowBlower: {
+		DisplayName: Snow Blower
+		Tooltip: ""
+	}
+
+	SnowperIceful: {
+		DisplayName: Snowper Iceful
+		Tooltip: ""
+	}
+
+	Snowshot: {
+		DisplayName: Snowshot
+		Tooltip: ""
+	}
+
+	SpineChiller: {
+		DisplayName: Spine Chiller
+		Tooltip: ""
+	}
+
+	TheBlessing: {
+		DisplayName: The Blessing
+		Tooltip: ""
+	}
+
+	TwinSnokes: {
+		DisplayName: Twin Snokes
+		Tooltip: ""
+	}
+
+	UFSnow: {
+		DisplayName: U F Snow
+		Tooltip: ""
+	}
+
+	Keystone: {
+		DisplayName: Keystone
+		Tooltip: Unlocks the next Temple room with 3 Keystones
+	}
+
+	GoldenTempleKey: {
+		Tooltip: ""
+		DisplayName: Golden Temple Key
+	}
+}
+
+Projectiles: {
+	WarpPearl.DisplayName: Warp Pearl
+	BigSnowball.DisplayName: Big Snowball
+	Blessedball.DisplayName: Blessedball
+	DarkIceball.DisplayName: Dark Iceball
+	Frostball.DisplayName: Frostball
+	Graviball.DisplayName: Graviball
+	Hailball.DisplayName: Hailball
+	Hiveball.DisplayName: Hiveball
+	Pearlsandball.DisplayName: Pearlsandball
+	Snipeball.DisplayName: Snipeball
+	Sootball.DisplayName: Sootball
+	Spiritball.DisplayName: Spiritball
+	YellowSnowball.DisplayName: Yellow Snowball
+}

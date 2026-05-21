@@ -1,0 +1,77 @@
+using Microsoft.Xna.Framework;
+using NewDawn.Items.Alchemistry.Essences;
+using NewDawn.Tiles.Alchemistry;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.DataStructures;
+using Terraria.Enums;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.ObjectData;
+
+namespace NewDawn.Tiles
+{
+    public class Demyst : ModTile
+    {
+        public override void SetStaticDefaults()
+        {
+            Main.tileSolidTop[Type] = true;
+            Main.tileFrameImportant[Type] = true;
+            Main.tileNoAttach[Type] = false;
+            Main.tileTable[Type] = true;
+            Main.tileLavaDeath[Type] = true;
+            TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
+
+            TileObjectData.newTile.AnchorBottom = new AnchorData(AnchorType.SolidTile | AnchorType.SolidWithTop | AnchorType.SolidSide | AnchorType.Table, TileObjectData.newTile.Width, 0);
+            TileObjectData.addTile(Type);
+            LocalizedText name = CreateMapEntryName();
+            // name.SetDefault("Demyst");
+            AddMapEntry(new Color(115, 65, 68), name);
+        }
+
+        public override void HitWire(int i, int j)
+        {
+            base.HitWire(i, j);
+            Wiring.SkipWire(i, j);
+            if (j > 0)
+            {
+                var tile = ModContent.GetModTile(Main.tile[i, j - 1].TileType);
+                if (tile is not null and CrystalTile)
+                {
+                    if(Main.netMode != NetmodeID.MultiplayerClient)
+                        ((CrystalTile)tile).GetEssencesFromTile(i, j - 1);
+                    WorldGen.KillTile(i, j - 1, false, false, true);
+                }
+            }
+        }
+
+        public override bool RightClick(int i, int j)
+        {
+            //if(Vector2.Distance(Main.LocalPlayer.Center, new Vector2(i * 16, j * 16)) < 8 * 16)
+            {
+                if (j > 0)
+                {
+                    var tile = ModContent.GetModTile(Main.tile[i, j - 1].TileType);
+                    if (tile is not null and CrystalTile)
+                    {
+                        ((CrystalTile)tile).GetEssencesFromTile(i, j - 1);
+                        WorldGen.KillTile(i, j-1, false, false, true);
+                        return true;
+                    }
+                }
+            }
+            return false;
+        }
+
+        public override void NumDust(int i, int j, bool fail, ref int num)
+        {
+            num = fail ? 1 : 3;
+        }
+
+        public override void KillMultiTile(int i, int j, int frameX, int frameY)
+        {
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 48, 32, ModContent.ItemType<Items.Placeable.DemystBlock>());
+        }
+    }
+}

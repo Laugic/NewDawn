@@ -1,0 +1,43 @@
+﻿using Microsoft.Xna.Framework;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using Terraria;
+using Terraria.Audio;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Projectiles.Ranged
+{
+    public class Sootball : ModProjectile
+    {
+        public override void SetDefaults()
+        {
+            Projectile.width = 14;
+            Projectile.height = 14;
+            Projectile.friendly = true;
+            Projectile.DamageType = DamageClass.Ranged;
+            Projectile.timeLeft = 600;
+        }
+
+        public override void AI()
+        {
+            var multiplier = Math.Min(600 - Projectile.timeLeft, 30) / 30f;
+            Projectile.velocity.Y += .5f * multiplier;
+            Projectile.velocity.X *= 1 - .02f * multiplier;
+            Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, DustID.Flare, Projectile.velocity.X * -0.25f, Projectile.velocity.Y * -0.5f);
+        }
+
+        public override void OnKill(int timeLeft)
+        {
+            SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
+        }
+
+        public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            target.AddBuff(BuffID.OnFire, 5 * 60 + Main.rand.Next(60));
+        }
+    }
+}

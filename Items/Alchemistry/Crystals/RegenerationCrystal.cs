@@ -1,0 +1,42 @@
+﻿using NewDawn.Tiles;
+using Terraria;
+using Terraria.ID;
+using NewDawn.Items.Materials;
+using Terraria.ModLoader;
+using NewDawn.Tiles.Alchemistry;
+using NewDawn.Items.Alchemistry.Essences;
+
+namespace NewDawn.Items.Alchemistry.Crystals
+{
+    public class RegenerationCrystal : PotionCrystal
+    {
+        public override void SetStaticDefaults()
+        {
+            // Tooltip.SetDefault("Provides life regeneration");
+        }
+
+        public override void CustomDefaults()
+        {
+            Item.createTile = ModContent.TileType<RegenerationTile>();
+        }
+        
+        public override void UpdateEquip(Player player)
+        {
+            player.lifeRegen += 2;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.RegenerationPotion, 4);
+            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(null, Crystallizer.name);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<SoulEssence>(), 2);
+            recipe.AddIngredient(this);
+            recipe.AddCondition(Demystify);
+            recipe.Register();
+        }
+    }
+}

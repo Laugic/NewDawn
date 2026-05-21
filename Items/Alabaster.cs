@@ -1,0 +1,75 @@
+using NewDawn.Abstracts;
+using NewDawn.Temple;
+using SubworldLibrary;
+using System;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Items
+{
+    public class Alabaster : AbstractStorageItem
+    {
+		public override Item[] Items { get; set; } = new Item[3];
+
+        public override void SetStaticDefaults()
+		{
+			// DisplayName.SetDefault("Alabaster");
+			//Tooltip.SetDefault("Can store 3 stacks of items");
+		}
+
+		public override void SetDefaults()
+        {
+            base.SetDefaults();
+            Item.damage = 50000;
+			Item.DamageType = DamageClass.Melee;
+			Item.width = 40;
+			Item.height = 40;
+			Item.useTime = Item.useAnimation = 6;
+			Item.useStyle = ItemUseStyleID.Swing;
+			Item.knockBack = 6;
+			Item.value = 10000;
+			Item.rare = 2;
+			Item.UseSound = SoundID.Item1;
+			Item.autoReuse = true;
+            Item.shoot = ProjectileID.BulletHighVelocity;
+            Item.shootSpeed = 14f;
+            if (Items[0] == null)
+                AbstractStorage.GenerateClearStorage(this);
+        }
+        /*
+        public override bool? UseItem(Player player)
+		{
+            if (player.whoAmI == Main.myPlayer && player.altFunctionUse == 2 && player.itemAnimation == player.itemAnimationMax)
+                AbstractStorage.TriggerUI(this);
+
+            return null;
+        }
+
+        public override bool AltFunctionUse(Player player)
+        {
+            return true;
+        }*/
+
+        public override void UpdateInventory(Player player)
+        {
+            base.UpdateInventory(player);
+            //Main.NewText(SubworldSystem.CurrentPath);
+            //Main.NewText(SubworldSystem.IsActive<TempleWorld>());
+        }
+        /*
+        public override void RightClick(Player player)
+        {
+            if (player.whoAmI == Main.myPlayer)
+                AbstractStorage.TriggerUI(this);
+
+            TempleMain.EnterFloor();
+            Item.stack++;
+        }
+
+        public override bool CanRightClick()
+        {
+            return true;
+        }*/
+	}
+}

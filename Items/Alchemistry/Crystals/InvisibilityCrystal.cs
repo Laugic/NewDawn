@@ -1,0 +1,47 @@
+﻿using NewDawn.Tiles;
+using Terraria;
+using Terraria.ID;
+using NewDawn.Items.Materials;
+using Terraria.ModLoader;
+using NewDawn.Tiles.Alchemistry;
+using NewDawn.Items.Alchemistry.Essences;
+
+namespace NewDawn.Items.Alchemistry.Crystals
+{
+    public class InvisibilityCrystal : PotionCrystal
+    {
+        public override void SetStaticDefaults()
+        {
+            // Tooltip.SetDefault("'You can't see me.'");
+        }
+
+        public override void CustomDefaults()
+        {
+            Item.createTile = ModContent.TileType<InvisibilityTile>();
+        }
+
+        public override void UpdateEquip(Player player)
+        {
+            player.invis = true;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ItemID.InvisibilityPotion, 4);
+            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(null, Crystallizer.name);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<ChaosEssence>());
+            recipe.AddIngredient(this);
+            recipe.AddCondition(Demystify);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<LightEssence>());
+            recipe.AddIngredient(this);
+            recipe.AddCondition(Demystify);
+            recipe.Register();
+        }
+    }
+}
