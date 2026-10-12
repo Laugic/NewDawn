@@ -10,5 +10,11 @@
     <Reference Include="SubworldLibrary">
       <HintPath>..\Dependencies\SubworldLibrary.dll</HintPath>
     </Reference>
+    <Reference Include="WebCom">
+      <HintPath>..\Dependencies\WebCom.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NPCs\Hypothema\" />
   </ItemGroup>
 </Project>

@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using NewDawn.Control;
 using NewDawn.Projectiles.Ranged;
 using Terraria;
 using Terraria.DataStructures;
@@ -16,11 +17,11 @@ namespace NewDawn.Items.Weapons.Snowball
 
         public override void SetDefaults()
         {
-            Item.damage = 22;
+            Item.damage = 21;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 60;
             Item.height = 38;
-            Item.useTime = Item.useAnimation = 13;
+            Item.useTime = Item.useAnimation = 15;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 8;
@@ -59,7 +60,7 @@ namespace NewDawn.Items.Weapons.Snowball
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<SMG>());
-            recipe.AddRecipeGroup(nameof(ItemID.MythrilBar), 12);
+            recipe.AddRecipeGroup(RecipeManager.Mythril, 12);
             recipe.AddIngredient(ItemID.FrostCore, 1);
             recipe.AddTile(TileID.IceMachine);
             recipe.Register();

@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using NewDawn.Projectiles.Ranged;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;

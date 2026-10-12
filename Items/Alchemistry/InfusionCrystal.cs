@@ -1,7 +1,5 @@
-﻿using Microsoft.Xna.Framework;
-using NewDawn.Abstracts;
-using NewDawn.Items.Alchemistry.Crystals;
-using NewDawn.Items.Alchemistry.Essences;
+﻿using NewDawn.Abstracts;
+using NewDawn.Items.Alchemistry.OLD_Essences;
 using NewDawn.Items.Materials;
 using NewDawn.Players;
 using NewDawn.Tiles;
@@ -11,7 +9,6 @@ using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 
@@ -80,7 +77,7 @@ namespace NewDawn.Items.Alchemistry
 
         public override bool? UseItem(Player player)
         {
-            if(!Sealed)
+            if (!Sealed)
             {
                 bool checkEmpty = false;
                 foreach (var item in Items)
@@ -121,7 +118,7 @@ namespace NewDawn.Items.Alchemistry
             foreach (var item in Items)
             {
                 bool alreadyIn = false;
-                foreach(var ing in ingredients)
+                foreach (var ing in ingredients)
                 {
                     if (ing.type == item.type)
                     {
@@ -129,7 +126,7 @@ namespace NewDawn.Items.Alchemistry
                         alreadyIn = true;
                     }
                 }
-                if(!alreadyIn)
+                if (!alreadyIn)
                     ingredients.Add(item);
             }
             bool foundRecipe = false;
@@ -140,21 +137,21 @@ namespace NewDawn.Items.Alchemistry
                 foundRecipe = true;
                 if (recipe.Conditions.Contains(Infusion))
                 {
-                    foreach(var ing in ingredients)
+                    foreach (var ing in ingredients)
                     {
                         var foundMatch = false;
-                        foreach(var item in recipe.requiredItem)
+                        foreach (var item in recipe.requiredItem)
                         {
                             if (item.type == ing.type && item.stack == ing.stack)
                                 foundMatch = true;
                         }
-                        if(!foundMatch)
+                        if (!foundMatch)
                         {
                             foundRecipe = false;
                             break;
                         }
                     }
-                    foreach(var item in recipe.requiredItem)
+                    foreach (var item in recipe.requiredItem)
                     {
                         var foundMatch = false;
                         foreach (var ing in ingredients)
@@ -168,7 +165,7 @@ namespace NewDawn.Items.Alchemistry
                             break;
                         }
                     }
-                    if(foundRecipe)
+                    if (foundRecipe)
                     {
                         Main.LocalPlayer.QuickSpawnItem(new EntitySource_ItemUse(Main.LocalPlayer, Item), new Item(recipe.createItem.type));
                         Item.consumable = true;
@@ -216,7 +213,7 @@ namespace NewDawn.Items.Alchemistry
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<LavaGem>());
+            recipe.AddIngredient(ModContent.ItemType<Items.Materials.LavaGem>());
             recipe.AddIngredient(ModContent.ItemType<ArcaneShard>(), 15);
             recipe.AddIngredient(ModContent.ItemType<Vitasilk>(), 4);
             recipe.AddTile(null, Crystallizer.name);

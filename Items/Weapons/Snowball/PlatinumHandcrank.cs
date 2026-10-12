@@ -10,6 +10,7 @@ namespace NewDawn.Items.Weapons.Snowball
         public override void SetStaticDefaults()
         {
             // DisplayName.SetDefault("Platinum Handcrank");
+            //Tooltip.SetDefault("Cranks snowballs");
         }
         public override void SetDefaults()
         {

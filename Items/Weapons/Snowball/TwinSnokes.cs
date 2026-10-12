@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-using NewDawn.Projectiles.Ranged;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -16,7 +15,7 @@ namespace NewDawn.Items.Weapons.Snowball
         }
         public override void SetDefaults()
         {
-            Item.damage = 42;
+            Item.damage = 38;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;

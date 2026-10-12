@@ -18,11 +18,11 @@ namespace NewDawn.Items.Weapons.Snowball
 
         public override void SetDefaults()
         {
-            Item.damage = 40;
+            Item.damage = 35;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 50;
             Item.height = 26;
-            Item.useAnimation = Item.useTime = 8;
+            Item.useAnimation = Item.useTime = 9;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 2;

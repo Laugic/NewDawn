@@ -1,5 +1,4 @@
-﻿using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -9,7 +8,7 @@ namespace NewDawn.Items.Materials
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("'A magical crystallizing catalyst'\nHeld by monsters in the frigid cold");
+            // Tooltip.SetDefault("'A magical crystallizing catalyst'\nHeld by monsters in the deep frigid cold");
         }
 
         public override void SetDefaults()

@@ -1,6 +1,4 @@
 using Microsoft.Xna.Framework;
-using NewDawn.Abstracts;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;

@@ -95,7 +95,7 @@ namespace NewDawn.UI
 
                     string[] array = new string[maxVal];
                     int pref = 0;
-                    Main.MouseText_DrawItemTooltip_GetLinesInfo(hoverItem, ref yoyoLogo, ref researchLine, knockBack, ref numLines, text, modifier, badModifier, array, out pref);
+                    Main.MouseText_DrawItemTooltip_GetLinesInfo(hoverItem, ref yoyoLogo, ref researchLine, knockback, ref numLines, text, modifier, badModifier, array, out pref);
                     float num3 = (float)(int)Main.mouseTextColor / 255f;
                     float num4 = num3;
                     int alpha = Main.mouseTextColor;

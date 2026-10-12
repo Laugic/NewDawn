@@ -14,7 +14,7 @@ namespace NewDawn.Items.Weapons.Snowball
         }
         public override void SetDefaults()
         {
-            Item.damage = 22;
+            Item.damage = 25;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 60;
             Item.height = 28;
@@ -26,7 +26,7 @@ namespace NewDawn.Items.Weapons.Snowball
             Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item5;
             Item.autoReuse = false;
-            Item.shootSpeed = 9f;
+            Item.shootSpeed = 12f;
             Item.useAmmo = AmmoID.Snowball;
             Item.shoot = ProjectileID.SnowBallFriendly;
         }

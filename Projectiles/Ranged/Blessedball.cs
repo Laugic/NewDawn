@@ -1,9 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ID;
@@ -19,7 +15,7 @@ namespace NewDawn.Projectiles.Ranged
             Projectile.height = 14;
             Projectile.friendly = true;
             Projectile.DamageType = DamageClass.Ranged;
-            Projectile.penetrate = 2;
+            //Projectile.penetrate = 2;
             Projectile.timeLeft = 600;
         }
 
@@ -27,7 +23,7 @@ namespace NewDawn.Projectiles.Ranged
         {
             var multiplier = Math.Min(600 - Projectile.timeLeft, 45) / 45f;
             Projectile.velocity.Y += .3f * multiplier;
-            Projectile.velocity.X *= 1 - .02f * multiplier;
+            Projectile.velocity.X *= 1 - (.02f * multiplier);
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)
@@ -46,7 +42,7 @@ namespace NewDawn.Projectiles.Ranged
                     Projectile.velocity.Y = -oldVelocity.Y;
                 }
                 Projectile.velocity.X *= 0.95f;
-                Projectile.velocity.Y *= 1.5f;
+                Projectile.velocity.Y *= 1.25f;
                 SoundEngine.PlaySound(SoundID.Item50, Projectile.position);
             }
             return false;

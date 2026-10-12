@@ -21,7 +21,7 @@ namespace NewDawn.Items.Weapons.Snowball
             Item.DamageType = DamageClass.Ranged;
             Item.width = 50;
             Item.height = 26;
-            Item.useAnimation = Item.useTime = 45;
+            Item.useAnimation = Item.useTime = 40;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 2;

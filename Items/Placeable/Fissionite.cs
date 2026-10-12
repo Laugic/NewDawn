@@ -1,0 +1,31 @@
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Items.Placeable
+{
+    public class Fissionite : ModItem
+    {
+        public override void SetDefaults()
+        {
+            Item.width = 16;
+            Item.height = 16;
+            Item.maxStack = 9999;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.useAnimation = Item.useTime = 15;
+            Item.useStyle = ItemUseStyleID.Swing;
+            Item.consumable = true;
+            Item.createTile = ModContent.TileType<Tiles.FissioniteTile>();
+        }
+
+        //public override void AddRecipes()
+        //{
+        //    Recipe recipe = CreateRecipe();
+        //    recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
+        //    recipe.AddIngredient(ItemID.RichMahogany, 10);
+        //    recipe.AddIngredient(ItemID.JungleSpores, 4);
+        //    recipe.Register();
+        //}
+    }
+}

@@ -1,10 +1,9 @@
-﻿using NewDawn.Tiles;
+﻿using NewDawn.Items.Alchemistry.Essences;
+using NewDawn.Tiles;
+using NewDawn.Tiles.Alchemistry;
 using Terraria;
 using Terraria.ID;
-using NewDawn.Items.Materials;
 using Terraria.ModLoader;
-using NewDawn.Tiles.Alchemistry;
-using NewDawn.Items.Alchemistry.Essences;
 
 namespace NewDawn.Items.Alchemistry.Crystals
 {
@@ -19,7 +18,7 @@ namespace NewDawn.Items.Alchemistry.Crystals
         {
             Item.createTile = ModContent.TileType<RegenerationTile>();
         }
-        
+
         public override void UpdateEquip(Player player)
         {
             player.lifeRegen += 2;
@@ -29,11 +28,16 @@ namespace NewDawn.Items.Alchemistry.Crystals
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.RegenerationPotion, 4);
-            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
             recipe.AddTile(null, Crystallizer.name);
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<SoulEssence>(), 2);
+            recipe = Recipe.Create(ModContent.ItemType<IgnisEssence>());
+            recipe.AddIngredient(this);
+            recipe.AddCondition(Demystify);
+            recipe.Register();
+
+            recipe = Recipe.Create(ModContent.ItemType<VitaEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();

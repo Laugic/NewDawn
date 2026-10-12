@@ -1,14 +1,12 @@
 ﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using NewDawn.Tiles.Alchemistry;
-using Terraria.Localization;
 
 namespace NewDawn.Items.Alchemistry.Crystals
 {
     public abstract class PotionCrystal : ModItem
     {
-        public static Condition Demystify = new Condition("Activate Demyst block", () => false);
+        public static Condition Demystify = new Condition("Right Click with Fizzle", () => false);
         public override void SetDefaults()
         {
             Item.width = 20;
@@ -21,8 +19,8 @@ namespace NewDawn.Items.Alchemistry.Crystals
             Item.useTime = Item.useAnimation = 15;
             Item.useStyle = ItemUseStyleID.Swing;
             Item.consumable = true;
-            Item.autoReuse= true;
-            Item.hasVanityEffects= true;
+            Item.autoReuse = true;
+            Item.hasVanityEffects = true;
             Item.prefix = 0;
 
             CustomDefaults();
@@ -37,7 +35,7 @@ namespace NewDawn.Items.Alchemistry.Crystals
 
         public override void PostReforge()
         {
-            if(Item.stack > 1)
+            if (Item.stack > 1)
                 Item.prefix = 0;
 
             if (Item.prefix != 0)

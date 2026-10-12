@@ -1,434 +1,435 @@
-Biomes: {
-	TempleBiome: {
-		DisplayName: Temple Biome
-		TownNPCDialogueName: the Temple Biome
-	}
+Misc: {
+	ModName: New Dawn
+	ModDescription: A mod about snowballs and potion crystals and stuff (so far)
 }
 
-Tiles: {
-	Crystallizer.MapEntry: Crystallizer
-	Demyst.MapEntry: Demyst
-	LaugicalWorkbench.MapEntry: Laugical Workbench
-	Smelter.MapEntry: Smelter
-	TempleEntrance.MapEntry: Temple Entrance
-	TestTriggerTile.MapEntry: Test Trigger Tile
-	KeystoneTile.MapEntry: Keystone Tile
-	ExitStairs.MapEntry: Exit Stairs
-}
+Recipes.LargeGems: Large Gems
+
+// ==================================================
+// AUTO-GENERATED LOCALIZATION
+// ==================================================
 
 Items: {
-	IceCrown: {
-		DisplayName: Ice Crown
-		Tooltip: "7% increased melee and ranged critical strike chance\n7% increased melee and ranged damage\n7% increased snowball damage\n'The authority of the snow'"
+	PureVitaCrystal: {
+		DisplayName: Pure Vita Crystal
+		Tooltip:
+			'''
+			+20% max life
+			Whenever you would die, if you have over 100 max life, gain a Fatality charge and heal to full instead
+			Your max life is halved for each Fatality charge you have
+			Healing Potions no longer heal you - they instead reduce a Fatality charge
+			'''
 	}
 
-	Alabaster: {
-		DisplayName: Alabaster
+	FrigidCrystal: {
+		DisplayName: Frigid Crystal
+		Tooltip: Magical Catalyst for condensing and purifying essences
+	}
+
+	Fizzle: {
+		DisplayName: Fizzle
+		Tooltip:
+			'''
+			Right Click to break placed Potion Crystals down into their component Essences.
+			'Fission Chisel'
+			'''
+	}
+
+	Fissionite: {
+		DisplayName: Fissionite
 		Tooltip: ""
 	}
 
-	AmmoReservationCrystal: {
-		DisplayName: Ammo Reservation Crystal
+	IgnisEssence: {
+		DisplayName: Ignis Essence
+		Tooltip: The essence of Fire and Fury
+	}
+
+	NeptusEssence: {
+		DisplayName: Neptus Essence
+		Tooltip: The essence of Water and Force
+	}
+
+	TerronEssence: {
+		DisplayName: Terron Essence
+		Tooltip: The essence of Nature and Hardiness
+	}
+
+	HermusEssence: {
+		DisplayName: Hermus Essence
+		Tooltip: The essence of Air and Speed
+	}
+
+	VitaEssence: {
+		DisplayName: Vita Essence
+		Tooltip: The essence of Life and Restoration
+	}
+
+	LumaEssence: {
+		DisplayName: Luma Essence
+		Tooltip: The essence of Light and Sight
+	}
+
+	FluxEssence: {
+		DisplayName: Flux Essence
+		Tooltip: The essence of Chaos and Magic
+	}
+
+	MaliceEssence: {
+		DisplayName: Malice Essence
+		Tooltip: The essence of Evil and Corruption
+	}
+
+	GraceEssence: {
+		DisplayName: Grace Essence
+		Tooltip: The essence of Goodness and Purity
+	}
+
+	AurumEssence: {
+		DisplayName: Aurum Essence
+		Tooltip: The essence of Value and Treasure
+	}
+
+	AbsoluteZero: {
+		DisplayName: Absolute Zero
+		Tooltip:
+			'''
+			66% chance not to consume ammo
+			'I am beneath you, but nothing is beneath me'
+			'''
+	}
+
+	AbstractStorageItem: {
+		DisplayName: Abstract Storage Item
 		Tooltip: ""
 	}
 
-	ArcheryCrystal: {
-		DisplayName: Archery Crystal
+	AbstractStorageTile: {
+		DisplayName: Abstract Storage Tile
 		Tooltip: ""
 	}
 
-	BattleCrystal: {
-		DisplayName: Battle Crystal
-		Tooltip: ""
-	}
-
-	BuilderCrystal: {
-		DisplayName: Builder Crystal
-		Tooltip: ""
-	}
-
-	CalmingCrystal: {
-		DisplayName: Calming Crystal
-		Tooltip: ""
-	}
-
-	CrateCrystal: {
-		DisplayName: Crate Crystal
-		Tooltip: ""
-	}
-
-	DangersenseCrystal: {
-		DisplayName: Dangersense Crystal
-		Tooltip: ""
-	}
-
-	EnduranceCrystal: {
-		DisplayName: Endurance Crystal
-		Tooltip: ""
-	}
-
-	FeatherfallCrystal: {
-		DisplayName: Featherfall Crystal
-		Tooltip: ""
-	}
-
-	FishingCrystal: {
-		DisplayName: Fishing Crystal
-		Tooltip: ""
-	}
-
-	FlipperCrystal: {
-		DisplayName: Flipper Crystal
-		Tooltip: ""
-	}
-
-	GillsCrystal: {
-		DisplayName: Gills Crystal
-		Tooltip: ""
-	}
-
-	GravitationCrystal: {
-		DisplayName: Gravitation Crystal
-		Tooltip: ""
-	}
-
-	HeartreachCrystal: {
-		DisplayName: Heartreach Crystal
-		Tooltip: ""
-	}
-
-	HunterCrystal: {
-		DisplayName: Hunter Crystal
-		Tooltip: ""
-	}
-
-	InfernoCrystal: {
-		DisplayName: Inferno Crystal
-		Tooltip: ""
-	}
-
-	InvisibilityCrystal: {
-		DisplayName: Invisibility Crystal
-		Tooltip: ""
-	}
-
-	IronskinCrystal: {
-		DisplayName: Ironskin Crystal
-		Tooltip: ""
-	}
-
-	LifeforceCrystal: {
-		DisplayName: Lifeforce Crystal
-		Tooltip: ""
-	}
-
-	MagicPowerCrystal: {
-		DisplayName: Magic Power Crystal
-		Tooltip: ""
-	}
-
-	ManaRegenerationCrystal: {
-		DisplayName: Mana Regeneration Crystal
-		Tooltip: ""
-	}
-
-	MiningCrystal: {
-		DisplayName: Mining Crystal
-		Tooltip: ""
-	}
-
-	NightOwlCrystal: {
-		DisplayName: Night Owl Crystal
-		Tooltip: ""
-	}
-
-	ObsidianSkinCrystal: {
-		DisplayName: Obsidian Skin Crystal
-		Tooltip: ""
-	}
-
-	RageCrystal: {
-		DisplayName: Rage Crystal
-		Tooltip: ""
-	}
-
-	RegenerationCrystal: {
-		DisplayName: Regeneration Crystal
-		Tooltip: ""
-	}
-
-	ShineCrystal: {
-		DisplayName: Shine Crystal
-		Tooltip: ""
-	}
-
-	SonarCrystal: {
-		DisplayName: Sonar Crystal
-		Tooltip: ""
-	}
-
-	SpelunkerCrystal: {
-		DisplayName: Spelunker Crystal
-		Tooltip: ""
-	}
-
-	SummoningCrystal: {
-		DisplayName: Summoning Crystal
-		Tooltip: ""
-	}
-
-	SwiftnessCrystal: {
-		DisplayName: Swiftness Crystal
-		Tooltip: ""
-	}
-
-	ThornsCrystal: {
-		DisplayName: Thorns Crystal
-		Tooltip: ""
-	}
-
-	TitanCrystal: {
-		DisplayName: Titan Crystal
-		Tooltip: ""
-	}
-
-	WarmthCrystal: {
-		DisplayName: Warmth Crystal
-		Tooltip: ""
-	}
-
-	WaterWalkingCrystal: {
-		DisplayName: Water Walking Crystal
-		Tooltip: ""
-	}
-
-	WrathCrystal: {
-		DisplayName: Wrath Crystal
+	AccessoryPlayer: {
+		DisplayName: Accessory Player
 		Tooltip: ""
 	}
 
 	AirEssence: {
 		DisplayName: Air Essence
-		Tooltip: ""
+		Tooltip: The essence of Speed and Potential
 	}
 
 	AirInfusion: {
 		DisplayName: Air Infusion
-		Tooltip: ""
+		Tooltip:
+			'''
+			20% increased movement speed and running speed
+			Double tap to dash
+			Jump higher and fall slower
+			'''
 	}
 
-	ChaosEssence: {
-		DisplayName: Chaos Essence
-		Tooltip: ""
+	Alabaster: {
+		DisplayName: Alabaster
+		Tooltip: Can store 3 stacks of items
 	}
 
-	ChaosInfusion: {
-		DisplayName: Chaos Infusion
-		Tooltip: ""
+	AmmoReservationCrystal: {
+		DisplayName: Ammo Reservation Crystal
+		Tooltip: 20% chance not to consume ammo
 	}
 
-	EarthEssence: {
-		DisplayName: Earth Essence
-		Tooltip: ""
-	}
-
-	EarthInfusion: {
-		DisplayName: Earth Infusion
-		Tooltip: ""
-	}
-
-	FireEssence: {
-		DisplayName: Fire Essence
-		Tooltip: ""
-	}
-
-	FireInfusion: {
-		DisplayName: Fire Infusion
-		Tooltip: ""
-	}
-
-	ForceEssence: {
-		DisplayName: Force Essence
-		Tooltip: ""
-	}
-
-	ForceInfusion: {
-		DisplayName: Force Infusion
-		Tooltip: ""
-	}
-
-	LightEssence: {
-		DisplayName: Light Essence
-		Tooltip: ""
-	}
-
-	LightInfusion: {
-		DisplayName: Light Infusion
-		Tooltip: ""
-	}
-
-	SoulEssence: {
-		DisplayName: Soul Essence
-		Tooltip: ""
-	}
-
-	SoulInfusion: {
-		DisplayName: Soul Infusion
-		Tooltip: ""
-	}
-
-	WaterEssence: {
-		DisplayName: Water Essence
-		Tooltip: ""
-	}
-
-	WaterInfusion: {
-		DisplayName: Water Infusion
-		Tooltip: ""
-	}
-
-	GemBelt: {
-		DisplayName: Gem Belt
-		Tooltip: ""
-	}
-
-	InfusionCrystal: {
-		DisplayName: Infusion Crystal
-		Tooltip: ""
-	}
-
-	ShroomiteHood: {
-		DisplayName: Shroomite Hood
-		Tooltip: ""
-	}
-
-	ArcaneShard: {
-		DisplayName: Arcane Shard
-		Tooltip: ""
-	}
-
-	Frostpetal: {
-		DisplayName: Frostpetal
-		Tooltip: ""
-	}
-
-	LavaGem: {
-		DisplayName: Lava Gem
-		Tooltip: ""
-	}
-
-	Vitasilk: {
-		DisplayName: Vitasilk
-		Tooltip: ""
-	}
-
-	Wagidget: {
-		DisplayName: Wagidget
-		Tooltip: ""
-	}
-
-	CrystallizerItem: {
-		DisplayName: Crystallizer Item
-		Tooltip: ""
-	}
-
-	DemystBlock: {
-		DisplayName: Demyst Block
-		Tooltip: ""
-	}
-
-	LaugicalWorkbench: {
-		DisplayName: Laugical Workbench
-		Tooltip: ""
-	}
-
-	SmelterItem: {
-		DisplayName: Smelter Item
-		Tooltip: ""
-	}
-
-	TempleEntrance: {
-		DisplayName: Temple Entrance
+	AmmoReservationTile: {
+		DisplayName: Ammo Reservation Tile
 		Tooltip: ""
 	}
 
 	AncientTempleKey: {
 		DisplayName: Ancient Temple Key
-		Tooltip: ""
+		Tooltip: Allows you to access the ancient temple
 	}
 
-	WarpPearl: {
-		DisplayName: Warp Pearl
-		Tooltip: ""
+	ArcaneShard: {
+		DisplayName: Arcane Shard
+		Tooltip:
+			'''
+			'A shard of magic'
+			Held by monsters in the dungeon
+			'''
 	}
 
-	SnowScoop: {
-		DisplayName: Snow Scoop
-		Tooltip: ""
+	ArcheryCrystal: {
+		DisplayName: Archery Crystal
+		Tooltip: 10% increased ranged damage
 	}
 
-	DarkIceball: {
-		DisplayName: Dark Iceball
-		Tooltip: ""
-	}
-
-	Hiveball: {
-		DisplayName: Hiveball
-		Tooltip: ""
-	}
-
-	Pearlsandball: {
-		DisplayName: Pearlsandball
-		Tooltip: ""
-	}
-
-	SnowPile: {
-		DisplayName: Snow Pile
-		Tooltip: ""
-	}
-
-	Sootball: {
-		DisplayName: Sootball
-		Tooltip: ""
-	}
-
-	Spiritball: {
-		DisplayName: Spiritball
-		Tooltip: ""
-	}
-
-	YellowSnowball: {
-		DisplayName: Yellow Snowball
-		Tooltip: ""
-	}
-
-	AbsoluteZero: {
-		DisplayName: Absolute Zero
+	ArcheryTile: {
+		DisplayName: Archery Tile
 		Tooltip: ""
 	}
 
 	Avalanche: {
 		DisplayName: Avalanche
-		Tooltip: ""
+		Tooltip:
+			'''
+			50% chance not to consume ammo
+			'Look out below!'
+			'''
 	}
 
 	Baller: {
 		DisplayName: Baller
+		Tooltip:
+			'''
+			Chance to shoot multiple snowballs
+			'Looks like it's from the Snowman Mafia'
+			'''
+	}
+
+	BattleCrystal: {
+		DisplayName: Battle Crystal
+		Tooltip: Increases enemy spawn rate
+	}
+
+	BattleTile: {
+		DisplayName: Battle Tile
 		Tooltip: ""
 	}
 
 	Blizzard: {
 		DisplayName: Blizzard
+		Tooltip: 50% chance not to consume ammo
+	}
+
+	BuilderCrystal: {
+		DisplayName: Builder Crystal
+		Tooltip: Increases placement speed and range
+	}
+
+	BuilderTile: {
+		DisplayName: Builder Tile
 		Tooltip: ""
+	}
+
+	CalmingCrystal: {
+		DisplayName: Calming Crystal
+		Tooltip: Decreases enemy spawn rate
+	}
+
+	CalmingTile: {
+		DisplayName: Calming Tile
+		Tooltip: ""
+	}
+
+	ChaosEssence: {
+		DisplayName: Chaos Essence
+		Tooltip: The essence of Magic and the Unknowable
+	}
+
+	ChaosInfusion: {
+		DisplayName: Chaos Infusion
+		Tooltip:
+			'''
+			+40 max mana
+			Enemies are more likely to spawn and target you
+			20% chance not to consume ammo
+			'''
+	}
+
+	CrateCrystal: {
+		DisplayName: Crate Crystal
+		Tooltip: Increases chance to get a crate
+	}
+
+	CrateTile: {
+		DisplayName: Crate Tile
+		Tooltip: ""
+	}
+
+	CrystallizerItem: {
+		DisplayName: Crystallizer
+		Tooltip: Crystallize magical liquids
+	}
+
+	CrystalTile: {
+		DisplayName: Crystal Tile
+		Tooltip: ""
+	}
+
+	DangersenseCrystal: {
+		DisplayName: Dangersense Crystal
+		Tooltip: Allows you to see nearby danger sources
+	}
+
+	DangersenseTile: {
+		DisplayName: Dangersense Tile
+		Tooltip: ""
+	}
+
+	DarkIceball: {
+		DisplayName: Dark Iceball
+		Tooltip: Pierces enemies
+	}
+
+	DemystBlock: {
+		DisplayName: Demyst Block
+		Tooltip:
+			'''
+			When placed, right click or activate with wire to break Potion Crystals placed above into Essences
+			Demystifying!
+			'''
+	}
+
+	EarthEssence: {
+		DisplayName: Earth Essence
+		Tooltip: The essence of Sturdiness and Nature
+	}
+
+	EarthInfusion: {
+		DisplayName: Earth Infusion
+		Tooltip:
+			'''
+			6 defense
+			Grants immunity to knockback
+			+25% mining and building speed
+			'''
+	}
+
+	EnduranceCrystal: {
+		DisplayName: Endurance Crystal
+		Tooltip: Reduces damage taken by 10%
+	}
+
+	EnduranceTile: {
+		DisplayName: Endurance Tile
+		Tooltip: ""
+	}
+
+	Essence: {
+		DisplayName: Essence
+		Tooltip: ""
+	}
+
+	ExploreRoom: {
+		DisplayName: Explore Room
+		Tooltip: ""
+	}
+
+	FeatherfallCrystal: {
+		DisplayName: Featherfall Crystal
+		Tooltip: Slows falling speed
+	}
+
+	FeatherfallTile: {
+		DisplayName: Featherfall Tile
+		Tooltip: ""
+	}
+
+	FireEssence: {
+		DisplayName: Fire Essence
+		Tooltip: The essence of Heat and Power
+	}
+
+	FireInfusion: {
+		DisplayName: Fire Infusion
+		Tooltip:
+			'''
+			8% increased critical strike chance
+			Grants immunity to fire and lava
+			Attacks set enemies on fire
+			'''
+	}
+
+	FishingCrystal: {
+		DisplayName: Fishing Crystal
+		Tooltip: 15% increased fishing power
+	}
+
+	FishingTile: {
+		DisplayName: Fishing Tile
+		Tooltip: ""
+	}
+
+	FlipperCrystal: {
+		DisplayName: Flipper Crystal
+		Tooltip: Allows you to swim and grants better mobility in liquids
+	}
+
+	FlipperTile: {
+		DisplayName: Flipper Tile
+		Tooltip: ""
+	}
+
+	ForceEssence: {
+		DisplayName: Force Essence
+		Tooltip: The essence of Magnitude and Energy
+	}
+
+	ForceInfusion: {
+		DisplayName: Force Infusion
+		Tooltip:
+			'''
+			8% increased damage
+			+1 max minion
+			Increases knockback by 33%
+			'''
 	}
 
 	FractalEngine: {
 		DisplayName: Fractal Engine
-		Tooltip: ""
+		Tooltip:
+			'''
+			66% chance to not consume ammo
+			'Compounding'
+			'''
+	}
+
+	Frostpetal: {
+		DisplayName: Frostpetal
+		Tooltip:
+			'''
+			'A magical crystallizing catalyst'
+			Held by monsters in the frigid cold
+			'''
 	}
 
 	FrostThrower: {
 		DisplayName: Frost Thrower
+		Tooltip: Fires a stream of frost
+	}
+
+	FullFloor: {
+		DisplayName: Full Floor
+		Tooltip: ""
+	}
+
+	GemBelt: {
+		DisplayName: Gem Belt
+		Tooltip: Can hold multiple Potion Crystals
+	}
+
+	GillsCrystal: {
+		DisplayName: Gills Crystal
+		Tooltip: You can breathe water
+	}
+
+	GillsTile: {
+		DisplayName: Gills Tile
+		Tooltip: ""
+	}
+
+	GlobalNPCs: {
+		DisplayName: Global N P Cs
+		Tooltip: ""
+	}
+
+	GlobalTempleNPCs: {
+		DisplayName: Global Temple N P Cs
+		Tooltip: ""
+	}
+
+	GoldenTempleKey: {
+		DisplayName: Golden Temple Key
 		Tooltip: ""
 	}
 
@@ -437,13 +438,240 @@ Items: {
 		Tooltip: ""
 	}
 
-	Gravitron9000: {
-		DisplayName: Gravitron9000
+	GravitationCrystal: {
+		DisplayName: Gravitation Crystal
+		Tooltip: Allows the control of gravity
+	}
+
+	GravitationTile: {
+		DisplayName: Gravitation Tile
 		Tooltip: ""
+	}
+
+	Gravitron9000: {
+		DisplayName: Gravitron 9000
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Converts normal snowballs into Graviballs
+			'''
 	}
 
 	Hailmaker: {
 		DisplayName: Hailmaker
+		Tooltip: Rains snowballs from snowballs
+	}
+
+	HeartreachCrystal: {
+		DisplayName: Heartreach Crystal
+		Tooltip: Increases pickup range for life hearts
+	}
+
+	HeartreachTile: {
+		DisplayName: Heartreach Tile
+		Tooltip: ""
+	}
+
+	Hiveball: {
+		DisplayName: Hiveball
+		Tooltip: "'Beeball'"
+	}
+
+	HunterCrystal: {
+		DisplayName: Hunter Crystal
+		Tooltip: Shows the location of creatures
+	}
+
+	HunterTile: {
+		DisplayName: Hunter Tile
+		Tooltip: ""
+	}
+
+	IceCrown: {
+		DisplayName: Ice Crown
+		Tooltip:
+			'''
+			7% increased melee and ranged critical strike chance
+			7% increased snowball damage
+			'The authority of the snow'
+			'''
+	}
+
+	InfernoCrystal: {
+		DisplayName: Inferno Crystal
+		Tooltip: ""
+	}
+
+	InfernoTile: {
+		DisplayName: Inferno Tile
+		Tooltip: ""
+	}
+
+	InfusionCrystal: {
+		DisplayName: Infusion Crystal
+		Tooltip: ""
+	}
+
+	InvisibilityCrystal: {
+		DisplayName: Invisibility Crystal
+		Tooltip: "'You can't see me.'"
+	}
+
+	InvisibilityTile: {
+		DisplayName: Invisibility Tile
+		Tooltip: ""
+	}
+
+	IronskinCrystal: {
+		DisplayName: Ironskin Crystal
+		Tooltip: ""
+	}
+
+	IronskinTile: {
+		DisplayName: Ironskin Tile
+		Tooltip: ""
+	}
+
+	ItemStorageSlot: {
+		DisplayName: Item Storage Slot
+		Tooltip: ""
+	}
+
+	ItemStorageUI: {
+		DisplayName: Item Storage U I
+		Tooltip: ""
+	}
+
+	Keystone: {
+		DisplayName: Keystone
+		Tooltip: ""
+	}
+
+	LaugicalWorkbench: {
+		DisplayName: Laugical Workbench
+		Tooltip:
+			'''
+			For crafting things to craft things. 
+			'It's completely laugical!'
+			'''
+	}
+
+	LavaGem: {
+		DisplayName: Lava Gem
+		Tooltip:
+			'''
+			'Crystallized magma'
+			Held by monsters in the burning heat
+			'''
+	}
+
+	LifeforceCrystal: {
+		DisplayName: Lifeforce Crystal
+		Tooltip: Increases max life by 20%
+	}
+
+	LifeforceTile: {
+		DisplayName: Lifeforce Tile
+		Tooltip: ""
+	}
+
+	LightEssence: {
+		DisplayName: Light Essence
+		Tooltip: The essence of Knowledge and Illumination
+	}
+
+	LightInfusion: {
+		DisplayName: Light Infusion
+		Tooltip:
+			'''
+			Shows the location of treasure and ore
+			Emits light and increases night vision
+			Shows the location of creatures and danger sources
+			'''
+	}
+
+	MagicPowerCrystal: {
+		DisplayName: Magic Power Crystal
+		Tooltip: 10% increased magic damage
+	}
+
+	MagicPowerTile: {
+		DisplayName: Magic Power Tile
+		Tooltip: ""
+	}
+
+	ManaRegenerationCrystal: {
+		DisplayName: Mana Regeneration Crystal
+		Tooltip: Increased mana regeneration
+	}
+
+	ManaRegenerationTile: {
+		DisplayName: Mana Regeneration Tile
+		Tooltip: ""
+	}
+
+	MiningCrystal: {
+		DisplayName: Mining Crystal
+		Tooltip: Increases mining speed by 25%
+	}
+
+	MiningTile: {
+		DisplayName: Mining Tile
+		Tooltip: ""
+	}
+
+	NewDawn: {
+		DisplayName: New Dawn
+		Tooltip: ""
+	}
+
+	NewDawnGlobalItem: {
+		DisplayName: New Dawn Global Item
+		Tooltip: ""
+	}
+
+	NewDawnGlobalProjectile: {
+		DisplayName: New Dawn Global Projectile
+		Tooltip: ""
+	}
+
+	NewDawnSpiritInterface: {
+		DisplayName: New Dawn Spirit Interface
+		Tooltip: ""
+	}
+
+	NightOwlCrystal: {
+		DisplayName: Night Owl Crystal
+		Tooltip: Increases night vision
+	}
+
+	NightOwlTile: {
+		DisplayName: Night Owl Tile
+		Tooltip: ""
+	}
+
+	ObsidianSkinCrystal: {
+		DisplayName: Obsidian Skin Crystal
+		Tooltip: Provides immunity to fire and lava
+	}
+
+	ObsidianSkinTile: {
+		DisplayName: Obsidian Skin Tile
+		Tooltip: ""
+	}
+
+	ParkourRoom: {
+		DisplayName: Parkour Room
+		Tooltip: ""
+	}
+
+	Pearlsandball: {
+		DisplayName: Pearlsandball
+		Tooltip: Dense and fast
+	}
+
+	Pitfall: {
+		DisplayName: Pitfall
 		Tooltip: ""
 	}
 
@@ -452,29 +680,107 @@ Items: {
 		Tooltip: ""
 	}
 
+	PotionCrystal: {
+		DisplayName: Potion Crystal
+		Tooltip: ""
+	}
+
+	RageCrystal: {
+		DisplayName: Rage Crystal
+		Tooltip: Increases critical strike chance by 10%
+	}
+
+	RageTile: {
+		DisplayName: Rage Tile
+		Tooltip: ""
+	}
+
+	RecipeManager: {
+		DisplayName: Recipe Manager
+		Tooltip: ""
+	}
+
+	RegenerationCrystal: {
+		DisplayName: Regeneration Crystal
+		Tooltip: Provides life regeneration
+	}
+
+	RegenerationTile: {
+		DisplayName: Regeneration Tile
+		Tooltip: ""
+	}
+
+	Sanctuary: {
+		DisplayName: Sanctuary
+		Tooltip: ""
+	}
+
+	ShineCrystal: {
+		DisplayName: Shine Crystal
+		Tooltip: Emits an aura of light
+	}
+
+	ShineTile: {
+		DisplayName: Shine Tile
+		Tooltip: ""
+	}
+
+	ShroomiteHood: {
+		DisplayName: Shroomite Hood
+		Tooltip:
+			'''
+			15% increased snowball damage
+			5% increased ranged critical strike chance
+			'''
+	}
+
 	Slinger: {
 		DisplayName: Slinger
-		Tooltip: ""
+		Tooltip: Slings snowballs
 	}
 
 	Slynger: {
 		DisplayName: Slynger
+		Tooltip: Slyngs snowballs
+	}
+
+	Smelter: {
+		DisplayName: Smelter
+		Tooltip: ""
+	}
+
+	SmelterItem: {
+		DisplayName: Smelter
+		Tooltip: Melts items you place inside
+	}
+
+	SmelterTileEntity: {
+		DisplayName: Smelter Tile Entity
 		Tooltip: ""
 	}
 
 	SMG: {
-		DisplayName: S. M. G.
-		Tooltip: ""
+		DisplayName: S.M.G.
+		Tooltip:
+			'''
+			'Snow Machine Gun'
+			20% chance not to consume ammo
+			'Shouldn't the snow be melting-?'
+			'''
 	}
 
 	Snobbler: {
 		DisplayName: Snobbler
-		Tooltip: ""
+		Tooltip: Shoots a burst of snowballs
 	}
 
 	SnowBlower: {
 		DisplayName: Snow Blower
-		Tooltip: ""
+		Tooltip:
+			'''
+			Blows a barrge of brrs
+			Shoots an additional stream of frostballs
+			'''
 	}
 
 	SnowperIceful: {
@@ -482,43 +788,272 @@ Items: {
 		Tooltip: ""
 	}
 
+	SnowPile: {
+		DisplayName: Endless Snow Pile
+		Tooltip: ""
+	}
+
+	SnowScoop: {
+		DisplayName: The Scoop Mk II
+		Tooltip: Gathers snowballs from blocks
+	}
+
 	Snowshot: {
 		DisplayName: Snowshot
 		Tooltip: ""
 	}
 
+	SonarCrystal: {
+		DisplayName: Sonar Crystal
+		Tooltip: Detects hooked fish
+	}
+
+	SonarTile: {
+		DisplayName: Sonar Tile
+		Tooltip: ""
+	}
+
+	Sootball: {
+		DisplayName: Sootball
+		Tooltip: Sets enemies on fire
+	}
+
+	SoulEssence: {
+		DisplayName: Soul Essence
+		Tooltip: The essence of Life and Restoration
+	}
+
+	SoulInfusion: {
+		DisplayName: Soul Infusion
+		Tooltip:
+			'''
+			+40 maximum life
+			Increases life and mana regeneration
+			Hearts heal an additional 20 life upon pickup
+			'''
+	}
+
+	SpelunkerCrystal: {
+		DisplayName: Spelunker Crystal
+		Tooltip: Shows the location of treasure and ore
+	}
+
+	SpelunkerTile: {
+		DisplayName: Spelunker Tile
+		Tooltip: ""
+	}
+
 	SpineChiller: {
 		DisplayName: Spine Chiller
+		Tooltip:
+			'''
+			Shoots down in an area around your cursor
+			80% chance not to consume ammo
+			'''
+	}
+
+	Spiritball: {
+		DisplayName: Spiritball
+		Tooltip: Flies back towards you
+	}
+
+	SpiritBarUIOLD: {
+		DisplayName: Spirit Bar U I O L D
+		Tooltip: ""
+	}
+
+	SpiritPlayer: {
+		DisplayName: Spirit Player
+		Tooltip: ""
+	}
+
+	SpriteProgressBar: {
+		DisplayName: Sprite Progress Bar
+		Tooltip: ""
+	}
+
+	SummoningCrystal: {
+		DisplayName: Summoning Crystal
+		Tooltip: Increases your max number of minions by 1
+	}
+
+	SummoningTile: {
+		DisplayName: Summoning Tile
+		Tooltip: ""
+	}
+
+	SwiftnessCrystal: {
+		DisplayName: Swiftness Crystal
+		Tooltip: 25% increased movement speed
+	}
+
+	SwiftnessTile: {
+		DisplayName: Swiftness Tile
+		Tooltip: ""
+	}
+
+	TempleBiome: {
+		DisplayName: Ancient Temple
+		Tooltip: ""
+	}
+
+	TempleEntrance: {
+		DisplayName: Temple Entrance
+		Tooltip: How did you get this
+	}
+
+	TempleWorld: {
+		DisplayName: Temple World
+		Tooltip: ""
+	}
+
+	TestRoom: {
+		DisplayName: Test Room
 		Tooltip: ""
 	}
 
 	TheBlessing: {
 		DisplayName: The Blessing
+		Tooltip: Converts some snowballs into blessedballs
+	}
+
+	ThornsCrystal: {
+		DisplayName: Thorns Crystal
+		Tooltip: Attackers also take damage
+	}
+
+	ThornsTile: {
+		DisplayName: Thorns Tile
+		Tooltip: ""
+	}
+
+	TitanCrystal: {
+		DisplayName: Titan Crystal
+		Tooltip: Increases knockback by 50%
+	}
+
+	TitanTile: {
+		DisplayName: Titan Tile
 		Tooltip: ""
 	}
 
 	TwinSnokes: {
 		DisplayName: Twin Snokes
-		Tooltip: ""
+		Tooltip: "'Double-headed dragon'"
 	}
 
 	UFSnow: {
-		DisplayName: U F Snow
+		DisplayName: U.F.Snow
+		Tooltip:
+			'''
+			Converts normal snowballs into dark iceballs
+			Doesn't consume ammo if you're wearing all Meteorite armor
+			'''
+	}
+
+	UIPlayer: {
+		DisplayName: U I Player
 		Tooltip: ""
 	}
 
-	Keystone: {
-		DisplayName: Keystone
-		Tooltip: Unlocks the next Temple room with 3 Keystones
+	VariableManager: {
+		DisplayName: Variable Manager
+		Tooltip: ""
 	}
 
-	GoldenTempleKey: {
+	Vitasilk: {
+		DisplayName: Vitasilk
+		Tooltip: "'Cloth of life'"
+	}
+
+	Wagidget: {
+		DisplayName: Wagidget
+		Tooltip:
+			'''
+			'Ancient goblin technology for sale!'
+			'Totally not just random scraps!'
+			'''
+	}
+
+	WarmthCrystal: {
+		DisplayName: Warmth Crystal
+		Tooltip: Reduces damage from cold sources
+	}
+
+	WarmthTile: {
+		DisplayName: Warmth Tile
 		Tooltip: ""
-		DisplayName: Golden Temple Key
+	}
+
+	WarpPearl: {
+		DisplayName: Warp Pearl
+		Tooltip: Teleports you to where it lands
+	}
+
+	WaterEssence: {
+		DisplayName: Water Essence
+		Tooltip: The essence of Sea and Calm
+	}
+
+	WaterInfusion: {
+		DisplayName: Water Infusion
+		Tooltip:
+			'''
+			15% increased fishing power and detects hooked fish
+			Enemies spawn less and target you less
+			Allows you to swim and breathe underwater
+			'''
+	}
+
+	WaterWalkingCrystal: {
+		DisplayName: Water Walking Crystal
+		Tooltip: Allows the ability to walk on water
+	}
+
+	WaterWalkingTile: {
+		DisplayName: Water Walking Tile
+		Tooltip: ""
+	}
+
+	WrathCrystal: {
+		DisplayName: Wrath Crystal
+		Tooltip: Increases damage by 10%
+	}
+
+	WrathTile: {
+		DisplayName: Wrath Tile
+		Tooltip: ""
+	}
+
+	YellowSnowball: {
+		DisplayName: Yellow Snowball
+		Tooltip: Homes in on enemies as it falls
+	}
+
+	FungonsWand: {
+		Tooltip: ""
+		DisplayName: Fungons Wand
+	}
+
+	PureIgnisCrystal: {
+		DisplayName: Pure Ignis Crystal
+		Tooltip:
+			'''
+			Nearby enemies are inflicted with Ablaze on hit
+			Ablaze deals damage over time and makes enemies take 15% more damage
+			'''
 	}
 }
 
 Projectiles: {
+	HailProj.DisplayName: Hail Proj
+	HatSpin.DisplayName: Hat Spin
+	QuietSnowball.DisplayName: Quiet Snowball
+	ShotgunYeet.DisplayName: Shotgun Yeet
+	Snowball.DisplayName: Snowball
+	Snowbomb.DisplayName: Snowbomb
+	SnowCloud.DisplayName: Snow Cloud
+	Steward.DisplayName: Steward
 	WarpPearl.DisplayName: Warp Pearl
 	BigSnowball.DisplayName: Big Snowball
 	Blessedball.DisplayName: Blessedball
@@ -532,4 +1067,63 @@ Projectiles: {
 	Sootball.DisplayName: Sootball
 	Spiritball.DisplayName: Spiritball
 	YellowSnowball.DisplayName: Yellow Snowball
+	ShroomBurst.DisplayName: Shroom Burst
+	FungonIllusion.DisplayName: Fungon Illusion
+	FungonDestruction.DisplayName: Fungon Destruction
+	FungonConjuration2.DisplayName: Fungon Conjuration2
+	FungonConjuration1.DisplayName: Fungon Conjuration1
 }
+
+Tiles: {
+	Crystallizer.MapEntry: Crystallizer
+	Demyst.MapEntry: Demyst
+	ExitStairs.MapEntry: Exit Stairs
+	KeystoneTile.MapEntry: Keystone Tile
+	LaugicalWorkbench.MapEntry: Laugical Workbench
+	NewDawnTile.MapEntry: New Dawn Tile
+	TempleBrick.MapEntry: Temple Brick
+	TempleEntrance.MapEntry: Temple Entrance
+	TemplePlatform.MapEntry: Temple Platform
+	TestTriggerTile.MapEntry: Test Trigger Tile
+	Smelter.MapEntry: Smelter
+}
+
+Walls: {
+}
+
+Biomes: {
+	TempleBiome: {
+		TownNPCDialogueName: the Temple Biome
+		DisplayName: Temple Biome
+	}
+}
+
+NPCs: {
+	Hypothema.DisplayName: Hypothema
+	MiniHypo.DisplayName: Mini Hypo
+}
+
+Buffs: {
+	Spored: {
+		Description: Mods.NewDawn.Buffs.Spored.Description
+		DisplayName: Spored
+	}
+
+	Fatality: {
+		Description:
+			'''
+			Halves your max life for each Fatality charge you have
+			Healing potions remove a Fatality charge instead of healing you
+			'''
+		DisplayName: Fatality
+	}
+
+	Ablaze: {
+		DisplayName: Ablaze
+		Description: Owey
+	}
+}
+
+"Keybinds.Toggle Mysticism.DisplayName": Toggle  Mysticism
+DamageClasses.MysticDamageClass.DisplayName: Mystic Damage Class
+UI.ExampleResource: Mods.NewDawn.UI.ExampleResource

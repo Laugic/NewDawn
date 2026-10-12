@@ -1,0 +1,29 @@
+using Terraria;
+using Terraria.ID;
+
+namespace NewDawn.Items.Equipables
+{
+    public class FireDust : NewDawnItem
+    {
+        public override void SetStaticDefaults()
+        {
+            // DisplayName.SetDefault("Fire Dust");
+            // Tooltip.SetDefault("All attacks inflict 'On Fire!'");
+        }
+
+        public override void SetDefaults()
+        {
+            Item.width = 24;
+            Item.height = 24;
+            Item.value = Item.sellPrice(gold: 1);
+            Item.rare = ItemRarityID.Orange;
+            Item.accessory = true;
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            modPlayer.Obsidium = true;
+        }
+    }
+}

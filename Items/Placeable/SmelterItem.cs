@@ -25,7 +25,7 @@ namespace NewDawn.Items.Placeable
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddTile(null, "LaugicalWorkbench");
+            recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
             recipe.AddTile(TileID.Hellforge);
             recipe.AddIngredient(ItemID.HellstoneBar, 16);
             recipe.Register();

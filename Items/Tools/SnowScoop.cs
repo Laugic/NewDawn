@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using NewDawn.Items.Weapons.Ammo;
+using NewDawn.Items.Ammo;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

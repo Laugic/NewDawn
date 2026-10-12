@@ -1,9 +1,4 @@
 ﻿using NewDawn.Items.Materials;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Terraria;
 using Terraria.ID;
 using Terraria.Localization;
@@ -14,41 +9,49 @@ namespace NewDawn.Control
     public class RecipeManager : ModSystem
     {
         // A place to store the recipe group so we can easily use it later
-        public static RecipeGroup EvilBar;
+        public static RecipeGroup EvilBar, EvilMaterial, AdamBar, Mythril, LargeGems;
 
         public override void Unload()
         {
             EvilBar = null;
+            EvilMaterial = null;
+            AdamBar = null;
+            Mythril = null;
+            LargeGems = null;
         }
 
         public override void AddRecipeGroups()
         {
             // Create a recipe group and store it
             // Language.GetTextValue("LegacyMisc.37") is the word "Any" in english, and the corresponding word in other languages
-            RecipeGroup EvilBar = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.DemoniteBar)}",
+            EvilBar = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.DemoniteBar)}",
                 ItemID.DemoniteBar, ItemID.CrimtaneBar);
 
             // To avoid name collisions, when a modded items is the iconic or 1st item in a recipe group, name the recipe group: ModName:ItemName
             //RecipeGroup.RegisterGroup("NewDawn:EvilBars", EvilBars);
-            RecipeGroup.RegisterGroup(nameof(ItemID.DemoniteBar), EvilBar);
+            RecipeGroup.RegisterGroup($"NewDawn:{nameof(ItemID.DemoniteBar)}", EvilBar);
 
 
 
-            RecipeGroup EvilMaterial = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.ShadowScale)}",
+            EvilMaterial = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.ShadowScale)}",
                 ItemID.ShadowScale, ItemID.TissueSample);
-            RecipeGroup.RegisterGroup(nameof(ItemID.ShadowScale), EvilMaterial);
+            RecipeGroup.RegisterGroup($"NewDawn:{nameof(ItemID.ShadowScale)}", EvilMaterial);
 
 
 
-            RecipeGroup AdamBar = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.AdamantiteBar)}",
+            AdamBar = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.AdamantiteBar)}",
                 ItemID.AdamantiteBar, ItemID.TitaniumBar);
-            RecipeGroup.RegisterGroup(nameof(ItemID.AdamantiteBar), AdamBar);
+            RecipeGroup.RegisterGroup($"NewDawn:{nameof(ItemID.AdamantiteBar)}", AdamBar);
 
 
 
-            RecipeGroup MythBar = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.MythrilBar)}",
+            Mythril = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.MythrilBar)}",
                 ItemID.MythrilBar, ItemID.OrichalcumBar);
-            RecipeGroup.RegisterGroup(nameof(ItemID.MythrilBar), MythBar);
+            RecipeGroup.RegisterGroup($"NewDawn:{nameof(ItemID.MythrilBar)}", Mythril);
+
+            LargeGems = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} Large Gemstone",
+                ItemID.LargeEmerald, ItemID.LargeAmber, ItemID.LargeAmethyst, ItemID.LargeDiamond, ItemID.LargeRuby, ItemID.LargeSapphire, ItemID.LargeTopaz);
+            RecipeGroup.RegisterGroup($"NewDawn:LargeGems", LargeGems);
 
             // Add an item to an existing Terraria recipeGroup
             //RecipeGroup.recipeGroups[RecipeGroupID.Snails].ValidItems.Add(ModContent.ItemType<Items.ExampleCritter>());

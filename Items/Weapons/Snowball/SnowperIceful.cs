@@ -9,6 +9,10 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class SnowperIceful : ModItem
     {
+        public override void SetStaticDefaults()
+        {
+            // Tooltip.SetDefault("Shoots a powerful, high velocity snowball");
+        }
 
         public override void SetDefaults()
         {
@@ -24,7 +28,7 @@ namespace NewDawn.Items.Weapons.Snowball
             Item.rare = ItemRarityID.Yellow;
             Item.UseSound = SoundID.Item40;
             Item.autoReuse = true;
-            Item.shootSpeed = 24f;
+            Item.shootSpeed = 30f;
             Item.useAmmo = AmmoID.Snowball;
             Item.shoot = ProjectileID.SnowBallFriendly;
         }

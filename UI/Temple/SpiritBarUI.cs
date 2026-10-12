@@ -1,14 +1,12 @@
-﻿using Terraria.UI;
-using Terraria;
-using System;
-using ReLogic.Graphics;
-using Terraria.ModLoader;
-using System.Text;
-using NewDawn.Players;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework;
-using Terraria.GameContent;
+using NewDawn.Players;
+using NewDawn.UI.NewAttempts.Mystic;
+using System;
 using System.Collections.Generic;
+using Terraria;
+using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace NewDawn.UI.MoldyrianTemple
 {
@@ -137,7 +135,7 @@ namespace NewDawn.UI.MoldyrianTemple
 
     public class SpiritBarUI : UIState
     {
-        public Vector2 Position = new Vector2(Main.screenWidth / 2 - 72, 32);
+        public Vector2 Position = new Vector2((Main.screenWidth / 2) - 72, 32);
 
         public static bool visible = true;
 
@@ -151,17 +149,17 @@ namespace NewDawn.UI.MoldyrianTemple
                 var player = Main.LocalPlayer.GetModPlayer<SpiritPlayer>();
                 if (player != null)
                 {
-                    SpiritBar.Position = new Vector2(Main.screenWidth / 2 - (72 / Main.UIScale), 32 / Main.UIScale);
+                    SpiritBar.Position = new Vector2((Main.screenWidth / 2) - (72 / Main.UIScale), 32 / Main.UIScale);
                     SpiritBar.MaxVal = (int)player.MaxSpirit;
                     SpiritBar.CurVal = (int)player.Spirit;
                     SpiritBar.Visible = player.ShowSpirit;
                     SpiritBar.FGAlpha = player.Spirit / player.MaxSpirit;
-                    SpiritBar.Display = "Spirit: " + Math.Round(player.Spirit)  + "/" + Math.Round(player.MaxSpirit);
+                    SpiritBar.Display = "Spirit: " + Math.Round(player.Spirit) + "/" + Math.Round(player.MaxSpirit);
                 }
             }
         }
 
-        /*
+
         public override void Draw(SpriteBatch spriteBatch)
         {
             base.Draw(spriteBatch);
@@ -172,11 +170,11 @@ namespace NewDawn.UI.MoldyrianTemple
                 if (player != null && player.ShowSpirit)
                 {
                     SpiritBar.DrawBar(Main.spriteBatch, (int)player.Spirit, (int)player.MaxSpirit);
-                    Main.spriteBatch.Draw(SpiritBGTexture, Position, Color.White);
-                    Main.NewText("Position: " + Position);
+                    //Main.spriteBatch.Draw(SpiritBGTexture, Position, Color.White);
+                    //Main.NewText("Position: " + Position);
                 }
             }
-        }*/
+        }
 
         public void Load()
         {
@@ -227,7 +225,8 @@ namespace NewDawn.UI.MoldyrianTemple
             {
                 layers.Insert(resourceBarIndex, new LegacyGameInterfaceLayer(
                     "New Dawn: Spirit Bar",
-                    delegate {
+                    delegate
+                    {
                         SpiritUserInterface.Draw(Main.spriteBatch, new GameTime());
                         return true;
                     },
