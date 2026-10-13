@@ -7,28 +7,34 @@ namespace NewDawn.Tiles
 {
     public class NewDawnGlobalTile : GlobalTile
     {
-        public int miscVar = 0;
+        private int pendingShadowOrbX = -1;
+        private int pendingShadowOrbY = -1;
+        private bool suppressShadowOrbDrop;
+        private bool dropShadowOrbBoots;
 
-        public override void Drop(int i, int j, int type)/* tModPorter Suggestion: Use CanDrop to decide if items can drop, use this method to drop additional items. See documentation. */
+        public override bool CanDrop(int i, int j, int type)
         {
-            Tile tile = Main.tile[i, j];
+            suppressShadowOrbDrop = type == TileID.ShadowOrbs && Main.rand.Next(6) == 0;
+            dropShadowOrbBoots = suppressShadowOrbDrop && i % 2 == 0 && j % 2 == 0;
+            pendingShadowOrbX = i;
+            pendingShadowOrbY = j;
+            return !suppressShadowOrbDrop;
+        }
 
-            if (tile == null)
-                return base.Drop(i, j, type);
+        public override void Drop(int i, int j, int type)
+        {
+            if (!suppressShadowOrbDrop || i != pendingShadowOrbX || j != pendingShadowOrbY || type != TileID.ShadowOrbs)
+                return;
 
-            if (tile.TileType == TileID.ShadowOrbs && Main.rand.Next(6) == 0)
-            {
-                if(i % 2 == 0 && j % 2 == 0)
-                {
-                    if(!WorldGen.crimson)
-                        Item.NewItem(i * 16, j * 16, 8, 8, ModContent.ItemType<DarkfootBoots>(), 1);
-                    else
-                        Item.NewItem(i * 16, j * 16, 8, 8, ModContent.ItemType<BloodfootBoots>(), 1);
-                }
-                return false;
-            }
+            suppressShadowOrbDrop = false;
+            if (!dropShadowOrbBoots)
+                return;
 
-            return base.Drop(i, j, type);
+            dropShadowOrbBoots = false;
+            int itemType = WorldGen.crimson
+                ? ModContent.ItemType<BloodfootBoots>()
+                : ModContent.ItemType<DarkfootBoots>();
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 8, 8, itemType, 1);
         }
     }
 }

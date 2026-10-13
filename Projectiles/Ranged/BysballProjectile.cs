@@ -51,7 +51,7 @@ namespace NewDawn.Projectiles.Ranged
             newVel /= 120;
             newVel *= -12;
             Projectile.velocity = newVel;
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            base.ModifyHitNPC(target, ref modifiers);
         }
 
         private void DrawDust(Vector2 position, Vector2 shift, int numDust)

@@ -43,7 +43,7 @@ namespace NewDawn.Items.Weapons.Snowball
 
             if (type == ProjectileID.SnowBallFriendly)
                 type = ModContent.ProjectileType<Snipeball>();
-            Projectile.NewProjectile(source, position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, player.whoAmI);
+            Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), type, damage, knockback, player.whoAmI);
             return false;
         }
         public override Vector2? HoldoutOffset()

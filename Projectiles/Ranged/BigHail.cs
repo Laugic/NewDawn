@@ -33,7 +33,7 @@ namespace NewDawn.Projectiles.Ranged
             {
                 delay = 0;
                 if(Projectile.ai[0] > 0 && Main.myPlayer == Projectile.owner)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position, new Vector2(0, 2), (int)Projectile.ai[0], Projectile.damage, Projectile.knockback, Projectile.owner);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position, new Vector2(0, 2), (int)Projectile.ai[0], Projectile.damage, Projectile.knockBack, Projectile.owner);
             }
             Projectile.velocity.Y += .5f;
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, 33, Projectile.velocity.X * -0.5f, Projectile.velocity.Y * -0.5f);

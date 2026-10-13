@@ -1,6 +1,10 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
+using NewDawn.Items.Equipables;
+using NewDawn.Items.Loot;
+using NewDawn.Items.Weapons.Range;
 
 namespace NewDawn.Items.Loot
 {
@@ -31,42 +35,20 @@ namespace NewDawn.Items.Loot
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
-            //TODO: Add item loot for Ragnar Treasure Bag
-            //itemLoot.Add(ModContent.ItemType<DarkShard>(), Main.rand.Next(2, 4));
-            //itemLoot.Add(ModContent.ItemType<MoltenCore>(), 1);
-            //itemLoot.Add(ModContent.ItemType<ObsidiumChunk>(), Main.rand.Next(3, 5));
-
-            //int obsidiumItem = 0;
-            //int rand = Main.rand.Next(7);
-            //switch (rand)
-            //{
-            //    case 0:
-            //        obsidiumItem = ItemID.LavaCharm;
-            //        break;
-            //    case 1:
-            //        obsidiumItem = ModContent.ItemType<ObsidiumLily>();
-            //        break;
-            //    case 2:
-            //        obsidiumItem = ModContent.ItemType<FireDust>();
-            //        break;
-            //    case 3:
-            //        obsidiumItem = ModContent.ItemType<Eruption>();
-            //        break;
-            //    case 4:
-            //        obsidiumItem = ModContent.ItemType<CrystalizedMagma>();
-            //        break;
-            //    case 5:
-            //        obsidiumItem = ModContent.ItemType<Ragnashia>();
-            //        break;
-            //    default:
-            //        obsidiumItem = ModContent.ItemType<MagmaHeart>();
-            //        break;
-            //}
-            //itemLoot.Add(obsidiumItem, 1);
-            //if (Main.rand.Next(4) == 0)
-            //    itemLoot.Add(ModContent.ItemType<BlackIce>(), 1);
-
-            //itemLoot.Add(188, Main.rand.Next(10, 15));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DarkShard>(), 1, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<MoltenCore>()));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ObsidiumChunk>(), 1, 3, 4));
+            itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(
+                1,
+                ItemID.LavaCharm,
+                ModContent.ItemType<ObsidiumLily>(),
+                ModContent.ItemType<FireDust>(),
+                ModContent.ItemType<Eruption>(),
+                ModContent.ItemType<CrystalizedMagma>(),
+                ModContent.ItemType<Ragnashia>(),
+                ModContent.ItemType<MagmaHeart>()));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<BlackIce>(), 4));
+            itemLoot.Add(ItemDropRule.Common(ItemID.HealingPotion, 1, 10, 14));
         }
 
     }

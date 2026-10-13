@@ -1,12 +1,9 @@
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
-using NewDawn.Items.Placeable;
 using NewDawn.Projectiles.Thrown;
 using NewDawn.Tiles;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.Items.Weapons.Thrown
 {

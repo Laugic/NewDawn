@@ -1,9 +1,8 @@
-﻿using System;
-using NewDawn.Tiles;
+﻿using NewDawn.Tiles;
+using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.Projectiles
 {
@@ -20,7 +19,7 @@ namespace NewDawn.Projectiles
 
         public override bool PreAI(Projectile projectile)
         {
-            if(boosted > 0)
+            if (boosted > 0)
             {
                 boosted--;
                 return true;
@@ -28,9 +27,14 @@ namespace NewDawn.Projectiles
 
             if (!projectile.active)
                 return true;
-            if (projectile.position.X < 0 || projectile.position.Y < 0 || projectile.position.X > Main.maxTilesX * 16 || projectile.position.Y > Main.maxTilesY * 16 || double.IsNaN(projectile.position.X)|| double.IsNaN(projectile.position.Y))
+            if (projectile.position.X < 0 || projectile.position.Y < 0 || projectile.position.X > Main.maxTilesX * 16 || projectile.position.Y > Main.maxTilesY * 16 || double.IsNaN(projectile.position.X) || double.IsNaN(projectile.position.Y))
                 return true;
-            Tile tile = projectile.GetTileOnCenter();
+            int tileX = (int)(projectile.Center.X / 16f);
+            int tileY = (int)(projectile.Center.Y / 16f);
+            if (tileX < 0 || tileY < 0 || tileX >= Main.maxTilesX || tileY >= Main.maxTilesY)
+                return true;
+
+            Tile tile = Main.tile[tileX, tileY];
 
             if (tile.TileType == ModContent.TileType<BrassFAN>())
             {
@@ -52,26 +56,26 @@ namespace NewDawn.Projectiles
         private void BoostLeft(Projectile projectile)
         {
             projectile.velocity.X = -MAX_SPEED;
-            SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassFAN"));
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassFAN"));
         }
 
         private void BoostRight(Projectile projectile)
         {
             projectile.velocity.X = MAX_SPEED;
-            SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassFAN"));
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassFAN"));
         }
 
         private void HandleDirectionalFans(Projectile projectile, bool left)
         {
             int directionMultiplier = left ? -1 : 1;
 
-            if (left && projectile.velocity.X < MAX_SPEED * directionMultiplier || !left && projectile.velocity.X > MAX_SPEED * directionMultiplier)
+            if ((left && projectile.velocity.X < MAX_SPEED * directionMultiplier) || (!left && projectile.velocity.X > MAX_SPEED * directionMultiplier))
                 return;
 
             if (Math.Abs(projectile.velocity.X) < MIN_SPEED * directionMultiplier)
                 projectile.velocity.X = MIN_SPEED * directionMultiplier;
 
-            SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassFAN"));
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassFAN"));
 
             projectile.velocity.X *= 2;
 

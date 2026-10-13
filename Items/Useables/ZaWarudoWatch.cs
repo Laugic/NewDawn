@@ -1,4 +1,5 @@
 using NewDawn.Buffs;
+using NewDawn.NPCs;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

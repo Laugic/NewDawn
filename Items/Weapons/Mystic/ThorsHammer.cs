@@ -59,7 +59,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitNPC(player, target, damage, knockback, crit);
+            base.OnHitNPC(player, target, hit, damageDone);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 2 && modPlayer.Vis > VisCost)
             {

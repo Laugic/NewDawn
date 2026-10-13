@@ -38,6 +38,7 @@ namespace NewDawn.Items.Weapons.Mystic
         
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 1)
             {
@@ -48,7 +49,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
                     float scale = 1f - (Main.rand.NextFloat() * .3f);
                     perturbedSpeed = perturbedSpeed * scale;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockBack, player.whoAmI);
                 }
             }
             return true;

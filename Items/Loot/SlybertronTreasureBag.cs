@@ -1,5 +1,8 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.ModLoader;
+using NewDawn.Items.Loot;
 
 namespace NewDawn.Items.Loot
 {
@@ -27,13 +30,12 @@ namespace NewDawn.Items.Loot
             return true;
         }
 
-        //TODO: Add loot to this bag
-        //public override void ModifyItemLoot(ItemLoot itemLoot)
-        //{
-        //    itemLoot.Add(ModContent.ItemType<SteamBar>(), Main.rand.Next(20, 35));
-        //    itemLoot.Add(ModContent.ItemType<SoulOfFraught>(), Main.rand.Next(25, 40));
-        //    itemLoot.Add(ModContent.ItemType<Pipeworks>(), 1);
-        //    itemLoot.Add(499, Main.rand.Next(10, 15));
-        //}
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SteamBar>(), 1, 20, 34));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfFraught>(), 1, 25, 39));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Pipeworks>()));
+            itemLoot.Add(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 10, 14));
+        }
     }
 }

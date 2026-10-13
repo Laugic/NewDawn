@@ -50,7 +50,7 @@ namespace NewDawn.Items.Weapons.Magic
                 Vector2 perturbedSpeed = new Vector2(velocity.X, velocity.Y).RotatedByRandom(MathHelper.ToRadians(15));
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = perturbedSpeed * scale;
-                Projectile.NewProjectile(new EntitySource_Parent(player), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<SteamOfSteamworks>(), damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(player), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<SteamOfSteamworks>(), damage, knockback, player.whoAmI);
             }
             return true;
         }

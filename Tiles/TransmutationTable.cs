@@ -22,7 +22,7 @@ namespace NewDawn.Tiles
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Transmutation Table");
             AddMapEntry(new Color(150, 150, 150), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             //adjTiles = new int[] { TileID.WorkBenches };
             AnimationFrameHeight = 72;
         }
@@ -67,7 +67,7 @@ namespace NewDawn.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 64, 64, ModContent.ItemType<Items.Placeable.TransmutationTable>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 64, ModContent.ItemType<Items.Placeable.TransmutationTable>());
         }
     }
 }

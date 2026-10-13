@@ -21,7 +21,7 @@ namespace NewDawn.Tiles
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Brass F.A.N.");
             AddMapEntry(new Color(220, 200, 100), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = false;
+            TileID.Sets.DisableSmartCursor[Type] = false;
             AnimationFrameHeight = 54;
             DustType = ModContent.DustType<Brass>();
         }
@@ -47,7 +47,7 @@ namespace NewDawn.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 112, 64, ModContent.ItemType<Items.Placeable.BrassFAN>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 112, 64, ModContent.ItemType<Items.Placeable.BrassFAN>());
         }
     }
 }

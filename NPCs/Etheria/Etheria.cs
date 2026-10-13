@@ -95,7 +95,7 @@ namespace NewDawn.NPCs.Etheria
             NPC.lavaImmune = true;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Etheria");
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Etheria");
         }
 
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
@@ -176,7 +176,7 @@ namespace NewDawn.NPCs.Etheria
                     attackDelMax -= 30;
                 if (NewDawnWorld.downedEtheria && Main.netMode != 1)
                 {
-                    NPC.NewNPC((int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<EtheriaDecoy>());
+                    NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<EtheriaDecoy>());
                 }
                 NPC.netUpdate = true;
             }
@@ -194,7 +194,7 @@ namespace NewDawn.NPCs.Etheria
                 if (Main.expertMode)
                     attackDelMax -= 30;
                 if(Main.netMode != 1)
-                    NPC.NewNPC((int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<EtheriaDecoy>());
+                    NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<EtheriaDecoy>());
                 NPC.netUpdate = true;
             }
 
@@ -314,10 +314,10 @@ namespace NewDawn.NPCs.Etheria
             }
             if (attack == 3 && Main.netMode != 1 && _attacking)
             {
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
                 for (int i = 0; i < 8; i++)
                 {
-                    int n = NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
+                    int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
                     Main.npc[n].ai[0] = NPC.whoAmI;
                     Main.npc[n].ai[1] = i;
                 }
@@ -337,7 +337,7 @@ namespace NewDawn.NPCs.Etheria
             {
                 if (NPC.CountNPCS(ModContent.NPCType<EtherialTear>()) < 4)
                 {
-                    NPC.NewNPC((int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<EtherialTear>());
+                    NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<EtherialTear>());
                     tearIndex++;
                     _attacking = false;
                 }
@@ -379,10 +379,10 @@ namespace NewDawn.NPCs.Etheria
             }
             if (eattack == 3 && Main.netMode != 1 && _attacking)
             {
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
                 for (int i = 0; i < 12; i++)
                 {
-                    int n = NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<TrueEtherialSpiralShot>());
+                    int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<TrueEtherialSpiralShot>());
                     Main.npc[n].ai[0] = NPC.whoAmI;
                     Main.npc[n].ai[1] = i;
                 }
@@ -403,7 +403,7 @@ namespace NewDawn.NPCs.Etheria
             {
                 if (NPC.CountNPCS(ModContent.NPCType<TrueEtherialTear>()) < 4)
                 {
-                    NPC.NewNPC((int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<TrueEtherialTear>());
+                    NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.position.X + Main.rand.Next(0, NPC.width), (int)NPC.position.Y + Main.rand.Next(0, NPC.height), ModContent.NPCType<TrueEtherialTear>());
                     tearIndex++;
                     _attacking = false;
                 }
@@ -447,12 +447,12 @@ namespace NewDawn.NPCs.Etheria
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
 
-            player.AddBuff(44, 300, true);//Frostburn
+            target.AddBuff(44, 300, true);//Frostburn
         }
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 188;
+            potionType = ItemID.HealingPotion;
         }
 
         public override void OnKill()
@@ -462,15 +462,15 @@ namespace NewDawn.NPCs.Etheria
                 plays = 1;
             if (NewDawnWorld.downedEtheria)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EssenceOfEtheria>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EssenceOfEtheria>(), 1);
                 NewDawnWorld.downedEtheria = false;
                 NewDawnWorld.downedTrueEtheria = true;
                 if (Main.rand.Next(10) == 0)
-                    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtheriaTrophy>(), 1);
+                    Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtheriaTrophy>(), 1);
             }
             else
             {
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
                 NewDawnWorld.downedEtheria = true;
             }
 

@@ -79,8 +79,6 @@ namespace NewDawn
         public override void SaveWorldData(TagCompound tag)/* tModPorter Suggestion: Edit tag parameter instead of returning new TagCompound */
         {
             List<string> downed = new List<string>();
-            bool obs = false;
-            int pwr = 0;
             if (downedAnnihilator) downed.Add("annihilator");
             if (downedSlybertron) downed.Add("slybertron");
             if (downedSteamTrain) downed.Add("steamtrain");
@@ -93,17 +91,12 @@ namespace NewDawn
             if (downedAndesia) downed.Add("andesia");
             if (downedAnDio) downed.Add("andio");
             if (downedNecrodon) downed.Add("necrodon");
-            if (obEnf) obs = true;
-            pwr = power;
-
-            return new TagCompound {
-                {"downed", downed},
-                {"etherial", downedEtheria},
-                {"obsidium", obs },
-                {"obsidiumHeart", obsidiumHeart },
-                {"bysmal", bysmal },
-                {"power", pwr }
-            };
+            tag["downed"] = downed;
+            tag["etherial"] = downedEtheria;
+            tag["obsidium"] = obEnf;
+            tag["obsidiumHeart"] = obsidiumHeart;
+            tag["bysmal"] = bysmal;
+            tag["power"] = power;
         }
 
         public override void LoadWorldData(TagCompound tag)
@@ -225,16 +218,14 @@ namespace NewDawn
             int genIndex = tasks.FindIndex(genpass => genpass.Name.Equals("Micro Biomes"));
             int xO = Main.maxTilesX / 2;
             int yO = (int)(Main.maxTilesY * .7f);
-            tasks.Insert(genIndex + 1, new PassLegacy("Generating Obsidian Cavern", delegate (GenerationProgress progress)
+            tasks.Insert(genIndex + 1, new PassLegacy("Generating Obsidian Cavern", delegate
             {
-                progress.Message = "Obsidification";
                 GenerateObsidium(xO, yO);
             }));
 
             int genIndex2 = tasks.FindIndex(genpass => genpass.Name.Equals("Micro Biomes"));
-            tasks.Insert(genIndex2 + 2, new PassLegacy("Obsidium Features", delegate (GenerationProgress progress)
+            tasks.Insert(genIndex2 + 2, new PassLegacy("Obsidium Features", delegate
             {
-                progress.Message = "Obsidium Core";
                 GenerateObsidiumStructures(xO, yO);
             }));
         }
@@ -258,7 +249,7 @@ namespace NewDawn
 
         private static bool TileCheckSafe(int i, int j)
         {
-            if (i > 0 && i < Main.tile.GetLength(0) - 1 && j > 0 && j < Main.tile.GetLength(1) - 1)
+            if (i > 0 && i < Main.maxTilesX - 1 && j > 0 && j < Main.maxTilesY - 1)
             {
                 if (Main.tile[i, j] == null)
                     return false;

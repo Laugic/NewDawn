@@ -17,7 +17,7 @@ namespace NewDawn.Tiles
             Main.tileLighted[Type] = true;
 
             DustType = ModContent.DustType<Magma>();
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Placeable.LavaGemItem>();
+            RegisterItemDrop(ModContent.ItemType<Items.Placeable.LavaGemItem>());
 
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Lava Gem");
@@ -35,8 +35,8 @@ namespace NewDawn.Tiles
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/ArcanaGemTile");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/ArcanaGemTile");
             }
         }
 

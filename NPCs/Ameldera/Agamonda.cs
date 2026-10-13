@@ -4,6 +4,7 @@ using NewDawn.NPCs.Obsidium;
 using System;
 using System.IO;
 using Terraria;
+using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -168,7 +169,7 @@ namespace NewDawn.NPCs.Ameldera
 
         public override void OnKill()
         {
-            Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<ElderPearl>());
+            Item.NewItem(NPC.GetSource_Loot(), NPC.getRect(), ModContent.ItemType<ElderPearl>());
         }
     }
 

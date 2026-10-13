@@ -14,8 +14,8 @@ namespace NewDawn.Tiles
             AddMapEntry(new Color(80, 130, 100));
             MineResist = 1f;
             MinPick = 20;
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Placeable.ZincBrick>();
-            HitSound = 21;
+            RegisterItemDrop(ModContent.ItemType<Items.Placeable.ZincBrick>());
+            HitSound = SoundID.Tink;
             DustType = 1;
         }
 

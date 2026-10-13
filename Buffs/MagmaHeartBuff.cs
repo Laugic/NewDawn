@@ -1,7 +1,6 @@
-﻿using NewDawn.Projectiles.Pets;
+﻿using Microsoft.Xna.Framework;
+using NewDawn.Projectiles.Pets;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Buffs
@@ -26,8 +25,7 @@ namespace NewDawn.Buffs
             bool petProjectileNotSpawned = player.ownedProjectileCounts[ModContent.ProjectileType<MagmaHeartProjectile>()] <= 0;
             if (petProjectileNotSpawned && player.whoAmI == Main.myPlayer)
             {
-                Projectile.NewProjectile(new EntitySource_Parent(player), player.position.X + (float)(player.width / 2), player.position.Y + (float)(player.height / 2),
-                    0f, 0f, ModContent.ProjectileType<MagmaHeartProjectile>(), 0, 0f, player.whoAmI, 0f, 0f);
+                Projectile.NewProjectile(new EntitySource_Parent(player), new Vector2(player.position.X + (float)(player.width / 2), player.position.Y + (float)(player.height / 2)), new Vector2(0f, 0f), ModContent.ProjectileType<MagmaHeartProjectile>(), 0, 0f, player.whoAmI, 0f, 0f);
             }
         }
     }

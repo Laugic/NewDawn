@@ -59,9 +59,9 @@ namespace NewDawn.NPCs.RockTwins
             if (NPC.frame.Y > frameHeight * 8 && !spawned)
             {
                 NPC.frame.Y = frameHeight * 10;
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/boom"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/boom"));
                 if(Main.netMode != 1)
-                    NPC.NewNPC((int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<AnDio3>());
+                    NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<AnDio3>());
                 spawned = true;
                 NPC.active = false;
             }

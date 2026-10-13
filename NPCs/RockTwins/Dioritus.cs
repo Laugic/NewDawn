@@ -95,7 +95,7 @@ namespace NewDawn.NPCs.RockTwins
             NPC.lavaImmune = true;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/RockPhase3");
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/RockPhase3");
             damage = 32;
             //bossBag = ModContent.ItemType<RagnarTreasureBag>();
             //npc.scale = 2f;
@@ -164,7 +164,7 @@ namespace NewDawn.NPCs.RockTwins
                 //Checking if it should initiate phase 3 already
                 if (NewDawnWorld.downedAndesia && NewDawnWorld.downedDioritus && NPC.CountNPCS(ModContent.NPCType<Andesia>()) == 0 && Main.netMode != 1)
                 {
-                    int and = NPC.NewNPC((int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<Andesia>());
+                    int and = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<Andesia>());
                     Main.npc[and].ai[3] = NPC.whoAmI;
                 }
                     //Checking which direction to move when spawned
@@ -319,26 +319,26 @@ namespace NewDawn.NPCs.RockTwins
                 int rng = 480;
                 int yHeight = 480;
                 shoot = 0;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X, Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight, 0, 0, ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X, Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Main.player[NPC.target].position.X - rng + Main.rand.Next(rng * 2), Main.player[NPC.target].position.Y - yHeight), new Vector2(0, 0), ModContent.ProjectileType<DioShard>(), damage / 2, 3, Main.myPlayer);
             }
             NPC.netUpdate = true;
         }
@@ -347,12 +347,12 @@ namespace NewDawn.NPCs.RockTwins
         {
             NewDawnWorld.downedDioritus = true;
             if (NPC.CountNPCS(ModContent.NPCType<Andesia>()) == 0 && NPC.CountNPCS(ModContent.NPCType<AnDio2>()) == 0 && Main.netMode != 1)
-                NPC.NewNPC((int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<Andesia>());
+                NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<Andesia>());
             else
             {
                 Main.npc[(int)NPC.ai[3]].position.X -= 10000;
                 if (Main.netMode != 1)
-                    NPC.NewNPC((int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<AnDio2>());
+                    NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.position.Y + NPC.height, ModContent.NPCType<AnDio2>());
             }
             SoundEngine.PlaySound(SoundID.Roar);
             return false;

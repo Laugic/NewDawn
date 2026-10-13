@@ -85,13 +85,13 @@ namespace NewDawn.NPCs.RockTwins
 
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            player.AddBuff(ModContent.BuffType<ForHonor>(), 300, true);
+            target.AddBuff(ModContent.BuffType<ForHonor>(), 300, true);
         }
 
         public override void DrawBehind(int index, List<int> behindNPCsAndTiles, List<int> behindNPCs, List<int> behindProjectiles, List<int> overPlayers, List<int> overWiresUI)
         {
             //drawCacheProjsBehindProjectiles.Add(index);
-            drawCacheProjsBehindNpCs.Add(index);
+            behindProjectiles.Add(index);
         }
     }
 }

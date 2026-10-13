@@ -1,7 +1,10 @@
 using NewDawn.Players;
+using NewDawn.Items.Equipables;
+using NewDawn.Items.Weapons.Mystic;
 using System.Collections.Generic;
 using System.IO;
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -24,6 +27,38 @@ namespace NewDawn.Items
 
             myClone.Yeet = Yeet;
             return myClone;
+        }
+
+        public override void ModifyItemLoot(Item item, ItemLoot itemLoot)
+        {
+            if (item.type == ItemID.EaterOfWorldsBossBag)
+            {
+                itemLoot.Add(new OneFromRulesRule(1,
+                    ItemDropRule.Common(ModContent.ItemType<DarkfootBoots>()),
+                    ItemDropRule.Common(ItemID.ShadowOrb),
+                    ItemDropRule.Common(ItemID.Vilethorn),
+                    ItemDropRule.Common(ItemID.BandofStarpower),
+                    ItemDropRule.Common(ItemID.BallOHurt),
+                    ItemDropRule.SequentialRulesNotScalingWithLuck(1,
+                        ItemDropRule.Common(ItemID.Musket),
+                        ItemDropRule.Common(ItemID.MusketBall, 1, 100, 100))));
+            }
+            else if (item.type == ItemID.BrainOfCthulhuBossBag)
+            {
+                itemLoot.Add(new OneFromRulesRule(1,
+                    ItemDropRule.Common(ModContent.ItemType<BloodfootBoots>()),
+                    ItemDropRule.Common(ItemID.CrimsonHeart),
+                    ItemDropRule.Common(ItemID.CrimsonRod),
+                    ItemDropRule.Common(ItemID.PanicNecklace),
+                    ItemDropRule.Common(ItemID.TheRottedFork),
+                    ItemDropRule.SequentialRulesNotScalingWithLuck(1,
+                        ItemDropRule.Common(ItemID.TheUndertaker),
+                        ItemDropRule.Common(ItemID.MusketBall, 1, 100, 100))));
+            }
+            else if (item.type == ItemID.FishronBossBag)
+            {
+                itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<PoseidonsTide>(), 6));
+            }
         }
 
         //public override void RightClick(Item item, Player player)

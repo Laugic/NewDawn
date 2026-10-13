@@ -1,11 +1,8 @@
-﻿using NewDawn.Dusts;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+﻿using Microsoft.Xna.Framework;
+using NewDawn.Dusts;
 using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.NPCs.PreTrio
 {
@@ -26,7 +23,7 @@ namespace NewDawn.NPCs.PreTrio
 
         public override void AI()
         {
-            if(Projectile.ai[0] == 1) // Gravity
+            if (Projectile.ai[0] == 1) // Gravity
                 Projectile.velocity.Y += .2f;
             if (Projectile.ai[0] == 2)
                 SlowAI();
@@ -53,7 +50,7 @@ namespace NewDawn.NPCs.PreTrio
 
                 npc = (int)Projectile.ai[1];
 
-                if(Main.npc[npc].type == ModContent.NPCType<Ragnar>() && Main.player[Main.npc[npc].target].active && Main.player[Main.npc[npc].target].statLife > 0)
+                if (Main.npc[npc].type == ModContent.NPCType<Ragnar>() && Main.player[Main.npc[npc].target].active && Main.player[Main.npc[npc].target].statLife > 0)
                 {
                     Projectile.velocity = Projectile.position - Main.player[Main.npc[npc].target].position;
                     Projectile.velocity.Normalize();

@@ -67,7 +67,7 @@ namespace NewDawn.Items.Weapons.Range
                 perturbedSpeed = perturbedSpeed.RotatedByRandom(MathHelper.ToRadians(spread));
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = perturbedSpeed * scale;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
             }
             return false;
         }
@@ -76,7 +76,7 @@ namespace NewDawn.Items.Weapons.Range
         {
             if (Main.rand.Next(2) == 0)
                 return false;
-            return base.CanConsumeAmmo(player);
+            return base.CanConsumeAmmo(ammo, player);
         }
 
         public override Vector2? HoldoutOffset()

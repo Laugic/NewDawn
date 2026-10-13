@@ -37,6 +37,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 50f;
 
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);

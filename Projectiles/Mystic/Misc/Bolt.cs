@@ -70,7 +70,7 @@ namespace NewDawn.Projectiles.Mystic.Misc
         {
             if(Main.myPlayer == Projectile.owner)
             {
-                int p = Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position.X, Projectile.position.Y, Projectile.velocity.X, Projectile.velocity.Y, ModContent.ProjectileType<Bolt>(), (int)(Projectile.damage), 8, Main.myPlayer);
+                int p = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Projectile.position.X, Projectile.position.Y), new Vector2(Projectile.velocity.X, Projectile.velocity.Y), ModContent.ProjectileType<Bolt>(), (int)(Projectile.damage), 8, Main.myPlayer);
                 Main.projectile[p].timeLeft = Projectile.timeLeft;
             }
             nextBolt = (int)Projectile.ai[0];
@@ -115,7 +115,7 @@ namespace NewDawn.Projectiles.Mystic.Misc
                         nextPos = Projectile.Center;
                     else
                         nextPos = Trails[i + 1];
-                    NewDawn.DrawChain(spriteBatch, Mod.GetTexture("Projectiles/Mystic/Misc/BoltChain"), curPos, nextPos, .5f, Color.White);
+                    NewDawn.DrawChain(Main.spriteBatch, NewDawn.RequestTexture("Projectiles/Mystic/Misc/BoltChain"), curPos, nextPos, .5f, Color.White);
                 }
             }
             return true;

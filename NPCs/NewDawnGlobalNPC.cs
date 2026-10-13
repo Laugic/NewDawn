@@ -6,6 +6,7 @@ using NewDawn.Items.Weapons.Snowball;
 using NewDawn.Projectiles.Mystic.Fungon;
 using Terraria;
 using Terraria.DataStructures;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -14,6 +15,45 @@ namespace NewDawn.NPCs
     public class NewDawnGlobalNPC : GlobalNPC
     {
         public override bool InstancePerEntity => true;
+
+        public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
+        {
+            if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.PreTrio.Ragnar>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.RagnarTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.PreTrio.DuneSharkron>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.DuneSharkronTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.RockTwins.AnDio3>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.AnDioTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.Bosses.TheAnnihilator>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.AnnihilatorTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.Slybertron.Slybertron>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.SlybertronTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.SteamTrain.SteamTrain>() ||
+                     npc.type == ModContent.NPCType<global::NewDawn.NPCs.SteamTrain.SteamTrainOld>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.SteamTrainTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.Necrodon.Phylactery>() ||
+                     npc.type == ModContent.NPCType<global::NewDawn.NPCs.Necrodon.NecrodonDDDFight>())
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.DuneSharkronTreasureBag>()));
+            else if (npc.type == ModContent.NPCType<global::NewDawn.NPCs.Hypothema.Hypothema>())
+            {
+                npcLoot.Add(ItemDropRule.BossBag(ModContent.ItemType<global::NewDawn.Items.Loot.HypothemaTreasureBag>()));
+                var normalModeDrops = new LeadingConditionRule(new Conditions.NotExpert());
+                normalModeDrops.OnSuccess(ItemDropRule.Common(ModContent.ItemType<global::NewDawn.Items.Loot.FrostShard>(), 1, 1, 2));
+                normalModeDrops.OnSuccess(ItemDropRule.OneFromOptionsNotScalingWithLuck(
+                    3,
+                    ItemID.IceBoomerang,
+                    ItemID.IceBlade,
+                    ItemID.IceSkates,
+                    ItemID.SnowballCannon,
+                    ItemID.BlizzardinaBottle,
+                    ItemID.FlurryBoots));
+                normalModeDrops.OnSuccess(ItemDropRule.Common(ItemID.SnowBlock, 1, 30, 59));
+                normalModeDrops.OnSuccess(ItemDropRule.Common(ItemID.IceBlock, 1, 30, 59));
+                normalModeDrops.OnSuccess(ItemDropRule.Common(ModContent.ItemType<global::NewDawn.Items.Materials.ChilledBar>(), 1, 16, 24));
+                npcLoot.Add(normalModeDrops);
+            }
+        }
+
         public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
             var wadidget = new Wagidget();

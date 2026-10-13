@@ -45,8 +45,7 @@ namespace NewDawn.NPCs.Bosses
             NPC.lavaImmune = true;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Annihilator");
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<AnnihilatorTreasureBag>();
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Annihilator");
             NPC.buffImmune[ModContent.BuffType<Steamy>()] = true;
             Phase = 0;
             FrameDelay = 0;
@@ -223,33 +222,33 @@ namespace NewDawn.NPCs.Bosses
             {
                 case 1:
                     for (int i = 0; i < 4; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
                     for (int i = 0; i < 8; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
                     break;
                 case 2:
                     for (int i = 0; i < 4; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
                     for (int i = 0; i < 8; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
                     break;
                 case 3:
                     for (int i = 0; i < 4; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
                     for (int i = 0; i < 8; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
                     break;
                 case 4:
                     for (int i = 0; i < 4; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
                     for (int i = 0; i < 8; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
                     break;
                 case 5:
                     for (int i = 0; i < 4; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkDefender>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkDefender>()));
                     for (int i = 0; i < 8; i++)
-                        NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
+                        NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<SteampunkZapper>(), 0, NPC.whoAmI, NPC.CountNPCS(ModContent.NPCType<SteampunkZapper>()));
                     break;
                 default:
 
@@ -470,7 +469,7 @@ namespace NewDawn.NPCs.Bosses
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             if (Main.expertMode)
-                player.AddBuff(ModContent.BuffType<Steamy>(), 2 * 60 + Main.rand.Next(60), true);
+                target.AddBuff(ModContent.BuffType<Steamy>(), 2 * 60 + Main.rand.Next(60), true);
         }
 
         public override void OnKill()
@@ -479,27 +478,23 @@ namespace NewDawn.NPCs.Bosses
             NewDawnPlayer modPlayer = NewDawnPlayer.Get();
             if (NewDawnWorld.downedEtheria)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<CogOfEtheria>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<CogOfEtheria>(), 1);
             }
             if (!Main.expertMode)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
                
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfThought>(), Main.rand.Next(20, 40));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfThought>(), Main.rand.Next(20, 40));
             }
 
-            if (Main.expertMode)
-            {
-                NPC.DropBossBags();
-            }
-            if (Main.rand.Next(10) == 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<AnnihilatorTrophy>(), 1);
+            if(Main.rand.Next(10) == 0)
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<AnnihilatorTrophy>(), 1);
             NewDawnWorld.downedAnnihilator = true;
 
         }
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 499;
+            potionType = ItemID.GreaterHealingPotion;
         }
         public override void FindFrame(int frameHeight)
         {

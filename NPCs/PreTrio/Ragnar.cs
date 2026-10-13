@@ -1,18 +1,14 @@
-using System;
-using System.Collections.Generic;
-using NewDawn.Dusts;
+using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Graphics;
 using NewDawn.Items.Equipables;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Placeable;
 using NewDawn.Items.Weapons.Range;
-using NewDawn.NPCs.Obsidium;
 using NewDawn.Particles;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using System;
+using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.NPCs.PreTrio
 {
@@ -55,8 +51,7 @@ namespace NewDawn.NPCs.PreTrio
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.buffImmune[24] = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Ragnar");
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<RagnarTreasureBag>();
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Ragnar");
             PrevAIPhase = AIPhase = 0;
             Counter = 0;
             TargetPos = NPC.Center;
@@ -68,14 +63,14 @@ namespace NewDawn.NPCs.PreTrio
             NPC.velocity = Vector2.Zero;
             if (!Main.dedServ)
             {
-                Heart = Mod.GetTexture(this.GetType().GetRootPath() + "/RagnarHeart");
+                Heart = NewDawn.RequestTexture(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/RagnarHeart");
             }
 
         }
 
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
         {
-            NPC.lifeMax = 10000 + numPlayers * 2000;
+            NPC.lifeMax = 10000 + (numPlayers * 2000);
             NPC.damage = 70;
         }
 
@@ -90,7 +85,7 @@ namespace NewDawn.NPCs.PreTrio
         #region behavior AIs
         private void PickAI()
         {
-            switch(AIPhase)
+            switch (AIPhase)
             {
                 case 1:
                     FireballWave();
@@ -131,7 +126,7 @@ namespace NewDawn.NPCs.PreTrio
             Slow();
             if (Counter > 1 * 60 && Counter <= 4 * 60)
             {
-                int curOff = (Counter - 1 * 60 - (Counter - 1 * 60) % 15) / 15;
+                int curOff = (Counter - (1 * 60) - ((Counter - (1 * 60)) % 15)) / 15;
 
                 if (Counter % 60 == 30)
                 {
@@ -166,7 +161,7 @@ namespace NewDawn.NPCs.PreTrio
         private void Chase()
         {
             TargetPos = Target();
-            if(Main.expertMode)
+            if (Main.expertMode)
                 NewMove(8, 1.5f + (1.5f * (NPC.life / NPC.lifeMax)));
             else
                 NewMove(6, 3);
@@ -178,7 +173,7 @@ namespace NewDawn.NPCs.PreTrio
         {
             int xOffset = 60;
             int yOffset = 500;
-            if(Counter < 2)
+            if (Counter < 2)
             {
                 TargetPos = Main.player[NPC.target].Center;
                 TargetPos.Y -= 180;
@@ -189,19 +184,19 @@ namespace NewDawn.NPCs.PreTrio
                 Slow();
             if (Counter > 3 * 60)
             {
-                int curOff = (Counter - 3 * 60 - (Counter - 3 * 60) % 15) / 15;
-                if(Counter % 3 == 0)
+                int curOff = (Counter - (3 * 60) - ((Counter - (3 * 60)) % 15)) / 15;
+                if (Counter % 3 == 0)
                 {
-                    BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Flame"), new Vector2(NPC.Center.X + xOffset * curOff - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
-                    BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Flame"), new Vector2(NPC.Center.X - xOffset * curOff - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
+                    BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), new Vector2(NPC.Center.X + (xOffset * curOff) - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
+                    BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), new Vector2(NPC.Center.X - (xOffset * curOff) - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
                 }
                 //Dust.NewDust(new Vector2(npc.Center.X + xOffset * curOff, npc.Center.Y + yOffset), 40, 10, ModContent.DustType<Magma>(), -2 + Main.rand.Next(5), -2 + Main.rand.Next(5));
                 //Dust.NewDust(new Vector2(npc.Center.X - xOffset * curOff, npc.Center.Y + yOffset), 40, 10, ModContent.DustType<Magma>(), -2 + Main.rand.Next(5), -2 + Main.rand.Next(5));
                 if (Counter % 15 == 0)
                 {
-                    int proj = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.Center.X - xOffset * curOff, NPC.Center.Y + yOffset), new Vector2(0, -18), ModContent.ProjectileType<RagnarFireball>(), NPC.damage / 2, 4f);
+                    int proj = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.Center.X - (xOffset * curOff), NPC.Center.Y + yOffset), new Vector2(0, -18), ModContent.ProjectileType<RagnarFireball>(), NPC.damage / 2, 4f);
                     Main.projectile[proj].ai[0] = 1;
-                    proj = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.Center.X + xOffset * curOff, NPC.Center.Y + yOffset), new Vector2(0, -18), ModContent.ProjectileType<RagnarFireball>(), NPC.damage / 2, 4f);
+                    proj = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.Center.X + (xOffset * curOff), NPC.Center.Y + yOffset), new Vector2(0, -18), ModContent.ProjectileType<RagnarFireball>(), NPC.damage / 2, 4f);
                     Main.projectile[proj].ai[0] = 1;
                 }
             }
@@ -224,32 +219,32 @@ namespace NewDawn.NPCs.PreTrio
         {
             //Background
             if (Counter % 15 == 0)
-                BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Flame"), NPC.Center + new Vector2(-NPC.width / 4 + Main.rand.Next(NPC.width / 2), 20 - NPC.height / 4 + Main.rand.Next(NPC.height / 3)), Vector2.Zero, 7));
+                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), NPC.Center + new Vector2((-NPC.width / 4) + Main.rand.Next(NPC.width / 2), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 3)), Vector2.Zero, 7));
             if (Counter % 10 == 0)
             {
-                BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Blaze"), NPC.Center + new Vector2(12 + NPC.direction * 4 - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1))); BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Blaze"), NPC.Center + new Vector2(-30 + Main.rand.Next(60) + NPC.direction * 4, 20 - NPC.height / 4 + Main.rand.Next(NPC.height / 3)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
-                BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Blaze"), NPC.Center + new Vector2(12 + NPC.direction * 4 - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(-1 + 2 * (float)Main.rand.NextDouble(), -1 + 2 * (float)Main.rand.NextDouble()), 6, .95f, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
+                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Blaze"), NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1))); BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Blaze"), NPC.Center + new Vector2(-30 + Main.rand.Next(60) + (NPC.direction * 4), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 3)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
+                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Blaze"), NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(-1 + (2 * (float)Main.rand.NextDouble()), -1 + (2 * (float)Main.rand.NextDouble())), 6, .95f, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
             }
             if (Counter % 5 == 0)
-                BkgParticles.Add(new Particle(Mod.GetTexture("Particles/Spark"), NPC.Center + new Vector2(12 + NPC.direction * 4 - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2((float)(-1 + 2 * Main.rand.NextDouble()) / 4f, -1 - (float)Main.rand.NextDouble()), 8));
+                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Spark"), NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2((float)(-1 + (2 * Main.rand.NextDouble())) / 4f, -1 - (float)Main.rand.NextDouble()), 8));
 
             //Foreground
             if (Counter % 25 == 0)
-                Particles.Add(new Particle(Mod.GetTexture("Particles/Flame"), NPC.Center + new Vector2(-NPC.width / 2 + Main.rand.Next(NPC.width), 20 - NPC.height / 4 + Main.rand.Next(NPC.height / 2)), Vector2.Zero, 7));
+                Particles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), NPC.Center + new Vector2((-NPC.width / 2) + Main.rand.Next(NPC.width), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 2)), Vector2.Zero, 7));
         }
 
         private void HealthCheck()
         {
-            if(NPC.life <= (int)(HEART_HP * NPC.lifeMax) && Main.expertMode)
+            if (NPC.life <= (int)(HEART_HP * NPC.lifeMax) && Main.expertMode)
             {
-                if (Music != Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/RagnarHeart"))
+                if (Music != global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/RagnarHeart"))
                     HeartChange();
             }
         }
 
         private void HeartChange()
         {
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/RagnarHeart");
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/RagnarHeart");
         }
 
         private void MoveTowards(Vector2 targetPos, float maxVel = 16f)
@@ -311,7 +306,7 @@ namespace NewDawn.NPCs.PreTrio
         {
             var distance = ang2 - ang1;
             if (Math.Abs(distance) > Math.PI)
-                return (-Math.Sign(distance) * (2 * (float)Math.PI - Math.Abs(distance)));
+                return -Math.Sign(distance) * ((2 * (float)Math.PI) - Math.Abs(distance));
             return distance;
         }
 
@@ -352,15 +347,15 @@ namespace NewDawn.NPCs.PreTrio
             ParticleManager.DrawParticles(spriteBatch, Color.White, ref BkgParticles);
 
             //Draw Heart
-            Rectangle rect = new Rectangle(0, ((int)Math.Floor(Counter / 4.0) % 8) * Heart.Height / 8, Heart.Width, Heart.Height / 8);
-            spriteBatch.Draw(Heart, NPC.Center - Main.screenPosition + new Vector2( -28 + NPC.direction * 4, -10), rect, Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0f);
+            Rectangle rect = new Rectangle(0, (int)Math.Floor(Counter / 4.0) % 8 * Heart.Height / 8, Heart.Width, Heart.Height / 8);
+            spriteBatch.Draw(Heart, NPC.Center - Main.screenPosition + new Vector2(-28 + (NPC.direction * 4), -10), rect, Color.White, 0, Vector2.Zero, 1, SpriteEffects.None, 0f);
 
-            return (NPC.life > (int)(HEART_HP * NPC.lifeMax) && Main.expertMode);
+            return NPC.life > (int)(HEART_HP * NPC.lifeMax) && Main.expertMode;
         }
 
         public override void PostDraw(SpriteBatch spriteBatch, Vector2 screenPos, Color drawColor)
         {
-            base.PostDraw(spriteBatch, drawColor);
+            base.PostDraw(spriteBatch, screenPos, drawColor);
             ParticleManager.DrawParticles(spriteBatch, Color.White, ref Particles);
         }
 
@@ -370,16 +365,12 @@ namespace NewDawn.NPCs.PreTrio
         {
             if (NewDawnWorld.downedEtheria)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<MoltenEtheria>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<MoltenEtheria>(), 1);
             }
 
-            if (Main.expertMode)
-            {
-                NPC.DropBossBags();
-            }
             if (!Main.expertMode)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<DarkShard>(), Main.rand.Next(1, 3));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<DarkShard>(), Main.rand.Next(1, 3));
                 int obsidiumItem = 0;
                 int rand = Main.rand.Next(7);
                 switch (rand)
@@ -406,11 +397,11 @@ namespace NewDawn.NPCs.PreTrio
                         obsidiumItem = ModContent.ItemType<MagmaHeart>();
                         break;
                 }
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, obsidiumItem, 1);
-                if(Main.rand.Next(4) == 0)
-                    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<BlackIce>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, obsidiumItem, 1);
+                if (Main.rand.Next(4) == 0)
+                    Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<BlackIce>(), 1);
                 if (Main.rand.Next(10) == 0)
-                    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<RagnarTrophy>(), 1);
+                    Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<RagnarTrophy>(), 1);
             }
             if (!NewDawnWorld.downedRagnar)
                 Main.NewText("Fury runs through the Obsidium Caverns.", 250, 150, 50);
@@ -419,7 +410,7 @@ namespace NewDawn.NPCs.PreTrio
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 188;
+            potionType = ItemID.HealingPotion;
         }
 
 

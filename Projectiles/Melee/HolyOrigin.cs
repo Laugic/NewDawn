@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -27,7 +28,7 @@ namespace NewDawn.Projectiles.Melee
             {
                 delay = 4;
                 if(Main.myPlayer == Projectile.owner)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position.X, Projectile.position.Y, 0, 48, ModContent.ProjectileType<HolyStrike>(), (int)(Projectile.damage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Projectile.position.X, Projectile.position.Y), new Vector2(0, 48), ModContent.ProjectileType<HolyStrike>(), (int)(Projectile.damage), 3, Main.myPlayer);
             }
         }
 	}

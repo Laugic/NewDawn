@@ -3,10 +3,8 @@ using NewDawn.Items.Equipables;
 using NewDawn.Structures;
 using NewDawn.Tiles;
 using System;
-using NewDawn.Items.Materials;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn
@@ -43,19 +41,19 @@ namespace NewDawn
                     curThicc += growth;
                 if (Main.rand.NextDouble() < wiggle * 2)
                     curThicc -= growth * 2;
-                if(curThicc > length * 2 - i && !genBranch && branches > 0)
+                if (curThicc > (length * 2) - i && !genBranch && branches > 0)
                 {
-                    GenBranches(branches, x, y, direction - Math.PI / 3 + Main.rand.NextDouble() * Math.PI * .667, curve * (Main.rand.Next(2) * 2 - 1) / 2, jerk, growth, wiggle, length / 2, Math.Max(2, thiccness - 2), curThicc, tile);
+                    GenBranches(branches, x, y, direction - (Math.PI / 3) + (Main.rand.NextDouble() * Math.PI * .667), curve * ((Main.rand.Next(2) * 2) - 1) / 2, jerk, growth, wiggle, length / 2, Math.Max(2, thiccness - 2), curThicc, tile);
                     genBranch = true;
                 }
-                curThicc = Math.Min(curThicc, length * 2 - i);
+                curThicc = Math.Min(curThicc, (length * 2) - i);
             }
         }
 
         private void GenBranches(int branches, double x, double y, double direction, double curve, double jerk, double growth, double wiggle, int length, int thiccness, double curThicc, ushort tile)
         {
             for (int i = 0; i < branches; i++)
-                GenVein(x, y, direction - Math.PI / 3 + Main.rand.NextDouble() * Math.PI * .667, curve * (Main.rand.Next(2) * 2 - 1) / 2, jerk, growth, wiggle, length / 2, Math.Max(2, thiccness - 2), curThicc, tile);
+                GenVein(x, y, direction - (Math.PI / 3) + (Main.rand.NextDouble() * Math.PI * .667), curve * ((Main.rand.Next(2) * 2) - 1) / 2, jerk, growth, wiggle, length / 2, Math.Max(2, thiccness - 2), curThicc, tile);
         }
 
         private void GenBumpyCircle(double x, double y, double radius, ushort tile)
@@ -86,9 +84,9 @@ namespace NewDawn
         {
             GenVein(x, y,
                     Math.PI * 2 * Main.rand.NextDouble(),
-                    (Main.rand.NextDouble() * Math.PI / length + .05) * (Main.rand.Next(2) * 2 - 1),
-                    (.975 + Main.rand.NextDouble() * .05),
-                    .5 + Main.rand.NextDouble() / 2,
+                    ((Main.rand.NextDouble() * Math.PI / length) + .05) * ((Main.rand.Next(2) * 2) - 1),
+                    .975 + (Main.rand.NextDouble() * .05),
+                    .5 + (Main.rand.NextDouble() / 2),
                     Main.rand.NextDouble() / 5,
                     length,
                     thiccness,
@@ -159,13 +157,13 @@ namespace NewDawn
             int sign = 1;
             if (i != 0)
                 sign = (int)(Math.Abs(i) / i);
-            if (Distance(xO + sign * 100 * sizeMult, yO - 150 * sizeMult, xO + i, yO + j) < 100 * sizeMult)
+            if (Distance(xO + (sign * 100 * sizeMult), yO - (150 * sizeMult), xO + i, yO + j) < 100 * sizeMult)
             {
                 PlaceTile(xO + i, yO + j, ModContent.TileType<Tiles.ObsidiumRock>(), Mod.Find<ModWall>("ObsidiumRockWall").Type);
             }
-            else if (Distance(xO + sign * 100 * sizeMult, yO - (int)(150 * sizeMult), xO + i, yO + j) < 100 * sizeMult + 6)
+            else if (Distance(xO + (sign * 100 * sizeMult), yO - (int)(150 * sizeMult), xO + i, yO + j) < (100 * sizeMult) + 6)
             {
-                if (Main.rand.Next(6) < 100 * sizeMult + 6 - Distance(xO + sign * 100 * sizeMult, yO - 150 * sizeMult, xO + i, yO + j))
+                if (Main.rand.Next(6) < (100 * sizeMult) + 6 - Distance(xO + (sign * 100 * sizeMult), yO - (150 * sizeMult), xO + i, yO + j))
                 {
                     PlaceTile(xO + i, yO + j, ModContent.TileType<Tiles.ObsidiumRock>());
                 }
@@ -174,13 +172,13 @@ namespace NewDawn
 
         private void GenerateCavernTopMid(int xO, int yO, int i, int j)
         {
-            if (Distance(xO + i, yO + j, xO, yO) < (int)(150 * sizeMult - (int)(j * 2 / 3)))
+            if (Distance(xO + i, yO + j, xO, yO) < (int)((150 * sizeMult) - (int)(j * 2 / 3)))
             {
                 PlaceTile(xO + i, yO + j, ModContent.TileType<Tiles.ObsidiumRock>(), Mod.Find<ModWall>("ObsidiumRockWall").Type);
             }
-            else if (Distance(xO + i, yO + j, xO, yO) < (int)(150 * sizeMult - (int)(j * 2 / 3)) + 6)
+            else if (Distance(xO + i, yO + j, xO, yO) < (int)((150 * sizeMult) - (int)(j * 2 / 3)) + 6)
             {
-                if (Main.rand.Next(6) < -Distance(xO + i, yO + j, xO, yO) + 6 + (int)(150 * sizeMult - (int)(j * 2 / 3)))
+                if (Main.rand.Next(6) < -Distance(xO + i, yO + j, xO, yO) + 6 + (int)((150 * sizeMult) - (int)(j * 2 / 3)))
                 {
                     PlaceTile(xO + i, yO + j, ModContent.TileType<Tiles.ObsidiumRock>());
                 }
@@ -189,13 +187,13 @@ namespace NewDawn
 
         private void GenerateCavernMid(int xO, int yO, int i, int j)
         {
-            if (Distance(xO + i, yO + j, xO, yO) < (int)(150 * sizeMult - .47 * j))
+            if (Distance(xO + i, yO + j, xO, yO) < (int)((150 * sizeMult) - (.47 * j)))
             {
                 PlaceTile(xO + i, yO + j, ModContent.TileType<Tiles.ObsidiumRock>(), Mod.Find<ModWall>("ObsidiumRockWall").Type);
             }
-            else if (Distance(xO + i, yO + j, xO, yO) < (int)(150 * sizeMult - .47 * j) + 6)
+            else if (Distance(xO + i, yO + j, xO, yO) < (int)((150 * sizeMult) - (.47 * j)) + 6)
             {
-                if (Main.rand.Next(6) < -Distance(xO + i, yO + j, xO, yO) + 6 + (int)(150 * sizeMult - .47 * j))
+                if (Main.rand.Next(6) < -Distance(xO + i, yO + j, xO, yO) + 6 + (int)((150 * sizeMult) - (.47 * j)))
                 {
                     PlaceTile(xO + i, yO + j, ModContent.TileType<Tiles.ObsidiumRock>());
                 }
@@ -242,7 +240,7 @@ namespace NewDawn
             GenerateCave(xO, yO, 100 * sizeMult, (ushort)TileID.BubblegumBlock, 9 * sizeMult, 15 * sizeMult, 3 * sizeMult);
             GenerateCave(xO, yO, 50 * sizeMult, (ushort)TileID.BubblegumBlock, 16, 25, 140 * sizeMult);
             GenerateCave(xO, yO, 50 * sizeMult, (ushort)TileID.BubblegumBlock, 25, 30, 25 * sizeMult);
-            
+
             for (int i = (int)(-250 * sizeMult); i <= (int)(250 * sizeMult); i++)
             {
                 for (int j = (int)(-325 * sizeMult); j <= (int)(325 * sizeMult); j++)
@@ -320,8 +318,8 @@ namespace NewDawn
         private void DecorationStructures(int xO, int yO)
         {
             int s = Main.rand.Next(8);
-            int structX = xO - 225 * sizeMult + Main.rand.Next(225 * sizeMult * 2);
-            int structY = yO - 275 * sizeMult + Main.rand.Next(275 * sizeMult / 2);
+            int structX = xO - (225 * sizeMult) + Main.rand.Next(225 * sizeMult * 2);
+            int structY = yO - (275 * sizeMult) + Main.rand.Next(275 * sizeMult / 2);
 
             for (int q = 0; q < 12 * sizeMult; q++)
             {
@@ -397,8 +395,8 @@ namespace NewDawn
 
         private void LootStructures(int xO, int yO)
         {
-            int structX = xO - 225 * sizeMult + Main.rand.Next(225 * sizeMult * 2);
-            int structY = yO - 275 * sizeMult + Main.rand.Next(275 * sizeMult / 2);
+            int structX = xO - (225 * sizeMult) + Main.rand.Next(225 * sizeMult * 2);
+            int structY = yO - (275 * sizeMult) + Main.rand.Next(275 * sizeMult / 2);
 
             for (int q = 0; q < 10 * sizeMult; q++)
             {
@@ -513,16 +511,16 @@ namespace NewDawn
             DryTheObsidium();
             GrowLavaGems();
         }
-        
+
         private void DryTheObsidium()
         {
-            for(int i = 0; i < Main.maxTilesX - 2; i++)
+            for (int i = 0; i < Main.maxTilesX - 2; i++)
             {
                 for (int j = 0; j < Main.maxTilesX - 2; j++)
                 {
-                    if(TileCheckSafe(i, j))
+                    if (TileCheckSafe(i, j))
                     {
-                        if(Main.tile[i,j].LiquidAmount > 0 && (Main.tile[i,j].LiquidType == LiquidID.Lava) == false && (Main.tile[i,j].WallType == (ushort)Mod.Find<ModWall>("ObsidiumRockWall").Type || Main.tile[i, j].WallType == WallID.Lavafall))
+                        if (Main.tile[i, j].LiquidAmount > 0 && Main.tile[i, j].LiquidType == LiquidID.Lava == false && (Main.tile[i, j].WallType == (ushort)Mod.Find<ModWall>("ObsidiumRockWall").Type || Main.tile[i, j].WallType == WallID.Lavafall))
                         {
                             Main.tile[i, j].LiquidAmount = 0;
                         }
@@ -541,12 +539,12 @@ namespace NewDawn
                     {
                         if ((Main.tile[i, j].WallType == Mod.Find<ModWall>("ObsidiumRockWall").Type || Main.tile[i, j].WallType == WallID.Lavafall) && Main.tile[i, j + 1].TileType == (ushort)ModContent.TileType<Tiles.ObsidiumRock>() && Main.tile[i, j].TileType == 0 && Main.tile[i, j].HasTile == false)
                         {
-                            if(Main.rand.Next(8) == 0)
+                            if (Main.rand.Next(8) == 0)
                             {
-                                WorldGen.PlaceTile(i, j, ModContent.TileType<LavaGem>(), true);
+                                WorldGen.PlaceTile(i, j, ModContent.TileType<Tiles.LavaGem>(), true);
                             }
                         }
-                        else if((Main.tile[i, j].WallType == Mod.Find<ModWall>("ObsidiumRockWall").Type || Main.tile[i, j].WallType == WallID.Lavafall) && Main.tile[i, j].TileType == (ushort)ModContent.TileType<Tiles.ObsidiumRock>())
+                        else if ((Main.tile[i, j].WallType == Mod.Find<ModWall>("ObsidiumRockWall").Type || Main.tile[i, j].WallType == WallID.Lavafall) && Main.tile[i, j].TileType == (ushort)ModContent.TileType<Tiles.ObsidiumRock>())
                         {
                             if (Main.rand.Next(3) == 0)
                             {

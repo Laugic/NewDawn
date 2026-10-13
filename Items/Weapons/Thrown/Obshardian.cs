@@ -47,7 +47,7 @@ namespace NewDawn.Items.Weapons.Thrown
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, velocity.X, velocity.Y, type, damage, knockback, Main.myPlayer);
+            int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), type, damage, knockback, Main.myPlayer);
             Main.projectile[id].ai[1] = modPlayer.ObsidiumHeart;
             return false;
         }

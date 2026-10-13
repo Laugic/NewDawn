@@ -54,6 +54,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 1)
             {
@@ -63,7 +64,7 @@ namespace NewDawn.Items.Weapons.Mystic
                     Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(10));
                     float scale = 1f - (Main.rand.NextFloat() * .3f);
                     perturbedSpeed = perturbedSpeed * scale;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<HermesDestruction>(), damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<HermesDestruction>(), damage, knockBack, player.whoAmI);
                 }
             }
             return true;
@@ -105,8 +106,7 @@ namespace NewDawn.Items.Weapons.Mystic
         public override void AddRecipes()
 		{
 			Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Wood, 12);
-            recipe.anyWood = true;
+            recipe.AddRecipeGroup(RecipeGroupID.Wood, 12);
             recipe.AddIngredient(ItemID.Feather, 4);
             recipe.AddIngredient(ItemID.FallenStar, 2);
             recipe.AddTile(16);

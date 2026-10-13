@@ -23,8 +23,8 @@ namespace NewDawn.Tiles
             Main.tileSpelunker[Type] = true;
             MineResist = 1f;
             MinPick = 20;
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<ZincOre>();
-            HitSound = 21;
+            RegisterItemDrop(ModContent.ItemType<ZincOre>());
+            HitSound = SoundID.Tink;
             DustType = 1;
             //soundStyle = 1;
         }

@@ -46,7 +46,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
             if (Main.rand.Next(16) != 0)
                 Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, (int)(mag * Math.Cos(theta)), (int)(mag * Math.Sin(theta)), ModContent.ProjectileType<ChlorysConjuration2>(), (int)(Projectile.damage / 1.2f), 3, Main.myPlayer);
             else
-                Item.NewItem(Projectile.Center, ModContent.ItemType<DryadSpore>());
+                Item.NewItem(Projectile.GetSource_Death(), Projectile.Center, ModContent.ItemType<DryadSpore>());
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

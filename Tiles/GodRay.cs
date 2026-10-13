@@ -18,7 +18,7 @@ namespace NewDawn.Tiles
             MineResist = .5f;
             MinPick = 0;
             DustType = 19;
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Placeable.GodRay>();
+            RegisterItemDrop(ModContent.ItemType<Items.Placeable.GodRay>());
         }
 
         public override void NumDust(int i, int j, bool fail, ref int num)

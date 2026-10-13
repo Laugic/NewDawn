@@ -158,7 +158,7 @@ namespace NewDawn.Projectiles.Special
             }
 
             if (projectile.type == ProjectileID.StardustGuardian || projectile.type == ProjectileID.StardustGuardianExplosion)
-                projectile.damage = (int)(2000 * Main.player[projectile.owner].GetDamage(DamageClass.Summon));
+                projectile.damage = (int)Main.player[projectile.owner].GetDamage(DamageClass.Summon).ApplyTo(2000f);
 
             int rand = Main.rand.Next(60);
             /*if (projectile.friendly && projectile.damage > 0)
@@ -272,7 +272,7 @@ namespace NewDawn.Projectiles.Special
 
         public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            InflictDebuffs(projectile, target, damage, knockback, crit);
+            InflictDebuffs(projectile, target, hit.Damage, hit.Knockback, hit.Crit);
         }
 
         private void InflictDebuffs(Projectile projectile, NPC target, int damage, float knockback, bool crit)
@@ -367,7 +367,7 @@ namespace NewDawn.Projectiles.Special
             {
                 target.AddBuff(ModContent.BuffType<TrueCurse>(), 5 * 60);
             }
-            base.OnHitPlayer(projectile, target, damage, crit);
+            base.OnHitPlayer(projectile, target, info);
         }
 
         public void Explode(Vector2 center, float range, int damage)

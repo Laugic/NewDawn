@@ -26,7 +26,7 @@ namespace NewDawn.Tiles.Furniture
             // name.SetDefault("Obsidium Workbench");
             AddMapEntry(new Color(200, 200, 200), name);
             DustType = ModContent.DustType<Magma>();
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.WorkBenches };
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
         }
@@ -38,7 +38,7 @@ namespace NewDawn.Tiles.Furniture
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<ObsidiumWorkbench>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 16, ModContent.ItemType<ObsidiumWorkbench>());
         }
     }
 }

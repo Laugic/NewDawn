@@ -39,6 +39,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 50f;
 
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
@@ -53,13 +54,13 @@ namespace NewDawn.Items.Weapons.Mystic
                     float theta = (float)Main.rand.NextDouble() * 3.14f / 6 + 3.14f * 255f / 180f;
                     theta += -modPlayer.OrionCharge / 24 * 3.14f / 6 + 2 * modPlayer.OrionCharge / 24 * (float)Main.rand.NextDouble() * 3.14f / 6;
                     float mag = 600 + Main.rand.Next(200 + 4 * modPlayer.OrionCharge);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), (int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)) - 32 - modPlayer.OrionCharge + Main.rand.Next(64 + 2 * modPlayer.OrionCharge), (int)(Main.MouseWorld.Y) + (int)(mag * Math.Sin(theta)) - 32 - modPlayer.OrionCharge + Main.rand.Next(64 + 2 * modPlayer.OrionCharge), -25 * (float)Math.Cos(theta), -25 * (float)Math.Sin(theta), ModContent.ProjectileType<OrionDestruction>(), damage, 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)) - 32 - modPlayer.OrionCharge + Main.rand.Next(64 + 2 * modPlayer.OrionCharge), (int)(Main.MouseWorld.Y) + (int)(mag * Math.Sin(theta)) - 32 - modPlayer.OrionCharge + Main.rand.Next(64 + 2 * modPlayer.OrionCharge)), new Vector2(-25 * (float)Math.Cos(theta), -25 * (float)Math.Sin(theta)), ModContent.ProjectileType<OrionDestruction>(), damage, 3, Main.myPlayer);
                 }
             }
             if(modPlayer.MysticMode == 2)
             {
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.position.X, player.position.Y - 600, -4, 0, ModContent.ProjectileType<OrionIllusionSpawn>(), damage, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.position.X, player.position.Y - 600, 4, 0, ModContent.ProjectileType<OrionIllusionSpawn>(), damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(player.position.X, player.position.Y - 600), new Vector2(-4, 0), ModContent.ProjectileType<OrionIllusionSpawn>(), damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(player.position.X, player.position.Y - 600), new Vector2(4, 0), ModContent.ProjectileType<OrionIllusionSpawn>(), damage, 3, Main.myPlayer);
             }
             if (modPlayer.MysticMode == 3)
             {
@@ -75,7 +76,7 @@ namespace NewDawn.Items.Weapons.Mystic
                 }
                 if(!projExists)
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), (int)(Main.MouseWorld.X), (int)(Main.MouseWorld.Y), 0, 0, ModContent.ProjectileType<OrionConjuration>(), damage, 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)(Main.MouseWorld.X), (int)(Main.MouseWorld.Y)), new Vector2(0, 0), ModContent.ProjectileType<OrionConjuration>(), damage, 3, Main.myPlayer);
                 }
             }
             return true;

@@ -66,7 +66,7 @@ namespace NewDawn.NPCs.Obsidium
                     _attack = false;
                     for (int i = 0; i < 8; i++)
                     {
-                        int n = NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<TitanBlast>());
+                        int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<TitanBlast>());
                         Main.npc[n].ai[0] = NPC.whoAmI;
                         Main.npc[n].ai[1] = i;
                     }
@@ -153,7 +153,7 @@ namespace NewDawn.NPCs.Obsidium
 
         public override void OnKill()
         {
-            Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<MagmaticCluster>());
+            Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<MagmaticCluster>());
         }
     }
 }

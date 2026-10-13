@@ -71,7 +71,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
         {
             if(target.noGravity == false)
                 target.velocity.Y = -12f;
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.OnHitNPC(target, hit, damageDone);
         }
     }
 }

@@ -45,8 +45,7 @@ namespace NewDawn.NPCs.PreTrio
             NPC.lavaImmune = true;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/DuneSharkron");
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<DuneSharkronTreasureBag>();
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/DuneSharkron");
             NPC.scale = 1.25f;
             PrevAIPhase = AIPhase = 0;
             Angry = false;
@@ -342,7 +341,7 @@ namespace NewDawn.NPCs.PreTrio
 
         public override void ModifyHitByProjectile(Projectile projectile, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitByProjectile(projectile, ref damage, ref knockback, ref crit, ref hitDirection);
+            base.ModifyHitByProjectile(projectile, ref modifiers);
         }
 
         public override void FindFrame(int frameHeight)
@@ -361,27 +360,25 @@ namespace NewDawn.NPCs.PreTrio
         public override void OnKill()
         {
             if (NewDawnWorld.downedEtheria)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Etheramind>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Etheramind>(), 1);
 
             if (!Main.expertMode)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<AncientShard>(), Main.rand.Next(1, 3));
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Crystilla>(), Main.rand.Next(4, 11));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<AncientShard>(), Main.rand.Next(1, 3));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Crystilla>(), Main.rand.Next(4, 11));
 
                 int ran = Main.rand.Next(1, 8);
-                if (ran == 1) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.SandstorminaBottle, 1);
-                if (ran == 2) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.FlyingCarpet, 1);
-                if (ran == 3) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.BandofRegeneration, 1);
-                if (ran == 4) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.MagicMirror, 1);
-                if (ran == 5) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.CloudinaBottle, 1);
-                if (ran == 6) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.HermesBoots, 1);
-                if (ran == 7) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.EnchantedBoomerang, 1);
+                if (ran == 1) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.SandstorminaBottle, 1);
+                if (ran == 2) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.FlyingCarpet, 1);
+                if (ran == 3) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.BandofRegeneration, 1);
+                if (ran == 4) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.MagicMirror, 1);
+                if (ran == 5) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.CloudinaBottle, 1);
+                if (ran == 6) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.HermesBoots, 1);
+                if (ran == 7) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.EnchantedBoomerang, 1);
             }
 
-            if (Main.expertMode)
-                NPC.DropBossBags();
             if(Main.rand.Next(10) == 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<DuneSharkronTrophy>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<DuneSharkronTrophy>(), 1);
 
             NewDawnWorld.downedDuneSharkron = true;
         }
@@ -389,7 +386,7 @@ namespace NewDawn.NPCs.PreTrio
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 188;
+            potionType = ItemID.HealingPotion;
         }
     }
 }

@@ -1,6 +1,7 @@
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
+using NewDawn.Items.Loot;
 
 namespace NewDawn.Items.Weapons.Thrown
 {

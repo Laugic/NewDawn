@@ -36,7 +36,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (Main.myPlayer == Projectile.owner)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, 0, 0, ModContent.ProjectileType<HadesGeyser>(), damage, 3f, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, 0, 0, ModContent.ProjectileType<HadesGeyser>(), hit.Damage, 3f, Main.myPlayer);
             Projectile.Kill();
         }
     }

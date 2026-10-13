@@ -20,7 +20,7 @@ namespace NewDawn.Tiles
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Mineral Enchanter");
             AddMapEntry(new Color(150, 150, 150), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             //adjTiles = new int[] { TileID.WorkBenches };
         }
 
@@ -31,7 +31,7 @@ namespace NewDawn.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Placeable.MineralEnchanter>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Placeable.MineralEnchanter>());
         }
     }
 }

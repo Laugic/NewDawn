@@ -29,8 +29,8 @@ namespace NewDawn.Projectiles.Tools
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
             float mag = 38f;
-            Player player = Main.player[Projectile.owner];
-            player.velocity = mag * player.DirectionTo(Main.MouseWorld);
+            Player owner = Main.player[Projectile.owner];
+            owner.velocity = mag * owner.DirectionTo(Main.MouseWorld);
         }
     }
 }

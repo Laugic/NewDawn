@@ -104,11 +104,11 @@ namespace NewDawn.Items.Weapons.Range
 
             float scale = 1f - (Main.rand.NextFloat() * .2f);
             perturbedSpeed = perturbedSpeed * scale;
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<BrassArrowProjectile>(), damage, knockback, player.whoAmI);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<BrassArrowProjectile>(), damage, knockback, player.whoAmI);
             
             if(type == ProjectileID.WoodenArrowFriendly)
             {
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<BrassArrowProjectile>(), damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), ModContent.ProjectileType<BrassArrowProjectile>(), damage, knockback, player.whoAmI);
                 return false;
             }
             return true;

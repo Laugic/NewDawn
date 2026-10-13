@@ -278,7 +278,7 @@ namespace NewDawn.Projectiles.Summon
                             }
                             shootVel.Normalize();
                             shootVel *= shootSpeed;
-                            int proj = Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, 0, 6, shoot, Projectile.damage, Projectile.knockback, Main.myPlayer, 0f, 0f);
+                            int proj = Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, 0, 6, shoot, Projectile.damage, Projectile.knockBack, Main.myPlayer, 0f, 0f);
                             Main.projectile[proj].timeLeft = 300;
                             Main.projectile[proj].netUpdate = true;
                             Projectile.netUpdate = true;

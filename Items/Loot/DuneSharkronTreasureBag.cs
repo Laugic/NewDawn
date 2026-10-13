@@ -1,5 +1,9 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.ModLoader;
+using NewDawn.Items.Materials;
+using NewDawn.Items.Loot;
 
 namespace NewDawn.Items.Loot
 {
@@ -29,22 +33,21 @@ namespace NewDawn.Items.Loot
         }
 
 
-        //TODO: Add loot to this bag
-        //public override void ModifyItemLoot(ItemLoot itemLoot)
-        //{
-        //    itemLoot.Add(ModContent.ItemType<AncientShard>(), 2, 4);
-        //    itemLoot.Add(ModContent.ItemType<Crystilla>(), 8, 15);
-        //    itemLoot.Add(ModContent.ItemType<Pyramind>(), 1);
-        //    int ran = Main.rand.Next(1, 8);
-        //    if (ran == 1) itemLoot.Add(ItemID.SandstorminaBottle, 1);
-        //    if (ran == 2) itemLoot.Add(ItemID.FlyingCarpet, 1);
-        //    if (ran == 3) itemLoot.Add(ItemID.BandofRegeneration, 1);
-        //    if (ran == 4) itemLoot.Add(ItemID.MagicMirror, 1);
-        //    if (ran == 5) itemLoot.Add(ItemID.CloudinaBottle, 1);
-        //    if (ran == 6) itemLoot.Add(ItemID.HermesBoots, 1);
-        //    if (ran == 7) itemLoot.Add(ItemID.EnchantedBoomerang, 1);
-
-        //    itemLoot.Add(188, 10, 15);
-        //}
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AncientShard>(), 1, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Crystilla>(), 1, 8, 14));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<Pyramind>()));
+            itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(
+                1,
+                ItemID.SandstorminaBottle,
+                ItemID.FlyingCarpet,
+                ItemID.BandofRegeneration,
+                ItemID.MagicMirror,
+                ItemID.CloudinaBottle,
+                ItemID.HermesBoots,
+                ItemID.EnchantedBoomerang));
+            itemLoot.Add(ItemDropRule.Common(ItemID.HealingPotion, 1, 10, 14));
+        }
     }
 }

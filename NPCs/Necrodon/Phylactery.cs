@@ -41,8 +41,7 @@ namespace NewDawn.NPCs.Necrodon
             NPC.noTileCollide = true;
             NPC.knockBackResist = -1;
             NPC.ai[2] = 0;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Necrodungeon");
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<DuneSharkronTreasureBag>();
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Necrodungeon");
             counter = -8;
         }
 

@@ -1,12 +1,10 @@
-﻿using NewDawn.Dusts;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Dusts;
 using System;
 using Terraria;
 using Terraria.GameContent;
-using Terraria.ID;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.NPCs.PreTrio
 {
@@ -27,13 +25,13 @@ namespace NewDawn.NPCs.PreTrio
 
             if (!Main.dedServ)
             {
-                Fireball = Mod.GetTexture(this.GetType().GetRootPath() + "/RagnarFireballLayers");
+                Fireball = NewDawn.RequestTexture(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/RagnarFireballLayers");
             }
         }
 
         public override void AI()
         {
-            if(Projectile.ai[0] == 1) // Gravity
+            if (Projectile.ai[0] == 1) // Gravity
                 Projectile.velocity.Y += .2f;
             if (Projectile.ai[0] == 2)
                 SlowAI();
@@ -60,7 +58,7 @@ namespace NewDawn.NPCs.PreTrio
 
                 npc = (int)Projectile.ai[1];
 
-                if(Main.npc[npc].type == ModContent.NPCType<Ragnar>() && Main.player[Main.npc[npc].target].active && Main.player[Main.npc[npc].target].statLife > 0)
+                if (Main.npc[npc].type == ModContent.NPCType<Ragnar>() && Main.player[Main.npc[npc].target].active && Main.player[Main.npc[npc].target].statLife > 0)
                 {
                     Projectile.velocity = Projectile.position - Main.player[Main.npc[npc].target].position;
                     Projectile.velocity.Normalize();
@@ -88,9 +86,9 @@ namespace NewDawn.NPCs.PreTrio
                     spriteFX = SpriteEffects.FlipHorizontally;
                     sign = -1;
                 }
-                float rot = Projectile.rotation * (i / 2 + 1) / 2 * sign;
-                spriteBatch.Draw(Fireball, Projectile.position - Main.screenPosition + rotOffset + drawPos * (i%2==0?2:1), rect, Color.White, (i==0? imageRot:rot), rotOffset, Projectile.scale, spriteFX, 0f);
-                if(i % 2 == 0)
+                float rot = Projectile.rotation * ((i / 2) + 1) / 2 * sign;
+                Main.spriteBatch.Draw(Fireball, Projectile.position - Main.screenPosition + rotOffset + (drawPos * (i % 2 == 0 ? 2 : 1)), rect, Color.White, i == 0 ? imageRot : rot, rotOffset, Projectile.scale, spriteFX, 0f);
+                if (i % 2 == 0)
                     drawPos += drawMult;
                 if (i == 0)
                     i++;

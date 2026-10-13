@@ -35,7 +35,7 @@ namespace NewDawn.Projectiles.Ranged
             else
                 Projectile.velocity.Y *= -1;
             Projectile.velocity *= 0.8f;
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            base.ModifyHitNPC(target, ref modifiers);
         }
 
         public override bool OnTileCollide(Vector2 oldVelocity)

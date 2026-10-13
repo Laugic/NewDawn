@@ -64,7 +64,7 @@ namespace NewDawn.Items.Weapons.Range
 
             perturbedSpeed = perturbedSpeed * 1.33f;
             if (Main.rand.Next(3) == 0)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ProjectileID.CrystalBullet, (int)(damage * 1.25), knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ProjectileID.CrystalBullet, (int)(damage * 1.25), knockback, player.whoAmI);
 
             return true;
         }

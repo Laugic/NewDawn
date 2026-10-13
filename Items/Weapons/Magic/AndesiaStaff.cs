@@ -63,8 +63,8 @@ namespace NewDawn.Items.Weapons.Magic
         {
             if (Main.player[Main.myPlayer] == player)
             {
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), (int)Main.MouseWorld.X - 3 + Main.rand.Next(0, 6), (int)Main.MouseWorld.Y - 360 - 3 + Main.rand.Next(0, 6), 0, 0, ModContent.ProjectileType<Dioritite>(), (int)Item.damage, 3, Main.myPlayer);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), (int)Main.MouseWorld.X - 3 + Main.rand.Next(0, 6), (int)Main.MouseWorld.Y + 360 - 3 + Main.rand.Next(0, 6), 0, 0, ModContent.ProjectileType<Andesimite>(), (int)Item.damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)Main.MouseWorld.X - 3 + Main.rand.Next(0, 6), (int)Main.MouseWorld.Y - 360 - 3 + Main.rand.Next(0, 6)), new Vector2(0, 0), ModContent.ProjectileType<Dioritite>(), (int)Item.damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)Main.MouseWorld.X - 3 + Main.rand.Next(0, 6), (int)Main.MouseWorld.Y + 360 - 3 + Main.rand.Next(0, 6)), new Vector2(0, 0), ModContent.ProjectileType<Andesimite>(), (int)Item.damage, 3, Main.myPlayer);
             }
             return true;
         }

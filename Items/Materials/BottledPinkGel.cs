@@ -30,8 +30,8 @@ namespace NewDawn.Items.Materials
 
         public override void RightClick(Player player)
         {
-            player.QuickSpawnItem(new EntitySource_ItemUse(player), ItemID.Pinkgel, Main.rand.Next(2, 5));
-            player.QuickSpawnItem(new EntitySource_ItemUse(player), ItemID.Bottle, 1);
+            player.QuickSpawnItem(new EntitySource_ItemUse(player, Item, "RightClick"), ItemID.PinkGel, Main.rand.Next(2, 5));
+            player.QuickSpawnItem(new EntitySource_ItemUse(player, Item, "RightClick"), ItemID.Bottle, 1);
         }
 
     }

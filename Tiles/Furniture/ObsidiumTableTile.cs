@@ -22,7 +22,7 @@ namespace NewDawn.Tiles.Furniture
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Obsidium Table");
             AddMapEntry(new Color(220, 200, 160), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Tables };
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTable);
         }
@@ -34,7 +34,7 @@ namespace NewDawn.Tiles.Furniture
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 48, ModContent.ItemType<ObsidiumTable>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 48, ModContent.ItemType<ObsidiumTable>());
         }
     }
 }

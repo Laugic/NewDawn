@@ -20,13 +20,13 @@ namespace NewDawn.Tiles
             AddMapEntry(new Color(150, 50, 50), name);
             MineResist = 1f;
             MinPick = 60;
-            //ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<ObsidiumOre>();
+            //RegisterItemDrop(ModContent.ItemType<ObsidiumOre>());
             DustType = DustID.Stone;
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/AmelderaOreTile");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/AmelderaOreTile");
             }
         }
 

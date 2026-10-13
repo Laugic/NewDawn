@@ -43,8 +43,7 @@ namespace NewDawn.Items.Weapons.Summon
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            add += modPlayer.ObsidiumHeart * .1f;
-            base.ModifyWeaponDamage(player, ref add, ref mult, ref flat);
+            damage += modPlayer.ObsidiumHeart * .1f;
         }
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
@@ -52,7 +51,7 @@ namespace NewDawn.Items.Weapons.Summon
             int i = Main.myPlayer;
             float num72 = Item.shootSpeed;
             int newDamage = damage;
-            float num74 = knockBack;
+            float num74 = knockback;
             num74 = player.GetWeaponKnockback(Item, num74);
             player.itemTime = Item.useTime;
             Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
@@ -80,7 +79,7 @@ namespace NewDawn.Items.Weapons.Summon
             num79 = 0f;
             vector2.X = (float)Main.mouseX + Main.screenPosition.X;
             vector2.Y = (float)Main.mouseY + Main.screenPosition.Y;
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), vector2.X, vector2.Y, num78, num79, ModContent.ProjectileType<MagmaticCoreProjectile>(), newDamage, num74, i, 0f, 0f);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(vector2.X, vector2.Y), new Vector2(num78, num79), ModContent.ProjectileType<MagmaticCoreProjectile>(), newDamage, num74, i, 0f, 0f);
             return player.altFunctionUse != 2;
         }
 
@@ -93,7 +92,7 @@ namespace NewDawn.Items.Weapons.Summon
         {
             if (player.altFunctionUse == 2)
             {
-                player.MinionNPCTargetAim();
+                player.MinionNPCTargetAim(true);
             }
             return base.UseItem(player);
         }

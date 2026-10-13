@@ -74,7 +74,7 @@ namespace NewDawn.UI.NewAttempts.Mystic
 
         private Asset<Texture2D> GetTexture(string textureName)
         {
-            return ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/" + textureName);
+            return NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + textureName);
         }
 
         public override void Draw(SpriteBatch spriteBatch)

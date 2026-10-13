@@ -47,7 +47,7 @@ namespace NewDawn.Items.Weapons.Melee
                                                                                              // If you want to randomize the speed to stagger the projectiles
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = perturbedSpeed * scale;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, 118, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), 118, damage, knockback, player.whoAmI);
             }
 
 

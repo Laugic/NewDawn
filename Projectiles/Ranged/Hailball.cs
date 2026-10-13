@@ -28,7 +28,7 @@ namespace NewDawn.Projectiles.Ranged
             {
                 Projectile.ai[1] = 0;
                 if (Projectile.ai[0] > 0 && Main.myPlayer == Projectile.owner)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Main.player[Projectile.owner].GetSource_FromAI(), Projectile.position, new Vector2(0, 4), (int)Projectile.ai[0], Projectile.damage, Projectile.knockback, Projectile.owner);
+                    Projectile.NewProjectile(Main.player[Projectile.owner].GetSource_FromAI(), Projectile.position, new Vector2(0, 4), (int)Projectile.ai[0], Projectile.damage, Projectile.knockBack, Projectile.owner);
             }
             var multiplier = Math.Min(300 - Projectile.timeLeft, 30) / 30f;
             Projectile.velocity.Y += .5f * multiplier;

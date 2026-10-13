@@ -170,12 +170,12 @@ namespace NewDawn.NPCs.Etherial.BossFights
 
         private void MirrorTeleport(NPC npc, bool burst)
         {
-            SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
             if (burst && Main.player[npc.target].statLife > 1)
             {
                 for (int i = 0; i < 8; i++)
                 {
-                    int N = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
+                    int N = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
                     Main.npc[N].ai[0] = npc.whoAmI;
                     Main.npc[N].ai[1] = i;
                 }

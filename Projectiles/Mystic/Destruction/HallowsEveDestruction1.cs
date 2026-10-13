@@ -36,11 +36,11 @@ namespace NewDawn.Projectiles.Mystic.Destruction
 				Color color = Projectile.GetAlpha(lightColor * 0.35f) * ((float)(Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
 				if (Projectile.velocity.X < 0f)
 				{
-					spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
+					Main.spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
 				}
 				else
 				{
-					spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.FlipHorizontally, 0f);
+					Main.spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.FlipHorizontally, 0f);
 				}
 			}
 			return true;

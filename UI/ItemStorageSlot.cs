@@ -1,25 +1,17 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Abstracts;
+using NewDawn.Players;
+using System.Collections.Generic;
 using Terraria;
+using Terraria.Audio;
+using Terraria.GameContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.ModLoader;
 using Terraria.UI;
-using Terraria.GameContent;
-using System.Collections.Generic;
-using NewDawn.Items;
-using System.Linq;
-using Microsoft.Xna.Framework.Graphics.PackedVector;
-using Terraria.ID;
-using static Terraria.ModLoader.PlayerDrawLayer;
-using NewDawn.Players;
-using Terraria.Audio;
-using NewDawn.Items.Alchemistry;
-using NewDawn.Abstracts;
-using System.Drawing;
-using Color = Microsoft.Xna.Framework.Color;
 using Terraria.UI.Chat;
+using Color = Microsoft.Xna.Framework.Color;
 using Rectangle = Microsoft.Xna.Framework.Rectangle;
-using System.Collections;
 
 namespace NewDawn.UI
 {
@@ -80,7 +72,7 @@ namespace NewDawn.UI
                         hoverItem.knockBack *= kbMod;
 
                     if (hoverItem.DamageType == DamageClass.Ranged && Main.LocalPlayer.shroomiteStealth)
-                        hoverItem.knockBack *= 1f + (1f - Main.LocalPlayer.stealth) * 0.5f;
+                        hoverItem.knockBack *= 1f + ((1f - Main.LocalPlayer.stealth) * 0.5f);
 
                     int maxVal = 30;
                     int numLines = 1;
@@ -95,7 +87,7 @@ namespace NewDawn.UI
 
                     string[] array = new string[maxVal];
                     int pref = 0;
-                    Main.MouseText_DrawItemTooltip_GetLinesInfo(hoverItem, ref yoyoLogo, ref researchLine, knockback, ref numLines, text, modifier, badModifier, array, out pref);
+                    Main.MouseText_DrawItemTooltip_GetLinesInfo(hoverItem, ref yoyoLogo, ref researchLine, 0, ref numLines, text, modifier, badModifier, array, out pref);
                     float num3 = (float)(int)Main.mouseTextColor / 255f;
                     float num4 = num3;
                     int alpha = Main.mouseTextColor;
@@ -161,7 +153,7 @@ namespace NewDawn.UI
                         num3 = MathHelper.Lerp(num3, 1f, 1f);
                         int num16 = 14;
                         int num17 = 9;
-                        Utils.DrawInvBG(spriteBatch, new Rectangle(X - num16, Y - num17, (int)zero.X + num16 * 2, (int)zero.Y + num17 + num17 / 2), new Color(23, 25, 81, 255) * 0.925f);
+                        Utils.DrawInvBG(spriteBatch, new Rectangle(X - num16, Y - num17, (int)zero.X + (num16 * 2), (int)zero.Y + num17 + (num17 / 2)), new Color(23, 25, 81, 255) * 0.925f);
                     }
 
                     bool flag = ItemLoader.PreDrawTooltip(hoverItem, list.AsReadOnly(), ref X, ref Y);
@@ -179,46 +171,46 @@ namespace NewDawn.UI
                             rarityColor = new Color((byte)(130f * num4), (byte)(130f * num4), (byte)(130f * num4), alpha);
 
                         if (rare == 1)
-                        rarityColor = new Color((byte)(150f * num4), (byte)(150f * num4), (byte)(255f * num4), alpha);
+                            rarityColor = new Color((byte)(150f * num4), (byte)(150f * num4), (byte)(255f * num4), alpha);
 
                         if (rare == 2)
-                        rarityColor = new Color((byte)(150f * num4), (byte)(255f * num4), (byte)(150f * num4), alpha);
+                            rarityColor = new Color((byte)(150f * num4), (byte)(255f * num4), (byte)(150f * num4), alpha);
 
                         if (rare == 3)
-                        rarityColor = new Color((byte)(255f * num4), (byte)(200f * num4), (byte)(150f * num4), alpha);
+                            rarityColor = new Color((byte)(255f * num4), (byte)(200f * num4), (byte)(150f * num4), alpha);
 
                         if (rare == 4)
-                        rarityColor = new Color((byte)(255f * num4), (byte)(150f * num4), (byte)(150f * num4), alpha);
+                            rarityColor = new Color((byte)(255f * num4), (byte)(150f * num4), (byte)(150f * num4), alpha);
 
                         if (rare == 5)
-                        rarityColor = new Color((byte)(255f * num4), (byte)(150f * num4), (byte)(255f * num4), alpha);
+                            rarityColor = new Color((byte)(255f * num4), (byte)(150f * num4), (byte)(255f * num4), alpha);
 
                         if (rare == 6)
-                        rarityColor = new Color((byte)(210f * num4), (byte)(160f * num4), (byte)(255f * num4), alpha);
+                            rarityColor = new Color((byte)(210f * num4), (byte)(160f * num4), (byte)(255f * num4), alpha);
 
                         if (rare == 7)
-                        rarityColor = new Color((byte)(150f * num4), (byte)(255f * num4), (byte)(10f * num4), alpha);
+                            rarityColor = new Color((byte)(150f * num4), (byte)(255f * num4), (byte)(10f * num4), alpha);
 
                         if (rare == 8)
-                        rarityColor = new Color((byte)(255f * num4), (byte)(255f * num4), (byte)(10f * num4), alpha);
+                            rarityColor = new Color((byte)(255f * num4), (byte)(255f * num4), (byte)(10f * num4), alpha);
 
                         if (rare == 9)
-                        rarityColor = new Color((byte)(5f * num4), (byte)(200f * num4), (byte)(255f * num4), alpha);
+                            rarityColor = new Color((byte)(5f * num4), (byte)(200f * num4), (byte)(255f * num4), alpha);
 
                         if (rare == 10)
-                        rarityColor = new Color((byte)(255f * num4), (byte)(40f * num4), (byte)(100f * num4), alpha);
+                            rarityColor = new Color((byte)(255f * num4), (byte)(40f * num4), (byte)(100f * num4), alpha);
 
                         if (rare == 11)
-                        rarityColor = new Color((byte)(180f * num4), (byte)(40f * num4), (byte)(255f * num4), alpha);
+                            rarityColor = new Color((byte)(180f * num4), (byte)(40f * num4), (byte)(255f * num4), alpha);
 
                         if (rare > 11)
                             rarityColor = RarityLoader.GetRarity(rare).RarityColor * num4;
 
                         if (hoverItem.expert || rare == -12)
-                        rarityColor = new Color((byte)((float)Main.DiscoR * num4), (byte)((float)Main.DiscoG * num4), (byte)((float)Main.DiscoB * num4), alpha);
+                            rarityColor = new Color((byte)((float)Main.DiscoR * num4), (byte)((float)Main.DiscoG * num4), (byte)((float)Main.DiscoB * num4), alpha);
 
                         if (hoverItem.master || rare == -13)
-                        rarityColor = new Color((byte)(255f * num4), (byte)(Main.masterColor * 200f * num4), 0, alpha);
+                            rarityColor = new Color((byte)(255f * num4), (byte)(Main.masterColor * 200f * num4), 0, alpha);
 
                         Color drawColor = Color.White;
                         if (l == 0)
@@ -243,13 +235,13 @@ namespace NewDawn.UI
 
         public override void LeftMouseDown(UIMouseEvent evt)
         {
-            if (IsMouseHovering && Main.LocalPlayer != null  && Main.LocalPlayer.whoAmI == Main.myPlayer && CheckSpecialFilters())
+            if (IsMouseHovering && Main.LocalPlayer != null && Main.LocalPlayer.whoAmI == Main.myPlayer && CheckSpecialFilters())
             {
-                if(MaxStackOne())
+                if (MaxStackOne())
                 {
-                    if(GetItem().stack == 0)
+                    if (GetItem().stack == 0)
                     {
-                        if(Main.mouseItem.stack == 1)
+                        if (Main.mouseItem.stack == 1)
                         {
                             Utils.Swap(ref GetItem(), ref Main.mouseItem);
 
@@ -269,7 +261,7 @@ namespace NewDawn.UI
                     }
                     else
                     {
-                        if(Main.mouseItem.stack <= 1)
+                        if (Main.mouseItem.stack <= 1)
                         {
                             Utils.Swap(ref GetItem(), ref Main.mouseItem);
                             if (Main.myPlayer == Main.LocalPlayer.whoAmI)

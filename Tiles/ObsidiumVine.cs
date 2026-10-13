@@ -1,9 +1,8 @@
-using NewDawn.Dusts;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Dusts;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.Tiles
 {
@@ -18,13 +17,13 @@ namespace NewDawn.Tiles
             Main.tileLighted[Type] = true;
             LocalizedText name = CreateMapEntryName();
             //AddMapEntry(new Color(150, 0, 0), name);
-            HitSound = 6;
+            HitSound = SoundID.Dig;
             DustType = ModContent.DustType<Magma>();
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/AmelderaVineTile");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/AmelderaVineTile");
             }
         }
 
@@ -33,7 +32,7 @@ namespace NewDawn.Tiles
             num = fail ? 1 : 3;
         }
 
-        
+
         public override void SetSpriteEffects(int i, int j, ref SpriteEffects spriteEffects)
         {
             if ((j % 2 == 0 || i % 2 == 0) && !(j % 2 == 0 && i % 2 == 0))
@@ -59,7 +58,7 @@ namespace NewDawn.Tiles
 
         public override void KillTile(int i, int j, ref bool fail, ref bool effectOnly, ref bool noItem)
         {
-            if(j < Main.maxTilesY - 4)
+            if (j < Main.maxTilesY - 4)
             {
                 if (Main.tile[i, j + 1].TileType == ModContent.TileType<ObsidiumVine>())
                     Terraria.WorldGen.KillTile(i, j + 1);

@@ -59,7 +59,7 @@ namespace NewDawn.NPCs.Bosses
                 int debuff = 144;
                 if (debuff >= 0)
                 {
-                    player.AddBuff(debuff, 90, true);
+                    target.AddBuff(debuff, 90, true);
                 }
             }
         }

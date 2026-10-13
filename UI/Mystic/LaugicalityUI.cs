@@ -82,24 +82,24 @@ namespace NewDawn.UI
 
         public void Load()
         {
-            LuxBGTexture = NewDawn.Instance.GetTexture("UI/LuxBG");
-            LuxBarTexture = NewDawn.Instance.GetTexture("UI/LuxBar");
-            LuxFGTexture = NewDawn.Instance.GetTexture("UI/LuxFG");
-            MundusBGTexture = NewDawn.Instance.GetTexture("UI/MundusBG");
-            MundusBarTexture = NewDawn.Instance.GetTexture("UI/MundusBar");
-            MundusFGTexture = NewDawn.Instance.GetTexture("UI/MundusFG");
-            VisBGTexture = NewDawn.Instance.GetTexture("UI/VisBG");
-            VisBarTexture = NewDawn.Instance.GetTexture("UI/VisBar");
-            VisFGTexture = NewDawn.Instance.GetTexture("UI/VisFG");
-            OverflowBGTexture = NewDawn.Instance.GetTexture("UI/OverflowBG");
-            OverflowBarTexture = NewDawn.Instance.GetTexture("UI/OverflowBar");
-            OverflowFGTexture = NewDawn.Instance.GetTexture("UI/OverflowFG");
-            LuxFGOverflowTexture = NewDawn.Instance.GetTexture("UI/LuxFGOverflow");
-            VisFGOverflowTexture = NewDawn.Instance.GetTexture("UI/VisFGOverflow");
-            MundusOverflowTexture = NewDawn.Instance.GetTexture("UI/MundusOverflow");
-            MundusFGOverflowTexture = NewDawn.Instance.GetTexture("UI/MundusFGOverflow");
-            MysticBurstBGTexture = NewDawn.Instance.GetTexture("UI/MysticBurstBG");
-            MysticBurstBarTexture = NewDawn.Instance.GetTexture("UI/MysticBurstBar");
+            LuxBGTexture = NewDawn.RequestTexture("UI/Mystic/LuxBG");
+            LuxBarTexture = NewDawn.RequestTexture("UI/Mystic/LuxBar");
+            LuxFGTexture = NewDawn.RequestTexture("UI/Mystic/LuxFG");
+            MundusBGTexture = NewDawn.RequestTexture("UI/Mystic/MundusBG");
+            MundusBarTexture = NewDawn.RequestTexture("UI/Mystic/MundusBar");
+            MundusFGTexture = NewDawn.RequestTexture("UI/Mystic/MundusFG");
+            VisBGTexture = NewDawn.RequestTexture("UI/Mystic/VisBG");
+            VisBarTexture = NewDawn.RequestTexture("UI/Mystic/VisBar");
+            VisFGTexture = NewDawn.RequestTexture("UI/Mystic/VisFG");
+            OverflowBGTexture = NewDawn.RequestTexture("UI/Mystic/OverflowBG");
+            OverflowBarTexture = NewDawn.RequestTexture("UI/Mystic/OverflowBar");
+            OverflowFGTexture = NewDawn.RequestTexture("UI/Mystic/OverflowFG");
+            LuxFGOverflowTexture = NewDawn.RequestTexture("UI/Mystic/LuxFGOverflow");
+            VisFGOverflowTexture = NewDawn.RequestTexture("UI/Mystic/VisFGOverflow");
+            MundusOverflowTexture = NewDawn.RequestTexture("UI/Mystic/MundusOverflow");
+            MundusFGOverflowTexture = NewDawn.RequestTexture("UI/Mystic/MundusFGOverflow");
+            MysticBurstBGTexture = NewDawn.RequestTexture("UI/Mystic/MysticBurstBG");
+            MysticBurstBarTexture = NewDawn.RequestTexture("UI/Mystic/MysticBurstBar");
 
             LuxBar = new SpriteProgressBar
             (

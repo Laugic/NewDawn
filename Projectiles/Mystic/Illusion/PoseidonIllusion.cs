@@ -70,12 +70,12 @@ namespace NewDawn.Projectiles.Mystic.Illusion
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            Texture2D texture = Mod.GetTexture("Projectiles/Mystic/Illusion/PoseidonIllusion");
+            Texture2D texture = NewDawn.RequestTexture("Projectiles/Mystic/Illusion/PoseidonIllusion");
             var origin = Projectile.Center;
             //origin.X -= texture.Width / 2;
             //origin.Y -= texture.Height / 2;
-            NewDawn.DrawChain(spriteBatch, Mod.GetTexture("Projectiles/Mystic/Illusion/PoseidonChain"), Main.player[Projectile.owner].MountedCenter, Projectile.Center);
-            spriteBatch.Draw(texture, origin - Main.screenPosition, new Rectangle(0, 0, texture.Width, texture.Height), Color.White, Projectile.rotation, new Vector2(texture.Width / 2, texture.Height / 2), Projectile.scale, SpriteEffects.None, 0 );
+            NewDawn.DrawChain(Main.spriteBatch, NewDawn.RequestTexture("Projectiles/Mystic/Illusion/PoseidonChain"), Main.player[Projectile.owner].MountedCenter, Projectile.Center);
+            Main.spriteBatch.Draw(texture, origin - Main.screenPosition, new Rectangle(0, 0, texture.Width, texture.Height), Color.White, Projectile.rotation, new Vector2(texture.Width / 2, texture.Height / 2), Projectile.scale, SpriteEffects.None, 0 );
             return false;
         }
 

@@ -25,9 +25,9 @@ namespace NewDawn.Tiles.Furniture
             // name.SetDefault("Obsidium Bed");
             AddMapEntry(new Color(200, 200, 200), name);
             DustType = ModContent.DustType<Magma>();
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Beds };
-            bed/* tModPorter Note: Removed. Use TileID.Sets.CanBeSleptIn instead */ = true;
+            TileID.Sets.CanBeSleptIn[Type] = true;
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
@@ -42,7 +42,7 @@ namespace NewDawn.Tiles.Furniture
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 64, 32, ModContent.ItemType<ObsidiumBed>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<ObsidiumBed>());
         }
 
         public override bool RightClick(int i, int j)
@@ -60,12 +60,12 @@ namespace NewDawn.Tiles.Furniture
             if (player.SpawnX == spawnX && player.SpawnY == spawnY)
             {
                 player.RemoveSpawn();
-                Main.NewText("Spawn point removed!", 255, 240, 20, false);
+                Main.NewText("Spawn point removed!", 255, 240, 20);
             }
             else if (Player.CheckSpawn(spawnX, spawnY))
             {
                 player.ChangeSpawn(spawnX, spawnY);
-                Main.NewText("Spawn point set!", 255, 240, 20, false);
+                Main.NewText("Spawn point set!", 255, 240, 20);
             }
             return true;
         }

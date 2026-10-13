@@ -43,8 +43,8 @@ namespace NewDawn.Projectiles.Mystic.Destruction
         }*/
         public override bool PreDraw(ref Color lightColor)
         {
-            ParticleManager.DrawParticles(spriteBatch, Color.White, ref Particles);
-            return base.PreDraw(spriteBatch, drawColor);
+            ParticleManager.DrawParticles(Main.spriteBatch, Color.White, ref Particles);
+            return base.PreDraw(ref lightColor);
         }
 
         public override void PostAI()
@@ -76,7 +76,7 @@ namespace NewDawn.Projectiles.Mystic.Destruction
 
             ParticleManager.UpdateParticles(ref Particles);
             if (Counter % 2 == 0)
-                Particles.Add(new Particle(Mod.GetTexture("Particles/EtherialSmoke"), Projectile.Center - Projectile.velocity / 2, new Vector2(-2 + Main.rand.Next(5), -2 + Main.rand.Next(5)), 6, .95f, Main.rand.NextFloat() * 6.28f, .2f, 1, .9f + Main.rand.NextFloat() * .1f));
+                Particles.Add(new Particle(NewDawn.RequestTexture("Particles/EtherialSmoke"), Projectile.Center - Projectile.velocity / 2, new Vector2(-2 + Main.rand.Next(5), -2 + Main.rand.Next(5)), 6, .95f, Main.rand.NextFloat() * 6.28f, .2f, 1, .9f + Main.rand.NextFloat() * .1f));
         }
 
         private void MoveTo(Vector2 targetVector)

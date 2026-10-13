@@ -56,6 +56,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 1)
             {
@@ -68,19 +69,19 @@ namespace NewDawn.Items.Weapons.Mystic
                     if(Main.rand.Next(3) == 0)
                     {
                         if(player.strongBees && Main.rand.Next(3) == 0)
-                            Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ProjectileID.GiantBee, (int)(damage * 1.5), knockback, player.whoAmI);
+                            Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ProjectileID.GiantBee, (int)(damage * 1.5), knockBack, player.whoAmI);
                         else
-                            Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ProjectileID.Bee, damage, knockback, player.whoAmI);
+                            Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ProjectileID.Bee, damage, knockBack, player.whoAmI);
                     }
                     else
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<FriggDestruction>(), damage, knockback, player.whoAmI);
+                        Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<FriggDestruction>(), damage, knockBack, player.whoAmI);
                 }
             }
             if(modPlayer.MysticMode == 2)
             {
                 float theta = (float)Main.rand.NextDouble() * 3.14f * 2;
                 float mag = 360;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), (int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)), (int)(Main.MouseWorld.Y) + (int)(mag * Math.Sin(theta)), -4 * (float)Math.Cos(theta), -4 * (float)Math.Sin(theta), ModContent.ProjectileType<FriggIllusion>(), damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)), (int)(Main.MouseWorld.Y) + (int)(mag * Math.Sin(theta))), new Vector2(-4 * (float)Math.Cos(theta), -4 * (float)Math.Sin(theta)), ModContent.ProjectileType<FriggIllusion>(), damage, 3, Main.myPlayer);
             }
             return true;
         }

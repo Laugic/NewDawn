@@ -52,7 +52,7 @@ namespace NewDawn.Projectiles.Mystic.Illusion
                 if (!shoot)
                 {
                     if (Main.myPlayer == Projectile.owner)
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, Projectile.velocity.X, Projectile.velocity.Y, ModContent.ProjectileType<AgnesIllusion2>(), Projectile.damage, Projectile.knockback, player.whoAmI);
+                        Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, Projectile.velocity.X, Projectile.velocity.Y, ModContent.ProjectileType<AgnesIllusion2>(), Projectile.damage, Projectile.knockBack, player.whoAmI);
                     shoot = true;
                 }
             }

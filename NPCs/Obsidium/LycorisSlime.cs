@@ -41,8 +41,8 @@ namespace NewDawn.NPCs.Obsidium
         public override void OnKill()
         {
             if(Main.rand.Next(3) != 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Lycoris>(), Main.rand.Next(2, 5));
-            Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.Gel, Main.rand.Next(1,4));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Lycoris>(), Main.rand.Next(2, 5));
+            Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.Gel, Main.rand.Next(1,4));
         }
     }
 }

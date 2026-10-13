@@ -55,7 +55,7 @@ namespace NewDawn.NPCs.Slybertron
             int debuff = ModContent.BuffType<Steamy>();
             if (debuff >= 0)
             {
-                player.AddBuff(debuff, 90, true);
+                target.AddBuff(debuff, 90, true);
             }      //Add Onfire buff to the NPC for 1 second
         }
     }

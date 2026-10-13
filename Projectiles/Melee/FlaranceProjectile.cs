@@ -68,7 +68,7 @@ namespace NewDawn.Projectiles.Melee
         public override void ModifyHitNPC(NPC target, ref NPC.HitModifiers modifiers)
         {
             if (Projectile.ai[0] >= 5)
-                damage = (int)(damage * 1.5);
+                modifiers.SourceDamage *= 1.5f;
         }
         public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{

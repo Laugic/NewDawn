@@ -42,7 +42,7 @@ namespace NewDawn.NPCs.Obsidium
             {
                 NPC.ai[0] = 1;
 
-                int n = NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<ReaverHeadNPC>());
+                int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<ReaverHeadNPC>());
                 Main.npc[n].ai[0] = NPC.whoAmI;
             }
         }

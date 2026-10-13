@@ -50,7 +50,7 @@ namespace NewDawn.Projectiles.SoulStone
         {
             if (target.whoAmI == Projectile.ai[0])
                 collided = true;
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.OnHitNPC(target, hit, damageDone);
         }
     }
 }

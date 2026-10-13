@@ -61,7 +61,7 @@ namespace NewDawn.NPCs.Etherial.BossFights
             shootDelay++;
             if(shootDelay >= 8 * 60)
             {
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/retro_blast"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/retro_blast"));
                 for (int i = 0; i < 8; i++)
                 {
                     if (Main.netMode != 1)

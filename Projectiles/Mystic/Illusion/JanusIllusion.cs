@@ -63,7 +63,7 @@ namespace NewDawn.Projectiles.Mystic.Illusion
                     var theta = (float)(Math.PI * -Main.rand.NextDouble());
                     Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                     newVel *= 12;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), pos.X, pos.Y, newVel.X, newVel.Y, ModContent.ProjectileType<JanusIllusionSandball>(), Projectile.damage / 2, 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(pos.X, pos.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<JanusIllusionSandball>(), Projectile.damage / 2, 3, Main.myPlayer);
                 }
             }
         }

@@ -23,7 +23,7 @@ namespace NewDawn.Projectiles.Mystic.Illusion
             buffID = ModContent.BuffType<ThunderCharged>();
             if (!Main.dedServ)
             {
-                Smash = Mod.GetTexture(this.GetType().GetRootPath() + "/ThorSmashIllusion");
+                Smash = NewDawn.RequestTexture(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/ThorSmashIllusion");
             }
         }
         public override void PostAI()

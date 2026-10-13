@@ -94,10 +94,8 @@ namespace NewDawn.NPCs.Slybertron
             NPC.lavaImmune = true;
             NPC.noGravity = false;
             NPC.noTileCollide = false;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Slybertron");
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Slybertron");
             damage = 40;
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<SlybertronTreasureBag>();
-
         }
 
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
@@ -390,7 +388,7 @@ namespace NewDawn.NPCs.Slybertron
                 int debuff = ModContent.BuffType<Steamy>();
                 if (debuff >= 0)
                 {
-                    player.AddBuff(debuff, 90, true);
+                    target.AddBuff(debuff, 90, true);
                 }
             }
         }
@@ -400,28 +398,23 @@ namespace NewDawn.NPCs.Slybertron
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(Main.LocalPlayer);
             if (NewDawnWorld.downedEtheria)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Etherworks>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<Etherworks>(), 1);
             }
             spawned = 0;
             if (!Main.expertMode)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
                
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfFraught>(), Main.rand.Next(20, 40));
-            }
-
-            if (Main.expertMode)
-            {
-                NPC.DropBossBags();
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfFraught>(), Main.rand.Next(20, 40));
             }
 
             if (Main.rand.Next(10) == 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SlybertronTrophy>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SlybertronTrophy>(), 1);
             NewDawnWorld.downedSlybertron = true;
         }
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 499;
+            potionType = ItemID.GreaterHealingPotion;
         }
         
         public override void FindFrame(int frameHeight)

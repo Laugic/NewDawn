@@ -45,7 +45,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 Vector2 pos = new Vector2(Projectile.Center.X - (Projectile.width / 2 * Projectile.scale) + Main.rand.Next((int)(Projectile.width * Projectile.scale)), Projectile.Center.Y);
                 newVel *= 16;
-                int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), pos.X, pos.Y, newVel.X, newVel.Y, ModContent.ProjectileType<JanusConjurationSandball>(), Projectile.damage, 3, Main.myPlayer);
+                int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(pos.X, pos.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<JanusConjurationSandball>(), Projectile.damage, 3, Main.myPlayer);
             }
         }
 
@@ -78,7 +78,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
         {
             if (target.noGravity == false)
                 target.velocity.Y = -12f;
-            base.OnHitNPC(target, damage, knockback, crit);
+            base.OnHitNPC(target, hit, damageDone);
         }
     }
 }

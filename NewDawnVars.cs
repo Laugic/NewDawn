@@ -1,11 +1,11 @@
 ﻿using NewDawn.NPCs.Bosses;
+using NewDawn.NPCs.Hypothema;
 using NewDawn.NPCs.Obsidium;
 using NewDawn.NPCs.PreTrio;
 using NewDawn.NPCs.RockTwins;
 using NewDawn.NPCs.Slybertron;
 using NewDawn.Tiles;
 using System.Collections.Generic;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn

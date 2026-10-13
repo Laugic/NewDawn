@@ -42,16 +42,17 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 1)
             {
                 if(Main.rand.Next(2) == 0)
                 {
-					Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<ZuesBoltDestruction2>(), damage, 3f, player.whoAmI, 0f, 0f);
+					Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), ModContent.ProjectileType<ZuesBoltDestruction2>(), damage, 3f, player.whoAmI, 0f, 0f);
                 }
                 else
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, velocity.X, velocity.Y, ModContent.ProjectileType<ZuesBoltDestruction1>(), damage, 3f, player.whoAmI, 0f, 0f);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), ModContent.ProjectileType<ZuesBoltDestruction1>(), damage, 3f, player.whoAmI, 0f, 0f);
                 }
             }
             if (modPlayer.MysticMode == 3)

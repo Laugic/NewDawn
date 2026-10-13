@@ -7,6 +7,7 @@ using NewDawn.Items.Equipables;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using NewDawn.Items.Weapons.Mystic;
+using NewDawn.Items.Weapons.Snowball;
 using NewDawn.NPCs.Obsidium;
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Illusion;
@@ -17,7 +18,6 @@ using NewDawn.Projectiles.Ranged;
 using System;
 using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Bubble = NewDawn.Projectiles.Plague.Bubble;
 
@@ -280,17 +280,17 @@ namespace NewDawn.NPCs
             if (bubbly)
             {
                 if (Main.rand.Next(1 * 60) == 0 && Main.netMode != 1)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<Bubble>(), 20, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<Bubble>(), 20, 3f, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<DepthBubbles>()))
             {
                 if (Main.rand.Next(1 * 60) == 0 && Main.netMode != 1)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<PoseidonConjuration2>(), Math.Max(20, Math.Min(npc.defense, 80)), 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<PoseidonConjuration2>(), Math.Max(20, Math.Min(npc.defense, 80)), 3f, Main.myPlayer);
             }
             if (dawn)
             {
                 if (Main.rand.Next(1 * 60) == 0 && Main.netMode != 1)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<GoldenBubble>(), 20, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<GoldenBubble>(), 20, 3f, Main.myPlayer);
             }
             if (trueDawn)
             {
@@ -302,7 +302,7 @@ namespace NewDawn.NPCs
                     damage = 24;
                 }
                 if (Main.rand.Next(1 * 60) == 0 && Main.netMode != 1)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<TrueDawnSpark>(), 40, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<TrueDawnSpark>(), 40, 3f, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<InfernalBuff>()))
             {
@@ -316,7 +316,7 @@ namespace NewDawn.NPCs
             if (JunglePlague)
             {
                 if (Main.rand.Next(1 * 60) == 0 && Main.netMode != 1)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<JunglePlagueSpore>(), 75, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<JunglePlagueSpore>(), 75, 3f, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<TimeDilation>()))
             {
@@ -343,16 +343,23 @@ namespace NewDawn.NPCs
                     damage = (int)(npc.velocity.Length() / 2);
                 }
                 if (Main.rand.Next(1 * 60) == 0 && Main.netMode != 1)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<TrueDawnSpark>(), 40, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<TrueDawnSpark>(), 40, 3f, Main.myPlayer);
             }
 
             if (npc.HasBuff(ModContent.BuffType<TimeDilation>()) && !TimeDilation && (NewDawn.zaWarudo > 0 || NewDawn.zaWarudo > 0))
             {
                 TimeDilation = true;
-                Main.npc[npc.whoAmI].StrikeNPC(TIME_DILATION_DAMAGE * (npc.boss ? 10 : 1), 0, 0);
+                NPC.HitInfo hitInfo = new NPC.HitInfo
+                {
+                    Damage = TIME_DILATION_DAMAGE * (npc.boss ? 10 : 1),
+                    Knockback = 0f,
+                    HitDirection = 0,
+                    Crit = false
+                };
+                npc.StrikeNPC(hitInfo);
             }
 
-            if (NewDawn.zaWarudo < 1 && !NewDawn.zaWarudo > 0)
+            if (NewDawn.zaWarudo < 1)
                 TimeDilation = false;
 
             if (DebuffDamageMult > 1)
@@ -812,26 +819,26 @@ namespace NewDawn.NPCs
                     float mag = 6f;
                     float theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
                     int damage = 80;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
                     theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
                     theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
                     theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
                     theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<ObsidiumArrowHead>(), damage, 3f, Main.myPlayer);
                 }
             }
             if (npc.HasBuff(ModContent.BuffType<UndeathBuff>()))
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, 0, 0, ModContent.ProjectileType<UndeathSkull>(), npc.damage + 6, 3f, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(0, 0), ModContent.ProjectileType<UndeathSkull>(), npc.damage + 6, 3f, Main.myPlayer);
             if (bubbly)
             {
                 if (Main.netMode != 1)
                 {
                     int rand = Main.rand.Next(3, 7);
                     for (int i = 0; i < rand; i++)
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<Bubble>(), 20, 3f, Main.myPlayer);
+                        Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<Bubble>(), 20, 3f, Main.myPlayer);
                 }
             }
             if (npc.HasBuff(ModContent.BuffType<DepthBubbles>()))
@@ -840,7 +847,7 @@ namespace NewDawn.NPCs
                 {
                     int rand = Main.rand.Next(3, 7);
                     for (int i = 0; i < rand; i++)
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<PoseidonIllusion2>(), Math.Max(20, Math.Min(npc.defense, 80)), 3f, Main.myPlayer);
+                        Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<PoseidonIllusion2>(), Math.Max(20, Math.Min(npc.defense, 80)), 3f, Main.myPlayer);
                 }
             }
             if (dawn)
@@ -853,7 +860,7 @@ namespace NewDawn.NPCs
                         float mag = 8f;
                         float theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
                         int damage = 32;
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<DawnSpark>(), damage, 3f, Main.myPlayer);
+                        Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<DawnSpark>(), damage, 3f, Main.myPlayer);
                     }
                 }
             }
@@ -867,7 +874,7 @@ namespace NewDawn.NPCs
                         float mag = 8f;
                         float theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
                         int damage = 45;
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<TrueDawnSpark>(), damage, 3f, Main.myPlayer);
+                        Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<TrueDawnSpark>(), damage, 3f, Main.myPlayer);
                     }
                 }
             }
@@ -877,7 +884,7 @@ namespace NewDawn.NPCs
                 {
                     int rand = Main.rand.Next(3, 7);
                     for (int i = 0; i < rand; i++)
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2), ModContent.ProjectileType<JunglePlagueSporeSpread>(), 75, 3f, Main.myPlayer);
+                        Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((-1 + (2 * Main.rand.Next(2))) * 4, Main.rand.Next(-5, 2)), ModContent.ProjectileType<JunglePlagueSporeSpread>(), 75, 3f, Main.myPlayer);
                 }
             }
             if (steamified)
@@ -890,13 +897,13 @@ namespace NewDawn.NPCs
                         float mag = 8f;
                         float theta2 = (float)(Main.rand.NextDouble() * 2 * Math.PI);
                         int damage = 1000;
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, (float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag, ModContent.ProjectileType<VulcanConjuration>(), damage, 3f, Main.myPlayer);
+                        Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2((float)Math.Cos(theta2) * mag, (float)Math.Sin(theta2) * mag), ModContent.ProjectileType<VulcanConjuration>(), damage, 3f, Main.myPlayer);
                     }
                 }
             }
             if (DeathMarked)
             {
-                Item.NewItem(npc.Center, ModContent.ItemType<Soul>());
+                Item.NewItem(npc.GetSource_Loot(), npc.Center, ModContent.ItemType<Soul>());
             }
             if (attacker != -1)
             {
@@ -910,10 +917,10 @@ namespace NewDawn.NPCs
                 plays = 1;
             if (lovestruck && !npc.boss)
             {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 58); //Drop Hearts
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 58); //Drop Hearts
                 if (Main.rand.Next(1, 3) == 1)
                 {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 58);
+                    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, 58);
                 }
             }
             //Soul Drops
@@ -921,30 +928,30 @@ namespace NewDawn.NPCs
             {
                 if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneSkyHeight && Main.rand.Next(3) == 0)
                 {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulOfSought>());
+                    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulOfSought>());
                 }
                 if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].ZoneUnderworldHeight && Main.rand.Next(3) == 0)
                 {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulOfHaught>());
+                    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulOfHaught>());
                 }
                 if (NewDawnPlayer.Get(Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)]).zoneObsidium && Main.rand.Next(3) == 0)
                 {
-                    Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulOfHaught>());
+                    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SoulOfHaught>());
                 }
             }
             //Misc Materials
             if (npc.type == 113)
             {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<NullShard>(), Main.rand.Next(1, 4));
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<NullShard>(), Main.rand.Next(1, 4));
             }
             if (npc.type == 4)
             {
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TastyMorsel>(), 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<TastyMorsel>(), 1);
             }
             if (npc.type == NPCID.IceQueen)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<RoyalIce>(), 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<RoyalIce>(), 1);
             if (npc.type == NPCID.GoblinSummoner)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Shadowflame>(), Main.rand.Next(2, 5));
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Shadowflame>(), Main.rand.Next(2, 5));
             GetWeaponAndAccDrops(npc);
         }
         public override Color? GetAlpha(NPC npc, Color drawColor)
@@ -962,7 +969,9 @@ namespace NewDawn.NPCs
 
         public override void ModifyHitByItem(NPC npc, Player player, Item item, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitByItem(npc, player, item, ref damage, ref knockback, ref crit);
+            base.ModifyHitByItem(npc, player, item, ref modifiers);
+            int originalDamage = (int)modifiers.SourceDamage.ApplyTo(item.damage);
+            int damage = originalDamage;
             if (AerialWeakness && player.Center.Y < npc.position.Y)
                 damage += 6;
             if (Brittle)
@@ -972,7 +981,7 @@ namespace NewDawn.NPCs
                 float theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 newVel *= 6;
-                int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, newVel.X, newVel.Y, ModContent.ProjectileType<GemShard>(), Math.Min(Math.Max(npc.defense, 4), 80), 0, Main.myPlayer);
+                int id = Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<GemShard>(), Math.Min(Math.Max(npc.defense, 4), 80), 0, Main.myPlayer);
                 Main.projectile[id].ai[1] = Main.rand.Next(6);
             }
             if (npc.HasBuff(ModContent.BuffType<JudgementBuff>()))
@@ -985,14 +994,14 @@ namespace NewDawn.NPCs
                 float theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 newVel *= 8;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, newVel.X, newVel.Y, ModContent.ProjectileType<MarsIllusion2>(), damage, 0, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<MarsIllusion2>(), damage, 0, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<ThunderCharged>()))
             {
                 float theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 newVel *= 8;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, newVel.X, newVel.Y, ModContent.ProjectileType<Bolt>(), damage, 0, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<Bolt>(), damage, 0, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<EerinessBuff>()) && HitDelay > 0)
             {
@@ -1012,12 +1021,15 @@ namespace NewDawn.NPCs
                 ProjectileTypesHitBy.Clear();
                 ItemTypesHitBy.Clear();
             }
+            modifiers.SourceDamage.Flat += damage - originalDamage;
             HitDelay = 0;
         }
 
         public override void ModifyHitByProjectile(NPC npc, Projectile projectile, ref NPC.HitModifiers modifiers)
         {
-            base.ModifyHitByProjectile(npc, projectile, ref damage, ref knockback, ref crit, ref hitDirection);
+            base.ModifyHitByProjectile(npc, projectile, ref modifiers);
+            int originalDamage = (int)modifiers.SourceDamage.ApplyTo(projectile.damage);
+            int damage = originalDamage;
             if (Pollinated && NewDawnVars.BeeProjectiles.Contains(projectile.type))
             {
                 Main.projectile[projectile.whoAmI].penetrate = 1;
@@ -1032,7 +1044,7 @@ namespace NewDawn.NPCs
                 float theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 newVel *= 6;
-                int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, newVel.X, newVel.Y, ModContent.ProjectileType<NPCGemShard>(), Math.Min(Math.Max(npc.defense, 4), 80), 0, Main.myPlayer);
+                int id = Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<NPCGemShard>(), Math.Min(Math.Max(npc.defense, 4), 80), 0, Main.myPlayer);
                 Main.projectile[id].ai[1] = Main.rand.Next(6);
             }
             if (Slushie && projectile.type != ModContent.ProjectileType<SlushballProjectile>() && NewDawnVars.SnowballProjectiles.Contains(projectile.type))
@@ -1049,14 +1061,14 @@ namespace NewDawn.NPCs
                 float theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 newVel *= 8;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, newVel.X, newVel.Y, ModContent.ProjectileType<MarsIllusion2>(), damage, 0, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<MarsIllusion2>(), damage, 0, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<ThunderCharged>()) && projectile.type != ModContent.ProjectileType<Bolt>())
             {
                 float theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                 Vector2 newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                 newVel *= 8;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.Center.X, npc.Center.Y, newVel.X, newVel.Y, ModContent.ProjectileType<Bolt>(), damage, 0, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(npc), new Vector2(npc.Center.X, npc.Center.Y), new Vector2(newVel.X, newVel.Y), ModContent.ProjectileType<Bolt>(), damage, 0, Main.myPlayer);
             }
             if (npc.HasBuff(ModContent.BuffType<EerinessBuff>()) && HitDelay > 0)
             {
@@ -1076,12 +1088,13 @@ namespace NewDawn.NPCs
                 ProjectileTypesHitBy.Clear();
                 ItemTypesHitBy.Clear();
             }
+            modifiers.SourceDamage.Flat += damage - originalDamage;
             HitDelay = 0;
         }
 
         public override void OnHitByProjectile(NPC npc, Projectile projectile, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitByProjectile(npc, projectile, damage, knockback, crit);
+            base.OnHitByProjectile(npc, projectile, hit, damageDone);
             if (Fertile && NewDawnVars.SeedProjectiles.Contains(projectile.type))
                 NumSeeds++;
             if (spored && NewDawnVars.ShroomProjectiles.Contains(projectile.type) && Main.projectile[projectile.whoAmI].ai[0] == 0)
@@ -1096,13 +1109,13 @@ namespace NewDawn.NPCs
         private void GetWeaponAndAccDrops(NPC npc)
         {
             if (npc.type == NPCID.Mothron && Main.rand.Next(4) == 0)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SaturnsRings>(), 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SaturnsRings>(), 1);
             if (npc.type == NPCID.DukeFishron && !Main.expertMode && Main.rand.Next(6) == 0)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PoseidonsTide>(), 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<PoseidonsTide>(), 1);
             if (npc.type == NPCID.IceGolem && Main.rand.Next(6) == 0)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CongealedFrostCore>(), 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<CongealedFrostCore>(), 1);
             if (npc.type == NPCID.MourningWood && Main.rand.Next(10) == 0)
-                Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SpineChiller>(), 1);
+                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<SpineChiller>(), 1);
         }
 
         public override bool InstancePerEntity

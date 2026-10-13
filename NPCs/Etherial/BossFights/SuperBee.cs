@@ -97,7 +97,7 @@ namespace NewDawn.NPCs.Etherial.BossFights
                 {
                     if (Main.netMode != 1)
                     {
-                        int N = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
+                        int N = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
                         Main.npc[N].ai[0] = npc.whoAmI;
                         Main.npc[N].ai[1] = i;
                     }

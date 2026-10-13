@@ -84,7 +84,7 @@ namespace NewDawn.NPCs.Etheria
             NPC.lavaImmune = true;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Etheria");
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Etheria");
         }
 
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
@@ -237,7 +237,7 @@ namespace NewDawn.NPCs.Etheria
             }
             if (attack == 3 && Main.netMode != 1)
             {
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
                 NPC.position.X = Main.player[NPC.target].position.X - (NPC.position.X - Main.player[NPC.target].position.X) / 2;
                 NPC.position.Y = Main.player[NPC.target].position.Y - (NPC.position.Y - Main.player[NPC.target].position.Y) / 2;
                 NPC.velocity.X = -NPC.velocity.X;
@@ -248,7 +248,7 @@ namespace NewDawn.NPCs.Etheria
                     {
                         for (int i = 0; i < 8; i++)
                         {
-                            int n = NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
+                            int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
                             Main.npc[n].ai[0] = NPC.whoAmI;
                             Main.npc[n].ai[1] = i;
                         }
@@ -257,7 +257,7 @@ namespace NewDawn.NPCs.Etheria
                     {
                         for (int i = 0; i < 12; i++)
                         {
-                            int n = NPC.NewNPC((int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<TrueEtherialSpiralShot>());
+                            int n = NPC.NewNPC(NPC.GetSource_FromAI(), (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<TrueEtherialSpiralShot>());
                             Main.npc[n].ai[0] = NPC.whoAmI;
                             Main.npc[n].ai[1] = i;
                         }

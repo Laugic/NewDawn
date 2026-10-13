@@ -16,7 +16,7 @@ namespace NewDawn.Tiles
             Main.tileLavaDeath[Type] = false;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style1x2Top);
             TileObjectData.addTile(Type);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             //adjTiles = new int[] { TileID.WorkBenches };
         }
 

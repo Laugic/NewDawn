@@ -18,7 +18,7 @@ namespace NewDawn.Tiles.MusicBoxes
 			TileObjectData.newTile.LavaDeath = false;
 			TileObjectData.newTile.DrawYOffset = 2;
 			TileObjectData.addTile(Type);
-			disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+			TileID.Sets.DisableSmartCursor[Type] = true;
 			LocalizedText name = CreateMapEntryName();
 			// name.SetDefault("Annihilator Music Box");
 			AddMapEntry(new Color(200, 200, 200), name);
@@ -26,7 +26,7 @@ namespace NewDawn.Tiles.MusicBoxes
 
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 48, ModContent.ItemType<Items.Placeable.MusicBoxes.AnnihilatorMusicBox>());
+			Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, ModContent.ItemType<Items.Placeable.MusicBoxes.AnnihilatorMusicBox>());
 		}
 
 		public override void MouseOver(int i, int j)

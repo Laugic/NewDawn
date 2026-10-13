@@ -108,7 +108,7 @@ namespace NewDawn.NPCs.Etheria
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
-            player.AddBuff(44, 300, true);
+            target.AddBuff(44, 300, true);
         }
 
         public override Color? GetAlpha(Color drawColor)

@@ -58,7 +58,7 @@ namespace NewDawn.Items.Weapons.Snowball
                 if (i == 0)
                     Projectile.NewProjectile(source, position, perturbedSpeed, ModContent.ProjectileType<BigSnowball>(), damage, knockback, player.whoAmI, type);
                 else
-                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
             }
 
             return false;

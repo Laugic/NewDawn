@@ -47,7 +47,7 @@ namespace NewDawn.Projectiles.Ranged
                     var theta = (float)(Math.PI * Main.rand.NextDouble() * 2);
                     var newVel = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
                     newVel *= 12;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position, newVel, (int)Projectile.ai[0], Projectile.damage, Projectile.knockback, Projectile.owner);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position, newVel, (int)Projectile.ai[0], Projectile.damage, Projectile.knockBack, Projectile.owner);
                 }
             }
             SoundEngine.PlaySound(SoundID.Item50, Projectile.position);

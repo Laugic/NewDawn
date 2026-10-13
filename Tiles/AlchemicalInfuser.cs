@@ -23,7 +23,7 @@ namespace NewDawn.Tiles
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Alchemical Infuser");
             AddMapEntry(new Color(170, 200, 120), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Tables };
         }
 
@@ -34,7 +34,7 @@ namespace NewDawn.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 108, 54, ModContent.ItemType<Items.Placeable.AlchemicalInfuserItem>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 108, 54, ModContent.ItemType<Items.Placeable.AlchemicalInfuserItem>());
         }
     }
 }

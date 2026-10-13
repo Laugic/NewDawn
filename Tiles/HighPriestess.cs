@@ -24,7 +24,7 @@ namespace NewDawn.Tiles
 
             // name.SetDefault("High Priestess");
             AddMapEntry(new Color(0, 150, 150), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             DustType = ModContent.DustType<EtherialDust>();
         }
 
@@ -67,7 +67,7 @@ namespace NewDawn.Tiles
                 for(int k = 0; k < 12; k++)
                     Dust.NewDust(pos, 64, 64, ModContent.DustType<EtherialDust>(), 0f, 0f);
 
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
             }
         }
     }

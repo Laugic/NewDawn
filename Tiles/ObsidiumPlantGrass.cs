@@ -3,7 +3,6 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using WebCom.Extensions;
 
 namespace NewDawn.Tiles
 {
@@ -21,16 +20,16 @@ namespace NewDawn.Tiles
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Lycoris Radiata");
             //AddMapEntry(new Color(200, 30, 0), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             DustType = ModContent.DustType<Magma>();
             Main.tileCut[Type] = true;
-            HitSound = 6;
+            HitSound = SoundID.Dig;
             //adjTiles = new int[] { TileID.WorkBenches };
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/EldergrassPlant");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/EldergrassPlant");
             }
         }
 

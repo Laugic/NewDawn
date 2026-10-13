@@ -7,7 +7,7 @@
 //    {
 //        public static Texture2D GetTexture(object obj, string textureName)
 //        {
-//            return (Texture2D)ModContent.Request<Texture2D>(obj.GetType().Namespace.Replace('.', '/') + "/" + textureName);
+//            return (Texture2D)ModContent.Request<Texture2D>(obj.GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + textureName);
 //        }
 //    }
 //}

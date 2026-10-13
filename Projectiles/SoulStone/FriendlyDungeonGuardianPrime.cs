@@ -41,10 +41,6 @@ namespace NewDawn.Projectiles.SoulStone
             if (!Main.player[Projectile.owner].active)
                 Projectile.Kill();
 
-            NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get(Main.player[Projectile.owner]);
-
-            if (!NewDawnPlayer.Focus.IsCapacity() || !NewDawnPlayer.SkeletronPrimeEffect)
-                Projectile.Kill();
         }
 
         public void CheckActive()

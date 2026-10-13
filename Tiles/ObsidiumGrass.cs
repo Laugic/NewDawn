@@ -1,10 +1,9 @@
-using NewDawn.Dusts;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Dusts;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using WebCom.Extensions;
 
 namespace NewDawn.Tiles
 {
@@ -22,7 +21,7 @@ namespace NewDawn.Tiles
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleAlch);
             Main.tileFrameImportant[Type] = true;
             Main.tileCut[Type] = true;
-            HitSound = 6;
+            HitSound = SoundID.Dig;
             TileObjectData.newTile.AnchorValidTiles = new int[]
             {
                 ModContent.TileType<Lycoris>(),
@@ -32,8 +31,8 @@ namespace NewDawn.Tiles
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/Eldergrass");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/Eldergrass");
             }
         }
 
@@ -49,12 +48,12 @@ namespace NewDawn.Tiles
         {
             num = fail ? 1 : 3;
         }
-        
+
         public override void AnimateIndividualTile(int type, int i, int j, ref int frameXOffset, ref int frameYOffset)
         {
-                frameYOffset = i % 4 * 18;
+            frameYOffset = i % 4 * 18;
         }
-        
+
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
         {
             offsetY = 2;
@@ -66,6 +65,6 @@ namespace NewDawn.Tiles
             g = 0.05f;
             b = 0.0f;
         }
-        
+
     }
 }

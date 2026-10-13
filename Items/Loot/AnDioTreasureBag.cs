@@ -1,5 +1,9 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.ModLoader;
+using NewDawn.Items.Loot;
+using NewDawn.Items.Useables;
 
 namespace NewDawn.Items.Loot
 {
@@ -24,41 +28,22 @@ namespace NewDawn.Items.Loot
         {
             return true;
         }
-        //TODO: Add loot to this bag
-        //public override void ModifyItemLoot(ItemLoot itemLoot)
-        //{
-        //    itemLoot.Add(ModContent.ItemType<DioritusCore>(), 2, 4);
-        //    itemLoot.Add(ModContent.ItemType<AndesiaCore>(), 2, 4);
-        //    itemLoot.Add(ItemID.Marble, 10, 31);
-        //    itemLoot.Add(ItemID.Granite, 10, 31);
-        //    itemLoot.Add(ModContent.ItemType<ZaWarudoWatch>(), 1);
-        //    itemLoot.Add(ItemID.HealingPotion, 10, 15);
-
-        //    //TODO: Move this to a boss that is pre-WoF
-        //    int anDioItem = 0;
-        //    int rand = Main.rand.Next(6);
-        //    switch (rand)
-        //    {
-        //        case 0:
-        //            anDioItem = ItemID.DarkLance;
-        //            break;
-        //        case 1:
-        //            anDioItem = ItemID.Flamelash;
-        //            break;
-        //        case 2:
-        //            anDioItem = ItemID.FlowerofFire;
-        //            break;
-        //        case 3:
-        //            anDioItem = ItemID.Sunfury;
-        //            break;
-        //        case 4:
-        //            anDioItem = ItemID.HellwingBow;
-        //            break;
-        //        default:
-        //            anDioItem = ItemID.ImpStaff;
-        //            break;
-        //    }
-        //    itemLoot.Add(anDioItem, 1);
-        //}
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<DioritusCore>(), 1, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<AndesiaCore>(), 1, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ItemID.Marble, 1, 10, 30));
+            itemLoot.Add(ItemDropRule.Common(ItemID.Granite, 1, 10, 30));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ZaWarudoWatch>()));
+            itemLoot.Add(ItemDropRule.Common(ItemID.HealingPotion, 1, 10, 14));
+            itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(
+                1,
+                ItemID.DarkLance,
+                ItemID.Flamelash,
+                ItemID.FlowerofFire,
+                ItemID.Sunfury,
+                ItemID.HellwingBow,
+                ItemID.ImpStaff));
+        }
     }
 }

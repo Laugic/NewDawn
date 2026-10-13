@@ -45,7 +45,7 @@ namespace NewDawn.Items.Weapons.Summon
     	    int i = Main.myPlayer;
 		    float num72 = Item.shootSpeed;
 		    int num73 = damage;
-		    float num74 = knockBack;
+		    float num74 = knockback;
     	    num74 = player.GetWeaponKnockback(Item, num74);
     	    player.itemTime = Item.useTime;
     	    Vector2 vector2 = player.RotatedRelativePoint(player.MountedCenter, true);
@@ -73,10 +73,10 @@ namespace NewDawn.Items.Weapons.Summon
 		    num79 = 0f;
 		    vector2.X = (float)Main.mouseX + Main.screenPosition.X;
 		    vector2.Y = (float)Main.mouseY + Main.screenPosition.Y;
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), vector2.X, vector2.Y, num78, num79, ModContent.ProjectileType<UltimateLeader1>(), num73, num74, i, 0f, 0f);
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), vector2.X, vector2.Y, num78, num79, ModContent.ProjectileType<UltimateLeader2>(), num73, num74, i, 0f, 0f);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(vector2.X, vector2.Y), new Vector2(num78, num79), ModContent.ProjectileType<UltimateLeader1>(), num73, num74, i, 0f, 0f);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(vector2.X, vector2.Y), new Vector2(num78, num79), ModContent.ProjectileType<UltimateLeader2>(), num73, num74, i, 0f, 0f);
             if (player.ownedProjectileCounts[ModContent.ProjectileType<UltimateLeader3>()] == 0)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.position.X, player.position.Y - 32, num78, num79, ModContent.ProjectileType<UltimateLeader3>(), num73, num74, i, 0f, 0f);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(player.position.X, player.position.Y - 32), new Vector2(num78, num79), ModContent.ProjectileType<UltimateLeader3>(), num73, num74, i, 0f, 0f);
 
 
             return player.altFunctionUse != 2;
@@ -91,7 +91,7 @@ namespace NewDawn.Items.Weapons.Summon
         {
             if (player.altFunctionUse == 2)
             {
-                player.MinionNPCTargetAim();
+                player.MinionNPCTargetAim(true);
             }
             return base.UseItem(player);
         }

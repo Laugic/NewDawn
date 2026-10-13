@@ -27,7 +27,7 @@ namespace NewDawn.Projectiles.Thrown
                 Projectile.Kill();
                 if(Main.rand.Next(2) == 0)
                 {
-                    Item.NewItem((int)Projectile.position.X, (int)Projectile.position.Y, Projectile.width, Projectile.height, ModContent.ItemType<Coginator>(), 1);
+                    Item.NewItem(Projectile.GetSource_Death(), (int)Projectile.position.X, (int)Projectile.position.Y, Projectile.width, Projectile.height, ModContent.ItemType<Coginator>(), 1);
                 }
                 SoundEngine.PlaySound(SoundID.Dig, Projectile.position);
             }

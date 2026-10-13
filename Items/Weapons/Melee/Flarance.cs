@@ -35,7 +35,7 @@ namespace NewDawn.Items.Weapons.Melee
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, velocity.X, velocity.Y, Item.shoot, damage, knockback, player.whoAmI);
+            int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), Item.shoot, damage, knockback, player.whoAmI);
             Main.projectile[id].ai[0] = modPlayer.ObsidiumHeart;
             return false;
         }

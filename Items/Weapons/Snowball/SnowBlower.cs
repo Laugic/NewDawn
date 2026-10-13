@@ -46,9 +46,9 @@ namespace NewDawn.Items.Weapons.Snowball
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed *= scale;
                 if (type == ProjectileID.SnowBallFriendly && i % 2 == 0)
-                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<Frostball>(), damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<Frostball>(), damage, knockback, player.whoAmI);
                 else
-                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
             }
             return false;
         }

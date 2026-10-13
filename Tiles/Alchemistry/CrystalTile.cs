@@ -19,7 +19,7 @@ namespace NewDawn.Tiles.Alchemistry
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
 
-            ItemDrop = ModContent.ItemType<Frostpetal>();
+            RegisterItemDrop(ModContent.ItemType<Frostpetal>());
 
             AddMapEntry(new Color(220, 220, 220));
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);

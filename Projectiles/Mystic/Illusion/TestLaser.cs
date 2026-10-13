@@ -42,7 +42,7 @@ namespace NewDawn.Projectiles.Mystic.Illusion
 		{
 			if (IsAtMaxCharge)
 			{
-				DrawLaser(spriteBatch, TextureAssets.Projectile[Projectile.type].Value, Main.player[Projectile.owner].Center,
+				DrawLaser(Main.spriteBatch, TextureAssets.Projectile[Projectile.type].Value, Main.player[Projectile.owner].Center,
 					Projectile.velocity, TextureAssets.Projectile[Projectile.type].Value.Height / 3, Projectile.damage, -1.57f, 1f, 1000f, Color.White, (int)MOVE_DISTANCE);
 			}
 			return false;

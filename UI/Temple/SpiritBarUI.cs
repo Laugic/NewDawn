@@ -16,7 +16,7 @@ namespace NewDawn.UI.MoldyrianTemple
         private const int BAR_WIDTH = 192;
 
         public static bool visible = true;
-        public static SpriteProgressBar SpiritBar;
+        public static global::NewDawn.UI.NewAttempts.Mystic.SpriteProgressBar SpiritBar;
         public static Texture2D SpiritBGTexture;
         public static Texture2D SpiritBarTexture;
         public static Texture2D SpiritFGTexture;
@@ -139,7 +139,7 @@ namespace NewDawn.UI.MoldyrianTemple
 
         public static bool visible = true;
 
-        public static SpriteProgressBar SpiritBar;
+        public static global::NewDawn.UI.NewAttempts.Mystic.SpriteProgressBar SpiritBar;
 
         public override void Update(GameTime gameTime)
         {
@@ -178,11 +178,11 @@ namespace NewDawn.UI.MoldyrianTemple
 
         public void Load()
         {
-            SpiritBar = new SpriteProgressBar
+            SpiritBar = new global::NewDawn.UI.NewAttempts.Mystic.SpriteProgressBar
             (
-                "NewDawn/UI/Temple/SpiritBG",
-                "NewDawn/UI/Temple/SpiritBar",
-                "NewDawn/UI/Temple/SpiritFG",
+                NewDawn.RequestTexture("UI/Temple/SpiritBG"),
+                NewDawn.RequestTexture("UI/Temple/SpiritBar"),
+                NewDawn.RequestTexture("UI/Temple/SpiritFG"),
                 Position,
                 new Vector2(0, 0)
             );

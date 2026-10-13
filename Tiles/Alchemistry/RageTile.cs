@@ -16,7 +16,7 @@ namespace NewDawn.Tiles.Alchemistry
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            ItemDrop = ModContent.ItemType<RageCrystal>();
+            RegisterItemDrop(ModContent.ItemType<RageCrystal>());
         }
         public override void AddBuff()
         {

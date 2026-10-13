@@ -56,7 +56,7 @@ namespace NewDawn.Projectiles.Magic
                 originV.X = Projectile.velocity.X;
                 originV.Y = Projectile.velocity.Y;
                 if (Main.myPlayer == Projectile.owner)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position.X, Projectile.position.Y, Projectile.velocity.X, Projectile.velocity.Y, ModContent.ProjectileType<WarlockStaff2>(), Projectile.damage, 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Projectile.position.X, Projectile.position.Y), new Vector2(Projectile.velocity.X, Projectile.velocity.Y), ModContent.ProjectileType<WarlockStaff2>(), Projectile.damage, 3, Main.myPlayer);
             }
             bitherial = true;
             Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, ModContent.DustType<Blue>(), 0f, 0f);

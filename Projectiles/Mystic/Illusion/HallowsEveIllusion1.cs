@@ -53,7 +53,7 @@ namespace NewDawn.Projectiles.Mystic.Illusion
 			timer++;
 			if (timer > 8)
 			{
-				Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.position.X, Projectile.position.Y, Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, -1f), ModContent.ProjectileType<HallowsEveIllusion2>(), (int)(Projectile.damage * 0.35f), 1f, Main.myPlayer);
+				Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Projectile.position.X, Projectile.position.Y), new Vector2(Main.rand.NextFloat(-2f, 2f), Main.rand.NextFloat(-2f, -1f)), ModContent.ProjectileType<HallowsEveIllusion2>(), (int)(Projectile.damage * 0.35f), 1f, Main.myPlayer);
 				timer = 0;
 			}
         }

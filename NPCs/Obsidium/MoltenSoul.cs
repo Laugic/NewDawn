@@ -51,7 +51,7 @@ namespace NewDawn.NPCs.Obsidium
         public override void OnKill()
         {
             if(Main.rand.Next(2) == 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfHaught>());
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfHaught>());
         }
     }
 }

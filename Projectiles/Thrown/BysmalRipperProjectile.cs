@@ -43,11 +43,11 @@ namespace NewDawn.Projectiles.Thrown
                 {
                     theta = (float)Main.rand.NextDouble() * 3.14f * 2;
                     mag = 120;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X + (int)(mag * Math.Cos(theta)), target.Center.Y + (int)(mag * Math.Sin(theta)), -8 * (float)Math.Cos(theta), -8 * (float)Math.Sin(theta), ModContent.ProjectileType<BysmalRipperShadow>(), damage, 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X + (int)(mag * Math.Cos(theta)), target.Center.Y + (int)(mag * Math.Sin(theta)), -8 * (float)Math.Cos(theta), -8 * (float)Math.Sin(theta), ModContent.ProjectileType<BysmalRipperShadow>(), hit.Damage, 3, Main.myPlayer);
                 }
                 theta = (float)Main.rand.NextDouble() * 3.14f * 2;
                 mag = 120;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X + (int)(mag * Math.Cos(theta)), target.Center.Y + (int)(mag * Math.Sin(theta)), -8 * (float)Math.Cos(theta), -8 * (float)Math.Sin(theta), ModContent.ProjectileType<BysmalRipperShadow>(), damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X + (int)(mag * Math.Cos(theta)), target.Center.Y + (int)(mag * Math.Sin(theta)), -8 * (float)Math.Cos(theta), -8 * (float)Math.Sin(theta), ModContent.ProjectileType<BysmalRipperShadow>(), hit.Damage, 3, Main.myPlayer);
             }
         }
     }

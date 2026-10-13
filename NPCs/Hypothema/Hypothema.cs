@@ -99,7 +99,6 @@ namespace NewDawn.NPCs.Hypothema
             NPC.noTileCollide = true;
             NPC.npcSlots = 10f; // Take up open spawn slots, preventing random NPCs from spawning during the fight
             //Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Hypothema");
-            //bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<HypothemaTreasureBag>();
             PrevAIPhase = CurrentPhase = AIPhase.RainChase;
             HealthPhase = 1;
             FrameDelay = 0;
@@ -135,10 +134,10 @@ namespace NewDawn.NPCs.Hypothema
                     Music = MusicID.OtherworldlyBoss1;
                 }
 
-                AnimFrames = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/Hypothema_Frames");
-                CloudFront = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/HypothemaCloud");
-                CloudBack = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/HypothemaCloudOutline");
-                GunSpin = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/GunSpin");
+                AnimFrames = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/Hypothema_Frames");
+                CloudFront = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/HypothemaCloud");
+                CloudBack = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/HypothemaCloudOutline");
+                GunSpin = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/GunSpin");
             }
         }
 
@@ -1603,42 +1602,18 @@ namespace NewDawn.NPCs.Hypothema
         #region Loot
         public override void OnKill()
         {
-            //NewDawnPlayer modPlayer = NewDawnPlayer.Get();
-            //if (NewDawnWorld.downedEtheria)
-            //{
-            //    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialFrost>(), 1);
-            //}
-            //if (!Main.expertMode)
-            //{
-            //    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<FrostShard>(), Main.rand.Next(1, 3));
-            //    if (Main.rand.Next(0, 3) != 0)
-            //    {
-            //        int ran = Main.rand.Next(1, 7);
-            //        if (ran == 1) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.IceBoomerang, 1);
-            //        if (ran == 2) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.IceBlade, 1);
-            //        if (ran == 3) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.IceSkates, 1);
-            //        if (ran == 4) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.SnowballCannon, 1);
-            //        if (ran == 5) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.BlizzardinaBottle, 1);
-            //        if (ran == 6) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.FlurryBoots, 1);
-            //    }
-            //    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.SnowBlock, Main.rand.Next(30, 60));
-            //    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ItemID.IceBlock, Main.rand.Next(30, 60));
+            if (NewDawnWorld.downedEtheria)
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<global::NewDawn.Items.Loot.EtherialFrost>());
 
-            //    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<ChilledBar>(), Main.rand.Next(16, 25));
-            //}
+            if (Main.rand.NextBool(10))
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<global::NewDawn.Items.Placeable.HypothemaTrophy>());
 
-            //if (Main.expertMode)
-            //    NPC.DropBossBags();
-
-            //if (Main.rand.Next(10) == 0)
-            //    Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<HypothemaTrophy>(), 1);
-
-            //NewDawnWorld.downedHypothema = true;
+            NewDawnWorld.downedHypothema = true;
         }
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 188;
+            potionType = ItemID.HealingPotion;
         }
         #endregion
     }

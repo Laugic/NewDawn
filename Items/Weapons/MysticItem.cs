@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using NewDawn.Buffs.Mystic;
+using NewDawn.Projectiles.Mystic.Conjuration;
+using NewDawn.Projectiles.Mystic.Overflow;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
@@ -272,7 +274,6 @@ namespace NewDawn.Items.Weapons
             modPlayer.CurrentVisCost = VisCost;
             modPlayer.CurrentMundusCost = MundusCost;
 
-            NewDawn.MysticaUI.Update();
         }
 
         private string GetMysticType()
@@ -328,8 +329,8 @@ namespace NewDawn.Items.Weapons
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
 
-            ModifyMysticShoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
-            GetMysticShots(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
+            ModifyMysticShoot(player, ref position, ref velocity.X, ref velocity.Y, ref type, ref damage, ref knockback);
+            GetMysticShots(player, ref position, ref velocity.X, ref velocity.Y, ref type, ref damage, ref knockback);
             switch (modPlayer.MysticMode)
             {
                 case 1:
@@ -387,7 +388,7 @@ namespace NewDawn.Items.Weapons
                         return false;
                     break;
             }
-            return MysticShoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
+            return MysticShoot(player, ref position, ref velocity.X, ref velocity.Y, ref type, ref damage, ref knockback);
         }
 
         private void ModifyMysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
@@ -404,11 +405,11 @@ namespace NewDawn.Items.Weapons
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.Crystillium && modPlayer.IsOnOverflow())
-                Projectile.NewProjectile(position, new Vector2(speedX / 16f, speedY / 16f), ModContent.ProjectileType<CrystilliumShard>(), damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(player.GetSource_ItemUse(Item), position, new Vector2(speedX / 16f, speedY / 16f), ModContent.ProjectileType<CrystilliumShard>(), damage, knockBack, player.whoAmI);
             if (modPlayer.OverflowFire && modPlayer.IsOnOverflow())
-                Projectile.NewProjectile(position, velocity, ModContent.ProjectileType<OverflowThermalite>(), (int)(damage / 1.2f), knockback, player.whoAmI);
+                Projectile.NewProjectile(player.GetSource_ItemUse(Item), position, new Vector2(speedX, speedY), ModContent.ProjectileType<OverflowThermalite>(), (int)(damage / 1.2f), knockBack, player.whoAmI);
             if (modPlayer.ShroomOverflow > 0 && modPlayer.IsOnOverflow())
-                Projectile.NewProjectile(new Vector2(player.Center.X, player.position.Y), new Vector2(0, -10f), ModContent.ProjectileType<FreyaConjuration2>(), damage, 3, player.whoAmI);
+                Projectile.NewProjectile(player.GetSource_ItemUse(Item), new Vector2(player.Center.X, player.position.Y), new Vector2(0, -10f), ModContent.ProjectileType<FreyaConjuration2>(), damage, 3, player.whoAmI);
         }
 
         public virtual bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)

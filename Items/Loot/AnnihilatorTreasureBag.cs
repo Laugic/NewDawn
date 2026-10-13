@@ -1,5 +1,8 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.ModLoader;
+using NewDawn.Items.Loot;
 
 namespace NewDawn.Items.Loot
 {
@@ -29,13 +32,12 @@ namespace NewDawn.Items.Loot
         }
 
 
-        //TODO: Add loot to this bag
-        //public override void ModifyItemLoot(ItemLoot itemLoot)
-        //{
-        //    itemLoot.Add(ModContent.ItemType<SteamBar>(), 20, 35);
-        //    itemLoot.Add(ModContent.ItemType<SoulOfThought>(), 25, 40);
-        //    itemLoot.Add(ModContent.ItemType<CogOfKnowledge>(), 1);
-        //    itemLoot.Add(499, 10, 15);
-        //}
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SteamBar>(), 1, 20, 34));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<SoulOfThought>(), 1, 25, 39));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<CogOfKnowledge>()));
+            itemLoot.Add(ItemDropRule.Common(ItemID.GreaterHealingPotion, 1, 10, 14));
+        }
     }
 }

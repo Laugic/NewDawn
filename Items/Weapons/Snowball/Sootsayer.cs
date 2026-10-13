@@ -51,7 +51,7 @@ namespace NewDawn.Items.Weapons.Range
                 Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(15));
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = perturbedSpeed * scale;
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type==ProjectileID.SnowBallFriendly?ModContent.ProjectileType<SootballProjectile>():type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type==ProjectileID.SnowBallFriendly?ModContent.ProjectileType<SootballProjectile>():type, damage, knockback, player.whoAmI);
             }
 
             return false;

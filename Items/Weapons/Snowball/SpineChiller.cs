@@ -46,7 +46,7 @@ namespace NewDawn.Items.Weapons.Snowball
             float theta = (float)Main.rand.NextDouble() * 3.14f * 2;
             float mag = 50;
             if(Main.netMode != NetmodeID.MultiplayerClient)
-                Projectile.NewProjectile(source, (int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)), player.position.Y - 600 - Math.Abs((int)(mag * Math.Sin(theta))), -3 + 6 * (float)Main.rand.NextDouble(), 8 + 2 * Math.Abs((float)Math.Sin(theta)), type, damage, 3, Main.myPlayer);
+                Projectile.NewProjectile(source,new Vector2((int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)), player.position.Y - 600 - Math.Abs((int)(mag * Math.Sin(theta)))), new Vector2(-3 + 6 * (float)Main.rand.NextDouble(), 8 + 2 * Math.Abs((float)Math.Sin(theta))), type, damage, 3, Main.myPlayer);
             return false;
         }
 

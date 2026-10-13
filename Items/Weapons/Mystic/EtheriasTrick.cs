@@ -55,6 +55,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 25f;
             if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
             {
@@ -63,7 +64,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
             if(NewDawnPlayer.Get(player).MysticMode == 2)
             {
-                SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/Etherlaser"));
+                SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/Etherlaser"));
             }
 
             return base.MysticShoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);

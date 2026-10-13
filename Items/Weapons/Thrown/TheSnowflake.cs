@@ -1,4 +1,6 @@
 using NewDawn.Projectiles.Thrown;
+using NewDawn.Items.Loot;
+using NewDawn.Items.Materials;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;

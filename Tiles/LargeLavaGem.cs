@@ -21,7 +21,7 @@ namespace NewDawn.Tiles
             LocalizedText name = CreateMapEntryName();
             // name.SetDefault("Large Lava Gem");
             AddMapEntry(new Color(220, 150, 40), name);
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             DustType = ModContent.DustType<Magma>();
             Main.tileLighted[Type] = true;
             //adjTiles = new int[] { TileID.WorkBenches };
@@ -39,7 +39,7 @@ namespace NewDawn.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Placeable.LavaGemItem>(), Main.rand.Next(3, 6));
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Placeable.LavaGemItem>(), Main.rand.Next(3, 6));
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

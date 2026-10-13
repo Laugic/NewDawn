@@ -1,4 +1,5 @@
 using NewDawn.Items.Loot;
+using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Summon;
 using Terraria;
 using Terraria.ID;

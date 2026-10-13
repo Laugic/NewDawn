@@ -1,11 +1,8 @@
-using NewDawn.Dusts;
 using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Dusts;
 using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using WebCom.Extensions;
 
 namespace NewDawn.Tiles
 {
@@ -21,20 +18,20 @@ namespace NewDawn.Tiles
             MineResist = .5f;
             MinPick = 50;
             DustType = ModContent.DustType<Magma>();
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<Items.Placeable.ObsidiumCore>();
+            RegisterItemDrop(ModContent.ItemType<Items.Placeable.ObsidiumCore>());
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/AmelderaCoreTile");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/AmelderaCoreTile");
             }
         }
-        
+
         public override void NumDust(int i, int j, bool fail, ref int num)
         {
             num = fail ? 1 : 3;
         }
-        
+
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
         {
             r = 0.9f;
@@ -52,7 +49,7 @@ namespace NewDawn.Tiles
             {
                 if (Main.rand.Next(20) == 0)
                 {
-                    if(CountCrystals(i, j) < 9)
+                    if (CountCrystals(i, j) < 9)
                         WorldGen.AddLifeCrystal(i, j - 1);
                 }
             }
@@ -61,11 +58,11 @@ namespace NewDawn.Tiles
         private static int CountCrystals(int i, int j)
         {
             int crystalCount = 0;
-            for(int x = -20; x < 20; x++)
+            for (int x = -20; x < 20; x++)
             {
-                for(int y = -20; y < 20; y++)
+                for (int y = -20; y < 20; y++)
                 {
-                    if(TileCheckSafe(x + i, y + j))
+                    if (TileCheckSafe(x + i, y + j))
                     {
                         if (Main.tile[x + i, y + j].TileType == TileID.Heart)
                             crystalCount++;

@@ -25,11 +25,13 @@ namespace NewDawn.Tiles.Furniture
             Main.tileContainer[Type] = true;
             Main.tileLavaDeath[Type] = false;
             TileID.Sets.HasOutlines[Type] = true;
+            TileID.Sets.BasicDresser[Type] = true;
+            TileID.Sets.IsAContainer[Type] = true;
             TileObjectData.newTile.CopyFrom(TileObjectData.Style3x2);
             TileObjectData.newTile.Origin = new Point16(1, 1);
             TileObjectData.newTile.CoordinateHeights = new[] { 16, 16 };
-            TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(new Func<int, int, int, int, int, int>(Chest.FindEmptyChest), -1, 0, true);
-            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(new Func<int, int, int, int, int, int>(Chest.AfterPlacement_Hook), -1, 0, false);
+            TileObjectData.newTile.HookCheckIfCanPlace = new PlacementHook(new Func<int, int, int, int, int, int, int>(Chest.FindEmptyChest), -1, 0, true);
+            TileObjectData.newTile.HookPostPlaceMyPlayer = new PlacementHook(new Func<int, int, int, int, int, int, int>(Chest.AfterPlacement_Hook), -1, 0, false);
             TileObjectData.newTile.AnchorInvalidTiles = new[] { 127 };
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newTile.LavaDeath = false;
@@ -40,10 +42,14 @@ namespace NewDawn.Tiles.Furniture
             // name.SetDefault("Obsidium Dresser");
             AddMapEntry(new Color(200, 200, 200), name);
             DustType = ModContent.DustType<Magma>();
-            disableSmartCursor/* tModPorter Note: Removed. Use TileID.Sets.DisableSmartCursor instead */ = true;
+            TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[] { TileID.Dressers };
-            dresser/* tModPorter Note: Removed. Use ContainerName.SetDefault() and TileID.Sets.BasicDresser instead */ = "Obsidium Dresser";
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<ObsidiumDresser>();
+            RegisterItemDrop(ModContent.ItemType<ObsidiumDresser>());
+        }
+
+        public override LocalizedText DefaultContainerName(int frameX, int frameY)
+        {
+            return CreateMapEntryName();
         }
 
         public override bool HasSmartInteract(int i, int j, SmartInteractScanSettings settings)
@@ -96,7 +102,6 @@ namespace NewDawn.Tiles.Furniture
                 }
                 else
                 {
-                    player.flyingPigChest = -1;
                     int num213 = Chest.FindChest(left, top);
                     if (num213 != -1)
                     {
@@ -166,9 +171,9 @@ namespace NewDawn.Tiles.Furniture
                 }
                 else
                 {
-                    player.cursorItemIconText = chest/* tModPorter Note: Removed. Use ContainerName.SetDefault() and TileID.Sets.BasicChest instead */;
+                    player.cursorItemIconText = DefaultContainerName(tile.TileFrameX, tile.TileFrameY).Value;
                 }
-                if (player.cursorItemIconText == chest/* tModPorter Note: Removed. Use ContainerName.SetDefault() and TileID.Sets.BasicChest instead */)
+                if (player.cursorItemIconText == DefaultContainerName(tile.TileFrameX, tile.TileFrameY).Value)
                 {
                     player.cursorItemIconID = ModContent.ItemType<ObsidiumDresser>();
                     player.cursorItemIconText = "";
@@ -208,9 +213,9 @@ namespace NewDawn.Tiles.Furniture
                 }
                 else
                 {
-                    player.cursorItemIconText = chest/* tModPorter Note: Removed. Use ContainerName.SetDefault() and TileID.Sets.BasicChest instead */;
+                    player.cursorItemIconText = DefaultContainerName(tile.TileFrameX, tile.TileFrameY).Value;
                 }
-                if (player.cursorItemIconText == chest/* tModPorter Note: Removed. Use ContainerName.SetDefault() and TileID.Sets.BasicChest instead */)
+                if (player.cursorItemIconText == DefaultContainerName(tile.TileFrameX, tile.TileFrameY).Value)
                 {
                     player.cursorItemIconID = ModContent.ItemType<ObsidiumDresser>();
                     player.cursorItemIconText = "";
@@ -231,7 +236,6 @@ namespace NewDawn.Tiles.Furniture
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 48, 32, ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */);
             Chest.DestroyChest(i, j);
         }
     }

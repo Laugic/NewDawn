@@ -91,8 +91,7 @@ namespace NewDawn.Items.Weapons.Mystic
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.Wood, 16);
-            recipe.anyWood = true;
+            recipe.AddRecipeGroup(RecipeGroupID.Wood, 16);
             recipe.AddIngredient(ItemID.Acorn, 6);
             recipe.AddIngredient(ItemID.Sunflower, 4);
             recipe.AddTile(TileID.WorkBenches);

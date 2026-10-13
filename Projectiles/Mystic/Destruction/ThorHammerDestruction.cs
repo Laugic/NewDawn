@@ -35,7 +35,7 @@ namespace NewDawn.Projectiles.Mystic.Destruction
             {
                 Vector2 drawPos = Projectile.oldPos[k] - Main.screenPosition + drawOrigin + new Vector2(0f, Projectile.gfxOffY);
                 Color color = Projectile.GetAlpha(lightColor * 0.25f) * ((float)(Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
-                spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, new Rectangle(0, 74 * Projectile.frame, 74, 74), color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
+                Main.spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, new Rectangle(0, 74 * Projectile.frame, 74, 74), color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
             }
             return true;
         }

@@ -1,11 +1,10 @@
-using System;
-using NewDawn.Buffs;
-using NewDawn.Projectiles.Mystic.Burst;
 using Microsoft.Xna.Framework;
+using NewDawn.Buffs;
+using NewDawn.Players;
+using NewDawn.Projectiles.Mystic.Burst;
+using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
-using WebCom.Tinq;
 
 namespace NewDawn
 {
@@ -123,7 +122,7 @@ namespace NewDawn
             if (Mundus + MundusUnuseRegen <= MundusMax + MundusMaxPermaBoost && MysticMode != 3)
                 Mundus += MundusUnuseRegen;
 
-            if(Player.statLife < 1)
+            if (Player.statLife < 1)
             {
                 Lux = LuxMax + LuxMaxPermaBoost;
                 Vis = VisMax + VisMaxPermaBoost;
@@ -133,9 +132,10 @@ namespace NewDawn
 
         public void MysticSwitch()
         {
-            switch(MysticMode)
+            switch (MysticMode)
             {
-                case 1: MysticMode = 3;
+                case 1:
+                    MysticMode = 3;
                     break;
                 case 2:
                     MysticMode = 1;
@@ -158,14 +158,14 @@ namespace NewDawn
             {
                 if (MysticShroomBurst)
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 2.5f, -6.25f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 5, -5, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -5, -5, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -2.5f, -6.25f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 2.5f / 2, -6.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 3.75f, -5.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -3.75f, -5.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -2.5f / 2, -6.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 2.5f, -6.25f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 5, -5, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -5, -5, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -2.5f, -6.25f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 2.5f / 2, -6.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 3.75f, -5.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -3.75f, -5.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -2.5f / 2, -6.75f, ModContent.ProjectileType<ShroomBurst>(), (int)(10 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
 
                     MysticSwitchCool += 1 * 60;
                 }
@@ -184,16 +184,16 @@ namespace NewDawn
 
                 if (MysticSandBurst)
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 16, 2, 0, ModContent.ProjectileType<AncientRune>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 16, -2, 0, ModContent.ProjectileType<AncientRune>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 16, 2, 0, ModContent.ProjectileType<AncientRune>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 16, -2, 0, ModContent.ProjectileType<AncientRune>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
 
                     MysticSwitchCool += 3 * 60;
                 }
 
                 if (MysticEruptionBurst)
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 16, 4, 0, ModContent.ProjectileType<EruptionBurst>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 16, -4, 0, ModContent.ProjectileType<EruptionBurst>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 16, 4, 0, ModContent.ProjectileType<EruptionBurst>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 16, -4, 0, ModContent.ProjectileType<EruptionBurst>(), (int)(12 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
                     MysticErupting += 45;
 
                     MysticSwitchCool += 4 * 60;
@@ -216,40 +216,45 @@ namespace NewDawn
                     Player.AddBuff(ModContent.BuffType<ForGlory>(), 180 + (int)(120 * MysticDuration));
                     Player.AddBuff(ModContent.BuffType<ForHonor>(), 180 + (int)(120 * MysticDuration));
                 }
-                if(MysticSwitchCool > 0)
+                if (MysticSwitchCool > 0)
                     PostBurstEffects();
             }
-            NewDawn.MysticaUI.CyclePositions(MysticMode);
+            if (!Main.dedServ && NewDawn.EnigmaMysticUI is not null)
+            {
+                MysticPlayer.MysticMode uiMode = MysticMode switch
+                {
+                    1 => MysticPlayer.MysticMode.Destruction,
+                    2 => MysticPlayer.MysticMode.Illusion,
+                    _ => MysticPlayer.MysticMode.Conjuration
+                };
+                NewDawn.EnigmaMysticUI.CyclePositions(uiMode);
+            }
         }
 
         private void Blink()
         {
-            var rect = GenerateAngledHitbox(Player.Center + (Main.MouseWorld - Player.Center).SafeNormalize(Vector2.UnitY) * 10, Main.MouseWorld, 36f, 400f);
-            var target = Main.npc.WhereActive(n =>
+            var rect = GenerateAngledHitbox(Player.Center + ((Main.MouseWorld - Player.Center).SafeNormalize(Vector2.UnitY) * 10), Main.MouseWorld, 36f, 400f);
+            foreach (NPC npc in Main.npc)
             {
-                return !n.friendly && CheckWithinAngledRectangle(n.Center, rect);
-            });
-
-            foreach (NPC npc in target)
-            {
-                npc.AddBuff(BuffID.OnFire, 2);
+                if (npc.active && !npc.friendly && CheckWithinAngledRectangle(npc.Center, rect))
+                    npc.AddBuff(BuffID.OnFire, 2);
             }
         }
 
         private Vector2[] GenerateAngledHitbox(Vector2 center, Vector2 target, float width, float length)
         {
             var dirTo = Direction(center, target);// (float)Math.Atan2((center.X - target.X), (center.Y - target.Y)) + (float)Math.PI / 2;
-            var b1 = center + new Vector2((float)Math.Cos(dirTo - Math.PI / 2), (float)Math.Sin(dirTo - Math.PI / 2)) * width;
-            var b2 = b1 + new Vector2((float)Math.Cos(dirTo), (float)Math.Sin(dirTo)) * length;
-            var t1 = center + new Vector2((float)Math.Cos(dirTo + Math.PI / 2), (float)Math.Sin(dirTo + Math.PI / 2)) * width;
-            var t2 = t1 + new Vector2((float)Math.Cos(dirTo), (float)Math.Sin(dirTo)) * length;
+            var b1 = center + (new Vector2((float)Math.Cos(dirTo - (Math.PI / 2)), (float)Math.Sin(dirTo - (Math.PI / 2))) * width);
+            var b2 = b1 + (new Vector2((float)Math.Cos(dirTo), (float)Math.Sin(dirTo)) * length);
+            var t1 = center + (new Vector2((float)Math.Cos(dirTo + (Math.PI / 2)), (float)Math.Sin(dirTo + (Math.PI / 2))) * width);
+            var t2 = t1 + (new Vector2((float)Math.Cos(dirTo), (float)Math.Sin(dirTo)) * length);
 
-            var bTtheta = dirTo + (float)Math.PI / 2;// Direction(b1, t1);// (float)Math.Atan2((b1.X - t1.X), (b1.Y - t1.Y));
+            var bTtheta = dirTo + ((float)Math.PI / 2);// Direction(b1, t1);// (float)Math.Atan2((b1.X - t1.X), (b1.Y - t1.Y));
 
             Vector2[] angles = new Vector2[]{
                 b1,
                 b2,
-                t1, 
+                t1,
                 t2,
                 new Vector2(length, width * 2)
             };
@@ -272,29 +277,29 @@ namespace NewDawn
             dust = Dust.NewDust(rect[3], 0, 0, DustID.Torch);
             Main.dust[dust].velocity *= 0;
 
-            var result = Direction(rect[0], pos) + 
-                Direction(rect[1], pos) + 
-                Direction(rect[2], pos) + 
+            var result = Direction(rect[0], pos) +
+                Direction(rect[1], pos) +
+                Direction(rect[2], pos) +
                 Direction(rect[3], pos);
             result = Distance(rect[0], pos) +
                  Distance(rect[1], pos) +
                  Distance(rect[2], pos) +
                  Distance(rect[3], pos);
-            result -= 2 * (float)Math.Sqrt(rect[4].X * rect[4].X + rect[4].Y * rect[4].Y);
-            Main.NewText((result).ToString());
-            var newResult = Math.Abs(result) < (float)(Math.Sqrt(rect[4].Y * rect[4].X)) / 2 && (Direction(rect[0], pos) >= Direction(rect[0], rect[1])) && (Direction(rect[2], pos) <= Direction(rect[2], rect[3]));
-            Main.NewText((newResult).ToString());
+            result -= 2 * (float)Math.Sqrt((rect[4].X * rect[4].X) + (rect[4].Y * rect[4].Y));
+            Main.NewText(result.ToString());
+            var newResult = Math.Abs(result) < (float)Math.Sqrt(rect[4].Y * rect[4].X) / 2 && (Direction(rect[0], pos) >= Direction(rect[0], rect[1])) && (Direction(rect[2], pos) <= Direction(rect[2], rect[3]));
+            Main.NewText(newResult.ToString());
             return newResult;
         }
 
         private float Distance(Vector2 pos1, Vector2 pos2)
         {
-            return (float)Math.Sqrt((pos2.Y - pos1.Y) * (pos2.Y - pos1.Y) + (pos2.X - pos1.X) * (pos2.X - pos1.X));
+            return (float)Math.Sqrt(((pos2.Y - pos1.Y) * (pos2.Y - pos1.Y)) + ((pos2.X - pos1.X) * (pos2.X - pos1.X)));
         }
 
         private float Direction(Vector2 pos1, Vector2 pos2)
         {
-            return (float)Math.Atan2((pos2.Y - pos1.Y), (pos2.X - pos1.X));
+            return (float)Math.Atan2(pos2.Y - pos1.Y, pos2.X - pos1.X);
         }
 
         private void PostBurstEffects()

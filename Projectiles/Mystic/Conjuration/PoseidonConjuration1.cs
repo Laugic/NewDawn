@@ -50,7 +50,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
                 {
                     Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y,
                            Projectile.velocity.X - (float)Main.rand.NextDouble() + (2 * (float)Main.rand.NextDouble()), Projectile.velocity.Y - (float)Main.rand.NextDouble() + (2 * (float)Main.rand.NextDouble()),
-                           ModContent.ProjectileType<PoseidonConjuration2>(), Projectile.damage, Projectile.knockback, Projectile.owner, Main.rand.Next(4));
+                           ModContent.ProjectileType<PoseidonConjuration2>(), Projectile.damage, Projectile.knockBack, Projectile.owner, Main.rand.Next(4));
                     SoundEngine.PlaySound(SoundID.Item86, Projectile.position);
                 }
             }

@@ -48,7 +48,7 @@ namespace NewDawn.Projectiles.Mystic.Illusion
 				var muzzleOffset = Projectile.velocity;
 				muzzleOffset.Normalize();
 				muzzleOffset *= 40;
-				DrawLaser(spriteBatch, TextureAssets.Projectile[Projectile.type].Value, Main.player[Projectile.owner].Center + muzzleOffset,
+				DrawLaser(Main.spriteBatch, TextureAssets.Projectile[Projectile.type].Value, Main.player[Projectile.owner].Center + muzzleOffset,
 					Projectile.velocity, TextureAssets.Projectile[Projectile.type].Value.Height / 3, Projectile.damage, -1.57f, 1f, 1000f, Color.White, (int)MOVE_DISTANCE);
 			}
 			return false;

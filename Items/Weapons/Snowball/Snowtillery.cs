@@ -54,7 +54,7 @@ namespace NewDawn.Items.Weapons.Range
             {
                 SoundEngine.PlaySound(SoundID.Item11, player.Center);
                 type = ModContent.ProjectileType<SnowRocket>();
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, speedX * .25f, speedY * .25f, type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X * .25f, velocity.Y * .25f), type, damage, knockback, player.whoAmI);
             }
             return false;
         }

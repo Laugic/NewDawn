@@ -45,7 +45,7 @@ namespace NewDawn.Items.Weapons.Magic
             {
                 position += muzzleOffset;
             }
-            return base.Shoot(player, source, ref position, ref velocity, ref type, ref damage, ref knockback);
+            return base.Shoot(player, source, position, velocity, type, damage, knockback);
         }
 
         public override void AddRecipes()

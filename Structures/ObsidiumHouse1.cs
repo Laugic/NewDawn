@@ -78,8 +78,11 @@ namespace NewDawn.Structures
                             if (_structureArray[j, i] == 6)
                             {
                                 WorldGen.KillTile(xPosO + i, yPosO + j);
-                                Main.tile[xPosO + _structureArray.GetLength(1) - i, yPosO + j].LiquidType = LiquidID.Lava;
-                                Main.tile[xPosO + _structureArray.GetLength(1) - i, yPosO + j].LiquidAmount = 255;
+                                int tileX = xPosO + _structureArray.GetLength(1) - i;
+                                int tileY = yPosO + j;
+                                Tile lavaTile = Main.tile[tileX, tileY];
+                                lavaTile.LiquidType = LiquidID.Lava;
+                                lavaTile.LiquidAmount = 255;
                             }
                             if (_structureArray[j, i] == 7)
                             {
@@ -133,8 +136,11 @@ namespace NewDawn.Structures
                             if (_structureArray[j, i] == 6)
                             {
                                 WorldGen.KillTile(xPosO + i, yPosO + j);
-                                Main.tile[xPosO + i, yPosO + j].LiquidType = LiquidID.Lava;
-                                Main.tile[xPosO + i, yPosO + j].LiquidAmount = 255;
+                                int tileX = xPosO + i;
+                                int tileY = yPosO + j;
+                                Tile lavaTile = Main.tile[tileX, tileY];
+                                lavaTile.LiquidType = LiquidID.Lava;
+                                lavaTile.LiquidAmount = 255;
                             }
                             if (_structureArray[j, i] == 7)
                             {

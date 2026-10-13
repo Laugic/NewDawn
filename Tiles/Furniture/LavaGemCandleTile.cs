@@ -32,7 +32,7 @@ namespace NewDawn.Tiles.Furniture
             // name.SetDefault("Lava Gem Candle");
             AddMapEntry(new Color(170, 200, 120), name);
 
-            ItemDrop/* tModPorter Note: Removed. Tiles and walls will drop the item which places them automatically. Use RegisterItemDrop to alter the automatic drop if necessary. */ = ModContent.ItemType<LavaGemCandle>();
+            RegisterItemDrop(ModContent.ItemType<LavaGemCandle>());
             AdjTiles = new int[] { TileID.Candles };
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
         }

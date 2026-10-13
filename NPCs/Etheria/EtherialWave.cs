@@ -63,7 +63,7 @@ namespace NewDawn.NPCs.Etheria
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            player.AddBuff(BuffID.Chilled, 90, true);
+            target.AddBuff(BuffID.Chilled, 90, true);
         }
     }
 }

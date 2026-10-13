@@ -79,8 +79,7 @@ namespace NewDawn.NPCs.SteamTrain
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.netAlways = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/SteamTrain");
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<SteamTrainTreasureBag>();
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/SteamTrain");
         }
 
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
@@ -162,7 +161,7 @@ namespace NewDawn.NPCs.SteamTrain
                 {
                     if (boosted == false) //Play boosted sound effect
                     {
-                        SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/train_whistle"));
+                        SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/train_whistle"));
                         boosted = true;
                     }
                     accel = maxAccel;
@@ -183,7 +182,7 @@ namespace NewDawn.NPCs.SteamTrain
                 {
                     if (boosted == false) //Play boosted sound effect
                     {
-                        SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/train_whistle"));
+                        SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/train_whistle"));
                         boosted = true;
                     }
                     accel = -maxAccel;
@@ -230,26 +229,26 @@ namespace NewDawn.NPCs.SteamTrain
                 if (delta.Y < 0)
                 {
                     SoundEngine.PlaySound(SoundID.Item34, NPC.position);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 312, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 522, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 732, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 942, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 1156, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 1372, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 312, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 522, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 732, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 942, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 1156, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 1372, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<GasBallUp>(), NPC.damage / 3, 3f, Main.myPlayer);
                 }
                 else
                 {
                     //Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 312, npc.position.Y + 60, 0, 8, ModContent.ProjectileType<Coginator>(), npc.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 522, NPC.position.Y + 60, 0, 8, ModContent.ProjectileType<SteamyShadow>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 522, NPC.position.Y + 60), new Vector2(0, 8), ModContent.ProjectileType<SteamyShadow>(), NPC.damage / 3, 3f, Main.myPlayer);
                     //Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 732, npc.position.Y + 60, 0, 8, ModContent.ProjectileType<Coginatore>(), npc.damage / 3, 3f, Main.myPlayer);
                     //Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 942, npc.position.Y + 60, 0, 8, ModContent.ProjectileType<Coginator>(), npc.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 1156, NPC.position.Y + 60, 0, 8, ModContent.ProjectileType<SteamyShadow>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 1156, NPC.position.Y + 60), new Vector2(0, 8), ModContent.ProjectileType<SteamyShadow>(), NPC.damage / 3, 3f, Main.myPlayer);
                     //Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 1372, npc.position.Y + 60, 0, 8, ModContent.ProjectileType<Coginator>(), npc.damage / 3, 3f, Main.myPlayer);
                 }
                 if (phase != _phase_Normaldrive)
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 1572, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<Coginator>(), NPC.damage / 3, 3f, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), NPC.position.X + 102, NPC.position.Y + 60, 0, -8, ModContent.ProjectileType<Coginator>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 1572, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<Coginator>(), NPC.damage / 3, 3f, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(NPC.position.X + 102, NPC.position.Y + 60), new Vector2(0, -8), ModContent.ProjectileType<Coginator>(), NPC.damage / 3, 3f, Main.myPlayer);
                 }
                 delay = 0;
 
@@ -334,7 +333,7 @@ namespace NewDawn.NPCs.SteamTrain
                 int debuff = ModContent.BuffType<Steamy>();
                 if (debuff >= 0)
                 {
-                    player.AddBuff(debuff, 90, true);
+                    target.AddBuff(debuff, 90, true);
                 }
             }
         }
@@ -346,21 +345,17 @@ namespace NewDawn.NPCs.SteamTrain
             NewDawnPlayer modPlayer = NewDawnPlayer.Get();
             if (NewDawnWorld.downedEtheria)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialTank>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialTank>(), 1);
             }
             if (!Main.expertMode)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
 
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfWrought>(), Main.rand.Next(20, 40));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfWrought>(), Main.rand.Next(20, 40));
             }
 
-            if (Main.expertMode)
-            {
-                NPC.DropBossBags();
-            }
             if (Main.rand.Next(10) == 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamTrainTrophy>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamTrainTrophy>(), 1);
             NewDawnWorld.downedSteamTrain = true;
 
         }
@@ -369,7 +364,7 @@ namespace NewDawn.NPCs.SteamTrain
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 499;
+            potionType = ItemID.GreaterHealingPotion;
         }
 
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)

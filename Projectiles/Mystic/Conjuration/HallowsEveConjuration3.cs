@@ -31,11 +31,11 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
 				Color color = Projectile.GetAlpha(lightColor * 0.4f) * ((float)(Projectile.oldPos.Length - k) / (float)Projectile.oldPos.Length);
 				if (Projectile.velocity.X < 0f)
 				{
-					spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
+					Main.spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.None, 0f);
 				}
 				else
 				{
-					spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.FlipHorizontally, 0f);
+					Main.spriteBatch.Draw(TextureAssets.Projectile[Projectile.type].Value, drawPos, null, color, Projectile.rotation, drawOrigin, Projectile.scale, SpriteEffects.FlipHorizontally, 0f);
 				}
 			}
 			return true;
@@ -115,19 +115,19 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
 			// Large Smoke Gore spawn
 			for (int g = 0; g < 2; g++)
 			{
-				int goreIndex = Gore.NewGore(new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				int goreIndex = Gore.NewGore(new EntitySource_Parent(Projectile), new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[goreIndex].scale = 0.6f;
 				Main.gore[goreIndex].velocity.X = Main.gore[goreIndex].velocity.X + 0.75f;
 				Main.gore[goreIndex].velocity.Y = Main.gore[goreIndex].velocity.Y + 0.75f;
-				goreIndex = Gore.NewGore(new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				goreIndex = Gore.NewGore(new EntitySource_Parent(Projectile), new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[goreIndex].scale = 0.8f;
 				Main.gore[goreIndex].velocity.X = Main.gore[goreIndex].velocity.X - 0.75f;
 				Main.gore[goreIndex].velocity.Y = Main.gore[goreIndex].velocity.Y + 0.75f;
-				goreIndex = Gore.NewGore(new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				goreIndex = Gore.NewGore(new EntitySource_Parent(Projectile), new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[goreIndex].scale = 0.6f;
 				Main.gore[goreIndex].velocity.X = Main.gore[goreIndex].velocity.X + 0.75f;
 				Main.gore[goreIndex].velocity.Y = Main.gore[goreIndex].velocity.Y - 0.75f;
-				goreIndex = Gore.NewGore(new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
+				goreIndex = Gore.NewGore(new EntitySource_Parent(Projectile), new Vector2(Projectile.position.X + (float)(Projectile.width / 2) - 24f, Projectile.position.Y + (float)(Projectile.height / 2) - 24f), default(Vector2), Main.rand.Next(61, 64), 1f);
 				Main.gore[goreIndex].scale = 0.8f;
 				Main.gore[goreIndex].velocity.X = Main.gore[goreIndex].velocity.X - 0.75f;
 				Main.gore[goreIndex].velocity.Y = Main.gore[goreIndex].velocity.Y - 0.75f;

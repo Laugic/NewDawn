@@ -37,7 +37,7 @@ namespace NewDawn.NPCs.Etheria
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            player.AddBuff(44, 300, true);//Frostburn
+            target.AddBuff(44, 300, true);//Frostburn
         }
         public override Color? GetAlpha(Color drawColor)
         {

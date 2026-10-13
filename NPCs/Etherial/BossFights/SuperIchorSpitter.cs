@@ -84,12 +84,12 @@ namespace NewDawn.NPCs.Etherial.BossFights
 
         public override void OnKill()
         {
-            Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialEssence>(), 1);
+            Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialEssence>(), 1);
         }
 
         private void MirrorTeleport(NPC npc, bool burst)
         {
-            SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
             if (burst && Main.player[npc.target].statLife > 1)
             {
                 for (int i = 0; i < 8; i++)
@@ -97,7 +97,7 @@ namespace NewDawn.NPCs.Etherial.BossFights
 
                     if (Main.netMode != 1)
                     {
-                        int n = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
+                        int n = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
                         Main.npc[n].ai[0] = npc.whoAmI;
                         Main.npc[n].ai[1] = i;
                     }

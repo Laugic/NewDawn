@@ -1,3 +1,4 @@
+using Microsoft.Xna.Framework;
 using NewDawn.Projectiles.Melee;
 using Terraria;
 using Terraria.DataStructures;
@@ -45,7 +46,7 @@ namespace NewDawn.Items.Weapons.Melee
             {
                 if (Main.player[Main.myPlayer] == player)
                 {
-                    Projectile.NewProjectile(new EntitySource_Parent(player), (int)target.position.X, (int)target.position.Y - 1200, 0, 0, ModContent.ProjectileType<HolyOrigin>(), (int)Item.damage, 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(player), new Vector2((int)target.position.X, (int)target.position.Y - 1200), new Vector2(0, 0), ModContent.ProjectileType<HolyOrigin>(), (int)Item.damage, 3, Main.myPlayer);
                 }
             }
         }/*

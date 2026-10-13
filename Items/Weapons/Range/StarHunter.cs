@@ -109,7 +109,7 @@ namespace NewDawn.Items.Weapons.Range
                     float scale = 1f - (Main.rand.NextFloat() * .2f);
                     perturbedSpeed = perturbedSpeed * scale;
                     if(Main.player[Main.myPlayer] == player)
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, 638, damage, knockback, player.whoAmI);
+                        Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), 638, damage, knockback, player.whoAmI);
                 }
             }
 

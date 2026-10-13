@@ -98,7 +98,7 @@ namespace NewDawn.NPCs.Etherial.BossFights
 
         public override void OnKill()
         {
-            if (Main.rand.Next(6) == 0) Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialEssence>(), 1);
+            if (Main.rand.Next(6) == 0) Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialEssence>(), 1);
         }
 
         private void MirrorTeleport(NPC npc, bool burst)
@@ -110,7 +110,7 @@ namespace NewDawn.NPCs.Etherial.BossFights
 
                     if (Main.netMode != 1)
                     {
-                        int N = NPC.NewNPC((int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
+                        int N = NPC.NewNPC(npc.GetSource_FromAI(), (int)npc.Center.X, (int)npc.Center.Y, ModContent.NPCType<EtherialSpiralShot>());
                         Main.npc[N].ai[0] = npc.whoAmI;
                         Main.npc[N].ai[1] = i;
                     }

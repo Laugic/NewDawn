@@ -1,5 +1,9 @@
 using Terraria;
+using Terraria.GameContent.ItemDropRules;
 using Terraria.ID;
+using Terraria.ModLoader;
+using NewDawn.Items.Loot;
+using NewDawn.Items.Materials;
 
 namespace NewDawn.Items.Loot
 {
@@ -29,25 +33,22 @@ namespace NewDawn.Items.Loot
         }
 
 
-        //TODO: Add loot to this bag
-        //public override void ModifyItemLoot(ItemLoot itemLoot)
-        //{
-        //    itemLoot.Add(ModContent.ItemType<FrostShard>(), Main.rand.Next(2, 4));
-        //    itemLoot.Add(ModContent.ItemType<FrostEssence>(), 1);
-        //    itemLoot.Add(ModContent.ItemType<ChilledBar>(), Main.rand.Next(22, 36));
-        //    int ran = Main.rand.Next(1, 7);
-        //    if (ran == 1) itemLoot.Add(ItemID.IceBoomerang, 1);
-        //    if (ran == 2) itemLoot.Add(ItemID.IceBlade, 1);
-        //    if (ran == 3) itemLoot.Add(ItemID.IceSkates, 1);
-        //    if (ran == 4) itemLoot.Add(ItemID.SnowballCannon, 1);
-        //    if (ran == 5) itemLoot.Add(987, 1);
-        //    if (ran == 6) itemLoot.Add(ItemID.FlurryBoots, 1);
-
-
-        //    itemLoot.Add(188, Main.rand.Next(10, 15));
-        //    itemLoot.Add(ItemID.SnowBlock, Main.rand.Next(40, 75));
-        //    itemLoot.Add(ItemID.IceBlock, Main.rand.Next(40, 75));
-
-        //}
+        public override void ModifyItemLoot(ItemLoot itemLoot)
+        {
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FrostShard>(), 1, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FrostEssence>()));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChilledBar>(), 1, 22, 35));
+            itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(
+                1,
+                ItemID.IceBoomerang,
+                ItemID.IceBlade,
+                ItemID.IceSkates,
+                ItemID.SnowballCannon,
+                ItemID.BlizzardinaBottle,
+                ItemID.FlurryBoots));
+            itemLoot.Add(ItemDropRule.Common(ItemID.HealingPotion, 1, 10, 14));
+            itemLoot.Add(ItemDropRule.Common(ItemID.SnowBlock, 1, 40, 74));
+            itemLoot.Add(ItemDropRule.Common(ItemID.IceBlock, 1, 40, 74));
+        }
     }
 }

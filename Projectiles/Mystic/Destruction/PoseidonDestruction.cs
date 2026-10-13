@@ -76,7 +76,7 @@ namespace NewDawn.Projectiles.Mystic.Destruction
                 if (Main.myPlayer == Projectile.owner && Projectile.ai[0] > 0)
                     Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y,
                         Projectile.velocity.X - (float)Main.rand.NextDouble() + 2 * (float)Main.rand.NextDouble(), Projectile.velocity.Y - (float)Main.rand.NextDouble() + 2 * (float)Main.rand.NextDouble(),
-                        ModContent.ProjectileType<PoseidonDestruction2>(), Projectile.damage, Projectile.knockback, Projectile.owner, Main.rand.Next(4));
+                        ModContent.ProjectileType<PoseidonDestruction2>(), Projectile.damage, Projectile.knockBack, Projectile.owner, Main.rand.Next(4));
             }
         }
 

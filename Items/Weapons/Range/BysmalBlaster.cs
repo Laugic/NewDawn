@@ -1,5 +1,6 @@
 using System;
 using NewDawn.Items.Loot;
+using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Special;
 using Microsoft.Xna.Framework;
 using Terraria;
@@ -97,7 +98,7 @@ namespace NewDawn.Items.Weapons.Range
                     perturbedSpeed = perturbedSpeed * scale;
 
                     if(Main.player[Main.myPlayer] == player)
-                        Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                        Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
                 }
             }
 

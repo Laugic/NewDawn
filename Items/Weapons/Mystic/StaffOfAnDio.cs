@@ -1,6 +1,7 @@
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Destruction;
 using NewDawn.Projectiles.Mystic.Illusion;
+using NewDawn.Items.Loot;
 using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
@@ -53,6 +54,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 65f;
             if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
             {

@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using NewDawn.Buffs;
 using NewDawn.Dusts;
+using NewDawn.NPCs.Hypothema;
 using NewDawn.NPCs.Bosses;
 using NewDawn.NPCs.PreTrio;
 using NewDawn.NPCs.RockTwins;
@@ -60,28 +61,29 @@ namespace NewDawn
         {
             CheckBysmalPowers();
 
-            AccHitByNPC(npc, ref damage, ref crit);
-
-            if (EtherialBrain && !EtherialBrainCooldown && (NewDawnWorld.downedEtheria || Etherable > 0))
+            modifiers.ModifyHurtInfo += (ref Player.HurtInfo info) =>
             {
-                npc.AddBuff(ModContent.BuffType<FragmentedMind>(), 15 * 60, false);
-
-                if (damage >= Player.statLife)
+                if (EtherialBrain && !EtherialBrainCooldown && (NewDawnWorld.downedEtheria || Etherable > 0))
                 {
-                    if (EtherialBrain && !EtherialBrainCooldown && (NewDawnWorld.downedEtheria || Etherable > 0))
+                    npc.AddBuff(ModContent.BuffType<FragmentedMind>(), 15 * 60, false);
+
+                    if (info.Damage >= Player.statLife)
                     {
-                        Player.AddBuff(ModContent.BuffType<FragmentedMind>(), 60 * 60 * 3, true);
-                        Player.immune = true;
-                        Player.immuneTime = 2 * 60;
-                        Player.statLife += 300;
+                        if (EtherialBrain && !EtherialBrainCooldown && (NewDawnWorld.downedEtheria || Etherable > 0))
+                        {
+                            Player.AddBuff(ModContent.BuffType<FragmentedMind>(), 60 * 60 * 3, true);
+                            Player.immune = true;
+                            Player.immuneTime = 2 * 60;
+                            Player.statLife += 300;
 
-                        SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
 
-                        for (int i = 0; i < 20; i++)
-                            Dust.NewDust(Player.position + Player.velocity, Player.width, Player.height, ModContent.DustType<EtherialDust>(), 0f, 0f);
+                            for (int i = 0; i < 20; i++)
+                                Dust.NewDust(Player.position + Player.velocity, Player.width, Player.height, ModContent.DustType<EtherialDust>(), 0f, 0f);
+                        }
                     }
                 }
-            }
+            };
 
             if(EtherialTank)
             {
@@ -90,54 +92,48 @@ namespace NewDawn
                 if (npc.life <= 0)
                     npc.life = 1;
             }
-
-            SoulStoneHitByNPC(npc, ref damage, ref crit);
         }
 
         public override void ModifyHurt(ref Player.HurtModifiers modifiers)/* tModPorter Override ImmuneTo, FreeDodge or ConsumableDodge instead to prevent taking damage */
         {
             CheckBysmalPowers();
 
-            if(!AccPreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource))
-                return false;
-
-            if (!SoulStonePreHurt(pvp, quiet, ref damage, ref hitDirection, ref crit, ref customDamage, ref playSound, ref genGore, ref damageSource))
-                return false;
-
-            if (EtherialBones)
+            modifiers.ModifyHurtInfo += (ref Player.HurtInfo info) =>
             {
-                Player.AddBuff(ModContent.BuffType<EtherBones>(), 10 * 60, true);
-                EtherBonesDamageBoost += ((float)damage / (float)Player.statLifeMax2);
-            }
-
-            if(EtherialTwins && !JusticeCooldown)
-            {
-                Player.AddBuff(ModContent.BuffType<JusticeCooldown>(), 90 * 60, true);
-                Player.statLife += damage;
-                Player.immune = true;
-                Player.immuneTime = 2 * 60;
-
-                return false;
-            }
-
-            if (damage >= Player.statLife)
-            {
-                if (EtherialScarf && !EtherialScarfCooldown && (NewDawnWorld.downedEtheria || Etherable > 0))
+                if (EtherialBones)
                 {
-                    Player.AddBuff(ModContent.BuffType<EtherialScarfCooldown>(), 60 * 60 * 1, true);
-                    SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/EtherialChange"));
+                    Player.AddBuff(ModContent.BuffType<EtherBones>(), 10 * 60, true);
+                    EtherBonesDamageBoost += ((float)info.Damage / (float)Player.statLifeMax2);
+                }
 
-                    for (int i = 0; i < 20; i++)
-                        Dust.NewDust(Player.position + Player.velocity, Player.width, Player.height, ModContent.DustType<EtherialDust>(), 0f, 0f);
-
+                if (EtherialTwins && !JusticeCooldown)
+                {
+                    Player.AddBuff(ModContent.BuffType<JusticeCooldown>(), 90 * 60, true);
+                    Player.statLife += info.Damage;
                     Player.immune = true;
                     Player.immuneTime = 2 * 60;
 
-                    return false;
+                    info.Cancelled = true;
+                    return;
                 }
-            }
 
-            return true;
+                if (info.Damage >= Player.statLife)
+                {
+                    if (EtherialScarf && !EtherialScarfCooldown && (NewDawnWorld.downedEtheria || Etherable > 0))
+                    {
+                        Player.AddBuff(ModContent.BuffType<EtherialScarfCooldown>(), 60 * 60 * 1, true);
+                        SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/EtherialChange"));
+
+                        for (int i = 0; i < 20; i++)
+                            Dust.NewDust(Player.position + Player.velocity, Player.width, Player.height, ModContent.DustType<EtherialDust>(), 0f, 0f);
+
+                        Player.immune = true;
+                        Player.immuneTime = 2 * 60;
+
+                        info.Cancelled = true;
+                    }
+                }
+            };
         }
 
         // TODO Use BysmalPower class.
@@ -291,7 +287,7 @@ namespace NewDawn
             {
                 int originalDef = Player.statDefense;
 
-                float globalDmg = Player.GetDamage(DamageClass.Generic) - 1;
+                float globalDmg = Player.GetDamage(DamageClass.Generic).ApplyTo(1f) - 1f;
 
                 if (globalDmg > 0)
                 {

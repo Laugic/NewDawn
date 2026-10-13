@@ -56,6 +56,7 @@ namespace NewDawn.Items.Weapons.Mystic
         }
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 1 && modPlayer.Lux >= LuxCost)
             {
@@ -84,7 +85,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
-            base.OnHitNPC(player, target, damage, knockback, crit);
+            base.OnHitNPC(player, target, hit, damageDone);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode == 2 && modPlayer.Vis > VisCost)
             {

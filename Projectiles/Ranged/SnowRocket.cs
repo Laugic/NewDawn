@@ -67,7 +67,7 @@ namespace NewDawn.Projectiles.Ranged
         {
             Projectile.timeLeft = Math.Min(Projectile.timeLeft, 2);
             Projectile.ai[1] = 1;
-            base.ModifyHitNPC(target, ref damage, ref knockback, ref crit, ref hitDirection);
+            base.ModifyHitNPC(target, ref modifiers);
         }
 
         public override void OnKill(int timeLeft)

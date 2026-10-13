@@ -103,7 +103,7 @@ namespace NewDawn.NPCs.Etherial.BossFights
         }
         public override void OnHitPlayer(Player target, Player.HurtInfo info)
         {
-            player.AddBuff(ModContent.BuffType<Frostbite>(), 5 * 60, true);
+            target.AddBuff(ModContent.BuffType<Frostbite>(), 5 * 60, true);
         }
 
     }

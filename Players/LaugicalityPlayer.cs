@@ -112,6 +112,8 @@ namespace NewDawn
         public static NewDawnPlayer Get() => Get(Main.LocalPlayer);
         public static NewDawnPlayer Get(Player player) => player.GetModPlayer<NewDawnPlayer>();
 
+        public int HoneyRegenMultiplier { get; set; } = 1;
+        public bool Lovestruck { get; set; }
 
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)/* tModPorter Suggestion: Return an Item array to add to the players starting items. Use ModifyStartingInventory for modifying them if needed */
         {
@@ -127,7 +129,7 @@ namespace NewDawn
             danger = true;
             feather = true;
             ObsidiumHeart = 0;
-            int[] bysmalItems = { 0, 0, 0 };
+            return Array.Empty<Item>();
         }
 
         /// <summary>
@@ -239,6 +241,8 @@ namespace NewDawn
                 Player.extraAccessorySlots = 0;
 
             WeakenedDefense = 0;
+            HoneyRegenMultiplier = 1;
+            Lovestruck = false;
 
             SnowDamage = 1f;
             DebuffMult = 1f;
@@ -250,7 +254,7 @@ namespace NewDawn
         {
 
 
-            if (zoneObsidium && liquidType == 1 && fishingRod.type == ItemID.HotlineFishingHook)
+            if (zoneObsidium && attempt.inLava && Player.HeldItem.type == ItemID.HotlineFishingHook)
             {
                 if (Main.rand.Next(3) == 0)
                 {
@@ -259,22 +263,22 @@ namespace NewDawn
                     switch (rand)
                     {
                         case 0:
-                            caughtType = ItemID.Topaz;
+                            itemDrop = ItemID.Topaz;
                             break;
                         case 1:
-                            caughtType = ItemID.Amethyst;
+                            itemDrop = ItemID.Amethyst;
                             break;
                         case 2:
-                            caughtType = ItemID.Sapphire;
+                            itemDrop = ItemID.Sapphire;
                             break;
                         case 3:
-                            caughtType = ItemID.Emerald;
+                            itemDrop = ItemID.Emerald;
                             break;
                         case 4:
-                            caughtType = ItemID.Ruby;
+                            itemDrop = ItemID.Ruby;
                             break;
                         default:
-                            caughtType = ItemID.Diamond;
+                            itemDrop = ItemID.Diamond;
                             break;
                     }
                 }
@@ -282,23 +286,23 @@ namespace NewDawn
                 if (NPC.downedBoss2)
                 {
                     if (Main.rand.Next(3) == 0)
-                        caughtType = ModContent.ItemType<ObsidiumOre>();
+                        itemDrop = ModContent.ItemType<ObsidiumOre>();
 
                     if (Main.rand.Next(4) == 0)
-                        caughtType = ModContent.ItemType<ObsidiumBar>();
+                        itemDrop = ModContent.ItemType<ObsidiumBar>();
                 }
 
                 if (NewDawnWorld.downedRagnar)
                 {
                     if (Main.rand.Next(5) == 0)
-                        caughtType = ModContent.ItemType<MagmaSnapper>();
+                        itemDrop = ModContent.ItemType<MagmaSnapper>();
 
                     else if (Main.rand.Next(4) == 0)
-                        caughtType = ModContent.ItemType<ObsidiumChunk>();
+                        itemDrop = ModContent.ItemType<ObsidiumChunk>();
                 }
 
                 if (Main.rand.Next(5) == 0)
-                    caughtType = ItemID.Obsidian;
+                    itemDrop = ItemID.Obsidian;
 
                 if (Main.rand.Next(25) == 0)
                 {
@@ -307,32 +311,32 @@ namespace NewDawn
                     switch (rand)
                     {
                         case 0:
-                            caughtType = ItemID.LavaCharm;
+                            itemDrop = ItemID.LavaCharm;
                             break;
                         case 1:
-                            caughtType = ModContent.ItemType<ObsidiumLily>();
+                            itemDrop = ModContent.ItemType<ObsidiumLily>();
                             break;
                         case 2:
-                            caughtType = ModContent.ItemType<FireDust>();
+                            itemDrop = ModContent.ItemType<FireDust>();
                             break;
                         case 3:
-                            caughtType = ModContent.ItemType<Eruption>();
+                            itemDrop = ModContent.ItemType<Eruption>();
                             break;
                         case 4:
-                            caughtType = ModContent.ItemType<CrystalizedMagma>();
+                            itemDrop = ModContent.ItemType<CrystalizedMagma>();
                             break;
                         case 5:
-                            caughtType = ModContent.ItemType<Ragnashia>();
+                            itemDrop = ModContent.ItemType<Ragnashia>();
                             break;
                         default:
-                            caughtType = ModContent.ItemType<MagmaHeart>();
+                            itemDrop = ModContent.ItemType<MagmaHeart>();
                             break;
                     }
                 }
 
-                if (junk)
+                if (attempt.rolledItemDrop == ItemID.OldShoe || attempt.rolledItemDrop == ItemID.TinCan || attempt.rolledItemDrop == ItemID.Seaweed)
                 {
-                    caughtType = ItemID.Obsidian;
+                    itemDrop = ItemID.Obsidian;
                     return;
                 }
             }
@@ -374,7 +378,7 @@ namespace NewDawn
             {
                 ThorCharge = true;
                 SoundEngine.PlaySound(SoundID.Item122, Player.position);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X + (Player.direction * 40), Player.Center.Y - 70, 0, 0, ModContent.ProjectileType<ThorSmashIllusion>(), (int)Player.HeldItem.damage, 8, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X + (Player.direction * 40), Player.Center.Y - 70, 0, 0, ModContent.ProjectileType<ThorSmashIllusion>(), (int)Player.HeldItem.damage, 8, Main.myPlayer);
             }
             if (Player.HeldItem.type != ModContent.ItemType<ThorsHammer>() || Player.itemAnimation == 0 || MysticMode != 2)
                 ThorCharge = false;
@@ -389,10 +393,6 @@ namespace NewDawn
         }
         public override void PostUpdateBuffs()
         {
-            CheckFerocityCurse4();
-            CheckMobilityCurse4();
-
-            ResetSoulStoneEffects();
         }
 
         private void PostUpdateZaWarudo()
@@ -442,8 +442,6 @@ namespace NewDawn
             if (Verdi > 0)
                 Player.maxRunSpeed += .1f;
 
-            CheckFerocityCurse4();
-            CheckMobilityCurse4();
         }
 
         private void PostUpdateMysticBursts()
@@ -451,7 +449,7 @@ namespace NewDawn
             if (MysticErupting > 0)
             {
                 if (Main.rand.Next(4) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, Player.velocity.X - 4 + Main.rand.Next(9), -Main.rand.Next(6, 9), ModContent.ProjectileType<EruptionProjectile>(), (int)(30 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, Player.velocity.X - 4 + Main.rand.Next(9), -Main.rand.Next(6, 9), ModContent.ProjectileType<EruptionProjectile>(), (int)(30 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
             }
 
             /*if (MysticSpiralBurst > 0)
@@ -461,7 +459,7 @@ namespace NewDawn
                 if (MysticSpiralDelay > 2)
                 {
                     MysticSpiralDelay = 0;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, player.Center.Y, 4 * (float)Math.Cos(theta * 2), 4 * (float)Math.Sin(theta * 2), ModContent.ProjectileType<AnDioChestguardBurst>(), (int)(32 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 4 * (float)Math.Cos(theta * 2), 4 * (float)Math.Sin(theta * 2), ModContent.ProjectileType<AnDioChestguardBurst>(), (int)(32 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
                 }
             }
             */
@@ -472,8 +470,8 @@ namespace NewDawn
                 if (MysticSteamSpiralDelay > 5)
                 {
                     MysticSteamSpiralDelay = 0;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 * (float)Math.Cos(theta), 6 * (float)Math.Sin(theta), ModContent.ProjectileType<SteamBurst>(), (int)(40 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 * (float)Math.Cos(theta + 3.14f), 6 * (float)Math.Sin(theta + 3.14f), ModContent.ProjectileType<SteamBurst>(), (int)(40 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 * (float)Math.Cos(theta), 6 * (float)Math.Sin(theta), ModContent.ProjectileType<SteamBurst>(), (int)(40 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 * (float)Math.Cos(theta + 3.14f), 6 * (float)Math.Sin(theta + 3.14f), ModContent.ProjectileType<SteamBurst>(), (int)(40 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
                 }
             }
         }
@@ -486,18 +484,12 @@ namespace NewDawn
             CheckFanRight();
         }
 
-        public override void OnEnterWorld()
-        {
-            if (Player.whoAmI == Main.myPlayer)
-                new NewDawnPlayerSynchronizationPacket().Send();
-        }
-
         private void CheckVent()
         {
             if (Main.tile[(int)(Player.Center.X / 16), (int)(Player.Center.Y / 16)].TileType == ModContent.TileType<SteamVENT>())
             {
                 if (Player.velocity.Y >= 0)
-                    SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassFAN"));
+                    SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassFAN"));
 
                 Player.velocity.Y = -25;
             }
@@ -517,7 +509,7 @@ namespace NewDawn
                         Player.velocity.Y = -minVSpeed;
 
                     _ringBoost = Player.velocity.Y * 2f;
-                    SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassRING"));
+                    SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassRING"));
 
                     if (_ringBoost < -maxVSpeed)
                         _ringBoost = -maxVSpeed;
@@ -536,7 +528,7 @@ namespace NewDawn
             float minHSpeed = 10;
             float maxHSpeed = 50;
 
-            if (Player.GetTileOnCenter().type == ModContent.TileType<BrassFAN>())
+            if (Main.tile[(int)(Player.Center.X / 16), (int)(Player.Center.Y / 16)].TileType == ModContent.TileType<BrassFAN>())
             {
                 if (_fanBoost == 0)
                 {
@@ -544,7 +536,7 @@ namespace NewDawn
                         Player.velocity.X = -minHSpeed;
 
                     _fanBoost = Player.velocity.X * 2f;
-                    SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassFAN"));
+                    SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassFAN"));
 
                     if (_fanBoost < -maxHSpeed)
                         _fanBoost = -maxHSpeed;
@@ -563,7 +555,7 @@ namespace NewDawn
             float minHSpeed = 10;
             float maxHSpeed = 50;
 
-            if (Player.GetTileOnCenter().type == ModContent.TileType<BrassFANRight>())
+            if (Main.tile[(int)(Player.Center.X / 16), (int)(Player.Center.Y / 16)].TileType == ModContent.TileType<BrassFANRight>())
             {
                 if (_fanBoost == 0)
                 {
@@ -571,7 +563,7 @@ namespace NewDawn
                         Player.velocity.X = minHSpeed;
 
                     _fanBoost = Player.velocity.X * 2f;
-                    SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/BrassFAN"));
+                    SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/BrassFAN"));
 
                     if (_fanBoost > maxHSpeed)
                         _fanBoost = maxHSpeed;
@@ -608,7 +600,9 @@ namespace NewDawn
             }
             if (Blaze)
                 BlazeEffect();
-            Player.statDefense = Math.Max(0, Player.statDefense - WeakenedDefense);
+            int defenseAfterPenalty = Math.Max(0, Player.statDefense - WeakenedDefense);
+            int currentDefense = Player.statDefense - 0;
+            Player.statDefense -= currentDefense - defenseAfterPenalty;
             if (NewDawnWorld.downedEtheria || Etherable > 0)
                 GetEtherialAccessoriesPost();
         }
@@ -668,39 +662,34 @@ namespace NewDawn
         public override void ModifyWeaponDamage(Item item, ref StatModifier damage)
         {
             if (item.ammo == AmmoID.Snowball)
-                mult = mult * SnowDamage;
+                damage *= SnowDamage;
 
-            base.ModifyWeaponDamage(item, ref add, ref mult, ref flat);
+            base.ModifyWeaponDamage(item, ref damage);
         }
 
         public override void SaveData(TagCompound tag)/* tModPorter Suggestion: Edit tag parameter instead of returning new TagCompound */
         {
-            TagCompound tag = new TagCompound {
-                {"Class", Class },
-                {"Etherial", etherial },
-                {"ESlot", etherialSlot },
-                {"SoulStoneMove", SoulStoneMovement },
-                {"SoulStoneVis", SoulStoneVisuals },
-                {"Inferno", inf},
-                {"Calming", calm},
-                {"WaterWalking", ww},
-                {"Battle", battle},
-                {"Hunter", hunter},
-                {"Spelunker", spelunker},
-                {"NightOwl", owl},
-                {"Dangersense", danger},
-                {"Featherfall", feather},
-                {"BysmalPowers", BysmalPowers},
-                {"ObsidiumHeart", ObsidiumHeart},
-                {"LuxMaxPermaBoost", LuxMaxPermaBoost},
-                {"VisMaxPermaBoost", VisMaxPermaBoost},
-                {"MundusMaxPermaBoost", MundusMaxPermaBoost},
-                {"MysticBurstDisabled", MysticBurstDisabled},
-                {"BysmalAbsorbDisabled", BysmalAbsorbDisabled},
-                { nameof(Focus), Focus != null ? Focus.UnlocalizedName : "" }
-            };
-
-            return tag;
+            tag["Class"] = Class;
+            tag["Etherial"] = etherial;
+            tag["ESlot"] = etherialSlot;
+            tag["SoulStoneMove"] = SoulStoneMovement;
+            tag["SoulStoneVis"] = SoulStoneVisuals;
+            tag["Inferno"] = inf;
+            tag["Calming"] = calm;
+            tag["WaterWalking"] = ww;
+            tag["Battle"] = battle;
+            tag["Hunter"] = hunter;
+            tag["Spelunker"] = spelunker;
+            tag["NightOwl"] = owl;
+            tag["Dangersense"] = danger;
+            tag["Featherfall"] = feather;
+            tag["BysmalPowers"] = BysmalPowers;
+            tag["ObsidiumHeart"] = ObsidiumHeart;
+            tag["LuxMaxPermaBoost"] = LuxMaxPermaBoost;
+            tag["VisMaxPermaBoost"] = VisMaxPermaBoost;
+            tag["MundusMaxPermaBoost"] = MundusMaxPermaBoost;
+            tag["MysticBurstDisabled"] = MysticBurstDisabled;
+            tag["BysmalAbsorbDisabled"] = BysmalAbsorbDisabled;
         }
 
         //public override void UpdateBiomeVisuals()
@@ -734,13 +723,9 @@ namespace NewDawn
             MysticBurstDisabled = tag.GetBool("MysticBurstDisabled");
             BysmalAbsorbDisabled = tag.GetBool("BysmalAbsorbDisabled");
             BysmalPowers = (List<int>)tag.GetList<int>("BysmalPowers");
-            string focus = tag.GetString("Focus");
-
             Lux = LuxMax + LuxMaxPermaBoost;
             Vis = VisMax + VisMaxPermaBoost;
             Mundus = MundusMax + MundusMaxPermaBoost;
-            if (!string.IsNullOrWhiteSpace(focus))
-                Focus = FocusManager.Instance[focus];
         }
         //TODO: Add Biome classes to determine biomes.
         //public override void UpdateBiomes()
@@ -783,7 +768,7 @@ namespace NewDawn
         //public override Texture2D GetMapBackgroundImage()
         //{
         //    if (zoneObsidium)
-        //        return Mod.GetTexture("Backgrounds/ObsidiumBiomeMapBackground");
+        //        return NewDawn.RequestTexture("Backgrounds/ObsidiumBiomeMapBackground");
 
         //    return null;
         //}
@@ -850,7 +835,6 @@ namespace NewDawn
                 Player.lifeRegenTime = 0;
             }
 
-            SoulStoneBadLifeRegen();
             if (Player.lifeRegen < 0)
                 LosingLife = true;
             else
@@ -861,6 +845,8 @@ namespace NewDawn
         {
             base.UpdateLifeRegen();
 
+            if (Player.honey)
+                Player.lifeRegen += 2 * HoneyRegenMultiplier - 2;
 
             if (Bloat && Player.statLife >= (int)(Player.statLifeMax2 * .5))
             {
@@ -870,10 +856,9 @@ namespace NewDawn
             }
             if (MoltenCore > 0 && Player.ownedProjectileCounts[ModContent.ProjectileType<MoltenCoreHand>()] <= 0 && Player.statLife <= Player.statLifeMax2 / 2)
             {
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Player.Center.X + 600, Player.Center.Y), new Vector2(0, 0), ModContent.ProjectileType<MoltenCoreHand>(), (int)((12 + (4 * ObsidiumHeart)) * player.GetDamage(DamageClass.Generic).Multiplicative), 1, Player.whoAmI, 0);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Player.Center.X - 600, Player.Center.Y), new Vector2(0, 0), ModContent.ProjectileType<MoltenCoreHand>(), (int)((12 + (4 * ObsidiumHeart)) * player.GetDamage(DamageClass.Generic).Multiplicative), 1, Player.whoAmI, 1);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Player.Center.X + 600, Player.Center.Y), new Vector2(0, 0), ModContent.ProjectileType<MoltenCoreHand>(), (int)((12 + (4 * ObsidiumHeart)) * Player.GetDamage(DamageClass.Generic).Multiplicative), 1, Player.whoAmI, 0);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Player.Center.X - 600, Player.Center.Y), new Vector2(0, 0), ModContent.ProjectileType<MoltenCoreHand>(), (int)((12 + (4 * ObsidiumHeart)) * Player.GetDamage(DamageClass.Generic).Multiplicative), 1, Player.whoAmI, 1);
             }
-            UpdateSoulStoneLifeRegen();
         }
 
 
@@ -890,7 +875,7 @@ namespace NewDawn
         /// </summary>
         public override void OnHitNPCWithItem(Item item, NPC target, NPC.HitInfo hit, int damageDone)/* tModPorter If you don't need the Item, consider using OnHitNPC instead */
         {
-            InflictDebuffs(item, target, damage, knockback, crit);
+            InflictDebuffs(item, target, hit.Damage, hit.Knockback, hit.Crit);
         }
 
         private void InflictDebuffs(Item item, NPC target, int damage, float knockback, bool crit)
@@ -967,43 +952,43 @@ namespace NewDawn
             if (FireTrail && Math.Abs(Player.velocity.X) > 3)
             {
                 if (Main.rand.Next(12) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 2 - Main.rand.Next(4), Math.Abs(Player.velocity.Y) / 4, ModContent.ProjectileType<GoodFireball>(), (int)(8 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 2 - Main.rand.Next(4), Math.Abs(Player.velocity.Y) / 4, ModContent.ProjectileType<GoodFireball>(), (int)(8 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (TrueFireTrail && Math.Abs(Player.velocity.X) > 2)
             {
                 if (Main.rand.Next(12) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 0, Math.Abs(Player.velocity.Y) / 4, ModContent.ProjectileType<TrueGoodFireball>(), (int)(15 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, Math.Abs(Player.velocity.Y) / 4, ModContent.ProjectileType<TrueGoodFireball>(), (int)(15 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (ShadowflameTrail && Math.Abs(Player.velocity.X) > 2)
             {
                 if (Main.rand.Next(15) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 0, Math.Abs(Player.velocity.Y) / 4, ModContent.ProjectileType<GoodShadowflame>(), (int)(18 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, Math.Abs(Player.velocity.Y) / 4, ModContent.ProjectileType<GoodShadowflame>(), (int)(18 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (CrystalliteTrail && (Math.Abs(Player.velocity.X) > 2 || Math.Abs(Player.velocity.Y) > 2))
             {
                 if (Main.rand.Next(14) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<CrystalliteOrb>(), (int)(24 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<CrystalliteOrb>(), (int)(24 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (SteamTrail && (Math.Abs(Player.velocity.X) > 2 || Math.Abs(Player.velocity.Y) > 2))
             {
                 if (Main.rand.Next(10) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<SteamTrailProj>(), (int)(26 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<SteamTrailProj>(), (int)(26 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (BysmalTrail && (Math.Abs(Player.velocity.X) > 2 || Math.Abs(Player.velocity.Y) > 2))
             {
                 if (Main.rand.Next(10) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<BysmalTrailProj>(), (int)(30 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<BysmalTrailProj>(), (int)(30 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (CosmicTrail && (Math.Abs(Player.velocity.X) > 2 || Math.Abs(Player.velocity.Y) > 2))
             {
                 if (Main.rand.Next(10) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<CosmicTrailProj>(), (int)(45 * GetGlobalDamage()), 0, Player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<CosmicTrailProj>(), (int)(45 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
             if (MysticHold > 0)
@@ -1050,7 +1035,7 @@ namespace NewDawn
                 Main.dust[dust].noGravity = false;
                 Main.dust[dust].velocity *= 1.8f;
                 Main.dust[dust].velocity.Y -= 0.5f;
-                Main.playerDrawDust.Add(dust);
+                drawInfo.DustCache.Add(dust);
             }
 
             r *= 0.1f;
@@ -1091,7 +1076,7 @@ namespace NewDawn
             {
                 MysticSwitch();
                 if (NewDawnUI.SoundOn)
-                    SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/MysticSwitch"));
+                    SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/MysticSwitch"));
             }
 
             if (NewDawn.quickMystica.JustPressed && Mysticality == 0)
@@ -1114,7 +1099,7 @@ namespace NewDawn
                         if (Mundus < (MundusMax + MundusMaxPermaBoost) * (1 + ((MundusOverflow - 1) / 2)))
                             Mundus = (MundusMax + MundusMaxPermaBoost) * (1 + ((MundusOverflow - 1) / 2));
 
-                        Player.AddBuff(ModContent.BuffType<Mysticality3>(), 60 * Constants.TICKS_PER_SECONDS, true);
+                        Player.AddBuff(ModContent.BuffType<Mysticality3>(), 60 * 60, true);
                     }
 
                     if (mysticaPotion)
@@ -1141,7 +1126,7 @@ namespace NewDawn
                             if (Mundus < MundusMax + MundusMaxPermaBoost)
                                 Mundus = MundusMax + MundusMaxPermaBoost;
 
-                            Player.AddBuff(ModContent.BuffType<Mysticality2>(), 60 * Constants.TICKS_PER_SECONDS, true);
+                            Player.AddBuff(ModContent.BuffType<Mysticality2>(), 60 * 60, true);
                         }
 
                         if (mysticaPotion)
@@ -1317,8 +1302,7 @@ namespace NewDawn
                 ArmorEffectPlayerHurt();
                 MysticSwitchCool = 120;
             }
-            AccessoryEffectOnHurt(pvp, quiet, damage, hitDirection, crit);
-            SoulStonePostHurt(pvp, quiet, damage, hitDirection, crit);
+            AccessoryEffectOnHurt(info);
             if (Player.ownedProjectileCounts[ModContent.ProjectileType<GaiaConjuration>()] > 0)
             {
                 for (int i = 0; i < 1000; i++)
@@ -1334,18 +1318,18 @@ namespace NewDawn
 
         private void ArmorEffectPlayerHurt()
         {
-            if ((AndioChestguard || AnDioCapacityEffect) && Player.statLife < Player.statLifeMax2 / 4 && zCool == false)
+            if (AndioChestguard && Player.statLife < Player.statLifeMax2 / 4 && zCool == false)
                 ZaWarudo();
         }
 
-        private void AccessoryEffectOnHurt(bool pvp, bool quiet, double damage, int hitDirection, bool crit)
+        private void AccessoryEffectOnHurt(Player.HurtInfo info)
         {
             if (Carapace)
             {
-                CombatText.NewText(new Rectangle((int)Player.position.X - 12, (int)Player.position.Y - 12, Player.width, 12), Color.LightSeaGreen, (int)damage / 2);
-                AddLux((float)damage / 2);
-                AddVis((float)damage / 2);
-                AddMundus((float)damage / 2);
+                CombatText.NewText(new Rectangle((int)Player.position.X - 12, (int)Player.position.Y - 12, Player.width, 12), Color.LightSeaGreen, info.Damage / 2);
+                AddLux(info.Damage / 2f);
+                AddVis(info.Damage / 2f);
+                AddMundus(info.Damage / 2f);
             }
             if (Shroud)
                 Player.AddBuff(ModContent.BuffType<CarapaceDamageBuff>(), 8 * 60);
@@ -1353,12 +1337,13 @@ namespace NewDawn
 
         private void ZaWarudo()
         {
-            SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/zawarudo"));
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/zawarudo"));
             Player.AddBuff(ModContent.BuffType<TimeExhausted>(), zCoolDown, true);
 
             if (NewDawn.zaWarudo < zaWarudoDuration)
             {
-                TimeManagement.TryAlterTime(new TimeAlterationRequest(Player, zaWarudoDuration, 0));
+                NewDawn.zaWarudo = zaWarudoDuration;
+                LaugicalGlobalNPCs.zTime = zaWarudoDuration;
             }
         }
 
@@ -1381,94 +1366,94 @@ namespace NewDawn
         private void ApplyBloodRage()
         {
             Player.AddBuff(ModContent.BuffType<BloodRage>(), 420);
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
         }
 
         private void SpawnMiniEye()
         {
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
                 ModContent.ProjectileType<MiniEye>(), 12, 3f, Player.whoAmI);
 
             if (Main.rand.Next(0, 2) == 0)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
                     ModContent.ProjectileType<MiniEye>(), 12, 3f, Player.whoAmI);
 
             if (Main.rand.Next(0, 2) == 0)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
                     ModContent.ProjectileType<MiniEye>(), 12, 3f, Player.whoAmI);
         }
 
         private void SpawnSandBall()
         {
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 4, 4, ModContent.ProjectileType<Sandball>(), 18, 5,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 4, 4, ModContent.ProjectileType<Sandball>(), 18, 5,
                 Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 4, -4, ModContent.ProjectileType<Sandball>(), 18, 5,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 4, -4, ModContent.ProjectileType<Sandball>(), 18, 5,
                 Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -4, -4, ModContent.ProjectileType<Sandball>(), 18, 5,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -4, -4, ModContent.ProjectileType<Sandball>(), 18, 5,
                 Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -4, 4, ModContent.ProjectileType<Sandball>(), 18, 5,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -4, 4, ModContent.ProjectileType<Sandball>(), 18, 5,
                 Main.myPlayer);
         }
 
         private void SpawnIceShard()
         {
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
                 ModContent.ProjectileType<IceShardF>(), 16, 3f, Player.whoAmI);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12),
                 ModContent.ProjectileType<IceShardF>(), 16, 3f, Player.whoAmI);
         }
 
         private void SpawnSpore()
         {
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 567, 48,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 567, 48,
                 3f, Player.whoAmI);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 568, 48,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 568, 48,
                 3f, Player.whoAmI);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 569, 48,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 569, 48,
                 3f, Player.whoAmI);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 570, 48,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 570, 48,
                 3f, Player.whoAmI);
             if (Main.rand.Next(0, 2) == 0)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 571,
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 571,
                     48, 3f, Player.whoAmI);
 
             if (Main.rand.Next(0, 2) == 0)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 567,
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 6 - Main.rand.Next(12), 567,
                     48, 3f, Player.whoAmI);
         }
 
         private void SpawnRockShard()
         {
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 8, 0, ModContent.ProjectileType<RockShard>(), 20, 3,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 8, 0, ModContent.ProjectileType<RockShard>(), 20, 3,
                 Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -8, 0, ModContent.ProjectileType<RockShard>(), 20, 3,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8, 0, ModContent.ProjectileType<RockShard>(), 20, 3,
                 Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, 0, 8, ModContent.ProjectileType<RockShard>(), 20, 3,
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 0, 8, ModContent.ProjectileType<RockShard>(), 20, 3,
                 Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
                 ModContent.ProjectileType<RockShard>(), 20, 3, Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
                 ModContent.ProjectileType<RockShard>(), 20, 3, Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
                 ModContent.ProjectileType<RockShard>(), 20, 3, Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
                 ModContent.ProjectileType<RockShard>(), 20, 3, Main.myPlayer);
 
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
                 ModContent.ProjectileType<RockShard>(), 20, 3, Main.myPlayer);
         }
 
@@ -1487,7 +1472,7 @@ namespace NewDawn
 
         public float GetGlobalDamage()
         {
-            return Player.GetDamage(DamageClass.Generic);
+            return Player.GetDamage(DamageClass.Generic).ApplyTo(1f);
         }
 
         #region Buffs
@@ -1589,4 +1574,3 @@ namespace NewDawn
         #endregion // TODO Verify if name matches.
     }
 }
-

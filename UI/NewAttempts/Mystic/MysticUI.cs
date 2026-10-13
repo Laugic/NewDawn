@@ -85,24 +85,24 @@ namespace NewDawn.UI.NewAttempts.Mystic
 
         public void Load()
         {
-            LuxBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/LuxBG");
-            LuxBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/LuxBar");
-            LuxFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/LuxFG");
-            MundusBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MundusBG");
-            MundusBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MundusBar");
-            MundusFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MundusFG");
-            VisBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/VisBG");
-            VisBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/VisBar");
-            VisFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/VisFG");
-            OverflowBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/OverflowBG");
-            OverflowBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/OverflowBar");
-            OverflowFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/OverflowFG");
-            LuxFGOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/LuxFGOverflow");
-            VisFGOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/VisFGOverflow");
-            MundusOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MundusOverflow");
-            MundusFGOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MundusFGOverflow");
-            MysticBurstBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MysticBurstBG");
-            MysticBurstBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/MysticBurstBar");
+            LuxBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/LuxBG");
+            LuxBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/LuxBar");
+            LuxFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/LuxFG");
+            MundusBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MundusBG");
+            MundusBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MundusBar");
+            MundusFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MundusFG");
+            VisBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/VisBG");
+            VisBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/VisBar");
+            VisFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/VisFG");
+            OverflowBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/OverflowBG");
+            OverflowBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/OverflowBar");
+            OverflowFGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/OverflowFG");
+            LuxFGOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/LuxFGOverflow");
+            VisFGOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/VisFGOverflow");
+            MundusOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MundusOverflow");
+            MundusFGOverflowTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MundusFGOverflow");
+            MysticBurstBGTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MysticBurstBG");
+            MysticBurstBarTexture = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/MysticBurstBar");
 
             LuxBar = new SpriteProgressBar
             (

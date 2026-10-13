@@ -35,6 +35,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             if (modPlayer.MysticMode != 1)
                 return true;
@@ -82,7 +83,7 @@ namespace NewDawn.Items.Weapons.Mystic
             if (modPlayer.MysticMode == 3)
             {
                 if (Main.player[Main.myPlayer] == player && player.ownedProjectileCounts[ModContent.ProjectileType<GreatGladiusConjuration1>()] < 2)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<GreatGladiusConjuration1>(), damage, knockback, Main.myPlayer);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<GreatGladiusConjuration1>(), hit.Damage, hit.Knockback, Main.myPlayer);
             }
         }
         /*

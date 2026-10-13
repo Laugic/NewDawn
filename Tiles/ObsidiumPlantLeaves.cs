@@ -4,7 +4,6 @@ using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
-using WebCom.Extensions;
 
 namespace NewDawn.Tiles
 {
@@ -23,28 +22,28 @@ namespace NewDawn.Tiles
             TileObjectData.newTile.Width = 4;
             //AddMapEntry(new Color(200, 30, 0), name);
             Main.tileFrameImportant[Type] = true;
-            HitSound = 6;
+            HitSound = SoundID.Dig;
             TileObjectData.newTile.AnchorValidTiles = new int[]
             {
-				ModContent.TileType<Lycoris>(),
+                ModContent.TileType<Lycoris>(),
                 ModContent.TileType<Tiles.Radiata>()
             };
             TileObjectData.addTile(Type);
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = this.GetType().GetTexture();
-                amelderaTexture = Mod.GetTexture(this.GetType().GetRootPath() + "/Elderleaves");
+                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/Elderleaves");
             }
         }
-        
+
 
         public override void NumDust(int i, int j, bool fail, ref int num)
         {
             num = fail ? 1 : 3;
         }
-        
-        
+
+
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
         {
             offsetY = 4;
@@ -59,7 +58,7 @@ namespace NewDawn.Tiles
 
         public override void KillMultiTile(int i, int j, int frameX, int frameY)
         {
-            Item.NewItem(i * 16, j * 16, 64, 64, ModContent.ItemType<ObsidiumPlant>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 64, ModContent.ItemType<ObsidiumPlant>());
         }
     }
 }

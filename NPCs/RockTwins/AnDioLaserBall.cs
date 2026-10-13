@@ -57,7 +57,7 @@ namespace NewDawn.NPCs.RockTwins
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
 		{
-			//player.AddBuff(BuffID.Shadowflame, 300, true);
+			//target.AddBuff(BuffID.Shadowflame, 300, true);
 		}
         
 		public override Color? GetAlpha(Color drawColor)

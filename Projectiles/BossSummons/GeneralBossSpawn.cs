@@ -34,9 +34,9 @@ namespace NewDawn.Projectiles.BossSummons
                 else
                 {
                     if(player.position.X > Main.maxTilesX / 2)
-                        NPC.NewNPC((int)player.position.X + 160, (int)player.position.Y, NPCID.WallofFlesh);
+                        NPC.NewNPC(player.GetSource_Misc("NPCSpawn"), (int)player.position.X + 160, (int)player.position.Y, NPCID.WallofFlesh);
                     else
-                        NPC.NewNPC((int)player.position.X - 160, (int)player.position.Y, NPCID.WallofFlesh);
+                        NPC.NewNPC(player.GetSource_Misc("NPCSpawn"), (int)player.position.X - 160, (int)player.position.Y, NPCID.WallofFlesh);
                 }
 				Projectile.ai[1] = -30;
 			}

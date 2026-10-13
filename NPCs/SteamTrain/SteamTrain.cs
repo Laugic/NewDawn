@@ -43,8 +43,7 @@ namespace NewDawn.NPCs.SteamTrain
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.netAlways = true;
-            Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/SteamTrain");
-            bossBag/* tModPorter Note: Removed. Spawn the treasure bag alongside other loot via npcLoot.Add(ItemDropRule.BossBag(type)) */ = ModContent.ItemType<SteamTrainTreasureBag>();
+            Music = global::Terraria.ModLoader.MusicLoader.GetMusicSlot(Mod, "Sounds/Music/SteamTrain");
         }
 
         public override void ApplyDifficultyAndPlayerScaling(int numPlayers, float balance, float bossAdjustment)/* tModPorter Note: bossLifeScale -> balance (bossAdjustment is different, see the docs for details) */
@@ -132,35 +131,32 @@ namespace NewDawn.NPCs.SteamTrain
         }
 
         /*
-        public override void OnHitPlayer(Player player, int dmgDealt, bool crit)
+        public override void OnHitPlayer(Player target, int dmgDealt, bool crit)
         {
             if (Main.expertMode)
-                player.AddBuff(ModContent.BuffType<Steamy>(), 90, true);
+                target.AddBuff(ModContent.BuffType<Steamy>(), 90, true);
         }*/
 
         public override void OnKill()
         {
             if (NewDawnWorld.downedEtheria)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialTank>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<EtherialTank>(), 1);
 
             if (!Main.expertMode)
             {
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfWrought>(), Main.rand.Next(20, 40));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamBar>(), Main.rand.Next(15, 30));
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfWrought>(), Main.rand.Next(20, 40));
             }
 
-            if (Main.expertMode)
-                NPC.DropBossBags();
-
             if (Main.rand.Next(10) == 0)
-                Item.NewItem((int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamTrainTrophy>(), 1);
+                Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SteamTrainTrophy>(), 1);
 
             NewDawnWorld.downedSteamTrain = true;
         }
 
         public override void BossLoot(ref string name, ref int potionType)
         {
-            potionType = 499;
+            potionType = ItemID.GreaterHealingPotion;
         }
 
         public override bool? DrawHealthBar(byte hbPosition, ref float scale, ref Vector2 position)

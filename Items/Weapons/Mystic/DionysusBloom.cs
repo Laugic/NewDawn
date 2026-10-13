@@ -39,6 +39,7 @@ namespace NewDawn.Items.Weapons.Mystic
 
         public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
+            Vector2 velocity = new Vector2(speedX, speedY);
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 64f;
             if (Collision.CanHit(position, 0, 0, position + muzzleOffset, 0, 0))
             {
@@ -54,7 +55,7 @@ namespace NewDawn.Items.Weapons.Mystic
                     Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(10)); 
                     float scale = 1f - (Main.rand.NextFloat() * .3f);
                     perturbedSpeed = perturbedSpeed * scale;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<DionysusIllusion>(), damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<DionysusIllusion>(), damage, knockBack, player.whoAmI);
                 }
                 return false;
             }
