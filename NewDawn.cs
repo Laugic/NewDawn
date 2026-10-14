@@ -87,7 +87,6 @@ namespace NewDawn
             NewDawnUI.Unload();
         }
 
-
         //public static UserInterface MysticaUserInterface { get; private set; }
         public static NewDawn Instance { get; private set; }
     }

@@ -1,7 +1,7 @@
 using NewDawn.Buffs;
 using NewDawn.NPCs;
 using Terraria;
-using Terraria.ID;
+using Terraria.Audio;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Useables
@@ -29,7 +29,13 @@ namespace NewDawn.Items.Useables
         public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */
         {
             //TODO: Add sound effect for this item
-            //SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/zawarudo"));
+            SoundStyle switchSound = new SoundStyle("NewDawn/Sounds/zawarudo")
+            {
+                Volume = 0.9f,
+                PitchVariance = 0.0f,
+                MaxInstances = 3,
+            };
+            SoundEngine.PlaySound(switchSound, player.Center);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             //TimeManagement.TryAlterTime(new TimeAlterationRequest(player, modPlayer.zaWarudoDuration, 0));
             if (NewDawn.zaWarudo < modPlayer.zaWarudoDuration)

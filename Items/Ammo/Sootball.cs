@@ -1,5 +1,5 @@
+using NewDawn.Items.Placeable;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Ammo
@@ -27,6 +27,10 @@ namespace NewDawn.Items.Ammo
         {
             Recipe recipe = CreateRecipe(15);
             recipe.AddIngredient(ItemID.AshBlock);
+            recipe.Register();
+
+            recipe = CreateRecipe(30);
+            recipe.AddIngredient(ModContent.ItemType<Soot>());
             recipe.Register();
         }
     }

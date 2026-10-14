@@ -92,7 +92,11 @@ Items: {
 
 	AbsoluteZero: {
 		DisplayName: Absolute Zero
-		Tooltip: "66% chance not to consume ammo\n'I am beneath you, but nothing is beneath me'"
+		Tooltip:
+			'''
+			66% chance not to consume ammo
+			'I am beneath you, but nothing is beneath me'
+			'''
 	}
 
 	AbstractStorageItem: {
@@ -112,22 +116,27 @@ Items: {
 
 	AirEssence: {
 		DisplayName: Air Essence
-		Tooltip: "The essence of Speed and Potential"
+		Tooltip: The essence of Speed and Potential
 	}
 
 	AirInfusion: {
 		DisplayName: Air Infusion
-		Tooltip: "20% increased movement speed and running speed\nDouble tap to dash\nJump higher and fall slower"
+		Tooltip:
+			'''
+			20% increased movement speed and running speed
+			Double tap to dash
+			Jump higher and fall slower
+			'''
 	}
 
 	Alabaster: {
-		DisplayName: "Alabaster"
-		Tooltip: "Can store 3 stacks of items"
+		DisplayName: Alabaster
+		Tooltip: Can store 3 stacks of items
 	}
 
 	AmmoReservationCrystal: {
 		DisplayName: Ammo Reservation Crystal
-		Tooltip: "20% chance not to consume ammo"
+		Tooltip: 20% chance not to consume ammo
 	}
 
 	AmmoReservationTile: {
@@ -137,17 +146,21 @@ Items: {
 
 	AncientTempleKey: {
 		DisplayName: Ancient Temple Key
-		Tooltip: "Allows you to access the ancient temple"
+		Tooltip: Allows you to access the ancient temple
 	}
 
 	ArcaneShard: {
 		DisplayName: Arcane Shard
-		Tooltip: "'A shard of magic'\nHeld by monsters in the dungeon"
+		Tooltip:
+			'''
+			'A shard of magic'
+			Held by monsters in the dungeon
+			'''
 	}
 
 	ArcheryCrystal: {
 		DisplayName: Archery Crystal
-		Tooltip: "10% increased ranged damage"
+		Tooltip: 10% increased ranged damage
 	}
 
 	ArcheryTile: {
@@ -157,17 +170,25 @@ Items: {
 
 	Avalanche: {
 		DisplayName: Avalanche
-		Tooltip: "50% chance not to consume ammo\n'Look out below!'"
+		Tooltip:
+			'''
+			50% chance not to consume ammo
+			'Look out below!'
+			'''
 	}
 
 	Baller: {
-		DisplayName: "Baller"
-		Tooltip: "Chance to shoot multiple snowballs\n'Looks like it's from the Snowman Mafia'"
+		DisplayName: Baller
+		Tooltip:
+			'''
+			Chance to shoot multiple snowballs
+			'Looks like it's from the Snowman Mafia'
+			'''
 	}
 
 	BattleCrystal: {
 		DisplayName: Battle Crystal
-		Tooltip: "Increases enemy spawn rate"
+		Tooltip: Increases enemy spawn rate
 	}
 
 	BattleTile: {
@@ -177,12 +198,12 @@ Items: {
 
 	Blizzard: {
 		DisplayName: Blizzard
-		Tooltip: "50% chance not to consume ammo"
+		Tooltip: 50% chance not to consume ammo
 	}
 
 	BuilderCrystal: {
 		DisplayName: Builder Crystal
-		Tooltip: "Increases placement speed and range"
+		Tooltip: Increases placement speed and range
 	}
 
 	BuilderTile: {
@@ -192,7 +213,7 @@ Items: {
 
 	CalmingCrystal: {
 		DisplayName: Calming Crystal
-		Tooltip: "Decreases enemy spawn rate"
+		Tooltip: Decreases enemy spawn rate
 	}
 
 	CalmingTile: {
@@ -202,17 +223,22 @@ Items: {
 
 	ChaosEssence: {
 		DisplayName: Chaos Essence
-		Tooltip: "The essence of Magic and the Unknowable"
+		Tooltip: The essence of Magic and the Unknowable
 	}
 
 	ChaosInfusion: {
 		DisplayName: Chaos Infusion
-		Tooltip: "+40 max mana\nEnemies are more likely to spawn and target you\n20% chance not to consume ammo"
+		Tooltip:
+			'''
+			+40 max mana
+			Enemies are more likely to spawn and target you
+			20% chance not to consume ammo
+			'''
 	}
 
 	CrateCrystal: {
 		DisplayName: Crate Crystal
-		Tooltip: "Increases chance to get a crate"
+		Tooltip: Increases chance to get a crate
 	}
 
 	CrateTile: {
@@ -221,8 +247,8 @@ Items: {
 	}
 
 	CrystallizerItem: {
-		DisplayName: "Crystallizer"
-		Tooltip: "Crystallize magical liquids"
+		DisplayName: Crystallizer
+		Tooltip: Crystallize magical liquids
 	}
 
 	CrystalTile: {
@@ -232,7 +258,7 @@ Items: {
 
 	DangersenseCrystal: {
 		DisplayName: Dangersense Crystal
-		Tooltip: "Allows you to see nearby danger sources"
+		Tooltip: Allows you to see nearby danger sources
 	}
 
 	DangersenseTile: {
@@ -241,8 +267,8 @@ Items: {
 	}
 
 	DarkIceball: {
-		DisplayName: "Dark Iceball"
-		Tooltip: "Pierces enemies"
+		DisplayName: Dark Iceball
+		Tooltip: Pierces enemies
 	}
 
 	DemystBlock: {
@@ -256,17 +282,22 @@ Items: {
 
 	EarthEssence: {
 		DisplayName: Earth Essence
-		Tooltip: "The essence of Sturdiness and Nature"
+		Tooltip: The essence of Sturdiness and Nature
 	}
 
 	EarthInfusion: {
 		DisplayName: Earth Infusion
-		Tooltip: "6 defense\nGrants immunity to knockback\n+25% mining and building speed"
+		Tooltip:
+			'''
+			6 defense
+			Grants immunity to knockback
+			+25% mining and building speed
+			'''
 	}
 
 	EnduranceCrystal: {
 		DisplayName: Endurance Crystal
-		Tooltip: "Reduces damage taken by 10%"
+		Tooltip: Reduces damage taken by 10%
 	}
 
 	EnduranceTile: {
@@ -286,7 +317,7 @@ Items: {
 
 	FeatherfallCrystal: {
 		DisplayName: Featherfall Crystal
-		Tooltip: "Slows falling speed"
+		Tooltip: Slows falling speed
 	}
 
 	FeatherfallTile: {
@@ -296,17 +327,22 @@ Items: {
 
 	FireEssence: {
 		DisplayName: Fire Essence
-		Tooltip: "The essence of Heat and Power"
+		Tooltip: The essence of Heat and Power
 	}
 
 	FireInfusion: {
 		DisplayName: Fire Infusion
-		Tooltip: "8% increased critical strike chance\nGrants immunity to fire and lava\nAttacks set enemies on fire"
+		Tooltip:
+			'''
+			8% increased critical strike chance
+			Grants immunity to fire and lava
+			Attacks set enemies on fire
+			'''
 	}
 
 	FishingCrystal: {
 		DisplayName: Fishing Crystal
-		Tooltip: "15% increased fishing power"
+		Tooltip: 15% increased fishing power
 	}
 
 	FishingTile: {
@@ -316,7 +352,7 @@ Items: {
 
 	FlipperCrystal: {
 		DisplayName: Flipper Crystal
-		Tooltip: "Allows you to swim and grants better mobility in liquids"
+		Tooltip: Allows you to swim and grants better mobility in liquids
 	}
 
 	FlipperTile: {
@@ -326,27 +362,40 @@ Items: {
 
 	ForceEssence: {
 		DisplayName: Force Essence
-		Tooltip: "The essence of Magnitude and Energy"
+		Tooltip: The essence of Magnitude and Energy
 	}
 
 	ForceInfusion: {
 		DisplayName: Force Infusion
-		Tooltip: "8% increased damage\n+1 max minion\nIncreases knockback by 33%"
+		Tooltip:
+			'''
+			8% increased damage
+			+1 max minion
+			Increases knockback by 33%
+			'''
 	}
 
 	FractalEngine: {
-		DisplayName: "Fractal Engine"
-		Tooltip: "66% chance to not consume ammo\n'Compounding'"
+		DisplayName: Fractal Engine
+		Tooltip:
+			'''
+			66% chance to not consume ammo
+			'Compounding'
+			'''
 	}
 
 	Frostpetal: {
 		DisplayName: Frostpetal
-		Tooltip: "'A magical crystallizing catalyst'\nHeld by monsters in the deep frigid cold"
+		Tooltip:
+			'''
+			'A magical crystallizing catalyst'
+			Held by monsters in the deep frigid cold
+			'''
 	}
 
 	FrostThrower: {
 		DisplayName: Frost Thrower
-		Tooltip: "Fires a stream of frost"
+		Tooltip: Fires a stream of frost
 	}
 
 	FullFloor: {
@@ -356,12 +405,12 @@ Items: {
 
 	GemBelt: {
 		DisplayName: Gem Belt
-		Tooltip: "Can hold multiple Potion Crystals"
+		Tooltip: Can hold multiple Potion Crystals
 	}
 
 	GillsCrystal: {
 		DisplayName: Gills Crystal
-		Tooltip: "You can breathe water"
+		Tooltip: You can breathe water
 	}
 
 	GillsTile: {
@@ -385,13 +434,13 @@ Items: {
 	}
 
 	GoldHandcrank: {
-		DisplayName: "Gold Handcrank"
+		DisplayName: Gold Handcrank
 		Tooltip: ""
 	}
 
 	GravitationCrystal: {
 		DisplayName: Gravitation Crystal
-		Tooltip: "Allows the control of gravity"
+		Tooltip: Allows the control of gravity
 	}
 
 	GravitationTile: {
@@ -400,18 +449,22 @@ Items: {
 	}
 
 	Gravitron9000: {
-		DisplayName: "Gravitron 9000"
-		Tooltip: "33% chance to not consume ammo\nConverts normal snowballs into Graviballs"
+		DisplayName: Gravitron 9000
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Converts normal snowballs into Graviballs
+			'''
 	}
 
 	Hailmaker: {
-		DisplayName: "Hailmaker"
-		Tooltip: "Rains snowballs from snowballs"
+		DisplayName: Hailmaker
+		Tooltip: Rains snowballs from snowballs
 	}
 
 	HeartreachCrystal: {
 		DisplayName: Heartreach Crystal
-		Tooltip: "Increases pickup range for life hearts"
+		Tooltip: Increases pickup range for life hearts
 	}
 
 	HeartreachTile: {
@@ -420,13 +473,13 @@ Items: {
 	}
 
 	Hiveball: {
-		DisplayName: "Hiveball"
+		DisplayName: Hiveball
 		Tooltip: "'Beeball'"
 	}
 
 	HunterCrystal: {
 		DisplayName: Hunter Crystal
-		Tooltip: "Shows the location of creatures"
+		Tooltip: Shows the location of creatures
 	}
 
 	HunterTile: {
@@ -435,8 +488,13 @@ Items: {
 	}
 
 	IceCrown: {
-		DisplayName: "Ice Crown"
-		Tooltip: "7% increased melee and ranged critical strike chance\n7% increased snowball damage\n'The authority of the snow'"
+		DisplayName: Ice Crown
+		Tooltip:
+			'''
+			7% increased melee and ranged critical strike chance
+			7% increased snowball damage
+			'The authority of the snow'
+			'''
 	}
 
 	InfernoCrystal: {
@@ -491,17 +549,25 @@ Items: {
 
 	LaugicalWorkbench: {
 		DisplayName: Laugical Workbench
-		Tooltip: "For crafting things to craft things. \n'It's completely laugical!'"
+		Tooltip:
+			'''
+			For crafting things to craft things. 
+			'It's completely laugical!'
+			'''
 	}
 
 	LavaGem: {
 		DisplayName: Lava Gem
-		Tooltip: "'Crystallized magma'\nHeld by monsters in the burning heat"
+		Tooltip:
+			'''
+			'Crystallized magma'
+			Held by monsters in the burning heat
+			'''
 	}
 
 	LifeforceCrystal: {
 		DisplayName: Lifeforce Crystal
-		Tooltip: "Increases max life by 20%"
+		Tooltip: Increases max life by 20%
 	}
 
 	LifeforceTile: {
@@ -511,17 +577,22 @@ Items: {
 
 	LightEssence: {
 		DisplayName: Light Essence
-		Tooltip: "The essence of Knowledge and Illumination"
+		Tooltip: The essence of Knowledge and Illumination
 	}
 
 	LightInfusion: {
 		DisplayName: Light Infusion
-		Tooltip: "Shows the location of treasure and ore\nEmits light and increases night vision\nShows the location of creatures and danger sources"
+		Tooltip:
+			'''
+			Shows the location of treasure and ore
+			Emits light and increases night vision
+			Shows the location of creatures and danger sources
+			'''
 	}
 
 	MagicPowerCrystal: {
 		DisplayName: Magic Power Crystal
-		Tooltip: "10% increased magic damage"
+		Tooltip: 10% increased magic damage
 	}
 
 	MagicPowerTile: {
@@ -531,7 +602,7 @@ Items: {
 
 	ManaRegenerationCrystal: {
 		DisplayName: Mana Regeneration Crystal
-		Tooltip: "Increased mana regeneration"
+		Tooltip: Increased mana regeneration
 	}
 
 	ManaRegenerationTile: {
@@ -541,7 +612,7 @@ Items: {
 
 	MiningCrystal: {
 		DisplayName: Mining Crystal
-		Tooltip: "Increases mining speed by 25%"
+		Tooltip: Increases mining speed by 25%
 	}
 
 	MiningTile: {
@@ -571,7 +642,7 @@ Items: {
 
 	NightOwlCrystal: {
 		DisplayName: Night Owl Crystal
-		Tooltip: "Increases night vision"
+		Tooltip: Increases night vision
 	}
 
 	NightOwlTile: {
@@ -581,7 +652,7 @@ Items: {
 
 	ObsidianSkinCrystal: {
 		DisplayName: Obsidian Skin Crystal
-		Tooltip: "Provides immunity to fire and lava"
+		Tooltip: Provides immunity to fire and lava
 	}
 
 	ObsidianSkinTile: {
@@ -595,8 +666,8 @@ Items: {
 	}
 
 	Pearlsandball: {
-		DisplayName: "Pearlsandball"
-		Tooltip: "Dense and fast"
+		DisplayName: Pearlsandball
+		Tooltip: Dense and fast
 	}
 
 	Pitfall: {
@@ -605,8 +676,8 @@ Items: {
 	}
 
 	PlatinumHandcrank: {
-		DisplayName: "Platinum Handcrank"
-		Tooltip: "Cranks snowballs"
+		DisplayName: Platinum Handcrank
+		Tooltip: Cranks snowballs
 	}
 
 	PotionCrystal: {
@@ -616,7 +687,7 @@ Items: {
 
 	RageCrystal: {
 		DisplayName: Rage Crystal
-		Tooltip: "Increases critical strike chance by 10%"
+		Tooltip: Increases critical strike chance by 10%
 	}
 
 	RageTile: {
@@ -631,7 +702,7 @@ Items: {
 
 	RegenerationCrystal: {
 		DisplayName: Regeneration Crystal
-		Tooltip: "Provides life regeneration"
+		Tooltip: Provides life regeneration
 	}
 
 	RegenerationTile: {
@@ -646,7 +717,7 @@ Items: {
 
 	ShineCrystal: {
 		DisplayName: Shine Crystal
-		Tooltip: "Emits an aura of light"
+		Tooltip: Emits an aura of light
 	}
 
 	ShineTile: {
@@ -656,17 +727,21 @@ Items: {
 
 	ShroomiteHood: {
 		DisplayName: Shroomite Hood
-		Tooltip: "15% increased snowball damage\n5% increased ranged critical strike chance"
+		Tooltip:
+			'''
+			15% increased snowball damage
+			5% increased ranged critical strike chance
+			'''
 	}
 
 	Slinger: {
-		DisplayName: "Slinger"
-		Tooltip: "Slings snowballs"
+		DisplayName: Slinger
+		Tooltip: Slings snowballs
 	}
 
 	Slynger: {
-		DisplayName: "Slynger"
-		Tooltip: "Slyngs snowballs"
+		DisplayName: Slynger
+		Tooltip: Slyngs snowballs
 	}
 
 	Smelter: {
@@ -675,8 +750,8 @@ Items: {
 	}
 
 	SmelterItem: {
-		DisplayName: "Smelter"
-		Tooltip: "Melts items you place inside"
+		DisplayName: Smelter
+		Tooltip: Melts items you place inside
 	}
 
 	SmelterTileEntity: {
@@ -685,43 +760,52 @@ Items: {
 	}
 
 	SMG: {
-		DisplayName: "S.M.G."
-		Tooltip: "'Snow Machine Gun'\n20% chance not to consume ammo\n'Shouldn't the snow be melting-?'"
+		DisplayName: S.M.G.
+		Tooltip:
+			'''
+			'Snow Machine Gun'
+			20% chance not to consume ammo
+			'Shouldn't the snow be melting-?'
+			'''
 	}
 
 	Snobbler: {
-		DisplayName: "Snobbler"
-		Tooltip: "Shoots a burst of snowballs"
+		DisplayName: Snobbler
+		Tooltip: Shoots a burst of snowballs
 	}
 
 	SnowBlower: {
 		DisplayName: Snow Blower
-		Tooltip: "Blows a barrge of brrs\nShoots an additional stream of frostballs"
+		Tooltip:
+			'''
+			Blows a barrge of brrs
+			Shoots an additional stream of frostballs
+			'''
 	}
 
 	SnowperIceful: {
 		DisplayName: Snowper Iceful
-		Tooltip: "Shoots a powerful, high velocity snowball"
+		Tooltip: Shoots a powerful, high velocity snowball
 	}
 
 	SnowPile: {
-		DisplayName: "Endless Snow Pile"
+		DisplayName: Endless Snow Pile
 		Tooltip: ""
 	}
 
 	SnowScoop: {
-		DisplayName: "The Scoop Mk II"
-		Tooltip: "Gathers snowballs from blocks"
+		DisplayName: The Scoop Mk II
+		Tooltip: Gathers snowballs from blocks
 	}
 
 	Snowshot: {
-		DisplayName: "Snowshot"
+		DisplayName: Snowshot
 		Tooltip: ""
 	}
 
 	SonarCrystal: {
 		DisplayName: Sonar Crystal
-		Tooltip: "Detects hooked fish"
+		Tooltip: Detects hooked fish
 	}
 
 	SonarTile: {
@@ -730,33 +814,38 @@ Items: {
 	}
 
 	Sootball: {
-		DisplayName: "Sootball"
-		Tooltip: "Sets enemies on fire"
+		DisplayName: Sootball
+		Tooltip: Sets enemies on fire
 	}
 
 	Soot: {
 		DisplayName: Soot
-		Tooltip: "Can be used in the Extractinator"
+		Tooltip: Can be used in the Extractinator
 	}
 
 	SoulEssence: {
 		DisplayName: Soul Essence
-		Tooltip: "The essence of Life and Restoration"
+		Tooltip: The essence of Life and Restoration
 	}
 
 	SoulInfusion: {
 		DisplayName: Soul Infusion
-		Tooltip: "+40 maximum life\nIncreases life and mana regeneration\nHearts heal an additional 20 life upon pickup"
+		Tooltip:
+			'''
+			+40 maximum life
+			Increases life and mana regeneration
+			Hearts heal an additional 20 life upon pickup
+			'''
 	}
 
 	Soul: {
 		DisplayName: Soul
-		Tooltip: "Restores Potentia and gives the Reaper buff."
+		Tooltip: Restores Potentia and gives the Reaper buff.
 	}
 
 	SpelunkerCrystal: {
 		DisplayName: Spelunker Crystal
-		Tooltip: "Shows the location of treasure and ore"
+		Tooltip: Shows the location of treasure and ore
 	}
 
 	SpelunkerTile: {
@@ -765,13 +854,17 @@ Items: {
 	}
 
 	SpineChiller: {
-		DisplayName: "Spine Chiller"
-		Tooltip: "Shoots down in an area around your cursor\n80% chance not to consume ammo"
+		DisplayName: Spine Chiller
+		Tooltip:
+			'''
+			Shoots down in an area around your cursor
+			80% chance not to consume ammo
+			'''
 	}
 
 	Spiritball: {
-		DisplayName: "Spiritball"
-		Tooltip: "Flies back towards you"
+		DisplayName: Spiritball
+		Tooltip: Flies back towards you
 	}
 
 	SpiritBarUIOLD: {
@@ -791,7 +884,7 @@ Items: {
 
 	SummoningCrystal: {
 		DisplayName: Summoning Crystal
-		Tooltip: "Increases your max number of minions by 1"
+		Tooltip: Increases your max number of minions by 1
 	}
 
 	SummoningTile: {
@@ -801,7 +894,7 @@ Items: {
 
 	SwiftnessCrystal: {
 		DisplayName: Swiftness Crystal
-		Tooltip: "25% increased movement speed"
+		Tooltip: 25% increased movement speed
 	}
 
 	SwiftnessTile: {
@@ -815,8 +908,8 @@ Items: {
 	}
 
 	TempleEntrance: {
-		DisplayName: "Temple Entrance"
-		Tooltip: "How did you get this"
+		DisplayName: Temple Entrance
+		Tooltip: How did you get this
 	}
 
 	TempleWorld: {
@@ -830,13 +923,13 @@ Items: {
 	}
 
 	TheBlessing: {
-		DisplayName: "The Blessing"
-		Tooltip: "Converts some snowballs into blessedballs"
+		DisplayName: The Blessing
+		Tooltip: Converts some snowballs into blessedballs
 	}
 
 	ThornsCrystal: {
 		DisplayName: Thorns Crystal
-		Tooltip: "Attackers also take damage"
+		Tooltip: Attackers also take damage
 	}
 
 	ThornsTile: {
@@ -846,7 +939,7 @@ Items: {
 
 	TitanCrystal: {
 		DisplayName: Titan Crystal
-		Tooltip: "Increases knockback by 50%"
+		Tooltip: Increases knockback by 50%
 	}
 
 	TitanTile: {
@@ -855,13 +948,17 @@ Items: {
 	}
 
 	TwinSnokes: {
-		DisplayName: "Twin Snokes"
+		DisplayName: Twin Snokes
 		Tooltip: "'Double-headed dragon'"
 	}
 
 	UFSnow: {
-		DisplayName: "U.F.Snow"
-		Tooltip: "Converts normal snowballs into dark iceballs\nDoesn't consume ammo if you're wearing all Meteorite armor"
+		DisplayName: U.F.Snow
+		Tooltip:
+			'''
+			Converts normal snowballs into dark iceballs
+			Doesn't consume ammo if you're wearing all Meteorite armor
+			'''
 	}
 
 	UIPlayer: {
@@ -881,12 +978,16 @@ Items: {
 
 	Wagidget: {
 		DisplayName: Wagidget
-		Tooltip: "'Ancient goblin technology for sale!'\n'Totally not just random scraps!'"
+		Tooltip:
+			'''
+			'Ancient goblin technology for sale!'
+			'Totally not just random scraps!'
+			'''
 	}
 
 	WarmthCrystal: {
 		DisplayName: Warmth Crystal
-		Tooltip: "Reduces damage from cold sources"
+		Tooltip: Reduces damage from cold sources
 	}
 
 	WarmthTile: {
@@ -896,22 +997,27 @@ Items: {
 
 	WarpPearl: {
 		DisplayName: Warp Pearl
-		Tooltip: "Teleports you to where it lands"
+		Tooltip: Teleports you to where it lands
 	}
 
 	WaterEssence: {
 		DisplayName: Water Essence
-		Tooltip: "The essence of Sea and Calm"
+		Tooltip: The essence of Sea and Calm
 	}
 
 	WaterInfusion: {
 		DisplayName: Water Infusion
-		Tooltip: "15% increased fishing power and detects hooked fish\nEnemies spawn less and target you less\nAllows you to swim and breathe underwater"
+		Tooltip:
+			'''
+			15% increased fishing power and detects hooked fish
+			Enemies spawn less and target you less
+			Allows you to swim and breathe underwater
+			'''
 	}
 
 	WaterWalkingCrystal: {
 		DisplayName: Water Walking Crystal
-		Tooltip: "Allows the ability to walk on water"
+		Tooltip: Allows the ability to walk on water
 	}
 
 	WaterWalkingTile: {
@@ -921,7 +1027,7 @@ Items: {
 
 	WrathCrystal: {
 		DisplayName: Wrath Crystal
-		Tooltip: "Increases damage by 10%"
+		Tooltip: Increases damage by 10%
 	}
 
 	WrathTile: {
@@ -930,13 +1036,13 @@ Items: {
 	}
 
 	YellowSnowball: {
-		DisplayName: "Yellow Snowball"
-		Tooltip: "Homes in on enemies as it falls"
+		DisplayName: Yellow Snowball
+		Tooltip: Homes in on enemies as it falls
 	}
 
 	FungonsWand: {
 		Tooltip: Unleash the glow
-		DisplayName: "Fungon's Wand"
+		DisplayName: Fungon's Wand
 	}
 
 	PureIgnisCrystal: {
@@ -950,252 +1056,323 @@ Items: {
 
 	VulcansWrath: {
 		Tooltip: ""
-		DisplayName: "Vulcan's Wrath"
+		DisplayName: Vulcan's Wrath
 	}
 
 	AntiIceball: {
-		DisplayName: "Anti-Iceball"
-		Tooltip: "Reverse gravity"
+		DisplayName: Anti-Iceball
+		Tooltip: Reverse gravity
 	}
 
 	Bloodbolt: {
-		DisplayName: "Bloodbolt"
-		Tooltip: "Heavy, but high damage"
+		DisplayName: Bloodbolt
+		Tooltip: Heavy, but high damage
 	}
 
 	BoneMesh: {
-		DisplayName: "Bone Mesh"
-		Tooltip: "Extractinated bones!\nFragment on impact"
+		DisplayName: Bone Mesh
+		Tooltip:
+			'''
+			Extractinated bones!
+			Fragment on impact
+			'''
 	}
 
 	BrassArrow: {
 		DisplayName: Brass Arrow
-		Tooltip: "Redirects itself on collision."
+		Tooltip: Redirects itself on collision.
 	}
 
 	Bysball: {
-		DisplayName: "Bysball"
-		Tooltip: "Dimension warping snowballs"
+		DisplayName: Bysball
+		Tooltip: Dimension warping snowballs
 	}
 
 	Frostball: {
-		DisplayName: "Frostball"
-		Tooltip: "Bounces off of enemies\nInflicts 'Frostburn'"
+		DisplayName: Frostball
+		Tooltip:
+			'''
+			Bounces off of enemies
+			Inflicts 'Frostburn'
+			'''
 	}
 
 	IceBall: {
-		DisplayName: "Iceball"
-		Tooltip: "A heavier, but more damaging snowball"
+		DisplayName: Iceball
+		Tooltip: A heavier, but more damaging snowball
 	}
 
 	PinkIceBall: {
-		DisplayName: "Pearlfrost Ball"
-		Tooltip: "The hallowed ice is much lighter, and able to fly much farther."
+		DisplayName: Pearlfrost Ball
+		Tooltip: The hallowed ice is much lighter, and able to fly much farther.
 	}
 
 	PurpleIceBall: {
-		DisplayName: "Ebonchunk"
-		Tooltip: "The corrupt ice is much thicker, and even able to bounce."
+		DisplayName: Ebonchunk
+		Tooltip: The corrupt ice is much thicker, and even able to bounce.
 	}
 
 	RedIceBall: {
-		DisplayName: "Crimchunk"
-		Tooltip: "The crimson ice is much heavier, and more damaging."
+		DisplayName: Crimchunk
+		Tooltip: The crimson ice is much heavier, and more damaging.
 	}
 
 	Shadowshot: {
-		DisplayName: "Shadowshot"
-		Tooltip: "High pierce and bounce"
+		DisplayName: Shadowshot
+		Tooltip: High pierce and bounce
 	}
 
 	Shbl: {
-		DisplayName: "Shbl"
+		DisplayName: Shbl
 		Tooltip: "'Shbl'"
 	}
 
 	Slushball: {
-		DisplayName: "Slushball"
-		Tooltip: "Inflicts 'Slushie', which makes enemies take more damage from snowballs that aren't Slushballs"
+		DisplayName: Slushball
+		Tooltip: Inflicts 'Slushie', which makes enemies take more damage from snowballs that aren't Slushballs
 	}
 
 	Wavesnow: {
-		DisplayName: "Wavesnowball"
+		DisplayName: Wavesnowball
 		Tooltip: "'Wiggle'"
 	}
 
 	YellowIceBall: {
-		DisplayName: "Yellow Snowball"
-		Tooltip: "The yellow snow just wants to be eaten.\n'Looks tasty'"
+		DisplayName: Yellow Snowball
+		Tooltip:
+			'''
+			The yellow snow just wants to be eaten.
+			'Looks tasty'
+			'''
 	}
 
 	AncientArmor: {
 		DisplayName: Ancient Armor
-		Tooltip: "Your damage increases based on your Movement Speed."
+		Tooltip: Your damage increases based on your Movement Speed.
 	}
 
 	AncientGreaves: {
 		DisplayName: Ancient Greaves
-		Tooltip: "Innate Sandstorm in a Bottle\n+15% Movement Speed"
+		Tooltip:
+			'''
+			Innate Sandstorm in a Bottle
+			+15% Movement Speed
+			'''
 	}
 
 	AncientHelmet: {
 		DisplayName: Ancient Helmet
-		Tooltip: "Increased Max Run Speed and Jump Height"
+		Tooltip: Increased Max Run Speed and Jump Height
 	}
 
 	AndesiaLeggings: {
 		DisplayName: Andesia Leggings
-		Tooltip: "+100% Mystic Duration\nIncreased Max Minions\n+15% movement speed"
+		Tooltip:
+			'''
+			+100% Mystic Duration
+			Increased Max Minions
+			+15% movement speed
+			'''
 	}
 
 	AnDioChestguard: {
-		DisplayName: "AnDio Chestguard"
-		Tooltip: "Decreased cooldown between Time Stops\nYou are immune to Time Stop"
+		DisplayName: AnDio Chestguard
+		Tooltip:
+			'''
+			Decreased cooldown between Time Stops
+			You are immune to Time Stop
+			'''
 	}
 
 	AnDioChestplate: {
-		DisplayName: "AnDio Chestplate"
-		Tooltip: "Increased duration of Time Stop\nYou are immune to Time Stop"
+		DisplayName: AnDio Chestplate
+		Tooltip:
+			'''
+			Increased duration of Time Stop
+			You are immune to Time Stop
+			'''
 	}
 
 	BysmalBoots: {
 		DisplayName: Bysmal Boots
-		Tooltip: "+15% Movement Speed\n+25% More Movement Speed and Max Run Speed when in the Etherial"
+		Tooltip:
+			'''
+			+15% Movement Speed
+			+25% More Movement Speed and Max Run Speed when in the Etherial
+			'''
 	}
 
 	BysmalChestguard: {
-		DisplayName: "Bysmal Chestguard"
-		Tooltip: "(20 Defense, +20 Defense when in the Etherial)"
+		DisplayName: Bysmal Chestguard
+		Tooltip: (20 Defense, +20 Defense when in the Etherial)
 	}
 
 	BysmalMask: {
 		DisplayName: Bysmal Mask
-		Tooltip: "+10% Damage \n+10% Additional Damage when in the Etherial"
+		Tooltip:
+			'''
+			+10% Damage 
+			+10% Additional Damage when in the Etherial
+			'''
 	}
 
 	DioritusHelmet: {
 		DisplayName: Dioritus Helmet
-		Tooltip: "+15% Damage\n+10% critical strike chance"
+		Tooltip:
+			'''
+			+15% Damage
+			+10% critical strike chance
+			'''
 	}
 
 	FrigidChestplate: {
 		DisplayName: Frigid Chestplate
-		Tooltip: "+10% Melee Speed and Range Crit Chance"
+		Tooltip: +10% Melee Speed and Range Crit Chance
 	}
 
 	FrigidHelmet: {
 		DisplayName: Frigid Helmet
-		Tooltip: "+10% Melee and Ranged Damage"
+		Tooltip: +10% Melee and Ranged Damage
 	}
 
 	FrigidLeggings: {
 		DisplayName: Frigid Leggings
-		Tooltip: "Immunity to Frostburn, Chilled, and Frozen\n+10% Movement Speed"
+		Tooltip:
+			'''
+			Immunity to Frostburn, Chilled, and Frozen
+			+10% Movement Speed
+			'''
 	}
 
 	JungleMask: {
-		DisplayName: "Jungle Hood"
-		Tooltip: "Mystic damage increased by 12%\n+100% Mystic Duration"
+		DisplayName: Jungle Hood
+		Tooltip:
+			'''
+			Mystic damage increased by 12%
+			+100% Mystic Duration
+			'''
 	}
 
 	MagmaticBoots: {
 		DisplayName: Magmatic Boots
-		Tooltip: "+100% Mystic Duration\n+50%Throwing Velocity\n+15% Movement Speed\nProvides waterwalking and free movement in liquids"
+		Tooltip:
+			'''
+			+100% Mystic Duration
+			+50%Throwing Velocity
+			+15% Movement Speed
+			Provides waterwalking and free movement in liquids
+			'''
 	}
 
 	MagmaticLongcoat: {
 		DisplayName: Magmatic Longcoat
-		Tooltip: "Immunity to lava, 'On Fire!', and 'Burning'\n+10% Throwing critical strike chance"
+		Tooltip:
+			'''
+			Immunity to lava, 'On Fire!', and 'Burning'
+			+10% Throwing critical strike chance
+			'''
 	}
 
 	MagmaticMask: {
 		DisplayName: Magmatic Mask
-		Tooltip: "+15% Mystic and Throwing Damage"
+		Tooltip: +15% Mystic and Throwing Damage
 	}
 
 	ObsidiumBand: {
 		DisplayName: Obsidium Band
-		Tooltip: "+15% Throwing Damage"
+		Tooltip: +15% Throwing Damage
 	}
 
 	ObsidiumHat: {
 		DisplayName: Obsidium Hat
-		Tooltip: "+15% Magic Damage"
+		Tooltip: +15% Magic Damage
 	}
 
 	ObsidiumHeadgear: {
 		DisplayName: Obsidium Headgear
-		Tooltip: "+15% Ranged Damage"
+		Tooltip: +15% Ranged Damage
 	}
 
 	ObsidiumHeadguard: {
 		DisplayName: Obsidium Headguard
-		Tooltip: "+15% Melee Damage"
+		Tooltip: +15% Melee Damage
 	}
 
 	ObsidiumHelmet: {
 		DisplayName: Obsidium Helmet
-		Tooltip: "+15% Mystic Damage"
+		Tooltip: +15% Mystic Damage
 	}
 
 	ObsidiumLongcoat: {
 		DisplayName: Obsidium Longcoat
-		Tooltip: "Immunity to lava, 'On Fire!', and 'Burning'"
+		Tooltip: Immunity to lava, 'On Fire!', and 'Burning'
 	}
 
 	ObsidiumMask: {
 		DisplayName: Obsidium Mask
-		Tooltip: "+15% Summoning Damage"
+		Tooltip: +15% Summoning Damage
 	}
 
 	ObsidiumPants: {
 		DisplayName: Obsidium Pants
-		Tooltip: "Provides waterwalking and free movement in liquids \n+10% Movement Speed"
+		Tooltip:
+			'''
+			Provides waterwalking and free movement in liquids 
+			+10% Movement Speed
+			'''
 	}
 
 	ShroomChest: {
-		DisplayName: "Shroom Amalgam"
-		Tooltip: "+20% Overflow"
+		DisplayName: Shroom Amalgam
+		Tooltip: +20% Overflow
 	}
 
 	ShroomHelmet: {
-		DisplayName: "Shroom Cap"
-		Tooltip: "+8% Mystic Damage"
+		DisplayName: Shroom Cap
+		Tooltip: +8% Mystic Damage
 	}
 
 	ShroomPants: {
-		DisplayName: "Shroom Stalk"
-		Tooltip: "+10% Movement Speed"
+		DisplayName: Shroom Stalk
+		Tooltip: +10% Movement Speed
 	}
 
 	SteampunkBoots: {
 		DisplayName: Steampunk Boots
-		Tooltip: "Insulated- Immune to 'Steamy'\n+10% Movement Speed"
+		Tooltip:
+			'''
+			Insulated- Immune to 'Steamy'
+			+10% Movement Speed
+			'''
 	}
 
 	SteampunkHeadgear: {
 		DisplayName: Steampunk Headgear
-		Tooltip: "+20% Throwing Damage"
+		Tooltip: +20% Throwing Damage
 	}
 
 	SteampunkHelmet: {
-		DisplayName: "Steampunk Hat"
-		Tooltip: "+20% Mystic Damage"
+		DisplayName: Steampunk Hat
+		Tooltip: +20% Mystic Damage
 	}
 
 	SteampunkJacket: {
 		DisplayName: Steampunk Jacket
-		Tooltip: "8% Increased damage and critical strike chance"
+		Tooltip: 8% Increased damage and critical strike chance
 	}
 
 	SteampunkMask: {
 		DisplayName: Steampunk Mask
-		Tooltip: "+4 Minion capacity"
+		Tooltip: +4 Minion capacity
 	}
 
 	AncientAwakener: {
 		DisplayName: Ancient Awakener
-		Tooltip: "Summons Dioritus\n'The rulers of the caverns are fearsome foes'"
+		Tooltip:
+			'''
+			Summons Dioritus
+			'The rulers of the caverns are fearsome foes'
+			'''
 	}
 
 	DryadSpore: {
@@ -1205,202 +1382,255 @@ Items: {
 
 	TimeCapsule: {
 		DisplayName: Time Capsule
-		Tooltip: "Reduces debuff duration & increases buff duration"
+		Tooltip: Reduces debuff duration & increases buff duration
 	}
 
 	ChilledMesh: {
-		DisplayName: "Innocent Child"
-		Tooltip: "Summons Hypothema\n'What are you doing to him?'"
+		DisplayName: Innocent Child
+		Tooltip:
+			'''
+			Summons Hypothema
+			'What are you doing to him?'
+			'''
 	}
 
 	EmblemOfEtheria: {
-		DisplayName: "Emblem of Etheria"
-		Tooltip: "Calls Etheria\n'This seems like a terrible idea.'"
+		DisplayName: Emblem of Etheria
+		Tooltip:
+			'''
+			Calls Etheria
+			'This seems like a terrible idea.'
+			'''
 	}
 
 	EtherialAwakener: {
 		DisplayName: Etherial Awakener
-		Tooltip: "Summons Dioritus"
+		Tooltip: Summons Dioritus
 	}
 
 	EtherialBone: {
-		DisplayName: "Etherial Crown"
-		Tooltip: "Summons Skeletron"
+		DisplayName: Etherial Crown
+		Tooltip: Summons Skeletron
 	}
 
 	EtherialBulb: {
-		DisplayName: "Etherial Crown"
-		Tooltip: "Summons Plantera"
+		DisplayName: Etherial Crown
+		Tooltip: Summons Plantera
 	}
 
 	EtherialCell: {
-		DisplayName: "Etherial Crown"
-		Tooltip: "Summons Golem"
+		DisplayName: Etherial Crown
+		Tooltip: Summons Golem
 	}
 
 	EtherialCrown: {
 		DisplayName: Etherial Crown
-		Tooltip: "Summons King Slime"
+		Tooltip: Summons King Slime
 	}
 
 	EtherialEnergy: {
 		DisplayName: Etherial Energy
-		Tooltip: "Imbues your body with Etherial energy"
+		Tooltip: Imbues your body with Etherial energy
 	}
 
 	EtherialEye: {
-		DisplayName: "Etherial Crown"
-		Tooltip: "Summons the Eye of Cthulhu"
+		DisplayName: Etherial Crown
+		Tooltip: Summons the Eye of Cthulhu
 	}
 
 	EtherialEyes: {
 		DisplayName: Etherial Eyes
-		Tooltip: "Summons the Twins"
+		Tooltip: Summons the Twins
 	}
 
 	EtherialMechanicalSkull: {
 		DisplayName: Etherial Mechanical Skull
-		Tooltip: "Summons Skeletron Prime"
+		Tooltip: Summons Skeletron Prime
 	}
 
 	EtherialMesh: {
 		DisplayName: Etherial Mesh
-		Tooltip: "Summons Hypothema"
+		Tooltip: Summons Hypothema
 	}
 
 	EtherialMess: {
 		DisplayName: Etherial Mess
-		Tooltip: "Summons Ragnar"
+		Tooltip: Summons Ragnar
 	}
 
 	EtherialMonitor: {
 		DisplayName: Etherial Monitor
-		Tooltip: "Summons the Annihilator"
+		Tooltip: Summons the Annihilator
 	}
 
 	EtherialMorsel: {
 		DisplayName: Etherial Morsel
-		Tooltip: "Summons Dune Sharkron"
+		Tooltip: Summons Dune Sharkron
 	}
 
 	EtherialSigil: {
 		DisplayName: Etherial Sigil
-		Tooltip: "Summons Moon Lord"
+		Tooltip: Summons Moon Lord
 	}
 
 	EtherialSpine: {
 		DisplayName: Etherial Spine
-		Tooltip: "Summons the Brain of Cthulhu"
+		Tooltip: Summons the Brain of Cthulhu
 	}
 
 	EtherialSteamCrown: {
 		DisplayName: Etherial Steam Crown
-		Tooltip: "Summons Slybertron"
+		Tooltip: Summons Slybertron
 	}
 
 	EtherialTrainWhistle: {
 		DisplayName: Etherial Train Whistle
-		Tooltip: "Summons Steam Train"
+		Tooltip: Summons Steam Train
 	}
 
 	EtherialVooDooDoll: {
-		DisplayName: "Etherial VooDoo Doll"
-		Tooltip: "Summons the Wall of Flesh in the Etherial"
+		DisplayName: Etherial VooDoo Doll
+		Tooltip: Summons the Wall of Flesh in the Etherial
 	}
 
 	EtherialWorm: {
 		DisplayName: Etherial Worm
-		Tooltip: "Summons the Destroyer"
+		Tooltip: Summons the Destroyer
 	}
 
 	EtherialWormFood: {
 		DisplayName: Etherial Worm Food
-		Tooltip: "Summons the Eater of Worlds"
+		Tooltip: Summons the Eater of Worlds
 	}
 
 	Etherination: {
 		DisplayName: Etherination
-		Tooltip: "Summons Queen Bee"
+		Tooltip: Summons Queen Bee
 	}
 
 	MechanicalMonitor: {
-		DisplayName: "Steam-O-Vision"
-		Tooltip: "Summons The Annihilator"
+		DisplayName: Steam-O-Vision
+		Tooltip: Summons The Annihilator
 	}
 
 	MoltenMess: {
 		DisplayName: Molten Mess
-		Tooltip: "Summons Ragnar\n'Chilled Lava.' \nGuardian of the Obsidium."
+		Tooltip:
+			'''
+			Summons Ragnar
+			'Chilled Lava.' 
+			Guardian of the Obsidium.
+			'''
 	}
 
 	ObsidiumHeart: {
 		DisplayName: Obsidium Heart
-		Tooltip: "Increases the strength of Obsidium weapons\nIncreases your Max Potentia by 10\nCan be used 5 times\nGrown on Magma Shards"
+		Tooltip:
+			'''
+			Increases the strength of Obsidium weapons
+			Increases your Max Potentia by 10
+			Can be used 5 times
+			Grown on Magma Shards
+			'''
 	}
 
 	GreaterMysticaPotion: {
-		DisplayName: "Greater Potentia Potion"
-		Tooltip: "Restores all Potentias to full capacity\nDoes not remove Overflow\nOverflow is increased by 10% while the Mysticality debuff is active"
+		DisplayName: Greater Potentia Potion
+		Tooltip:
+			'''
+			Restores all Potentias to full capacity
+			Does not remove Overflow
+			Overflow is increased by 10% while the Mysticality debuff is active
+			'''
 	}
 
 	JumpBoostPotion: {
 		DisplayName: Jump Boost Potion
-		Tooltip: "Increases jump height\n5 minute duration"
+		Tooltip:
+			'''
+			Increases jump height
+			5 minute duration
+			'''
 	}
 
 	MysticaPotion: {
-		DisplayName: "Potentia Potion"
-		Tooltip: "Restores all Potentias to full capacity, but removes Overflow"
+		DisplayName: Potentia Potion
+		Tooltip: Restores all Potentias to full capacity, but removes Overflow
 	}
 
 	OmegaJumpBoostPotion: {
 		DisplayName: Omega Jump Boost Potion
-		Tooltip: "INSANELY increases jump height\n5 minute duration"
+		Tooltip:
+			'''
+			INSANELY increases jump height
+			5 minute duration
+			'''
 	}
 
 	SupremeMysticaPotion: {
-		DisplayName: "Super Potentia Potion"
-		Tooltip: "Restores all Potentias to full capacity\nRestores Overflow to half capacity\nOverflow is increased by 20% while the Mysticality debuff is active"
+		DisplayName: Super Potentia Potion
+		Tooltip:
+			'''
+			Restores all Potentias to full capacity
+			Restores Overflow to half capacity
+			Overflow is increased by 20% while the Mysticality debuff is active
+			'''
 	}
 
 	UltraJumpBoostPotion: {
 		DisplayName: Ultra Jump Boost Potion
-		Tooltip: "GREATLY increases jump height\n5 minute duration"
+		Tooltip:
+			'''
+			GREATLY increases jump height
+			5 minute duration
+			'''
 	}
 
 	SteamCrown: {
 		DisplayName: Steam Crown
-		Tooltip: "Summons Slybertron"
+		Tooltip: Summons Slybertron
 	}
 
 	SuspiciousTrainWhistle: {
-		DisplayName: "Suspicious Steam Whistle"
-		Tooltip: "Summons Steam Train"
+		DisplayName: Suspicious Steam Whistle
+		Tooltip: Summons Steam Train
 	}
 
 	TastyMorsel: {
 		DisplayName: Tasty Morsel
-		Tooltip: "Summons Dune Sharkron in the desert \n'Mmm... Looks delicious.'"
+		Tooltip:
+			'''
+			Summons Dune Sharkron in the desert 
+			'Mmm... Looks delicious.'
+			'''
 	}
 
 	AncientCarapace: {
-		DisplayName: "Ancient Carapace"
-		Tooltip: "Restore Potentia upon taking damage"
+		DisplayName: Ancient Carapace
+		Tooltip: Restore Potentia upon taking damage
 	}
 
 	AncientJewelry: {
-		DisplayName: "Ancient Jewelry"
-		Tooltip: "Increases life and mana regeneration \n+40 Mana"
+		DisplayName: Ancient Jewelry
+		Tooltip:
+			'''
+			Increases life and mana regeneration 
+			+40 Mana
+			'''
 	}
 
 	AncientNecklace: {
-		DisplayName: "Ancient Necklace"
-		Tooltip: "Increases life and mana regeneration"
+		DisplayName: Ancient Necklace
+		Tooltip: Increases life and mana regeneration
 	}
 
 	AncientShroud: {
-		DisplayName: "Blood Shroud"
-		Tooltip: "Increased life regen\nIncreased Mystic Damage for a time after taking damage"
+		DisplayName: Blood Shroud
+		Tooltip:
+			'''
+			Increased life regen
+			Increased Mystic Damage for a time after taking damage
+			'''
 	}
 
 	AncientWax: {
@@ -1410,357 +1640,533 @@ Items: {
 
 	AquaflameWaders: {
 		DisplayName: Aquaflame Waders
-		Tooltip: "Dominion over liquids and fire\nLeave a trail of True Fire as you move"
+		Tooltip:
+			'''
+			Dominion over liquids and fire
+			Leave a trail of True Fire as you move
+			'''
 	}
 
 	Arcanum: {
-		DisplayName: "Arcanum"
-		Tooltip: "+40 mana\n+15% Overflow"
+		DisplayName: Arcanum
+		Tooltip:
+			'''
+			+40 mana
+			+15% Overflow
+			'''
 	}
 
 	BandOfAncients: {
-		DisplayName: "Band of Ancients"
-		Tooltip: "+40 Mana"
+		DisplayName: Band of Ancients
+		Tooltip: +40 Mana
 	}
 
 	Bloat: {
-		DisplayName: "Bloat"
-		Tooltip: "+100% Max Life. You cannot go above 50% of your Max Life."
+		DisplayName: Bloat
+		Tooltip: +100% Max Life. You cannot go above 50% of your Max Life.
 	}
 
 	BloodfootBoots: {
-		DisplayName: "Bloodfoot Boots"
-		Tooltip: "Allows the wearer to dash"
+		DisplayName: Bloodfoot Boots
+		Tooltip: Allows the wearer to dash
 	}
 
 	BysmaliteWarpers: {
 		DisplayName: Bysmalite Warpers
-		Tooltip: "Dimension-tearing speed and dashing\nDominion over everything\nLeave a Frigid trail\nIncreased Damage, Movement Speed, and Defense in the Etherial"
+		Tooltip:
+			'''
+			Dimension-tearing speed and dashing
+			Dominion over everything
+			Leave a Frigid trail
+			Increased Damage, Movement Speed, and Defense in the Etherial
+			'''
 	}
 
 	Clockface: {
-		DisplayName: "Clockface"
-		Tooltip: "Reduces the cooldown between Time Stops"
+		DisplayName: Clockface
+		Tooltip: Reduces the cooldown between Time Stops
 	}
 
 	CongealedFrostCore: {
-		DisplayName: "Congealed Frost Core"
-		Tooltip: "+10% Melee and Ranged damage\n+50% Snowball damage\n'Sometimes, an Ice Golem's Heart is extra cold'"
+		DisplayName: Congealed Frost Core
+		Tooltip:
+			'''
+			+10% Melee and Ranged damage
+			+50% Snowball damage
+			'Sometimes, an Ice Golem's Heart is extra cold'
+			'''
 	}
 
 	ConjurationCore: {
 		DisplayName: Conjuration Core
-		Tooltip: "+10% Conjuration Damage\n+50 Mundus"
+		Tooltip:
+			'''
+			+10% Conjuration Damage
+			+50 Mundus
+			'''
 	}
 
 	CoreOfAnDio: {
-		DisplayName: "Sands of Time"
-		Tooltip: "You are immune to Time Stop"
+		DisplayName: Sands of Time
+		Tooltip: You are immune to Time Stop
 	}
 
 	CoreOfMysticism: {
-		DisplayName: "Core of Mysticism"
-		Tooltip: "+15% Mystic Damage\n+50 Potentia"
+		DisplayName: Core of Mysticism
+		Tooltip:
+			'''
+			+15% Mystic Damage
+			+50 Potentia
+			'''
 	}
 
 	CrystalizedMagma: {
-		DisplayName: "Crystallized Magma"
-		Tooltip: "Leave a trail of fire as you run"
+		DisplayName: Crystallized Magma
+		Tooltip: Leave a trail of fire as you run
 	}
 
 	Crystillium: {
-		DisplayName: "Crystillium"
-		Tooltip: "+10% Overflow\nOverflow attacks shoot crystal shards"
+		DisplayName: Crystillium
+		Tooltip:
+			'''
+			+10% Overflow
+			Overflow attacks shoot crystal shards
+			'''
 	}
 
 	DarkfootBoots: {
-		DisplayName: "Ebonfoot Boots"
-		Tooltip: "Allows the wearer to dash"
+		DisplayName: Ebonfoot Boots
+		Tooltip: Allows the wearer to dash
 	}
 
 	DemondashBoots: {
 		DisplayName: Demondash Boots
-		Tooltip: "Allows the wearer to dash\nReduced cooldown between dashes\nIncreased movement speed"
+		Tooltip:
+			'''
+			Allows the wearer to dash
+			Reduced cooldown between dashes
+			Increased movement speed
+			'''
 	}
 
 	DemonrushBoots: {
-		DisplayName: "Devilrush Boots"
-		Tooltip: "Allows the wearer to dash in any direction\nIncreased jump height"
+		DisplayName: Devilrush Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash in any direction
+			Increased jump height
+			'''
 	}
 
 	DemonsparkBoots: {
-		DisplayName: "Hellspark Boots"
-		Tooltip: "Allows the wearer to dash\nIncreased jump height and movement speed\nCan dash multiple times in the air"
+		DisplayName: Hellspark Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash
+			Increased jump height and movement speed
+			Can dash multiple times in the air
+			'''
 	}
 
 	DestructionCore: {
 		DisplayName: Destruction Core
-		Tooltip: "+10% Destruction Damage\n+50 Lux"
+		Tooltip:
+			'''
+			+10% Destruction Damage
+			+50 Lux
+			'''
 	}
 
 	Eruption: {
-		DisplayName: "Eruption"
-		Tooltip: "Grants an Eruption Jump\nMake hidden to prevent fireballs from spawning"
+		DisplayName: Eruption
+		Tooltip:
+			'''
+			Grants an Eruption Jump
+			Make hidden to prevent fireballs from spawning
+			'''
 	}
 
 	FaeryInABottle: {
-		DisplayName: "Faery in a Bottle"
-		Tooltip: "Automatically switch Mysticism when you run out of the current Potentia"
+		DisplayName: Faery in a Bottle
+		Tooltip: Automatically switch Mysticism when you run out of the current Potentia
 	}
 
 	FatherTime: {
-		DisplayName: "Father Time"
-		Tooltip: "+15% Increased Damage while time is stopped\nReduces cooldown between Time Stops\nIncreases Duration of Time Stop\n'Mastery of Time'"
+		DisplayName: Father Time
+		Tooltip:
+			'''
+			+15% Increased Damage while time is stopped
+			Reduces cooldown between Time Stops
+			Increases Duration of Time Stop
+			'Mastery of Time'
+			'''
 	}
 
 	FireDust: {
-		DisplayName: "Fire Dust"
-		Tooltip: "All attacks inflict 'On Fire!'"
+		DisplayName: Fire Dust
+		Tooltip: All attacks inflict 'On Fire!'
 	}
 
 	FlamesparkWaders: {
 		DisplayName: Flamespark Waders
-		Tooltip: "Provides the ability to walk on water and lava\nGrants immunity to fire blocks and 8 seconds of immunity to lava\nAttacks inflict 'On Fire!'"
+		Tooltip:
+			'''
+			Provides the ability to walk on water and lava
+			Grants immunity to fire blocks and 8 seconds of immunity to lava
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	FlareburstWaders: {
-		DisplayName: "Flamespark Waders"
-		Tooltip: "Provides the ability to walk on water and lava\nGrants immunity to fire blocks and 10 seconds of immunity to lava\nLeave a trail of True Fire as you move"
+		DisplayName: Flamespark Waders
+		Tooltip:
+			'''
+			Provides the ability to walk on water and lava
+			Grants immunity to fire blocks and 10 seconds of immunity to lava
+			Leave a trail of True Fire as you move
+			'''
 	}
 
 	FrigidVisia: {
 		DisplayName: Frigid Visia
-		Tooltip: "+25% Mystic Duration\n+15% Illusion Damage\n+50 Vis"
+		Tooltip:
+			'''
+			+25% Mystic Duration
+			+15% Illusion Damage
+			+50 Vis
+			'''
 	}
 
 	FrostburstBoots: {
 		DisplayName: Frostburst Boots
-		Tooltip: "Allows flight, super fast running, and extra mobility on ice\nGrants the ability to double jump\nIncreases jump height and negates fall damage\n15% increased movement speed"
+		Tooltip:
+			'''
+			Allows flight, super fast running, and extra mobility on ice
+			Grants the ability to double jump
+			Increases jump height and negates fall damage
+			15% increased movement speed
+			'''
 	}
 
 	FrostwarpBoots: {
-		DisplayName: "Frostwarp Boots"
-		Tooltip: "Allows the wearer to dash, fly, and run super fast\nGrants the ability to double jump\nNegates fall damage\n20% Increased movement speed\nCan dash multiple times in the air\nBecome immune for a time while dashing"
+		DisplayName: Frostwarp Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash, fly, and run super fast
+			Grants the ability to double jump
+			Negates fall damage
+			20% Increased movement speed
+			Can dash multiple times in the air
+			Become immune for a time while dashing
+			'''
 	}
 
 	GaiasGem: {
-		DisplayName: "Gaia's Gem"
-		Tooltip: "+50% Mystic Duration"
+		DisplayName: Gaia's Gem
+		Tooltip: +50% Mystic Duration
 	}
 
 	HandsOfTime: {
-		DisplayName: "The Hands of Time"
-		Tooltip: "Increases the duration of Time Stop"
+		DisplayName: The Hands of Time
+		Tooltip: Increases the duration of Time Stop
 	}
 
 	HauntedMundium: {
 		DisplayName: Haunted Mundium
-		Tooltip: "+25% Overflow Capacity\n+15% Conjuration Damage\n+50Mundus"
+		Tooltip:
+			'''
+			+25% Overflow Capacity
+			+15% Conjuration Damage
+			+50Mundus
+			'''
 	}
 
 	HyperlightDrifters: {
 		DisplayName: Hyperlight Drifters
-		Tooltip: "Light speed and light dash\nDominion over everything\nLeave a Cosmic trail\n+10% Damage"
+		Tooltip:
+			'''
+			Light speed and light dash
+			Dominion over everything
+			Leave a Cosmic trail
+			+10% Damage
+			'''
 	}
 
 	HyperwarpLightboots: {
-		DisplayName: "Hallowarp Lightboots"
-		Tooltip: "Hyper speed and hyper dash\nDominion over liquids and the sky\nLeave a trail of Crystallite while moving"
+		DisplayName: Hallowarp Lightboots
+		Tooltip:
+			'''
+			Hyper speed and hyper dash
+			Dominion over liquids and the sky
+			Leave a trail of Crystallite while moving
+			'''
 	}
 
 	IllusionCore: {
 		DisplayName: Illusion Core
-		Tooltip: "+10% Illusion Damage\n+50 Vis"
+		Tooltip:
+			'''
+			+10% Illusion Damage
+			+50 Vis
+			'''
 	}
 
 	MagmaHeart: {
-		DisplayName: "Magma Heart"
-		Tooltip: "Summons a Magma Heart to shine light\nYou are immune to lava"
+		DisplayName: Magma Heart
+		Tooltip:
+			'''
+			Summons a Magma Heart to shine light
+			You are immune to lava
+			'''
 	}
 
 	Marblite: {
-		DisplayName: "Marblite"
-		Tooltip: "+10% Mystic Damage\nGet 'For Honor' and 'For Glory' when switching Mysticism."
+		DisplayName: Marblite
+		Tooltip:
+			'''
+			+10% Mystic Damage
+			Get 'For Honor' and 'For Glory' when switching Mysticism.
+			'''
 	}
 
 	MoltenTank: {
 		DisplayName: Molten Tank
-		Tooltip: "+33% Mystic Duration"
+		Tooltip: +33% Mystic Duration
 	}
 
 	MysticEmblem: {
 		DisplayName: Mystic Emblem
-		Tooltip: "+15% mystic damage"
+		Tooltip: +15% mystic damage
 	}
 
 	NinjaEmblem: {
 		DisplayName: Ninja Emblem
-		Tooltip: "+15% throwing damage"
+		Tooltip: +15% throwing damage
 	}
 
 	ObsidiumLily: {
-		DisplayName: "Obsidium Lily"
-		Tooltip: "You are immune to contact damage from enemies that\nare at max life and have less defense than you\n'A calming aura'"
+		DisplayName: Obsidium Lily
+		Tooltip:
+			'''
+			You are immune to contact damage from enemies that
+			are at max life and have less defense than you
+			'A calming aura'
+			'''
 	}
 
 	PrismVeil: {
 		DisplayName: Prism Veil
-		Tooltip: "+20% Mystic Burst Damage\nDecreased Mystic Burst Cooldown\nIncreased Movement Speed while Mystic Burst is on Cooldown\nBecome immune for a time after Mystic Bursts"
+		Tooltip:
+			'''
+			+20% Mystic Burst Damage
+			Decreased Mystic Burst Cooldown
+			Increased Movement Speed while Mystic Burst is on Cooldown
+			Become immune for a time after Mystic Bursts
+			'''
 	}
 
 	Ragnashia: {
-		DisplayName: "Ragnashia"
-		Tooltip: "+5% Crit Chance\nSet nearby enemies ablaze"
+		DisplayName: Ragnashia
+		Tooltip:
+			'''
+			+5% Crit Chance
+			Set nearby enemies ablaze
+			'''
 	}
 
 	RuneOfEruption: {
-		DisplayName: "Rune of Eruption"
-		Tooltip: "+20% Overflow damage and velocity\nIncreased movement and jump speed when on Overflow"
+		DisplayName: Rune of Eruption
+		Tooltip:
+			'''
+			+20% Overflow damage and velocity
+			Increased movement and jump speed when on Overflow
+			'''
 	}
 
 	RuneOfTheAncients: {
-		DisplayName: "Rune of the Ancients"
-		Tooltip: "+15% Overflow damage and velocity\nIncreased movement speed when on Overflow"
+		DisplayName: Rune of the Ancients
+		Tooltip:
+			'''
+			+15% Overflow damage and velocity
+			Increased movement speed when on Overflow
+			'''
 	}
 
 	ShadowarpFlameboots: {
-		DisplayName: "Shadowarp Flameboots"
-		Tooltip: "Shadow speed, shadow flight, and shadow dash\nDominion over liquids and fire\nLeave a trail of Shadowflame"
+		DisplayName: Shadowarp Flameboots
+		Tooltip:
+			'''
+			Shadow speed, shadow flight, and shadow dash
+			Dominion over liquids and fire
+			Leave a trail of Shadowflame
+			'''
 	}
 
 	ShroomSpore: {
-		DisplayName: "Spore Cloud"
-		Tooltip: "Overflow attacks shoot spores on hit"
+		DisplayName: Spore Cloud
+		Tooltip: Overflow attacks shoot spores on hit
 	}
 
 	SolarLuxus: {
 		DisplayName: Solar Luxus
-		Tooltip: "+15% Mystic Damage\n+15% Destruction Damage\n+50 Lux"
+		Tooltip:
+			'''
+			+15% Mystic Damage
+			+15% Destruction Damage
+			+50 Lux
+			'''
 	}
 
 	SolidPotentia: {
-		DisplayName: "Solid Potentia"
-		Tooltip: "+50 Potentia"
+		DisplayName: Solid Potentia
+		Tooltip: +50 Potentia
 	}
 
 	SpyritInABottle: {
-		DisplayName: "Spyrit in a Bottle"
-		Tooltip: "Automatically switch Mysticism when you run out of the current Potentia,\nor one of your Potentias is at Max Overflow"
+		DisplayName: Spyrit in a Bottle
+		Tooltip:
+			'''
+			Automatically switch Mysticism when you run out of the current Potentia,
+			or one of your Potentias is at Max Overflow
+			'''
 	}
 
 	SteamsparkJetboots: {
 		DisplayName: Steamspark Jetboots
-		Tooltip: "Steam speed!\nDominion over liquids and the sky\nLeave a trail of Steam"
+		Tooltip:
+			'''
+			Steam speed!
+			Dominion over liquids and the sky
+			Leave a trail of Steam
+			'''
 	}
 
 	SupremeEmblem: {
-		DisplayName: "Cog of Knowledge"
-		Tooltip: "'The power of all'\nIncreases damage by 20%"
+		DisplayName: Cog of Knowledge
+		Tooltip:
+			'''
+			'The power of all'
+			Increases damage by 20%
+			'''
 	}
 
 	SupremeMysticEmblem: {
 		DisplayName: Supreme Mystic Emblem
-		Tooltip: "+20% mystic damage"
+		Tooltip: +20% mystic damage
 	}
 
 	SupremeNinjaEmblem: {
 		DisplayName: Supreme Ninja Emblem
-		Tooltip: "+20% throwing damage"
+		Tooltip: +20% throwing damage
 	}
 
 	SupremeRangerEmblem: {
 		DisplayName: Supreme Ranger Emblem
-		Tooltip: "+20% ranged damage"
+		Tooltip: +20% ranged damage
 	}
 
 	SupremeSorcererEmblem: {
 		DisplayName: Supreme Sorcerer Emblem
-		Tooltip: "+20% magic damage"
+		Tooltip: +20% magic damage
 	}
 
 	SupremeSummonerEmblem: {
 		DisplayName: Supreme Summoner Emblem
-		Tooltip: "+20% minion damage"
+		Tooltip: +20% minion damage
 	}
 
 	SupremeWarriorEmblem: {
 		DisplayName: Supreme Warrior Emblem
-		Tooltip: "+20% melee damage"
+		Tooltip: +20% melee damage
 	}
 
 	TheBloodOfOld: {
-		DisplayName: "The Blood of Old"
-		Tooltip: "Increased life regen\n+10% mystic damage"
+		DisplayName: The Blood of Old
+		Tooltip:
+			'''
+			Increased life regen
+			+10% mystic damage
+			'''
 	}
 
 	TheDarkOfOld: {
-		DisplayName: "The Dark of Old"
-		Tooltip: "+25 Potentia"
+		DisplayName: The Dark of Old
+		Tooltip: +25 Potentia
 	}
 
 	Thermaltite: {
-		DisplayName: "Thermalite"
-		Tooltip: "Overflow attacks shoot Thermalite Bolts"
+		DisplayName: Thermalite
+		Tooltip: Overflow attacks shoot Thermalite Bolts
 	}
 
 	TimeWinder: {
-		DisplayName: "Time Winder"
-		Tooltip: "+15% Increased Damage while time is stopped"
+		DisplayName: Time Winder
+		Tooltip: +15% Increased Damage while time is stopped
 	}
 
 	ToyTrain: {
-		DisplayName: "Miniature Train Whistle"
-		Tooltip: "Summons a Toy Train that follows you"
+		DisplayName: Miniature Train Whistle
+		Tooltip: Summons a Toy Train that follows you
 	}
 
 	WarpburstBoots: {
-		DisplayName: "Warpburst Boots"
-		Tooltip: "Allows the wearer to dash\nIncreased jump height and movement speed\nCan dash multiple times in the air\nBecome immune for a time while dashing"
+		DisplayName: Warpburst Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash
+			Increased jump height and movement speed
+			Can dash multiple times in the air
+			Become immune for a time while dashing
+			'''
 	}
 
 	AncientShard: {
-		DisplayName: "Ancient Shard"
+		DisplayName: Ancient Shard
 		Tooltip: ""
 	}
 
 	AndesiaCore: {
-		DisplayName: "Core of Dusk"
-		Tooltip: "For Honor!"
+		DisplayName: Core of Dusk
+		Tooltip: For Honor!
 	}
 
 	AnDioTreasureBag: {
-		DisplayName: "Treasure Bag"
+		DisplayName: Treasure Bag
 		Tooltip: ""
 	}
 
 	AnnihilatorTreasureBag: {
-		DisplayName: "Treasure Bag"
+		DisplayName: Treasure Bag
 		Tooltip: ""
 	}
 
 	BrainOfEtheria: {
-		DisplayName: "Fragmented Mind"
-		Tooltip: "While in the etherial, if you would die from contact damage, heal 300 life instead. 3 minute cooldown.\nAfter colliding with an enemy, that enemy takes 50% more damage for 15 seconds."
+		DisplayName: Fragmented Mind
+		Tooltip:
+			'''
+			While in the etherial, if you would die from contact damage, heal 300 life instead. 3 minute cooldown.
+			After colliding with an enemy, that enemy takes 50% more damage for 15 seconds.
+			'''
 	}
 
 	CogOfEtheria: {
-		DisplayName: "The Annihilation"
-		Tooltip: "Killing an enemy while in the Etherial boosts your damage by 20% for 10 seconds. Killing another enemy in this time resets the timer and stacks the bonus."
+		DisplayName: The Annihilation
+		Tooltip: Killing an enemy while in the Etherial boosts your damage by 20% for 10 seconds. Killing another enemy in this time resets the timer and stacks the bonus.
 	}
 
 	CogOfKnowledge: {
-		DisplayName: "Cog of Knowledge"
-		Tooltip: "Increases your max number of minions by 2"
+		DisplayName: Cog of Knowledge
+		Tooltip: Increases your max number of minions by 2
 	}
 
 	DarkShard: {
-		DisplayName: "Magma Shard"
-		Tooltip: "Grows Obsidium Hearts over time when placed"
+		DisplayName: Magma Shard
+		Tooltip: Grows Obsidium Hearts over time when placed
 	}
 
 	DioritusCore: {
-		DisplayName: "Core of Dawn"
-		Tooltip: "For Glory!"
+		DisplayName: Core of Dawn
+		Tooltip: For Glory!
 	}
 
 	DuneSharkronTreasureBag: {
@@ -1769,83 +2175,96 @@ Items: {
 	}
 
 	Etheramind: {
-		DisplayName: "Ascension"
+		DisplayName: Ascension
 		Tooltip: "'Rule from above'"
 	}
 
 	EtherialConjurationCore: {
-		DisplayName: "Justice"
-		Tooltip: "Taking damage in the Etherial heals you for that damage instead once every 90 seconds."
+		DisplayName: Justice
+		Tooltip: Taking damage in the Etherial heals you for that damage instead once every 90 seconds.
 	}
 
 	EtherialDestructionCore: {
-		DisplayName: "The Destruction"
-		Tooltip: "Your global damage modifier is applied to your defense while in the Etherial"
+		DisplayName: The Destruction
+		Tooltip: Your global damage modifier is applied to your defense while in the Etherial
 	}
 
 	EtherialEssence: {
 		DisplayName: Etherial Essence
-		Tooltip: "From the world beyond."
+		Tooltip: From the world beyond.
 	}
 
 	EtherialFrost: {
-		DisplayName: "Byfrost"
-		Tooltip: "Attacks inflict 'Frostbite'"
+		DisplayName: Byfrost
+		Tooltip: Attacks inflict 'Frostbite'
 	}
 
 	EtherialGel: {
 		DisplayName: Etherial Gel
-		Tooltip: "Super Jump Boost & Super Speed Boost while in the Etherial"
+		Tooltip: Super Jump Boost & Super Speed Boost while in the Etherial
 	}
 
 	EtherialGlobe: {
 		DisplayName: Etherial Globe
-		Tooltip: "Allows the use of Etherial accessories outside the Etherial."
+		Tooltip: Allows the use of Etherial accessories outside the Etherial.
 	}
 
 	EtherialIllusionCore: {
-		DisplayName: "Mechanical Rage"
-		Tooltip: "In the Etherial, deal more damage the lower your life is"
+		DisplayName: Mechanical Rage
+		Tooltip: In the Etherial, deal more damage the lower your life is
 	}
 
 	EtherialPack: {
 		DisplayName: Etherial Pack
-		Tooltip: "Honey provides triple the normal regen, 15 defense, and +15% damage while in the Etherial"
+		Tooltip: Honey provides triple the normal regen, 15 defense, and +15% damage while in the Etherial
 	}
 
 	EtherialSac: {
 		DisplayName: Etherial Sac
-		Tooltip: "If you are grappled to a tile in the Etherial, +50% Damage & increased life regen."
+		Tooltip: If you are grappled to a tile in the Etherial, +50% Damage & increased life regen.
 	}
 
 	EtherialScarf: {
 		DisplayName: Etherial Scarf
-		Tooltip: "While in the etherial, prevent a hit of lethal damage once every minute. \n20% Damage Reduction"
+		Tooltip:
+			'''
+			While in the etherial, prevent a hit of lethal damage once every minute. 
+			20% Damage Reduction
+			'''
 	}
 
 	EtherialSkull: {
 		DisplayName: Etherial Skull
-		Tooltip: "After taking damage, your damage is boosted by the percentage of your health that was taken for 10 seconds.\nIf this buff is still active when damage is taken again, the boost is stacked."
+		Tooltip:
+			'''
+			After taking damage, your damage is boosted by the percentage of your health that was taken for 10 seconds.
+			If this buff is still active when damage is taken again, the boost is stacked.
+			'''
 	}
 
 	EtherialTank: {
 		DisplayName: Etherial Tank
-		Tooltip: "CHOO CHOO! While in the etherial, the faster you move, the higher your damage.\nColliding with an enemy deals your movement speed * 500 in damage.\nGreatly increases Movement Speed."
+		Tooltip:
+			'''
+			CHOO CHOO! While in the etherial, the faster you move, the higher your damage.
+			Colliding with an enemy deals your movement speed * 500 in damage.
+			Greatly increases Movement Speed.
+			'''
 	}
 
 	EtherialTruffle: {
 		DisplayName: Etherial Truffle
-		Tooltip: "Water brings you great power while in the Etherial"
+		Tooltip: Water brings you great power while in the Etherial
 	}
 
 	Etherworks: {
 		DisplayName: Etherworks
-		Tooltip: "Attacks in the Etherial inflict 'Steamified', dealing damage over time, making enemies take more damage, and explode into cogs on death."
+		Tooltip: Attacks in the Etherial inflict 'Steamified', dealing damage over time, making enemies take more damage, and explode into cogs on death.
 	}
 
 	EyeOfEtheria: {
-		DisplayName: "Eye of Etheria"
-		Tooltip: "Allows you to see all creatures, no matter which dimension you are in."
+		DisplayName: Eye of Etheria
+		Tooltip: Allows you to see all creatures, no matter which dimension you are in.
 	}
 
 	FrigidEssence: {
@@ -1854,8 +2273,12 @@ Items: {
 	}
 
 	FrostEssence: {
-		DisplayName: "Frosted Flake"
-		Tooltip: "Attacks inflict 'Frostburn'\n+25% Snowball Damage"
+		DisplayName: Frosted Flake
+		Tooltip:
+			'''
+			Attacks inflict 'Frostburn'
+			+25% Snowball Damage
+			'''
 	}
 
 	FrostShard: {
@@ -1875,27 +2298,48 @@ Items: {
 
 	MoltenCore: {
 		DisplayName: Molten Core
-		Tooltip: "+50 Max Life\nSummon Ragnar Hands when below 50% life"
+		Tooltip:
+			'''
+			+50 Max Life
+			Summon Ragnar Hands when below 50% life
+			'''
 	}
 
 	MoltenEtheria: {
 		DisplayName: Molten Etheria
-		Tooltip: "After submerging in Lava in the Etherial, greatly increased attack stats and mobility.\n+25% Max Life."
+		Tooltip:
+			'''
+			After submerging in Lava in the Etherial, greatly increased attack stats and mobility.
+			+25% Max Life.
+			'''
 	}
 
 	ObsidiumChunk: {
 		DisplayName: Obsidium Chunk
-		Tooltip: "Pulsing with heat\nRight Click to open"
+		Tooltip:
+			'''
+			Pulsing with heat
+			Right Click to open
+			'''
 	}
 
 	Pipeworks: {
 		DisplayName: Pipeworks
-		Tooltip: "+15% Throwing damage \n+25% Throwing Velocity"
+		Tooltip:
+			'''
+			+15% Throwing damage 
+			+25% Throwing Velocity
+			'''
 	}
 
 	Pyramind: {
 		DisplayName: Pyramind
-		Tooltip: "Increases your minion capacity\n+40 Mana\nIncreased Potentia Regen"
+		Tooltip:
+			'''
+			Increases your minion capacity
+			+40 Mana
+			Increased Potentia Regen
+			'''
 	}
 
 	RagnarTreasureBag: {
@@ -1914,27 +2358,27 @@ Items: {
 	}
 
 	SoulOfFraught: {
-		DisplayName: "Soul of Fraught"
+		DisplayName: Soul of Fraught
 		Tooltip: "'The essence of fear'"
 	}
 
 	SoulOfHaught: {
-		DisplayName: "Soul of Haught"
+		DisplayName: Soul of Haught
 		Tooltip: "'The essence of hot creatures'"
 	}
 
 	SoulOfSought: {
-		DisplayName: "Soul of Sought"
+		DisplayName: Soul of Sought
 		Tooltip: "'The essence of space creatures'"
 	}
 
 	SoulOfThought: {
-		DisplayName: "Soul of Thought"
+		DisplayName: Soul of Thought
 		Tooltip: "'The essence of intelligence'"
 	}
 
 	SoulOfWrought: {
-		DisplayName: "Soul of Wrought"
+		DisplayName: Soul of Wrought
 		Tooltip: "'The essence of havoc'"
 	}
 
@@ -1945,7 +2389,11 @@ Items: {
 
 	SteamTank: {
 		DisplayName: Steam Tank
-		Tooltip: "Steam speed!\n+15% Overflow Capacity and Damage"
+		Tooltip:
+			'''
+			Steam speed!
+			+15% Overflow Capacity and Damage
+			'''
 	}
 
 	SteamTrainTreasureBag: {
@@ -1955,22 +2403,26 @@ Items: {
 
 	StoneOfEtheria: {
 		DisplayName: Stone Of Etheria
-		Tooltip: "Your defense is added to your Max Life. Greatly increased Life Regen and +20 Defense while in the Etherial"
+		Tooltip: Your defense is added to your Max Life. Greatly increased Life Regen and +20 Defense while in the Etherial
 	}
 
 	TheWorldOfEtheria: {
-		DisplayName: "The World of Etheria"
-		Tooltip: "Your projectiles are immune to Time Stop when in the Etherial"
+		DisplayName: The World of Etheria
+		Tooltip: Your projectiles are immune to Time Stop when in the Etherial
 	}
 
 	BottledGel: {
 		DisplayName: Bottled Gel
-		Tooltip: "The gels will mesh together over time"
+		Tooltip: The gels will mesh together over time
 	}
 
 	BottledPinkGel: {
 		DisplayName: Bottled Pink Gel
-		Tooltip: "The Pink Gel has consumed the normal gel.\nRight Click to open."
+		Tooltip:
+			'''
+			The Pink Gel has consumed the normal gel.
+			Right Click to open.
+			'''
 	}
 
 	BysmalBar: {
@@ -1985,12 +2437,12 @@ Items: {
 
 	ChilledBar: {
 		DisplayName: Chilled Bar
-		Tooltip: "Very Cold"
+		Tooltip: Very Cold
 	}
 
 	Crystilla: {
 		DisplayName: Crystilla
-		Tooltip: "An ancient gemstone"
+		Tooltip: An ancient gemstone
 	}
 
 	ElderPearl: {
@@ -2035,7 +2487,7 @@ Items: {
 
 	Shadowflame: {
 		DisplayName: Shadowflame
-		Tooltip: "Accursed Heat"
+		Tooltip: Accursed Heat
 	}
 
 	AncientScroll: {
@@ -2044,27 +2496,27 @@ Items: {
 	}
 
 	AlchemicalInfuserItem: {
-		DisplayName: "Alchemical Infuser"
-		Tooltip: "Infuses Potions into Gems"
+		DisplayName: Alchemical Infuser
+		Tooltip: Infuses Potions into Gems
 	}
 
 	AmelderaOreItem: {
-		DisplayName: "Ameldera Ore"
-		Tooltip: "Can be used in the Extractinator"
+		DisplayName: Ameldera Ore
+		Tooltip: Can be used in the Extractinator
 	}
 
 	AncientEnchanter: {
 		DisplayName: Ancient Enchanter
-		Tooltip: "Combines Stones into Relics"
+		Tooltip: Combines Stones into Relics
 	}
 
 	AnDioTrophy: {
-		DisplayName: "AnDio Trophy"
+		DisplayName: AnDio Trophy
 		Tooltip: ""
 	}
 
 	AnnihilatorTrophy: {
-		DisplayName: "Annihilator Trophy"
+		DisplayName: Annihilator Trophy
 		Tooltip: ""
 	}
 
@@ -2075,46 +2527,59 @@ Items: {
 
 	Barrier: {
 		DisplayName: Barrier
-		Tooltip: "An invisible block"
+		Tooltip: An invisible block
 	}
 
 	BrassFAN: {
-		DisplayName: "Brass F.A.N."
-		Tooltip: "It's a 'Fast Acceleration Node'\nBoosts you horizontally"
+		DisplayName: Brass F.A.N.
+		Tooltip:
+			'''
+			It's a 'Fast Acceleration Node'
+			Boosts you horizontally
+			'''
 	}
 
 	BrassFANRight: {
-		DisplayName: "Brass F.A.N."
-		Tooltip: "It's a 'Fast Acceleration Node'\nBoosts you horizontally"
+		DisplayName: Brass F.A.N.
+		Tooltip:
+			'''
+			It's a 'Fast Acceleration Node'
+			Boosts you horizontally
+			'''
 	}
 
 	BrassRING: {
-		DisplayName: "Brass R.I.N.G."
-		Tooltip: "It's a 'Rotation Inertia Negator of Gravity'\nBoosts you upwards.\nFlying through the R.I.N.G's is not advised, as your wings will override the boost."
+		DisplayName: Brass R.I.N.G.
+		Tooltip:
+			'''
+			It's a 'Rotation Inertia Negator of Gravity'
+			Boosts you upwards.
+			Flying through the R.I.N.G's is not advised, as your wings will override the boost.
+			'''
 	}
 
 	CrystalineInfuser: {
-		DisplayName: "Crystalline Infuser"
-		Tooltip: "Combines Gems into Crystals"
+		DisplayName: Crystalline Infuser
+		Tooltip: Combines Gems into Crystals
 	}
 
 	DuneSharkronTrophy: {
-		DisplayName: "Dune Sharkron Trophy"
+		DisplayName: Dune Sharkron Trophy
 		Tooltip: ""
 	}
 
 	ElderlilyItem: {
-		DisplayName: "Elderlily"
+		DisplayName: Elderlily
 		Tooltip: "'An ancient bloom'"
 	}
 
 	ElderockItem: {
-		DisplayName: "Elderock"
+		DisplayName: Elderock
 		Tooltip: "'Frosted gemstones'"
 	}
 
 	ElderootItem: {
-		DisplayName: "Elderoot"
+		DisplayName: Elderoot
 		Tooltip: "'Roots of ice'"
 	}
 
@@ -2124,7 +2589,7 @@ Items: {
 	}
 
 	EtheriaTrophy: {
-		DisplayName: "Etheria Trophy"
+		DisplayName: Etheria Trophy
 		Tooltip: ""
 	}
 
@@ -2185,22 +2650,26 @@ Items: {
 
 	Holystone: {
 		DisplayName: Holystone
-		Tooltip: "Grows Lava Gems over time"
+		Tooltip: Grows Lava Gems over time
 	}
 
 	HolystoneBrick: {
 		DisplayName: Holystone Brick
-		Tooltip: "Grows Lava Gems over time"
+		Tooltip: Grows Lava Gems over time
 	}
 
 	HypothemaTrophy: {
-		DisplayName: "Hypothema Trophy"
+		DisplayName: Hypothema Trophy
 		Tooltip: ""
 	}
 
 	LavaGemItem: {
-		DisplayName: "Lava Gem"
-		Tooltip: "Grows on Obsidium Rock\n'Molten Candy'"
+		DisplayName: Lava Gem
+		Tooltip:
+			'''
+			Grows on Obsidium Rock
+			'Molten Candy'
+			'''
 	}
 
 	Lycoris: {
@@ -2210,82 +2679,82 @@ Items: {
 
 	MineralEnchanter: {
 		DisplayName: Mineral Enchanter
-		Tooltip: "Combines Crystals into Stones"
+		Tooltip: Combines Crystals into Stones
 	}
 
 	AnDioMusicBox: {
-		DisplayName: "Music Box (AnDio)"
+		DisplayName: Music Box (AnDio)
 		Tooltip: ""
 	}
 
 	AnnihilatorMusicBox: {
-		DisplayName: "Music Box (Annihilator)"
+		DisplayName: Music Box (Annihilator)
 		Tooltip: ""
 	}
 
 	DioritusMusicBox: {
-		DisplayName: "Music Box (Dioritus)"
+		DisplayName: Music Box (Dioritus)
 		Tooltip: ""
 	}
 
 	DuneSharkronMusicBox: {
-		DisplayName: "Music Box (Dune Sharkron)"
+		DisplayName: Music Box (Dune Sharkron)
 		Tooltip: ""
 	}
 
 	EtheriaMusicBox: {
-		DisplayName: "Music Box (Etheria)"
+		DisplayName: Music Box (Etheria)
 		Tooltip: ""
 	}
 
 	GreatShadowMusicBox: {
-		DisplayName: "Music Box (Surface Obsidium)"
+		DisplayName: Music Box (Surface Obsidium)
 		Tooltip: ""
 	}
 
 	HypothemaMusicBox: {
-		DisplayName: "Music Box (Hypothema)"
+		DisplayName: Music Box (Hypothema)
 		Tooltip: ""
 	}
 
 	ObsidiumMusicBox: {
-		DisplayName: "Music Box (Obsidium)"
+		DisplayName: Music Box (Obsidium)
 		Tooltip: ""
 	}
 
 	RagnarMusicBox: {
-		DisplayName: "Music Box (Ragnar)"
+		DisplayName: Music Box (Ragnar)
 		Tooltip: ""
 	}
 
 	SlybertronMusicBox: {
-		DisplayName: "Music Box (Slybertron)"
+		DisplayName: Music Box (Slybertron)
 		Tooltip: ""
 	}
 
 	SteamTrainMusicBox: {
-		DisplayName: "Music Box (Steam Train)"
+		DisplayName: Music Box (Steam Train)
 		Tooltip: ""
 	}
 
 	ObsidiumBrick: {
 		DisplayName: Obsidium Brick
-		Tooltip: "Grows Lava Gems over time"
+		Tooltip: Grows Lava Gems over time
 	}
 
 	ObsidiumBrickWall: {
 		DisplayName: Obsidium Brick Wall
-		Tooltip: "Grows Lava Gems over time"
+		Tooltip: Grows Lava Gems over time
 	}
 
 	ObsidiumChest: {
 		DisplayName: Obsidium Chest
-		Tooltip: "Transmutes items of equal value"
+		Tooltip: Transmutes items of equal value
 	}
 
 	ObsidiumCore: {
 		DisplayName: Obsidium Core
-		Tooltip: "Grows Life Crystals over time"
+		Tooltip: Grows Life Crystals over time
 	}
 
 	ObsidiumOre: {
@@ -2294,18 +2763,22 @@ Items: {
 	}
 
 	ObsidiumPlant: {
-		DisplayName: "Brimlin"
-		Tooltip: "'Plants of hell'\nGrows on Lycoris"
+		DisplayName: Brimlin
+		Tooltip:
+			'''
+			'Plants of hell'
+			Grows on Lycoris
+			'''
 	}
 
 	ObsidiumRock: {
-		DisplayName: "Basalt"
-		Tooltip: "Grows Lava Gems over time"
+		DisplayName: Basalt
+		Tooltip: Grows Lava Gems over time
 	}
 
 	ObsidiumRockWall: {
 		DisplayName: Obsidium Rock Wall
-		Tooltip: "Grows Lava Gems over time"
+		Tooltip: Grows Lava Gems over time
 	}
 
 	Radiata: {
@@ -2314,67 +2787,72 @@ Items: {
 	}
 
 	RagnarTrophy: {
-		DisplayName: "Ragnar Trophy"
+		DisplayName: Ragnar Trophy
 		Tooltip: ""
 	}
 
 	SlybertronTrophy: {
-		DisplayName: "Slybertron Trophy"
+		DisplayName: Slybertron Trophy
 		Tooltip: ""
 	}
 
 	SteamTrainTrophy: {
-		DisplayName: "Steam Train Trophy"
+		DisplayName: Steam Train Trophy
 		Tooltip: ""
 	}
 
 	SteamVENT: {
-		DisplayName: "Steam V.E.N.T."
-		Tooltip: "It's a 'Velocity Expulsion Nexus Tunnel'\nBoosts you upwards at great speeds.\n'Yeet'"
+		DisplayName: Steam V.E.N.T.
+		Tooltip:
+			'''
+			It's a 'Velocity Expulsion Nexus Tunnel'
+			Boosts you upwards at great speeds.
+			'Yeet'
+			'''
 	}
 
 	Transmutable: {
-		DisplayName: "Transmutable"
-		Tooltip: "For basic metal transmutations"
+		DisplayName: Transmutable
+		Tooltip: For basic metal transmutations
 	}
 
 	TransmutationTable: {
 		DisplayName: Transmutation Table
-		Tooltip: "Transmutes items of equal value"
+		Tooltip: Transmutes items of equal value
 	}
 
 	ZincBrick: {
 		DisplayName: Zinc Brick
-		Tooltip: "A crucial component of Brass"
+		Tooltip: A crucial component of Brass
 	}
 
 	ZincBrickWall: {
 		DisplayName: Zinc Brick Wall
-		Tooltip: "Grows Lava Gems over time"
+		Tooltip: Grows Lava Gems over time
 	}
 
 	ZincOre: {
 		DisplayName: Zinc Ore
-		Tooltip: "A crucial component of Brass"
+		Tooltip: A crucial component of Brass
 	}
 
 	BysmalDrill: {
-		DisplayName: "Drill-o-Tron 5000"
+		DisplayName: Drill-o-Tron 5000
 		Tooltip: "'To the core.'"
 	}
 
 	Debugger: {
-		DisplayName: "Debugger"
+		DisplayName: Debugger
 		Tooltip: "'A debug tool'"
 	}
 
 	Drillinator: {
-		DisplayName: "The Chariot"
+		DisplayName: The Chariot
 		Tooltip: "'To the sun.'"
 	}
 
 	DrillOTron10000: {
-		DisplayName: "Drillinator"
+		DisplayName: Drillinator
 		Tooltip: "'To the moon.'"
 	}
 
@@ -2394,53 +2872,74 @@ Items: {
 	}
 
 	BysmalKey: {
-		DisplayName: "Bysmal Key"
-		Tooltip: "Prevent Bysmal Armor from cycling in new Bonuses until toggled on again."
+		DisplayName: Bysmal Key
+		Tooltip: Prevent Bysmal Armor from cycling in new Bonuses until toggled on again.
 	}
 
 	EssenceOfEtheria: {
-		DisplayName: "The High Priestess"
-		Tooltip: "Allows you to enter and leave the Etherial at will, as long as no powerful creatures are present to stop you. \nCan place shadows of itself, which can be wired to enter the Etherial. \nAn odd number of wires need to be connected, or it will immediately switch back."
+		DisplayName: The High Priestess
+		Tooltip:
+			'''
+			Allows you to enter and leave the Etherial at will, as long as no powerful creatures are present to stop you. 
+			Can place shadows of itself, which can be wired to enter the Etherial. 
+			An odd number of wires need to be connected, or it will immediately switch back.
+			'''
 	}
 
 	SoulOfTheAncients: {
-		DisplayName: "Soul of the Ancients"
-		Tooltip: "Seal away a part of your Soul.\nUsing this item prevents you from unleashing Mystic Bursts, but increases Mystic Damage by 5%."
+		DisplayName: Soul of the Ancients
+		Tooltip:
+			'''
+			Seal away a part of your Soul.
+			Using this item prevents you from unleashing Mystic Bursts, but increases Mystic Damage by 5%.
+			'''
 	}
 
 	SteampunkWatch: {
-		DisplayName: "Steampunk Watch"
-		Tooltip: "You tell the time."
+		DisplayName: Steampunk Watch
+		Tooltip: You tell the time.
 	}
 
 	ZaWarudoWatch: {
-		DisplayName: "The World"
+		DisplayName: The World
 		Tooltip: "'ZA WARUDO!'"
 	}
 
 	AncientStaff: {
-		DisplayName: "Ancient Staff"
+		DisplayName: Ancient Staff
 		Tooltip: "'Crystilla Rain'"
 	}
 
 	AndesiaStaff: {
-		DisplayName: "Staff of Honor"
-		Tooltip: "Right click to place \n'Onto War!'"
+		DisplayName: Staff of Honor
+		Tooltip:
+			'''
+			Right click to place 
+			'Onto War!'
+			'''
 	}
 
 	Blitzfrig: {
-		DisplayName: "Blitzfrieg"
-		Tooltip: "'Cold Lightning'\nWhen in the Etherial after defeating Etheria, create twice as much branch Lightning."
+		DisplayName: Blitzfrieg
+		Tooltip:
+			'''
+			'Cold Lightning'
+			When in the Etherial after defeating Etheria, create twice as much branch Lightning.
+			'''
 	}
 
 	BookOfKnowledge: {
-		DisplayName: "Book of Knowledge"
+		DisplayName: Book of Knowledge
 		Tooltip: "'Rain Lightning upon them'"
 	}
 
 	BysmalWand: {
-		DisplayName: "Bysmal Wand"
-		Tooltip: "'Frigid Breeze'\nWhen in the Etherial after defeating Etheria, shoot an additional blast."
+		DisplayName: Bysmal Wand
+		Tooltip:
+			'''
+			'Frigid Breeze'
+			When in the Etherial after defeating Etheria, shoot an additional blast.
+			'''
 	}
 
 	Electrospark: {
@@ -2449,12 +2948,12 @@ Items: {
 	}
 
 	SandstormInABook: {
-		DisplayName: "Sandstorm in a Book"
-		Tooltip: "Don't try to read it"
+		DisplayName: Sandstorm in a Book
+		Tooltip: Don't try to read it
 	}
 
 	StaffOfSteamworks: {
-		DisplayName: "Staff of Steamworks"
+		DisplayName: Staff of Steamworks
 		Tooltip: "'Let's get Steamy!'"
 	}
 
@@ -2465,97 +2964,132 @@ Items: {
 
 	Volcite: {
 		DisplayName: Volcite
-		Tooltip: "'Volcanic Eruption'\nBecomes more powerful as you consume Obsidium Hearts"
+		Tooltip:
+			'''
+			'Volcanic Eruption'
+			Becomes more powerful as you consume Obsidium Hearts
+			'''
 	}
 
 	WarlockStaff: {
-		DisplayName: "Staff of The Enlightened Warlock"
-		Tooltip: "Ion Blast"
+		DisplayName: Staff of The Enlightened Warlock
+		Tooltip: Ion Blast
 	}
 
 	AnDioYo: {
-		DisplayName: "AnDio-Yo"
-		Tooltip: "A marball of fun"
+		DisplayName: AnDio-Yo
+		Tooltip: A marball of fun
 	}
 
 	Aurora: {
-		DisplayName: "Aurora"
+		DisplayName: Aurora
 		Tooltip: "'Chill them into submission'"
 	}
 
 	BrassClaymore: {
 		DisplayName: Brass Claymore
-		Tooltip: "Inflicts 'Steamy'"
+		Tooltip: Inflicts 'Steamy'
 	}
 
 	BysmalBlade: {
 		DisplayName: Bysmal Blade
-		Tooltip: "'A chill like no other' \nInflicts 'Frostbite'.\nWhile in the Etherial after defeating Etheria, increased size and swing speed"
+		Tooltip:
+			'''
+			'A chill like no other' 
+			Inflicts 'Frostbite'.
+			While in the Etherial after defeating Etheria, increased size and swing speed
+			'''
 	}
 
 	BysmalBrand: {
-		DisplayName: "Borealis"
-		Tooltip: "'The great frost comes'\nWhile in the Etherial after defeating Etheria, Borealis projectiles spawn twice as many Bysmal Blasts on hit"
+		DisplayName: Borealis
+		Tooltip:
+			'''
+			'The great frost comes'
+			While in the Etherial after defeating Etheria, Borealis projectiles spawn twice as many Bysmal Blasts on hit
+			'''
 	}
 
 	DaysBreak: {
-		DisplayName: "Sunrise"
-		Tooltip: "'Bring the dawn'\nStriking enemies makes them emit sparks\nEnemies explode into sparks on death, spreading the dawn."
+		DisplayName: Sunrise
+		Tooltip:
+			'''
+			'Bring the dawn'
+			Striking enemies makes them emit sparks
+			Enemies explode into sparks on death, spreading the dawn.
+			'''
 	}
 
 	DioritusBlade: {
-		DisplayName: "Blade of Glory"
-		Tooltip: "Right click to throw \n'Into Battle!'"
+		DisplayName: Blade of Glory
+		Tooltip:
+			'''
+			Right click to throw 
+			'Into Battle!'
+			'''
 	}
 
 	ElderanClaymore: {
-		DisplayName: "Elderan Claymore"
+		DisplayName: Elderan Claymore
 		Tooltip: "'The ancient crystals slot together quite nicely.'"
 	}
 
 	EnginatorM: {
-		DisplayName: "Enginator"
-		Tooltip: "CHOO CHOO"
+		DisplayName: Enginator
+		Tooltip: CHOO CHOO
 	}
 
 	Flarance: {
 		DisplayName: Flarance
-		Tooltip: "'Eruptions fly forth'\nProjectiles become stronger as you consume Obsidium Hearts"
+		Tooltip:
+			'''
+			'Eruptions fly forth'
+			Projectiles become stronger as you consume Obsidium Hearts
+			'''
 	}
 
 	FrigidYoyo: {
-		DisplayName: "Frigid Yoyo"
+		DisplayName: Frigid Yoyo
 		Tooltip: ""
 	}
 
 	FrostBlade: {
 		DisplayName: Frost Blade
-		Tooltip: "Frostular Fragments"
+		Tooltip: Frostular Fragments
 	}
 
 	GearIO: {
-		DisplayName: "Geariken"
-		Tooltip: "Don't prick yourself!"
+		DisplayName: Geariken
+		Tooltip: Don't prick yourself!
 	}
 
 	HolyBlade: {
-		DisplayName: "Blade of The Holy Knight"
+		DisplayName: Blade of The Holy Knight
 		Tooltip: "'Call down the sky'"
 	}
 
 	Mariana: {
 		DisplayName: Mariana
-		Tooltip: "'To the depths'\nStriking enemies makes them emit bubbles!\nEnemies explode into bubbles on death, spreading the bubbles."
+		Tooltip:
+			'''
+			'To the depths'
+			Striking enemies makes them emit bubbles!
+			Enemies explode into bubbles on death, spreading the bubbles.
+			'''
 	}
 
 	ObsidiumYoyo: {
-		DisplayName: "Obsidium Yoyo"
+		DisplayName: Obsidium Yoyo
 		Tooltip: ""
 	}
 
 	Scydian: {
 		DisplayName: Scydian
-		Tooltip: "'The power of magma'\nBecomes stronger as you consume Obsidium Hearts"
+		Tooltip:
+			'''
+			'The power of magma'
+			Becomes stronger as you consume Obsidium Hearts
+			'''
 	}
 
 	Sharkfin: {
@@ -2570,147 +3104,180 @@ Items: {
 
 	TrainScythe: {
 		DisplayName: Train Scythe
-		Tooltip: "CHOO CHOO! \nInflicts 'Steamy'"
+		Tooltip:
+			'''
+			CHOO CHOO! 
+			Inflicts 'Steamy'
+			'''
 	}
 
 	TrueDaysBreak: {
-		DisplayName: "True Sunrise"
-		Tooltip: "'Bring the sky'\nStriking enemies makes them emit True Sparks\nEnemies explode into True Sparks on death, spreading the Redemption."
+		DisplayName: True Sunrise
+		Tooltip:
+			'''
+			'Bring the sky'
+			Striking enemies makes them emit True Sparks
+			Enemies explode into True Sparks on death, spreading the Redemption.
+			'''
 	}
 
 	AgnesInferno: {
-		DisplayName: "Agnes' Inferno"
+		DisplayName: Agnes' Inferno
 		Tooltip: ""
 	}
 
 	CharonsScepter: {
-		DisplayName: "Charon's Scepter"
-		Tooltip: "Pay the toll"
+		DisplayName: Charon's Scepter
+		Tooltip: Pay the toll
 	}
 
 	ChlorysBlade: {
-		DisplayName: "Chlorys's Blade"
-		Tooltip: ""
+		DisplayName: Chlorys's Blade
+		Tooltip: Sunflower Power
 	}
 
 	CupidsBow: {
-		DisplayName: "Cupid's Bow"
-		Tooltip: "'Make them fall for you' \nArrows inflict 'Lovestruck', which makes enemies drop Hearts on death\nFires different projectiles based on Mysticism\nThe amount of angels that can be conjured is based on Mystic Duration"
+		DisplayName: Cupid's Bow
+		Tooltip:
+			'''
+			'Make them fall for you' 
+			Arrows inflict 'Lovestruck', which makes enemies drop Hearts on death
+			Fires different projectiles based on Mysticism
+			The amount of angels that can be conjured is based on Mystic Duration
+			'''
 	}
 
 	DeathsHarvest: {
-		DisplayName: "Death's Harvest"
+		DisplayName: Death's Harvest
 		Tooltip: ""
 	}
 
 	DionysusBloom: {
-		DisplayName: "Dionysus' Bloom"
-		Tooltip: "'Grow his strength' \nIllusion inflicts 'Venom'\nFires different projectiles based on Mysticism"
+		DisplayName: Dionysus' Bloom
+		Tooltip: It was me, Dionysus!
 	}
 
 	EtheriasTrick: {
-		DisplayName: "Etheria's Trick"
+		DisplayName: Etheria's Trick
 		Tooltip: "'A dimension in your hands'"
 	}
 
 	FreyasFley: {
-		DisplayName: "Freya's Fley"
-		Tooltip: "Spores of the gods"
+		DisplayName: Fungon's Wand
+		Tooltip: An amicable dude
 	}
 
 	FriggsPhalanx: {
-		DisplayName: "Frigg's Phalanx"
+		DisplayName: Frigg's Phalanx
 		Tooltip: "'The swarm cometh'"
 	}
 
 	GaiasWorld: {
-		DisplayName: "Gaia's World"
-		Tooltip: "The World is in your hands"
+		DisplayName: Gaia's World
+		Tooltip: The whole world in your hands
 	}
 
 	GreatGladius: {
-		DisplayName: "Gladius of The Great Moldyrian"
-		Tooltip: "Praise the gods\nIlusion inflicts 'Daybroken'\nAttacks differently projectiles based on Mysticism"
+		DisplayName: Gladius of The Great Moldyrian
+		Tooltip:
+			'''
+			Praise the gods
+			Ilusion inflicts 'Daybroken'
+			Attacks differently projectiles based on Mysticism
+			'''
 	}
 
 	HadesJudgement: {
-		DisplayName: "Hades' Judgement"
-		Tooltip: "Cleanse your sins"
+		DisplayName: Hades' Judgement
+		Tooltip: Cleanse your sins
 	}
 
 	HallowsEve: {
-		DisplayName: "Hallow's Eve"
+		DisplayName: Hallow's Eve
 		Tooltip: "'The spirits of the darkness are bent to your will'"
 	}
 
 	HermesFlight: {
-		DisplayName: "Hermes' Flight"
-		Tooltip: "Weild the power of Hermes"
+		DisplayName: Hermes' Flight
+		Tooltip: Reach for the skies
 	}
 
 	JanusHunt: {
-		DisplayName: "Janus's Hunt"
-		Tooltip: "'Stalking through the sands'"
+		DisplayName: The Hunt
+		Tooltip: Stalking through the sands
 	}
 
 	MarsFury: {
-		DisplayName: "Mars' Fury"
-		Tooltip: "A Furious War\nIllusion inflicts 'Furious', which deals damage over time and\nmakes enemies shoot fireballs when hit\nFires different projectiles based on Mysticism"
+		DisplayName: Mars' Fury
+		Tooltip: A Furious War
 	}
 
 	OrionsGate: {
-		DisplayName: "Orion's Gate"
-		Tooltip: "'Open the path to the stars'\nIllusion inflicts 'Cosmic Disarray', which drains life and makes enemies take more damage.\nFires different projectiles based on Mysticism\nConsuming enemies increases the Gate's power."
+		DisplayName: Orion's Gate
+		Tooltip: Open the path to the stars
 	}
 
 	PlutosFrost: {
-		DisplayName: "Pluto's Frost"
-		Tooltip: "'Harness the void of Space' \nIllusion inflicts 'Frigid', which stops enemies in their tracks\nWhile in the Etherial after defeating Etheria, +50% Overflow and Potentia Discharge and +25% Damage\nFires different projectiles based on Mysticism"
+		DisplayName: Pluto's Frost
+		Tooltip: Harness the void of Space
 	}
 
 	PoseidonsTide: {
-		DisplayName: "Poseidon's Tide"
+		DisplayName: Poseidon's Tide
 		Tooltip: ""
 	}
 
 	SaturnsRings: {
-		DisplayName: "Saturn's Rings"
+		DisplayName: Saturn's Rings
 		Tooltip: "'The majesty of Space'"
 	}
 
 	StaffOfAnDio: {
-		DisplayName: "Loki's Staff"
+		DisplayName: Loki's Staff
 		Tooltip: "'Many tricks up his sleeve'"
 	}
 
 	ThorsHammer: {
-		DisplayName: "Thor's Hammer"
+		DisplayName: Thor's Hammer
 		Tooltip: ""
 	}
 
 	Yuletide: {
-		DisplayName: "Yuletide"
-		Tooltip: "'Holiday Cheer'\nIllusion inflicts 'Frostburn'\nFires different projectiles based on Mysticism"
+		DisplayName: Yuletide
+		Tooltip: Holiday Cheer
 	}
 
 	ZeusBolt: {
-		DisplayName: "Zeus' Bolt"
-		Tooltip: "''\nIllusion inflicts ''\nFires different projectiles based on Mysticism"
+		DisplayName: Zeus' Bolt
+		Tooltip: Smitten
 	}
 
 	BysmalBlaster: {
-		DisplayName: "Bysmal Blaster"
-		Tooltip: "'Blast them to another dimension'\n50% chance to not consume ammo\nWhile in the Etherial after defeating Etheria, shoots shotgun blasts twice as often"
+		DisplayName: Bysmal Blaster
+		Tooltip:
+			'''
+			'Blast them to another dimension'
+			50% chance to not consume ammo
+			While in the Etherial after defeating Etheria, shoots shotgun blasts twice as often
+			'''
 	}
 
 	ClockworkShotgun: {
 		DisplayName: Clockwork Shotgun
-		Tooltip: "33% chance to not consume ammo\nOccasionally turns normal bullets into more damaging High Velocity bullets"
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Occasionally turns normal bullets into more damaging High Velocity bullets
+			'''
 	}
 
 	DuneSharkgun: {
 		DisplayName: Dune Sharkgun
-		Tooltip: "33% chance to not consume ammo\nOccasionally shoots Crystal bullets"
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Occasionally shoots Crystal bullets
+			'''
 	}
 
 	Geodizer: {
@@ -2720,72 +3287,108 @@ Items: {
 
 	ObsidiumGreatbow: {
 		DisplayName: Obsidium Greatbow
-		Tooltip: "'Molten Frenzy'\n20% chance to not consume ammo\nBecomes stronger as you consume Obsidium Hearts"
+		Tooltip:
+			'''
+			'Molten Frenzy'
+			20% chance to not consume ammo
+			Becomes stronger as you consume Obsidium Hearts
+			'''
 	}
 
 	StarHunter: {
-		DisplayName: "Bow of The Star Hunter"
-		Tooltip: "Shoot a supernova\n50% chance to not consume ammo"
+		DisplayName: Bow of The Star Hunter
+		Tooltip:
+			'''
+			Shoot a supernova
+			50% chance to not consume ammo
+			'''
 	}
 
 	Steamstring: {
 		DisplayName: Steamstring
-		Tooltip: "'Steaming Frenzy' \nTurns wooden arrows into Brass Arrows & fires an additional Brass Arrow\n33% chance to not consume ammo"
+		Tooltip:
+			'''
+			'Steaming Frenzy' 
+			Turns wooden arrows into Brass Arrows & fires an additional Brass Arrow
+			33% chance to not consume ammo
+			'''
 	}
 
 	BlackIce: {
-		DisplayName: "Black Ice"
-		Tooltip: "Fires faster in extreme heat\nFires more accurately in extreme cold\n50% chance not to consume ammo\n'They won't see it coming'"
+		DisplayName: Black Ice
+		Tooltip:
+			'''
+			Fires faster in extreme heat
+			Fires more accurately in extreme cold
+			50% chance not to consume ammo
+			'They won't see it coming'
+			'''
 	}
 
 	Snowtillery: {
-		DisplayName: "Snowtillery"
-		Tooltip: "Shoots snow rockets that push the player as well"
+		DisplayName: Snowtillery
+		Tooltip: Shoots snow rockets that push the player as well
 	}
 
 	Sootsayer: {
-		DisplayName: "Soot Sprayer"
-		Tooltip: "Converts snowballs into sootballs\nShoots more snowballs as you consume Obsidium Hearts"
+		DisplayName: Soot Sprayer
+		Tooltip:
+			'''
+			Converts snowballs into sootballs
+			Shoots more snowballs as you consume Obsidium Hearts
+			'''
 	}
 
 	Antenna: {
 		DisplayName: Antenna
-		Tooltip: "Summons a TV to fight for you."
+		Tooltip: Summons a TV to fight for you.
 	}
 
 	ArcticHydra: {
-		DisplayName: "Arctic Hydra Staff"
-		Tooltip: "'The beast of many Heads'\nWhen in the Etherial after defeating Etheria, Double Damage and Aggro range."
+		DisplayName: Arctic Hydra Staff
+		Tooltip:
+			'''
+			'The beast of many Heads'
+			When in the Etherial after defeating Etheria, Double Damage and Aggro range.
+			'''
 	}
 
 	BysmalSoulmaster: {
-		DisplayName: "Bysmal Soulmaster"
-		Tooltip: "'Unleash them'\nWhen in the Etherial after defeating Etheria, attack twice as fast."
+		DisplayName: Bysmal Soulmaster
+		Tooltip:
+			'''
+			'Unleash them'
+			When in the Etherial after defeating Etheria, attack twice as fast.
+			'''
 	}
 
 	MagmaticaStaff: {
 		DisplayName: Magmatica Staff
-		Tooltip: "Summons a Magmatic Core to fight for you\nDeals more damage for each Obsidium Heart you consume"
+		Tooltip:
+			'''
+			Summons a Magmatic Core to fight for you
+			Deals more damage for each Obsidium Heart you consume
+			'''
 	}
 
 	SandShardStaff: {
 		DisplayName: Sand Shard Staff
-		Tooltip: "Summons a Sandy Shark to fight for you."
+		Tooltip: Summons a Sandy Shark to fight for you.
 	}
 
 	Shroolipad: {
 		DisplayName: Shroolipad
-		Tooltip: "Summons a Shroolicopter to fight for you."
+		Tooltip: Summons a Shroolicopter to fight for you.
 	}
 
 	TheMessenger: {
 		DisplayName: The Messenger
-		Tooltip: "Summons the rulers of the caverns to fight for you."
+		Tooltip: Summons the rulers of the caverns to fight for you.
 	}
 
 	UltimateCall: {
-		DisplayName: "Call of the Ultimate Leader"
-		Tooltip: "Conjur the cosmos to fight for you."
+		DisplayName: Call of the Ultimate Leader
+		Tooltip: Conjur the cosmos to fight for you.
 	}
 
 	Andeshiard: {
@@ -2794,22 +3397,31 @@ Items: {
 	}
 
 	AnDiuriken: {
-		DisplayName: "AnDiuriken"
-		Tooltip: "Stacks up to 4"
+		DisplayName: AnDiuriken
+		Tooltip: Stacks up to 4
 	}
 
 	Antarctica: {
-		DisplayName: "Antarctica"
-		Tooltip: "'A blizzard hails from above'\nWhen in the Etherial after defeating Etheria, rain down more Hail,\nand stay stuck in enemies for twice as long."
+		DisplayName: Antarctica
+		Tooltip:
+			'''
+			'A blizzard hails from above'
+			When in the Etherial after defeating Etheria, rain down more Hail,
+			and stay stuck in enemies for twice as long.
+			'''
 	}
 
 	BysmalRipper: {
-		DisplayName: "Bysmal Ripper"
-		Tooltip: "'Tear through dimensions'\nWhen in the Etherial after defeating Etheria, create an extra shadow on enemy hits."
+		DisplayName: Bysmal Ripper
+		Tooltip:
+			'''
+			'Tear through dimensions'
+			When in the Etherial after defeating Etheria, create an extra shadow on enemy hits.
+			'''
 	}
 
 	ChakramOfTheViciousAssassin: {
-		DisplayName: "Chakram of The Vicious Assassin"
+		DisplayName: Chakram of The Vicious Assassin
 		Tooltip: "'Surround and eliminate'"
 	}
 
@@ -2824,8 +3436,8 @@ Items: {
 	}
 
 	EnginatorT: {
-		DisplayName: "Enginator"
-		Tooltip: "CHOO CHOO"
+		DisplayName: Enginator
+		Tooltip: CHOO CHOO
 	}
 
 	Eruptor: {
@@ -2834,22 +3446,22 @@ Items: {
 	}
 
 	ForbiddenAxe: {
-		DisplayName: "Forgotten Axe"
+		DisplayName: Forgotten Axe
 		Tooltip: "'From the dunes'"
 	}
 
 	JetDagger: {
-		DisplayName: "Jet Dagger"
+		DisplayName: Jet Dagger
 		Tooltip: "'Return to sender'"
 	}
 
 	Obshardian: {
 		DisplayName: Obshardian
-		Tooltip: "Shoots faster and pierces more as you consume Obsidium Hearts"
+		Tooltip: Shoots faster and pierces more as you consume Obsidium Hearts
 	}
 
 	TheSnowflake: {
-		DisplayName: "Snowflake"
+		DisplayName: Snowflake
 		Tooltip: ""
 	}
 
@@ -2860,192 +3472,286 @@ Items: {
 
 	AggressionStone: {
 		DisplayName: Aggression Stone
-		Tooltip: "+10% Ranged damage \n20% Chance to not use ammo \nIncreases knockback, magic damage, and mana regen \nIncreased Enemy Spawns"
+		Tooltip:
+			'''
+			+10% Ranged damage 
+			20% Chance to not use ammo 
+			Increases knockback, magic damage, and mana regen 
+			Increased Enemy Spawns
+			'''
 	}
 
 	AlterationStone: {
 		DisplayName: Alteration Stone
-		Tooltip: "Mastery of land and air"
+		Tooltip: Mastery of land and air
 	}
 
 	AncientRelic: {
 		DisplayName: Ancient Relic
-		Tooltip: "Mastery of the world"
+		Tooltip: Mastery of the world
 	}
 
 	AngelnCrystal: {
-		DisplayName: "Fishing Crystal"
-		Tooltip: "Improved fishing skills"
+		DisplayName: Fishing Crystal
+		Tooltip: Improved fishing skills
 	}
 
 	AquaStone: {
 		DisplayName: Aqua Stone
-		Tooltip: "Mastery of liquids"
+		Tooltip: Mastery of liquids
 	}
 
 	ArtifactOfEnhancement: {
 		DisplayName: Artifact Of Enhancement
-		Tooltip: "Mastery of all"
+		Tooltip: Mastery of all
 	}
 
 	ArtifactOfRestoration: {
 		DisplayName: Artifact Of Restoration
-		Tooltip: "+600 Max Life \n+160 Mana \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+600 Max Life 
+			+160 Mana 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	BewungCrystal: {
-		DisplayName: "Movement Crystal"
-		Tooltip: "Slows falling speed \n+25% Movement speed"
+		DisplayName: Movement Crystal
+		Tooltip:
+			'''
+			Slows falling speed 
+			+25% Movement speed
+			'''
 	}
 
 	CursedRelic: {
 		DisplayName: Cursed Relic
-		Tooltip: "Cursed? \nMastery of violence"
+		Tooltip:
+			'''
+			Cursed? 
+			Mastery of violence
+			'''
 	}
 
 	DeinstCrystal: {
-		DisplayName: "Manipulation Crystal"
-		Tooltip: "Increases placement speed and +1 range \n+25% Mining speed"
+		DisplayName: Manipulation Crystal
+		Tooltip:
+			'''
+			Increases placement speed and +1 range 
+			+25% Mining speed
+			'''
 	}
 
 	GreaterHealingGem: {
 		DisplayName: Greater Healing Gem
-		Tooltip: "+150 Max Life \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+150 Max Life 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	GreaterManaGem: {
 		DisplayName: Greater Mana Gem
-		Tooltip: "+60 Mana"
+		Tooltip: +60 Mana
 	}
 
 	HallowedRelic: {
 		DisplayName: Hallowed Relic
-		Tooltip: "You feel Blessed"
+		Tooltip: You feel Blessed
 	}
 
 	HealingCrystal: {
 		DisplayName: Healing Crystal
-		Tooltip: "+150 Max Life \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+150 Max Life 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	HealingGem: {
 		DisplayName: Healing Gem
-		Tooltip: "+100 Max Life \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+100 Max Life 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	HolyStone: {
 		DisplayName: Holy Stone
-		Tooltip: "Decreased enemy spawn rate \nTake less damage from cold sources \nIncreases heart pickup range \nIncreases life regeneration \n+1 Max Minion \nIncreases max life by 20% \nEquip in last slot for maximum effectiveness"
+		Tooltip:
+			'''
+			Decreased enemy spawn rate 
+			Take less damage from cold sources 
+			Increases heart pickup range 
+			Increases life regeneration 
+			+1 Max Minion 
+			Increases max life by 20% 
+			Equip in last slot for maximum effectiveness
+			'''
 	}
 
 	KekCrystal: {
-		DisplayName: "Mage Crystal"
-		Tooltip: "Increases knockback, magic damage, and mana regen"
+		DisplayName: Mage Crystal
+		Tooltip: Increases knockback, magic damage, and mana regen
 	}
 
 	LebenCrystal: {
-		DisplayName: "Vitality Crystal"
-		Tooltip: "Increases heart pickup range \nIncreases life regeneration \nIncreases max life by 20% \nEquip in last slot for maximum effectiveness"
+		DisplayName: Vitality Crystal
+		Tooltip:
+			'''
+			Increases heart pickup range 
+			Increases life regeneration 
+			Increases max life by 20% 
+			Equip in last slot for maximum effectiveness
+			'''
 	}
 
 	LesserHealingGem: {
 		DisplayName: Lesser Healing Gem
-		Tooltip: "+50 Max Life \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+50 Max Life 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	LesserManaGem: {
 		DisplayName: Lesser Mana Gem
-		Tooltip: "+20 Mana"
+		Tooltip: +20 Mana
 	}
 
 	LichtCrystal: {
-		DisplayName: "Light Crystal"
-		Tooltip: "Increases Light Vision"
+		DisplayName: Light Crystal
+		Tooltip: Increases Light Vision
 	}
 
 	MachtCrystal: {
-		DisplayName: "Attack Crystal"
-		Tooltip: "+10% Damage and critical strike chance \nSet your enemies ablaze"
+		DisplayName: Attack Crystal
+		Tooltip:
+			'''
+			+10% Damage and critical strike chance 
+			Set your enemies ablaze
+			'''
 	}
 
 	MagmaCrystal: {
-		DisplayName: "Magma Crystal"
-		Tooltip: "Provides immunity to lava \nYou can walk on liquids"
+		DisplayName: Magma Crystal
+		Tooltip:
+			'''
+			Provides immunity to lava 
+			You can walk on liquids
+			'''
 	}
 
 	ManaCrystal: {
 		DisplayName: Mana Crystal
-		Tooltip: "+60 Mana"
+		Tooltip: +60 Mana
 	}
 
 	ManaGem: {
 		DisplayName: Mana Gem
-		Tooltip: "+40 Mana"
+		Tooltip: +40 Mana
 	}
 
 	MegaHealingStone: {
 		DisplayName: Mega Healing Stone
-		Tooltip: "+350 Max Life \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+350 Max Life 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	MegaManaStone: {
 		DisplayName: Mega Mana Stone
-		Tooltip: "+100 Mana"
+		Tooltip: +100 Mana
 	}
 
 	PanzerCrystal: {
-		DisplayName: "Tank Crystal"
-		Tooltip: "+10% Damage reduction \n Attackers take damage"
+		DisplayName: Tank Crystal
+		Tooltip:
+			'''
+			+10% Damage reduction 
+			 Attackers take damage
+			'''
 	}
 
 	ReichCrystal: {
-		DisplayName: "Rogue Crystal"
-		Tooltip: "+10% Ranged damage\n20% Chance to not use ammo\nIncreased Enemy Spawns"
+		DisplayName: Rogue Crystal
+		Tooltip:
+			'''
+			+10% Ranged damage
+			20% Chance to not use ammo
+			Increased Enemy Spawns
+			'''
 	}
 
 	SichtCrystal: {
-		DisplayName: "Sight Crystal"
+		DisplayName: Sight Crystal
 		Tooltip: "'I see all.'"
 	}
 
 	SightStone: {
-		DisplayName: "Vision Stone"
-		Tooltip: "Mastery of light"
+		DisplayName: Vision Stone
+		Tooltip: Mastery of light
 	}
 
 	SuperHealingGem: {
 		DisplayName: Super Healing Gem
-		Tooltip: "+200 Max Life \nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+200 Max Life 
+			Gives constant Potion Sickness
+			'''
 	}
 
 	SuperManaGem: {
 		DisplayName: Super Mana Gem
-		Tooltip: "+80 Mana"
+		Tooltip: +80 Mana
 	}
 
 	TitanStone: {
 		DisplayName: Titan Stone
-		Tooltip: "+10% Damage reduction \n+10% Damage and critical strike chance \n Attackers take damage \nSet your enemies ablaze"
+		Tooltip:
+			'''
+			+10% Damage reduction 
+			+10% Damage and critical strike chance 
+			 Attackers take damage 
+			Set your enemies ablaze
+			'''
 	}
 
 	UltraHealingRelic: {
 		DisplayName: Ultra Healing Relic
-		Tooltip: "+500 Max Life\nGives constant Potion Sickness"
+		Tooltip:
+			'''
+			+500 Max Life
+			Gives constant Potion Sickness
+			'''
 	}
 
 	UltraManaRelic: {
 		DisplayName: Ultra Mana Relic
-		Tooltip: "+120 Mana"
+		Tooltip: +120 Mana
 	}
 
 	VerteCrystal: {
-		DisplayName: "Harmony Crystal"
-		Tooltip: "Decreased enemy spawn rate\nTake less damage from cold sources\n+1 Max Minion"
+		DisplayName: Harmony Crystal
+		Tooltip:
+			'''
+			Decreased enemy spawn rate
+			Take less damage from cold sources
+			+1 Max Minion
+			'''
 	}
 
 	WasserCrystal: {
-		DisplayName: "Aqua Crystal"
-		Tooltip: "Mastery of water"
+		DisplayName: Aqua Crystal
+		Tooltip: Mastery of water
 	}
 }
 

@@ -1,14 +1,14 @@
-using Terraria;
 using Microsoft.Xna.Framework;
-using Terraria.ModLoader;
-using System.Collections.Generic;
 using Microsoft.Xna.Framework.Graphics;
-using System;
 using NewDawn.Buffs;
+using System;
+using System.Collections.Generic;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Projectiles.Mystic.Misc
 {
-	public class Bolt : MysticProjectile
+    public class Bolt : MysticProjectile
     {
         Vector2 projGoal;
         int delay = 0;
@@ -20,7 +20,7 @@ namespace NewDawn.Projectiles.Mystic.Misc
             Projectile.height = 14;
             Projectile.penetrate = -1;
             Projectile.timeLeft = 120;
-			Projectile.friendly = true;
+            Projectile.friendly = true;
             Projectile.ignoreWater = true;
             Projectile.extraUpdates = 5;
             Trails = new List<Vector2>();
@@ -68,9 +68,9 @@ namespace NewDawn.Projectiles.Mystic.Misc
 
         private void SpawnBolt()
         {
-            if(Main.myPlayer == Projectile.owner)
+            if (Main.myPlayer == Projectile.owner)
             {
-                int p = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Projectile.position.X, Projectile.position.Y), new Vector2(Projectile.velocity.X, Projectile.velocity.Y), ModContent.ProjectileType<Bolt>(), (int)(Projectile.damage), 8, Main.myPlayer);
+                int p = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(Projectile.position.X, Projectile.position.Y), new Vector2(Projectile.velocity.X, Projectile.velocity.Y), ModContent.ProjectileType<Bolt>(), (int)Projectile.damage, 8, Main.myPlayer);
                 Main.projectile[p].timeLeft = Projectile.timeLeft;
             }
             nextBolt = (int)Projectile.ai[0];
@@ -81,7 +81,7 @@ namespace NewDawn.Projectiles.Mystic.Misc
             Trails.Add(Projectile.Center);
             Projectile.velocity.Normalize();
             Projectile.velocity *= 12;
-            projGoal = Projectile.Center + Projectile.velocity * 6000;
+            projGoal = Projectile.Center + (Projectile.velocity * 6000);
 
             Projectile.velocity = projGoal - Projectile.Center;
             Projectile.velocity.Normalize();
@@ -93,18 +93,18 @@ namespace NewDawn.Projectiles.Mystic.Misc
             if (Projectile.ai[0] != 0)
                 nextBolt = (int)Projectile.ai[0];
 
-            if(Projectile.ai[1] == 1)
+            if (Projectile.ai[1] == 1)
                 buffID = ModContent.BuffType<ThunderCharged>();
         }
 
         public override void OnKill(int timeLeft)
-		{
+        {
 
         }
 
         public override bool PreDraw(ref Color lightColor)
         {
-            if(Trails.Count > 0)
+            if (Trails.Count > 0)
             {
                 var curPos = Trails[0];
                 Vector2 nextPos = Projectile.Center;
@@ -115,7 +115,7 @@ namespace NewDawn.Projectiles.Mystic.Misc
                         nextPos = Projectile.Center;
                     else
                         nextPos = Trails[i + 1];
-                    NewDawn.DrawChain(Main.spriteBatch, ModContent.Request<Texture2D>("Projectiles/Mystic/Misc/BoltChain").Value, curPos, nextPos, .5f, Color.White);
+                    NewDawn.DrawChain(Main.spriteBatch, ModContent.Request<Texture2D>("NewDawn/Projectiles/Mystic/Misc/BoltChain").Value, curPos, nextPos, .5f, Color.White);
                 }
             }
             return true;

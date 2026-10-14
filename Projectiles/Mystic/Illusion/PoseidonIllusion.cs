@@ -1,16 +1,14 @@
-using System;
-using NewDawn.Buffs;
-using NewDawn.Dusts;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Buffs;
+using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Projectiles.Mystic.Illusion
 {
-	public class PoseidonIllusion : IllusionProjectile
+    public class PoseidonIllusion : IllusionProjectile
     {
         public int rot = 0;
         public int delay = 0;
@@ -70,12 +68,12 @@ namespace NewDawn.Projectiles.Mystic.Illusion
         }
         public override bool PreDraw(ref Color lightColor)
         {
-            Texture2D texture = ModContent.Request<Texture2D>("Projectiles/Mystic/Illusion/PoseidonIllusion").Value;
+            Texture2D texture = ModContent.Request<Texture2D>("NewDawn/Projectiles/Mystic/Illusion/PoseidonIllusion").Value;
             var origin = Projectile.Center;
             //origin.X -= texture.Width / 2;
             //origin.Y -= texture.Height / 2;
-            NewDawn.DrawChain(Main.spriteBatch, ModContent.Request<Texture2D>("Projectiles/Mystic/Illusion/PoseidonChain").Value, Main.player[Projectile.owner].MountedCenter, Projectile.Center);
-            Main.spriteBatch.Draw(texture, origin - Main.screenPosition, new Rectangle(0, 0, texture.Width, texture.Height), Color.White, Projectile.rotation, new Vector2(texture.Width / 2, texture.Height / 2), Projectile.scale, SpriteEffects.None, 0 );
+            NewDawn.DrawChain(Main.spriteBatch, ModContent.Request<Texture2D>("NewDawn/Projectiles/Mystic/Illusion/PoseidonChain").Value, Main.player[Projectile.owner].MountedCenter, Projectile.Center);
+            Main.spriteBatch.Draw(texture, origin - Main.screenPosition, new Rectangle(0, 0, texture.Width, texture.Height), Color.White, Projectile.rotation, new Vector2(texture.Width / 2, texture.Height / 2), Projectile.scale, SpriteEffects.None, 0);
             return false;
         }
 
