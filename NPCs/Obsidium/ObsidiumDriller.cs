@@ -1,9 +1,9 @@
-using System;
+using NewDawn.Biomes;
 using NewDawn.Dusts;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Placeable;
+using System;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Obsidium
@@ -27,14 +27,13 @@ namespace NewDawn.NPCs.Obsidium
             NPC.noTileCollide = true;
             NPC.buffImmune[24] = true;
         }
-        /*
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (NewDawnWorld.obsidiumTiles > 150 && spawnInfo.spawnTileY > WorldGen.rockLayer)
-                return SpawnCondition.Cavern.Chance * 0.15f;
+            if (spawnInfo.Player.InModBiome<ObsidiumBiome>())
+                return .015f;
             else return 0f;
-        }*/
-
+        }
         public override void AI()
         {
             //Retarget (borrowed from Dan <3)
@@ -85,9 +84,9 @@ namespace NewDawn.NPCs.Obsidium
                 }
                 NPC.velocity.Y *= .9f;
             }
-            
+
         }
-        
+
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {

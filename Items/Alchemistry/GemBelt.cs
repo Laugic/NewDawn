@@ -118,7 +118,7 @@ namespace NewDawn.Items.Alchemistry
             recipe.AddIngredient(ItemID.Silk, 12);
             recipe.AddIngredient(ItemID.MeteoriteBar, 8);
             recipe.AddIngredient(ItemID.ManaCrystal, 3);
-            recipe.AddTile(null, Crystallizer.name);
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
         }
     }

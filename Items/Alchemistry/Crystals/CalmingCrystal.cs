@@ -1,8 +1,6 @@
 ﻿using NewDawn.Items.Alchemistry.Essences;
-using NewDawn.Tiles;
 using NewDawn.Tiles.Alchemistry;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Alchemistry.Crystals
@@ -28,7 +26,7 @@ namespace NewDawn.Items.Alchemistry.Crystals
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CalmingPotion, 4);
             //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
             recipe = Recipe.Create(ModContent.ItemType<GraceEssence>(), 2);

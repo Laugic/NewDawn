@@ -127,8 +127,6 @@ namespace NewDawn.Players
             //ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("IsHoldingMystic: " + IsHoldingMystic()), Color.White);
             base.PostUpdate();
             PotentiaRegen();
-            if (Main.mouseRight && Main.mouseRightRelease)
-                MysticSwitch();
 
             PostUpdateMysticBursts();
         }

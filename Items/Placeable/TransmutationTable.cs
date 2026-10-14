@@ -1,5 +1,4 @@
 using NewDawn.Control;
-using NewDawn.Tiles;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -147,7 +146,7 @@ namespace NewDawn.Items.Placeable
             Recipe pCrecipe = Recipe.Create(ItemID.CobaltOre, 4);
             pCrecipe.AddIngredient(ItemID.PlatinumOre, 6);
             pCrecipe.AddTile(ModContent.TileType<Tiles.TransmutationTable>());
-            pCrecipe.AddTile(null, nameof(MineralEnchanterTile));
+            pCrecipe.AddTile(ModContent.TileType<Tiles.MineralEnchanterTile>());
             pCrecipe.Register();
 
             //Cobalt to Platinum
@@ -305,7 +304,7 @@ namespace NewDawn.Items.Placeable
             Recipe pcBrecipe = Recipe.Create(ItemID.CobaltBar, 4);
             pcBrecipe.AddIngredient(ItemID.PlatinumBar, 6);
             pcBrecipe.AddTile(ModContent.TileType<Tiles.TransmutationTable>());
-            pcBrecipe.AddTile(null, nameof(MineralEnchanterTile));
+            pcBrecipe.AddTile(ModContent.TileType<Tiles.MineralEnchanterTile>());
             pcBrecipe.Register();
 
             //Cobalt to Platinum

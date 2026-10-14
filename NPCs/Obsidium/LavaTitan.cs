@@ -1,8 +1,8 @@
-using NewDawn.Items.Loot;
 using Microsoft.Xna.Framework;
+using NewDawn.Biomes;
+using NewDawn.Items.Loot;
 using Terraria;
 using Terraria.Audio;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Obsidium
@@ -43,13 +43,13 @@ namespace NewDawn.NPCs.Obsidium
             NPC.noTileCollide = true;
             NPC.buffImmune[24] = true;
         }
-        /*
+
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (NPC.CountNPCS(ModContent.NPCType<LavaTitan>()) == 0 && NewDawnWorld.obsidiumTiles > 150 && spawnInfo.spawnTileY > WorldGen.rockLayer && NewDawnWorld.downedRagnar && Main.hardMode)
-                return SpawnCondition.Cavern.Chance * .075f;
+            if (NPC.CountNPCS(ModContent.NPCType<LavaTitan>()) == 0 && spawnInfo.Player.InModBiome<ObsidiumBiome>() && spawnInfo.Player.ZoneRockLayerHeight && NewDawnWorld.downedRagnar && Main.hardMode)
+                return .0075f;
             else return 0f;
-        }*/
+        }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -59,9 +59,9 @@ namespace NewDawn.NPCs.Obsidium
         public override void AI()
         {
             //Attack
-            if(_attack)
+            if (_attack)
             {
-                if(Main.netMode != 1)
+                if (Main.netMode != 1)
                 {
                     _attack = false;
                     for (int i = 0; i < 8; i++)
@@ -73,9 +73,9 @@ namespace NewDawn.NPCs.Obsidium
                     SoundEngine.PlaySound(SoundID.Item122, NPC.position);
                 }
             }
-            if(!_attacking)
+            if (!_attacking)
                 _attackDelay++;
-            if(_attackDelay > 60 * 4)
+            if (_attackDelay > 60 * 4)
             {
                 _attackDelay = 0;
                 _attacking = true;
@@ -83,7 +83,7 @@ namespace NewDawn.NPCs.Obsidium
 
             //Movement
             _targetPos = Main.player[NPC.target].Center;
-            if(!_attacking)
+            if (!_attacking)
             {
                 float dist = Vector2.Distance(_targetPos, NPC.Center);
                 tVel = dist / 15;
@@ -118,7 +118,7 @@ namespace NewDawn.NPCs.Obsidium
         public override void FindFrame(int frameHeight)
         {
             NPC.frameCounter += 1;
-            if(!_attacking)
+            if (!_attacking)
             {
                 if (NPC.frameCounter > 30)
                 {

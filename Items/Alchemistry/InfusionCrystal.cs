@@ -216,7 +216,7 @@ namespace NewDawn.Items.Alchemistry
             recipe.AddIngredient(ModContent.ItemType<Items.Materials.LavaGem>());
             recipe.AddIngredient(ModContent.ItemType<ArcaneShard>(), 15);
             recipe.AddIngredient(ModContent.ItemType<Vitasilk>(), 4);
-            recipe.AddTile(null, Crystallizer.name);
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
         }
     }

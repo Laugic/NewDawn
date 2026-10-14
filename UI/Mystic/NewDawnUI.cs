@@ -43,10 +43,10 @@ namespace NewDawn.UI
         public static SpriteProgressBar MysticBurstBar;
         public static Asset<Texture2D> MysticBurstBGTexture;
         public static Asset<Texture2D> MysticBurstBarTexture;
-
-        public static Vector2 TopPosBase = new Vector2(((Main.screenWidth / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Cos(3f / 2f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Sin(3f / 2f * Math.PI) * 100) + 25) / Main.UIScale);
-        public static Vector2 MidPosBase = new Vector2(((Main.screenWidth / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Cos(5f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Sin(5f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
-        public static Vector2 BotPosBase = new Vector2(((Main.screenWidth / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Cos(1f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Sin(1f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
+        static float posOffset = 1f;
+        public static Vector2 TopPosBase = new Vector2(((Main.screenWidth / 2) + (int)(posOffset * BAR_WIDTH) + ((float)Math.Cos(3f / 2f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(posOffset * BAR_WIDTH) + ((float)Math.Sin(3f / 2f * Math.PI) * 100) + 25) / Main.UIScale);
+        public static Vector2 MidPosBase = new Vector2(((Main.screenWidth / 2) + (int)(posOffset * BAR_WIDTH) + ((float)Math.Cos(5f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(posOffset * BAR_WIDTH) + ((float)Math.Sin(5f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
+        public static Vector2 BotPosBase = new Vector2(((Main.screenWidth / 2) + (int)(posOffset * BAR_WIDTH) + ((float)Math.Cos(1f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(posOffset * BAR_WIDTH) + ((float)Math.Sin(1f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
         private static Vector2 TopPos = new Vector2(0, 0);
         private static Vector2 MidPos = new Vector2(0, 0);
         private static Vector2 BotPos = new Vector2(0, 0);
@@ -126,7 +126,7 @@ namespace NewDawn.UI
                 MundusBGTexture,
                 MundusBarTexture,
                 MundusFGTexture,
-                MidPos,
+                BotPos,
                 new Vector2(0, 0)
             );
 
@@ -135,7 +135,7 @@ namespace NewDawn.UI
                 OverflowBGTexture,
                 OverflowBarTexture,
                 MundusFGOverflowTexture,
-                MidPos,
+                BotPos,
                 new Vector2(OverflowBarTexture.Width(), 0)
             );
 
@@ -144,7 +144,7 @@ namespace NewDawn.UI
                 VisBGTexture,
                 VisBarTexture,
                 VisFGTexture,
-                BotPos,
+                MidPos,
                 new Vector2(0, 0)
             );
 
@@ -153,7 +153,7 @@ namespace NewDawn.UI
                 OverflowBGTexture,
                 OverflowBarTexture,
                 VisFGOverflowTexture,
-                BotPos,
+                MidPos,
                 new Vector2(OverflowBarTexture.Width(), 0)
             );
 
@@ -237,18 +237,18 @@ namespace NewDawn.UI
         {
             rotationGoal += (float)(2f / 3 * Math.PI);
             targetPosition = setPosition;
-            switch (targetPosition)
-            {
-                case MysticMode.Destruction:
-                    rotationGoal = 6f / 3f * (float)Math.PI;
-                    break;
-                case MysticMode.Illusion:
-                    rotationGoal = 4f / 3f * (float)Math.PI;
-                    break;
-                default:
-                    rotationGoal = 8f / 3f * (float)Math.PI;
-                    break;
-            }
+            //switch (targetPosition)
+            //{
+            //    case MysticMode.Destruction:
+            //        rotationGoal = 6f / 3f * (float)Math.PI;
+            //        break;
+            //    case MysticMode.Illusion:
+            //        rotationGoal = 4f / 3f * (float)Math.PI;
+            //        break;
+            //    default:
+            //        rotationGoal = 8f / 3f * (float)Math.PI;
+            //        break;
+            //}
         }
 
         public static void Update()
@@ -289,29 +289,34 @@ namespace NewDawn.UI
 
         private static void UpdateRotations()
         {
+            float fullTurn = (float)(Math.PI * 2.0);
+            float rotationStep = (float)(Math.PI / 10.0);
+
             if (!Animated)
             {
                 rotation = rotationGoal;
                 position = targetPosition;
             }
             if (rotation < rotationGoal)
-                rotation += (float)(Math.PI / 10f);
+                rotation = Math.Min(rotation + rotationStep, rotationGoal);
             else
             {
                 rotation = rotationGoal;
                 position = targetPosition;
             }
-            if (rotationGoal > (float)Math.PI * 2 && rotation > (float)Math.PI * 2)
+            if (rotationGoal >= fullTurn && rotation > fullTurn)
             {
-                rotationGoal -= (float)Math.PI * 2;
-                rotation -= (float)Math.PI * 2;
+                rotationGoal -= fullTurn;
+                rotation -= fullTurn;
             }
-            TopPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2) + ((float)Math.Cos(rotation + (3f / 2f * Math.PI)) * 100)) / Main.UIScale;
-            TopPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation + (3f / 2f * Math.PI)) * 100) + 25) / Main.UIScale;
-            MidPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2) + ((float)Math.Cos(rotation + (5f / 6f * Math.PI)) * 100)) / Main.UIScale;
-            MidPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation + (5f / 6f * Math.PI)) * 100) + 25) / Main.UIScale;
-            BotPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2) + ((float)Math.Cos(rotation + (1f / 6f * Math.PI)) * 100)) / Main.UIScale;
-            BotPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation + (1f / 6f * Math.PI)) * 100) + 25) / Main.UIScale;
+            float offsetX = 0.6f;
+            float offsetY = 0.15f;
+            TopPosBase.X = ((CenterPos.X + ((float)Math.Cos(rotation + (3f / 2f * Math.PI)) * 100)) / Main.UIScale) + (BAR_WIDTH * offsetX);
+            TopPosBase.Y = ((CenterPos.Y + ((float)Math.Sin(rotation + (3f / 2f * Math.PI)) * 100) + 25) / Main.UIScale) + (BAR_WIDTH * offsetY);
+            MidPosBase.X = ((CenterPos.X + ((float)Math.Cos(rotation + (5f / 6f * Math.PI)) * 100)) / Main.UIScale) + (BAR_WIDTH * offsetX);
+            MidPosBase.Y = ((CenterPos.Y + ((float)Math.Sin(rotation + (5f / 6f * Math.PI)) * 100) + 25) / Main.UIScale) + (BAR_WIDTH * offsetY);
+            BotPosBase.X = ((CenterPos.X + ((float)Math.Cos(rotation + (1f / 6f * Math.PI)) * 100)) / Main.UIScale) + (BAR_WIDTH * offsetX);
+            BotPosBase.Y = ((CenterPos.Y + ((float)Math.Sin(rotation + (1f / 6f * Math.PI)) * 100) + 25) / Main.UIScale) + (BAR_WIDTH * offsetY);
             MysticBurstPos.X = (CenterPos.X - (MysticBurstBGTexture.Width() / 2)) / Main.UIScale;
             MysticBurstPos.Y = (CenterPos.Y + 125) / Main.UIScale;
         }
@@ -408,10 +413,10 @@ namespace NewDawn.UI
         {
             LuxBar.Position = TopPos;
             OverflowLuxBar.Position = TopPos;
-            VisBar.Position = BotPos;
-            OverflowVisBar.Position = BotPos;
-            MundusBar.Position = MidPos;
-            OverflowMundusBar.Position = MidPos;
+            VisBar.Position = MidPos;
+            OverflowVisBar.Position = MidPos;
+            MundusBar.Position = BotPos;
+            OverflowMundusBar.Position = BotPos;
         }
 
         private static void UpdateMysticBurst()
@@ -444,9 +449,9 @@ namespace NewDawn.UI
             if (posX > TopPosBase.X - widthMod && posX < TopPosBase.X + LuxBGTexture.Width() + widthMod && posY > TopPosBase.Y - heightMod && posY < TopPosBase.Y + LuxBGTexture.Height() + heightMod)
                 spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Lux).ToString() + "/" + Math.Round(mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Lux", drawPos, Color.White);
             if (posX > BotPosBase.X - widthMod && posX < BotPosBase.X + LuxBGTexture.Width() + widthMod && posY > BotPosBase.Y - heightMod && posY < BotPosBase.Y + LuxBGTexture.Height() + heightMod)
-                spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Vis).ToString() + "/" + Math.Round(mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Vis", drawPos, Color.White);
-            if (posX > MidPosBase.X - widthMod && posX < MidPosBase.X + LuxBGTexture.Width() + widthMod && posY > MidPosBase.Y - heightMod && posY < MidPosBase.Y + LuxBGTexture.Height() + heightMod)
                 spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Mundus).ToString() + "/" + Math.Round(mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Mundus", drawPos, Color.White);
+            if (posX > MidPosBase.X - widthMod && posX < MidPosBase.X + LuxBGTexture.Width() + widthMod && posY > MidPosBase.Y - heightMod && posY < MidPosBase.Y + LuxBGTexture.Height() + heightMod)
+                spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Vis).ToString() + "/" + Math.Round(mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Vis", drawPos, Color.White);
         }
     }
 }
@@ -597,7 +602,7 @@ public class SpriteProgressBar
         spriteBatch.Draw
             (
                 BarTexture.Value,
-                new Vector2((int)Position.X + (flipped ? -rect2.Width : 0), (int)Position.Y) + new Vector2((int)PosOffset.X, (int)PosOffset.Y),
+                new Vector2((int)Position.X + (flipped ? BarTexture.Width() - rect2.Width : 0), (int)Position.Y) + new Vector2((int)PosOffset.X, (int)PosOffset.Y),
                 rect2,
                 Colors[1] * Alpha,
                 0f,

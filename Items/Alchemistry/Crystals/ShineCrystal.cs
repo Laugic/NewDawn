@@ -29,7 +29,7 @@ namespace NewDawn.Items.Alchemistry.Crystals
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ShinePotion, 4);
             //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
             recipe = Recipe.Create(ModContent.ItemType<LumaEssence>(), 2);

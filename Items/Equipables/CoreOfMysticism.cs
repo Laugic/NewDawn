@@ -1,7 +1,5 @@
 using NewDawn.Items.Loot;
-using NewDawn.Tiles;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 
@@ -33,7 +31,7 @@ namespace NewDawn.Items.Equipables
             mysticPlayer.LuxMax += 50;
             mysticPlayer.VisMax += 50;
         }
-        
+
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
@@ -41,7 +39,7 @@ namespace NewDawn.Items.Equipables
             recipe.AddIngredient(ModContent.ItemType<IllusionCore>(), 1);
             recipe.AddIngredient(ModContent.ItemType<ConjurationCore>(), 1);
             recipe.AddIngredient(Mod, nameof(SoulOfWrought), 8);
-            recipe.AddTile(null, nameof(MineralEnchanterTile));
+            recipe.AddTile(ModContent.TileType<Tiles.MineralEnchanterTile>());
             recipe.Register();
         }
     }

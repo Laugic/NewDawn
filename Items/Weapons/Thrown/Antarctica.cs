@@ -1,7 +1,6 @@
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Thrown;
-using NewDawn.Tiles;
 using Terraria;
 using Terraria.ModLoader;
 
@@ -43,7 +42,7 @@ namespace NewDawn.Items.Weapons.Thrown
             recipe.AddIngredient(ItemID.NorthPole);
             recipe.AddIngredient(null, nameof(BysmalBar), 15);
             recipe.AddIngredient(Mod, nameof(EtherialEssence), 6);
-            recipe.AddTile(null, nameof(AlchemicalInfuser));
+            recipe.AddTile(ModContent.TileType<Tiles.AlchemicalInfuser>());
             recipe.Register();
         }
     }

@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
+using NewDawn.Items.Placeable;
+using System.Collections.Generic;
 using Terraria;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 
@@ -56,14 +57,11 @@ namespace NewDawn.Tiles
             return false;
         }
 
-        //public override bool Drop(int i, int j)/* tModPorter Note: Removed. Use CanDrop to decide if an item should drop. Use GetItemDrops to decide which item drops. Item drops based on placeStyle are handled automatically now, so this method might be able to be removed altogether. */
-        //{
-        //    if (NewDawnWorld.Ameldera)
-        //    {
-        //        Item.NewItem(i * 16, j * 16, 8, 8, ModContent.ItemType<AmelderaOreItem>(), 1);
-        //        return false;
-        //    }
-        //    return base.Drop(i, j);
-        //}
+        public override IEnumerable<Item> GetItemDrops(int i, int j)
+        {
+            if (NewDawnWorld.Ameldera)
+                return new List<Item> { new Item(ModContent.ItemType<AmelderaOreItem>()) };
+            return new List<Item> { new Item(ModContent.ItemType<ObsidiumOre>()) };
+        }
     }
 }

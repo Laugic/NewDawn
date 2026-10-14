@@ -1,7 +1,7 @@
+using NewDawn.Biomes;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Placeable;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Obsidium
@@ -24,6 +24,13 @@ namespace NewDawn.NPCs.Obsidium
             NPC.noGravity = true;
             NPC.noTileCollide = true;
             NPC.buffImmune[24] = true;
+        }
+
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            if (spawnInfo.Player.InModBiome<ObsidiumBiome>())
+                return .015f;
+            else return 0f;
         }
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)

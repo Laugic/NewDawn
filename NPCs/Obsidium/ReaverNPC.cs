@@ -1,7 +1,5 @@
-﻿using NewDawn.Items.Loot;
-using Microsoft.Xna.Framework;
+﻿using NewDawn.Biomes;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Obsidium
@@ -31,6 +29,13 @@ namespace NewDawn.NPCs.Obsidium
             NPC.buffImmune[24] = true;
         }
 
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            if (spawnInfo.Player.InModBiome<ObsidiumBiome>() && Main.hardMode && NewDawnWorld.downedRagnar)
+                return .075f;
+            else return 0f;
+        }
+
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
             target.AddBuff(BuffID.OnFire, 300, true);
@@ -38,7 +43,7 @@ namespace NewDawn.NPCs.Obsidium
 
         public override void AI()
         {
-            if(NPC.life < NPC.lifeMax / 2 && NPC.ai[0] != 1)
+            if (NPC.life < NPC.lifeMax / 2 && NPC.ai[0] != 1)
             {
                 NPC.ai[0] = 1;
 

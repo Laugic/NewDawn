@@ -1,8 +1,8 @@
+using NewDawn.Biomes;
 using NewDawn.Dusts;
 using NewDawn.Items.Loot;
 using NewDawn.Projectiles.NPCProj;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Obsidium
@@ -28,6 +28,12 @@ namespace NewDawn.NPCs.Obsidium
             NPC.noTileCollide = true;
             NPC.buffImmune[24] = true;
         }
+        public override float SpawnChance(NPCSpawnInfo spawnInfo)
+        {
+            if (spawnInfo.Player.InModBiome<ObsidiumBiome>() && Main.hardMode)
+                return .05f;
+            else return 0f;
+        }
 
         public override void AI()
         {
@@ -50,7 +56,7 @@ namespace NewDawn.NPCs.Obsidium
 
         public override void OnKill()
         {
-            if(Main.rand.Next(2) == 0)
+            if (Main.rand.Next(2) == 0)
                 Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<SoulOfHaught>());
         }
     }

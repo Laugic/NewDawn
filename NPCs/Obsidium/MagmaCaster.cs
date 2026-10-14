@@ -1,10 +1,10 @@
+using Microsoft.Xna.Framework;
+using NewDawn.Biomes;
 using NewDawn.Dusts;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Placeable;
 using NewDawn.Projectiles.NPCProj;
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Obsidium
@@ -38,13 +38,12 @@ namespace NewDawn.NPCs.Obsidium
             NPC.lifeMax = 450;
             NPC.damage = 48;
         }
-        /*
         public override float SpawnChance(NPCSpawnInfo spawnInfo)
         {
-            if (NewDawnWorld.obsidiumTiles > 150 && spawnInfo.spawnTileY > WorldGen.rockLayer && NewDawnWorld.downedRagnar)
-                return SpawnCondition.Cavern.Chance * 0.5f;
+            if (spawnInfo.Player.InModBiome<ObsidiumBiome>() && NewDawnWorld.downedRagnar)
+                return .05f;
             else return 0f;
-        }*/
+        }
 
         public override void AI()
         {
@@ -55,13 +54,13 @@ namespace NewDawn.NPCs.Obsidium
             Vector2 adj;
             adj.X = -NPC.width / 4;
             adj.Y = -NPC.height / 2;
-            if(Main.rand.Next(3) == 0)
+            if (Main.rand.Next(3) == 0)
                 Dust.NewDust(NPC.Center + adj, NPC.width / 2, 12, ModContent.DustType<Magma>(), 0f, 0f);
             _delay--;
             if (_delay <= 0)
             {
                 _reload++;
-                if(_reload < 45)
+                if (_reload < 45)
                 {
                     if (Main.rand.Next(4) == 0)
                     {
@@ -77,7 +76,7 @@ namespace NewDawn.NPCs.Obsidium
             }
 
         }
-        
+
 
         public override void OnHitPlayer(Player target, Player.HurtInfo hurtInfo)
         {
@@ -95,6 +94,6 @@ namespace NewDawn.NPCs.Obsidium
             else
                 Item.NewItem(NPC.GetSource_Loot(), (int)NPC.position.X, (int)NPC.position.Y, NPC.width, NPC.height, ModContent.ItemType<ObsidiumOre>(), Main.rand.Next(2, 5));
         }
-        
+
     }
 }

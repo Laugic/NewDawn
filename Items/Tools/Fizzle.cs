@@ -108,7 +108,7 @@ namespace NewDawn.Items.Tools
         {
             Recipe recipe = CreateRecipe(4);
             recipe.AddIngredient(ModContent.ItemType<Fissionite>(), 20);
-            recipe.AddTile(null, Crystallizer.name);
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
         }
     }

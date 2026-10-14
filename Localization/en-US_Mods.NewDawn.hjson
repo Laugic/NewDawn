@@ -2772,7 +2772,7 @@ Items: {
 	}
 
 	ObsidiumRock: {
-		DisplayName: Obsidium Rock
+		DisplayName: Basalt
 		Tooltip: Grows Lava Gems over time
 	}
 
@@ -3502,6 +3502,196 @@ Items: {
 		DisplayName: Train Whistle
 		Tooltip: ""
 	}
+
+	AggressionStone: {
+		DisplayName: Aggression Stone
+		Tooltip: ""
+	}
+
+	AlterationStone: {
+		DisplayName: Alteration Stone
+		Tooltip: ""
+	}
+
+	AncientRelic: {
+		DisplayName: Ancient Relic
+		Tooltip: ""
+	}
+
+	AngelnCrystal: {
+		DisplayName: Angeln Crystal
+		Tooltip: ""
+	}
+
+	AquaStone: {
+		DisplayName: Aqua Stone
+		Tooltip: ""
+	}
+
+	ArtifactOfEnhancement: {
+		DisplayName: Artifact Of Enhancement
+		Tooltip: ""
+	}
+
+	ArtifactOfRestoration: {
+		DisplayName: Artifact Of Restoration
+		Tooltip: ""
+	}
+
+	BewungCrystal: {
+		DisplayName: Bewung Crystal
+		Tooltip: ""
+	}
+
+	CursedRelic: {
+		DisplayName: Cursed Relic
+		Tooltip: ""
+	}
+
+	DeinstCrystal: {
+		DisplayName: Deinst Crystal
+		Tooltip: ""
+	}
+
+	GreaterHealingGem: {
+		DisplayName: Greater Healing Gem
+		Tooltip: ""
+	}
+
+	GreaterManaGem: {
+		DisplayName: Greater Mana Gem
+		Tooltip: ""
+	}
+
+	HallowedRelic: {
+		DisplayName: Hallowed Relic
+		Tooltip: ""
+	}
+
+	HealingCrystal: {
+		DisplayName: Healing Crystal
+		Tooltip: ""
+	}
+
+	HealingGem: {
+		DisplayName: Healing Gem
+		Tooltip: ""
+	}
+
+	HolyStone: {
+		DisplayName: Holy Stone
+		Tooltip: ""
+	}
+
+	KekCrystal: {
+		DisplayName: Kek Crystal
+		Tooltip: ""
+	}
+
+	LebenCrystal: {
+		DisplayName: Leben Crystal
+		Tooltip: ""
+	}
+
+	LesserHealingGem: {
+		DisplayName: Lesser Healing Gem
+		Tooltip: ""
+	}
+
+	LesserManaGem: {
+		DisplayName: Lesser Mana Gem
+		Tooltip: ""
+	}
+
+	LichtCrystal: {
+		DisplayName: Licht Crystal
+		Tooltip: ""
+	}
+
+	MachtCrystal: {
+		DisplayName: Macht Crystal
+		Tooltip: ""
+	}
+
+	MagmaCrystal: {
+		DisplayName: Magma Crystal
+		Tooltip: ""
+	}
+
+	ManaCrystal: {
+		DisplayName: Mana Crystal
+		Tooltip: ""
+	}
+
+	ManaGem: {
+		DisplayName: Mana Gem
+		Tooltip: ""
+	}
+
+	MegaHealingStone: {
+		DisplayName: Mega Healing Stone
+		Tooltip: ""
+	}
+
+	MegaManaStone: {
+		DisplayName: Mega Mana Stone
+		Tooltip: ""
+	}
+
+	PanzerCrystal: {
+		DisplayName: Panzer Crystal
+		Tooltip: ""
+	}
+
+	ReichCrystal: {
+		DisplayName: Reich Crystal
+		Tooltip: ""
+	}
+
+	SichtCrystal: {
+		DisplayName: Sicht Crystal
+		Tooltip: ""
+	}
+
+	SightStone: {
+		DisplayName: Sight Stone
+		Tooltip: ""
+	}
+
+	SuperHealingGem: {
+		DisplayName: Super Healing Gem
+		Tooltip: ""
+	}
+
+	SuperManaGem: {
+		DisplayName: Super Mana Gem
+		Tooltip: ""
+	}
+
+	TitanStone: {
+		DisplayName: Titan Stone
+		Tooltip: ""
+	}
+
+	UltraHealingRelic: {
+		DisplayName: Ultra Healing Relic
+		Tooltip: ""
+	}
+
+	UltraManaRelic: {
+		DisplayName: Ultra Mana Relic
+		Tooltip: ""
+	}
+
+	VerteCrystal: {
+		DisplayName: Verte Crystal
+		Tooltip: ""
+	}
+
+	WasserCrystal: {
+		DisplayName: Wasser Crystal
+		Tooltip: ""
+	}
 }
 
 Projectiles: {
@@ -3959,6 +4149,11 @@ Biomes: {
 	TempleBiome: {
 		TownNPCDialogueName: the Temple Biome
 		DisplayName: Temple Biome
+	}
+
+	ObsidiumBiome: {
+		TownNPCDialogueName: the Obsidium Biome
+		DisplayName: Obsidium Biome
 	}
 }
 
