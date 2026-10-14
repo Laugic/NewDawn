@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class LaugicalWorkbench : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("For crafting things to craft things. \n'It's completely laugical!'");
-        }
 
         public override void SetDefaults()
         {

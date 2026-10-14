@@ -16,7 +16,7 @@ namespace NewDawn.Tiles.Alchemistry
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            ItemDrop = ModContent.ItemType<SummoningCrystal>();
+            RegisterItemDrop(ModContent.ItemType<SummoningCrystal>());
         }
         public override void AddBuff()
         {

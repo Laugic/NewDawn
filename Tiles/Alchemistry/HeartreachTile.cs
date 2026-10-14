@@ -16,7 +16,7 @@ namespace NewDawn.Tiles.Alchemistry
         public override void SetStaticDefaults()
         {
             base.SetStaticDefaults();
-            ItemDrop = ModContent.ItemType<HeartreachCrystal>();
+            RegisterItemDrop(ModContent.ItemType<HeartreachCrystal>());
         }
         public override void AddBuff()
         {

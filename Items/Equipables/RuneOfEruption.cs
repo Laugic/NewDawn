@@ -1,0 +1,47 @@
+using NewDawn.Items.Loot;
+using Microsoft.Xna.Framework;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+
+namespace NewDawn.Items.Equipables
+{
+    public class RuneOfEruption : NewDawnItem
+    {
+
+        public override void SetDefaults()
+        {
+            Item.width = 22;
+            Item.height = 36;
+            Item.value = Item.sellPrice(gold: 4);
+            Item.rare = ItemRarityID.LightRed;
+            Item.accessory = true;
+        }
+
+        public override void UpdateAccessory(Player player, bool hideVisual)
+        {
+            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (mysticPlayer.IsOnOverflow())
+            {
+                mysticPlayer.OverflowDamage += .2f;
+                mysticPlayer.OverflowVelocity += .2f;
+                player.moveSpeed += .25f;
+                player.jumpSpeedBoost += 3;
+                player.maxRunSpeed += 3;
+                player.accRunSpeed += 3;
+            }
+        }
+        
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe();
+            recipe.AddIngredient(ModContent.ItemType<RuneOfTheAncients>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<Eruption>(), 1);
+            recipe.AddIngredient(Mod, nameof(SoulOfHaught), 8);
+            recipe.AddTile(TileID.MythrilAnvil);
+            recipe.Register();
+        }
+    }
+}

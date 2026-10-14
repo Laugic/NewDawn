@@ -12,11 +12,6 @@ namespace NewDawn.Items
     {
 		public override Item[] Items { get; set; } = new Item[3];
 
-        public override void SetStaticDefaults()
-		{
-			// DisplayName.SetDefault("Alabaster");
-			//Tooltip.SetDefault("Can store 3 stacks of items");
-		}
 
 		public override void SetDefaults()
         {

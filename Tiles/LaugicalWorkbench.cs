@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -27,24 +26,19 @@ namespace NewDawn.Tiles
             //adjTiles = new int[] { TileID.WorkBenches };
             AnimationFrameHeight = 74;
         }
-        
+
         public override void AnimateTile(ref int frame, ref int frameCounter)
         {
             frameCounter++;
-			if (frameCounter >= 5)
-			{
-				frameCounter = 0;
-				frame++;
-				if (frame > 26)
-				{
-					frame = 0;
-				}
-			}
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 112, 64, ModContent.ItemType<Items.Placeable.LaugicalWorkbench>());
+            if (frameCounter >= 5)
+            {
+                frameCounter = 0;
+                frame++;
+                if (frame > 26)
+                {
+                    frame = 0;
+                }
+            }
         }
     }
 }

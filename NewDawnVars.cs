@@ -1,0 +1,255 @@
+﻿using NewDawn.NPCs.Bosses;
+using NewDawn.NPCs.Hypothema;
+using NewDawn.NPCs.Obsidium;
+using NewDawn.NPCs.PreTrio;
+using NewDawn.NPCs.RockTwins;
+using NewDawn.NPCs.Slybertron;
+using NewDawn.Tiles;
+using System.Collections.Generic;
+using Terraria.ModLoader;
+
+namespace NewDawn
+{
+    internal class NewDawnVars //A list of all of the important vars!
+    {
+        // TODO Change this to an actual instance of NewDawn, taken from NewDawnMod.
+        public static Mod Mod => NewDawn.Instance;
+
+        public enum ClassType
+        {
+            Undefined, //(No class) 0
+            /*Melee*/
+            Warrior, //(Dmg) 1
+            Tank, //(Def) 2
+            Paladin, //(Util/Survivability) 3
+            /*Magic*/
+            Warlock, //(Dmg) 4
+            Wizard, //(Mana) 5
+            Mage, //(Util/Survivability) 6
+            /*Range*/
+            Sharpshooter, //(Dmg) 7
+            Rogue, //(Mobility) 8
+            Hunter, //(Util/Survivability) 9
+            /*Summn*/
+            Necromancer, //(Dmg) 10
+            Sorcerer, //(Minions & Mana) 11
+            Shaman, //(Util/Survivability) 12
+            /*Throw*/
+            Assasin, //(Dmg) 13
+            Ninja, //(Vel & Sp & Mobility) 14
+            Thief, //(Util/Survivability) 15
+            /*Mystc:*/
+            Destructionist, //(Dmg) 16
+            Illusionist, //(BuffDur & Mobility) 17
+            Conjurer //(Util/Survivability) 18
+        }
+        /* -------------- Etherial NPCs and Projectiles -------------- */
+
+        public static readonly HashSet<int> eNPCs =
+            new HashSet<int>
+            {
+                4, 50, 266, 267, 13, 14, 15, 222, 35, 36, 113, 114,  125, 126, 127, 128, 129, 130, 134, 135, 136, NPCID.DungeonGuardian, NPCID.PrimeLaser, 139, 262, 263, 264, 265, 245, 246, 247, 248, 249, 439, 440, 396, 397, 398, 400, 370, 371, 372, 373, 454, 455, 457, 458, 459, 452, 454, 455, 456, 422, 493, 507, 517, 438, NPCID.TargetDummy, 379, 551, 552, 553, 554, 555, 556, 557, 558, 559, 560, 561, 562, 563, 564, 565, 566, 567, 568, 569, 570, 571, 572, 573, 574, 575, 576, 577, 578, NPCID.SandElemental, NPCID.IceGolem, ModContent.NPCType<TitanBlast>(), ModContent.NPCType<LaserBall>(), ModContent.NPCType<AnDioLaserBall>(), NPCID.Golem,
+            };
+
+        public static readonly HashSet<int> eProjectiles =
+            new HashSet<int>
+            {
+                31, 67, 68, 56, 71, 241, 179, 270, 55, 83, 99, 100, 96, 605, 101, 102, 257, 275, 276, 277, 262, 258, 259, 288, 384, 385, 386, 464, 465, 466, 467, 468, 490, 455, 454, 452, 657, 658, 670, 671, 672, 673, 673, 675, 676, 681, 682, 683, 684, 685, 686, 687,
+            };
+
+        public static readonly HashSet<int> eBosses =
+            new HashSet<int>
+            {
+                NPCID.KingSlime, NPCID.EyeofCthulhu, NPCID.BrainofCthulhu, ModContent.NPCType<Hypothema>(), NPCID.QueenBee, ModContent.NPCType<Ragnar>(), NPCID.SkeletronHead, ModContent.NPCType<AnDio3>(), NPCID.TheDestroyer, NPCID.SkeletronPrime, ModContent.NPCType<TheAnnihilator>(), ModContent.NPCType<Slybertron>(), ModContent.NPCType<NPCs.SteamTrain.SteamTrainOld>(), NPCID.Plantera, NPCID.Golem, NPCID.DukeFishron, NPCID.MoonLordCore
+            };
+
+        //Projectiles that are immune to time stop
+        public static readonly HashSet<int> zProjectiles =
+            new HashSet<int>
+            {
+
+            };
+
+        //Projectiles that are immune to time stop while in the Etherial
+        public static readonly HashSet<int> ezProjectiles =
+            new HashSet<int>
+            {
+                ModContent.ProjectileType<AndeBall>(), ModContent.ProjectileType<AndeEnergy>(), ModContent.ProjectileType<AndeLaser3>(), ModContent.ProjectileType<AndeShard>(), ModContent.ProjectileType<AnDioEnergy>(), ModContent.ProjectileType<AnDioSpiral>(), ModContent.ProjectileType<AnDioSpiral2>(), ModContent.ProjectileType<DioBall>(), ModContent.ProjectileType<DioBallShot>(), ModContent.ProjectileType<DioEnergy>(), ModContent.ProjectileType<DioEnergyHoming>(), ModContent.ProjectileType<DioShard>(),
+            };
+
+        //Bosses that are immune to time stop
+        public static readonly HashSet<int> zNPCs =
+            new HashSet<int>
+            {
+                ModContent.NPCType<LaserBall>(), ModContent.NPCType<AnDioLaserBall>(),
+            };
+
+        public static readonly HashSet<int> eBad =
+            new HashSet<int>
+            {
+                430, 431, 432, 433, 434, 435, 436
+            };
+
+
+        public static readonly HashSet<int> frigImmune =
+            new HashSet<int>
+            {
+                13, 14, 15
+            };
+
+        public static readonly HashSet<int> etherial =
+            new HashSet<int>
+            {
+
+            };
+
+
+        public static readonly HashSet<int> obsidiumTiles =
+            new HashSet<int>
+            {
+                 ModContent.TileType<Tiles.ObsidiumRock>(), ModContent.TileType<ObsidiumBrick>(), ModContent.TileType<Lycoris>(), ModContent.TileType<Tiles.Radiata>(), ModContent.TileType<ObsidiumOreBlock>(), TileID.Obsidian,
+            };
+
+        /* -------------- SLIMEKING -------------- */
+        public static readonly HashSet<int> slimeThrow =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief };
+        public static readonly HashSet<int> slimeJump =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> slimeMinion =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Destructionist };
+        public static readonly HashSet<int> slimeVelocity =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Thief };
+
+        /* -------------- BOSS1 -------------- */
+        public static readonly HashSet<int> boss1Thorns =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Destructionist };
+        public static readonly HashSet<int> boss1Speed =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Illusionist };
+        public static readonly HashSet<int> boss1Detect =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> boss1Damage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+
+        /* -------------- BOSS2 -------------- */
+        public static readonly HashSet<int> boss2Rage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Destructionist };
+        public static readonly HashSet<int> boss2Defence =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Illusionist };
+        public static readonly HashSet<int> boss2Regen =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> boss2RBonus =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage };
+
+        /* -------------- QUEENBEE -------------- */
+        public static readonly HashSet<int> beeTrue =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Destructionist };
+        public static readonly HashSet<int> beeRegen =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> beeMinions =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Illusionist };
+        public static readonly HashSet<int> beeMDamage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman };
+
+        /* -------------- BOSS3 -------------- */
+        public static readonly HashSet<int> boss3Damage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Destructionist };
+        public static readonly HashSet<int> boss3Defense =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Illusionist };
+        public static readonly HashSet<int> boss3Speed =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> boss3Crit =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter };
+
+        /* -------------- HARDMODE -------------- */
+        public static readonly HashSet<int> hardDamage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Destructionist };
+        public static readonly HashSet<int> hardRegen =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief };
+        public static readonly HashSet<int> hardMana =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> hardObsid =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin };
+
+        /* -------------- MECH1 -------------- */
+        public static readonly HashSet<int> mech1Crit =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter };
+        public static readonly HashSet<int> mech1Speed =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+
+        /* -------------- MECH2 -------------- */
+        public static readonly HashSet<int> mech2Magic =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman };
+        public static readonly HashSet<int> mech2Jump =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief };
+
+        /* -------------- MECH3 -------------- */
+        public static readonly HashSet<int> mech3Damage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin };
+        public static readonly HashSet<int> mech3Defense =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+
+        /* -------------- PLANT -------------- */
+        public static readonly HashSet<int> plantBonus =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+        public static readonly HashSet<int> plantThorns =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief };
+
+        /* -------------- GOLEM -------------- */
+        public static readonly HashSet<int> golemCrit =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Assasin };
+        public static readonly HashSet<int> golemRegen =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief, (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+
+
+        /* -------------- FISH -------------- */
+        public static readonly HashSet<int> fishDouche =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter };
+        public static readonly HashSet<int> fishSpeed =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief };
+        public static readonly HashSet<int> fishMDamage =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+
+        /* -------------- CULTIST -------------- */
+        public static readonly HashSet<int> cultistDamage1 =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warrior, (int)NewDawnVars.ClassType.Tank, (int)NewDawnVars.ClassType.Paladin, (int)NewDawnVars.ClassType.Sharpshooter, (int)NewDawnVars.ClassType.Rogue, (int)NewDawnVars.ClassType.Hunter, (int)NewDawnVars.ClassType.Assasin, (int)NewDawnVars.ClassType.Ninja, (int)NewDawnVars.ClassType.Thief };
+        public static readonly HashSet<int> cultistDamage2 =
+            new HashSet<int> { (int)NewDawnVars.ClassType.Warlock, (int)NewDawnVars.ClassType.Wizard, (int)NewDawnVars.ClassType.Mage, (int)NewDawnVars.ClassType.Necromancer, (int)NewDawnVars.ClassType.Sorcerer, (int)NewDawnVars.ClassType.Shaman, (int)NewDawnVars.ClassType.Destructionist, (int)NewDawnVars.ClassType.Illusionist, (int)NewDawnVars.ClassType.Conjurer };
+
+
+        public static readonly HashSet<int> SeedProjectiles =
+        new HashSet<int>
+        {
+            ProjectileID.Seed, ProjectileID.SeedlerNut, ProjectileID.SeedlerThorn,
+        };
+
+        public static readonly HashSet<int> BeeProjectiles =
+        new HashSet<int>
+        {
+            ProjectileID.Bee, ProjectileID.GiantBee
+        };
+
+        public static readonly HashSet<int> ShroomProjectiles =
+        new HashSet<int>
+        {
+
+        };
+
+        public static readonly HashSet<int> SnowballProjectiles =
+        new HashSet<int>
+        {
+            ProjectileID.SnowBallFriendly,
+        };
+
+        public static readonly HashSet<int> DashBoots =
+        new HashSet<int>
+        {
+
+        };
+
+        public static readonly HashSet<int> RocketBoots =
+        new HashSet<int>
+        {
+
+        };
+    }
+}

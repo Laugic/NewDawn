@@ -8,14 +8,9 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class SMG : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("S.M.G.");
-            // Tooltip.SetDefault("'Snow Machine Gun'\n20% chance not to consume ammo\n'Shouldn't the snow be melting-?'");
-        }
         public override void SetDefaults()
         {
-            Item.damage = 21;
+            Item.damage = 24;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 60;
             Item.height = 28;

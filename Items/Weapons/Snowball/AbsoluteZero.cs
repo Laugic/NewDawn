@@ -9,14 +9,10 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class AbsoluteZero : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("66% chance not to consume ammo\n'I am beneath you, but nothing is beneath me'");
-        }
 
         public override void SetDefaults()
         {
-            Item.damage = 88;
+            Item.damage = 77;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 72;
             Item.height = 36;
@@ -55,10 +51,10 @@ namespace NewDawn.Items.Weapons.Snowball
 
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed *= scale;
-                if(i == 0)
+                if (i == 0)
                     Projectile.NewProjectile(source, position, perturbedSpeed, ModContent.ProjectileType<BigSnowball>(), damage, knockback, player.whoAmI, type);
                 else
-                    Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                    Projectile.NewProjectile(source, position, perturbedSpeed, type, damage, knockback, player.whoAmI);
             }
 
             return false;

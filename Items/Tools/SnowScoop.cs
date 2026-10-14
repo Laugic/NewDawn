@@ -1,5 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
-using NewDawn.Items.Weapons.Ammo;
+using NewDawn.Items.Ammo;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -8,11 +8,6 @@ namespace NewDawn.Items.Tools
 {
     public class SnowScoop : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Scoop Mk II");
-            // Tooltip.SetDefault("Gathers snowballs from blocks");
-        }
         public override void SetDefaults()
         {
             Item.damage = 4;

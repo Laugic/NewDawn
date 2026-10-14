@@ -1,38 +1,35 @@
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+//using Terraria;
+//using Terraria.ID;
+//using Terraria.ModLoader;
 
-namespace NewDawn.Items.Placeable
-{
-    public class DemystBlock : ModItem
-    {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Demyst Block");
-            // Tooltip.SetDefault("When placed, right click or activate with wire to break Potion Crystals placed above into Essences\nDemystifying!");
-        }
+//namespace NewDawn.Items.Placeable
+//{
+//    public class DemystBlock : ModItem
+//    {
+//        public override void SetStaticDefaults()
+//        {
+//        }
 
-        public override void SetDefaults()
-        {
-            Item.width = 16;
-            Item.height = 16;
-            Item.maxStack = 999;
-            Item.useTurn = true;
-            Item.autoReuse = true;
-            Item.useAnimation = Item.useTime = 15;
-            Item.useStyle = ItemUseStyleID.Swing;
-            Item.consumable = true;
-            Item.createTile = ModContent.TileType<Tiles.Demyst>();
-        }
+//        public override void SetDefaults()
+//        {
+//            Item.width = 16;
+//            Item.height = 16;
+//            Item.maxStack = 999;
+//            Item.useTurn = true;
+//            Item.autoReuse = true;
+//            Item.useAnimation = Item.useTime = 15;
+//            Item.useStyle = ItemUseStyleID.Swing;
+//            Item.consumable = true;
+//            Item.createTile = ModContent.TileType<Tiles.Demyst>();
+//        }
 
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
-            recipe.AddIngredient(ItemID.RichMahogany, 10);
-            recipe.AddIngredient(ItemID.JungleSpores, 4);
-            recipe.AddRecipeGroup(nameof(ItemID.ShadowScale), 4);
-            recipe.Register();
-        }
-    }
-}
+//        public override void AddRecipes()
+//        {
+//            Recipe recipe = CreateRecipe();
+//            recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
+//            recipe.AddIngredient(ItemID.RichMahogany, 10);
+//            recipe.AddIngredient(ItemID.JungleSpores, 4);
+//            recipe.Register();
+//        }
+//    }
+//}

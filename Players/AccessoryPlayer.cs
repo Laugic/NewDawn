@@ -1,14 +1,14 @@
-﻿using Terraria.ModLoader;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace NewDawn.Players
 {
     public class AccessoryPlayer : ModPlayer
     {
         public bool SetOnFire { get; set; } = false;
-        public int BonusHealFromHearts { get; set; } = 0;
         public float SnowDamage { get; set; } = 1f;
+
         public override void Initialize()
         {
             base.Initialize();
@@ -17,14 +17,13 @@ namespace NewDawn.Players
         public override void ResetEffects()
         {
             SetOnFire = false;
-            BonusHealFromHearts = 0;
             SnowDamage = 1f;
             base.ResetEffects();
         }
 
         public override void ModifyWeaponDamage(Item item, ref StatModifier damage)
         {
-            if (/*item.ammo == AmmoID.Snowball || */item.useAmmo == AmmoID.Snowball)
+            if (item.useAmmo == AmmoID.Snowball)
                 damage *= SnowDamage;
 
             base.ModifyWeaponDamage(item, ref damage);
@@ -38,7 +37,8 @@ namespace NewDawn.Players
         private void InflictDebuffs(Item item, NPC target, NPC.HitInfo hit, int damageDone)
         {
             if (SetOnFire)
-                target.AddBuff(BuffID.OnFire, (int)((5 * 60 + Main.rand.Next(60))));
+                target.AddBuff(BuffID.OnFire, (int)((5 * 60) + Main.rand.Next(60)));
         }
+
     }
 }

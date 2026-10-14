@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class SmelterItem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Smelter");
-            // Tooltip.SetDefault("Melts items you place inside");
-        }
 
         public override void SetDefaults()
         {
@@ -25,7 +20,7 @@ namespace NewDawn.Items.Placeable
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddTile(null, "LaugicalWorkbench");
+            recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
             recipe.AddTile(TileID.Hellforge);
             recipe.AddIngredient(ItemID.HellstoneBar, 16);
             recipe.Register();

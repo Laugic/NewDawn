@@ -1,19 +1,14 @@
-﻿using NewDawn.Tiles;
+﻿using NewDawn.Items.Alchemistry.Essences;
+using NewDawn.Tiles;
+using NewDawn.Tiles.Alchemistry;
 using Terraria;
 using Terraria.ID;
-using NewDawn.Items.Materials;
 using Terraria.ModLoader;
-using NewDawn.Tiles.Alchemistry;
-using NewDawn.Items.Alchemistry.Essences;
 
 namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class FeatherfallCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Slows falling speed");
-        }
 
         public override void CustomDefaults()
         {
@@ -28,16 +23,16 @@ namespace NewDawn.Items.Alchemistry.Crystals
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.FeatherfallPotion, 4);
-            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<AirEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<GraceEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<ForceEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<HermusEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();

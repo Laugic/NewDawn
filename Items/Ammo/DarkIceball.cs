@@ -1,0 +1,36 @@
+using NewDawn.Control;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Items.Ammo
+{
+    public class DarkIceball : ModItem
+    {
+
+        public override void SetDefaults()
+        {
+            Item.damage = 10;
+            Item.DamageType = DamageClass.Ranged;
+            Item.width = 8;
+            Item.height = 8;
+            Item.maxStack = 999;
+            Item.consumable = true;
+            Item.knockBack = 7f;
+            Item.value = 0;
+            Item.rare = ItemRarityID.Blue;
+            Item.shoot = ModContent.ProjectileType<Projectiles.Ranged.DarkIceball>();
+            Item.shootSpeed = 8f;
+            Item.ammo = AmmoID.Snowball;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe(50);
+            recipe.AddIngredient(ItemID.Snowball, 50);
+            recipe.AddRecipeGroup(RecipeManager.EvilBar);
+            recipe.AddTile(TileID.Anvils);
+            recipe.Register();
+        }
+    }
+}

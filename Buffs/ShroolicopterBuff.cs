@@ -1,0 +1,35 @@
+using NewDawn.Projectiles.Summon;
+using Terraria;
+using Terraria.ModLoader;
+
+namespace NewDawn.Buffs
+{
+	public class ShroolicopterBuff : NewDawnBuff
+	{
+		public override void SetStaticDefaults()
+		{
+            // DisplayName.SetDefault("Shroolicopter");
+            // Description.SetDefault("'Rain Shrooms upon them.'");
+			Main.buffNoTimeDisplay[Type] = true;
+			Main.buffNoSave[Type] = true;
+		}
+		
+		public override void Update(Player player, ref int buffIndex)
+		{
+			NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+			if (player.ownedProjectileCounts[ModContent.ProjectileType<ShroolicopterProjectile>()] > 0)
+			{
+				modPlayer.ShroomCopterSummon = true;
+			}
+			if (!modPlayer.ShroomCopterSummon)
+			{
+				player.DelBuff(buffIndex);
+				buffIndex--;
+			}
+			else
+			{
+				player.buffTime[buffIndex] = 18000;
+			}
+		}
+	}
+}

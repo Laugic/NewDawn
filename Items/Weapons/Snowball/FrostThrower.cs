@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using NewDawn.Control;
 using NewDawn.Projectiles.Ranged;
 using Terraria;
 using Terraria.DataStructures;
@@ -9,18 +10,14 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class FrostThrower : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Fires a stream of frost");
-        }
 
         public override void SetDefaults()
         {
-            Item.damage = 22;
+            Item.damage = 21;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 60;
             Item.height = 38;
-            Item.useTime = Item.useAnimation = 13;
+            Item.useTime = Item.useAnimation = 15;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 8;
@@ -43,9 +40,9 @@ namespace NewDawn.Items.Weapons.Snowball
             float scale = 1.15f - (Main.rand.NextFloat() * .3f);
             perturbedSpeed *= scale;
             if (type == ProjectileID.SnowBallFriendly)
-                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, ModContent.ProjectileType<Frostball>(), damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<Frostball>(), damage, knockback, player.whoAmI);
             else
-                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
 
             return false;
         }
@@ -59,7 +56,7 @@ namespace NewDawn.Items.Weapons.Snowball
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<SMG>());
-            recipe.AddRecipeGroup(nameof(ItemID.MythrilBar), 12);
+            recipe.AddRecipeGroup(RecipeManager.Mythril, 12);
             recipe.AddIngredient(ItemID.FrostCore, 1);
             recipe.AddTile(TileID.IceMachine);
             recipe.Register();

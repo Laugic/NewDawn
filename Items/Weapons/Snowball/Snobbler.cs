@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using NewDawn.Control;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -8,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Snobbler : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Snobbler");
-            // Tooltip.SetDefault("Shoots a burst of snowballs");
-        }
         public override void SetDefaults()
         {
             Item.damage = 11;
@@ -60,7 +56,7 @@ namespace NewDawn.Items.Weapons.Snowball
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Boomstick);
-            recipe.AddRecipeGroup(nameof(ItemID.DemoniteBar), 12);
+            recipe.AddRecipeGroup(RecipeManager.EvilBar, 12);
             recipe.AddIngredient(ItemID.SnowBlock, 20);
             recipe.AddIngredient(ItemID.IceBlock, 20);
             recipe.AddTile(TileID.IceMachine);

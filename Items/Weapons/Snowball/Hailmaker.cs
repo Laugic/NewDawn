@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Hailmaker : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Hailmaker");
-            // Tooltip.SetDefault("Rains snowballs from snowballs");
-        }
 
         public override void SetDefaults()
         {
@@ -21,7 +16,7 @@ namespace NewDawn.Items.Weapons.Snowball
             Item.DamageType = DamageClass.Ranged;
             Item.width = 50;
             Item.height = 26;
-            Item.useAnimation = Item.useTime = 45;
+            Item.useAnimation = Item.useTime = 40;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 2;

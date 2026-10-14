@@ -1,0 +1,33 @@
+using Terraria.ModLoader;
+
+namespace NewDawn.Items.Placeable
+{
+    public class GodRay : NewDawnItem
+    {
+
+        public override void SetDefaults()
+        {
+            Item.width = 16;
+            Item.height = 16;
+            Item.maxStack = 999;
+            Item.useTurn = true;
+            Item.autoReuse = true;
+            Item.useAnimation = 15;
+            Item.useTime = 10;
+            Item.useStyle = 1;
+            Item.consumable = true;
+            Item.value = 0;
+            Item.createTile = ModContent.TileType<Tiles.GodRay>();
+        }
+        /*
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddTile(17);
+            recipe.AddIngredient(ModContent.ItemType<ObsidiumRock>(), 2);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }*/
+
+    }
+}

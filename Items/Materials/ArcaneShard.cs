@@ -7,10 +7,6 @@ namespace NewDawn.Items.Materials
 {
     public class ArcaneShard : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'A shard of magic'\nHeld by monsters in the dungeon");
-        }
 
         public override void SetDefaults()
         {

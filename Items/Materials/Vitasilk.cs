@@ -7,10 +7,6 @@ namespace NewDawn.Items.Materials
 {
     public class Vitasilk : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Cloth of life'");
-        }
 
         public override void SetDefaults()
         {

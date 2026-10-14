@@ -1,6 +1,5 @@
 using Microsoft.Xna.Framework;
 using NewDawn.Projectiles.Ranged;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -10,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class FractalEngine : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Fractal Engine");
-            // Tooltip.SetDefault("66% chance to not consume ammo\n'Compounding'");
-        }
 
         public override void SetDefaults()
         {

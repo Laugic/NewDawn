@@ -43,9 +43,9 @@ namespace NewDawn.Projectiles.Ranged
                 {
                     double theta = Main.rand.NextDouble() * Math.PI * 2;
                     if (player.strongBees && Main.rand.NextBool(3))
-                        Projectile.NewProjectile(Main.player[Projectile.owner].GetSource_FromAI(), Projectile.Center.X - 4 + Main.rand.Next(9), Projectile.Center.Y - 4 + Main.rand.Next(9), 4 * (float)Math.Sin(theta), 4 * (float)Math.Cos(theta), ProjectileID.GiantBee, (int)(Projectile.damage * .8f), 2f, Projectile.owner);
+                        Projectile.NewProjectile(new EntitySource_Parent(Projectile), new Vector2(Projectile.Center.X - 4 + Main.rand.Next(9), Projectile.Center.Y - 4 + Main.rand.Next(9)), new Vector2(4 * (float)Math.Sin(theta), 4 * (float)Math.Cos(theta)), ProjectileID.GiantBee, (int)(Projectile.damage * .8f), 2f, Projectile.owner);
                     else
-                        Projectile.NewProjectile(Main.player[Projectile.owner].GetSource_FromAI(), Projectile.Center.X - 4 + Main.rand.Next(9), Projectile.Center.Y - 4 + Main.rand.Next(9), 4 * (float)Math.Sin(theta), 4 * (float)Math.Cos(theta), ProjectileID.Bee, (int)(Projectile.damage * .4f), 2f, Projectile.owner);
+                        Projectile.NewProjectile(new EntitySource_Parent(Projectile), new Vector2(Projectile.Center.X - 4 + Main.rand.Next(9), Projectile.Center.Y - 4 + Main.rand.Next(9)), new Vector2(4 * (float)Math.Sin(theta), 4 * (float)Math.Cos(theta)), ProjectileID.Bee, (int)(Projectile.damage * .4f), 2f, Projectile.owner);
                 }
             }
             SoundEngine.PlaySound(SoundID.Dig, Projectile.position);

@@ -1,5 +1,4 @@
 ﻿using NewDawn.Items.Alchemistry.Essences;
-using NewDawn.Items.Materials;
 using NewDawn.Tiles;
 using NewDawn.Tiles.Alchemistry;
 using Terraria;
@@ -24,11 +23,11 @@ namespace NewDawn.Items.Alchemistry.Crystals
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.InfernoPotion, 4);
-            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<FireEssence>(), 2);
+            recipe = Recipe.Create(ModContent.ItemType<IgnisEssence>(), 2);
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();

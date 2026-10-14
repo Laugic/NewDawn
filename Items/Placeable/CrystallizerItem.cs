@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -6,11 +7,6 @@ namespace NewDawn.Items.Placeable
 {
     public class CrystallizerItem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Crystallizer");
-            // Tooltip.SetDefault("Crystallize magical liquids");
-        }
 
         public override void SetDefaults()
         {
@@ -31,7 +27,8 @@ namespace NewDawn.Items.Placeable
             Recipe recipe = CreateRecipe();
             recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
             recipe.AddRecipeGroup(RecipeGroupID.Wood, 50);
-            recipe.AddIngredient(ItemID.ManaCrystal, 3);
+            recipe.AddIngredient(ItemID.IceMachine, 1);
+            recipe.AddRecipeGroup(RecipeManager.LargeGems, 1);
             recipe.Register();
         }
     }

@@ -1,19 +1,12 @@
-﻿using NewDawn.Tiles;
-using Terraria;
-using Terraria.ID;
-using NewDawn.Items.Materials;
-using Terraria.ModLoader;
+﻿using NewDawn.Items.Alchemistry.Essences;
 using NewDawn.Tiles.Alchemistry;
-using NewDawn.Items.Alchemistry.Essences;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class AmmoReservationCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("20% chance not to consume ammo");
-        }
 
         public override void CustomDefaults()
         {
@@ -28,16 +21,16 @@ namespace NewDawn.Items.Alchemistry.Crystals
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.AmmoReservationPotion, 4);
-            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<LightEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<AurumEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<ForceEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<FluxEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();

@@ -17,7 +17,7 @@ namespace NewDawn.Items.Temple.Consumables
         public override void SetStaticDefaults()
         {
             ItemID.Sets.ItemNoGravity[Type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

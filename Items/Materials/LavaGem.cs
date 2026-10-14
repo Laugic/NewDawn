@@ -7,10 +7,6 @@ namespace NewDawn.Items.Materials
 {
     public class LavaGem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Crystallized magma'\nHeld by monsters in the burning heat");
-        }
 
         public override void SetDefaults()
         {

@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Blizzard : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("50% chance not to consume ammo");
-        }
 
         public override void SetDefaults()
         {
@@ -50,7 +46,7 @@ namespace NewDawn.Items.Weapons.Snowball
             float scale = 1f - (Main.rand.NextFloat() * .3f);
             perturbedSpeed *= scale;
 
-            Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+            Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
             return false;
         }
 

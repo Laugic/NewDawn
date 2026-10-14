@@ -3,21 +3,15 @@ using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static System.Formats.Asn1.AsnWriter;
 
 namespace NewDawn.Items.Weapons.Snowball
 {
     public class Baller : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Baller");
-            // Tooltip.SetDefault("Chance to shoot multiple snowballs\n'Looks like it's from the Snowman Mafia'");
-        }
 
         public override void SetDefaults()
         {
-            Item.damage = 28;
+            Item.damage = 22;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 50;
             Item.height = 26;

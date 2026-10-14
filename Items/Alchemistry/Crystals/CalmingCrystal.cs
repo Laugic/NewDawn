@@ -1,19 +1,12 @@
-﻿using NewDawn.Tiles;
-using Terraria;
-using Terraria.ID;
-using NewDawn.Items.Materials;
-using Terraria.ModLoader;
+﻿using NewDawn.Items.Alchemistry.Essences;
 using NewDawn.Tiles.Alchemistry;
-using NewDawn.Items.Alchemistry.Essences;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class CalmingCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Decreases enemy spawn rate");
-        }
 
         public override void CustomDefaults()
         {
@@ -22,25 +15,25 @@ namespace NewDawn.Items.Alchemistry.Crystals
 
         public override void UpdateEquip(Player player)
         {
-            player.calmed= true;
+            player.calmed = true;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.CalmingPotion, 4);
-            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<WaterEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<GraceEssence>(), 2);
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<SoulEssence>());
-            recipe.AddIngredient(this);
-            recipe.AddCondition(Demystify);
-            recipe.Register();
+            //recipe = Recipe.Create(ModContent.ItemType<SoulEssence>());
+            //recipe.AddIngredient(this);
+            //recipe.AddCondition(Demystify);
+            //recipe.Register();
         }
     }
 }

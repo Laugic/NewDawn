@@ -1,19 +1,14 @@
-﻿using NewDawn.Tiles;
+﻿using NewDawn.Items.Alchemistry.Essences;
+using NewDawn.Tiles;
+using NewDawn.Tiles.Alchemistry;
 using Terraria;
 using Terraria.ID;
-using NewDawn.Items.Materials;
 using Terraria.ModLoader;
-using NewDawn.Tiles.Alchemistry;
-using NewDawn.Items.Alchemistry.Essences;
 
 namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class ManaRegenerationCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increased mana regeneration");
-        }
 
         public override void CustomDefaults()
         {
@@ -24,22 +19,22 @@ namespace NewDawn.Items.Alchemistry.Crystals
         {
             player.manaRegen += 100;
             player.manaRegenBonus += 100;
-            player.manaRegenDelayBonus+= 30;
+            player.manaRegenDelayBonus += 30;
         }
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.ManaRegenerationPotion, 4);
-            recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
-            recipe.AddTile(null, Crystallizer.name);
+            //recipe.AddIngredient(ModContent.ItemType<Frostpetal>());
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<SoulEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<FluxEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();
 
-            recipe = Recipe.Create(ModContent.ItemType<ChaosEssence>());
+            recipe = Recipe.Create(ModContent.ItemType<VitaEssence>());
             recipe.AddIngredient(this);
             recipe.AddCondition(Demystify);
             recipe.Register();

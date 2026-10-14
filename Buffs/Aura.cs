@@ -1,0 +1,20 @@
+using Terraria;
+
+namespace NewDawn.Buffs
+{
+	public class Aura : NewDawnBuff
+	{
+		public override void SetStaticDefaults()
+		{
+			// DisplayName.SetDefault("Aura");
+			// Description.SetDefault("+10% Max Life");
+			Main.buffNoSave[Type] = false;
+		}
+
+		public override void Update(Player player, ref int buffIndex)
+		{
+            player.statLifeMax2 = (int)(player.statLifeMax2 * 1.1f);
+        }
+        
+	}
+}

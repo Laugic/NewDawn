@@ -7,10 +7,6 @@ namespace NewDawn.Items.Materials
 {
     public class Wagidget : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Ancient goblin technology for sale!'\n'Totally not just random scraps!'");
-        }
 
         public override void SetDefaults()
         {

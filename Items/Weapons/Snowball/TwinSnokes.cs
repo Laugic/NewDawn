@@ -1,5 +1,4 @@
 using Microsoft.Xna.Framework;
-using NewDawn.Projectiles.Ranged;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -9,14 +8,9 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class TwinSnokes : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Twin Snokes");
-            // Tooltip.SetDefault("'Double-headed dragon'");
-        }
         public override void SetDefaults()
         {
-            Item.damage = 42;
+            Item.damage = 38;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 32;
             Item.height = 32;
@@ -44,7 +38,7 @@ namespace NewDawn.Items.Weapons.Snowball
                 Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(15));
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = perturbedSpeed * scale;
-                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
             }
 
             muzzleOffset = Vector2.Normalize(velocity) * -25f;
@@ -56,7 +50,7 @@ namespace NewDawn.Items.Weapons.Snowball
                 Vector2 perturbedSpeed = velocity.RotatedByRandom(MathHelper.ToRadians(15));
                 float scale = 1f - (Main.rand.NextFloat() * .3f);
                 perturbedSpeed = -perturbedSpeed * scale;
-                Projectile.NewProjectile(source, position.X, position.Y, perturbedSpeed.X, perturbedSpeed.Y, type, damage, knockback, player.whoAmI);
+                Projectile.NewProjectile(source,new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), type, damage, knockback, player.whoAmI);
             }
 
             return false;

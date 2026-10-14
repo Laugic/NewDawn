@@ -10,11 +10,6 @@ namespace NewDawn.Items.Weapons.Snowball
     public class UFSnow : ModItem
     {
         public int numShots = 0;
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("U.F.Snow");
-            // Tooltip.SetDefault("Converts normal snowballs into dark iceballs\nDoesn't consume ammo if you're wearing all Meteorite armor");
-        }
         public override void SetDefaults()
         {
             Item.damage = 17;

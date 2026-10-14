@@ -1,5 +1,4 @@
-﻿using System;
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -7,10 +6,6 @@ namespace NewDawn.Items.Materials
 {
     public class Frostpetal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'A magical crystallizing catalyst'\nHeld by monsters in the frigid cold");
-        }
 
         public override void SetDefaults()
         {

@@ -11,10 +11,6 @@ namespace NewDawn.Items.Temple.Consumables
 {
     public class AncientTempleKey : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Allows you to access the ancient temple");
-        }
 
         public override void SetDefaults()
         {

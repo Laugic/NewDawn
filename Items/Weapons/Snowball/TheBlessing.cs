@@ -9,18 +9,13 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class TheBlessing : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Blessing");
-            // Tooltip.SetDefault("Converts some snowballs into blessedballs");
-        }
         public override void SetDefaults()
         {
-            Item.damage = 32;
+            Item.damage = 28;
             Item.DamageType = DamageClass.Ranged;
             Item.width = 46;
             Item.height = 26;
-            Item.useTime = Item.useAnimation = 48;
+            Item.useTime = Item.useAnimation = 45;
             Item.useStyle = ItemUseStyleID.Shoot;
             Item.noMelee = true;
             Item.knockBack = 8;
@@ -28,7 +23,7 @@ namespace NewDawn.Items.Weapons.Snowball
             Item.rare = ItemRarityID.Orange;
             Item.UseSound = SoundID.Item28;
             Item.autoReuse = true;
-            Item.shootSpeed = 8f;
+            Item.shootSpeed = 6f;
             Item.useAmmo = AmmoID.Snowball;
             Item.shoot = ProjectileID.SnowBallFriendly;
         }

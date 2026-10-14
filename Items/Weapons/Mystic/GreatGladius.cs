@@ -1,0 +1,96 @@
+using Microsoft.Xna.Framework;
+using NewDawn.Projectiles.Mystic.Conjuration;
+using NewDawn.Projectiles.Special;
+using Terraria;
+using Terraria.ID;
+using Terraria.ModLoader;
+
+namespace NewDawn.Items.Weapons.Mystic
+{
+    public class GreatGladius : MysticItem
+    {
+
+        public override void SetMysticDefaults()
+        {
+            Item.damage = 1500;
+            Item.width = 70;
+            Item.height = 70;
+            Item.useTime = 18;
+            Item.useAnimation = 18;
+            Item.useStyle = 1;
+            Item.noMelee = false;
+            Item.knockBack = 2;
+            Item.value = 10000;
+            Item.rare = ItemRarityID.Cyan;
+            Item.UseSound = SoundID.Item1;
+            Item.autoReuse = true;
+            Item.shootSpeed = 6f;
+            Item.scale = 1.5f;
+        }
+
+        public override bool MysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
+        {
+            Vector2 velocity = new Vector2(speedX, speedY);
+            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode != global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
+                return true;
+            else return false;
+        }
+
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
+        {
+            Item.damage = 2000;
+            Item.useTime = 26;
+            Item.useAnimation = Item.useTime;
+            Item.knockBack = 8;
+            Item.shootSpeed = 4f;
+            Item.shoot = ModContent.ProjectileType<Nothing>();
+            Item.scale = 2.25f;
+        }
+
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
+        {
+            Item.damage = 1500;
+            Item.useTime = 20;
+            Item.useAnimation = 20;
+            Item.knockBack = 4;
+            Item.shootSpeed = 12f;
+            Item.shoot = ProjectileID.Daybreak;
+            Item.scale = 1.5f;
+        }
+
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
+        {
+            Item.damage = 1000;
+            Item.useTime = 45;
+            Item.useAnimation = 45;
+            Item.knockBack = 2;
+            Item.shootSpeed = 8f;
+            Item.shoot = ModContent.ProjectileType<Nothing>();
+            Item.scale = 2f;
+        }
+
+        public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
+        {
+            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
+                target.AddBuff(BuffID.Daybreak, (int)(4 * 60 * mysticPlayer.MysticDuration));
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
+            {
+                if (Main.player[Main.myPlayer] == player && player.ownedProjectileCounts[ModContent.ProjectileType<GreatGladiusConjuration1>()] < 2)
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<GreatGladiusConjuration1>(), hit.Damage, hit.Knockback, Main.myPlayer);
+            }
+        }
+        /*
+        public override void AddRecipes()
+        {
+            ModRecipe recipe = new ModRecipe(mod);
+            recipe.AddIngredient(3467, 16);
+            recipe.AddIngredient(ModContent.ItemType<GalacticFragment>(), 8);
+            recipe.AddTile(412);
+            recipe.SetResult(this);
+            recipe.AddRecipe();
+        }*/
+    }
+}

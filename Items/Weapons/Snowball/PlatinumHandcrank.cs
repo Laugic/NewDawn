@@ -7,10 +7,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class PlatinumHandcrank : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Platinum Handcrank");
-        }
         public override void SetDefaults()
         {
             Item.damage = 17;

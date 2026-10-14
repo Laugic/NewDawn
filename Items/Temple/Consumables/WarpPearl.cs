@@ -1,6 +1,4 @@
 using Microsoft.Xna.Framework;
-using NewDawn.Abstracts;
-using System;
 using Terraria;
 using Terraria.DataStructures;
 using Terraria.ID;
@@ -10,10 +8,6 @@ namespace NewDawn.Items.Temple.Consumables
 {
     public class WarpPearl : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Teleports you to where it lands");
-        }
 
         public override void SetDefaults()
         {

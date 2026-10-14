@@ -1,434 +1,435 @@
-Biomes: {
-	TempleBiome: {
-		DisplayName: Temple Biome
-		TownNPCDialogueName: the Temple Biome
-	}
+Misc: {
+	ModName: New Dawn
+	ModDescription: A mod about snowballs and potion crystals and stuff (so far)
 }
 
-Tiles: {
-	Crystallizer.MapEntry: Crystallizer
-	Demyst.MapEntry: Demyst
-	LaugicalWorkbench.MapEntry: Laugical Workbench
-	Smelter.MapEntry: Smelter
-	TempleEntrance.MapEntry: Temple Entrance
-	TestTriggerTile.MapEntry: Test Trigger Tile
-	KeystoneTile.MapEntry: Keystone Tile
-	ExitStairs.MapEntry: Exit Stairs
-}
+Recipes.LargeGems: Large Gems
+
+// ==================================================
+// AUTO-GENERATED LOCALIZATION
+// ==================================================
 
 Items: {
-	IceCrown: {
-		DisplayName: Ice Crown
-		Tooltip: "7% increased melee and ranged critical strike chance\n7% increased melee and ranged damage\n7% increased snowball damage\n'The authority of the snow'"
+	PureVitaCrystal: {
+		DisplayName: Pure Vita Crystal
+		Tooltip:
+			'''
+			+20% max life
+			Whenever you would die, if you have over 100 max life, gain a Fatality charge and heal to full instead
+			Your max life is halved for each Fatality charge you have
+			Healing Potions no longer heal you - they instead reduce a Fatality charge
+			'''
 	}
 
-	Alabaster: {
-		DisplayName: Alabaster
+	FrigidCrystal: {
+		DisplayName: Frigid Crystal
+		Tooltip: Magical Catalyst for condensing and purifying essences
+	}
+
+	Fizzle: {
+		DisplayName: Fizzle
+		Tooltip:
+			'''
+			Right Click to break placed Potion Crystals down into their component Essences.
+			'Fission Chisel'
+			'''
+	}
+
+	Fissionite: {
+		DisplayName: Fissionite
 		Tooltip: ""
 	}
 
-	AmmoReservationCrystal: {
-		DisplayName: Ammo Reservation Crystal
+	IgnisEssence: {
+		DisplayName: Ignis Essence
+		Tooltip: The essence of Fire and Fury
+	}
+
+	NeptusEssence: {
+		DisplayName: Neptus Essence
+		Tooltip: The essence of Water and Force
+	}
+
+	TerronEssence: {
+		DisplayName: Terron Essence
+		Tooltip: The essence of Nature and Hardiness
+	}
+
+	HermusEssence: {
+		DisplayName: Hermus Essence
+		Tooltip: The essence of Air and Speed
+	}
+
+	VitaEssence: {
+		DisplayName: Vita Essence
+		Tooltip: The essence of Life and Restoration
+	}
+
+	LumaEssence: {
+		DisplayName: Luma Essence
+		Tooltip: The essence of Light and Sight
+	}
+
+	FluxEssence: {
+		DisplayName: Flux Essence
+		Tooltip: The essence of Chaos and Magic
+	}
+
+	MaliceEssence: {
+		DisplayName: Malice Essence
+		Tooltip: The essence of Evil and Corruption
+	}
+
+	GraceEssence: {
+		DisplayName: Grace Essence
+		Tooltip: The essence of Goodness and Purity
+	}
+
+	AurumEssence: {
+		DisplayName: Aurum Essence
+		Tooltip: The essence of Value and Treasure
+	}
+
+	AbsoluteZero: {
+		DisplayName: Absolute Zero
+		Tooltip:
+			'''
+			66% chance not to consume ammo
+			'I am beneath you, but nothing is beneath me'
+			'''
+	}
+
+	AbstractStorageItem: {
+		DisplayName: Abstract Storage Item
 		Tooltip: ""
 	}
 
-	ArcheryCrystal: {
-		DisplayName: Archery Crystal
+	AbstractStorageTile: {
+		DisplayName: Abstract Storage Tile
 		Tooltip: ""
 	}
 
-	BattleCrystal: {
-		DisplayName: Battle Crystal
-		Tooltip: ""
-	}
-
-	BuilderCrystal: {
-		DisplayName: Builder Crystal
-		Tooltip: ""
-	}
-
-	CalmingCrystal: {
-		DisplayName: Calming Crystal
-		Tooltip: ""
-	}
-
-	CrateCrystal: {
-		DisplayName: Crate Crystal
-		Tooltip: ""
-	}
-
-	DangersenseCrystal: {
-		DisplayName: Dangersense Crystal
-		Tooltip: ""
-	}
-
-	EnduranceCrystal: {
-		DisplayName: Endurance Crystal
-		Tooltip: ""
-	}
-
-	FeatherfallCrystal: {
-		DisplayName: Featherfall Crystal
-		Tooltip: ""
-	}
-
-	FishingCrystal: {
-		DisplayName: Fishing Crystal
-		Tooltip: ""
-	}
-
-	FlipperCrystal: {
-		DisplayName: Flipper Crystal
-		Tooltip: ""
-	}
-
-	GillsCrystal: {
-		DisplayName: Gills Crystal
-		Tooltip: ""
-	}
-
-	GravitationCrystal: {
-		DisplayName: Gravitation Crystal
-		Tooltip: ""
-	}
-
-	HeartreachCrystal: {
-		DisplayName: Heartreach Crystal
-		Tooltip: ""
-	}
-
-	HunterCrystal: {
-		DisplayName: Hunter Crystal
-		Tooltip: ""
-	}
-
-	InfernoCrystal: {
-		DisplayName: Inferno Crystal
-		Tooltip: ""
-	}
-
-	InvisibilityCrystal: {
-		DisplayName: Invisibility Crystal
-		Tooltip: ""
-	}
-
-	IronskinCrystal: {
-		DisplayName: Ironskin Crystal
-		Tooltip: ""
-	}
-
-	LifeforceCrystal: {
-		DisplayName: Lifeforce Crystal
-		Tooltip: ""
-	}
-
-	MagicPowerCrystal: {
-		DisplayName: Magic Power Crystal
-		Tooltip: ""
-	}
-
-	ManaRegenerationCrystal: {
-		DisplayName: Mana Regeneration Crystal
-		Tooltip: ""
-	}
-
-	MiningCrystal: {
-		DisplayName: Mining Crystal
-		Tooltip: ""
-	}
-
-	NightOwlCrystal: {
-		DisplayName: Night Owl Crystal
-		Tooltip: ""
-	}
-
-	ObsidianSkinCrystal: {
-		DisplayName: Obsidian Skin Crystal
-		Tooltip: ""
-	}
-
-	RageCrystal: {
-		DisplayName: Rage Crystal
-		Tooltip: ""
-	}
-
-	RegenerationCrystal: {
-		DisplayName: Regeneration Crystal
-		Tooltip: ""
-	}
-
-	ShineCrystal: {
-		DisplayName: Shine Crystal
-		Tooltip: ""
-	}
-
-	SonarCrystal: {
-		DisplayName: Sonar Crystal
-		Tooltip: ""
-	}
-
-	SpelunkerCrystal: {
-		DisplayName: Spelunker Crystal
-		Tooltip: ""
-	}
-
-	SummoningCrystal: {
-		DisplayName: Summoning Crystal
-		Tooltip: ""
-	}
-
-	SwiftnessCrystal: {
-		DisplayName: Swiftness Crystal
-		Tooltip: ""
-	}
-
-	ThornsCrystal: {
-		DisplayName: Thorns Crystal
-		Tooltip: ""
-	}
-
-	TitanCrystal: {
-		DisplayName: Titan Crystal
-		Tooltip: ""
-	}
-
-	WarmthCrystal: {
-		DisplayName: Warmth Crystal
-		Tooltip: ""
-	}
-
-	WaterWalkingCrystal: {
-		DisplayName: Water Walking Crystal
-		Tooltip: ""
-	}
-
-	WrathCrystal: {
-		DisplayName: Wrath Crystal
+	AccessoryPlayer: {
+		DisplayName: Accessory Player
 		Tooltip: ""
 	}
 
 	AirEssence: {
 		DisplayName: Air Essence
-		Tooltip: ""
+		Tooltip: The essence of Speed and Potential
 	}
 
 	AirInfusion: {
 		DisplayName: Air Infusion
-		Tooltip: ""
+		Tooltip:
+			'''
+			20% increased movement speed and running speed
+			Double tap to dash
+			Jump higher and fall slower
+			'''
 	}
 
-	ChaosEssence: {
-		DisplayName: Chaos Essence
-		Tooltip: ""
+	Alabaster: {
+		DisplayName: Alabaster
+		Tooltip: Can store 3 stacks of items
 	}
 
-	ChaosInfusion: {
-		DisplayName: Chaos Infusion
-		Tooltip: ""
+	AmmoReservationCrystal: {
+		DisplayName: Ammo Reservation Crystal
+		Tooltip: 20% chance not to consume ammo
 	}
 
-	EarthEssence: {
-		DisplayName: Earth Essence
-		Tooltip: ""
-	}
-
-	EarthInfusion: {
-		DisplayName: Earth Infusion
-		Tooltip: ""
-	}
-
-	FireEssence: {
-		DisplayName: Fire Essence
-		Tooltip: ""
-	}
-
-	FireInfusion: {
-		DisplayName: Fire Infusion
-		Tooltip: ""
-	}
-
-	ForceEssence: {
-		DisplayName: Force Essence
-		Tooltip: ""
-	}
-
-	ForceInfusion: {
-		DisplayName: Force Infusion
-		Tooltip: ""
-	}
-
-	LightEssence: {
-		DisplayName: Light Essence
-		Tooltip: ""
-	}
-
-	LightInfusion: {
-		DisplayName: Light Infusion
-		Tooltip: ""
-	}
-
-	SoulEssence: {
-		DisplayName: Soul Essence
-		Tooltip: ""
-	}
-
-	SoulInfusion: {
-		DisplayName: Soul Infusion
-		Tooltip: ""
-	}
-
-	WaterEssence: {
-		DisplayName: Water Essence
-		Tooltip: ""
-	}
-
-	WaterInfusion: {
-		DisplayName: Water Infusion
-		Tooltip: ""
-	}
-
-	GemBelt: {
-		DisplayName: Gem Belt
-		Tooltip: ""
-	}
-
-	InfusionCrystal: {
-		DisplayName: Infusion Crystal
-		Tooltip: ""
-	}
-
-	ShroomiteHood: {
-		DisplayName: Shroomite Hood
-		Tooltip: ""
-	}
-
-	ArcaneShard: {
-		DisplayName: Arcane Shard
-		Tooltip: ""
-	}
-
-	Frostpetal: {
-		DisplayName: Frostpetal
-		Tooltip: ""
-	}
-
-	LavaGem: {
-		DisplayName: Lava Gem
-		Tooltip: ""
-	}
-
-	Vitasilk: {
-		DisplayName: Vitasilk
-		Tooltip: ""
-	}
-
-	Wagidget: {
-		DisplayName: Wagidget
-		Tooltip: ""
-	}
-
-	CrystallizerItem: {
-		DisplayName: Crystallizer Item
-		Tooltip: ""
-	}
-
-	DemystBlock: {
-		DisplayName: Demyst Block
-		Tooltip: ""
-	}
-
-	LaugicalWorkbench: {
-		DisplayName: Laugical Workbench
-		Tooltip: ""
-	}
-
-	SmelterItem: {
-		DisplayName: Smelter Item
-		Tooltip: ""
-	}
-
-	TempleEntrance: {
-		DisplayName: Temple Entrance
+	AmmoReservationTile: {
+		DisplayName: Ammo Reservation Tile
 		Tooltip: ""
 	}
 
 	AncientTempleKey: {
 		DisplayName: Ancient Temple Key
-		Tooltip: ""
+		Tooltip: Allows you to access the ancient temple
 	}
 
-	WarpPearl: {
-		DisplayName: Warp Pearl
-		Tooltip: ""
+	ArcaneShard: {
+		DisplayName: Arcane Shard
+		Tooltip:
+			'''
+			'A shard of magic'
+			Held by monsters in the dungeon
+			'''
 	}
 
-	SnowScoop: {
-		DisplayName: Snow Scoop
-		Tooltip: ""
+	ArcheryCrystal: {
+		DisplayName: Archery Crystal
+		Tooltip: 10% increased ranged damage
 	}
 
-	DarkIceball: {
-		DisplayName: Dark Iceball
-		Tooltip: ""
-	}
-
-	Hiveball: {
-		DisplayName: Hiveball
-		Tooltip: ""
-	}
-
-	Pearlsandball: {
-		DisplayName: Pearlsandball
-		Tooltip: ""
-	}
-
-	SnowPile: {
-		DisplayName: Snow Pile
-		Tooltip: ""
-	}
-
-	Sootball: {
-		DisplayName: Sootball
-		Tooltip: ""
-	}
-
-	Spiritball: {
-		DisplayName: Spiritball
-		Tooltip: ""
-	}
-
-	YellowSnowball: {
-		DisplayName: Yellow Snowball
-		Tooltip: ""
-	}
-
-	AbsoluteZero: {
-		DisplayName: Absolute Zero
+	ArcheryTile: {
+		DisplayName: Archery Tile
 		Tooltip: ""
 	}
 
 	Avalanche: {
 		DisplayName: Avalanche
-		Tooltip: ""
+		Tooltip:
+			'''
+			50% chance not to consume ammo
+			'Look out below!'
+			'''
 	}
 
 	Baller: {
 		DisplayName: Baller
+		Tooltip:
+			'''
+			Chance to shoot multiple snowballs
+			'Looks like it's from the Snowman Mafia'
+			'''
+	}
+
+	BattleCrystal: {
+		DisplayName: Battle Crystal
+		Tooltip: Increases enemy spawn rate
+	}
+
+	BattleTile: {
+		DisplayName: Battle Tile
 		Tooltip: ""
 	}
 
 	Blizzard: {
 		DisplayName: Blizzard
+		Tooltip: 50% chance not to consume ammo
+	}
+
+	BuilderCrystal: {
+		DisplayName: Builder Crystal
+		Tooltip: Increases placement speed and range
+	}
+
+	BuilderTile: {
+		DisplayName: Builder Tile
 		Tooltip: ""
+	}
+
+	CalmingCrystal: {
+		DisplayName: Calming Crystal
+		Tooltip: Decreases enemy spawn rate
+	}
+
+	CalmingTile: {
+		DisplayName: Calming Tile
+		Tooltip: ""
+	}
+
+	ChaosEssence: {
+		DisplayName: Chaos Essence
+		Tooltip: The essence of Magic and the Unknowable
+	}
+
+	ChaosInfusion: {
+		DisplayName: Chaos Infusion
+		Tooltip:
+			'''
+			+40 max mana
+			Enemies are more likely to spawn and target you
+			20% chance not to consume ammo
+			'''
+	}
+
+	CrateCrystal: {
+		DisplayName: Crate Crystal
+		Tooltip: Increases chance to get a crate
+	}
+
+	CrateTile: {
+		DisplayName: Crate Tile
+		Tooltip: ""
+	}
+
+	CrystallizerItem: {
+		DisplayName: Crystallizer
+		Tooltip: Crystallize magical liquids
+	}
+
+	CrystalTile: {
+		DisplayName: Crystal Tile
+		Tooltip: ""
+	}
+
+	DangersenseCrystal: {
+		DisplayName: Dangersense Crystal
+		Tooltip: Allows you to see nearby danger sources
+	}
+
+	DangersenseTile: {
+		DisplayName: Dangersense Tile
+		Tooltip: ""
+	}
+
+	DarkIceball: {
+		DisplayName: Dark Iceball
+		Tooltip: Pierces enemies
+	}
+
+	DemystBlock: {
+		DisplayName: Demyst Block
+		Tooltip:
+			'''
+			When placed, right click or activate with wire to break Potion Crystals placed above into Essences
+			Demystifying!
+			'''
+	}
+
+	EarthEssence: {
+		DisplayName: Earth Essence
+		Tooltip: The essence of Sturdiness and Nature
+	}
+
+	EarthInfusion: {
+		DisplayName: Earth Infusion
+		Tooltip:
+			'''
+			6 defense
+			Grants immunity to knockback
+			+25% mining and building speed
+			'''
+	}
+
+	EnduranceCrystal: {
+		DisplayName: Endurance Crystal
+		Tooltip: Reduces damage taken by 10%
+	}
+
+	EnduranceTile: {
+		DisplayName: Endurance Tile
+		Tooltip: ""
+	}
+
+	Essence: {
+		DisplayName: Essence
+		Tooltip: ""
+	}
+
+	ExploreRoom: {
+		DisplayName: Explore Room
+		Tooltip: ""
+	}
+
+	FeatherfallCrystal: {
+		DisplayName: Featherfall Crystal
+		Tooltip: Slows falling speed
+	}
+
+	FeatherfallTile: {
+		DisplayName: Featherfall Tile
+		Tooltip: ""
+	}
+
+	FireEssence: {
+		DisplayName: Fire Essence
+		Tooltip: The essence of Heat and Power
+	}
+
+	FireInfusion: {
+		DisplayName: Fire Infusion
+		Tooltip:
+			'''
+			8% increased critical strike chance
+			Grants immunity to fire and lava
+			Attacks set enemies on fire
+			'''
+	}
+
+	FishingCrystal: {
+		DisplayName: Fishing Crystal
+		Tooltip: 15% increased fishing power
+	}
+
+	FishingTile: {
+		DisplayName: Fishing Tile
+		Tooltip: ""
+	}
+
+	FlipperCrystal: {
+		DisplayName: Flipper Crystal
+		Tooltip: Allows you to swim and grants better mobility in liquids
+	}
+
+	FlipperTile: {
+		DisplayName: Flipper Tile
+		Tooltip: ""
+	}
+
+	ForceEssence: {
+		DisplayName: Force Essence
+		Tooltip: The essence of Magnitude and Energy
+	}
+
+	ForceInfusion: {
+		DisplayName: Force Infusion
+		Tooltip:
+			'''
+			8% increased damage
+			+1 max minion
+			Increases knockback by 33%
+			'''
 	}
 
 	FractalEngine: {
 		DisplayName: Fractal Engine
-		Tooltip: ""
+		Tooltip:
+			'''
+			66% chance to not consume ammo
+			'Compounding'
+			'''
+	}
+
+	Frostpetal: {
+		DisplayName: Frostpetal
+		Tooltip:
+			'''
+			'A magical crystallizing catalyst'
+			Held by monsters in the deep frigid cold
+			'''
 	}
 
 	FrostThrower: {
 		DisplayName: Frost Thrower
+		Tooltip: Fires a stream of frost
+	}
+
+	FullFloor: {
+		DisplayName: Full Floor
+		Tooltip: ""
+	}
+
+	GemBelt: {
+		DisplayName: Gem Belt
+		Tooltip: Can hold multiple Potion Crystals
+	}
+
+	GillsCrystal: {
+		DisplayName: Gills Crystal
+		Tooltip: You can breathe water
+	}
+
+	GillsTile: {
+		DisplayName: Gills Tile
+		Tooltip: ""
+	}
+
+	GlobalNPCs: {
+		DisplayName: Global N P Cs
+		Tooltip: ""
+	}
+
+	GlobalTempleNPCs: {
+		DisplayName: Global Temple N P Cs
+		Tooltip: ""
+	}
+
+	GoldenTempleKey: {
+		DisplayName: Golden Temple Key
 		Tooltip: ""
 	}
 
@@ -437,49 +438,364 @@ Items: {
 		Tooltip: ""
 	}
 
-	Gravitron9000: {
-		DisplayName: Gravitron9000
+	GravitationCrystal: {
+		DisplayName: Gravitation Crystal
+		Tooltip: Allows the control of gravity
+	}
+
+	GravitationTile: {
+		DisplayName: Gravitation Tile
 		Tooltip: ""
+	}
+
+	Gravitron9000: {
+		DisplayName: Gravitron 9000
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Converts normal snowballs into Graviballs
+			'''
 	}
 
 	Hailmaker: {
 		DisplayName: Hailmaker
+		Tooltip: Rains snowballs from snowballs
+	}
+
+	HeartreachCrystal: {
+		DisplayName: Heartreach Crystal
+		Tooltip: Increases pickup range for life hearts
+	}
+
+	HeartreachTile: {
+		DisplayName: Heartreach Tile
+		Tooltip: ""
+	}
+
+	Hiveball: {
+		DisplayName: Hiveball
+		Tooltip: "'Beeball'"
+	}
+
+	HunterCrystal: {
+		DisplayName: Hunter Crystal
+		Tooltip: Shows the location of creatures
+	}
+
+	HunterTile: {
+		DisplayName: Hunter Tile
+		Tooltip: ""
+	}
+
+	IceCrown: {
+		DisplayName: Ice Crown
+		Tooltip:
+			'''
+			7% increased melee and ranged critical strike chance
+			7% increased snowball damage
+			'The authority of the snow'
+			'''
+	}
+
+	InfernoCrystal: {
+		DisplayName: Inferno Crystal
+		Tooltip: ""
+	}
+
+	InfernoTile: {
+		DisplayName: Inferno Tile
+		Tooltip: ""
+	}
+
+	InfusionCrystal: {
+		DisplayName: Infusion Crystal
+		Tooltip: ""
+	}
+
+	InvisibilityCrystal: {
+		DisplayName: Invisibility Crystal
+		Tooltip: "'You can't see me.'"
+	}
+
+	InvisibilityTile: {
+		DisplayName: Invisibility Tile
+		Tooltip: ""
+	}
+
+	IronskinCrystal: {
+		DisplayName: Ironskin Crystal
+		Tooltip: ""
+	}
+
+	IronskinTile: {
+		DisplayName: Ironskin Tile
+		Tooltip: ""
+	}
+
+	ItemStorageSlot: {
+		DisplayName: Item Storage Slot
+		Tooltip: ""
+	}
+
+	ItemStorageUI: {
+		DisplayName: Item Storage U I
+		Tooltip: ""
+	}
+
+	Keystone: {
+		DisplayName: Keystone
+		Tooltip: ""
+	}
+
+	LaugicalWorkbench: {
+		DisplayName: Laugical Workbench
+		Tooltip:
+			'''
+			For crafting things to craft things. 
+			'It's completely laugical!'
+			'''
+	}
+
+	LavaGem: {
+		DisplayName: Lava Gem
+		Tooltip:
+			'''
+			'Crystallized magma'
+			Held by monsters in the burning heat
+			'''
+	}
+
+	LifeforceCrystal: {
+		DisplayName: Lifeforce Crystal
+		Tooltip: Increases max life by 20%
+	}
+
+	LifeforceTile: {
+		DisplayName: Lifeforce Tile
+		Tooltip: ""
+	}
+
+	LightEssence: {
+		DisplayName: Light Essence
+		Tooltip: The essence of Knowledge and Illumination
+	}
+
+	LightInfusion: {
+		DisplayName: Light Infusion
+		Tooltip:
+			'''
+			Shows the location of treasure and ore
+			Emits light and increases night vision
+			Shows the location of creatures and danger sources
+			'''
+	}
+
+	MagicPowerCrystal: {
+		DisplayName: Magic Power Crystal
+		Tooltip: 10% increased magic damage
+	}
+
+	MagicPowerTile: {
+		DisplayName: Magic Power Tile
+		Tooltip: ""
+	}
+
+	ManaRegenerationCrystal: {
+		DisplayName: Mana Regeneration Crystal
+		Tooltip: Increased mana regeneration
+	}
+
+	ManaRegenerationTile: {
+		DisplayName: Mana Regeneration Tile
+		Tooltip: ""
+	}
+
+	MiningCrystal: {
+		DisplayName: Mining Crystal
+		Tooltip: Increases mining speed by 25%
+	}
+
+	MiningTile: {
+		DisplayName: Mining Tile
+		Tooltip: ""
+	}
+
+	NewDawn: {
+		DisplayName: New Dawn
+		Tooltip: ""
+	}
+
+	NewDawnGlobalItem: {
+		DisplayName: New Dawn Global Item
+		Tooltip: ""
+	}
+
+	NewDawnGlobalProjectile: {
+		DisplayName: New Dawn Global Projectile
+		Tooltip: ""
+	}
+
+	NewDawnSpiritInterface: {
+		DisplayName: New Dawn Spirit Interface
+		Tooltip: ""
+	}
+
+	NightOwlCrystal: {
+		DisplayName: Night Owl Crystal
+		Tooltip: Increases night vision
+	}
+
+	NightOwlTile: {
+		DisplayName: Night Owl Tile
+		Tooltip: ""
+	}
+
+	ObsidianSkinCrystal: {
+		DisplayName: Obsidian Skin Crystal
+		Tooltip: Provides immunity to fire and lava
+	}
+
+	ObsidianSkinTile: {
+		DisplayName: Obsidian Skin Tile
+		Tooltip: ""
+	}
+
+	ParkourRoom: {
+		DisplayName: Parkour Room
+		Tooltip: ""
+	}
+
+	Pearlsandball: {
+		DisplayName: Pearlsandball
+		Tooltip: Dense and fast
+	}
+
+	Pitfall: {
+		DisplayName: Pitfall
 		Tooltip: ""
 	}
 
 	PlatinumHandcrank: {
 		DisplayName: Platinum Handcrank
+		Tooltip: Cranks snowballs
+	}
+
+	PotionCrystal: {
+		DisplayName: Potion Crystal
 		Tooltip: ""
+	}
+
+	RageCrystal: {
+		DisplayName: Rage Crystal
+		Tooltip: Increases critical strike chance by 10%
+	}
+
+	RageTile: {
+		DisplayName: Rage Tile
+		Tooltip: ""
+	}
+
+	RecipeManager: {
+		DisplayName: Recipe Manager
+		Tooltip: ""
+	}
+
+	RegenerationCrystal: {
+		DisplayName: Regeneration Crystal
+		Tooltip: Provides life regeneration
+	}
+
+	RegenerationTile: {
+		DisplayName: Regeneration Tile
+		Tooltip: ""
+	}
+
+	Sanctuary: {
+		DisplayName: Sanctuary
+		Tooltip: ""
+	}
+
+	ShineCrystal: {
+		DisplayName: Shine Crystal
+		Tooltip: Emits an aura of light
+	}
+
+	ShineTile: {
+		DisplayName: Shine Tile
+		Tooltip: ""
+	}
+
+	ShroomiteHood: {
+		DisplayName: Shroomite Hood
+		Tooltip:
+			'''
+			15% increased snowball damage
+			5% increased ranged critical strike chance
+			'''
 	}
 
 	Slinger: {
 		DisplayName: Slinger
-		Tooltip: ""
+		Tooltip: Slings snowballs
 	}
 
 	Slynger: {
 		DisplayName: Slynger
+		Tooltip: Slyngs snowballs
+	}
+
+	Smelter: {
+		DisplayName: Smelter
+		Tooltip: ""
+	}
+
+	SmelterItem: {
+		DisplayName: Smelter
+		Tooltip: Melts items you place inside
+	}
+
+	SmelterTileEntity: {
+		DisplayName: Smelter Tile Entity
 		Tooltip: ""
 	}
 
 	SMG: {
-		DisplayName: S. M. G.
-		Tooltip: ""
+		DisplayName: S.M.G.
+		Tooltip:
+			'''
+			'Snow Machine Gun'
+			20% chance not to consume ammo
+			'Shouldn't the snow be melting-?'
+			'''
 	}
 
 	Snobbler: {
 		DisplayName: Snobbler
-		Tooltip: ""
+		Tooltip: Shoots a burst of snowballs
 	}
 
 	SnowBlower: {
 		DisplayName: Snow Blower
-		Tooltip: ""
+		Tooltip:
+			'''
+			Blows a barrge of brrs
+			Shoots an additional stream of frostballs
+			'''
 	}
 
 	SnowperIceful: {
 		DisplayName: Snowper Iceful
+		Tooltip: Shoots a powerful, high velocity snowball
+	}
+
+	SnowPile: {
+		DisplayName: Endless Snow Pile
 		Tooltip: ""
+	}
+
+	SnowScoop: {
+		DisplayName: The Scoop Mk II
+		Tooltip: Gathers snowballs from blocks
 	}
 
 	Snowshot: {
@@ -487,38 +803,2967 @@ Items: {
 		Tooltip: ""
 	}
 
+	SonarCrystal: {
+		DisplayName: Sonar Crystal
+		Tooltip: Detects hooked fish
+	}
+
+	SonarTile: {
+		DisplayName: Sonar Tile
+		Tooltip: ""
+	}
+
+	Sootball: {
+		DisplayName: Sootball
+		Tooltip: Sets enemies on fire
+	}
+
+	Soot: {
+		DisplayName: Soot
+		Tooltip: Can be used in the Extractinator
+	}
+
+	SoulEssence: {
+		DisplayName: Soul Essence
+		Tooltip: The essence of Life and Restoration
+	}
+
+	SoulInfusion: {
+		DisplayName: Soul Infusion
+		Tooltip:
+			'''
+			+40 maximum life
+			Increases life and mana regeneration
+			Hearts heal an additional 20 life upon pickup
+			'''
+	}
+
+	Soul: {
+		DisplayName: Soul
+		Tooltip: Restores Potentia and gives the Reaper buff.
+	}
+
+	SpelunkerCrystal: {
+		DisplayName: Spelunker Crystal
+		Tooltip: Shows the location of treasure and ore
+	}
+
+	SpelunkerTile: {
+		DisplayName: Spelunker Tile
+		Tooltip: ""
+	}
+
 	SpineChiller: {
 		DisplayName: Spine Chiller
+		Tooltip:
+			'''
+			Shoots down in an area around your cursor
+			80% chance not to consume ammo
+			'''
+	}
+
+	Spiritball: {
+		DisplayName: Spiritball
+		Tooltip: Flies back towards you
+	}
+
+	SpiritBarUIOLD: {
+		DisplayName: Spirit Bar U I O L D
+		Tooltip: ""
+	}
+
+	SpiritPlayer: {
+		DisplayName: Spirit Player
+		Tooltip: ""
+	}
+
+	SpriteProgressBar: {
+		DisplayName: Sprite Progress Bar
+		Tooltip: ""
+	}
+
+	SummoningCrystal: {
+		DisplayName: Summoning Crystal
+		Tooltip: Increases your max number of minions by 1
+	}
+
+	SummoningTile: {
+		DisplayName: Summoning Tile
+		Tooltip: ""
+	}
+
+	SwiftnessCrystal: {
+		DisplayName: Swiftness Crystal
+		Tooltip: 25% increased movement speed
+	}
+
+	SwiftnessTile: {
+		DisplayName: Swiftness Tile
+		Tooltip: ""
+	}
+
+	TempleBiome: {
+		DisplayName: Ancient Temple
+		Tooltip: ""
+	}
+
+	TempleEntrance: {
+		DisplayName: Temple Entrance
+		Tooltip: How did you get this
+	}
+
+	TempleWorld: {
+		DisplayName: Temple World
+		Tooltip: ""
+	}
+
+	TestRoom: {
+		DisplayName: Test Room
 		Tooltip: ""
 	}
 
 	TheBlessing: {
 		DisplayName: The Blessing
+		Tooltip: Converts some snowballs into blessedballs
+	}
+
+	ThornsCrystal: {
+		DisplayName: Thorns Crystal
+		Tooltip: Attackers also take damage
+	}
+
+	ThornsTile: {
+		DisplayName: Thorns Tile
+		Tooltip: ""
+	}
+
+	TitanCrystal: {
+		DisplayName: Titan Crystal
+		Tooltip: Increases knockback by 50%
+	}
+
+	TitanTile: {
+		DisplayName: Titan Tile
 		Tooltip: ""
 	}
 
 	TwinSnokes: {
 		DisplayName: Twin Snokes
-		Tooltip: ""
+		Tooltip: "'Double-headed dragon'"
 	}
 
 	UFSnow: {
-		DisplayName: U F Snow
+		DisplayName: U.F.Snow
+		Tooltip:
+			'''
+			Converts normal snowballs into dark iceballs
+			Doesn't consume ammo if you're wearing all Meteorite armor
+			'''
+	}
+
+	UIPlayer: {
+		DisplayName: U I Player
 		Tooltip: ""
 	}
 
-	Keystone: {
-		DisplayName: Keystone
-		Tooltip: Unlocks the next Temple room with 3 Keystones
+	VariableManager: {
+		DisplayName: Variable Manager
+		Tooltip: ""
 	}
 
-	GoldenTempleKey: {
+	Vitasilk: {
+		DisplayName: Vitasilk
+		Tooltip: "'Cloth of life'"
+	}
+
+	Wagidget: {
+		DisplayName: Wagidget
+		Tooltip:
+			'''
+			'Ancient goblin technology for sale!'
+			'Totally not just random scraps!'
+			'''
+	}
+
+	WarmthCrystal: {
+		DisplayName: Warmth Crystal
+		Tooltip: Reduces damage from cold sources
+	}
+
+	WarmthTile: {
+		DisplayName: Warmth Tile
 		Tooltip: ""
-		DisplayName: Golden Temple Key
+	}
+
+	WarpPearl: {
+		DisplayName: Warp Pearl
+		Tooltip: Teleports you to where it lands
+	}
+
+	WaterEssence: {
+		DisplayName: Water Essence
+		Tooltip: The essence of Sea and Calm
+	}
+
+	WaterInfusion: {
+		DisplayName: Water Infusion
+		Tooltip:
+			'''
+			15% increased fishing power and detects hooked fish
+			Enemies spawn less and target you less
+			Allows you to swim and breathe underwater
+			'''
+	}
+
+	WaterWalkingCrystal: {
+		DisplayName: Water Walking Crystal
+		Tooltip: Allows the ability to walk on water
+	}
+
+	WaterWalkingTile: {
+		DisplayName: Water Walking Tile
+		Tooltip: ""
+	}
+
+	WrathCrystal: {
+		DisplayName: Wrath Crystal
+		Tooltip: Increases damage by 10%
+	}
+
+	WrathTile: {
+		DisplayName: Wrath Tile
+		Tooltip: ""
+	}
+
+	YellowSnowball: {
+		DisplayName: Yellow Snowball
+		Tooltip: Homes in on enemies as it falls
+	}
+
+	FungonsWand: {
+		Tooltip: Unleash the glow
+		DisplayName: Fungon's Wand
+	}
+
+	PureIgnisCrystal: {
+		DisplayName: Pure Ignis Crystal
+		Tooltip:
+			'''
+			Nearby enemies are inflicted with Ablaze on hit
+			Ablaze deals damage over time and makes enemies take 15% more damage
+			'''
+	}
+
+	VulcansWrath: {
+		Tooltip: ""
+		DisplayName: Vulcan's Wrath
+	}
+
+	AntiIceball: {
+		DisplayName: Anti-Iceball
+		Tooltip: Reverse gravity
+	}
+
+	Bloodbolt: {
+		DisplayName: Bloodbolt
+		Tooltip: Heavy, but high damage
+	}
+
+	BoneMesh: {
+		DisplayName: Bone Mesh
+		Tooltip:
+			'''
+			Extractinated bones!
+			Fragment on impact
+			'''
+	}
+
+	BrassArrow: {
+		DisplayName: Brass Arrow
+		Tooltip: Redirects itself on collision.
+	}
+
+	Bysball: {
+		DisplayName: Bysball
+		Tooltip: Dimension warping snowballs
+	}
+
+	Frostball: {
+		DisplayName: Frostball
+		Tooltip:
+			'''
+			Bounces off of enemies
+			Inflicts 'Frostburn'
+			'''
+	}
+
+	IceBall: {
+		DisplayName: Iceball
+		Tooltip: A heavier, but more damaging snowball
+	}
+
+	PinkIceBall: {
+		DisplayName: Pearlfrost Ball
+		Tooltip: The hallowed ice is much lighter, and able to fly much farther.
+	}
+
+	PurpleIceBall: {
+		DisplayName: Ebonchunk
+		Tooltip: The corrupt ice is much thicker, and even able to bounce.
+	}
+
+	RedIceBall: {
+		DisplayName: Crimchunk
+		Tooltip: The crimson ice is much heavier, and more damaging.
+	}
+
+	Shadowshot: {
+		DisplayName: Shadowshot
+		Tooltip: High pierce and bounce
+	}
+
+	Shbl: {
+		DisplayName: Shbl
+		Tooltip: "'Shbl'"
+	}
+
+	Slushball: {
+		DisplayName: Slushball
+		Tooltip: Inflicts 'Slushie', which makes enemies take more damage from snowballs that aren't Slushballs
+	}
+
+	Wavesnow: {
+		DisplayName: Wavesnowball
+		Tooltip: "'Wiggle'"
+	}
+
+	YellowIceBall: {
+		DisplayName: Yellow Snowball
+		Tooltip:
+			'''
+			The yellow snow just wants to be eaten.
+			'Looks tasty'
+			'''
+	}
+
+	AncientArmor: {
+		DisplayName: Ancient Armor
+		Tooltip: Your damage increases based on your Movement Speed.
+	}
+
+	AncientGreaves: {
+		DisplayName: Ancient Greaves
+		Tooltip:
+			'''
+			Innate Sandstorm in a Bottle
+			+15% Movement Speed
+			'''
+	}
+
+	AncientHelmet: {
+		DisplayName: Ancient Helmet
+		Tooltip: Increased Max Run Speed and Jump Height
+	}
+
+	AndesiaLeggings: {
+		DisplayName: Andesia Leggings
+		Tooltip:
+			'''
+			+100% Mystic Duration
+			Increased Max Minions
+			+15% movement speed
+			'''
+	}
+
+	AnDioChestguard: {
+		DisplayName: AnDio Chestguard
+		Tooltip:
+			'''
+			Decreased cooldown between Time Stops
+			You are immune to Time Stop
+			'''
+	}
+
+	AnDioChestplate: {
+		DisplayName: AnDio Chestplate
+		Tooltip:
+			'''
+			Increased duration of Time Stop
+			You are immune to Time Stop
+			'''
+	}
+
+	BysmalBoots: {
+		DisplayName: Bysmal Boots
+		Tooltip:
+			'''
+			+15% Movement Speed
+			+25% More Movement Speed and Max Run Speed when in the Etherial
+			'''
+	}
+
+	BysmalChestguard: {
+		DisplayName: Bysmal Chestguard
+		Tooltip: (20 Defense, +20 Defense when in the Etherial)
+	}
+
+	BysmalMask: {
+		DisplayName: Bysmal Mask
+		Tooltip:
+			'''
+			+10% Damage 
+			+10% Additional Damage when in the Etherial
+			'''
+	}
+
+	DioritusHelmet: {
+		DisplayName: Dioritus Helmet
+		Tooltip:
+			'''
+			+15% Damage
+			+10% critical strike chance
+			'''
+	}
+
+	FrigidChestplate: {
+		DisplayName: Frigid Chestplate
+		Tooltip: +10% Melee Speed and Range Crit Chance
+	}
+
+	FrigidHelmet: {
+		DisplayName: Frigid Helmet
+		Tooltip: +10% Melee and Ranged Damage
+	}
+
+	FrigidLeggings: {
+		DisplayName: Frigid Leggings
+		Tooltip:
+			'''
+			Immunity to Frostburn, Chilled, and Frozen
+			+10% Movement Speed
+			'''
+	}
+
+	JungleMask: {
+		DisplayName: Jungle Hood
+		Tooltip:
+			'''
+			Mystic damage increased by 12%
+			+100% Mystic Duration
+			'''
+	}
+
+	MagmaticBoots: {
+		DisplayName: Magmatic Boots
+		Tooltip:
+			'''
+			+100% Mystic Duration
+			+50%Throwing Velocity
+			+15% Movement Speed
+			Provides waterwalking and free movement in liquids
+			'''
+	}
+
+	MagmaticLongcoat: {
+		DisplayName: Magmatic Longcoat
+		Tooltip:
+			'''
+			Immunity to lava, 'On Fire!', and 'Burning'
+			+10% Throwing critical strike chance
+			'''
+	}
+
+	MagmaticMask: {
+		DisplayName: Magmatic Mask
+		Tooltip: +15% Mystic and Throwing Damage
+	}
+
+	ObsidiumBand: {
+		DisplayName: Obsidium Band
+		Tooltip: +15% Throwing Damage
+	}
+
+	ObsidiumHat: {
+		DisplayName: Obsidium Hat
+		Tooltip: +15% Magic Damage
+	}
+
+	ObsidiumHeadgear: {
+		DisplayName: Obsidium Headgear
+		Tooltip: +15% Ranged Damage
+	}
+
+	ObsidiumHeadguard: {
+		DisplayName: Obsidium Headguard
+		Tooltip: +15% Melee Damage
+	}
+
+	ObsidiumHelmet: {
+		DisplayName: Obsidium Helmet
+		Tooltip: +15% Mystic Damage
+	}
+
+	ObsidiumLongcoat: {
+		DisplayName: Obsidium Longcoat
+		Tooltip: Immunity to lava, 'On Fire!', and 'Burning'
+	}
+
+	ObsidiumMask: {
+		DisplayName: Obsidium Mask
+		Tooltip: +15% Summoning Damage
+	}
+
+	ObsidiumPants: {
+		DisplayName: Obsidium Pants
+		Tooltip:
+			'''
+			Provides waterwalking and free movement in liquids 
+			+10% Movement Speed
+			'''
+	}
+
+	ShroomChest: {
+		DisplayName: Shroom Amalgam
+		Tooltip: +20% Overflow
+	}
+
+	ShroomHelmet: {
+		DisplayName: Shroom Cap
+		Tooltip: +8% Mystic Damage
+	}
+
+	ShroomPants: {
+		DisplayName: Shroom Stalk
+		Tooltip: +10% Movement Speed
+	}
+
+	SteampunkBoots: {
+		DisplayName: Steampunk Boots
+		Tooltip:
+			'''
+			Insulated- Immune to 'Steamy'
+			+10% Movement Speed
+			'''
+	}
+
+	SteampunkHeadgear: {
+		DisplayName: Steampunk Headgear
+		Tooltip: +20% Throwing Damage
+	}
+
+	SteampunkHelmet: {
+		DisplayName: Steampunk Hat
+		Tooltip: +20% Mystic Damage
+	}
+
+	SteampunkJacket: {
+		DisplayName: Steampunk Jacket
+		Tooltip: 8% Increased damage and critical strike chance
+	}
+
+	SteampunkMask: {
+		DisplayName: Steampunk Mask
+		Tooltip: +4 Minion capacity
+	}
+
+	AncientAwakener: {
+		DisplayName: Ancient Awakener
+		Tooltip:
+			'''
+			Summons Dioritus
+			'The rulers of the caverns are fearsome foes'
+			'''
+	}
+
+	DryadSpore: {
+		DisplayName: Dryad Spore
+		Tooltip: "'Gives Dryad's Blessing'"
+	}
+
+	TimeCapsule: {
+		DisplayName: Time Capsule
+		Tooltip: Reduces debuff duration & increases buff duration
+	}
+
+	ChilledMesh: {
+		DisplayName: Innocent Child
+		Tooltip:
+			'''
+			Summons Hypothema
+			'What are you doing to him?'
+			'''
+	}
+
+	EmblemOfEtheria: {
+		DisplayName: Emblem of Etheria
+		Tooltip:
+			'''
+			Calls Etheria
+			'This seems like a terrible idea.'
+			'''
+	}
+
+	EtherialAwakener: {
+		DisplayName: Etherial Awakener
+		Tooltip: Summons Dioritus
+	}
+
+	EtherialBone: {
+		DisplayName: Etherial Crown
+		Tooltip: Summons Skeletron
+	}
+
+	EtherialBulb: {
+		DisplayName: Etherial Crown
+		Tooltip: Summons Plantera
+	}
+
+	EtherialCell: {
+		DisplayName: Etherial Crown
+		Tooltip: Summons Golem
+	}
+
+	EtherialCrown: {
+		DisplayName: Etherial Crown
+		Tooltip: Summons King Slime
+	}
+
+	EtherialEnergy: {
+		DisplayName: Etherial Energy
+		Tooltip: Imbues your body with Etherial energy
+	}
+
+	EtherialEye: {
+		DisplayName: Etherial Crown
+		Tooltip: Summons the Eye of Cthulhu
+	}
+
+	EtherialEyes: {
+		DisplayName: Etherial Eyes
+		Tooltip: Summons the Twins
+	}
+
+	EtherialMechanicalSkull: {
+		DisplayName: Etherial Mechanical Skull
+		Tooltip: Summons Skeletron Prime
+	}
+
+	EtherialMesh: {
+		DisplayName: Etherial Mesh
+		Tooltip: Summons Hypothema
+	}
+
+	EtherialMess: {
+		DisplayName: Etherial Mess
+		Tooltip: Summons Ragnar
+	}
+
+	EtherialMonitor: {
+		DisplayName: Etherial Monitor
+		Tooltip: Summons the Annihilator
+	}
+
+	EtherialMorsel: {
+		DisplayName: Etherial Morsel
+		Tooltip: Summons Dune Sharkron
+	}
+
+	EtherialSigil: {
+		DisplayName: Etherial Sigil
+		Tooltip: Summons Moon Lord
+	}
+
+	EtherialSpine: {
+		DisplayName: Etherial Spine
+		Tooltip: Summons the Brain of Cthulhu
+	}
+
+	EtherialSteamCrown: {
+		DisplayName: Etherial Steam Crown
+		Tooltip: Summons Slybertron
+	}
+
+	EtherialTrainWhistle: {
+		DisplayName: Etherial Train Whistle
+		Tooltip: Summons Steam Train
+	}
+
+	EtherialVooDooDoll: {
+		DisplayName: Etherial VooDoo Doll
+		Tooltip: Summons the Wall of Flesh in the Etherial
+	}
+
+	EtherialWorm: {
+		DisplayName: Etherial Worm
+		Tooltip: Summons the Destroyer
+	}
+
+	EtherialWormFood: {
+		DisplayName: Etherial Worm Food
+		Tooltip: Summons the Eater of Worlds
+	}
+
+	Etherination: {
+		DisplayName: Etherination
+		Tooltip: Summons Queen Bee
+	}
+
+	MechanicalMonitor: {
+		DisplayName: Steam-O-Vision
+		Tooltip: Summons The Annihilator
+	}
+
+	MoltenMess: {
+		DisplayName: Molten Mess
+		Tooltip:
+			'''
+			Summons Ragnar
+			'Chilled Lava.' 
+			Guardian of the Obsidium.
+			'''
+	}
+
+	ObsidiumHeart: {
+		DisplayName: Obsidium Heart
+		Tooltip:
+			'''
+			Increases the strength of Obsidium weapons
+			Increases your Max Potentia by 10
+			Can be used 5 times
+			Grown on Magma Shards
+			'''
+	}
+
+	GreaterMysticaPotion: {
+		DisplayName: Greater Potentia Potion
+		Tooltip:
+			'''
+			Restores all Potentias to full capacity
+			Does not remove Overflow
+			Overflow is increased by 10% while the Mysticality debuff is active
+			'''
+	}
+
+	JumpBoostPotion: {
+		DisplayName: Jump Boost Potion
+		Tooltip:
+			'''
+			Increases jump height
+			5 minute duration
+			'''
+	}
+
+	MysticaPotion: {
+		DisplayName: Potentia Potion
+		Tooltip: Restores all Potentias to full capacity, but removes Overflow
+	}
+
+	OmegaJumpBoostPotion: {
+		DisplayName: Omega Jump Boost Potion
+		Tooltip:
+			'''
+			INSANELY increases jump height
+			5 minute duration
+			'''
+	}
+
+	SupremeMysticaPotion: {
+		DisplayName: Super Potentia Potion
+		Tooltip:
+			'''
+			Restores all Potentias to full capacity
+			Restores Overflow to half capacity
+			Overflow is increased by 20% while the Mysticality debuff is active
+			'''
+	}
+
+	UltraJumpBoostPotion: {
+		DisplayName: Ultra Jump Boost Potion
+		Tooltip:
+			'''
+			GREATLY increases jump height
+			5 minute duration
+			'''
+	}
+
+	SteamCrown: {
+		DisplayName: Steam Crown
+		Tooltip: Summons Slybertron
+	}
+
+	SuspiciousTrainWhistle: {
+		DisplayName: Suspicious Steam Whistle
+		Tooltip: Summons Steam Train
+	}
+
+	TastyMorsel: {
+		DisplayName: Tasty Morsel
+		Tooltip:
+			'''
+			Summons Dune Sharkron in the desert 
+			'Mmm... Looks delicious.'
+			'''
+	}
+
+	AncientCarapace: {
+		DisplayName: Ancient Carapace
+		Tooltip: Restore Potentia upon taking damage
+	}
+
+	AncientJewelry: {
+		DisplayName: Ancient Jewelry
+		Tooltip:
+			'''
+			Increases life and mana regeneration 
+			+40 Mana
+			'''
+	}
+
+	AncientNecklace: {
+		DisplayName: Ancient Necklace
+		Tooltip: Increases life and mana regeneration
+	}
+
+	AncientShroud: {
+		DisplayName: Blood Shroud
+		Tooltip:
+			'''
+			Increased life regen
+			Increased Mystic Damage for a time after taking damage
+			'''
+	}
+
+	AncientWax: {
+		DisplayName: Ancient Wax
+		Tooltip: "Increases your minion capacity "
+	}
+
+	AquaflameWaders: {
+		DisplayName: Aquaflame Waders
+		Tooltip:
+			'''
+			Dominion over liquids and fire
+			Leave a trail of True Fire as you move
+			'''
+	}
+
+	Arcanum: {
+		DisplayName: Arcanum
+		Tooltip:
+			'''
+			+40 mana
+			+15% Overflow
+			'''
+	}
+
+	BandOfAncients: {
+		DisplayName: Band of Ancients
+		Tooltip: +40 Mana
+	}
+
+	Bloat: {
+		DisplayName: Bloat
+		Tooltip: +100% Max Life. You cannot go above 50% of your Max Life.
+	}
+
+	BloodfootBoots: {
+		DisplayName: Bloodfoot Boots
+		Tooltip: Allows the wearer to dash
+	}
+
+	BysmaliteWarpers: {
+		DisplayName: Bysmalite Warpers
+		Tooltip:
+			'''
+			Dimension-tearing speed and dashing
+			Dominion over everything
+			Leave a Frigid trail
+			Increased Damage, Movement Speed, and Defense in the Etherial
+			'''
+	}
+
+	Clockface: {
+		DisplayName: Clockface
+		Tooltip: Reduces the cooldown between Time Stops
+	}
+
+	CongealedFrostCore: {
+		DisplayName: Congealed Frost Core
+		Tooltip:
+			'''
+			+10% Melee and Ranged damage
+			+50% Snowball damage
+			'Sometimes, an Ice Golem's Heart is extra cold'
+			'''
+	}
+
+	ConjurationCore: {
+		DisplayName: Conjuration Core
+		Tooltip:
+			'''
+			+10% Conjuration Damage
+			+50 Mundus
+			'''
+	}
+
+	CoreOfAnDio: {
+		DisplayName: Sands of Time
+		Tooltip: You are immune to Time Stop
+	}
+
+	CoreOfMysticism: {
+		DisplayName: Core of Mysticism
+		Tooltip:
+			'''
+			+15% Mystic Damage
+			+50 Potentia
+			'''
+	}
+
+	CrystalizedMagma: {
+		DisplayName: Crystallized Magma
+		Tooltip: Leave a trail of fire as you run
+	}
+
+	Crystillium: {
+		DisplayName: Crystillium
+		Tooltip:
+			'''
+			+10% Overflow
+			Overflow attacks shoot crystal shards
+			'''
+	}
+
+	DarkfootBoots: {
+		DisplayName: Ebonfoot Boots
+		Tooltip: Allows the wearer to dash
+	}
+
+	DemondashBoots: {
+		DisplayName: Demondash Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash
+			Reduced cooldown between dashes
+			Increased movement speed
+			'''
+	}
+
+	DemonrushBoots: {
+		DisplayName: Devilrush Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash in any direction
+			Increased jump height
+			'''
+	}
+
+	DemonsparkBoots: {
+		DisplayName: Hellspark Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash
+			Increased jump height and movement speed
+			Can dash multiple times in the air
+			'''
+	}
+
+	DestructionCore: {
+		DisplayName: Destruction Core
+		Tooltip:
+			'''
+			+10% Destruction Damage
+			+50 Lux
+			'''
+	}
+
+	Eruption: {
+		DisplayName: Eruption
+		Tooltip:
+			'''
+			Grants an Eruption Jump
+			Make hidden to prevent fireballs from spawning
+			'''
+	}
+
+	FaeryInABottle: {
+		DisplayName: Faery in a Bottle
+		Tooltip: Automatically switch Mysticism when you run out of the current Potentia
+	}
+
+	FatherTime: {
+		DisplayName: Father Time
+		Tooltip:
+			'''
+			+15% Increased Damage while time is stopped
+			Reduces cooldown between Time Stops
+			Increases Duration of Time Stop
+			'Mastery of Time'
+			'''
+	}
+
+	FireDust: {
+		DisplayName: Fire Dust
+		Tooltip: All attacks inflict 'On Fire!'
+	}
+
+	FlamesparkWaders: {
+		DisplayName: Flamespark Waders
+		Tooltip:
+			'''
+			Provides the ability to walk on water and lava
+			Grants immunity to fire blocks and 8 seconds of immunity to lava
+			Attacks inflict 'On Fire!'
+			'''
+	}
+
+	FlareburstWaders: {
+		DisplayName: Flamespark Waders
+		Tooltip:
+			'''
+			Provides the ability to walk on water and lava
+			Grants immunity to fire blocks and 10 seconds of immunity to lava
+			Leave a trail of True Fire as you move
+			'''
+	}
+
+	FrigidVisia: {
+		DisplayName: Frigid Visia
+		Tooltip:
+			'''
+			+25% Mystic Duration
+			+15% Illusion Damage
+			+50 Vis
+			'''
+	}
+
+	FrostburstBoots: {
+		DisplayName: Frostburst Boots
+		Tooltip:
+			'''
+			Allows flight, super fast running, and extra mobility on ice
+			Grants the ability to double jump
+			Increases jump height and negates fall damage
+			15% increased movement speed
+			'''
+	}
+
+	FrostwarpBoots: {
+		DisplayName: Frostwarp Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash, fly, and run super fast
+			Grants the ability to double jump
+			Negates fall damage
+			20% Increased movement speed
+			Can dash multiple times in the air
+			Become immune for a time while dashing
+			'''
+	}
+
+	GaiasGem: {
+		DisplayName: Gaia's Gem
+		Tooltip: +50% Mystic Duration
+	}
+
+	HandsOfTime: {
+		DisplayName: The Hands of Time
+		Tooltip: Increases the duration of Time Stop
+	}
+
+	HauntedMundium: {
+		DisplayName: Haunted Mundium
+		Tooltip:
+			'''
+			+25% Overflow Capacity
+			+15% Conjuration Damage
+			+50Mundus
+			'''
+	}
+
+	HyperlightDrifters: {
+		DisplayName: Hyperlight Drifters
+		Tooltip:
+			'''
+			Light speed and light dash
+			Dominion over everything
+			Leave a Cosmic trail
+			+10% Damage
+			'''
+	}
+
+	HyperwarpLightboots: {
+		DisplayName: Hallowarp Lightboots
+		Tooltip:
+			'''
+			Hyper speed and hyper dash
+			Dominion over liquids and the sky
+			Leave a trail of Crystallite while moving
+			'''
+	}
+
+	IllusionCore: {
+		DisplayName: Illusion Core
+		Tooltip:
+			'''
+			+10% Illusion Damage
+			+50 Vis
+			'''
+	}
+
+	MagmaHeart: {
+		DisplayName: Magma Heart
+		Tooltip:
+			'''
+			Summons a Magma Heart to shine light
+			You are immune to lava
+			'''
+	}
+
+	Marblite: {
+		DisplayName: Marblite
+		Tooltip:
+			'''
+			+10% Mystic Damage
+			Get 'For Honor' and 'For Glory' when switching Mysticism.
+			'''
+	}
+
+	MoltenTank: {
+		DisplayName: Molten Tank
+		Tooltip: +33% Mystic Duration
+	}
+
+	MysticEmblem: {
+		DisplayName: Mystic Emblem
+		Tooltip: +15% mystic damage
+	}
+
+	NinjaEmblem: {
+		DisplayName: Ninja Emblem
+		Tooltip: +15% throwing damage
+	}
+
+	ObsidiumLily: {
+		DisplayName: Obsidium Lily
+		Tooltip:
+			'''
+			You are immune to contact damage from enemies that
+			are at max life and have less defense than you
+			'A calming aura'
+			'''
+	}
+
+	PrismVeil: {
+		DisplayName: Prism Veil
+		Tooltip:
+			'''
+			+20% Mystic Burst Damage
+			Decreased Mystic Burst Cooldown
+			Increased Movement Speed while Mystic Burst is on Cooldown
+			Become immune for a time after Mystic Bursts
+			'''
+	}
+
+	Ragnashia: {
+		DisplayName: Ragnashia
+		Tooltip:
+			'''
+			+5% Crit Chance
+			Set nearby enemies ablaze
+			'''
+	}
+
+	RuneOfEruption: {
+		DisplayName: Rune of Eruption
+		Tooltip:
+			'''
+			+20% Overflow damage and velocity
+			Increased movement and jump speed when on Overflow
+			'''
+	}
+
+	RuneOfTheAncients: {
+		DisplayName: Rune of the Ancients
+		Tooltip:
+			'''
+			+15% Overflow damage and velocity
+			Increased movement speed when on Overflow
+			'''
+	}
+
+	ShadowarpFlameboots: {
+		DisplayName: Shadowarp Flameboots
+		Tooltip:
+			'''
+			Shadow speed, shadow flight, and shadow dash
+			Dominion over liquids and fire
+			Leave a trail of Shadowflame
+			'''
+	}
+
+	ShroomSpore: {
+		DisplayName: Spore Cloud
+		Tooltip: Overflow attacks shoot spores on hit
+	}
+
+	SolarLuxus: {
+		DisplayName: Solar Luxus
+		Tooltip:
+			'''
+			+15% Mystic Damage
+			+15% Destruction Damage
+			+50 Lux
+			'''
+	}
+
+	SolidPotentia: {
+		DisplayName: Solid Potentia
+		Tooltip: +50 Potentia
+	}
+
+	SpyritInABottle: {
+		DisplayName: Spyrit in a Bottle
+		Tooltip:
+			'''
+			Automatically switch Mysticism when you run out of the current Potentia,
+			or one of your Potentias is at Max Overflow
+			'''
+	}
+
+	SteamsparkJetboots: {
+		DisplayName: Steamspark Jetboots
+		Tooltip:
+			'''
+			Steam speed!
+			Dominion over liquids and the sky
+			Leave a trail of Steam
+			'''
+	}
+
+	SupremeEmblem: {
+		DisplayName: Cog of Knowledge
+		Tooltip:
+			'''
+			'The power of all'
+			Increases damage by 20%
+			'''
+	}
+
+	SupremeMysticEmblem: {
+		DisplayName: Supreme Mystic Emblem
+		Tooltip: +20% mystic damage
+	}
+
+	SupremeNinjaEmblem: {
+		DisplayName: Supreme Ninja Emblem
+		Tooltip: +20% throwing damage
+	}
+
+	SupremeRangerEmblem: {
+		DisplayName: Supreme Ranger Emblem
+		Tooltip: +20% ranged damage
+	}
+
+	SupremeSorcererEmblem: {
+		DisplayName: Supreme Sorcerer Emblem
+		Tooltip: +20% magic damage
+	}
+
+	SupremeSummonerEmblem: {
+		DisplayName: Supreme Summoner Emblem
+		Tooltip: +20% minion damage
+	}
+
+	SupremeWarriorEmblem: {
+		DisplayName: Supreme Warrior Emblem
+		Tooltip: +20% melee damage
+	}
+
+	TheBloodOfOld: {
+		DisplayName: The Blood of Old
+		Tooltip:
+			'''
+			Increased life regen
+			+10% mystic damage
+			'''
+	}
+
+	TheDarkOfOld: {
+		DisplayName: The Dark of Old
+		Tooltip: +25 Potentia
+	}
+
+	Thermaltite: {
+		DisplayName: Thermalite
+		Tooltip: Overflow attacks shoot Thermalite Bolts
+	}
+
+	TimeWinder: {
+		DisplayName: Time Winder
+		Tooltip: +15% Increased Damage while time is stopped
+	}
+
+	ToyTrain: {
+		DisplayName: Miniature Train Whistle
+		Tooltip: Summons a Toy Train that follows you
+	}
+
+	WarpburstBoots: {
+		DisplayName: Warpburst Boots
+		Tooltip:
+			'''
+			Allows the wearer to dash
+			Increased jump height and movement speed
+			Can dash multiple times in the air
+			Become immune for a time while dashing
+			'''
+	}
+
+	AncientShard: {
+		DisplayName: Ancient Shard
+		Tooltip: ""
+	}
+
+	AndesiaCore: {
+		DisplayName: Core of Dusk
+		Tooltip: For Honor!
+	}
+
+	AnDioTreasureBag: {
+		DisplayName: Treasure Bag
+		Tooltip: ""
+	}
+
+	AnnihilatorTreasureBag: {
+		DisplayName: Treasure Bag
+		Tooltip: ""
+	}
+
+	BrainOfEtheria: {
+		DisplayName: Fragmented Mind
+		Tooltip:
+			'''
+			While in the etherial, if you would die from contact damage, heal 300 life instead. 3 minute cooldown.
+			After colliding with an enemy, that enemy takes 50% more damage for 15 seconds.
+			'''
+	}
+
+	CogOfEtheria: {
+		DisplayName: The Annihilation
+		Tooltip: Killing an enemy while in the Etherial boosts your damage by 20% for 10 seconds. Killing another enemy in this time resets the timer and stacks the bonus.
+	}
+
+	CogOfKnowledge: {
+		DisplayName: Cog of Knowledge
+		Tooltip: Increases your max number of minions by 2
+	}
+
+	DarkShard: {
+		DisplayName: Magma Shard
+		Tooltip: Grows Obsidium Hearts over time when placed
+	}
+
+	DioritusCore: {
+		DisplayName: Core of Dawn
+		Tooltip: For Glory!
+	}
+
+	DuneSharkronTreasureBag: {
+		DisplayName: Dune Sharkron Treasure Bag
+		Tooltip: ""
+	}
+
+	Etheramind: {
+		DisplayName: Ascension
+		Tooltip: "'Rule from above'"
+	}
+
+	EtherialConjurationCore: {
+		DisplayName: Justice
+		Tooltip: Taking damage in the Etherial heals you for that damage instead once every 90 seconds.
+	}
+
+	EtherialDestructionCore: {
+		DisplayName: The Destruction
+		Tooltip: Your global damage modifier is applied to your defense while in the Etherial
+	}
+
+	EtherialEssence: {
+		DisplayName: Etherial Essence
+		Tooltip: From the world beyond.
+	}
+
+	EtherialFrost: {
+		DisplayName: Byfrost
+		Tooltip: Attacks inflict 'Frostbite'
+	}
+
+	EtherialGel: {
+		DisplayName: Etherial Gel
+		Tooltip: Super Jump Boost & Super Speed Boost while in the Etherial
+	}
+
+	EtherialGlobe: {
+		DisplayName: Etherial Globe
+		Tooltip: Allows the use of Etherial accessories outside the Etherial.
+	}
+
+	EtherialIllusionCore: {
+		DisplayName: Mechanical Rage
+		Tooltip: In the Etherial, deal more damage the lower your life is
+	}
+
+	EtherialPack: {
+		DisplayName: Etherial Pack
+		Tooltip: Honey provides triple the normal regen, 15 defense, and +15% damage while in the Etherial
+	}
+
+	EtherialSac: {
+		DisplayName: Etherial Sac
+		Tooltip: If you are grappled to a tile in the Etherial, +50% Damage & increased life regen.
+	}
+
+	EtherialScarf: {
+		DisplayName: Etherial Scarf
+		Tooltip:
+			'''
+			While in the etherial, prevent a hit of lethal damage once every minute. 
+			20% Damage Reduction
+			'''
+	}
+
+	EtherialSkull: {
+		DisplayName: Etherial Skull
+		Tooltip:
+			'''
+			After taking damage, your damage is boosted by the percentage of your health that was taken for 10 seconds.
+			If this buff is still active when damage is taken again, the boost is stacked.
+			'''
+	}
+
+	EtherialTank: {
+		DisplayName: Etherial Tank
+		Tooltip:
+			'''
+			CHOO CHOO! While in the etherial, the faster you move, the higher your damage.
+			Colliding with an enemy deals your movement speed * 500 in damage.
+			Greatly increases Movement Speed.
+			'''
+	}
+
+	EtherialTruffle: {
+		DisplayName: Etherial Truffle
+		Tooltip: Water brings you great power while in the Etherial
+	}
+
+	Etherworks: {
+		DisplayName: Etherworks
+		Tooltip: Attacks in the Etherial inflict 'Steamified', dealing damage over time, making enemies take more damage, and explode into cogs on death.
+	}
+
+	EyeOfEtheria: {
+		DisplayName: Eye of Etheria
+		Tooltip: Allows you to see all creatures, no matter which dimension you are in.
+	}
+
+	FrigidEssence: {
+		DisplayName: Frigid Essence
+		Tooltip: ""
+	}
+
+	FrostEssence: {
+		DisplayName: Frosted Flake
+		Tooltip:
+			'''
+			Attacks inflict 'Frostburn'
+			+25% Snowball Damage
+			'''
+	}
+
+	FrostShard: {
+		DisplayName: Frost Shard
+		Tooltip: ""
+	}
+
+	HypothemaTreasureBag: {
+		DisplayName: Hypothema Treasure Bag
+		Tooltip: ""
+	}
+
+	MagmaticCluster: {
+		DisplayName: Magmatic Cluster
+		Tooltip: "'A Titan's Soul'"
+	}
+
+	MoltenCore: {
+		DisplayName: Molten Core
+		Tooltip:
+			'''
+			+50 Max Life
+			Summon Ragnar Hands when below 50% life
+			'''
+	}
+
+	MoltenEtheria: {
+		DisplayName: Molten Etheria
+		Tooltip:
+			'''
+			After submerging in Lava in the Etherial, greatly increased attack stats and mobility.
+			+25% Max Life.
+			'''
+	}
+
+	ObsidiumChunk: {
+		DisplayName: Obsidium Chunk
+		Tooltip:
+			'''
+			Pulsing with heat
+			Right Click to open
+			'''
+	}
+
+	Pipeworks: {
+		DisplayName: Pipeworks
+		Tooltip:
+			'''
+			+15% Throwing damage 
+			+25% Throwing Velocity
+			'''
+	}
+
+	Pyramind: {
+		DisplayName: Pyramind
+		Tooltip:
+			'''
+			Increases your minion capacity
+			+40 Mana
+			Increased Potentia Regen
+			'''
+	}
+
+	RagnarTreasureBag: {
+		DisplayName: Ragnar Treasure Bag
+		Tooltip: ""
+	}
+
+	RoyalIce: {
+		DisplayName: Royal Ice
+		Tooltip: "'A Queen's Tear'"
+	}
+
+	SlybertronTreasureBag: {
+		DisplayName: Slybertron Treasure Bag
+		Tooltip: ""
+	}
+
+	SoulOfFraught: {
+		DisplayName: Soul of Fraught
+		Tooltip: "'The essence of fear'"
+	}
+
+	SoulOfHaught: {
+		DisplayName: Soul of Haught
+		Tooltip: "'The essence of hot creatures'"
+	}
+
+	SoulOfSought: {
+		DisplayName: Soul of Sought
+		Tooltip: "'The essence of space creatures'"
+	}
+
+	SoulOfThought: {
+		DisplayName: Soul of Thought
+		Tooltip: "'The essence of intelligence'"
+	}
+
+	SoulOfWrought: {
+		DisplayName: Soul of Wrought
+		Tooltip: "'The essence of havoc'"
+	}
+
+	SteamBar: {
+		DisplayName: Steam Bar
+		Tooltip: ""
+	}
+
+	SteamTank: {
+		DisplayName: Steam Tank
+		Tooltip:
+			'''
+			Steam speed!
+			+15% Overflow Capacity and Damage
+			'''
+	}
+
+	SteamTrainTreasureBag: {
+		DisplayName: Steam Train Treasure Bag
+		Tooltip: ""
+	}
+
+	StoneOfEtheria: {
+		DisplayName: Stone Of Etheria
+		Tooltip: Your defense is added to your Max Life. Greatly increased Life Regen and +20 Defense while in the Etherial
+	}
+
+	TheWorldOfEtheria: {
+		DisplayName: The World of Etheria
+		Tooltip: Your projectiles are immune to Time Stop when in the Etherial
+	}
+
+	BottledGel: {
+		DisplayName: Bottled Gel
+		Tooltip: The gels will mesh together over time
+	}
+
+	BottledPinkGel: {
+		DisplayName: Bottled Pink Gel
+		Tooltip:
+			'''
+			The Pink Gel has consumed the normal gel.
+			Right Click to open.
+			'''
+	}
+
+	BysmalBar: {
+		DisplayName: Bysmal Bar
+		Tooltip: "'Tangibly intangible'"
+	}
+
+	Bysmal: {
+		DisplayName: Bysmal
+		Tooltip: "'Painful to even touch'"
+	}
+
+	ChilledBar: {
+		DisplayName: Chilled Bar
+		Tooltip: Very Cold
+	}
+
+	Crystilla: {
+		DisplayName: Crystilla
+		Tooltip: An ancient gemstone
+	}
+
+	ElderPearl: {
+		DisplayName: Elder Pearl
+		Tooltip: "'It's emitting a calming energy.'"
+	}
+
+	GalacticFragment: {
+		DisplayName: Galactic Fragment
+		Tooltip: "'The secrets of the universe swirl around this fragment'"
+	}
+
+	Gear: {
+		DisplayName: Gear
+		Tooltip: "'Like a Cog, but better.'"
+	}
+
+	MagmaSnapper: {
+		DisplayName: Magma Snapper
+		Tooltip: "'Don't get your hand too close.'"
+	}
+
+	NovaFragment: {
+		DisplayName: Nova Fragment
+		Tooltip: "'Cosmic entropy bursts from this fragment'"
+	}
+
+	NullEmblem: {
+		DisplayName: Null Emblem
+		Tooltip: ""
+	}
+
+	NullShard: {
+		DisplayName: Null Shard
+		Tooltip: ""
+	}
+
+	ObsidiumBar: {
+		DisplayName: Obsidium Bar
+		Tooltip: ""
+	}
+
+	Shadowflame: {
+		DisplayName: Shadowflame
+		Tooltip: Accursed Heat
+	}
+
+	AncientScroll: {
+		DisplayName: Ancient Scroll
+		Tooltip: ""
+	}
+
+	AlchemicalInfuserItem: {
+		DisplayName: Alchemical Infuser
+		Tooltip: Infuses Potions into Gems
+	}
+
+	AmelderaOreItem: {
+		DisplayName: Ameldera Ore
+		Tooltip: Can be used in the Extractinator
+	}
+
+	AncientEnchanter: {
+		DisplayName: Ancient Enchanter
+		Tooltip: Combines Stones into Relics
+	}
+
+	AnDioTrophy: {
+		DisplayName: AnDio Trophy
+		Tooltip: ""
+	}
+
+	AnnihilatorTrophy: {
+		DisplayName: Annihilator Trophy
+		Tooltip: ""
+	}
+
+	AntitherialBlock: {
+		DisplayName: Antitherial Block
+		Tooltip: ""
+	}
+
+	Barrier: {
+		DisplayName: Barrier
+		Tooltip: An invisible block
+	}
+
+	BrassFAN: {
+		DisplayName: Brass F.A.N.
+		Tooltip:
+			'''
+			It's a 'Fast Acceleration Node'
+			Boosts you horizontally
+			'''
+	}
+
+	BrassFANRight: {
+		DisplayName: Brass F.A.N.
+		Tooltip:
+			'''
+			It's a 'Fast Acceleration Node'
+			Boosts you horizontally
+			'''
+	}
+
+	BrassRING: {
+		DisplayName: Brass R.I.N.G.
+		Tooltip:
+			'''
+			It's a 'Rotation Inertia Negator of Gravity'
+			Boosts you upwards.
+			Flying through the R.I.N.G's is not advised, as your wings will override the boost.
+			'''
+	}
+
+	CrystalineInfuser: {
+		DisplayName: Crystalline Infuser
+		Tooltip: Combines Gems into Crystals
+	}
+
+	DuneSharkronTrophy: {
+		DisplayName: Dune Sharkron Trophy
+		Tooltip: ""
+	}
+
+	ElderlilyItem: {
+		DisplayName: Elderlily
+		Tooltip: "'An ancient bloom'"
+	}
+
+	ElderockItem: {
+		DisplayName: Elderock
+		Tooltip: "'Frosted gemstones'"
+	}
+
+	ElderootItem: {
+		DisplayName: Elderoot
+		Tooltip: "'Roots of ice'"
+	}
+
+	EtherialBlock: {
+		DisplayName: Etherial Block
+		Tooltip: ""
+	}
+
+	EtheriaTrophy: {
+		DisplayName: Etheria Trophy
+		Tooltip: ""
+	}
+
+	LavaGemCandle: {
+		DisplayName: Lava Gem Candle
+		Tooltip: ""
+	}
+
+	LavaGemLamp: {
+		DisplayName: Lava Gem Lamp
+		Tooltip: ""
+	}
+
+	LavaGemLantern: {
+		DisplayName: Lava Gem Lantern
+		Tooltip: ""
+	}
+
+	ObsidiumBed: {
+		DisplayName: Obsidium Bed
+		Tooltip: ""
+	}
+
+	ObsidiumChair: {
+		DisplayName: Obsidium Chair
+		Tooltip: ""
+	}
+
+	ObsidiumDoor: {
+		DisplayName: Obsidium Door
+		Tooltip: ""
+	}
+
+	ObsidiumDresser: {
+		DisplayName: Obsidium Dresser
+		Tooltip: ""
+	}
+
+	ObsidiumSink: {
+		DisplayName: Obsidium Sink
+		Tooltip: ""
+	}
+
+	ObsidiumTable: {
+		DisplayName: Obsidium Table
+		Tooltip: ""
+	}
+
+	ObsidiumWorkbench: {
+		DisplayName: Obsidium Workbench
+		Tooltip: ""
+	}
+
+	GodRay: {
+		DisplayName: God Ray
+		Tooltip: "'Solid divinity'"
+	}
+
+	Holystone: {
+		DisplayName: Holystone
+		Tooltip: Grows Lava Gems over time
+	}
+
+	HolystoneBrick: {
+		DisplayName: Holystone Brick
+		Tooltip: Grows Lava Gems over time
+	}
+
+	HypothemaTrophy: {
+		DisplayName: Hypothema Trophy
+		Tooltip: ""
+	}
+
+	LavaGemItem: {
+		DisplayName: Lava Gem
+		Tooltip:
+			'''
+			Grows on Obsidium Rock
+			'Molten Candy'
+			'''
+	}
+
+	Lycoris: {
+		DisplayName: Lycoris
+		Tooltip: "'Plants of hell'"
+	}
+
+	MineralEnchanter: {
+		DisplayName: Mineral Enchanter
+		Tooltip: Combines Crystals into Stones
+	}
+
+	AnDioMusicBox: {
+		DisplayName: Music Box (AnDio)
+		Tooltip: ""
+	}
+
+	AnnihilatorMusicBox: {
+		DisplayName: Music Box (Annihilator)
+		Tooltip: ""
+	}
+
+	DioritusMusicBox: {
+		DisplayName: Music Box (Dioritus)
+		Tooltip: ""
+	}
+
+	DuneSharkronMusicBox: {
+		DisplayName: Music Box (Dune Sharkron)
+		Tooltip: ""
+	}
+
+	EtheriaMusicBox: {
+		DisplayName: Music Box (Etheria)
+		Tooltip: ""
+	}
+
+	GreatShadowMusicBox: {
+		DisplayName: Music Box (Surface Obsidium)
+		Tooltip: ""
+	}
+
+	HypothemaMusicBox: {
+		DisplayName: Music Box (Hypothema)
+		Tooltip: ""
+	}
+
+	ObsidiumMusicBox: {
+		DisplayName: Music Box (Obsidium)
+		Tooltip: ""
+	}
+
+	RagnarMusicBox: {
+		DisplayName: Music Box (Ragnar)
+		Tooltip: ""
+	}
+
+	SlybertronMusicBox: {
+		DisplayName: Music Box (Slybertron)
+		Tooltip: ""
+	}
+
+	SteamTrainMusicBox: {
+		DisplayName: Music Box (Steam Train)
+		Tooltip: ""
+	}
+
+	ObsidiumBrick: {
+		DisplayName: Obsidium Brick
+		Tooltip: Grows Lava Gems over time
+	}
+
+	ObsidiumBrickWall: {
+		DisplayName: Obsidium Brick Wall
+		Tooltip: Grows Lava Gems over time
+	}
+
+	ObsidiumChest: {
+		DisplayName: Obsidium Chest
+		Tooltip: Transmutes items of equal value
+	}
+
+	ObsidiumCore: {
+		DisplayName: Obsidium Core
+		Tooltip: Grows Life Crystals over time
+	}
+
+	ObsidiumOre: {
+		DisplayName: Obsidium Ore
+		Tooltip: ""
+	}
+
+	ObsidiumPlant: {
+		DisplayName: Brimlin
+		Tooltip:
+			'''
+			'Plants of hell'
+			Grows on Lycoris
+			'''
+	}
+
+	ObsidiumRock: {
+		DisplayName: Basalt
+		Tooltip: Grows Lava Gems over time
+	}
+
+	ObsidiumRockWall: {
+		DisplayName: Obsidium Rock Wall
+		Tooltip: Grows Lava Gems over time
+	}
+
+	Radiata: {
+		DisplayName: Radiata
+		Tooltip: "'Roots of hell'"
+	}
+
+	RagnarTrophy: {
+		DisplayName: Ragnar Trophy
+		Tooltip: ""
+	}
+
+	SlybertronTrophy: {
+		DisplayName: Slybertron Trophy
+		Tooltip: ""
+	}
+
+	SteamTrainTrophy: {
+		DisplayName: Steam Train Trophy
+		Tooltip: ""
+	}
+
+	SteamVENT: {
+		DisplayName: Steam V.E.N.T.
+		Tooltip:
+			'''
+			It's a 'Velocity Expulsion Nexus Tunnel'
+			Boosts you upwards at great speeds.
+			'Yeet'
+			'''
+	}
+
+	Transmutable: {
+		DisplayName: Transmutable
+		Tooltip: For basic metal transmutations
+	}
+
+	TransmutationTable: {
+		DisplayName: Transmutation Table
+		Tooltip: Transmutes items of equal value
+	}
+
+	ZincBrick: {
+		DisplayName: Zinc Brick
+		Tooltip: A crucial component of Brass
+	}
+
+	ZincBrickWall: {
+		DisplayName: Zinc Brick Wall
+		Tooltip: Grows Lava Gems over time
+	}
+
+	ZincOre: {
+		DisplayName: Zinc Ore
+		Tooltip: A crucial component of Brass
+	}
+
+	BysmalDrill: {
+		DisplayName: Drill-o-Tron 5000
+		Tooltip: "'To the core.'"
+	}
+
+	Debugger: {
+		DisplayName: Debugger
+		Tooltip: "'A debug tool'"
+	}
+
+	Drillinator: {
+		DisplayName: The Chariot
+		Tooltip: "'To the sun.'"
+	}
+
+	DrillOTron10000: {
+		DisplayName: Drillinator
+		Tooltip: "'To the moon.'"
+	}
+
+	FrigidPickaxe: {
+		DisplayName: Frigid Pickaxe
+		Tooltip: "'Slow and steady'"
+	}
+
+	FrostburnPickaxe: {
+		DisplayName: Frostburn Pickaxe
+		Tooltip: "'The best of both worlds'"
+	}
+
+	ObsidiumPickaxe: {
+		DisplayName: Obsidium Pickaxe
+		Tooltip: "'It's molten inside'"
+	}
+
+	BysmalKey: {
+		DisplayName: Bysmal Key
+		Tooltip: Prevent Bysmal Armor from cycling in new Bonuses until toggled on again.
+	}
+
+	EssenceOfEtheria: {
+		DisplayName: The High Priestess
+		Tooltip:
+			'''
+			Allows you to enter and leave the Etherial at will, as long as no powerful creatures are present to stop you. 
+			Can place shadows of itself, which can be wired to enter the Etherial. 
+			An odd number of wires need to be connected, or it will immediately switch back.
+			'''
+	}
+
+	SoulOfTheAncients: {
+		DisplayName: Soul of the Ancients
+		Tooltip:
+			'''
+			Seal away a part of your Soul.
+			Using this item prevents you from unleashing Mystic Bursts, but increases Mystic Damage by 5%.
+			'''
+	}
+
+	SteampunkWatch: {
+		DisplayName: Steampunk Watch
+		Tooltip: You tell the time.
+	}
+
+	ZaWarudoWatch: {
+		DisplayName: The World
+		Tooltip: "'ZA WARUDO!'"
+	}
+
+	AncientStaff: {
+		DisplayName: Ancient Staff
+		Tooltip: "'Crystilla Rain'"
+	}
+
+	AndesiaStaff: {
+		DisplayName: Staff of Honor
+		Tooltip:
+			'''
+			Right click to place 
+			'Onto War!'
+			'''
+	}
+
+	Blitzfrig: {
+		DisplayName: Blitzfrieg
+		Tooltip:
+			'''
+			'Cold Lightning'
+			When in the Etherial after defeating Etheria, create twice as much branch Lightning.
+			'''
+	}
+
+	BookOfKnowledge: {
+		DisplayName: Book of Knowledge
+		Tooltip: "'Rain Lightning upon them'"
+	}
+
+	BysmalWand: {
+		DisplayName: Bysmal Wand
+		Tooltip:
+			'''
+			'Frigid Breeze'
+			When in the Etherial after defeating Etheria, shoot an additional blast.
+			'''
+	}
+
+	Electrospark: {
+		DisplayName: Electrospark
+		Tooltip: "'Zap them to dust'"
+	}
+
+	SandstormInABook: {
+		DisplayName: Sandstorm in a Book
+		Tooltip: Don't try to read it
+	}
+
+	StaffOfSteamworks: {
+		DisplayName: Staff of Steamworks
+		Tooltip: "'Let's get Steamy!'"
+	}
+
+	Stationator: {
+		DisplayName: Stationator
+		Tooltip: "'Here they come'"
+	}
+
+	Volcite: {
+		DisplayName: Volcite
+		Tooltip:
+			'''
+			'Volcanic Eruption'
+			Becomes more powerful as you consume Obsidium Hearts
+			'''
+	}
+
+	WarlockStaff: {
+		DisplayName: Staff of The Enlightened Warlock
+		Tooltip: Ion Blast
+	}
+
+	AnDioYo: {
+		DisplayName: AnDio-Yo
+		Tooltip: A marball of fun
+	}
+
+	Aurora: {
+		DisplayName: Aurora
+		Tooltip: "'Chill them into submission'"
+	}
+
+	BrassClaymore: {
+		DisplayName: Brass Claymore
+		Tooltip: Inflicts 'Steamy'
+	}
+
+	BysmalBlade: {
+		DisplayName: Bysmal Blade
+		Tooltip:
+			'''
+			'A chill like no other' 
+			Inflicts 'Frostbite'.
+			While in the Etherial after defeating Etheria, increased size and swing speed
+			'''
+	}
+
+	BysmalBrand: {
+		DisplayName: Borealis
+		Tooltip:
+			'''
+			'The great frost comes'
+			While in the Etherial after defeating Etheria, Borealis projectiles spawn twice as many Bysmal Blasts on hit
+			'''
+	}
+
+	DaysBreak: {
+		DisplayName: Sunrise
+		Tooltip:
+			'''
+			'Bring the dawn'
+			Striking enemies makes them emit sparks
+			Enemies explode into sparks on death, spreading the dawn.
+			'''
+	}
+
+	DioritusBlade: {
+		DisplayName: Blade of Glory
+		Tooltip:
+			'''
+			Right click to throw 
+			'Into Battle!'
+			'''
+	}
+
+	ElderanClaymore: {
+		DisplayName: Elderan Claymore
+		Tooltip: "'The ancient crystals slot together quite nicely.'"
+	}
+
+	EnginatorM: {
+		DisplayName: Enginator
+		Tooltip: CHOO CHOO
+	}
+
+	Flarance: {
+		DisplayName: Flarance
+		Tooltip:
+			'''
+			'Eruptions fly forth'
+			Projectiles become stronger as you consume Obsidium Hearts
+			'''
+	}
+
+	FrigidYoyo: {
+		DisplayName: Frigid Yoyo
+		Tooltip: ""
+	}
+
+	FrostBlade: {
+		DisplayName: Frost Blade
+		Tooltip: Frostular Fragments
+	}
+
+	GearIO: {
+		DisplayName: Geariken
+		Tooltip: Don't prick yourself!
+	}
+
+	HolyBlade: {
+		DisplayName: Blade of The Holy Knight
+		Tooltip: "'Call down the sky'"
+	}
+
+	Mariana: {
+		DisplayName: Mariana
+		Tooltip:
+			'''
+			'To the depths'
+			Striking enemies makes them emit bubbles!
+			Enemies explode into bubbles on death, spreading the bubbles.
+			'''
+	}
+
+	ObsidiumYoyo: {
+		DisplayName: Obsidium Yoyo
+		Tooltip: ""
+	}
+
+	Scydian: {
+		DisplayName: Scydian
+		Tooltip:
+			'''
+			'The power of magma'
+			Becomes stronger as you consume Obsidium Hearts
+			'''
+	}
+
+	Sharkfin: {
+		DisplayName: Sharkfin
+		Tooltip: "'Crystal barrage'"
+	}
+
+	SteamworkShanker: {
+		DisplayName: Steamwork Shanker
+		Tooltip: ""
+	}
+
+	TrainScythe: {
+		DisplayName: Train Scythe
+		Tooltip:
+			'''
+			CHOO CHOO! 
+			Inflicts 'Steamy'
+			'''
+	}
+
+	TrueDaysBreak: {
+		DisplayName: True Sunrise
+		Tooltip:
+			'''
+			'Bring the sky'
+			Striking enemies makes them emit True Sparks
+			Enemies explode into True Sparks on death, spreading the Redemption.
+			'''
+	}
+
+	AgnesInferno: {
+		DisplayName: Agnes' Inferno
+		Tooltip: ""
+	}
+
+	CharonsScepter: {
+		DisplayName: Charon's Scepter
+		Tooltip: Pay the toll
+	}
+
+	ChlorysBlade: {
+		DisplayName: Chlorys's Blade
+		Tooltip: Sunflower Power
+	}
+
+	CupidsBow: {
+		DisplayName: Cupid's Bow
+		Tooltip:
+			'''
+			'Make them fall for you' 
+			Arrows inflict 'Lovestruck', which makes enemies drop Hearts on death
+			Fires different projectiles based on Mysticism
+			The amount of angels that can be conjured is based on Mystic Duration
+			'''
+	}
+
+	DeathsHarvest: {
+		DisplayName: Death's Harvest
+		Tooltip: ""
+	}
+
+	DionysusBloom: {
+		DisplayName: Dionysus' Bloom
+		Tooltip: It was me, Dionysus!
+	}
+
+	EtheriasTrick: {
+		DisplayName: Etheria's Trick
+		Tooltip: "'A dimension in your hands'"
+	}
+
+	FreyasFley: {
+		DisplayName: Fungon's Wand
+		Tooltip: An amicable dude
+	}
+
+	FriggsPhalanx: {
+		DisplayName: Frigg's Phalanx
+		Tooltip: "'The swarm cometh'"
+	}
+
+	GaiasWorld: {
+		DisplayName: Gaia's World
+		Tooltip: The whole world in your hands
+	}
+
+	GreatGladius: {
+		DisplayName: Gladius of The Great Moldyrian
+		Tooltip:
+			'''
+			Praise the gods
+			Ilusion inflicts 'Daybroken'
+			Attacks differently projectiles based on Mysticism
+			'''
+	}
+
+	HadesJudgement: {
+		DisplayName: Hades' Judgement
+		Tooltip: Cleanse your sins
+	}
+
+	HallowsEve: {
+		DisplayName: Hallow's Eve
+		Tooltip: "'The spirits of the darkness are bent to your will'"
+	}
+
+	HermesFlight: {
+		DisplayName: Hermes' Flight
+		Tooltip: Reach for the skies
+	}
+
+	JanusHunt: {
+		DisplayName: The Hunt
+		Tooltip: Stalking through the sands
+	}
+
+	MarsFury: {
+		DisplayName: Mars' Fury
+		Tooltip: A Furious War
+	}
+
+	OrionsGate: {
+		DisplayName: Orion's Gate
+		Tooltip: Open the path to the stars
+	}
+
+	PlutosFrost: {
+		DisplayName: Pluto's Frost
+		Tooltip: Harness the void of Space
+	}
+
+	PoseidonsTide: {
+		DisplayName: Poseidon's Tide
+		Tooltip: ""
+	}
+
+	SaturnsRings: {
+		DisplayName: Saturn's Rings
+		Tooltip: "'The majesty of Space'"
+	}
+
+	StaffOfAnDio: {
+		DisplayName: Loki's Staff
+		Tooltip: "'Many tricks up his sleeve'"
+	}
+
+	ThorsHammer: {
+		DisplayName: Thor's Hammer
+		Tooltip: ""
+	}
+
+	Yuletide: {
+		DisplayName: Yuletide
+		Tooltip: Holiday Cheer
+	}
+
+	ZeusBolt: {
+		DisplayName: Zeus' Bolt
+		Tooltip: Smitten
+	}
+
+	BysmalBlaster: {
+		DisplayName: Bysmal Blaster
+		Tooltip:
+			'''
+			'Blast them to another dimension'
+			50% chance to not consume ammo
+			While in the Etherial after defeating Etheria, shoots shotgun blasts twice as often
+			'''
+	}
+
+	ClockworkShotgun: {
+		DisplayName: Clockwork Shotgun
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Occasionally turns normal bullets into more damaging High Velocity bullets
+			'''
+	}
+
+	DuneSharkgun: {
+		DisplayName: Dune Sharkgun
+		Tooltip:
+			'''
+			33% chance to not consume ammo
+			Occasionally shoots Crystal bullets
+			'''
+	}
+
+	Geodizer: {
+		DisplayName: Geodizer
+		Tooltip: "'For Fury'"
+	}
+
+	ObsidiumGreatbow: {
+		DisplayName: Obsidium Greatbow
+		Tooltip:
+			'''
+			'Molten Frenzy'
+			20% chance to not consume ammo
+			Becomes stronger as you consume Obsidium Hearts
+			'''
+	}
+
+	StarHunter: {
+		DisplayName: Bow of The Star Hunter
+		Tooltip:
+			'''
+			Shoot a supernova
+			50% chance to not consume ammo
+			'''
+	}
+
+	Steamstring: {
+		DisplayName: Steamstring
+		Tooltip:
+			'''
+			'Steaming Frenzy' 
+			Turns wooden arrows into Brass Arrows & fires an additional Brass Arrow
+			33% chance to not consume ammo
+			'''
+	}
+
+	BlackIce: {
+		DisplayName: Black Ice
+		Tooltip:
+			'''
+			Fires faster in extreme heat
+			Fires more accurately in extreme cold
+			50% chance not to consume ammo
+			'They won't see it coming'
+			'''
+	}
+
+	Snowtillery: {
+		DisplayName: Snowtillery
+		Tooltip: Shoots snow rockets that push the player as well
+	}
+
+	Sootsayer: {
+		DisplayName: Soot Sprayer
+		Tooltip:
+			'''
+			Converts snowballs into sootballs
+			Shoots more snowballs as you consume Obsidium Hearts
+			'''
+	}
+
+	Antenna: {
+		DisplayName: Antenna
+		Tooltip: Summons a TV to fight for you.
+	}
+
+	ArcticHydra: {
+		DisplayName: Arctic Hydra Staff
+		Tooltip:
+			'''
+			'The beast of many Heads'
+			When in the Etherial after defeating Etheria, Double Damage and Aggro range.
+			'''
+	}
+
+	BysmalSoulmaster: {
+		DisplayName: Bysmal Soulmaster
+		Tooltip:
+			'''
+			'Unleash them'
+			When in the Etherial after defeating Etheria, attack twice as fast.
+			'''
+	}
+
+	MagmaticaStaff: {
+		DisplayName: Magmatica Staff
+		Tooltip:
+			'''
+			Summons a Magmatic Core to fight for you
+			Deals more damage for each Obsidium Heart you consume
+			'''
+	}
+
+	SandShardStaff: {
+		DisplayName: Sand Shard Staff
+		Tooltip: Summons a Sandy Shark to fight for you.
+	}
+
+	Shroolipad: {
+		DisplayName: Shroolipad
+		Tooltip: Summons a Shroolicopter to fight for you.
+	}
+
+	TheMessenger: {
+		DisplayName: The Messenger
+		Tooltip: Summons the rulers of the caverns to fight for you.
+	}
+
+	UltimateCall: {
+		DisplayName: Call of the Ultimate Leader
+		Tooltip: Conjur the cosmos to fight for you.
+	}
+
+	Andeshiard: {
+		DisplayName: Andeshiard
+		Tooltip: ""
+	}
+
+	AnDiuriken: {
+		DisplayName: AnDiuriken
+		Tooltip: Stacks up to 4
+	}
+
+	Antarctica: {
+		DisplayName: Antarctica
+		Tooltip:
+			'''
+			'A blizzard hails from above'
+			When in the Etherial after defeating Etheria, rain down more Hail,
+			and stay stuck in enemies for twice as long.
+			'''
+	}
+
+	BysmalRipper: {
+		DisplayName: Bysmal Ripper
+		Tooltip:
+			'''
+			'Tear through dimensions'
+			When in the Etherial after defeating Etheria, create an extra shadow on enemy hits.
+			'''
+	}
+
+	ChakramOfTheViciousAssassin: {
+		DisplayName: Chakram of The Vicious Assassin
+		Tooltip: "'Surround and eliminate'"
+	}
+
+	Coginator: {
+		DisplayName: Coginator
+		Tooltip: ""
+	}
+
+	Daggoritus: {
+		DisplayName: Daggoritus
+		Tooltip: ""
+	}
+
+	EnginatorT: {
+		DisplayName: Enginator
+		Tooltip: CHOO CHOO
+	}
+
+	Eruptor: {
+		DisplayName: Eruptor
+		Tooltip: "'For Fury'"
+	}
+
+	ForbiddenAxe: {
+		DisplayName: Forgotten Axe
+		Tooltip: "'From the dunes'"
+	}
+
+	JetDagger: {
+		DisplayName: Jet Dagger
+		Tooltip: "'Return to sender'"
+	}
+
+	Obshardian: {
+		DisplayName: Obshardian
+		Tooltip: Shoots faster and pierces more as you consume Obsidium Hearts
+	}
+
+	TheSnowflake: {
+		DisplayName: Snowflake
+		Tooltip: ""
+	}
+
+	TrainWhistle: {
+		DisplayName: Train Whistle
+		Tooltip: ""
+	}
+
+	AggressionStone: {
+		DisplayName: Aggression Stone
+		Tooltip:
+			'''
+			+10% Ranged damage 
+			20% Chance to not use ammo 
+			Increases knockback, magic damage, and mana regen 
+			Increased Enemy Spawns
+			'''
+	}
+
+	AlterationStone: {
+		DisplayName: Alteration Stone
+		Tooltip: Mastery of land and air
+	}
+
+	AncientRelic: {
+		DisplayName: Ancient Relic
+		Tooltip: Mastery of the world
+	}
+
+	AngelnCrystal: {
+		DisplayName: Fishing Crystal
+		Tooltip: Improved fishing skills
+	}
+
+	AquaStone: {
+		DisplayName: Aqua Stone
+		Tooltip: Mastery of liquids
+	}
+
+	ArtifactOfEnhancement: {
+		DisplayName: Artifact Of Enhancement
+		Tooltip: Mastery of all
+	}
+
+	ArtifactOfRestoration: {
+		DisplayName: Artifact Of Restoration
+		Tooltip:
+			'''
+			+600 Max Life 
+			+160 Mana 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	BewungCrystal: {
+		DisplayName: Movement Crystal
+		Tooltip:
+			'''
+			Slows falling speed 
+			+25% Movement speed
+			'''
+	}
+
+	CursedRelic: {
+		DisplayName: Cursed Relic
+		Tooltip:
+			'''
+			Cursed? 
+			Mastery of violence
+			'''
+	}
+
+	DeinstCrystal: {
+		DisplayName: Manipulation Crystal
+		Tooltip:
+			'''
+			Increases placement speed and +1 range 
+			+25% Mining speed
+			'''
+	}
+
+	GreaterHealingGem: {
+		DisplayName: Greater Healing Gem
+		Tooltip:
+			'''
+			+150 Max Life 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	GreaterManaGem: {
+		DisplayName: Greater Mana Gem
+		Tooltip: +60 Mana
+	}
+
+	HallowedRelic: {
+		DisplayName: Hallowed Relic
+		Tooltip: You feel Blessed
+	}
+
+	HealingCrystal: {
+		DisplayName: Healing Crystal
+		Tooltip:
+			'''
+			+150 Max Life 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	HealingGem: {
+		DisplayName: Healing Gem
+		Tooltip:
+			'''
+			+100 Max Life 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	HolyStone: {
+		DisplayName: Holy Stone
+		Tooltip:
+			'''
+			Decreased enemy spawn rate 
+			Take less damage from cold sources 
+			Increases heart pickup range 
+			Increases life regeneration 
+			+1 Max Minion 
+			Increases max life by 20% 
+			Equip in last slot for maximum effectiveness
+			'''
+	}
+
+	KekCrystal: {
+		DisplayName: Mage Crystal
+		Tooltip: Increases knockback, magic damage, and mana regen
+	}
+
+	LebenCrystal: {
+		DisplayName: Vitality Crystal
+		Tooltip:
+			'''
+			Increases heart pickup range 
+			Increases life regeneration 
+			Increases max life by 20% 
+			Equip in last slot for maximum effectiveness
+			'''
+	}
+
+	LesserHealingGem: {
+		DisplayName: Lesser Healing Gem
+		Tooltip:
+			'''
+			+50 Max Life 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	LesserManaGem: {
+		DisplayName: Lesser Mana Gem
+		Tooltip: +20 Mana
+	}
+
+	LichtCrystal: {
+		DisplayName: Light Crystal
+		Tooltip: Increases Light Vision
+	}
+
+	MachtCrystal: {
+		DisplayName: Attack Crystal
+		Tooltip:
+			'''
+			+10% Damage and critical strike chance 
+			Set your enemies ablaze
+			'''
+	}
+
+	MagmaCrystal: {
+		DisplayName: Magma Crystal
+		Tooltip:
+			'''
+			Provides immunity to lava 
+			You can walk on liquids
+			'''
+	}
+
+	ManaCrystal: {
+		DisplayName: Mana Crystal
+		Tooltip: +60 Mana
+	}
+
+	ManaGem: {
+		DisplayName: Mana Gem
+		Tooltip: +40 Mana
+	}
+
+	MegaHealingStone: {
+		DisplayName: Mega Healing Stone
+		Tooltip:
+			'''
+			+350 Max Life 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	MegaManaStone: {
+		DisplayName: Mega Mana Stone
+		Tooltip: +100 Mana
+	}
+
+	PanzerCrystal: {
+		DisplayName: Tank Crystal
+		Tooltip:
+			'''
+			+10% Damage reduction 
+			 Attackers take damage
+			'''
+	}
+
+	ReichCrystal: {
+		DisplayName: Rogue Crystal
+		Tooltip:
+			'''
+			+10% Ranged damage
+			20% Chance to not use ammo
+			Increased Enemy Spawns
+			'''
+	}
+
+	SichtCrystal: {
+		DisplayName: Sight Crystal
+		Tooltip: "'I see all.'"
+	}
+
+	SightStone: {
+		DisplayName: Vision Stone
+		Tooltip: Mastery of light
+	}
+
+	SuperHealingGem: {
+		DisplayName: Super Healing Gem
+		Tooltip:
+			'''
+			+200 Max Life 
+			Gives constant Potion Sickness
+			'''
+	}
+
+	SuperManaGem: {
+		DisplayName: Super Mana Gem
+		Tooltip: +80 Mana
+	}
+
+	TitanStone: {
+		DisplayName: Titan Stone
+		Tooltip:
+			'''
+			+10% Damage reduction 
+			+10% Damage and critical strike chance 
+			 Attackers take damage 
+			Set your enemies ablaze
+			'''
+	}
+
+	UltraHealingRelic: {
+		DisplayName: Ultra Healing Relic
+		Tooltip:
+			'''
+			+500 Max Life
+			Gives constant Potion Sickness
+			'''
+	}
+
+	UltraManaRelic: {
+		DisplayName: Ultra Mana Relic
+		Tooltip: +120 Mana
+	}
+
+	VerteCrystal: {
+		DisplayName: Harmony Crystal
+		Tooltip:
+			'''
+			Decreased enemy spawn rate
+			Take less damage from cold sources
+			+1 Max Minion
+			'''
+	}
+
+	WasserCrystal: {
+		DisplayName: Aqua Crystal
+		Tooltip: Mastery of water
 	}
 }
 
 Projectiles: {
+	HailProj.DisplayName: Hail Proj
+	HatSpin.DisplayName: Hat Spin
+	QuietSnowball.DisplayName: Quiet Snowball
+	ShotgunYeet.DisplayName: Shotgun Yeet
+	Snowball.DisplayName: Snowball
+	Snowbomb.DisplayName: Snowbomb
+	SnowCloud.DisplayName: Snow Cloud
+	Steward.DisplayName: Steward
 	WarpPearl.DisplayName: Warp Pearl
 	BigSnowball.DisplayName: Big Snowball
 	Blessedball.DisplayName: Blessedball
@@ -526,10 +3771,1087 @@ Projectiles: {
 	Frostball.DisplayName: Frostball
 	Graviball.DisplayName: Graviball
 	Hailball.DisplayName: Hailball
+	Hail.DisplayName: Hail
 	Hiveball.DisplayName: Hiveball
 	Pearlsandball.DisplayName: Pearlsandball
 	Snipeball.DisplayName: Snipeball
 	Sootball.DisplayName: Sootball
 	Spiritball.DisplayName: Spiritball
 	YellowSnowball.DisplayName: Yellow Snowball
+	ShroomBurst.DisplayName: Shroom Burst
+	FungonIllusion.DisplayName: Fungon Illusion
+	FungonDestruction.DisplayName: Fungon Destruction
+	FungonConjuration2.DisplayName: Fungon Conjuration2
+	FungonConjuration1.DisplayName: Fungon Conjuration1
+	ElderCrystalShard.DisplayName: Elder Crystal Shard
+	ElderShardRock.DisplayName: Elder Shard Rock
+	ElectroKnowledge.DisplayName: Electro Knowledge
+	KnowledgeBolt.DisplayName: Knowledge Bolt
+	EtherialPulsar.DisplayName: Etherial Pulsar
+	EtherialPulse.DisplayName: Etherial Pulse
+	EtherialWave.DisplayName: Etherial Wave
+	EtherialYeet.DisplayName: Etherial Yeet
+	QuadroBurst.DisplayName: Quadro Burst
+	TrueEtherialPulsar.DisplayName: True Etherial Pulsar
+	TrueEtherialPulse.DisplayName: True Etherial Pulse
+	TrueEtherialYeet.DisplayName: True Etherial Yeet
+	TrueQuadroBurst.DisplayName: True Quadro Burst
+	EtherialSpore.DisplayName: Etherial Spore
+	EtherialStinger.DisplayName: Etherial Stinger
+	FrostbiteBreath.DisplayName: Frostbite Breath
+	SlimePipe.DisplayName: Slime Pipe
+	DoubleEighth.DisplayName: Double Eighth
+	Eighth.DisplayName: Eighth
+	PeriodicalRotateNotes.DisplayName: Periodical Rotate Notes
+	PhylacteryRotate.DisplayName: Phylactery Rotate
+	Quarter.DisplayName: Quarter
+	Sixteenth.DisplayName: Sixteenth
+	Fireball.DisplayName: Fireball
+	GravityFireball.DisplayName: Gravity Fireball
+	Lava.DisplayName: Lava
+	LavaGeyeser.DisplayName: Lava Geyeser
+	MiniRock.DisplayName: Mini Rock
+	RagnarFireball.DisplayName: Ragnar Fireball
+	RagnarFireballDown.DisplayName: Ragnar Fireball Down
+	Ragnarock.DisplayName: Ragnarock
+	RockFalling.DisplayName: Rock Falling
+	RockLoose.DisplayName: Rock Loose
+	RockLooseMini.DisplayName: Rock Loose Mini
+	Sandnado.DisplayName: Sandnado
+	SandnadoUp.DisplayName: Sandnado Up
+	SharkNeedle.DisplayName: Shark Needle
+	SharkNeedleHoming.DisplayName: Shark Needle Homing
+	SharkronCrystalShard.DisplayName: Sharkron Crystal Shard
+	SharkronMiniCrystalShard.DisplayName: Sharkron Mini Crystal Shard
+	AndeBall.DisplayName: Ande Ball
+	AndeEnergy.DisplayName: Ande Energy
+	AndeLaser3.DisplayName: Ande Laser3
+	AndeShard.DisplayName: Ande Shard
+	AnDioEnergy.DisplayName: An Dio Energy
+	AnDioSpiral.DisplayName: An Dio Spiral
+	AnDioSpiral2.DisplayName: An Dio Spiral2
+	DioBall.DisplayName: Dio Ball
+	DioBallShot.DisplayName: Dio Ball Shot
+	DioEnergy.DisplayName: Dio Energy
+	DioEnergyHoming.DisplayName: Dio Energy Homing
+	DioShard.DisplayName: Dio Shard
+	Coginator.DisplayName: Coginator
+	CogLoose.DisplayName: Cog Loose
+	Electroshock.DisplayName: Electroshock
+	ElectroshockP2.DisplayName: Electroshock P2
+	GasBall.DisplayName: Gas Ball
+	GasBallDown.DisplayName: Gas Ball Down
+	GasBallUp.DisplayName: Gas Ball Up
+	Gearikan.DisplayName: Gearikan
+	SteamStream.DisplayName: Steam Stream
+	SteamyShadow.DisplayName: Steamy Shadow
+	XOut.DisplayName: X Out
+	ShadowBurst.DisplayName: Shadow Burst
+	BysmalTrailProj.DisplayName: Bysmal Trail Proj
+	CosmicTrailProj.DisplayName: Cosmic Trail Proj
+	CrystalliteOrb.DisplayName: Crystallite Orb
+	GoodFireball.DisplayName: Good Fireball
+	GoodShadowflame.DisplayName: Good Shadowflame
+	IceShardF.DisplayName: Ice Shard F
+	RockShard.DisplayName: Rock Shard
+	SteamTrailProj.DisplayName: Steam Trail Proj
+	TrueGoodFireball.DisplayName: True Good Fireball
+	GeneralBossSpawn.DisplayName: General Boss Spawn
+	SpawnVanillaBoss.DisplayName: Spawn Vanilla Boss
+	AndesiaStaffProjectile.DisplayName: Andesia Staff Projectile
+	Andesimite.DisplayName: Andesimite
+	BlitzBolt1.DisplayName: Blitz Bolt1
+	BlitzBolt2.DisplayName: Blitz Bolt2
+	BookSandstormBottom.DisplayName: Book Sandstorm Bottom
+	BookSandstormUp.DisplayName: Book Sandstorm Up
+	BysmalWandProjectile.DisplayName: Bysmal Wand Projectile
+	CrystillaShardProjectile.DisplayName: Crystilla Shard Projectile
+	Dioritite.DisplayName: Dioritite
+	ElectrosparkP2.DisplayName: Electrospark P2
+	ElectrosparkProjectile.DisplayName: Electrospark Projectile
+	LightningBall.DisplayName: Lightning Ball
+	Sandball.DisplayName: Sandball
+	SteamOfSteamworks.DisplayName: Steam Of Steamworks
+	VolciteProjectile.DisplayName: Volcite Projectile
+	WarlockStaff1.DisplayName: Warlock Staff1
+	WarlockStaff2.DisplayName: Warlock Staff2
+	WarlockStaff3.DisplayName: Warlock Staff3
+	Andespear.DisplayName: Andespear
+	AnDioYoProjectile.DisplayName: An Dio Yo Projectile
+	AnDioYoShot.DisplayName: An Dio Yo Shot
+	AuroraProjectile.DisplayName: Aurora Projectile
+	AuroraShard.DisplayName: Aurora Shard
+	Borealis.DisplayName: Borealis
+	DawnStar.DisplayName: Dawn Star
+	DioritusBladeProjectile.DisplayName: Dioritus Blade Projectile
+	ElderanClaymoreProjectile.DisplayName: Elderan Claymore Projectile
+	EnginatorMProj.DisplayName: Enginator M Proj
+	FlaranceProjectile.DisplayName: Flarance Projectile
+	FrigidYoyoProjectile.DisplayName: Frigid Yoyo Projectile
+	GearIO2Projectile.DisplayName: Gear I O2 Projectile
+	GearIOProjectile.DisplayName: Gear I O Projectile
+	GoldenSword.DisplayName: Golden Sword
+	HolyBlade.DisplayName: Holy Blade
+	HolyOrigin.DisplayName: Holy Origin
+	HolyStrike.DisplayName: Holy Strike
+	ObsidiumYoyoFireball.DisplayName: Obsidium Yoyo Fireball
+	ObsidiumYoyoProjectile.DisplayName: Obsidium Yoyo Projectile
+	SteamworkShankerProjectile.DisplayName: Steamwork Shanker Projectile
+	TrainScytheProjectile.DisplayName: Train Scythe Projectile
+	TrueDawnStar.DisplayName: True Dawn Star
+	TrueGoldenSword.DisplayName: True Golden Sword
+	AncientRune.DisplayName: Ancient Rune
+	AncientRuneUp.DisplayName: Ancient Rune Up
+	AnDioChestguardBurst.DisplayName: An Dio Chestguard Burst
+	EruptionBurst.DisplayName: Eruption Burst
+	EruptionBurstUp.DisplayName: Eruption Burst Up
+	EruptionProjectile.DisplayName: Eruption Projectile
+	ObsidiumMysticBurst.DisplayName: Obsidium Mystic Burst
+	SteamBurst.DisplayName: Steam Burst
+	AgnesConjuration.DisplayName: Agnes Conjuration
+	AgnesConjuration2.DisplayName: Agnes Conjuration2
+	AnDioConjuration1.DisplayName: An Dio Conjuration1
+	AnDioConjuration2.DisplayName: An Dio Conjuration2
+	AnDioStalactite.DisplayName: An Dio Stalactite
+	AnDioStalagmite.DisplayName: An Dio Stalagmite
+	CharonConjuration.DisplayName: Charon Conjuration
+	ChlorysConjuration1.DisplayName: Chlorys Conjuration1
+	ChlorysConjuration2.DisplayName: Chlorys Conjuration2
+	ConjurationProjectile.DisplayName: Conjuration Projectile
+	CupidBurst.DisplayName: Cupid Burst
+	CupidConjuration2.DisplayName: Cupid Conjuration2
+	CupidConjurationAngel.DisplayName: Cupid Conjuration Angel
+	CupidHoming.DisplayName: Cupid Homing
+	DeathConjuration.DisplayName: Death Conjuration
+	DeathConjurationSkull.DisplayName: Death Conjuration Skull
+	DionysusConjuration.DisplayName: Dionysus Conjuration
+	DionysusConjuration2.DisplayName: Dionysus Conjuration2
+	FreyaConjuration1.DisplayName: Freya Conjuration1
+	FreyaConjuration2.DisplayName: Freya Conjuration2
+	FriggConjuration.DisplayName: Frigg Conjuration
+	GaiaConjuration.DisplayName: Gaia Conjuration
+	GemShard.DisplayName: Gem Shard
+	GreatGladiusConjuration1.DisplayName: Great Gladius Conjuration1
+	GreatGladiusConjuration2.DisplayName: Great Gladius Conjuration2
+	HadesConjuration.DisplayName: Hades Conjuration
+	HadesGeyser.DisplayName: Hades Geyser
+	HadesGeyserBurst.DisplayName: Hades Geyser Burst
+	HallowsEveConjuration1.DisplayName: Hallows Eve Conjuration1
+	HallowsEveConjuration2.DisplayName: Hallows Eve Conjuration2
+	HallowsEveConjuration3.DisplayName: Hallows Eve Conjuration3
+	HallowsEveConjuration4.DisplayName: Hallows Eve Conjuration4
+	HermesConjuration.DisplayName: Hermes Conjuration
+	HermesConjuration1.DisplayName: Hermes Conjuration1
+	HermesConjurationHoming.DisplayName: Hermes Conjuration Homing
+	JanusConjuration.DisplayName: Janus Conjuration
+	JanusConjurationBottom.DisplayName: Janus Conjuration Bottom
+	JanusConjurationSandball.DisplayName: Janus Conjuration Sandball
+	JanusConjurationUp.DisplayName: Janus Conjuration Up
+	MarsConjuration.DisplayName: Mars Conjuration
+	MarsGeyeser.DisplayName: Mars Geyeser
+	MarsGeyeserBurst.DisplayName: Mars Geyeser Burst
+	OrionConjuration.DisplayName: Orion Conjuration
+	PlutoConjuration.DisplayName: Pluto Conjuration
+	PlutoConjuration3.DisplayName: Pluto Conjuration3
+	PoseidonConjuration1.DisplayName: Poseidon Conjuration1
+	PoseidonConjuration2.DisplayName: Poseidon Conjuration2
+	PrimaryConjurationProjectile.DisplayName: Primary Conjuration Projectile
+	SaturnConjuration1.DisplayName: Saturn Conjuration1
+	SaturnConjuration2.DisplayName: Saturn Conjuration2
+	ThorShadowConjuration.DisplayName: Thor Shadow Conjuration
+	UndeathSkull.DisplayName: Undeath Skull
+	VulcanConjuration.DisplayName: Vulcan Conjuration
+	VulcanConjuration2.DisplayName: Vulcan Conjuration2
+	VulcanConjuration3.DisplayName: Vulcan Conjuration3
+	YuleConjuration.DisplayName: Yule Conjuration
+	YuleConjuration1.DisplayName: Yule Conjuration1
+	YuleConjuration2.DisplayName: Yule Conjuration2
+	AgnesDestruction.DisplayName: Agnes Destruction
+	AgnesDestruction2.DisplayName: Agnes Destruction2
+	AnDioDestruction1.DisplayName: An Dio Destruction1
+	AnDioDestruction2.DisplayName: An Dio Destruction2
+	CharonDestruction.DisplayName: Charon Destruction
+	ChlorysDestruction.DisplayName: Chlorys Destruction
+	CupidDestruction.DisplayName: Cupid Destruction
+	DestructionProjectile.DisplayName: Destruction Projectile
+	DionysusDestruction.DisplayName: Dionysus Destruction
+	DionysusExplosion.DisplayName: Dionysus Explosion
+	EtherialRocket.DisplayName: Etherial Rocket
+	FreyaDestruction.DisplayName: Freya Destruction
+	FriggDestruction.DisplayName: Frigg Destruction
+	GaiaDestruction.DisplayName: Gaia Destruction
+	HadesDestruction.DisplayName: Hades Destruction
+	HadesExplosion.DisplayName: Hades Explosion
+	HallowsEveDestruction1.DisplayName: Hallows Eve Destruction1
+	HallowsEveDestruction2.DisplayName: Hallows Eve Destruction2
+	HermesDestruction.DisplayName: Hermes Destruction
+	JanusDestruction.DisplayName: Janus Destruction
+	MarsDestruction.DisplayName: Mars Destruction
+	OrionDestruction.DisplayName: Orion Destruction
+	PlutoDestruction.DisplayName: Pluto Destruction
+	PoseidonDestruction.DisplayName: Poseidon Destruction
+	PoseidonDestruction2.DisplayName: Poseidon Destruction2
+	SaturnDestruction.DisplayName: Saturn Destruction
+	ShroomBoom.DisplayName: Shroom Boom
+	ThorHammerDestruction.DisplayName: Thor Hammer Destruction
+	YuleDestruction.DisplayName: Yule Destruction
+	ZuesBoltDestruction1.DisplayName: Zues Bolt Destruction1
+	ZuesBoltDestruction2.DisplayName: Zues Bolt Destruction2
+	ZuesBoltDestruction3.DisplayName: Zues Bolt Destruction3
+	AgnesIllusion.DisplayName: Agnes Illusion
+	AgnesIllusion2.DisplayName: Agnes Illusion2
+	AnDioIllusion.DisplayName: An Dio Illusion
+	CharonIllusion.DisplayName: Charon Illusion
+	ChlorysIllusion.DisplayName: Chlorys Illusion
+	CupidArrow.DisplayName: Cupid Arrow
+	CupidIllusion.DisplayName: Cupid Illusion
+	DionysusIllusion.DisplayName: Dionysus Illusion
+	EtheriaIllusion.DisplayName: Etheria Illusion
+	FreyaIllusion.DisplayName: Freya Illusion
+	FriggIllusion.DisplayName: Frigg Illusion
+	GaiaIllusion.DisplayName: Gaia Illusion
+	HadesIllusion.DisplayName: Hades Illusion
+	HallowsEveIllusion1.DisplayName: Hallows Eve Illusion1
+	HallowsEveIllusion2.DisplayName: Hallows Eve Illusion2
+	HermesIllusion.DisplayName: Hermes Illusion
+	IllusionProjectile.DisplayName: Illusion Projectile
+	JanusIllusion.DisplayName: Janus Illusion
+	JanusIllusionSandball.DisplayName: Janus Illusion Sandball
+	MarsIllusion.DisplayName: Mars Illusion
+	MarsIllusion2.DisplayName: Mars Illusion2
+	OrionIllusion.DisplayName: Orion Illusion
+	OrionIllusionSpawn.DisplayName: Orion Illusion Spawn
+	PlutoIllusion.DisplayName: Pluto Illusion
+	PoseidonIllusion.DisplayName: Poseidon Illusion
+	PoseidonIllusion2.DisplayName: Poseidon Illusion2
+	SaturnIllusion1.DisplayName: Saturn Illusion1
+	SaturnIllusion2.DisplayName: Saturn Illusion2
+	TestLaser.DisplayName: Test Laser
+	ThorSmashIllusion.DisplayName: Thor Smash Illusion
+	VulcanIllusion.DisplayName: Vulcan Illusion
+	YuleIllusion.DisplayName: Yule Illusion
+	ZuesBoltIllusion1.DisplayName: Zues Bolt Illusion1
+	ZuesBoltIllusion2.DisplayName: Zues Bolt Illusion2
+	Bolt.DisplayName: Bolt
+	CrystilliumShard.DisplayName: Crystillium Shard
+	OverflowSpore.DisplayName: Overflow Spore
+	OverflowThermalite.DisplayName: Overflow Thermalite
+	CoginatorConductor.DisplayName: Coginator Conductor
+	ConductorProjectile.DisplayName: Conductor Projectile
+	EruptionEvil.DisplayName: Eruption Evil
+	MagmaBallLaunched.DisplayName: Magma Ball Launched
+	NPCGemShard.DisplayName: N P C Gem Shard
+	MagmaHeartProjectile.DisplayName: Magma Heart Projectile
+	ToyTrainProjectile.DisplayName: Toy Train Projectile
+	Bubble.DisplayName: Bubble
+	DawnSpark.DisplayName: Dawn Spark
+	GoldenBubble.DisplayName: Golden Bubble
+	JunglePlagueSpore.DisplayName: Jungle Plague Spore
+	JunglePlagueSporeSpread.DisplayName: Jungle Plague Spore Spread
+	TrueDawnSpark.DisplayName: True Dawn Spark
+	AntiIceballProjectile.DisplayName: Anti Iceball Projectile
+	AvalancheProjectile.DisplayName: Avalanche Projectile
+	BigHail.DisplayName: Big Hail
+	BigSnowballProjectile.DisplayName: Big Snowball Projectile
+	BloodboltProjectile.DisplayName: Bloodbolt Projectile
+	BoneMeshFragmentProjectile.DisplayName: Bone Mesh Fragment Projectile
+	BoneMeshProjectile.DisplayName: Bone Mesh Projectile
+	BrassArrowProjectile.DisplayName: Brass Arrow Projectile
+	BysballProjectile.DisplayName: Bysball Projectile
+	ClusterballFragmentProjectile.DisplayName: Clusterball Fragment Projectile
+	ClusterballProjectile.DisplayName: Clusterball Projectile
+	FrostballProjectile.DisplayName: Frostball Projectile
+	IceBallProjectile.DisplayName: Ice Ball Projectile
+	Luminarrow.DisplayName: Luminarrow
+	LuminarrowHead.DisplayName: Luminarrow Head
+	ObsidiumArrow.DisplayName: Obsidium Arrow
+	ObsidiumArrowHead.DisplayName: Obsidium Arrow Head
+	PinkIceBallProjectile.DisplayName: Pink Ice Ball Projectile
+	PurpleIceBallProjectile.DisplayName: Purple Ice Ball Projectile
+	RedIceBallProjectile.DisplayName: Red Ice Ball Projectile
+	ShadowshotProjectile.DisplayName: Shadowshot Projectile
+	ShblProjectile.DisplayName: Shbl Projectile
+	SlushballProjectile.DisplayName: Slushball Projectile
+	SnowRocket.DisplayName: Snow Rocket
+	SootballProjectile.DisplayName: Sootball Projectile
+	StarStrikerBeam.DisplayName: Star Striker Beam
+	WavesnowProjectile.DisplayName: Wavesnow Projectile
+	YellowIceBall.DisplayName: Yellow Ice Ball
+	CapacityThornsProj.DisplayName: Capacity Thorns Proj
+	ElectroAura.DisplayName: Electro Aura
+	FriendlyDungeonGuardian.DisplayName: Friendly Dungeon Guardian
+	FriendlyDungeonGuardianPrime.DisplayName: Friendly Dungeon Guardian Prime
+	FriendlyEyeLaserProj.DisplayName: Friendly Eye Laser Proj
+	FriendlyGolemProj.DisplayName: Friendly Golem Proj
+	FriendlyProbeLaserProj.DisplayName: Friendly Probe Laser Proj
+	FriendlyProbeProj.DisplayName: Friendly Probe Proj
+	FriendlyTrueEyeProj.DisplayName: Friendly True Eye Proj
+	MiniEye.DisplayName: Mini Eye
+	ShadowDoubleProj.DisplayName: Shadow Double Proj
+	BysmalBlast.DisplayName: Bysmal Blast
+	MoltenCoreHand.DisplayName: Molten Core Hand
+	Nothing.DisplayName: Nothing
+	AndeshiardOrb.DisplayName: Andeshiard Orb
+	AndesiaProbe.DisplayName: Andesia Probe
+	ArcticHydraHead.DisplayName: Arctic Hydra Head
+	BysmalBlast2.DisplayName: Bysmal Blast2
+	DaggorShard.DisplayName: Daggor Shard
+	DioritusProbe.DisplayName: Dioritus Probe
+	MagmaticCoreProjectile.DisplayName: Magmatic Core Projectile
+	SandySharkProjectile.DisplayName: Sandy Shark Projectile
+	ShroolicopterProjectile.DisplayName: Shroolicopter Projectile
+	ShroomProjectile.DisplayName: Shroom Projectile
+	SoulmasterOrb.DisplayName: Soulmaster Orb
+	TV.DisplayName: T V
+	UltimateLeader1.DisplayName: Ultimate Leader1
+	UltimateLeader2.DisplayName: Ultimate Leader2
+	UltimateLeader3.DisplayName: Ultimate Leader3
+	UltimateLeader4.DisplayName: Ultimate Leader4
+	UltimateLeader5.DisplayName: Ultimate Leader5
+	UltimateLeader6.DisplayName: Ultimate Leader6
+	AndeshiardThrownProjectile.DisplayName: Andeshiard Thrown Projectile
+	AnDiurikenThrownProjectile.DisplayName: An Diuriken Thrown Projectile
+	AntarcticaProjectile.DisplayName: Antarctica Projectile
+	BysmalRipperProjectile.DisplayName: Bysmal Ripper Projectile
+	BysmalRipperShadow.DisplayName: Bysmal Ripper Shadow
+	CoginatorP.DisplayName: Coginator P
+	DaggoritusProjectile.DisplayName: Daggoritus Projectile
+	EnginatorTProj.DisplayName: Enginator T Proj
+	EruptorProjectile.DisplayName: Eruptor Projectile
+	ForbiddenAxeProj.DisplayName: Forbidden Axe Proj
+	JetDaggerProjectile.DisplayName: Jet Dagger Projectile
+	ObshardianP.DisplayName: Obshardian P
+	ShardianP.DisplayName: Shardian P
+	TheSnowflakeProjectile.DisplayName: The Snowflake Projectile
+	ViciousAssassin2.DisplayName: Vicious Assassin2
+	ViciousAssassinMain.DisplayName: Vicious Assassin Main
+	ViciousAssassinShard.DisplayName: Vicious Assassin Shard
+	BysmalDrillProjectile.DisplayName: Bysmal Drill Projectile
+	DrillinatorProjectile.DisplayName: Drillinator Projectile
+	DrillOTron10000Projectile.DisplayName: Drill O Tron10000 Projectile
+}
+
+Tiles: {
+	Crystallizer.MapEntry: Crystallizer
+	Demyst.MapEntry: Demyst
+	ExitStairs.MapEntry: Exit Stairs
+	KeystoneTile.MapEntry: Keystone Tile
+	LaugicalWorkbench.MapEntry: Laugical Workbench
+	NewDawnTile.MapEntry: New Dawn Tile
+	TempleBrick.MapEntry: Temple Brick
+	TempleEntrance.MapEntry: Temple Entrance
+	TemplePlatform.MapEntry: Temple Platform
+	TestTriggerTile.MapEntry: Test Trigger Tile
+	Smelter.MapEntry: Smelter
+	AlchemicalInfuser.MapEntry: Alchemical Infuser
+	AncientEnchanter.MapEntry: Ancient Enchanter
+	AnDioTrophyTile.MapEntry: An Dio Trophy Tile
+	AnnihilatorTrophyTile.MapEntry: Annihilator Trophy Tile
+	BrassFAN.MapEntry: Brass F A N
+	BrassFANRight.MapEntry: Brass F A N Right
+	BrassRING.MapEntry: Brass R I N G
+	CrystalineInfuser.MapEntry: Crystaline Infuser
+	DuneSharkronTrophyTile.MapEntry: Dune Sharkron Trophy Tile
+	EtheriaTrophyTile.MapEntry: Etheria Trophy Tile
+	LavaGemCandleTile.MapEntry: Lava Gem Candle Tile
+	LavaGemLampTile.MapEntry: Lava Gem Lamp Tile
+	LavaGemLanternTile.MapEntry: Lava Gem Lantern Tile
+	LavaGem.MapEntry: Lava Gem
+	ObsidiumBedTile.MapEntry: Obsidium Bed Tile
+	ObsidiumChairTile.MapEntry: Obsidium Chair Tile
+	ObsidiumDoorClosed.MapEntry: Obsidium Door Closed
+	ObsidiumDoorOpen.MapEntry: Obsidium Door Open
+	ObsidiumDresserTile.MapEntry: Obsidium Dresser Tile
+	ObsidiumSinkTile.MapEntry: Obsidium Sink Tile
+	ObsidiumTableTile.MapEntry: Obsidium Table Tile
+	ObsidiumWorkbenchTile.MapEntry: Obsidium Workbench Tile
+	HighPriestess.MapEntry: High Priestess
+	HypothemaTrophyTile.MapEntry: Hypothema Trophy Tile
+	LargeLavaGem.MapEntry: Large Lava Gem
+	MagmaVeins.MapEntry: Magma Veins
+	MineralEnchanterTile.MapEntry: Mineral Enchanter Tile
+	AnDioMusicBox.MapEntry: An Dio Music Box
+	AnnihilatorMusicBox.MapEntry: Annihilator Music Box
+	DioritusMusicBox.MapEntry: Dioritus Music Box
+	DuneSharkronMusicBox.MapEntry: Dune Sharkron Music Box
+	EtheriaMusicBox.MapEntry: Etheria Music Box
+	GreatShadowMusicBox.MapEntry: Great Shadow Music Box
+	HypothemaMusicBox.MapEntry: Hypothema Music Box
+	ObsidiumMusicBox.MapEntry: Obsidium Music Box
+	RagnarMusicBox.MapEntry: Ragnar Music Box
+	SlybertronMusicBox.MapEntry: Slybertron Music Box
+	SteamTrainMusicBox.MapEntry: Steam Train Music Box
+	ObsidiumChest.MapEntry: Obsidium Chest
+	ObsidiumCore.MapEntry: Obsidium Core
+	ObsidiumGrass.MapEntry: Obsidium Grass
+	ObsidiumHeart.MapEntry: Obsidium Heart
+	ObsidiumOreBlock.MapEntry: Obsidium Ore Block
+	ObsidiumPlantBulbs.MapEntry: Obsidium Plant Bulbs
+	ObsidiumPlantGrass.MapEntry: Obsidium Plant Grass
+	ObsidiumPlantGrass2.MapEntry: Obsidium Plant Grass2
+	ObsidiumPlantHeart.MapEntry: Obsidium Plant Heart
+	ObsidiumPlantLeaves.MapEntry: Obsidium Plant Leaves
+	ObsidiumPlantMine.MapEntry: Obsidium Plant Mine
+	ObsidiumVine.MapEntry: Obsidium Vine
+	RagnarTrophyTile.MapEntry: Ragnar Trophy Tile
+	SlybertronTrophyTile.MapEntry: Slybertron Trophy Tile
+	SootTile.MapEntry: Soot Tile
+	SteamTrainTrophyTile.MapEntry: Steam Train Trophy Tile
+	SteamVENT.MapEntry: Steam V E N T
+	Transmutable.MapEntry: Transmutable
+	TransmutationTable.MapEntry: Transmutation Table
+	Zinc.MapEntry: Zinc
+}
+
+Walls: {
+}
+
+Biomes: {
+	TempleBiome: {
+		TownNPCDialogueName: the Temple Biome
+		DisplayName: Temple Biome
+	}
+
+	ObsidiumBiome: {
+		TownNPCDialogueName: the Obsidium Biome
+		DisplayName: Obsidium Biome
+	}
+}
+
+NPCs: {
+	Hypothema.DisplayName: Hypothema
+	MiniHypo.DisplayName: Mini Hypo
+	AgamondaBody.DisplayName: Agamonda Body
+	AgamondaHead.DisplayName: Agamonda Head
+	AgamondaTail.DisplayName: Agamonda Tail
+	Fluvium.DisplayName: Fluvium
+	MechanicalCrawler.DisplayName: Mechanical Crawler
+	MechanicalCreeper.DisplayName: Mechanical Creeper
+	MechanicalMimic.DisplayName: Mechanical Mimic
+	MechanicalShelly.DisplayName: Mechanical Shelly
+	MechanicalSlimer.DisplayName: Mechanical Slimer
+	SteampunkDefender.DisplayName: Steampunk Defender
+	SteampunkZapper.DisplayName: Steampunk Zapper
+	TheAnnihilator.DisplayName: The Annihilator
+	Etheria.DisplayName: Etheria
+	EtheriaDecoy.DisplayName: Etheria Decoy
+	EtherialSpiralShot.DisplayName: Etherial Spiral Shot
+	EtherialTear.DisplayName: Etherial Tear
+	TrueEtherialSpiralShot.DisplayName: True Etherial Spiral Shot
+	TrueEtherialTear.DisplayName: True Etherial Tear
+	EtherialEoC.DisplayName: Etherial Eo C
+	EtherialRagnarHand.DisplayName: Etherial Ragnar Hand
+	GearSlime.DisplayName: Gear Slime
+	MechanicalDungeonGuardian.DisplayName: Mechanical Dungeon Guardian
+	PipeSlime.DisplayName: Pipe Slime
+	SparkSlime.DisplayName: Spark Slime
+	SuperBee.DisplayName: Super Bee
+	SuperCorruptor.DisplayName: Super Corruptor
+	SuperGolemFist.DisplayName: Super Golem Fist
+	SuperHornet.DisplayName: Super Hornet
+	SuperHungry.DisplayName: Super Hungry
+	SuperIchorSpitter.DisplayName: Super Ichor Spitter
+	SuperLeechBody.DisplayName: Super Leech Body
+	SuperLeechHead.DisplayName: Super Leech Head
+	SuperLeechTail.DisplayName: Super Leech Tail
+	SuperMechanicalCrawler.DisplayName: Super Mechanical Crawler
+	SuperMechanicalMinion.DisplayName: Super Mechanical Minion
+	SuperServant.DisplayName: Super Servant
+	SuperShark.DisplayName: Super Shark
+	SuperSlime.DisplayName: Super Slime
+	Terratome.DisplayName: Terratome
+	EtherialSpirit.DisplayName: Etherial Spirit
+	NecrodonDDDFight.DisplayName: Necrodon D D D Fight
+	Phylactery.DisplayName: Phylactery
+	LavaTitan.DisplayName: Lava Titan
+	LycorisSlime.DisplayName: Lycoris Slime
+	MagmaCaster.DisplayName: Magma Caster
+	MagmatipedeBody.DisplayName: Magmatipede Body
+	MagmatipedeHead.DisplayName: Magmatipede Head
+	MagmatipedeTail.DisplayName: Magmatipede Tail
+	MoltenSoul.DisplayName: Molten Soul
+	MoltiochBody.DisplayName: Moltioch Body
+	MoltiochHead.DisplayName: Moltioch Head
+	MoltiochTail.DisplayName: Moltioch Tail
+	ObsidiumDriller.DisplayName: Obsidium Driller
+	ObsidiumSkull.DisplayName: Obsidium Skull
+	ReaverHeadNPC.DisplayName: Reaver Head N P C
+	ReaverNPC.DisplayName: Reaver N P C
+	TitanBlast.DisplayName: Titan Blast
+	DuneSharkron.DisplayName: Dune Sharkron
+	Ragnar.DisplayName: Ragnar
+	RagnarHand.DisplayName: Ragnar Hand
+	Ragnarune.DisplayName: Ragnarune
+	Andesia.DisplayName: Andesia
+	AnDio1.DisplayName: An Dio1
+	AnDio2.DisplayName: An Dio2
+	AnDio3.DisplayName: An Dio3
+	AnDioLaserBall.DisplayName: An Dio Laser Ball
+	Dioritus.DisplayName: Dioritus
+	LaserBall.DisplayName: Laser Ball
+	Slybertron.DisplayName: Slybertron
+	SteamTrain.DisplayName: Steam Train
+	SteamTrainOld.DisplayName: Steam Train Old
+}
+
+Buffs: {
+	Spored: {
+		Description: Smokin hot!
+		DisplayName: Spored
+	}
+
+	Fatality: {
+		Description:
+			'''
+			Halves your max life for each Fatality charge you have
+			Healing potions remove a Fatality charge instead of healing you
+			'''
+		DisplayName: Fatality
+	}
+
+	Ablaze: {
+		DisplayName: Ablaze
+		Description: Owey
+	}
+
+	Albus: {
+		DisplayName: Albus
+		Description: +10% Damage Reduction
+	}
+
+	Annihilation: {
+		DisplayName: Annihilation
+		Description: You are infused with the rage of an Annihilator.
+	}
+
+	Aquos: {
+		DisplayName: Aquos
+		Description: +10% Critical Strike Chance
+	}
+
+	ArcticHydraBuff: {
+		DisplayName: Arctic Hydra Buff
+		Description: The Hydra Hoard will fight for you
+	}
+
+	Aura: {
+		DisplayName: Aura
+		Description: +10% Max Life
+	}
+
+	BloodRage: {
+		DisplayName: Blood Rage
+		Description: Increased Damage and Crit chance
+	}
+
+	BrittleBuff: {
+		DisplayName: Brittle Buff
+		Description: I feel like I could shatter
+	}
+
+	Bubbly: {
+		DisplayName: Bubbly
+		Description: Bubbles!
+	}
+
+	BurningFragrance: {
+		DisplayName: Burning Fragrance
+		Description: Increased attack stats
+	}
+
+	CapacityCurseBuff: {
+		DisplayName: Capacity Curse Buff
+		Description: You've been weakened!
+	}
+
+	CarapaceDamageBuff: {
+		DisplayName: Carapace Damage Buff
+		Description: Increased Damage!
+	}
+
+	ConjurationBoost: {
+		DisplayName: Conjuration Boost
+		Description:
+			'''
+			'Otherworldly energy strengthens you.'
+			+50% Overflow
+			'''
+	}
+
+	Conjuration: {
+		DisplayName: Conjuration
+		Description: Draw energy from other worlds
+	}
+
+	Connected: {
+		DisplayName: Connected
+		Description: You are connected to the grid!
+	}
+
+	DawnBuff: {
+		DisplayName: Dawn Buff
+		Description: Golden energy
+	}
+
+	DeathMark: {
+		DisplayName: Death Mark
+		Description: Your time is soon.
+	}
+
+	DepthBubbles: {
+		DisplayName: Depth Bubbles
+		Description: Bubbles!
+	}
+
+	DestructionBoost: {
+		DisplayName: Destruction Boost
+		Description:
+			'''
+			'Hell's energy strengthens you.'
+			+10% Mystic Damage
+			'''
+	}
+
+	Destruction: {
+		DisplayName: Destruction
+		Description: Hell is your catalyst
+	}
+
+	EerinessBuff: {
+		DisplayName: Eeriness Buff
+		Description: Bubbles!
+	}
+
+	EtherBones: {
+		DisplayName: Ether Bones
+		Description: Your bones are infused with the strength of the Etherial.
+	}
+
+	EtherialEffectCooldownBuff: {
+		DisplayName: Etherial Effect Cooldown Buff
+		Description: +20 Defense & +20% Damage
+	}
+
+	EtherialRagnar: {
+		DisplayName: Etherial Ragnar
+		Description: Increased stats from being in lava!
+	}
+
+	EtherialScarfCooldown: {
+		DisplayName: Etherial Scarf Cooldown
+		Description: Your Etherial Scarf has to regenerate before it can save you again.
+	}
+
+	EvilBossCooldownBuff: {
+		DisplayName: Evil Boss Cooldown Buff
+		Description: Your World Evil Boss effect is on Cooldown.
+	}
+
+	Fertile: {
+		DisplayName: Fertile
+		Description: Seeds grow within you.
+	}
+
+	ForGlory: {
+		DisplayName: For Glory
+		Description:
+			'''
+			+15% Damage 
+			No life Regen
+			'''
+	}
+
+	ForHonor: {
+		DisplayName: For Honor
+		Description:
+			'''
+			+15% Damage 
+			Defense Halved
+			'''
+	}
+
+	FragmentedMind: {
+		DisplayName: Fragmented Mind
+		Description: Your Etherial Brain has to regenerate before it can save you again.
+	}
+
+	Frigid: {
+		DisplayName: Frigid
+		Description: "'Freeze!'"
+	}
+
+	Frostbite: {
+		DisplayName: Frostbite
+		Description: The cold bites back!
+	}
+
+	Furious: {
+		DisplayName: Furious
+		Description:
+			'''
+			Losing life.
+			Explode upon death
+			'''
+	}
+
+	IllusionBoost: {
+		DisplayName: Illusion Boost
+		Description:
+			'''
+			'The mind's energy strengthens you.'
+			+100% Mystic Duration
+			'''
+	}
+
+	Illusion: {
+		DisplayName: Illusion
+		Description: The power of the mind is yours
+	}
+
+	Incineration: {
+		DisplayName: Incineration
+		Description: Smokin hot!
+	}
+
+	InfernalBuff: {
+		DisplayName: Infernal Buff
+		Description: Burning in your Armor
+	}
+
+	JudgementBuff: {
+		DisplayName: Judgement Buff
+		Description: Bring down weight upon you
+	}
+
+	JumpBoost: {
+		DisplayName: Jump Boost
+		Description: "'Reach for the sky.'"
+	}
+
+	JunglePlagueBuff: {
+		DisplayName: Jungle Plague Buff
+		Description: Sporified!
+	}
+
+	JusticeCooldown: {
+		DisplayName: Justice Cooldown
+		Description: Justice has gone blind for a while.
+	}
+
+	LavaDamageBuff: {
+		DisplayName: Lava Damage Buff
+		Description: +15% Damage
+	}
+
+	LavaDefenseBuff: {
+		DisplayName: Lava Defense Buff
+		Description: +10 Defense
+	}
+
+	LavaRegen: {
+		DisplayName: Lava Regen
+		Description: Greatly increased regeneration
+	}
+
+	Lovestruck: {
+		DisplayName: Lovestruck
+		Description: Mods.NewDawn.Buffs.Lovestruck.Description
+	}
+
+	MagmaHeartBuff: {
+		DisplayName: Magma Heart Buff
+		Description:
+			'''
+			You are immune to lava
+			'A special kind of love.'
+			'''
+	}
+
+	Magmatic: {
+		DisplayName: Magmatic
+		Description: Increased stats from being in lava!
+	}
+
+	MagmaticCoreBuff: {
+		DisplayName: Magmatic Core Buff
+		Description: This ball of hardened magma will fight for you
+	}
+
+	MagmaticVeins: {
+		DisplayName: Magmatic Veins
+		Description: Power flows through you!
+	}
+
+	Midnight: {
+		DisplayName: Midnight
+		Description:
+			'''
+			'Midnight's Moon glows bright on you.'
+			Unleash a Midnight Burst when changing Mysticism
+			'''
+	}
+
+	MobilityCurseBuff: {
+		DisplayName: Mobility Curse Buff
+		Description: Slow down there, punk.
+	}
+
+	MoonLordSoulCooldownBuff: {
+		DisplayName: Moon Lord Soul Cooldown Buff
+		Description: Your Moon Lord effect is on Cooldown.
+	}
+
+	HermesBuff: {
+		DisplayName: Hermes Buff
+		Description: Aerial predator
+	}
+
+	Mystified: {
+		DisplayName: Mystified
+		Description: Disintegrating!
+	}
+
+	Mysticality: {
+		DisplayName: Mysticality
+		Description: You can't drink Potentia Potions for a while
+	}
+
+	Mysticality2: {
+		DisplayName: Mysticality2
+		Description: You can't drink Potentia Potions for a while, but Overflow is increased by 10%
+	}
+
+	Mysticality3: {
+		DisplayName: Mysticality3
+		Description:
+			'''
+			You can't drink Potentia Potions for a while.
+			+20% Overflow
+			'''
+	}
+
+	MysticBurstPotion: {
+		DisplayName: Mystic Burst Potion
+		Description:
+			'''
+			'Mystical energy swells within you.'
+			Decreases Mystic Burst cooldown
+			'''
+	}
+
+	MysticPower: {
+		DisplayName: Mystic Power
+		Description:
+			'''
+			'The energy of the cosmos strengthens you.'
+			+10% Mystic Damage
+			'''
+	}
+
+	ObsidiumArmorBuff: {
+		DisplayName: Obsidium Armor Buff
+		Description: Increased Mystic damage
+	}
+
+	ObsidiumHeartBuff: {
+		DisplayName: Obsidium Heart Buff
+		Description: "'A special kind of love.'"
+	}
+
+	OmegaJumpBoost: {
+		DisplayName: Omega Jump Boost
+		Description: "'Reach for the next dimension.'"
+	}
+
+	OrbitalBuff: {
+		DisplayName: Orbital Buff
+		Description: Into orbit!
+	}
+
+	PollinatedBuff: {
+		DisplayName: Pollinated Buff
+		Description: I'm about to sneeze
+	}
+
+	ReaperBuff: {
+		DisplayName: Reaper Buff
+		Description: Increased damage and movement speed
+	}
+
+	Refracting: {
+		DisplayName: Refracting
+		Description: Sparkly but deadly
+	}
+
+	Regis: {
+		DisplayName: Regis
+		Description: +10% Life Regen
+	}
+
+	RockTwins: {
+		DisplayName: Rock Twins
+		Description: The rulers of the caverns will protect you!
+	}
+
+	Rubrum: {
+		DisplayName: Rubrum
+		Description: +10% Damage
+	}
+
+	SandyBuff: {
+		DisplayName: Sandy Buff
+		Description: There's sand in my eyes!
+	}
+
+	SandySharkBuff: {
+		DisplayName: Sandy Shark Buff
+		Description: It looks a bit pouty
+	}
+
+	ShroolicopterBuff: {
+		DisplayName: Shroolicopter Buff
+		Description: "'Rain Shrooms upon them.'"
+	}
+
+	Slimed: {
+		DisplayName: Slimed
+		Description: Slowly losing life
+	}
+
+	Slushie: {
+		DisplayName: Slushie
+		Description: Squish
+	}
+
+	SpookedBuff: {
+		DisplayName: Spooked Buff
+		Description: Many spoops!
+	}
+
+	Steamified: {
+		DisplayName: Steamified
+		Description: Steamin hot!
+	}
+
+	SteamTrainSoulCooldownBuff: {
+		DisplayName: Steam Train Soul Cooldown Buff
+		Description: Your Steam Train effect is on Cooldown.
+	}
+
+	Steamy: {
+		DisplayName: Steamy
+		Description: Smokin hot!
+	}
+
+	TenacityCurseBuff: {
+		DisplayName: Tenacity Curse Buff
+		Description:
+			'''
+			You've been weakened!
+			-12 Defense
+			'''
+	}
+
+	ThunderCharged: {
+		DisplayName: Thunder Charged
+		Description: Full of lightning
+	}
+
+	TimeDilation: {
+		DisplayName: Time Dilation
+		Description: Take a burst of damage when Time is Stopped
+	}
+
+	TimeExhausted: {
+		DisplayName: Time Exhausted
+		Description: You cannot use Time Stop for a while
+	}
+
+	ToyTrainBuff: {
+		DisplayName: Toy Train Buff
+		Description: Choo Choo!
+	}
+
+	TrueCurse: {
+		DisplayName: True Curse
+		Description: You truly can do nothing
+	}
+
+	TrueDawn: {
+		DisplayName: True Dawn
+		Description: Star energy
+	}
+
+	TVBuff: {
+		DisplayName: T V Buff
+		Description: Don't watch- it's just fake news.
+	}
+
+	UltimateLeaderBuff: {
+		DisplayName: Ultimate Leader Buff
+		Description: This nebula swarm will fight for you
+	}
+
+	UltraJumpBoostBuff: {
+		DisplayName: Ultra Jump Boost Buff
+		Description: "'Reach for the stars.'"
+	}
+
+	UndeathBuff: {
+		DisplayName: Undeath Buff
+		Description: Not quite immortality
+	}
+
+	Verdi: {
+		DisplayName: Verdi
+		Description: +10% Max Run Speed
+	}
+
+	WallOfFleshEffectCooldownBuff: {
+		DisplayName: Wall Of Flesh Effect Cooldown Buff
+		Description: Your Wall of Flesh effect is on Cooldown.
+	}
+
+	WingClip: {
+		DisplayName: Wing Clip
+		Description: Flight time drastically reduced.
+	}
+
+	SteamTrainMountBuff: {
+		DisplayName: Steam Train Mount Buff
+		Description: Mods.NewDawn.Buffs.SteamTrainMountBuff.Description
+	}
+}
+
+Keybinds: {
+	"Toggle Mysticism.DisplayName": Toggle  Mysticism
+	"Toggle Visual Effects.DisplayName": Toggle  Visual  Effects
+	"Toggle Mobility Effects.DisplayName": Toggle  Mobility  Effects
+	"Quick Mystica.DisplayName": Quick  Mystica
+	"Soul Stone Ability.DisplayName": Soul  Stone  Ability
+	"Restock from Nearby Chests.DisplayName": Restock from  Nearby  Chests
+}
+
+DamageClasses.MysticDamageClass.DisplayName: Mystic Damage Class
+UI.ExampleResource: Mods.NewDawn.UI.ExampleResource
+
+Configs: {
+	EnigmaConfig: {
+		DisplayName: Enigma Config
+
+		MysticUIType: {
+			Label: Mystic UI Type [0: Center, 1: Top Circle, 2: Top Stacked]
+			Tooltip: ""
+		}
+
+		MysticUIAnimated: {
+			Label: Mystic UI Animation
+			Tooltip: ""
+		}
+
+		MysticSound: {
+			Label: Mystic Change Sound
+			Tooltip: ""
+		}
+	}
 }
