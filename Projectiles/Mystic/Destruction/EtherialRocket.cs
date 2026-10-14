@@ -76,7 +76,7 @@ namespace NewDawn.Projectiles.Mystic.Destruction
 
             ParticleManager.UpdateParticles(ref Particles);
             if (Counter % 2 == 0)
-                Particles.Add(new Particle(NewDawn.RequestTexture("Particles/EtherialSmoke"), Projectile.Center - Projectile.velocity / 2, new Vector2(-2 + Main.rand.Next(5), -2 + Main.rand.Next(5)), 6, .95f, Main.rand.NextFloat() * 6.28f, .2f, 1, .9f + Main.rand.NextFloat() * .1f));
+                Particles.Add(new Particle(ModContent.Request<Texture2D>("Particles/EtherialSmoke").Value, Projectile.Center - Projectile.velocity / 2, new Vector2(-2 + Main.rand.Next(5), -2 + Main.rand.Next(5)), 6, .95f, Main.rand.NextFloat() * 6.28f, .2f, 1, .9f + Main.rand.NextFloat() * .1f));
         }
 
         private void MoveTo(Vector2 targetVector)

@@ -29,9 +29,9 @@ namespace NewDawn.Items.Useables
         {
             //TODO: Add sound effect for this item
             //SoundEngine.PlaySound(SoundLoader.customSoundType, -1, -1, Mod.GetSoundSlot(SoundType.Sound, "Sounds/SoulStore"));
-            NewDawnPlayer.Get(player).MysticBurstDisabled = !NewDawnPlayer.Get(player).MysticBurstDisabled;
+            player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().MysticBurstDisabled = !player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().MysticBurstDisabled;
             //NewDawnWorld.downedNecrodon = !NewDawnWorld.downedNecrodon;
-            if (NewDawnPlayer.Get(player).MysticBurstDisabled)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().MysticBurstDisabled)
                 Main.NewText("You stored part of your Soul in the Vase.", 150, 100, 0);
             else
                 Main.NewText("Your soul has been released.", 150, 100, 0);

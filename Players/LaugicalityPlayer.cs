@@ -1,28 +1,23 @@
 using Microsoft.Xna.Framework;
 using NewDawn.Buffs;
 using NewDawn.Dusts;
-using NewDawn.Items.Consumables.Potions;
 using NewDawn.Items.Equipables;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using NewDawn.Items.Placeable;
-using NewDawn.Items.Weapons.Mystic;
 using NewDawn.NPCs;
+using NewDawn.Players;
 using NewDawn.Projectiles.Accessory;
 using NewDawn.Projectiles.Magic;
-using NewDawn.Projectiles.Mystic.Burst;
 using NewDawn.Projectiles.Mystic.Conjuration;
-using NewDawn.Projectiles.Mystic.Illusion;
 using NewDawn.Projectiles.SoulStone;
 using NewDawn.Projectiles.Special;
-using NewDawn.UI;
 using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
 using Terraria.DataStructures;
 using Terraria.GameInput;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using BrassFAN = NewDawn.Tiles.BrassFAN;
@@ -95,7 +90,6 @@ namespace NewDawn
         public bool OverflowFire { get; set; } = false;
         public bool Lily { get; set; } = false;
         public bool Bloat { get; set; } = false;
-        public bool ThorCharge { get; set; } = false;
 
 
         //Music
@@ -117,7 +111,7 @@ namespace NewDawn
 
         public override IEnumerable<Item> AddStartingItems(bool mediumCoreDeath)/* tModPorter Suggestion: Return an Item array to add to the players starting items. Use ModifyStartingInventory for modifying them if needed */
         {
-            MysticBurstDisabled = false;
+            //MysticBurstDisabled = false;
             BysmalAbsorbDisabled = false;
             inf = true;
             calm = true;
@@ -137,8 +131,6 @@ namespace NewDawn
         /// </summary>
         public override void ResetEffects()
         {
-            MysticReset();
-
             if (fullBysmal > 0)
                 fullBysmal -= 1;
 
@@ -163,16 +155,16 @@ namespace NewDawn
             if (Verdi > 0)
                 Verdi -= 1;
 
+            if (HurtCooldown > 0)
+                HurtCooldown--;
+
             Slimey = false;
-            Magmatic = false;
             FireTrail = false;
             theta += 3.14f / 60f;
             UltraBoisSummon = false;
             obsHeart = false;
             zCoolDown = 65 * 60;
             zaWarudoDuration = 4 * 60;
-            Midnight = false;
-            AndioChestplate = false;
             AndioChestguard = false;
             ShroomCopterSummon = false;
             zProjImmune = false;
@@ -354,17 +346,6 @@ namespace NewDawn
                 Player.position.Y = shakeO.Y - shakeMag + ((float)random.NextDouble() * shakeMag * 2);
             }
 
-            if (((Main.tileSolid[Main.tile[(int)(Player.position.X / 16), (int)(Player.position.Y / 16) + 3].TileType] && Main.tile[(int)(Player.position.X / 16), (int)(Player.position.Y / 16) + 3].TileType != 0) ||
-                (Main.tileSolid[Main.tile[(int)(Player.position.X / 16) + 1, (int)(Player.position.Y / 16) + 3].TileType] && Main.tile[(int)(Player.position.X / 16) + 1, (int)(Player.position.Y / 16) + 3].TileType != 0)) &&
-                Player.velocity.Y >= 0)
-                Grounded();
-
-            if (Player.HeldItem.type == ModContent.ItemType<ThorsHammer>() && MysticMode == 2)
-            {
-                Player.maxFallSpeed += 80;
-                if (Player.velocity.Y > 0)
-                    Player.velocity.Y += .25f;
-            }
 
             CheckBysmalPowers();
 
@@ -372,23 +353,9 @@ namespace NewDawn
                 GetEtherialAccessories();
         }
 
-        private void Grounded()
-        {
-            if (Player.HeldItem.type == ModContent.ItemType<ThorsHammer>() && Player.itemAnimation > 0 && Player.velocity.Y > 4 && !ThorCharge && MysticMode == 2)
-            {
-                ThorCharge = true;
-                SoundEngine.PlaySound(SoundID.Item122, Player.position);
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X + (Player.direction * 40), Player.Center.Y - 70, 0, 0, ModContent.ProjectileType<ThorSmashIllusion>(), (int)Player.HeldItem.damage, 8, Main.myPlayer);
-            }
-            if (Player.HeldItem.type != ModContent.ItemType<ThorsHammer>() || Player.itemAnimation == 0 || MysticMode != 2)
-                ThorCharge = false;
-        }
-
         public override void PostUpdate()
         {
             PostUpdateZaWarudo();
-            PostUpdateMysticBursts();
-            PostUpdateMysticBuffs();
             PostUpdateMovementTileChecks();
         }
         public override void PostUpdateBuffs()
@@ -444,37 +411,6 @@ namespace NewDawn
 
         }
 
-        private void PostUpdateMysticBursts()
-        {
-            if (MysticErupting > 0)
-            {
-                if (Main.rand.Next(4) == 0)
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, Player.velocity.X - 4 + Main.rand.Next(9), -Main.rand.Next(6, 9), ModContent.ProjectileType<EruptionProjectile>(), (int)(30 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-            }
-
-            /*if (MysticSpiralBurst > 0)
-            {
-                MysticSpiralDelay++;
-
-                if (MysticSpiralDelay > 2)
-                {
-                    MysticSpiralDelay = 0;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 4 * (float)Math.Cos(theta * 2), 4 * (float)Math.Sin(theta * 2), ModContent.ProjectileType<AnDioChestguardBurst>(), (int)(32 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                }
-            }
-            */
-            if (MysticSteamSpiralBurst > 0)
-            {
-                MysticSteamSpiralDelay++;
-
-                if (MysticSteamSpiralDelay > 5)
-                {
-                    MysticSteamSpiralDelay = 0;
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 * (float)Math.Cos(theta), 6 * (float)Math.Sin(theta), ModContent.ProjectileType<SteamBurst>(), (int)(40 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 * (float)Math.Cos(theta + 3.14f), 6 * (float)Math.Sin(theta + 3.14f), ModContent.ProjectileType<SteamBurst>(), (int)(40 * MysticDamage * MysticBurstDamage), 3, Main.myPlayer);
-                }
-            }
-        }
 
         private void PostUpdateMovementTileChecks()
         {
@@ -637,7 +573,7 @@ namespace NewDawn
                                 Player.GetCritChance(DamageClass.Ranged) += 5;
                                 Player.GetCritChance(DamageClass.Throwing) += 5;
                                 Player.maxMinions++;
-                                MysticDuration += .05f;
+                                Player.GetModPlayer<MysticPlayer>().MysticDuration += .05f;
                                 break;
                             default:
                                 Player.lifeRegen += 2;
@@ -685,10 +621,6 @@ namespace NewDawn
             tag["Featherfall"] = feather;
             tag["BysmalPowers"] = BysmalPowers;
             tag["ObsidiumHeart"] = ObsidiumHeart;
-            tag["LuxMaxPermaBoost"] = LuxMaxPermaBoost;
-            tag["VisMaxPermaBoost"] = VisMaxPermaBoost;
-            tag["MundusMaxPermaBoost"] = MundusMaxPermaBoost;
-            tag["MysticBurstDisabled"] = MysticBurstDisabled;
             tag["BysmalAbsorbDisabled"] = BysmalAbsorbDisabled;
         }
 
@@ -717,15 +649,8 @@ namespace NewDawn
             danger = tag.GetBool("Dangersense");
             feather = tag.GetBool("Featherfall");
             ObsidiumHeart = tag.GetInt("ObsidiumHeart");
-            LuxMaxPermaBoost = tag.GetFloat("LuxMaxPermaBoost");
-            VisMaxPermaBoost = tag.GetFloat("VisMaxPermaBoost");
-            MundusMaxPermaBoost = tag.GetFloat("MundusMaxPermaBoost");
-            MysticBurstDisabled = tag.GetBool("MysticBurstDisabled");
             BysmalAbsorbDisabled = tag.GetBool("BysmalAbsorbDisabled");
             BysmalPowers = (List<int>)tag.GetList<int>("BysmalPowers");
-            Lux = LuxMax + LuxMaxPermaBoost;
-            Vis = VisMax + VisMaxPermaBoost;
-            Mundus = MundusMax + MundusMaxPermaBoost;
         }
         //TODO: Add Biome classes to determine biomes.
         //public override void UpdateBiomes()
@@ -768,7 +693,7 @@ namespace NewDawn
         //public override Texture2D GetMapBackgroundImage()
         //{
         //    if (zoneObsidium)
-        //        return NewDawn.RequestTexture("Backgrounds/ObsidiumBiomeMapBackground");
+        //        return ModContent.Request<Texture2D>("Backgrounds/ObsidiumBiomeMapBackground").Value;
 
         //    return null;
         //}
@@ -846,7 +771,7 @@ namespace NewDawn
             base.UpdateLifeRegen();
 
             if (Player.honey)
-                Player.lifeRegen += 2 * HoneyRegenMultiplier - 2;
+                Player.lifeRegen += (2 * HoneyRegenMultiplier) - 2;
 
             if (Bloat && Player.statLife >= (int)(Player.statLifeMax2 * .5))
             {
@@ -991,10 +916,10 @@ namespace NewDawn
                     Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y + 12, 0, 0, ModContent.ProjectileType<CosmicTrailProj>(), (int)(45 * GetGlobalDamage()), 0, Player.whoAmI);
             }
 
-            if (MysticHold > 0)
-            {
-                //DrawMysticUI();
-            }
+            //if (MysticHold > 0)
+            //{
+            //    //DrawMysticUI();
+            //}
         }
 
         private void DrawEtherialTrailEffect()
@@ -1072,88 +997,7 @@ namespace NewDawn
         //Hotkey
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
-            if (NewDawn.toggleMystic.JustPressed && MysticHold > 0)
-            {
-                MysticSwitch();
-                if (NewDawnUI.SoundOn)
-                    SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/MysticSwitch"));
-            }
 
-            if (NewDawn.quickMystica.JustPressed && Mysticality == 0)
-            {
-                bool mysticaPotion = false;
-
-                foreach (Item item in Player.inventory)
-                {
-                    if (item.type == ModContent.ItemType<SupremeMysticaPotion>())
-                    {
-                        mysticaPotion = true;
-                        item.stack -= 1;
-                        SoundEngine.PlaySound(SoundID.Item3, Player.position);
-                        if (Lux < (LuxMax + LuxMaxPermaBoost) * (1 + ((LuxOverflow - 1) / 2)))
-                            Lux = (LuxMax + LuxMaxPermaBoost) * (1 + ((LuxOverflow - 1) / 2));
-
-                        if (Vis < (VisMax + VisMaxPermaBoost) * (1 + ((VisOverflow - 1) / 2)))
-                            Vis = (VisMax + VisMaxPermaBoost) * (1 + ((VisOverflow - 1) / 2));
-
-                        if (Mundus < (MundusMax + MundusMaxPermaBoost) * (1 + ((MundusOverflow - 1) / 2)))
-                            Mundus = (MundusMax + MundusMaxPermaBoost) * (1 + ((MundusOverflow - 1) / 2));
-
-                        Player.AddBuff(ModContent.BuffType<Mysticality3>(), 60 * 60, true);
-                    }
-
-                    if (mysticaPotion)
-                        break;
-                }
-
-                if (!mysticaPotion)
-                {
-                    foreach (Item item in Player.inventory)
-                    {
-                        if (item.type == ModContent.ItemType<GreaterMysticaPotion>())
-                        {
-                            mysticaPotion = true;
-                            item.stack -= 1;
-
-                            SoundEngine.PlaySound(SoundID.Item3, Player.position);
-
-                            if (Lux < LuxMax + LuxMaxPermaBoost)
-                                Lux = LuxMax + LuxMaxPermaBoost;
-
-                            if (Vis < VisMax + VisMaxPermaBoost)
-                                Vis = VisMax + VisMaxPermaBoost;
-
-                            if (Mundus < MundusMax + MundusMaxPermaBoost)
-                                Mundus = MundusMax + MundusMaxPermaBoost;
-
-                            Player.AddBuff(ModContent.BuffType<Mysticality2>(), 60 * 60, true);
-                        }
-
-                        if (mysticaPotion)
-                            break;
-                    }
-                }
-
-                if (!mysticaPotion)
-                {
-                    foreach (Item item in Player.inventory)
-                    {
-                        if (item.type == ModContent.ItemType<MysticaPotion>())
-                        {
-                            mysticaPotion = true;
-                            item.stack -= 1;
-                            SoundEngine.PlaySound(SoundID.Item3, Player.position);
-                            Lux = LuxMax + LuxMaxPermaBoost;
-                            Vis = VisMax + VisMaxPermaBoost;
-                            Mundus = MundusMax + MundusMaxPermaBoost;
-                            Player.AddBuff(ModContent.BuffType<Mysticality>(), 60 * 60, true);
-                        }
-
-                        if (mysticaPotion)
-                            break;
-                    }
-                }
-            }
 
             if (NewDawn.toggleSoulStoneV.JustPressed)
             {
@@ -1234,118 +1078,6 @@ namespace NewDawn
             }
         }
 
-        private Item FindFirst(List<int> types, List<Item> items, Item findItem)
-        {
-            foreach (int item in types)
-            {
-                if (item == findItem.type)
-                    return items[types.IndexOf(item)];
-            }
-            return null;
-        }
-
-        private void ListChestElements(Chest chest)
-        {
-            string output = "Chest contains: ";
-            foreach (Item chestItem in chest.item)
-            {
-                if (chestItem != null)
-                    output += chestItem.Name + ", ";
-            }
-            Main.NewText(output, 250, 250, 250);
-        }
-
-        private void ListItems(List<Item> items)
-        {
-            string output = "Current items: ";
-            foreach (Item item in items)
-            {
-                if (item != null)
-                    output += item.Name + ", ";
-            }
-            Main.NewText(output, 250, 250, 250);
-        }
-
-        public float Distance(float x1, float y1, float x2, float y2)
-        {
-            return (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
-        }
-
-        private bool AccPreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
-        {
-            return true;
-        }
-
-        public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
-        {
-            if (Lily)
-            {
-                if (npc.defense < Player.statDefense && npc.life == npc.lifeMax)
-                    return false;
-            }
-            return base.CanBeHitByNPC(npc, ref cooldownSlot);
-        }
-
-        private bool AccHitByNPC(NPC npc, ref int damage, ref bool crit)
-        {
-            return true;
-        }
-
-        public override void PostHurt(Player.HurtInfo info)
-        {
-            if (MysticSwitchCool <= 0)
-            {
-                if (BloodRage)
-                    ApplyBloodRage();
-
-                SpawnProjectileOnPlayerHurt();
-                ArmorEffectPlayerHurt();
-                MysticSwitchCool = 120;
-            }
-            AccessoryEffectOnHurt(info);
-            if (Player.ownedProjectileCounts[ModContent.ProjectileType<GaiaConjuration>()] > 0)
-            {
-                for (int i = 0; i < 1000; i++)
-                {
-                    if (Main.projectile[i].type == ModContent.ProjectileType<GaiaConjuration>() && Main.projectile[i].ai[1] == 0)
-                    {
-                        GaiaConjuration gc = (GaiaConjuration)Main.projectile[i].ModProjectile;
-                        gc.Burst();
-                    }
-                }
-            }
-        }
-
-        private void ArmorEffectPlayerHurt()
-        {
-            if (AndioChestguard && Player.statLife < Player.statLifeMax2 / 4 && zCool == false)
-                ZaWarudo();
-        }
-
-        private void AccessoryEffectOnHurt(Player.HurtInfo info)
-        {
-            if (Carapace)
-            {
-                CombatText.NewText(new Rectangle((int)Player.position.X - 12, (int)Player.position.Y - 12, Player.width, 12), Color.LightSeaGreen, info.Damage / 2);
-                AddLux(info.Damage / 2f);
-                AddVis(info.Damage / 2f);
-                AddMundus(info.Damage / 2f);
-            }
-            if (Shroud)
-                Player.AddBuff(ModContent.BuffType<CarapaceDamageBuff>(), 8 * 60);
-        }
-
-        private void ZaWarudo()
-        {
-            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/zawarudo"));
-            Player.AddBuff(ModContent.BuffType<TimeExhausted>(), zCoolDown, true);
-
-            if (NewDawn.zaWarudo < zaWarudoDuration)
-            {
-                NewDawn.zaWarudo = zaWarudoDuration;
-                LaugicalGlobalNPCs.zTime = zaWarudoDuration;
-            }
-        }
 
 
         private void SpawnProjectileOnPlayerHurt()
@@ -1363,12 +1095,6 @@ namespace NewDawn
                 SpawnSpore();
         }
 
-        private void ApplyBloodRage()
-        {
-            Player.AddBuff(ModContent.BuffType<BloodRage>(), 420);
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
-            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
-        }
 
         private void SpawnMiniEye()
         {
@@ -1455,6 +1181,129 @@ namespace NewDawn
 
             Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, -8 + Main.rand.Next(0, 17), -8 + Main.rand.Next(0, 17),
                 ModContent.ProjectileType<RockShard>(), 20, 3, Main.myPlayer);
+        }
+
+        private void ZaWarudo()
+        {
+            SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/zawarudo"));
+            Player.AddBuff(ModContent.BuffType<TimeExhausted>(), zCoolDown, true);
+
+            if (NewDawn.zaWarudo < zaWarudoDuration)
+            {
+                NewDawn.zaWarudo = zaWarudoDuration;
+                LaugicalGlobalNPCs.zTime = zaWarudoDuration;
+            }
+        }
+        private void ArmorEffectPlayerHurt()
+        {
+            if (AndioChestguard && Player.statLife < Player.statLifeMax2 / 4 && zCool == false)
+                ZaWarudo();
+        }
+
+        private void AccessoryEffectOnHurt(Player.HurtInfo info)
+        {
+            if (Carapace)
+            {
+                CombatText.NewText(new Rectangle((int)Player.position.X - 12, (int)Player.position.Y - 12, Player.width, 12), Color.LightSeaGreen, info.Damage / 2);
+                MysticPlayer mp = Player.GetModPlayer<MysticPlayer>();
+                mp.AddLux(info.Damage / 2f);
+                mp.AddVis(info.Damage / 2f);
+                mp.AddMundus(info.Damage / 2f);
+            }
+            if (Shroud)
+                Player.AddBuff(ModContent.BuffType<CarapaceDamageBuff>(), 8 * 60);
+        }
+
+        private void ApplyBloodRage()
+        {
+            Player.AddBuff(ModContent.BuffType<BloodRage>(), 420);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
+            Projectile.NewProjectile(new EntitySource_Parent(Entity), Player.Center.X, Player.Center.Y, 6 - Main.rand.Next(12), 0, 565, 16, 3f, Player.whoAmI);
+        }
+
+        private Item FindFirst(List<int> types, List<Item> items, Item findItem)
+        {
+            foreach (int item in types)
+            {
+                if (item == findItem.type)
+                    return items[types.IndexOf(item)];
+            }
+            return null;
+        }
+
+        private void ListChestElements(Chest chest)
+        {
+            string output = "Chest contains: ";
+            foreach (Item chestItem in chest.item)
+            {
+                if (chestItem != null)
+                    output += chestItem.Name + ", ";
+            }
+            Main.NewText(output, 250, 250, 250);
+        }
+
+        private void ListItems(List<Item> items)
+        {
+            string output = "Current items: ";
+            foreach (Item item in items)
+            {
+                if (item != null)
+                    output += item.Name + ", ";
+            }
+            Main.NewText(output, 250, 250, 250);
+        }
+
+        public float Distance(float x1, float y1, float x2, float y2)
+        {
+            return (float)Math.Sqrt(((x2 - x1) * (x2 - x1)) + ((y2 - y1) * (y2 - y1)));
+        }
+
+        private bool AccPreHurt(bool pvp, bool quiet, ref int damage, ref int hitDirection, ref bool crit, ref bool customDamage, ref bool playSound, ref bool genGore, ref PlayerDeathReason damageSource)
+        {
+            return true;
+        }
+
+        public override bool CanBeHitByNPC(NPC npc, ref int cooldownSlot)
+        {
+            if (Lily)
+            {
+                if (npc.defense < Player.statDefense && npc.life == npc.lifeMax)
+                    return false;
+            }
+            return base.CanBeHitByNPC(npc, ref cooldownSlot);
+        }
+
+        private bool AccHitByNPC(NPC npc, ref int damage, ref bool crit)
+        {
+            return true;
+        }
+
+        public override void PostHurt(Player.HurtInfo info)
+        {
+            if (Player.ownedProjectileCounts[ModContent.ProjectileType<GaiaConjuration>()] > 0)
+            {
+                for (int i = 0; i < 1000; i++)
+                {
+                    if (Main.projectile[i].type == ModContent.ProjectileType<GaiaConjuration>() && Main.projectile[i].ai[1] == 0)
+                    {
+                        GaiaConjuration gc = (GaiaConjuration)Main.projectile[i].ModProjectile;
+                        gc.Burst();
+                    }
+                }
+            }
+
+
+            AccessoryEffectOnHurt(info);
+            if (HurtCooldown <= 0)
+            {
+                if (BloodRage)
+                    ApplyBloodRage();
+
+                SpawnProjectileOnPlayerHurt();
+                ArmorEffectPlayerHurt();
+                HurtCooldown = 120;
+            }
+            base.PostHurt(info);
         }
 
         public void DamageBoost(float amount)
@@ -1570,6 +1419,8 @@ namespace NewDawn
         public bool Slimey { get; set; }
 
         public bool LosingLife { get; set; }
+        public bool AndioChestguard { get; set; } = false;
+        public int HurtCooldown { get; set; } = 0;
 
         #endregion // TODO Verify if name matches.
     }

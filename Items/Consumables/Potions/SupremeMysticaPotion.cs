@@ -29,18 +29,19 @@ namespace NewDawn.Items.Consumables.Potions
 
         public override bool CanUseItem(Player player)
         {
-            return player.GetModPlayer<NewDawnPlayer>().Mysticality == 0;
+            return player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().Mysticality == 0;
         }
 
         public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */
         {
             NewDawnPlayer modPlayer = player.GetModPlayer<NewDawnPlayer>();
-            if (modPlayer.Lux < (modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost) * (1 + (modPlayer.LuxOverflow * modPlayer.GlobalOverflow - 1) / 2))
-                modPlayer.Lux = (modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost) * (1 + (modPlayer.LuxOverflow * modPlayer.GlobalOverflow - 1) / 2);
-            if (modPlayer.Vis < (modPlayer.VisMax + modPlayer.VisMaxPermaBoost) * (1 + (modPlayer.VisOverflow * modPlayer.GlobalOverflow - 1) / 2))
-                modPlayer.Vis = (modPlayer.VisMax + modPlayer.VisMaxPermaBoost) * (1 + (modPlayer.VisOverflow * modPlayer.GlobalOverflow - 1) / 2);
-            if (modPlayer.Mundus < (modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost) * (1 + (modPlayer.MundusOverflow * modPlayer.GlobalOverflow - 1) / 2))
-                modPlayer.Mundus = (modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost) * (1 + (modPlayer.MundusOverflow * modPlayer.GlobalOverflow - 1) / 2);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (mysticPlayer.Lux < (mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * (1 + (mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow - 1) / 2))
+                mysticPlayer.Lux = (mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * (1 + (mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow - 1) / 2);
+            if (mysticPlayer.Vis < (mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * (1 + (mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow - 1) / 2))
+                mysticPlayer.Vis = (mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * (1 + (mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow - 1) / 2);
+            if (mysticPlayer.Mundus < (mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * (1 + (mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow - 1) / 2))
+                mysticPlayer.Mundus = (mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * (1 + (mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow - 1) / 2);
             player.AddBuff(ModContent.BuffType<Mysticality3>(), 60 * 60, true);
             return true;
         }

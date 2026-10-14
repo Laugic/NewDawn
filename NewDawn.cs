@@ -1,21 +1,16 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using NewDawn.UI.NewAttempts.Mystic;
+using NewDawn.UI;
 using ReLogic.Content;
 using System;
-using Terraria.Audio;
 using Terraria;
+using Terraria.Audio;
 using Terraria.ModLoader;
-using Terraria.UI;
 
 namespace NewDawn
 {
     public class NewDawn : Mod
     {
-        public const string GOLD_BARS_GROUP = "GldBars";
-        public const string EVIL_BARS_GROUP = "EnigmaEvilBars";
-        public const string DOUBLE_JUMP_GROUP = "EnigmaDoubleJump";
-        public const string COLORED_BALLOON_GROUP = "EnigmaColoredBalloon";
         public static Texture2D MysticWeaponIcon;
 
         internal static ModKeybind toggleMystic, toggleSoulStoneV, toggleSoulStoneM, quickMystica, soulStoneAbility, restockNearby;
@@ -29,7 +24,9 @@ namespace NewDawn
 
         public static Asset<Texture2D> RequestTextureAsset(string path)
         {
-            return ModContent.Request<Texture2D>($"{nameof(NewDawn)}/{path}");
+            string removeDuplicateName = $"{nameof(NewDawn)}/{path}";
+            removeDuplicateName = removeDuplicateName.Replace("NewDawn.", "");
+            return ModContent.Request<Texture2D>($"{nameof(NewDawn)}/{removeDuplicateName}");
         }
 
         public static Texture2D RequestTexture(string path)
@@ -52,7 +49,7 @@ namespace NewDawn
 
             for (int i = 0; i < segmentCount; i++)
             {
-                Vector2 position = start + direction * (length * (i + 0.5f) / segmentCount) - Main.screenPosition;
+                Vector2 position = start + (direction * (length * (i + 0.5f) / segmentCount)) - Main.screenPosition;
                 spriteBatch.Draw(texture, position, null, color, rotation, texture.Size() / 2f, scale, SpriteEffects.None, 0f);
             }
         }
@@ -66,27 +63,32 @@ namespace NewDawn
         {
             if (!Main.dedServ)
             {
-
-                EnigmaMysticUI = new NewDawnMysticUI();
-                EnigmaMysticUI.Activate();
-                //EnigmaMysticUI.Load();
-                MysticaUserInterface = new UserInterface();
-                MysticaUserInterface.SetState(EnigmaMysticUI);
+                //GameInterfaceLayer Insert = new GameInterfaceLayer("NewDawn: Mysticism", delegate
+                //{
+                //    MysticaUserInterface.Draw(Main.spriteBatch, new GameTime());
+                //    return true;
+                //}, InterfaceScaleType.UI);
+                //ModSystem.ModifyInterfaceLayers(Insert, MysticaUserInterface);
+                //ModSystem.Interf
+                NewDawnUI.Load();
             }
 
             toggleMystic = KeybindLoader.RegisterKeybind(this, "Toggle Mysticism", "Mouse2");
+            toggleSoulStoneV = KeybindLoader.RegisterKeybind(this, "Toggle Visual Effects", "V");
+            toggleSoulStoneM = KeybindLoader.RegisterKeybind(this, "Toggle Mobility Effects", "C");
+            quickMystica = KeybindLoader.RegisterKeybind(this, "Quick Mystica", "G");
+            soulStoneAbility = KeybindLoader.RegisterKeybind(this, "Soul Stone Ability", "Mouse3");
+            restockNearby = KeybindLoader.RegisterKeybind(this, "Restock from Nearby Chests", "N");
         }
 
         public override void Unload()
         {
             Instance = null;
-            //MysticaUserInterface = null;
+            NewDawnUI.Unload();
         }
 
 
         //public static UserInterface MysticaUserInterface { get; private set; }
         public static NewDawn Instance { get; private set; }
-        public static NewDawnMysticUI EnigmaMysticUI { get; private set; }
-        public static UserInterface MysticaUserInterface { get; private set; }
     }
 }

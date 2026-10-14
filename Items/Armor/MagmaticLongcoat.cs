@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using Terraria;
 using Terraria.ID;
@@ -35,7 +36,7 @@ namespace NewDawn.Items.Armor
 		{
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ObsidiumLongcoat>(), 1);
-            recipe.AddRecipeGroup("TitaniumBars", 18);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 18);
             recipe.AddIngredient(ModContent.ItemType<SoulOfHaught>(), 6);
             recipe.AddIngredient(ModContent.ItemType<MagmaticCluster>(), 1);
             recipe.AddTile(TileID.MythrilAnvil);

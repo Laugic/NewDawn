@@ -1,10 +1,7 @@
-using Terraria;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
 using NewDawn.Items.Equipables;
-using NewDawn.Items.Loot;
-using NewDawn.Items.Weapons.Range;
+using NewDawn.Items.Weapons.Snowball;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Items.Loot
 {

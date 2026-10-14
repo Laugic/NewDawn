@@ -26,7 +26,8 @@ namespace NewDawn.Items.Equipables
         {
             player.statManaMax2 += 40;
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.GlobalOverflow += .15f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.GlobalOverflow += .15f;
         }
 
         public override void AddRecipes()

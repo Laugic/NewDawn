@@ -44,7 +44,7 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 if(Main.rand.Next(2) == 0)
                 {
@@ -55,14 +55,14 @@ namespace NewDawn.Items.Weapons.Mystic
                     Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), ModContent.ProjectileType<ZuesBoltDestruction1>(), damage, 3f, player.whoAmI, 0f, 0f);
                 }
             }
-            if (modPlayer.MysticMode == 3)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
             {
                 
             }
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 72;
             Item.useTime = 15;
@@ -74,7 +74,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.scale = 1.5f;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 42;
             Item.useTime = 32;
@@ -87,7 +87,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.scale = 1f;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 44;
             Item.useTime = 30;

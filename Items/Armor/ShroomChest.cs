@@ -26,7 +26,8 @@ namespace NewDawn.Items.Armor
         public override void UpdateEquip(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.GlobalOverflow += .2f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.GlobalOverflow += .2f;
         }
         
         public override void AddRecipes()

@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Destruction;
 using NewDawn.Projectiles.Mystic.Illusion;
@@ -39,13 +40,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots a slightly homing orb";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots a homing beam that inflicts 'Time Dilation', which\ncauses enemies to take a burst of damage when Time is Stopped.";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Spawns energy orbs that create stalagmites and stalactites.";
                 default:
                     return "";
@@ -63,7 +64,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return base.MysticShoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 42;
             Item.useTime = 20;
@@ -76,7 +77,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 8;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 26;
             Item.useAnimation = Item.useTime = 4;
@@ -89,7 +90,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 4;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 38;
             Item.useAnimation = Item.useTime = 15;
@@ -105,7 +106,7 @@ namespace NewDawn.Items.Weapons.Mystic
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddRecipeGroup("TitaniumBars", 12);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 12);
             recipe.AddIngredient(ModContent.ItemType<DioritusCore>(), 1);
             recipe.AddIngredient(ModContent.ItemType<AndesiaCore>(), 1);
             recipe.AddIngredient(3081, 25);

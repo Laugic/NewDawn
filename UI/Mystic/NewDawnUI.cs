@@ -1,16 +1,18 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using NewDawn.Players;
+using ReLogic.Content;
 using ReLogic.Graphics;
 using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent;
-using Terraria.ID;
-using Terraria.UI;
+using Terraria.ModLoader;
+using static NewDawn.Players.MysticPlayer;
 
 namespace NewDawn.UI
 {
-    public class NewDawnUI : UIState
+    public class NewDawnUI
     {
         //Thanks for the help, DayOrk <3
         private const int BAR_WIDTH = 96;
@@ -18,51 +20,51 @@ namespace NewDawn.UI
         public static bool visible = true;
         public static SpriteProgressBar LuxBar;
         public static SpriteProgressBar OverflowLuxBar;
-        public static Texture2D LuxBGTexture;
-        public static Texture2D LuxBarTexture;
-        public static Texture2D LuxFGTexture;
+        public static Asset<Texture2D> LuxBGTexture;
+        public static Asset<Texture2D> LuxBarTexture;
+        public static Asset<Texture2D> LuxFGTexture;
         public static SpriteProgressBar MundusBar;
         public static SpriteProgressBar OverflowMundusBar;
-        public static Texture2D MundusBGTexture;
-        public static Texture2D MundusBarTexture;
-        public static Texture2D MundusFGTexture;
+        public static Asset<Texture2D> MundusBGTexture;
+        public static Asset<Texture2D> MundusBarTexture;
+        public static Asset<Texture2D> MundusFGTexture;
         public static SpriteProgressBar VisBar;
         public static SpriteProgressBar OverflowVisBar;
-        public static Texture2D VisBGTexture;
-        public static Texture2D VisBarTexture;
-        public static Texture2D VisFGTexture;
-        public static Texture2D OverflowBGTexture;
-        public static Texture2D OverflowBarTexture;
-        public static Texture2D OverflowFGTexture;
-        public static Texture2D LuxFGOverflowTexture;
-        public static Texture2D VisFGOverflowTexture;
-        public static Texture2D MundusOverflowTexture;
-        public static Texture2D MundusFGOverflowTexture;
+        public static Asset<Texture2D> VisBGTexture;
+        public static Asset<Texture2D> VisBarTexture;
+        public static Asset<Texture2D> VisFGTexture;
+        public static Asset<Texture2D> OverflowBGTexture;
+        public static Asset<Texture2D> OverflowBarTexture;
+        public static Asset<Texture2D> OverflowFGTexture;
+        public static Asset<Texture2D> LuxFGOverflowTexture;
+        public static Asset<Texture2D> VisFGOverflowTexture;
+        public static Asset<Texture2D> MundusOverflowTexture;
+        public static Asset<Texture2D> MundusFGOverflowTexture;
         public static SpriteProgressBar MysticBurstBar;
-        public static Texture2D MysticBurstBGTexture;
-        public static Texture2D MysticBurstBarTexture;
+        public static Asset<Texture2D> MysticBurstBGTexture;
+        public static Asset<Texture2D> MysticBurstBarTexture;
 
-        private Vector2 TopPosBase = new Vector2(((Main.screenWidth / 2) - (BAR_WIDTH / 2) + ((float)Math.Cos(3f / 2f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) - (BAR_WIDTH / 2) + ((float)Math.Sin(3f / 2f * Math.PI) * 100) + 25) / Main.UIScale);
-        private Vector2 MidPosBase = new Vector2(((Main.screenWidth / 2) - (BAR_WIDTH / 2) + ((float)Math.Cos(5f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) - (BAR_WIDTH / 2) + ((float)Math.Sin(5f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
-        private Vector2 BotPosBase = new Vector2(((Main.screenWidth / 2) - (BAR_WIDTH / 2) + ((float)Math.Cos(1f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) - (BAR_WIDTH / 2) + ((float)Math.Sin(1f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
-        private Vector2 TopPos = new Vector2(0, 0);
-        private Vector2 MidPos = new Vector2(0, 0);
-        private Vector2 BotPos = new Vector2(0, 0);
-        private Vector2 MysticBurstPos = new Vector2(0, 0);
+        public static Vector2 TopPosBase = new Vector2(((Main.screenWidth / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Cos(3f / 2f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Sin(3f / 2f * Math.PI) * 100) + 25) / Main.UIScale);
+        public static Vector2 MidPosBase = new Vector2(((Main.screenWidth / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Cos(5f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Sin(5f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
+        public static Vector2 BotPosBase = new Vector2(((Main.screenWidth / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Cos(1f / 6f * Math.PI) * 100)) / Main.UIScale, ((Main.screenHeight / 2) + (int)(0 * BAR_WIDTH) + ((float)Math.Sin(1f / 6f * Math.PI) * 100) + 25) / Main.UIScale);
+        private static Vector2 TopPos = new Vector2(0, 0);
+        private static Vector2 MidPos = new Vector2(0, 0);
+        private static Vector2 BotPos = new Vector2(0, 0);
+        private static Vector2 MysticBurstPos = new Vector2(0, 0);
 
-        int position = 1;
-        float topTheta = -100;
-        float midTheta = -100;
-        float botTheta = -100;
-        float topMag = 0;
-        float midMag = 0;
-        float botMag = 0;
-        float magMax = 5;
-        float rotation = (float)Math.PI * 2f;
-        float rotationGoal = (float)Math.PI * 2;
+        private static MysticMode position = MysticMode.Destruction;
+        private static float topTheta = -100;
+        private static float midTheta = -100;
+        private static float botTheta = -100;
+        private static float topMag = 0;
+        private static float midMag = 0;
+        private static float botMag = 0;
+        private static float magMax = 5;
+        private static float rotation = (float)Math.PI * 2f;
+        private static float rotationGoal = (float)Math.PI * 2;
 
-        int targetPosition = 1;
-        int mysticBurstCooldownMax = 0;
+        public static MysticMode targetPosition = MysticMode.Destruction;
+        private static int mysticBurstCooldownMax = 0;
 
         //CONFIGURABLES
         public static int MysticUIType { get; set; }
@@ -70,36 +72,36 @@ namespace NewDawn.UI
         public static bool SoundOn { get; set; }
 
         //CONFIG RELATED VALUES
-        private Vector2 CenterPos = new Vector2(0, 0);
-        Vector2 CENTER = new Vector2(Main.screenWidth / 2, Main.screenHeight / 2);
-        Vector2 TOPCIRCLE = new Vector2(Main.screenWidth / 2, 100 / Main.UIScale);
-        Vector2 TOPSTACK = new Vector2(Main.screenWidth / 2, 30 / Main.UIScale);
+        private static Vector2 CenterPos = new Vector2(0, 0);
+        private static Vector2 CENTER = new Vector2(Main.screenWidth / 2, Main.screenHeight / 2);
+        private static Vector2 TOPCIRCLE = new Vector2(Main.screenWidth / 2, 100 / Main.UIScale);
+        private static Vector2 TOPSTACK = new Vector2(Main.screenWidth / 2, 30 / Main.UIScale);
 
         static NewDawnUI()
         {
             visible = true;
         }
 
-        public void Load()
+        public static void Load()
         {
-            LuxBGTexture = NewDawn.RequestTexture("UI/Mystic/LuxBG");
-            LuxBarTexture = NewDawn.RequestTexture("UI/Mystic/LuxBar");
-            LuxFGTexture = NewDawn.RequestTexture("UI/Mystic/LuxFG");
-            MundusBGTexture = NewDawn.RequestTexture("UI/Mystic/MundusBG");
-            MundusBarTexture = NewDawn.RequestTexture("UI/Mystic/MundusBar");
-            MundusFGTexture = NewDawn.RequestTexture("UI/Mystic/MundusFG");
-            VisBGTexture = NewDawn.RequestTexture("UI/Mystic/VisBG");
-            VisBarTexture = NewDawn.RequestTexture("UI/Mystic/VisBar");
-            VisFGTexture = NewDawn.RequestTexture("UI/Mystic/VisFG");
-            OverflowBGTexture = NewDawn.RequestTexture("UI/Mystic/OverflowBG");
-            OverflowBarTexture = NewDawn.RequestTexture("UI/Mystic/OverflowBar");
-            OverflowFGTexture = NewDawn.RequestTexture("UI/Mystic/OverflowFG");
-            LuxFGOverflowTexture = NewDawn.RequestTexture("UI/Mystic/LuxFGOverflow");
-            VisFGOverflowTexture = NewDawn.RequestTexture("UI/Mystic/VisFGOverflow");
-            MundusOverflowTexture = NewDawn.RequestTexture("UI/Mystic/MundusOverflow");
-            MundusFGOverflowTexture = NewDawn.RequestTexture("UI/Mystic/MundusFGOverflow");
-            MysticBurstBGTexture = NewDawn.RequestTexture("UI/Mystic/MysticBurstBG");
-            MysticBurstBarTexture = NewDawn.RequestTexture("UI/Mystic/MysticBurstBar");
+            LuxBGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/LuxBG");
+            LuxBarTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/LuxBar");
+            LuxFGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/LuxFG");
+            MundusBGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MundusBG");
+            MundusBarTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MundusBar");
+            MundusFGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MundusFG");
+            VisBGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/VisBG");
+            VisBarTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/VisBar");
+            VisFGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/VisFG");
+            OverflowBGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/OverflowBG");
+            OverflowBarTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/OverflowBar");
+            OverflowFGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/OverflowFG");
+            LuxFGOverflowTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/LuxFGOverflow");
+            VisFGOverflowTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/VisFGOverflow");
+            MundusOverflowTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MundusOverflow");
+            MundusFGOverflowTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MundusFGOverflow");
+            MysticBurstBGTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MysticBurstBG");
+            MysticBurstBarTexture = ModContent.Request<Texture2D>("NewDawn/UI/Mystic/MysticBurstBar");
 
             LuxBar = new SpriteProgressBar
             (
@@ -116,7 +118,7 @@ namespace NewDawn.UI
                 OverflowBarTexture,
                 LuxFGOverflowTexture,
                 TopPos,
-                new Vector2(OverflowBarTexture.Width, 0)
+                new Vector2(OverflowBarTexture.Width(), 0)
             );
 
             MundusBar = new SpriteProgressBar
@@ -134,7 +136,7 @@ namespace NewDawn.UI
                 OverflowBarTexture,
                 MundusFGOverflowTexture,
                 MidPos,
-                new Vector2(OverflowBarTexture.Width, 0)
+                new Vector2(OverflowBarTexture.Width(), 0)
             );
 
             VisBar = new SpriteProgressBar
@@ -152,7 +154,7 @@ namespace NewDawn.UI
                 OverflowBarTexture,
                 VisFGOverflowTexture,
                 BotPos,
-                new Vector2(OverflowBarTexture.Width, 0)
+                new Vector2(OverflowBarTexture.Width(), 0)
             );
 
             MysticBurstBar = new SpriteProgressBar
@@ -165,7 +167,7 @@ namespace NewDawn.UI
             );
         }
 
-        public void Unload()
+        public static void Unload()
         {
             LuxBGTexture = null;
             LuxBarTexture = null;
@@ -187,11 +189,11 @@ namespace NewDawn.UI
             MysticBurstBarTexture = null;
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public static void Draw(SpriteBatch spriteBatch)
         {
-            NewDawnPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<NewDawnPlayer>();
+            MysticPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<MysticPlayer>();
 
-            visible = mysticPlayer.MysticHold > 0;
+            visible = mysticPlayer.IsHoldingMystic();
             float luxTemp = mysticPlayer.Lux;
 
             if (luxTemp > mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost)
@@ -231,16 +233,16 @@ namespace NewDawn.UI
             UpdateHover(spriteBatch);
         }
 
-        public void CyclePositions(int setPosition)
+        public static void CyclePositions(MysticMode setPosition)
         {
             rotationGoal += (float)(2f / 3 * Math.PI);
             targetPosition = setPosition;
             switch (targetPosition)
             {
-                case 1:
+                case MysticMode.Destruction:
                     rotationGoal = 6f / 3f * (float)Math.PI;
                     break;
-                case 2:
+                case MysticMode.Illusion:
                     rotationGoal = 4f / 3f * (float)Math.PI;
                     break;
                 default:
@@ -249,7 +251,7 @@ namespace NewDawn.UI
             }
         }
 
-        public void Update()
+        public static void Update()
         {
             UpdateIdle();
             UpdateType();
@@ -259,16 +261,17 @@ namespace NewDawn.UI
                 UpdateHeights();
             UpdatePositions();
             UpdateMysticBurst();
+
         }
 
-        private void UpdateIdle()
+        private static void UpdateIdle()
         {
             UpdateTop();
             UpdateMid();
             UpdateBot();
         }
 
-        private void UpdateType()
+        private static void UpdateType()
         {
             switch (MysticUIType)
             {
@@ -284,7 +287,7 @@ namespace NewDawn.UI
             }
         }
 
-        private void UpdateRotations()
+        private static void UpdateRotations()
         {
             if (!Animated)
             {
@@ -303,17 +306,17 @@ namespace NewDawn.UI
                 rotationGoal -= (float)Math.PI * 2;
                 rotation -= (float)Math.PI * 2;
             }
-            TopPosBase.X = (CenterPos.X - (LuxBGTexture.Width / 2) + ((float)Math.Cos(rotation + (3f / 2f * Math.PI)) * 100)) / Main.UIScale;
-            TopPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height / 2) + ((float)Math.Sin(rotation + (3f / 2f * Math.PI)) * 100) + 25) / Main.UIScale;
-            MidPosBase.X = (CenterPos.X - (LuxBGTexture.Width / 2) + ((float)Math.Cos(rotation + (5f / 6f * Math.PI)) * 100)) / Main.UIScale;
-            MidPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height / 2) + ((float)Math.Sin(rotation + (5f / 6f * Math.PI)) * 100) + 25) / Main.UIScale;
-            BotPosBase.X = (CenterPos.X - (LuxBGTexture.Width / 2) + ((float)Math.Cos(rotation + (1f / 6f * Math.PI)) * 100)) / Main.UIScale;
-            BotPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height / 2) + ((float)Math.Sin(rotation + (1f / 6f * Math.PI)) * 100) + 25) / Main.UIScale;
-            MysticBurstPos.X = (CenterPos.X - (MysticBurstBGTexture.Width / 2)) / Main.UIScale;
+            TopPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2) + ((float)Math.Cos(rotation + (3f / 2f * Math.PI)) * 100)) / Main.UIScale;
+            TopPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation + (3f / 2f * Math.PI)) * 100) + 25) / Main.UIScale;
+            MidPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2) + ((float)Math.Cos(rotation + (5f / 6f * Math.PI)) * 100)) / Main.UIScale;
+            MidPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation + (5f / 6f * Math.PI)) * 100) + 25) / Main.UIScale;
+            BotPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2) + ((float)Math.Cos(rotation + (1f / 6f * Math.PI)) * 100)) / Main.UIScale;
+            BotPosBase.Y = (CenterPos.Y - (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation + (1f / 6f * Math.PI)) * 100) + 25) / Main.UIScale;
+            MysticBurstPos.X = (CenterPos.X - (MysticBurstBGTexture.Width() / 2)) / Main.UIScale;
             MysticBurstPos.Y = (CenterPos.Y + 125) / Main.UIScale;
         }
 
-        private void UpdateHeights()
+        private static void UpdateHeights()
         {
             if (rotation < rotationGoal)
                 rotation += (float)(Math.PI / 10f);
@@ -327,15 +330,15 @@ namespace NewDawn.UI
                 rotationGoal -= (float)Math.PI * 2;
                 rotation -= (float)Math.PI * 2;
             }
-            TopPosBase.X = (CenterPos.X - (LuxBGTexture.Width / 2)) / Main.UIScale;
-            TopPosBase.Y = (CenterPos.Y + (LuxBGTexture.Height / 2) + ((float)Math.Sin(rotation - (.333f * Math.PI)) * LuxBGTexture.Height * Main.UIScale) + 25) / Main.UIScale;
-            MidPosBase.X = (CenterPos.X - (LuxBGTexture.Width / 2)) / Main.UIScale;
-            MidPosBase.Y = (CenterPos.Y + (LuxBGTexture.Height / 2) + ((float)Math.Sin(rotation - (1f * Math.PI)) * LuxBGTexture.Height * Main.UIScale) + 25) / Main.UIScale;
-            BotPosBase.X = (CenterPos.X - (LuxBGTexture.Width / 2)) / Main.UIScale;
-            BotPosBase.Y = (CenterPos.Y + (LuxBGTexture.Height / 2) + ((float)Math.Sin(rotation - (1.667f * Math.PI)) * LuxBGTexture.Height * Main.UIScale) + 25) / Main.UIScale;
+            TopPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2)) / Main.UIScale;
+            TopPosBase.Y = (CenterPos.Y + (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation - (.333f * Math.PI)) * LuxBGTexture.Height() * Main.UIScale) + 25) / Main.UIScale;
+            MidPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2)) / Main.UIScale;
+            MidPosBase.Y = (CenterPos.Y + (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation - (1f * Math.PI)) * LuxBGTexture.Height() * Main.UIScale) + 25) / Main.UIScale;
+            BotPosBase.X = (CenterPos.X - (LuxBGTexture.Width() / 2)) / Main.UIScale;
+            BotPosBase.Y = (CenterPos.Y + (LuxBGTexture.Height() / 2) + ((float)Math.Sin(rotation - (1.667f * Math.PI)) * LuxBGTexture.Height() * Main.UIScale) + 25) / Main.UIScale;
         }
 
-        private void UpdateTop()
+        private static void UpdateTop()
         {
             if (topTheta == -100)
                 topTheta = (float)(Main.rand.NextDouble() * Math.PI * 2);
@@ -357,7 +360,7 @@ namespace NewDawn.UI
             TopPos.Y = TopPosBase.Y + (Animated ? topMag * (float)Math.Sin(topTheta * 2) : 0);
         }
 
-        private void UpdateMid()
+        private static void UpdateMid()
         {
             if (midTheta == -100)
                 midTheta = (float)(Main.rand.NextDouble() * Math.PI * 2);
@@ -379,7 +382,7 @@ namespace NewDawn.UI
             MidPos.Y = MidPosBase.Y + (Animated ? midMag * (float)Math.Sin(midTheta * 2) : 0);
         }
 
-        private void UpdateBot()
+        private static void UpdateBot()
         {
             if (botTheta == -100)
                 botTheta = (float)(Main.rand.NextDouble() * Math.PI * 2);
@@ -401,7 +404,7 @@ namespace NewDawn.UI
             BotPos.Y = BotPosBase.Y + (Animated ? botMag * (float)Math.Sin(botTheta * 2) : 0);
         }
 
-        private void UpdatePositions()
+        private static void UpdatePositions()
         {
             LuxBar.Position = TopPos;
             OverflowLuxBar.Position = TopPos;
@@ -411,9 +414,9 @@ namespace NewDawn.UI
             OverflowMundusBar.Position = MidPos;
         }
 
-        private void UpdateMysticBurst()
+        private static void UpdateMysticBurst()
         {
-            NewDawnPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<NewDawnPlayer>();
+            MysticPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<MysticPlayer>();
             if (mysticBurstCooldownMax < mysticPlayer.MysticSwitchCool)
                 mysticBurstCooldownMax = mysticPlayer.MysticSwitchCool;
             if (mysticPlayer.MysticSwitchCool == 0 && mysticBurstCooldownMax != 0)
@@ -424,9 +427,9 @@ namespace NewDawn.UI
             MysticBurstBar.Position = MysticBurstPos;
         }
 
-        private void UpdateHover(SpriteBatch spriteBatch)
+        private static void UpdateHover(SpriteBatch spriteBatch)
         {
-            NewDawnPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<NewDawnPlayer>();
+            MysticPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<MysticPlayer>();
 
 
             Vector2 drawPos = Main.MouseWorld - Main.screenPosition;
@@ -438,21 +441,21 @@ namespace NewDawn.UI
 
             float posX = Main.MouseWorld.X - Main.screenPosition.X;
             float posY = Main.MouseWorld.Y - Main.screenPosition.Y;
-            if (posX > TopPosBase.X - widthMod && posX < TopPosBase.X + LuxBGTexture.Width + widthMod && posY > TopPosBase.Y - heightMod && posY < TopPosBase.Y + LuxBGTexture.Height + heightMod)
+            if (posX > TopPosBase.X - widthMod && posX < TopPosBase.X + LuxBGTexture.Width() + widthMod && posY > TopPosBase.Y - heightMod && posY < TopPosBase.Y + LuxBGTexture.Height() + heightMod)
                 spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Lux).ToString() + "/" + Math.Round(mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Lux", drawPos, Color.White);
-            if (posX > BotPosBase.X - widthMod && posX < BotPosBase.X + LuxBGTexture.Width + widthMod && posY > BotPosBase.Y - heightMod && posY < BotPosBase.Y + LuxBGTexture.Height + heightMod)
+            if (posX > BotPosBase.X - widthMod && posX < BotPosBase.X + LuxBGTexture.Width() + widthMod && posY > BotPosBase.Y - heightMod && posY < BotPosBase.Y + LuxBGTexture.Height() + heightMod)
                 spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Vis).ToString() + "/" + Math.Round(mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Vis", drawPos, Color.White);
-            if (posX > MidPosBase.X - widthMod && posX < MidPosBase.X + LuxBGTexture.Width + widthMod && posY > MidPosBase.Y - heightMod && posY < MidPosBase.Y + LuxBGTexture.Height + heightMod)
+            if (posX > MidPosBase.X - widthMod && posX < MidPosBase.X + LuxBGTexture.Width() + widthMod && posY > MidPosBase.Y - heightMod && posY < MidPosBase.Y + LuxBGTexture.Height() + heightMod)
                 spriteBatch.DrawString(FontAssets.MouseText.Value, Math.Round(mysticPlayer.Mundus).ToString() + "/" + Math.Round(mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost).ToString() + " (" + Math.Round((mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow).ToString() + ") Mundus", drawPos, Color.White);
         }
     }
 }
 
-public class SpriteProgressBar : UIElement
+public class SpriteProgressBar
 {
-    public Texture2D MainTexture = TextureAssets.MagicPixel.Value;
-    public Texture2D BarTexture = TextureAssets.MagicPixel.Value;
-    public Texture2D DecoTexture = TextureAssets.MagicPixel.Value;
+    public Asset<Texture2D> MainTexture = TextureAssets.MagicPixel;
+    public Asset<Texture2D> BarTexture = TextureAssets.MagicPixel;
+    public Asset<Texture2D> DecoTexture = TextureAssets.MagicPixel;
 
     public Vector2 Position;
     public Vector2 PosOffset;
@@ -471,7 +474,7 @@ public class SpriteProgressBar : UIElement
     public int MaxVal;
     public int CurVal;
 
-    public SpriteProgressBar(Texture2D mainTexture, Texture2D barTexture, Texture2D decoTexture, Vector2 pos, Vector2 offset = new Vector2(), int frameCount = 1, Color c1 = new Color(), Color c2 = new Color())
+    public SpriteProgressBar(Asset<Texture2D> mainTexture, Asset<Texture2D> barTexture, Asset<Texture2D> decoTexture, Vector2 pos, Vector2 offset = new Vector2(), int frameCount = 1, Color c1 = new Color(), Color c2 = new Color())
     {
         MainTexture = mainTexture;
         BarTexture = barTexture;
@@ -500,16 +503,16 @@ public class SpriteProgressBar : UIElement
     public void DrawSelf(SpriteBatch spriteBatch)
     {
         #region Drawing
-        int frameHeight = FrameCount > 1 ? MainTexture.Height / FrameCount : MainTexture.Height;
-        Rectangle rect1 = new Rectangle(0, CurrentFrame * frameHeight, MainTexture.Width, frameHeight);
+        int frameHeight = FrameCount > 1 ? MainTexture.Height() / FrameCount : MainTexture.Height();
+        Rectangle rect1 = new Rectangle(0, CurrentFrame * frameHeight, MainTexture.Width(), frameHeight);
         if (Widths[0] != 0)
             rect1 = new Rectangle(0, 0, Widths[0], Heights[0]);
-        Rectangle rect2 = new Rectangle(0, 0, CalcLength(CurVal, MaxVal, BarTexture.Width), BarTexture.Height);
+        Rectangle rect2 = new Rectangle(0, 0, CalcLength(CurVal, MaxVal, BarTexture.Width()), BarTexture.Height());
         if (Widths[1] != 0)
             rect2 = new Rectangle(0, 0, CalcLength(CurVal, MaxVal, Widths[1]), Heights[1]);
         spriteBatch.Draw
             (
-                MainTexture,
+                MainTexture.Value,
                 new Vector2((int)Position.X, (int)Position.Y),
                 rect1,
                 Colors[0] * Alpha,
@@ -521,7 +524,7 @@ public class SpriteProgressBar : UIElement
             );
         spriteBatch.Draw
             (
-                BarTexture,
+                BarTexture.Value,
                 new Vector2((int)Position.X, (int)Position.Y) + new Vector2((int)PosOffset.X, (int)PosOffset.Y),
                 rect2,
                 Colors[1] * Alpha,
@@ -533,7 +536,7 @@ public class SpriteProgressBar : UIElement
             );
         spriteBatch.Draw
         (
-            DecoTexture,
+            DecoTexture.Value,
             new Vector2((int)Position.X, (int)Position.Y),
             rect1,
             Colors[0] * Alpha,
@@ -563,22 +566,24 @@ public class SpriteProgressBar : UIElement
     }
     public void DrawSelf(SpriteBatch spriteBatch, int currentValue, int maxValue, bool flipped)
     {
-        #region Drawing
-        int frameHeight = FrameCount > 1 ? MainTexture.Height / FrameCount : MainTexture.Height;
 
-        Rectangle rect1 = new Rectangle(0, CurrentFrame * frameHeight, MainTexture.Width, frameHeight);
+        //ChatHelper.BroadcastChatMessage(NetworkText.FromLiteral("Trying to draw self"), Color.White);
+        #region Drawing
+        int frameHeight = FrameCount > 1 ? MainTexture.Height() / FrameCount : MainTexture.Height();
+
+        Rectangle rect1 = new Rectangle(0, CurrentFrame * frameHeight, MainTexture.Width(), frameHeight);
         if (Widths[0] != 0)
             rect1 = new Rectangle(0, 0, Widths[0], Heights[0]);
 
-        Rectangle rect2 = new Rectangle(0, 0, CalcLength(currentValue, maxValue, BarTexture.Width), BarTexture.Height);
+        Rectangle rect2 = new Rectangle(0, 0, CalcLength(currentValue, maxValue, BarTexture.Width()), BarTexture.Height());
         if (Widths[1] != 0)
             rect2 = new Rectangle(0, 0, CalcLength(currentValue, maxValue, Widths[1]), Heights[1]);
         if (flipped)
-            rect2.X = BarTexture.Width - rect2.Width;
+            rect2.X = BarTexture.Width() - rect2.Width;
 
         spriteBatch.Draw
             (
-                MainTexture,
+                MainTexture.Value,
                 new Vector2((int)Position.X, (int)Position.Y),
                 rect1,
                 Colors[0] * Alpha,
@@ -591,7 +596,7 @@ public class SpriteProgressBar : UIElement
 
         spriteBatch.Draw
             (
-                BarTexture,
+                BarTexture.Value,
                 new Vector2((int)Position.X + (flipped ? -rect2.Width : 0), (int)Position.Y) + new Vector2((int)PosOffset.X, (int)PosOffset.Y),
                 rect2,
                 Colors[1] * Alpha,
@@ -604,7 +609,7 @@ public class SpriteProgressBar : UIElement
 
         spriteBatch.Draw
             (
-                DecoTexture,
+                DecoTexture.Value,
                 new Vector2((int)Position.X, (int)Position.Y),
                 rect1,
                 Colors[0] * Alpha,

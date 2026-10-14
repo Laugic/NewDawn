@@ -43,26 +43,27 @@ namespace NewDawn.Items.Weapons.Mystic
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 50f;
 
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
-                modPlayer.OrionCharge++;
-                modPlayer.UsingMysticWeapon = 60;
-                if (modPlayer.OrionCharge > 24)
-                    modPlayer.OrionCharge = 24;
-                for (int i = 0; i < modPlayer.OrionCharge / 2 + 1; i++)
+                mysticPlayer.OrionCharge++;
+                mysticPlayer.UsingMysticWeapon = 60;
+                if (mysticPlayer.OrionCharge > 24)
+                    mysticPlayer.OrionCharge = 24;
+                for (int i = 0; i < mysticPlayer.OrionCharge / 2 + 1; i++)
                 {
                     float theta = (float)Main.rand.NextDouble() * 3.14f / 6 + 3.14f * 255f / 180f;
-                    theta += -modPlayer.OrionCharge / 24 * 3.14f / 6 + 2 * modPlayer.OrionCharge / 24 * (float)Main.rand.NextDouble() * 3.14f / 6;
-                    float mag = 600 + Main.rand.Next(200 + 4 * modPlayer.OrionCharge);
-                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)) - 32 - modPlayer.OrionCharge + Main.rand.Next(64 + 2 * modPlayer.OrionCharge), (int)(Main.MouseWorld.Y) + (int)(mag * Math.Sin(theta)) - 32 - modPlayer.OrionCharge + Main.rand.Next(64 + 2 * modPlayer.OrionCharge)), new Vector2(-25 * (float)Math.Cos(theta), -25 * (float)Math.Sin(theta)), ModContent.ProjectileType<OrionDestruction>(), damage, 3, Main.myPlayer);
+                    theta += -mysticPlayer.OrionCharge / 24 * 3.14f / 6 + 2 * mysticPlayer.OrionCharge / 24 * (float)Main.rand.NextDouble() * 3.14f / 6;
+                    float mag = 600 + Main.rand.Next(200 + 4 * mysticPlayer.OrionCharge);
+                    Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2((int)(Main.MouseWorld.X) + (int)(mag * Math.Cos(theta)) - 32 - mysticPlayer.OrionCharge + Main.rand.Next(64 + 2 * mysticPlayer.OrionCharge), (int)(Main.MouseWorld.Y) + (int)(mag * Math.Sin(theta)) - 32 - mysticPlayer.OrionCharge + Main.rand.Next(64 + 2 * mysticPlayer.OrionCharge)), new Vector2(-25 * (float)Math.Cos(theta), -25 * (float)Math.Sin(theta)), ModContent.ProjectileType<OrionDestruction>(), damage, 3, Main.myPlayer);
                 }
             }
-            if(modPlayer.MysticMode == 2)
+            if(player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
             {
                 Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(player.position.X, player.position.Y - 600), new Vector2(-4, 0), ModContent.ProjectileType<OrionIllusionSpawn>(), damage, 3, Main.myPlayer);
                 Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(player.position.X, player.position.Y - 600), new Vector2(4, 0), ModContent.ProjectileType<OrionIllusionSpawn>(), damage, 3, Main.myPlayer);
             }
-            if (modPlayer.MysticMode == 3)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
             {
                 bool projExists = false;
                 foreach( Projectile projectile in Main.projectile)
@@ -70,7 +71,7 @@ namespace NewDawn.Items.Weapons.Mystic
                     if(projectile.type == ModContent.ProjectileType<OrionConjuration>())
                     {
                         projectile.timeLeft = 90;
-                        modPlayer.UsingMysticWeapon = 90;
+                        mysticPlayer.UsingMysticWeapon = 90;
                         projExists = true;
                     }
                 }
@@ -82,7 +83,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }
         
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 48;
             Item.useTime = 20;
@@ -93,7 +94,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.noUseGraphic = false;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 42;
             Item.useTime = 90;
@@ -104,7 +105,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.noUseGraphic = false;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 35;
             Item.useTime = 40;

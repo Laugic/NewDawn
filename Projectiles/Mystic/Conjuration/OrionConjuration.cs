@@ -33,7 +33,8 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
         {
             Player player = Main.player[Projectile.owner];
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.UsingMysticWeapon == 0 || modPlayer.MysticMode != 3)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (mysticPlayer.UsingMysticWeapon == 0 || player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode != global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
             {
                 Projectile.Kill();
             }

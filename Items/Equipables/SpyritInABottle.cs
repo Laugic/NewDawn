@@ -28,20 +28,21 @@ namespace NewDawn.Items.Equipables
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
 
-            switch (modPlayer.MysticMode)
+            switch (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
-                    if (modPlayer.Lux <= modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost && (modPlayer.CurrentLuxCost > modPlayer.Lux || (modPlayer.Vis >= (modPlayer.VisMax + modPlayer.VisMaxPermaBoost) * modPlayer.VisOverflow * modPlayer.GlobalOverflow) || (modPlayer.Mundus >= (modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost) * modPlayer.MundusOverflow * modPlayer.GlobalOverflow)))
-                        modPlayer.MysticSwitch();
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
+                    if (mysticPlayer.Lux <= mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost && (mysticPlayer.CurrentLuxCost > mysticPlayer.Lux || (mysticPlayer.Vis >= (mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow) || (mysticPlayer.Mundus >= (mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow)))
+                        mysticPlayer.MysticSwitch();
                     break;
-                case 2:
-                    if (modPlayer.Vis <= modPlayer.VisMax + modPlayer.VisMaxPermaBoost && (modPlayer.CurrentVisCost > modPlayer.Vis || (modPlayer.Lux >= (modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost) * modPlayer.LuxOverflow * modPlayer.GlobalOverflow) || (modPlayer.Mundus >= (modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost) * modPlayer.MundusOverflow * modPlayer.GlobalOverflow)))
-                        modPlayer.MysticSwitch();
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
+                    if (mysticPlayer.Vis <= mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost && (mysticPlayer.CurrentVisCost > mysticPlayer.Vis || (mysticPlayer.Lux >= (mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow) || (mysticPlayer.Mundus >= (mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow)))
+                        mysticPlayer.MysticSwitch();
                     break;
                 default:
-                    if (modPlayer.Mundus <= modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost && (modPlayer.CurrentMundusCost > modPlayer.Mundus || (modPlayer.Vis >= (modPlayer.VisMax + modPlayer.VisMaxPermaBoost) * modPlayer.VisOverflow * modPlayer.GlobalOverflow) || (modPlayer.Lux >= (modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost) * modPlayer.LuxOverflow * modPlayer.GlobalOverflow)))
-                        modPlayer.MysticSwitch();
+                    if (mysticPlayer.Mundus <= mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost && (mysticPlayer.CurrentMundusCost > mysticPlayer.Mundus || (mysticPlayer.Vis >= (mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow) || (mysticPlayer.Lux >= (mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow)))
+                        mysticPlayer.MysticSwitch();
                     break;
             }
         }

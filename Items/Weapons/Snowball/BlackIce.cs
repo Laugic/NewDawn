@@ -1,12 +1,9 @@
-﻿using NewDawn.Items.Loot;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
-using NewDawn.Items.Materials;
 
-namespace NewDawn.Items.Weapons.Range
+namespace NewDawn.Items.Weapons.Snowball
 {
     public class BlackIce : NewDawnItem
     {
@@ -40,7 +37,7 @@ namespace NewDawn.Items.Weapons.Range
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             Item.useTime = Item.useAnimation = 8;
-            if(player.ZoneDesert || player.ZoneUnderworldHeight || modPlayer.zoneObsidium)
+            if (player.ZoneDesert || player.ZoneUnderworldHeight || modPlayer.zoneObsidium)
                 Item.useTime = Item.useAnimation = 6;
         }
 

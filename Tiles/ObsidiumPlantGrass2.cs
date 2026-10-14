@@ -1,4 +1,4 @@
-using NewDawn.Dusts;
+﻿using NewDawn.Dusts;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -28,8 +28,8 @@ namespace NewDawn.Tiles
 
             if (!Main.dedServ)
             {
-                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
-                amelderaTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/EldergrassPlant2");
+                obsidiumTexture = ModContent.Request<Microsoft.Xna.Framework.Graphics.Texture2D>(GetType().Namespace.Replace('.', '/') + "/" + GetType().Name);
+                amelderaTexture = ModContent.Request<Microsoft.Xna.Framework.Graphics.Texture2D>(GetType().Namespace.Replace('.', '/') + "/EldergrassPlant2");
             }
         }
 

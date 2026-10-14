@@ -34,8 +34,9 @@ namespace NewDawn.Projectiles.Mystic.Burst
             
             Projectile.rotation += 0.02f;
             NewDawnPlayer modPlayer = Main.player[Projectile.owner].GetModPlayer<NewDawnPlayer>();
+            global::NewDawn.Players.MysticPlayer mysticPlayer = Main.player[Projectile.owner].GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             if (Main.rand.Next(4) == 0 && Main.myPlayer == Projectile.owner)
-                Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, -4+Main.rand.Next(0,9), -Main.rand.Next(3,7),  ModContent.ProjectileType<AncientRuneUp>(), (int)(12 * modPlayer.MysticDamage * modPlayer.MysticBurstDamage), 3, Main.myPlayer);
+                Projectile.NewProjectile(new EntitySource_Parent(Entity), Projectile.Center.X, Projectile.Center.Y, -4+Main.rand.Next(0,9), -Main.rand.Next(3,7),  ModContent.ProjectileType<AncientRuneUp>(), (int)(12 * mysticPlayer.MysticDamage * mysticPlayer.MysticBurstDamage), 3, Main.myPlayer);
             
         }
         

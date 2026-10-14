@@ -40,7 +40,7 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 int numberProjectiles = Main.rand.Next(2, 5);
                 for (int i = 0; i < numberProjectiles; i++)
@@ -56,7 +56,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 54;
             Item.useTime = 32;
@@ -69,7 +69,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 8;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 48;
             Item.useTime = 10;
@@ -83,7 +83,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 4;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 48;
             Item.useTime = 30;

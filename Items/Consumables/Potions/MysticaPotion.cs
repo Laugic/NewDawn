@@ -30,15 +30,16 @@ namespace NewDawn.Items.Consumables.Potions
 
         public override bool CanUseItem(Player player)
         {
-            return player.GetModPlayer<NewDawnPlayer>().Mysticality == 0;
+            return player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().Mysticality == 0;
         }
 
         public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */
         {
             NewDawnPlayer modPlayer = player.GetModPlayer<NewDawnPlayer>();
-            modPlayer.Lux = modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost;
-            modPlayer.Vis = modPlayer.VisMax + modPlayer.VisMaxPermaBoost;
-            modPlayer.Mundus = modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.Lux = mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost;
+            mysticPlayer.Vis = mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost;
+            mysticPlayer.Mundus = mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost;
             player.AddBuff(ModContent.BuffType<Mysticality>(), 60 * 60, true);
             return true;
         }

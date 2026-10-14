@@ -31,7 +31,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.shootSpeed = 6f;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 10;
             Item.useTime = 48;
@@ -43,7 +43,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 6;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 8;
             Item.useTime = 30;
@@ -57,7 +57,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 12;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 10;
             Item.useTime = 60;
@@ -75,13 +75,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots seeds";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots blooms that inflict 'Fertile', which makes enemies take damage for each seed that hits them";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Shoots sunflowers that drop seeds and sunlight";
                 default:
                     return "";

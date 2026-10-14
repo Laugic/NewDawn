@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Buffs;
 using NewDawn.Items.Loot;
 using Terraria;
@@ -32,12 +33,13 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             player.setBonus = "Eruption & Magmatic Mystic Bursts\n+25% Mystic Burst Damage & Decreased Mystic Burst cooldown\n+15%Throwing Crit Chance\nAttacks inflict 'On Fire!'\nIncreased stats after being submerged in Lava";
             modPlayer.Obsidium = true;
-            modPlayer.Magmatic = true;
-            modPlayer.MysticObsidiumSwitch = true;
+            mysticPlayer.Magmatic = true;
+            mysticPlayer.MysticObsidiumSwitch = true;
             player.GetCritChance(DamageClass.Throwing) += 15;
-            modPlayer.MysticSwitchCoolRate += 2;
+            mysticPlayer.MysticSwitchCoolRate += 2;
 
             if (player.lavaWet)
                 player.AddBuff(ModContent.BuffType<Magmatic>(), 60 * 15);
@@ -46,8 +48,9 @@ namespace NewDawn.Items.Armor
 
         public override void UpdateEquip(Player player)
         {
+        global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDamage += 0.15f;
+            mysticPlayer.MysticDamage += 0.15f;
             player.GetDamage(DamageClass.Throwing) += .15f;
         }
         
@@ -56,7 +59,7 @@ namespace NewDawn.Items.Armor
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ObsidiumHelmet>(), 1);
-            recipe.AddRecipeGroup("TitaniumBars", 12);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 12);
             recipe.AddIngredient(ModContent.ItemType<SoulOfHaught>(), 4);
             recipe.AddIngredient(ModContent.ItemType<MagmaticCluster>(), 1);
             recipe.AddTile(TileID.MythrilAnvil);
@@ -65,7 +68,7 @@ namespace NewDawn.Items.Armor
 
             Recipe recipe2 = CreateRecipe();
             recipe2.AddIngredient(ModContent.ItemType<ObsidiumBand>(), 1);
-            recipe2.AddRecipeGroup("TitaniumBars", 12);
+            recipe2.AddRecipeGroup(RecipeManager.TitaniumBars, 12);
             recipe2.AddIngredient(ModContent.ItemType<SoulOfHaught>(), 4);
             recipe2.AddIngredient(ModContent.ItemType<MagmaticCluster>(), 1);
             recipe2.AddTile(134);

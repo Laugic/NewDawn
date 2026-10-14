@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Thrown;
@@ -60,7 +61,7 @@ namespace NewDawn.Items.Weapons.Thrown
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<Obshardian>(), 222);
-            recipe.AddRecipeGroup("TitaniumBars", 8);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 8);
             recipe.AddIngredient(ModContent.ItemType<SoulOfHaught>(), 8);
             recipe.AddIngredient(ModContent.ItemType<MagmaticCluster>());
             recipe.AddTile(TileID.MythrilAnvil);

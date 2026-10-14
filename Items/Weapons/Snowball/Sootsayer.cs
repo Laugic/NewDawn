@@ -7,7 +7,7 @@ using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
 
-namespace NewDawn.Items.Weapons.Range
+namespace NewDawn.Items.Weapons.Snowball
 {
 	public class Sootsayer : NewDawnItem
 	{

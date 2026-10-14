@@ -13,7 +13,7 @@ namespace NewDawn.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
         {
-            NewDawnPlayer.Get(player).GlobalOverflow += .5f;
+            player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().GlobalOverflow += .5f;
         }
         
 	}

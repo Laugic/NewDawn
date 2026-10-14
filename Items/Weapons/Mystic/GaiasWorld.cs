@@ -1,10 +1,9 @@
+using Microsoft.Xna.Framework;
 using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Destruction;
 using NewDawn.Projectiles.Mystic.Illusion;
-using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Weapons.Mystic
@@ -22,13 +21,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots a burst of gem shards";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots large gemstones that inflict 'Refracting', which makes enemies break off gem shards upon being hit,\ndealing damage based on their defense";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Spawns Sigils with different effects based on their Focus";
                 default:
                     return "";
@@ -39,7 +38,7 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 int numberProjectiles = Main.rand.Next(4, 7);
                 for (int i = 0; i < numberProjectiles; i++)
@@ -53,7 +52,7 @@ namespace NewDawn.Items.Weapons.Mystic
                 }
                 return false;
             }
-            if(modPlayer.MysticMode == 2 || modPlayer.MysticMode == 3)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion || player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
             {
                 int id = Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(velocity.X, velocity.Y), type, damage, knockBack, player.whoAmI);
                 Main.projectile[id].ai[1] = Main.rand.Next(6);
@@ -80,7 +79,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.shootSpeed = 6f;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 10;
             Item.useAnimation = Item.useTime = 30;
@@ -90,7 +89,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 10;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 15;
             Item.useTime = Item.useAnimation = 30;
@@ -100,7 +99,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 15;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 20;
             Item.useTime = Item.useAnimation = 30;
@@ -113,7 +112,7 @@ namespace NewDawn.Items.Weapons.Mystic
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddRecipeGroup("IronBar", 12);
+            recipe.AddRecipeGroup(RecipeGroupID.IronBar, 12);
             recipe.AddIngredient(ItemID.Amethyst, 3);
             recipe.AddIngredient(ItemID.Topaz, 3);
             recipe.AddIngredient(ItemID.Sapphire, 3);

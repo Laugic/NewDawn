@@ -38,11 +38,12 @@ namespace NewDawn.Items.Consumables.Buffs
         public override bool OnPickup(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.AddBuff(ModContent.BuffType<ReaperBuff>(), (int)(10 * 60 * modPlayer.MysticDuration));
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            player.AddBuff(ModContent.BuffType<ReaperBuff>(), (int)(10 * 60 * mysticPlayer.MysticDuration));
             Item.stack = 0;
-            modPlayer.AddLux(50);
-            modPlayer.AddVis(50);
-            modPlayer.AddMundus(50);
+            mysticPlayer.AddLux(50);
+            mysticPlayer.AddVis(50);
+            mysticPlayer.AddMundus(50);
 
             BurstConjuration(player);
 

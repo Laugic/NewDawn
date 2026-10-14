@@ -19,8 +19,8 @@ namespace NewDawn.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
-            NewDawnPlayer.Get(player).Mysticality = 2;
-            NewDawnPlayer.Get(player).GlobalOverflow += .2f;
+            player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().Mysticality = 2;
+            player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().GlobalOverflow += .2f;
         }
     }
 }

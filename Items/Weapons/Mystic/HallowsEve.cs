@@ -41,13 +41,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots a burst of skulls that follow your mouse";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots an orb with a fire trail that inflicts 'Spooked', which\nmakes enemies take more damage for each unique thing that hits them";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Creates Jack-o-lanterns that shoot at nearby enemies";
                 default:
                     return "";
@@ -58,7 +58,7 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
 				Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, player.Center.Y, 0f, 8f, ModContent.ProjectileType<HallowsEveDestruction1>(), damage, 3f, player.whoAmI);
 				Projectile.NewProjectile(new EntitySource_Parent(Entity), player.Center.X, player.Center.Y, 0f, -8f, ModContent.ProjectileType<HallowsEveDestruction1>(), damage, 3f, player.whoAmI);
@@ -73,7 +73,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 55;
             Item.useTime = 28;
@@ -85,7 +85,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 10;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 55;
             Item.useTime = 14;
@@ -98,7 +98,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 8;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 55;
             Item.useTime = 30;

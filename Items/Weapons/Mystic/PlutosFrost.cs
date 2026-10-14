@@ -43,13 +43,14 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             if ((NewDawnWorld.downedEtheria || NewDawnPlayer.Get(player).Etherable > 0) && NewDawnWorld.downedTrueEtheria)
             {
-                modPlayer.MysticDamage += .25f;
-                modPlayer.GlobalAbsorbRate *= 1.5f;
-                modPlayer.GlobalOverflow += .5f;
+                mysticPlayer.MysticDamage += .25f;
+                mysticPlayer.GlobalAbsorbRate *= 1.5f;
+                mysticPlayer.GlobalOverflow += .5f;
             }
-            if (modPlayer.MysticMode == 2)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
             {
                 int numberProjectiles = Main.rand.Next(1, 3);
                 for (int i = 0; i < numberProjectiles; i++)
@@ -65,7 +66,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 100;
             Item.useTime = 16;
@@ -76,7 +77,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 5;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 60;
             Item.useTime = 10;
@@ -88,7 +89,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 6;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 54;
             Item.useTime = 24;

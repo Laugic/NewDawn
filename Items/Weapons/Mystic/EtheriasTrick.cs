@@ -40,13 +40,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoot a homing rocket bolt";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots a giant lazer that inflicts 'Eeriness', which\ncauses enemies to take more damage the longer they go without taking damage";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Spawns energy orbs that create stalagmites and stalactites.";
                 default:
                     return "";
@@ -62,7 +62,7 @@ namespace NewDawn.Items.Weapons.Mystic
                 position += muzzleOffset;
             }
 
-            if(NewDawnPlayer.Get(player).MysticMode == 2)
+            if(player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
             {
                 SoundEngine.PlaySound(NewDawn.CreateSoundStyle("Sounds/Etherlaser"));
             }
@@ -70,7 +70,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return base.MysticShoot(player, ref position, ref speedX, ref speedY, ref type, ref damage, ref knockBack);
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 250;
             Item.useAnimation = Item.useTime = 60;
@@ -84,7 +84,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.autoReuse = true;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 26;
             Item.useAnimation = Item.useTime = 2 * 60;
@@ -99,7 +99,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.autoReuse = false;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 38;
             Item.useAnimation = Item.useTime = 15;

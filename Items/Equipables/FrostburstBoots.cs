@@ -1,5 +1,5 @@
-﻿using Terraria;
-using Terraria.ID;
+﻿using NewDawn.Control;
+using Terraria;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Equipables
@@ -47,7 +47,7 @@ namespace NewDawn.Items.Equipables
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.FrostsparkBoots);
-            recipe.AddRecipeGroup(NewDawn.COLORED_BALLOON_GROUP);
+            recipe.AddRecipeGroup(RecipeManager.ColoredBalloon);
             recipe.AddTile(TileID.TinkerersWorkbench);
             recipe.Register();
         }

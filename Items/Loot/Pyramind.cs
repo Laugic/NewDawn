@@ -23,11 +23,12 @@ namespace NewDawn.Items.Loot
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             player.maxMinions += 1;
             player.statManaMax2 += 40;
-            modPlayer.LuxRegen += .02f;
-            modPlayer.VisRegen += .02f;
-            modPlayer.MundusRegen += .02f;
+            mysticPlayer.LuxRegen += .02f;
+            mysticPlayer.VisRegen += .02f;
+            mysticPlayer.MundusRegen += .02f;
         }
     }
 }

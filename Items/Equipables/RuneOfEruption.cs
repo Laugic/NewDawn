@@ -27,10 +27,11 @@ namespace NewDawn.Items.Equipables
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.IsOnOverflow())
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (mysticPlayer.IsOnOverflow())
             {
-                modPlayer.OverflowDamage += .2f;
-                modPlayer.OverflowVelocity += .2f;
+                mysticPlayer.OverflowDamage += .2f;
+                mysticPlayer.OverflowVelocity += .2f;
                 player.moveSpeed += .25f;
                 player.jumpSpeedBoost += 3;
                 player.maxRunSpeed += 3;

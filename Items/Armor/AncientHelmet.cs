@@ -38,10 +38,11 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             player.setBonus = "Increased Max Minions, Mana, and Potentia";
-            modPlayer.LuxMax += 40;
-            modPlayer.VisMax += 40;
-            modPlayer.MundusMax += 40;
+            mysticPlayer.LuxMax += 40;
+            mysticPlayer.VisMax += 40;
+            mysticPlayer.MundusMax += 40;
             player.statManaMax2 += 40;
             player.maxMinions += 2;
         }

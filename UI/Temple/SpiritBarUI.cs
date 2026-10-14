@@ -1,7 +1,6 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using NewDawn.Players;
-using NewDawn.UI.NewAttempts.Mystic;
 using System;
 using System.Collections.Generic;
 using Terraria;
@@ -180,9 +179,9 @@ namespace NewDawn.UI.MoldyrianTemple
         {
             SpiritBar = new global::NewDawn.UI.NewAttempts.Mystic.SpriteProgressBar
             (
-                NewDawn.RequestTexture("UI/Temple/SpiritBG"),
-                NewDawn.RequestTexture("UI/Temple/SpiritBar"),
-                NewDawn.RequestTexture("UI/Temple/SpiritFG"),
+                ModContent.Request<Texture2D>("NewDawn/UI/Temple/SpiritBG").Value,
+                ModContent.Request<Texture2D>("NewDawn/UI/Temple/SpiritBar").Value,
+                ModContent.Request<Texture2D>("NewDawn/UI/Temple/SpiritFG").Value,
                 Position,
                 new Vector2(0, 0)
             );

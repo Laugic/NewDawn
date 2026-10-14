@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using NewDawn.Items.Equipables;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Placeable;
-using NewDawn.Items.Weapons.Range;
+using NewDawn.Items.Weapons.Snowball;
 using NewDawn.Particles;
 using System;
 using System.Collections.Generic;
@@ -63,7 +63,8 @@ namespace NewDawn.NPCs.PreTrio
             NPC.velocity = Vector2.Zero;
             if (!Main.dedServ)
             {
-                Heart = NewDawn.RequestTexture(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/RagnarHeart");
+                //Heart = ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/RagnarHeart").Value;
+                Heart = ModContent.Request<Texture2D>("NewDawn/NPCs/PreTrio/RagnarHeart").Value;
             }
 
         }
@@ -187,8 +188,8 @@ namespace NewDawn.NPCs.PreTrio
                 int curOff = (Counter - (3 * 60) - ((Counter - (3 * 60)) % 15)) / 15;
                 if (Counter % 3 == 0)
                 {
-                    BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), new Vector2(NPC.Center.X + (xOffset * curOff) - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
-                    BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), new Vector2(NPC.Center.X - (xOffset * curOff) - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
+                    BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Flame").Value, new Vector2(NPC.Center.X + (xOffset * curOff) - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
+                    BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Flame").Value, new Vector2(NPC.Center.X - (xOffset * curOff) - 20 + Main.rand.Next(40), NPC.Center.Y + yOffset - 8 + Main.rand.Next(16)), Vector2.Zero, 7));
                 }
                 //Dust.NewDust(new Vector2(npc.Center.X + xOffset * curOff, npc.Center.Y + yOffset), 40, 10, ModContent.DustType<Magma>(), -2 + Main.rand.Next(5), -2 + Main.rand.Next(5));
                 //Dust.NewDust(new Vector2(npc.Center.X - xOffset * curOff, npc.Center.Y + yOffset), 40, 10, ModContent.DustType<Magma>(), -2 + Main.rand.Next(5), -2 + Main.rand.Next(5));
@@ -219,18 +220,18 @@ namespace NewDawn.NPCs.PreTrio
         {
             //Background
             if (Counter % 15 == 0)
-                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), NPC.Center + new Vector2((-NPC.width / 4) + Main.rand.Next(NPC.width / 2), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 3)), Vector2.Zero, 7));
+                BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Flame").Value, NPC.Center + new Vector2((-NPC.width / 4) + Main.rand.Next(NPC.width / 2), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 3)), Vector2.Zero, 7));
             if (Counter % 10 == 0)
             {
-                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Blaze"), NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1))); BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Blaze"), NPC.Center + new Vector2(-30 + Main.rand.Next(60) + (NPC.direction * 4), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 3)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
-                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Blaze"), NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(-1 + (2 * (float)Main.rand.NextDouble()), -1 + (2 * (float)Main.rand.NextDouble())), 6, .95f, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
+                BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Blaze").Value, NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1))); BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Blaze").Value, NPC.Center + new Vector2(-30 + Main.rand.Next(60) + (NPC.direction * 4), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 3)), new Vector2(0, -1 - (float)Main.rand.NextDouble()), 6, 1, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
+                BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Blaze").Value, NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2(-1 + (2 * (float)Main.rand.NextDouble()), -1 + (2 * (float)Main.rand.NextDouble())), 6, .95f, (float)(Main.rand.NextDouble() * 2 * Math.PI), .02f * (Main.rand.NextBool() ? 1 : -1)));
             }
             if (Counter % 5 == 0)
-                BkgParticles.Add(new Particle(NewDawn.RequestTexture("Particles/Spark"), NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2((float)(-1 + (2 * Main.rand.NextDouble())) / 4f, -1 - (float)Main.rand.NextDouble()), 8));
+                BkgParticles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Spark").Value, NPC.Center + new Vector2(12 + (NPC.direction * 4) - 8 + Main.rand.Next(16), 20 + Main.rand.Next(16)), new Vector2((float)(-1 + (2 * Main.rand.NextDouble())) / 4f, -1 - (float)Main.rand.NextDouble()), 8));
 
             //Foreground
             if (Counter % 25 == 0)
-                Particles.Add(new Particle(NewDawn.RequestTexture("Particles/Flame"), NPC.Center + new Vector2((-NPC.width / 2) + Main.rand.Next(NPC.width), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 2)), Vector2.Zero, 7));
+                Particles.Add(new Particle(ModContent.Request<Texture2D>("Particles/Flame").Value, NPC.Center + new Vector2((-NPC.width / 2) + Main.rand.Next(NPC.width), 20 - (NPC.height / 4) + Main.rand.Next(NPC.height / 2)), Vector2.Zero, 7));
         }
 
         private void HealthCheck()

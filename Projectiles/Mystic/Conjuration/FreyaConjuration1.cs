@@ -30,7 +30,7 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
 			Rectangle frame = new Rectangle(0, 0, 48, 38);
 			frame.Y += 38 * Projectile.frame;	
 			
-			Main.spriteBatch.Draw(NewDawn.RequestTexture("Projectiles/Mystic/Conjuration/FreyaConjuration1_Glow"), Projectile.Center - Main.screenPosition, frame, Color.White * 0.25f, Projectile.rotation, new Vector2(22, 17), 1f, SpriteEffects.None, 0f);
+			Main.spriteBatch.Draw(ModContent.Request<Texture2D>("Projectiles/Mystic/Conjuration/FreyaConjuration1_Glow").Value, Projectile.Center - Main.screenPosition, frame, Color.White * 0.25f, Projectile.rotation, new Vector2(22, 17), 1f, SpriteEffects.None, 0f);
 		}
 
         public override bool PreAI()

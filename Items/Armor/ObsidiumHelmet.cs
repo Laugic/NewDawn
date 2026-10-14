@@ -34,17 +34,19 @@ namespace NewDawn.Items.Armor
         public override void UpdateEquip(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDamage += 0.15f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDamage += 0.15f;
         }
 
         
 
         public override void UpdateArmorSet(Player player)
         {
+        global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             player.setBonus = "Increased Mystic damage for a time after swapping Mysticisms\nAttacks inflict 'On Fire!'";
             modPlayer.Obsidium = true;
-            modPlayer.MysticObsidiumSwitch = true;
+            mysticPlayer.MysticObsidiumSwitch = true;
         }
 
 		public override void AddRecipes()

@@ -39,13 +39,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots fireballs";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots orbiting fireballs that inflict 'Infernal', which \nmakes enemies take damage over time based on their defense";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Shoots Javelins that spawn a stream of fireballs";
                 default:
                     return "";
@@ -55,14 +55,14 @@ namespace NewDawn.Items.Weapons.Mystic
         public override bool CanUseItem(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
                 return player.ownedProjectileCounts[Item.shoot] < 1;
-            if (modPlayer.MysticMode == 2)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
                 return player.ownedProjectileCounts[Item.shoot] < 1;
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 32;
             Item.useAnimation = Item.useTime = 30;
@@ -75,7 +75,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 8;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 28;
             Item.useAnimation = Item.useTime = 21;
@@ -88,7 +88,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 10;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 24;
             Item.useAnimation = Item.useTime = 60;

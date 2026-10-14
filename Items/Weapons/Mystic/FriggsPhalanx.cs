@@ -41,13 +41,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots a spread of bees and spores";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots spore clouds that inflict 'Pollinated', \nwhich makes bees deal more damage and be consumed on hit";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Spawns a hive that shoots bees";
                 default:
                     return "";
@@ -58,7 +58,7 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 int numberProjectiles = 2 + Main.rand.Next(1, 4);
                 for (int i = 0; i < numberProjectiles; i++)
@@ -77,7 +77,7 @@ namespace NewDawn.Items.Weapons.Mystic
                         Projectile.NewProjectile(new EntitySource_Parent(Entity), new Vector2(position.X, position.Y), new Vector2(perturbedSpeed.X, perturbedSpeed.Y), ModContent.ProjectileType<FriggDestruction>(), damage, knockBack, player.whoAmI);
                 }
             }
-            if(modPlayer.MysticMode == 2)
+            if(player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
             {
                 float theta = (float)Main.rand.NextDouble() * 3.14f * 2;
                 float mag = 360;
@@ -86,7 +86,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 20;
             Item.useTime = 20;
@@ -97,7 +97,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 8;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 25;
             Item.useTime = 15;
@@ -108,7 +108,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 5;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 20;
             Item.useTime = 50;

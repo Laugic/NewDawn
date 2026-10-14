@@ -1,8 +1,8 @@
+using NewDawn.Control;
 using NewDawn.Items.Equipables;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Placeable
@@ -41,42 +41,42 @@ namespace NewDawn.Items.Placeable
             recipe.Register();
 
             Recipe warrecipe = Recipe.Create(ItemID.WarriorEmblem);
-            warrecipe.AddRecipeGroup("Emblems");
+            warrecipe.AddRecipeGroup(RecipeManager.Emblems);
             warrecipe.AddIngredient(ItemID.SoulofNight, 4);
             warrecipe.AddIngredient(Mod, nameof(SoulOfHaught), 4);
             warrecipe.AddTile(TileID.MythrilAnvil);
             warrecipe.Register();
 
             Recipe ranrecipe = Recipe.Create(ItemID.RangerEmblem);
-            ranrecipe.AddRecipeGroup("Emblems");
+            ranrecipe.AddRecipeGroup(RecipeManager.Emblems);
             ranrecipe.AddIngredient(ItemID.SoulofLight, 4);
             ranrecipe.AddIngredient(Mod, nameof(SoulOfHaught), 4);
             ranrecipe.AddTile(TileID.MythrilAnvil);
             ranrecipe.Register();
 
             Recipe sorrecipe = Recipe.Create(ItemID.SorcererEmblem);
-            sorrecipe.AddRecipeGroup("Emblems");
+            sorrecipe.AddRecipeGroup(RecipeManager.Emblems);
             sorrecipe.AddIngredient(ItemID.SoulofNight, 4);
             sorrecipe.AddIngredient(ItemID.SoulofLight, 4);
             sorrecipe.AddTile(TileID.MythrilAnvil);
             sorrecipe.Register();
 
             Recipe sumrecipe = Recipe.Create(ItemID.SummonerEmblem);
-            sumrecipe.AddRecipeGroup("Emblems");
+            sumrecipe.AddRecipeGroup(RecipeManager.Emblems);
             sumrecipe.AddIngredient(ItemID.SoulofLight, 4);
             sumrecipe.AddIngredient(Mod, nameof(SoulOfSought), 4);
             sumrecipe.AddTile(TileID.MythrilAnvil);
             sumrecipe.Register();
 
             //Recipe ninrecipe = Recipe.Create(null, "NinjaEmblem");
-            //ninrecipe.AddRecipeGroup("Emblems");
+            //ninrecipe.AddRecipeGroup(RecipeManager.Emblems);
             //ninrecipe.AddIngredient(ItemID.SoulofNight, 4);
             //ninrecipe.AddIngredient(Mod, nameof(SoulOfSought), 4);
             //ninrecipe.AddTile(TileID.MythrilAnvil);
             //ninrecipe.Register();
 
             Recipe mysrecipe = Recipe.Create(ModContent.ItemType<MysticEmblem>());
-            mysrecipe.AddRecipeGroup("Emblems");
+            mysrecipe.AddRecipeGroup(RecipeManager.Emblems);
             mysrecipe.AddIngredient(Mod, nameof(SoulOfHaught), 4);
             mysrecipe.AddIngredient(Mod, nameof(SoulOfSought), 4);
             mysrecipe.AddTile(TileID.MythrilAnvil);
@@ -99,7 +99,7 @@ namespace NewDawn.Items.Placeable
             enchrecipe2.Register();
 
             Recipe starfuryrecipe = Recipe.Create(ItemID.Starfury);
-            starfuryrecipe.AddRecipeGroup(NewDawn.GOLD_BARS_GROUP, 12);
+            starfuryrecipe.AddRecipeGroup(RecipeManager.GoldBars, 12);
             starfuryrecipe.AddIngredient(ItemID.SunplateBlock, 24);
             starfuryrecipe.AddIngredient(ModContent.ItemType<ArcaneShard>(), 4);
             starfuryrecipe.AddIngredient(ItemID.Amethyst, 2);

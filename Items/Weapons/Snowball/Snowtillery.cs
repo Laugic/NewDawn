@@ -9,7 +9,7 @@ using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Ranged;
 using NewDawn.Items.Accessories;
 
-namespace NewDawn.Items.Weapons.Range
+namespace NewDawn.Items.Weapons.Snowball
 {
     public class Snowtillery : NewDawnItem
     {

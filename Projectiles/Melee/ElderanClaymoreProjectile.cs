@@ -76,7 +76,7 @@ namespace NewDawn.Projectiles.Melee
 
         public override bool PreDraw(ref Color lightColor)
         {
-            NewDawn.DrawChain(Main.spriteBatch, NewDawn.RequestTexture("Projectiles/Melee/ElderanClaymoreChain"), Main.player[Projectile.owner].MountedCenter, Projectile.Center);
+            NewDawn.DrawChain(Main.spriteBatch, ModContent.Request<Texture2D>("Projectiles/Melee/ElderanClaymoreChain").Value, Main.player[Projectile.owner].MountedCenter, Projectile.Center);
             /*Vector2 playerCenter = Main.player[projectile.owner].MountedCenter;
             Vector2 center = projectile.Center;
             Vector2 distToProj = playerCenter - projectile.Center;
@@ -92,7 +92,7 @@ namespace NewDawn.Projectiles.Melee
                 Color drawColor = lightColor;
 
                 //Draw chain
-                Texture2D chainTexture = NewDawn.RequestTexture("Projectiles/Melee/ElderanClaymoreChain");
+                Texture2D chainTexture = ModContent.Request<Texture2D>("Projectiles/Melee/ElderanClaymoreChain").Value;
                 spriteBatch.Draw(chainTexture, new Vector2(center.X - Main.screenPosition.X, center.Y - Main.screenPosition.Y),
                     new Rectangle(0, 0, chainTexture.Width, chainTexture.Height), drawColor, projRotation,
                     new Vector2(chainTexture.Width * 0.5f, chainTexture.Height * 0.5f), 1f, SpriteEffects.None, 0f);

@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using Microsoft.Xna.Framework;
 using System;
 using NewDawn.Buffs;
@@ -65,7 +66,7 @@ namespace NewDawn.Items.Weapons.Melee
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<DaysBreak>());
-            recipe.AddRecipeGroup("TitaniumBars", 12);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 12);
             recipe.AddIngredient(ItemID.HallowedBar, 10);
             recipe.AddIngredient(ItemID.LargeDiamond, 1);
             recipe.AddTile(TileID.MythrilAnvil);

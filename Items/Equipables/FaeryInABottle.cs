@@ -28,20 +28,21 @@ namespace NewDawn.Items.Equipables
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
 
-            switch (modPlayer.MysticMode)
+            switch (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
-                    if (modPlayer.CurrentLuxCost > modPlayer.Lux)
-                        modPlayer.MysticSwitch();
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
+                    if (mysticPlayer.CurrentLuxCost > mysticPlayer.Lux)
+                        mysticPlayer.MysticSwitch();
                     break;
-                case 2:
-                    if (modPlayer.CurrentVisCost > modPlayer.Vis)
-                        modPlayer.MysticSwitch();
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
+                    if (mysticPlayer.CurrentVisCost > mysticPlayer.Vis)
+                        mysticPlayer.MysticSwitch();
                     break;
                 default:
-                    if (modPlayer.CurrentMundusCost > modPlayer.Mundus)
-                        modPlayer.MysticSwitch();
+                    if (mysticPlayer.CurrentMundusCost > mysticPlayer.Mundus)
+                        mysticPlayer.MysticSwitch();
                     break;
             }
         }

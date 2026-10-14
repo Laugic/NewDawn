@@ -25,7 +25,7 @@ namespace NewDawn.NPCs.PreTrio
 
             if (!Main.dedServ)
             {
-                Fireball = NewDawn.RequestTexture(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/RagnarFireballLayers");
+                Fireball = ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/RagnarFireballLayers").Value;
             }
         }
 

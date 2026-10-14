@@ -32,23 +32,25 @@ namespace NewDawn.Items.Armor
         public override void UpdateEquip(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDamage += .08f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDamage += .08f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
+        global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             player.setBonus = "Overflow attacks shoot Spores from your head\nOverflow slowly accrues over time";
-            modPlayer.ShroomOverflow = 2;
+            mysticPlayer.ShroomOverflow = 2;
 
-            if (modPlayer.MysticHold > 0)
+            if (mysticPlayer.MysticHold > 0)
             {
-                if (modPlayer.Lux >= modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost && modPlayer.Lux < (modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost) * modPlayer.LuxOverflow * modPlayer.GlobalOverflow)
-                    modPlayer.Lux += 1f / 20f;
-                if (modPlayer.Vis >= modPlayer.VisMax + modPlayer.VisMaxPermaBoost && modPlayer.Vis < (modPlayer.VisMax + modPlayer.VisMaxPermaBoost) * modPlayer.VisOverflow * modPlayer.GlobalOverflow)
-                    modPlayer.Vis += 1f / 20f;
-                if (modPlayer.Mundus >= modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost && modPlayer.Mundus < (modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost) * modPlayer.MundusOverflow * modPlayer.GlobalOverflow)
-                    modPlayer.Mundus += 1f / 20f;
+                if (mysticPlayer.Lux >= mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost && mysticPlayer.Lux < (mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost) * mysticPlayer.LuxOverflow * mysticPlayer.GlobalOverflow)
+                    mysticPlayer.Lux += 1f / 20f;
+                if (mysticPlayer.Vis >= mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost && mysticPlayer.Vis < (mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost) * mysticPlayer.VisOverflow * mysticPlayer.GlobalOverflow)
+                    mysticPlayer.Vis += 1f / 20f;
+                if (mysticPlayer.Mundus >= mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost && mysticPlayer.Mundus < (mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost) * mysticPlayer.MundusOverflow * mysticPlayer.GlobalOverflow)
+                    mysticPlayer.Mundus += 1f / 20f;
             }
         }
 

@@ -1,14 +1,12 @@
-﻿using Terraria.ID;
-using Terraria.ModLoader;
-using NewDawn.Projectiles.Mystic.Destruction;
-using NewDawn.Projectiles.Mystic.Illusion;
-using NewDawn.Projectiles.Mystic.Conjuration;
-using Terraria;
-using NewDawn.Projectiles.Special;
-using Microsoft.Xna.Framework;
-using System;
+﻿using Microsoft.Xna.Framework;
 using NewDawn.Buffs;
+using NewDawn.Control;
 using NewDawn.NPCs;
+using NewDawn.Projectiles.Mystic.Conjuration;
+using NewDawn.Projectiles.Special;
+using System;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Items.Weapons.Mystic
 {
@@ -42,13 +40,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "The scythe grows as you swing it";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Charge the scythe, then dash forward\nInflicts 'Death Mark', which makes enemies drop Souls on death\nSouls restore Potentia and grant the 'Reaper' buff";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Throws Scythes that hover around and follow you\nSpawn Skull Bursts upon picking up a Soul";
                 default:
                     return "";
@@ -58,14 +56,15 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1 && modPlayer.Lux >= LuxCost)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction && mysticPlayer.Lux >= LuxCost)
             {
                 Item.scale = Math.Min(Math.Max(1.5f, Item.scale + .05f), 2.5f);
                 return false;
             }
             else
                 Item.scale = 1;
-            if(modPlayer.MysticMode == 2)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
             {
                 if (!IllusionCharged)
                     IllusionCharged = true;
@@ -87,14 +86,15 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             base.OnHitNPC(player, target, hit, damageDone);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 2 && modPlayer.Vis > VisCost)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion && mysticPlayer.Vis > VisCost)
             {
-                target.AddBuff(ModContent.BuffType<DeathMark>(), (int)(8 * 60 * modPlayer.MysticDuration) + Main.rand.Next(1 * 60));
+                target.AddBuff(ModContent.BuffType<DeathMark>(), (int)(8 * 60 * mysticPlayer.MysticDuration) + Main.rand.Next(1 * 60));
                 target.GetGlobalNPC<LaugicalGlobalNPCs>().DeathMarked = true;
             }
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 20;
             Item.noMelee = false;
@@ -107,7 +107,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 5;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 40;
             Item.noMelee = false;
@@ -124,10 +124,10 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.knockBack = 5;
             Item.shootSpeed = 16f;
             Item.shoot = ModContent.ProjectileType<Nothing>();
-            Item.UseSound = IllusionCharged ? SoundID.Item60: SoundID.Item71;
+            Item.UseSound = IllusionCharged ? SoundID.Item60 : SoundID.Item71;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 20;
             Item.noMelee = true;
@@ -145,7 +145,7 @@ namespace NewDawn.Items.Weapons.Mystic
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddRecipeGroup(NewDawn.EVIL_BARS_GROUP, 16);
+            recipe.AddRecipeGroup(RecipeManager.EvilBar, 16);
             recipe.AddTile(TileID.DemonAltar);
             recipe.Register();
         }

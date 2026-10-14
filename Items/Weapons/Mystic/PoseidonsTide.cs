@@ -40,13 +40,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "A spear that shoots bubbles";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots a trident that is chained to you. Inflicts 'Bubbly', \nwhich makes enemies emit bubbles";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Creates mini cthulunados that shoot bubbles and fly at enemies";
                 default:
                     return "";
@@ -56,12 +56,12 @@ namespace NewDawn.Items.Weapons.Mystic
         public override bool CanUseItem(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
                 return player.ownedProjectileCounts[Item.shoot] < 1;
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 65;
             Item.UseSound = SoundID.Item76;
@@ -75,7 +75,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 15;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 80;
             Item.UseSound = SoundID.Item92;
@@ -89,7 +89,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 15;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 65;
             Item.UseSound = SoundID.Item21;

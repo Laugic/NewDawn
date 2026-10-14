@@ -34,11 +34,11 @@ namespace NewDawn.Projectiles.Mystic.Conjuration
 			frame.Y += 36 * Projectile.frame;	
 			if (Projectile.spriteDirection == 1)
 			{
-				Main.spriteBatch.Draw(NewDawn.RequestTexture("Projectiles/Mystic/Conjuration/HallowsEveConjuration1_Glow"), Projectile.Center - Main.screenPosition, frame, Color.White * 0.5f, Projectile.rotation, new Vector2(22, 18), 1f, SpriteEffects.None, 0f);
+				Main.spriteBatch.Draw(ModContent.Request<Texture2D>("Projectiles/Mystic/Conjuration/HallowsEveConjuration1_Glow").Value, Projectile.Center - Main.screenPosition, frame, Color.White * 0.5f, Projectile.rotation, new Vector2(22, 18), 1f, SpriteEffects.None, 0f);
 			}
 			else
 			{
-				Main.spriteBatch.Draw(NewDawn.RequestTexture("Projectiles/Mystic/Conjuration/HallowsEveConjuration1_Glow"), Projectile.Center - Main.screenPosition, frame, Color.White * 0.5f, Projectile.rotation, new Vector2(22, 18), 1f, SpriteEffects.FlipHorizontally, 0f);
+				Main.spriteBatch.Draw(ModContent.Request<Texture2D>("Projectiles/Mystic/Conjuration/HallowsEveConjuration1_Glow").Value, Projectile.Center - Main.screenPosition, frame, Color.White * 0.5f, Projectile.rotation, new Vector2(22, 18), 1f, SpriteEffects.FlipHorizontally, 0f);
 			}
 		}
         

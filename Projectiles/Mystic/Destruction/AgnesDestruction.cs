@@ -59,7 +59,7 @@ namespace NewDawn.Projectiles.Mystic.Destruction
                 Projectile.ai[0] += 1.25f;
             }
 
-            if (Main.player[Projectile.owner].itemAnimation == 0 || NewDawnPlayer.Get(Main.player[Projectile.owner]).MysticMode != 1)
+            if (Main.player[Projectile.owner].itemAnimation == 0 || Main.player[Projectile.owner].GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode != global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 Projectile.Kill();
             }

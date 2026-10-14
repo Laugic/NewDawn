@@ -13,7 +13,7 @@ namespace NewDawn.Tiles
         public override void SetStaticDefaults()
         {
             if (!Main.dedServ)
-                obsidiumTexture = NewDawn.RequestTextureAsset(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/" + GetType().Name);
+                obsidiumTexture = ModContent.Request<Microsoft.Xna.Framework.Graphics.Texture2D>(GetType().Namespace.Replace('.', '/') + "/" + GetType().Name);
         }
 
         public override bool PreDraw(int i, int j, SpriteBatch spriteBatch)

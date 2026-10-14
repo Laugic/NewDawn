@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using Terraria;
 using Terraria.ID;
@@ -41,7 +42,7 @@ namespace NewDawn.Items.Weapons.Melee
             recipe.AddIngredient(ModContent.ItemType<FrostBlade>(), 1);
             recipe.AddIngredient(Mod, nameof(SoulOfSought), 6);
             recipe.AddIngredient(ItemID.FrostCore, 1);
-            recipe.AddRecipeGroup("TitaniumBars", 8);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 8);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }

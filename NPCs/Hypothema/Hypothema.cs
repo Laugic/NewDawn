@@ -134,10 +134,10 @@ namespace NewDawn.NPCs.Hypothema
                     Music = MusicID.OtherworldlyBoss1;
                 }
 
-                AnimFrames = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/Hypothema_Frames");
-                CloudFront = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/HypothemaCloud");
-                CloudBack = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/HypothemaCloudOutline");
-                GunSpin = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace("NewDawn.", "").Replace('.', '/') + "/GunSpin");
+                AnimFrames = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/Hypothema_Frames");
+                CloudFront = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/HypothemaCloud");
+                CloudBack = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/HypothemaCloudOutline");
+                GunSpin = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/GunSpin");
             }
         }
 

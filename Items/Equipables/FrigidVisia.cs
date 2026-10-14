@@ -25,9 +25,10 @@ namespace NewDawn.Items.Equipables
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.IllusionDamage += .15f;
-            modPlayer.MysticDuration += .25f;
-            modPlayer.VisMax += 50;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.IllusionDamage += .15f;
+            mysticPlayer.MysticDuration += .25f;
+            mysticPlayer.VisMax += 50;
         }
 
         public override void AddRecipes()

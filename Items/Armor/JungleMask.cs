@@ -33,21 +33,23 @@ namespace NewDawn.Items.Armor
         public override void UpdateEquip(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDamage += .12f;
-            modPlayer.MysticDuration += 1f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDamage += .12f;
+            mysticPlayer.MysticDuration += 1f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
+        global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             player.setBonus = "Your Max Mana is added to your Potentias\nIncreased Mana and Potentia regen";
-            modPlayer.LuxMax += player.statManaMax2 / 3;
-            modPlayer.VisMax += player.statManaMax2 / 3;
-            modPlayer.MundusMax += player.statManaMax2 / 3;
+            mysticPlayer.LuxMax += player.statManaMax2 / 3;
+            mysticPlayer.VisMax += player.statManaMax2 / 3;
+            mysticPlayer.MundusMax += player.statManaMax2 / 3;
 
-            modPlayer.LuxUnuseRegen += .04f;
-            modPlayer.VisUnuseRegen += .04f;
-            modPlayer.MundusUnuseRegen += .04f;
+            mysticPlayer.LuxUnuseRegen += .04f;
+            mysticPlayer.VisUnuseRegen += .04f;
+            mysticPlayer.MundusUnuseRegen += .04f;
 
             player.manaRegen += 15;
         }

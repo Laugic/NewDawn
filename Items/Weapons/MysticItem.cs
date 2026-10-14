@@ -1,7 +1,9 @@
 using Microsoft.Xna.Framework;
 using NewDawn.Buffs.Mystic;
+using NewDawn.Players;
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Overflow;
+using NewDawn.UI;
 using System.Collections.Generic;
 using System.Linq;
 using Terraria;
@@ -12,11 +14,11 @@ namespace NewDawn.Items.Weapons
 {
     public abstract class MysticItem : ModItem
     {
-        public abstract void Destruction(NewDawnPlayer modPlayer);
+        public abstract void Destruction(MysticPlayer modPlayer);
 
-        public abstract void Illusion(NewDawnPlayer modPlayer);
+        public abstract void Illusion(MysticPlayer modPlayer);
 
-        public abstract void Conjuration(NewDawnPlayer modPlayer);
+        public abstract void Conjuration(MysticPlayer modPlayer);
 
         public abstract void SetMysticDefaults();
 
@@ -190,26 +192,26 @@ namespace NewDawn.Items.Weapons
 
         public override void ModifyWeaponDamage(Player player, ref StatModifier damage)
         {
-            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            MysticPlayer modPlayer = player.GetModPlayer<MysticPlayer>();
             damage += modPlayer.MysticDamage - 1;
 
-            switch (modPlayer.MysticMode)
+            switch (player.GetModPlayer<MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case MysticPlayer.MysticMode.Destruction:
                     damage += modPlayer.DestructionDamage - 1;
                     if (modPlayer.Lux > modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost)
                         damage += modPlayer.OverflowDamage - 1;
                     else
                         damage += modPlayer.AntiflowDamage - 1;
                     break;
-                case 2:
+                case MysticPlayer.MysticMode.Illusion:
                     damage += modPlayer.IllusionDamage - 1;
                     if (modPlayer.Vis > modPlayer.VisMax + modPlayer.VisMaxPermaBoost)
                         damage += modPlayer.OverflowDamage - 1;
                     else
                         damage += modPlayer.AntiflowDamage - 1;
                     break;
-                case 3:
+                case MysticPlayer.MysticMode.Conjuration:
                     damage += modPlayer.ConjurationDamage - 1;
                     if (modPlayer.Mundus > modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost)
                         damage += modPlayer.OverflowDamage - 1;
@@ -226,24 +228,24 @@ namespace NewDawn.Items.Weapons
 
         public override void UpdateInventory(Player player)
         {
-            GetCosts();
+            GetCosts(player);
             base.UpdateInventory(player);
         }
 
-        private void GetCosts()
+        private void GetCosts(Player player)
         {
 
-            NewDawnPlayer modPlayer = NewDawnPlayer.Get();
+            MysticPlayer modPlayer = player.GetModPlayer<MysticPlayer>();
 
-            switch (modPlayer.MysticMode)
+            switch (player.GetModPlayer<MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case MysticPlayer.MysticMode.Destruction:
                     Destruction(modPlayer);
                     break;
-                case 2:
+                case MysticPlayer.MysticMode.Illusion:
                     Illusion(modPlayer);
                     break;
-                case 3:
+                case MysticPlayer.MysticMode.Conjuration:
                     Conjuration(modPlayer);
                     break;
             }
@@ -251,42 +253,42 @@ namespace NewDawn.Items.Weapons
 
         public override void HoldItem(Player player)
         {
+            MysticPlayer mysticPlayer = player.GetModPlayer<MysticPlayer>();
 
-            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-
-            switch (modPlayer.MysticMode)
+            switch (player.GetModPlayer<MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case MysticPlayer.MysticMode.Destruction:
                     player.AddBuff(ModContent.BuffType<Destruction>(), 1, true);
                     break;
-                case 2:
+                case MysticPlayer.MysticMode.Illusion:
                     player.AddBuff(ModContent.BuffType<Illusion>(), 1, true);
                     break;
-                case 3:
+                case MysticPlayer.MysticMode.Conjuration:
                     player.AddBuff(ModContent.BuffType<Conjuration>(), 1, true);
                     break;
             }
 
-            GetCosts();
+            GetCosts(player);
 
             Hold = 2;
-            modPlayer.CurrentLuxCost = LuxCost;
-            modPlayer.CurrentVisCost = VisCost;
-            modPlayer.CurrentMundusCost = MundusCost;
+            mysticPlayer.CurrentLuxCost = LuxCost;
+            mysticPlayer.CurrentVisCost = VisCost;
+            mysticPlayer.CurrentMundusCost = MundusCost;
 
+            NewDawnUI.Update();
         }
 
         private string GetMysticType()
         {
-            NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
+            MysticPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<MysticPlayer>();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case MysticPlayer.MysticMode.Destruction:
                     return "[c/F1C40F:- Destruction -]";
-                case 2:
+                case MysticPlayer.MysticMode.Illusion:
                     return "[c/8E44AD:- Illusion -]";
-                case 3:
+                case MysticPlayer.MysticMode.Conjuration:
                     return "[c/28B463:- Conjuration -]";
             }
 
@@ -295,16 +297,16 @@ namespace NewDawn.Items.Weapons
 
         private string GetMysticaType()
         {
-            NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
+            MysticPlayer mysticPlayer = Main.LocalPlayer.GetModPlayer<MysticPlayer>();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
-                    return "Uses " + (GetLuxCost() * NewDawnPlayer.LuxUseRate * NewDawnPlayer.GlobalPotentiaUseRate) + " lux";
-                case 2:
-                    return "Uses " + (GetVisCost() * NewDawnPlayer.VisUseRate * NewDawnPlayer.GlobalPotentiaUseRate) + " vis";
-                case 3:
-                    return "Uses " + (GetMundusCost() * NewDawnPlayer.MundusUseRate * NewDawnPlayer.GlobalPotentiaUseRate) + " mundus";
+                case MysticPlayer.MysticMode.Destruction:
+                    return "Uses " + (GetLuxCost() * mysticPlayer.LuxUseRate * mysticPlayer.GlobalPotentiaUseRate) + " lux";
+                case MysticPlayer.MysticMode.Illusion:
+                    return "Uses " + (GetVisCost() * mysticPlayer.VisUseRate * mysticPlayer.GlobalPotentiaUseRate) + " vis";
+                case MysticPlayer.MysticMode.Conjuration:
+                    return "Uses " + (GetMundusCost() * mysticPlayer.MundusUseRate * mysticPlayer.GlobalPotentiaUseRate) + " mundus";
             }
 
             return "mystica";
@@ -327,13 +329,13 @@ namespace NewDawn.Items.Weapons
 
         public override bool Shoot(Player player, EntitySource_ItemUse_WithAmmo source, Vector2 position, Vector2 velocity, int type, int damage, float knockback)
         {
-            NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            MysticPlayer modPlayer = player.GetModPlayer<MysticPlayer>();
 
             ModifyMysticShoot(player, ref position, ref velocity.X, ref velocity.Y, ref type, ref damage, ref knockback);
             GetMysticShots(player, ref position, ref velocity.X, ref velocity.Y, ref type, ref damage, ref knockback);
-            switch (modPlayer.MysticMode)
+            switch (player.GetModPlayer<MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case MysticPlayer.MysticMode.Destruction:
                     if (modPlayer.Lux >= LuxCost * modPlayer.LuxUseRate * modPlayer.GlobalPotentiaUseRate)
                     {
                         modPlayer.Lux -= LuxCost * modPlayer.LuxUseRate * modPlayer.GlobalPotentiaUseRate;
@@ -351,7 +353,7 @@ namespace NewDawn.Items.Weapons
                     else
                         return false;
                     break;
-                case 2:
+                case MysticPlayer.MysticMode.Illusion:
                     if (modPlayer.Vis >= VisCost * modPlayer.VisUseRate * modPlayer.GlobalPotentiaUseRate)
                     {
                         modPlayer.Vis -= VisCost * modPlayer.VisUseRate * modPlayer.GlobalPotentiaUseRate;
@@ -369,7 +371,7 @@ namespace NewDawn.Items.Weapons
                     else
                         return false;
                     break;
-                case 3:
+                case MysticPlayer.MysticMode.Conjuration:
                     if (modPlayer.Mundus >= MundusCost * modPlayer.MundusUseRate * modPlayer.GlobalPotentiaUseRate)
                     {
                         modPlayer.Mundus -= MundusCost * modPlayer.MundusUseRate * modPlayer.GlobalPotentiaUseRate;
@@ -394,21 +396,23 @@ namespace NewDawn.Items.Weapons
         private void ModifyMysticShoot(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.IsOnOverflow())
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (mysticPlayer.IsOnOverflow())
             {
-                speedX *= modPlayer.OverflowVelocity;
-                speedY *= modPlayer.OverflowVelocity;
+                speedX *= mysticPlayer.OverflowVelocity;
+                speedY *= mysticPlayer.OverflowVelocity;
             }
         }
 
         private void GetMysticShots(Player player, ref Vector2 position, ref float speedX, ref float speedY, ref int type, ref int damage, ref float knockBack)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.Crystillium && modPlayer.IsOnOverflow())
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (modPlayer.Crystillium && mysticPlayer.IsOnOverflow())
                 Projectile.NewProjectile(player.GetSource_ItemUse(Item), position, new Vector2(speedX / 16f, speedY / 16f), ModContent.ProjectileType<CrystilliumShard>(), damage, knockBack, player.whoAmI);
-            if (modPlayer.OverflowFire && modPlayer.IsOnOverflow())
+            if (modPlayer.OverflowFire && mysticPlayer.IsOnOverflow())
                 Projectile.NewProjectile(player.GetSource_ItemUse(Item), position, new Vector2(speedX, speedY), ModContent.ProjectileType<OverflowThermalite>(), (int)(damage / 1.2f), knockBack, player.whoAmI);
-            if (modPlayer.ShroomOverflow > 0 && modPlayer.IsOnOverflow())
+            if (mysticPlayer.ShroomOverflow > 0 && mysticPlayer.IsOnOverflow())
                 Projectile.NewProjectile(player.GetSource_ItemUse(Item), new Vector2(player.Center.X, player.position.Y), new Vector2(0, -10f), ModContent.ProjectileType<FreyaConjuration2>(), damage, 3, player.whoAmI);
         }
 
@@ -424,19 +428,19 @@ namespace NewDawn.Items.Weapons
 
         private int GetLuxCost()
         {
-            Destruction(NewDawnPlayer.Get());
+            Destruction(Main.LocalPlayer.GetModPlayer<MysticPlayer>());
             return LuxCost;
         }
 
         private int GetVisCost()
         {
-            Illusion(NewDawnPlayer.Get());
+            Illusion(Main.LocalPlayer.GetModPlayer<MysticPlayer>());
             return VisCost;
         }
 
         private int GetMundusCost()
         {
-            Conjuration(NewDawnPlayer.Get());
+            Conjuration(Main.LocalPlayer.GetModPlayer<MysticPlayer>());
             return MundusCost;
         }
 

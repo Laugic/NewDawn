@@ -37,12 +37,12 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode != 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode != global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
                 return true;
             else return false;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 2000;
             Item.useTime = 26;
@@ -53,7 +53,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.scale = 2.25f;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 1500;
             Item.useTime = 20;
@@ -64,7 +64,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.scale = 1.5f;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 1000;
             Item.useTime = 45;
@@ -78,9 +78,10 @@ namespace NewDawn.Items.Weapons.Mystic
         public override void OnHitNPC(Player player, NPC target, NPC.HitInfo hit, int damageDone)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 2)
-                target.AddBuff(BuffID.Daybreak, (int)(4 * 60 * modPlayer.MysticDuration));
-            if (modPlayer.MysticMode == 3)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion)
+                target.AddBuff(BuffID.Daybreak, (int)(4 * 60 * mysticPlayer.MysticDuration));
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
             {
                 if (Main.player[Main.myPlayer] == player && player.ownedProjectileCounts[ModContent.ProjectileType<GreatGladiusConjuration1>()] < 2)
                     Projectile.NewProjectile(new EntitySource_Parent(Entity), target.Center.X, target.Center.Y, 0f, 0f, ModContent.ProjectileType<GreatGladiusConjuration1>(), hit.Damage, hit.Knockback, Main.myPlayer);

@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Destruction;
@@ -40,7 +41,7 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             Vector2 velocity = new Vector2(speedX, speedY);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 int numberProjectiles = Main.rand.Next(2, 6);
                 for (int i = 0; i < numberProjectiles; i++)
@@ -55,7 +56,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }      
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.scale = 1.25f;
             Item.damage = 44;
@@ -66,7 +67,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 6;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.scale = 1f;
             Item.damage = 32;
@@ -78,7 +79,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 4;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.scale = 1f;
             Item.damage = 32;
@@ -93,7 +94,7 @@ namespace NewDawn.Items.Weapons.Mystic
 		{
 			Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<HadesJudgement>(), 1);
-            recipe.AddRecipeGroup("TitaniumBars", 8);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 8);
             recipe.AddIngredient(ModContent.ItemType<SoulOfHaught>(), 8);
             recipe.AddIngredient(ModContent.ItemType<MagmaticCluster>());
             recipe.AddTile(TileID.MythrilAnvil);

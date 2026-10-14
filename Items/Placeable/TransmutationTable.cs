@@ -1,6 +1,6 @@
+using NewDawn.Control;
 using NewDawn.Tiles;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Placeable
@@ -31,8 +31,8 @@ namespace NewDawn.Items.Placeable
         {
             Recipe recipe = CreateRecipe();
             recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
-            recipe.AddRecipeGroup("LargeGems");
-            recipe.AddRecipeGroup("DungeonTables");
+            recipe.AddRecipeGroup(RecipeManager.LargeGems);
+            recipe.AddRecipeGroup(RecipeManager.DungeonTables);
             recipe.AddIngredient(ItemID.WaterCandle);
             recipe.AddIngredient(ItemID.Book);
             recipe.Register();
@@ -376,7 +376,7 @@ namespace NewDawn.Items.Placeable
 
 
             //Crimson to Corruption
-            
+
             //Undertaker to Musket
             Recipe uMrecipe = Recipe.Create(ItemID.Musket);
             uMrecipe.AddIngredient(ItemID.TheUndertaker);

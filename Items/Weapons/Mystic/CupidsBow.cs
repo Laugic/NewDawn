@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using NewDawn.Projectiles.Mystic.Conjuration;
 using NewDawn.Projectiles.Mystic.Destruction;
@@ -41,13 +42,14 @@ namespace NewDawn.Items.Weapons.Mystic
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 50f;
 
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 3)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration)
             {
                 for (int p = 0; p < 1000; p++)
                 {
                     if (Main.projectile[p].type == ModContent.ProjectileType<CupidConjurationAngel>())
                     {
-                        if (player.ownedProjectileCounts[ModContent.ProjectileType<CupidConjurationAngel>()] >= modPlayer.MysticDuration * 4)
+                        if (player.ownedProjectileCounts[ModContent.ProjectileType<CupidConjurationAngel>()] >= mysticPlayer.MysticDuration * 4)
                         {
                             Main.projectile[p].Kill();
                             break;
@@ -58,7 +60,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return true;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.useStyle = 1;
             Item.damage = 48;
@@ -71,7 +73,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 4;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.useStyle = 5;
             Item.damage = 42;
@@ -84,7 +86,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 5;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.useStyle = 5;
             Item.damage = 35;
@@ -101,7 +103,7 @@ namespace NewDawn.Items.Weapons.Mystic
 		{
 			Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Pearlwood, 24);
-            recipe.AddRecipeGroup("SilverBars", 8);
+            recipe.AddRecipeGroup(RecipeManager.SilverBars, 8);
             recipe.AddIngredient(ItemID.SoulofLight, 6);
             recipe.AddIngredient(Mod, nameof(SoulOfSought), 4);
             recipe.AddIngredient(ItemID.CrystalShard, 4);

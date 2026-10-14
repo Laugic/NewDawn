@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using Terraria;
 using Terraria.ID;
@@ -26,7 +27,8 @@ namespace NewDawn.Items.Armor
         {
             player.moveSpeed += 0.15f;
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDuration += 1f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDuration += 1f;
             player.ThrownVelocity += .5f;
             player.waterWalk = true;
             player.ignoreWater = true;
@@ -37,7 +39,7 @@ namespace NewDawn.Items.Armor
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ObsidiumPants>(), 1);
-            recipe.AddRecipeGroup("TitaniumBars", 10);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 10);
             recipe.AddIngredient(ModContent.ItemType<SoulOfHaught>(), 4);
             recipe.AddIngredient(ModContent.ItemType<MagmaticCluster>(), 1);
             recipe.AddTile(TileID.MythrilAnvil);

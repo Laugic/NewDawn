@@ -115,7 +115,7 @@ namespace NewDawn.Projectiles.Mystic.Misc
                         nextPos = Projectile.Center;
                     else
                         nextPos = Trails[i + 1];
-                    NewDawn.DrawChain(Main.spriteBatch, NewDawn.RequestTexture("Projectiles/Mystic/Misc/BoltChain"), curPos, nextPos, .5f, Color.White);
+                    NewDawn.DrawChain(Main.spriteBatch, ModContent.Request<Texture2D>("Projectiles/Mystic/Misc/BoltChain").Value, curPos, nextPos, .5f, Color.White);
                 }
             }
             return true;

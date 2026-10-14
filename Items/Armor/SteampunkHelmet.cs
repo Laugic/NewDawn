@@ -32,17 +32,19 @@ public override void SetStaticDefaults()
         public override void UpdateEquip(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDamage += .17f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDamage += .17f;
         }
 
         public override void UpdateArmorSet(Player player)
         {
             player.setBonus = "+200% Mystic Duration\nSwitching Mysticisms unleashes a burst of Steam\nDecreased Mystic Burst cooldown\nAttacks inflict 'Steamy!', which makes enemies take more damage";
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             modPlayer.Steamified = true;
-            modPlayer.MysticSteamBurst = true;
-            modPlayer.MysticDuration += 2f;
-            modPlayer.MysticSwitchCoolRate += 3;
+            mysticPlayer.MysticSteamBurst = true;
+            mysticPlayer.MysticDuration += 2f;
+            mysticPlayer.MysticSwitchCoolRate += 3;
         }
 
         public override void AddRecipes()

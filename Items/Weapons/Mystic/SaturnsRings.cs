@@ -40,13 +40,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots a burst of stars after charging 3 times";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots rings that inflict 'Orbital', which\nmakes enemies take 33% more damage when you're in Space";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Creates rings that orbit around you and periodically shoot stars";
                 default:
                     return "";
@@ -59,7 +59,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Vector2 muzzleOffset = Vector2.Normalize(velocity) * 40f;
             position += muzzleOffset;
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 1)
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Destruction)
             {
                 charge++;
                 SoundEngine.PlaySound(SoundID.Item60, position);
@@ -87,7 +87,7 @@ namespace NewDawn.Items.Weapons.Mystic
             return new Vector2(-16, 0);
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.useStyle = 5;
             Item.damage = 65;
@@ -98,7 +98,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.shoot = ModContent.ProjectileType<SaturnDestruction>();
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.useStyle = 5;
             Item.damage = 50;
@@ -109,7 +109,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.shoot = ModContent.ProjectileType<SaturnIllusion1>();
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.useStyle = 5;
             Item.damage = 60;

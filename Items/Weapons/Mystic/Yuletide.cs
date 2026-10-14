@@ -42,20 +42,20 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Shoots a stream of icicles that follow your cursor";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots a bouncing snowflake that inflicts 'Brittle', \nwhich makes enemies take more damage based on the speed of what hits them";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Spawns a snowflake that shoots out icicles";
                 default:
                     return "";
             }
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 30;
             Item.useAnimation = Item.useTime = 12;
@@ -65,7 +65,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 4;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 40;
             Item.useTime = 25;
@@ -76,7 +76,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 8;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 36;
             Item.useAnimation = Item.useTime = 30;

@@ -24,9 +24,10 @@ namespace NewDawn.Items.Equipables
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticBurstDamage += .2f;
-            modPlayer.MysticSwitchCoolRate += 1;
-            if(modPlayer.MysticSwitchCool > 0)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticBurstDamage += .2f;
+            mysticPlayer.MysticSwitchCoolRate += 1;
+            if(mysticPlayer.MysticSwitchCool > 0)
             {
                 player.moveSpeed += 1f;
                 player.maxRunSpeed += 2f;

@@ -29,18 +29,19 @@ namespace NewDawn.Items.Consumables.Potions
 
         public override bool CanUseItem(Player player)
         {
-            return player.GetModPlayer<NewDawnPlayer>().Mysticality == 0;
+            return player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().Mysticality == 0;
         }
 
         public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */
         {
             NewDawnPlayer modPlayer = player.GetModPlayer<NewDawnPlayer>();
-            if (modPlayer.Lux < modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost)
-                modPlayer.Lux = modPlayer.LuxMax + modPlayer.LuxMaxPermaBoost;
-            if (modPlayer.Vis < modPlayer.VisMax + modPlayer.VisMaxPermaBoost)
-                modPlayer.Vis = modPlayer.VisMax + modPlayer.VisMaxPermaBoost;
-            if (modPlayer.Mundus < modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost)
-                modPlayer.Mundus = modPlayer.MundusMax + modPlayer.MundusMaxPermaBoost;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (mysticPlayer.Lux < mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost)
+                mysticPlayer.Lux = mysticPlayer.LuxMax + mysticPlayer.LuxMaxPermaBoost;
+            if (mysticPlayer.Vis < mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost)
+                mysticPlayer.Vis = mysticPlayer.VisMax + mysticPlayer.VisMaxPermaBoost;
+            if (mysticPlayer.Mundus < mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost)
+                mysticPlayer.Mundus = mysticPlayer.MundusMax + mysticPlayer.MundusMaxPermaBoost;
             player.AddBuff(ModContent.BuffType<Mysticality2>(), 60 * 60, true);
             return true;
         }

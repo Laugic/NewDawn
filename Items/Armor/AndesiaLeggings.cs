@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using Terraria;
 using Terraria.ID;
@@ -25,7 +26,8 @@ namespace NewDawn.Items.Armor
         public override void UpdateEquip(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDuration += 1f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDuration += 1f;
             player.moveSpeed += 0.15f;
             player.maxMinions += 3;
         }
@@ -36,7 +38,7 @@ namespace NewDawn.Items.Armor
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<AndesiaCore>(), 1);
             recipe.AddIngredient(3086, 32);
-            recipe.AddRecipeGroup("TitaniumBars", 20);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 20);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }

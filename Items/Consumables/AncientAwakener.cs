@@ -1,10 +1,10 @@
 ﻿using Microsoft.Xna.Framework;
+using NewDawn.Control;
 using NewDawn.NPCs.RockTwins;
 using NewDawn.Projectiles.BossSummons;
 using NewDawn.Projectiles.Special;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Consumables
@@ -56,7 +56,7 @@ namespace NewDawn.Items.Consumables
             // TODO Move this to proper class.
             recipe = Recipe.Create(ItemID.GoldenKey);
 
-            recipe.AddRecipeGroup(NewDawn.GOLD_BARS_GROUP, 4);
+            recipe.AddRecipeGroup(RecipeManager.GoldBars, 4);
             recipe.AddIngredient(ItemID.Bone);
 
             recipe.AddTile(TileID.Hellforge);

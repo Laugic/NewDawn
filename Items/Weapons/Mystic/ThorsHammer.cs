@@ -44,13 +44,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Throw the hammer";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Swing the hammer when you land on the ground after a fall to create a Lightning Explosion\nInflicts 'Thunder Charged', which makes enemies release lightning bolts after being hit";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Creates Shadow Portals that shoot lightning";
                 default:
                     return "";
@@ -61,13 +61,14 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             base.OnHitNPC(player, target, hit, damageDone);
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            if (modPlayer.MysticMode == 2 && modPlayer.Vis > VisCost)
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            if (player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode == global::NewDawn.Players.MysticPlayer.MysticMode.Illusion && mysticPlayer.Vis > VisCost)
             {
-                target.AddBuff(ModContent.BuffType<ThunderCharged>(), (int)(8 * 60 * modPlayer.MysticDuration) + Main.rand.Next(1 * 60));
+                target.AddBuff(ModContent.BuffType<ThunderCharged>(), (int)(8 * 60 * mysticPlayer.MysticDuration) + Main.rand.Next(1 * 60));
             }
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 100;
             Item.noMelee = true;
@@ -82,7 +83,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.autoReuse = true;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 300;
             Item.noMelee = false;
@@ -97,7 +98,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.UseSound = SoundID.Item71;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 140;
             Item.noMelee = true;

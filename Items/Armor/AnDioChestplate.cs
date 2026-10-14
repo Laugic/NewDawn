@@ -1,3 +1,4 @@
+using NewDawn.Control;
 using NewDawn.Items.Loot;
 using Terraria;
 using Terraria.ID;
@@ -49,7 +50,7 @@ namespace NewDawn.Items.Armor
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<AndesiaCore>(), 1);
             recipe.AddIngredient(3086, 32);
-            recipe.AddRecipeGroup("TitaniumBars", 24);
+            recipe.AddRecipeGroup(RecipeManager.TitaniumBars, 24);
             recipe.AddTile(TileID.MythrilAnvil);
             recipe.Register();
         }

@@ -18,7 +18,8 @@ namespace NewDawn.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.MysticDamage += .15f;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.MysticDamage += .15f;
         }
     }
 }

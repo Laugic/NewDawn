@@ -13,7 +13,7 @@ namespace NewDawn.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-            NewDawnPlayer.Get(player).MysticDuration += 1f;
+            player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().MysticDuration += 1f;
         }
         
 	}

@@ -21,13 +21,13 @@ namespace NewDawn.Items.Weapons.Mystic
         {
             NewDawnPlayer NewDawnPlayer = NewDawnPlayer.Get();
 
-            switch (NewDawnPlayer.MysticMode)
+            switch (Main.LocalPlayer.GetModPlayer<global::NewDawn.Players.MysticPlayer>().CurrentMysticMode)
             {
-                case 1:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Destruction:
                     return "Rapidly shoots shrooms";
-                case 2:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Illusion:
                     return "Shoots a spore cloud that inflict 'Spored', which\nmakes Shrooms become Mega Shrooms on hit";
-                case 3:
+                case global::NewDawn.Players.MysticPlayer.MysticMode.Conjuration:
                     return "Spawns a shroom cap that launches spores into the sky";
                 default:
                     return "";
@@ -53,7 +53,7 @@ namespace NewDawn.Items.Weapons.Mystic
             Item.shootSpeed = 6f;
         }
 
-        public override void Destruction(NewDawnPlayer modPlayer)
+        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 10;
             Item.useTime = 9;
@@ -64,7 +64,7 @@ namespace NewDawn.Items.Weapons.Mystic
             LuxCost = 3;
         }
 
-        public override void Illusion(NewDawnPlayer modPlayer)
+        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 10;
             Item.damage = (int)(Item.damage * modPlayer.IllusionDamage);
@@ -76,7 +76,7 @@ namespace NewDawn.Items.Weapons.Mystic
             VisCost = 10;
         }
 
-        public override void Conjuration(NewDawnPlayer modPlayer)
+        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
         {
             Item.damage = 12;
             Item.useTime = 45;

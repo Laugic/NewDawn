@@ -13,7 +13,7 @@ namespace NewDawn.Buffs
 
 		public override void Update(Player player, ref int buffIndex)
 		{
-            NewDawnPlayer.Get(player).MysticSwitchCoolRate += 1;
+            player.GetModPlayer<global::NewDawn.Players.MysticPlayer>().MysticSwitchCoolRate += 1;
         }
         
 	}

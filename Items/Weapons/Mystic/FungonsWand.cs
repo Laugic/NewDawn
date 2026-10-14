@@ -53,7 +53,7 @@
 //            Item.shootSpeed = 6f;
 //        }
 
-//        public override void Destruction(MysticPlayer modPlayer)
+//        public override void Destruction(global::NewDawn.Players.MysticPlayer modPlayer)
 //        {
 //            Item.damage = 10;
 //            Item.useTime = 9;
@@ -64,7 +64,7 @@
 //            LuxCost = 3;
 //        }
 
-//        public override void Illusion(MysticPlayer modPlayer)
+//        public override void Illusion(global::NewDawn.Players.MysticPlayer modPlayer)
 //        {
 //            Item.damage = 10;
 //            Item.damage = (int)(Item.damage * modPlayer.IllusionDamage);
@@ -76,7 +76,7 @@
 //            VisCost = 10;
 //        }
 
-//        public override void Conjuration(MysticPlayer modPlayer)
+//        public override void Conjuration(global::NewDawn.Players.MysticPlayer modPlayer)
 //        {
 //            Item.damage = 12;
 //            Item.useTime = 45;

@@ -26,8 +26,9 @@ namespace NewDawn.Items.Equipables
         public override void UpdateAccessory(Player player, bool hideVisual)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            modPlayer.ConjurationDamage += .1f;
-            modPlayer.MundusMax += 50;
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            mysticPlayer.ConjurationDamage += .1f;
+            mysticPlayer.MundusMax += 50;
         }
         
         public override void AddRecipes()

@@ -27,13 +27,14 @@ namespace NewDawn.Items.Consumables
         public override bool? UseItem(Player player)/* tModPorter Suggestion: Return null instead of false */
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             if (player.itemAnimation == player.itemAnimationMax - 1 && NewDawnPlayer.Get(player).ObsidiumHeart < 5)
             {
                 Item.stack--;
                 modPlayer.ObsidiumHeart++;
-                modPlayer.LuxMaxPermaBoost += 10;
-                modPlayer.VisMaxPermaBoost += 10;
-                modPlayer.MundusMaxPermaBoost += 10;
+                mysticPlayer.LuxMaxPermaBoost += 10;
+                mysticPlayer.VisMaxPermaBoost += 10;
+                mysticPlayer.MundusMaxPermaBoost += 10;
             }
             return base.UseItem(player);
         }
