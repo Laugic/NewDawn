@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class EtheriaMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Etheria)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

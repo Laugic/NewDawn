@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class DioritusHelmet : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+15% Damage\n+10% critical strike chance");
-        }
 
         public override void SetDefaults()
         {

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class MagmaCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Magma Crystal");
-            // Tooltip.SetDefault("Provides immunity to lava \nYou can walk on liquids");
-        }
 
         public override void SetDefaults()
         {

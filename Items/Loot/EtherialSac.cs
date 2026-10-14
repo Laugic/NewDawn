@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialSac : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("If you are grappled to a tile in the Etherial, +50% Damage & increased life regen.");
-        }
 
         public override void SetDefaults()
         {

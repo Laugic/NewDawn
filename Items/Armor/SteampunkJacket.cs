@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class SteampunkJacket : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("8% Increased damage and critical strike chance");
-		}
 
 		public override void SetDefaults()
 		{

@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Legs)]
     public class BysmalBoots : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+15% Movement Speed\n+25% More Movement Speed and Max Run Speed when in the Etherial");
-        }
 
         public override void SetDefaults()
         {

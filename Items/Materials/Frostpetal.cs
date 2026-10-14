@@ -6,10 +6,6 @@ namespace NewDawn.Items.Materials
 {
     public class Frostpetal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'A magical crystallizing catalyst'\nHeld by monsters in the deep frigid cold");
-        }
 
         public override void SetDefaults()
         {

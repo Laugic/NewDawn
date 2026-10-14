@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class AncientEnchanter : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Combines Stones into Relics");
-        }
 
         public override void SetDefaults()
         {

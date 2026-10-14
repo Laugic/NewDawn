@@ -4,11 +4,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ElderlilyItem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Elderlily");
-            // Tooltip.SetDefault("'An ancient bloom'");
-        }
         public override void SetDefaults()
         {
             Item.width = 12;

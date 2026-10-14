@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialCrown : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons King Slime");
-        }
 
         public override void SetDefaults()
 		{

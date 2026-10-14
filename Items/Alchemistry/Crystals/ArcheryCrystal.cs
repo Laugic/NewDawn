@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class ArcheryCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("10% increased ranged damage");
-        }
 
         public override void CustomDefaults()
         {

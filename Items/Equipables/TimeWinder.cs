@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class TimeWinder : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Time Winder");
-            // Tooltip.SetDefault("+15% Increased Damage while time is stopped");
-        }
 
         public override void SetDefaults()
         {

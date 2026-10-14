@@ -10,13 +10,11 @@ namespace NewDawn.Items.Weapons.Melee
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("AnDio-Yo");
-            // Tooltip.SetDefault("A marball of fun");
 
             ItemID.Sets.Yoyo[Item.type] = true;
             ItemID.Sets.GamepadExtraRange[Item.type] = 15;
             ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

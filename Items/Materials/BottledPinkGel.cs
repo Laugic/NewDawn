@@ -6,10 +6,6 @@ namespace NewDawn.Items.Materials
 {
     public class BottledPinkGel : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The Pink Gel has consumed the normal gel.\nRight Click to open.");
-        }
         public override void SetDefaults()
         {
             Item.width = 28;

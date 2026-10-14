@@ -6,11 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class FlareburstWaders : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Flamespark Waders");
-            // Tooltip.SetDefault("Provides the ability to walk on water and lava\nGrants immunity to fire blocks and 10 seconds of immunity to lava\nLeave a trail of True Fire as you move");
-        }
 
         public override void SetDefaults()
         {

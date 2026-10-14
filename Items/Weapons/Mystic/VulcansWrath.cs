@@ -13,11 +13,10 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Vulcan's Wrath");
             Tooltip.AddLine("'Unleash his fury'");
             Tooltip.AddLine("Illusion inflicts 'Steamy'");
             Tooltip.AddLine("Fires different projectiles based on Mysticism");
-        }
+}
 
 		public override void SetMysticDefaults()
 		{

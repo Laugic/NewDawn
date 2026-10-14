@@ -12,10 +12,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Staff of Steamworks");
-            // Tooltip.SetDefault("'Let's get Steamy!'");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

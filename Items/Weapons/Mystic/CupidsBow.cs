@@ -12,12 +12,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
 	public class CupidsBow : MysticItem
     {
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Cupid's Bow");
-            /* Tooltip.SetDefault("'Make them fall for you' \nArrows inflict 'Lovestruck', which makes enemies drop Hearts on death" +
-                "\nFires different projectiles based on Mysticism\nThe amount of angels that can be conjured is based on Mystic Duration"); */
-        }
         
         public override void SetMysticDefaults()
 		{

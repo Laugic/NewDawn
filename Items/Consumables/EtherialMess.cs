@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialMess : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Ragnar");
-        }
 
         public override void SetDefaults()
 		{

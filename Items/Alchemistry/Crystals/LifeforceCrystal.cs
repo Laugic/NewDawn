@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class LifeforceCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases max life by 20%");
-        }
 
         public override void CustomDefaults()
         {

@@ -9,14 +9,12 @@ namespace NewDawn.Items.Loot
 	{
 		public override void SetStaticDefaults()
 		{
-			// DisplayName.SetDefault("Soul of Haught");
-			// Tooltip.SetDefault("'The essence of hot creatures'");
 			// ticksperframe, frameCount
 			Main.RegisterItemAnimation(Item.type, new DrawAnimationVertical(5, 4));
 			//ItemID.Sets.AnimatesAsSoul[item.type] = true;
 			ItemID.Sets.ItemIconPulse[Item.type] = true;
 			ItemID.Sets.ItemNoGravity[Item.type] = true;
-		}
+}
 
 		// TODO -- Velocity Y smaller, post NewItem?
 		public override void SetDefaults()

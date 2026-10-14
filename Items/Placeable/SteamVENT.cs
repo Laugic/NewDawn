@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class SteamVENT : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Steam V.E.N.T.");
-            // Tooltip.SetDefault("It's a 'Velocity Expulsion Nexus Tunnel'\nBoosts you upwards at great speeds.\n'Yeet'");
-        }
 
         public override void SetDefaults()
         {

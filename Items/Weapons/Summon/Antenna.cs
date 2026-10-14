@@ -11,10 +11,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
 	public class Antenna : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Summons a TV to fight for you.");
-		}
 
 		public override void SetDefaults()
 		{

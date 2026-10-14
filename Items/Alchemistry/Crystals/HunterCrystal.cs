@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class HunterCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Shows the location of creatures");
-        }
 
         public override void CustomDefaults()
         {

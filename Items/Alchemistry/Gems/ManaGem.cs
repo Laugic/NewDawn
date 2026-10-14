@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class ManaGem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+40 Mana");
-        }
 
         public override void SetDefaults()
         {

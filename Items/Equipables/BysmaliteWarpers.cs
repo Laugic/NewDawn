@@ -15,8 +15,7 @@ namespace NewDawn.Items.Equipables
         {
             NewDawnVars.DashBoots.Add(Item.type);
             NewDawnVars.RocketBoots.Add(Item.type);
-            // Tooltip.SetDefault("Dimension-tearing speed and dashing\nDominion over everything\nLeave a Frigid trail\nIncreased Damage, Movement Speed, and Defense in the Etherial");
-        }
+}
 
         public override void SetDefaults()
         {

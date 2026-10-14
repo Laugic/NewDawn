@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
 	public class Scydian : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("'The power of magma'\nBecomes stronger as you consume Obsidium Hearts");
-		}
 
 		public override void SetDefaults()
 		{

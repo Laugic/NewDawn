@@ -12,11 +12,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class TrueDaysBreak : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("True Sunrise");
-            // Tooltip.SetDefault("'Bring the sky'\nStriking enemies makes them emit True Sparks\nEnemies explode into True Sparks on death, spreading the Redemption.");
-        }
 
         public override void SetDefaults()
         {

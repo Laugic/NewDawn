@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class MoltenCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+50 Max Life\nSummon Ragnar Hands when below 50% life");
-        }
 
         public override void SetDefaults()
         {

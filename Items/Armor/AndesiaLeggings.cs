@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Legs)]
     public class AndesiaLeggings : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+100% Mystic Duration\nIncreased Max Minions\n+15% movement speed");
-        }
 
         public override void SetDefaults()
         {

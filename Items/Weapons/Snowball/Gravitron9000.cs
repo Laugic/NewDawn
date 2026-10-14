@@ -10,11 +10,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Gravitron9000 : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Gravitron 9000");
-            // Tooltip.SetDefault("33% chance to not consume ammo\nConverts normal snowballs into Graviballs");
-        }
 
         public override void SetDefaults()
         {

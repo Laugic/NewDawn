@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialSteamCrown : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Slybertron");
-        }
 
         public override void SetDefaults()
 		{

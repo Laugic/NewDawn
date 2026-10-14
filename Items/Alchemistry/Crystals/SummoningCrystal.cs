@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class SummoningCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases your max number of minions by 1");
-        }
 
         public override void CustomDefaults()
         {

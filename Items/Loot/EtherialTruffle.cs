@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialTruffle : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Water brings you great power while in the Etherial");
-        }
 
         public override void SetDefaults()
         {

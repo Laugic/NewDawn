@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Baller : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Baller");
-            // Tooltip.SetDefault("Chance to shoot multiple snowballs\n'Looks like it's from the Snowman Mafia'");
-        }
 
         public override void SetDefaults()
         {

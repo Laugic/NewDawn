@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class GaiasGem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Gaia's Gem");
-            // Tooltip.SetDefault("+50% Mystic Duration");
-        }
 
         public override void SetDefaults()
         {

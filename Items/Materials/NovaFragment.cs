@@ -6,10 +6,9 @@ namespace NewDawn.Items.Materials
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("'Cosmic entropy bursts from this fragment'");
             ItemID.Sets.ItemIconPulse[Item.type] = true;
             ItemID.Sets.ItemNoGravity[Item.type] = true;
-        }
+}
         public override void SetDefaults()
 		{
 			Item.width = 20;

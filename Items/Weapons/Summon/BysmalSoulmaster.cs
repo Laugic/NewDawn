@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Summon
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Bysmal Soulmaster");
-            // Tooltip.SetDefault("'Unleash them'\nWhen in the Etherial after defeating Etheria, attack twice as fast.");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

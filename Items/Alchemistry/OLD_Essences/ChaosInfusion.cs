@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class ChaosInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+40 max mana\nEnemies are more likely to spawn and target you\n20% chance not to consume ammo");
-        }
 
         public override void SetDefaults()
         {

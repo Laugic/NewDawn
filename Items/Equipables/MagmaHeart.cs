@@ -9,11 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class MagmaHeart : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Magma Heart");
-            // Tooltip.SetDefault("Summons a Magma Heart to shine light\nYou are immune to lava");
-        }
 
         public override void SetDefaults()
         {

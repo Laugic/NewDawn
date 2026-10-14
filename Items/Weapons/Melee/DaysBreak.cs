@@ -11,11 +11,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
 	public class DaysBreak : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Sunrise");
-            // Tooltip.SetDefault("'Bring the dawn'\nStriking enemies makes them emit sparks\nEnemies explode into sparks on death, spreading the dawn.");
-		}
 
 		public override void SetDefaults()
 		{

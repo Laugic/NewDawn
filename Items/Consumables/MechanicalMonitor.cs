@@ -12,11 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class MechanicalMonitor : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Steam-O-Vision");
-            // Tooltip.SetDefault("Summons The Annihilator");
-        }
         
         public override void SetDefaults()
 		{

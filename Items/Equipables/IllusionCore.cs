@@ -9,10 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class IllusionCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Illusion Damage\n+50 Vis");
-        }
 
         public override void SetDefaults()
         {

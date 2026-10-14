@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Pluto's Frost");
-            // Tooltip.SetDefault("'Harness the void of Space' \nIllusion inflicts 'Frigid', which stops enemies in their tracks\nWhile in the Etherial after defeating Etheria, +50% Overflow and Potentia Discharge and +25% Damage\nFires different projectiles based on Mysticism");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetMysticDefaults()
         {

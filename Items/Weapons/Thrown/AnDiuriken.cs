@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class AnDiuriken : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("AnDiuriken");
-            // Tooltip.SetDefault("Stacks up to 4");
-        }
         public override void SetDefaults()
         {
             Item.damage = 36;           

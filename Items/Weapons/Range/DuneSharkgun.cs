@@ -11,10 +11,6 @@ namespace NewDawn.Items.Weapons.Range
 {
     public class DuneSharkgun : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("33% chance to not consume ammo\nOccasionally shoots Crystal bullets");
-        }
 
         public override void SetDefaults()
         {

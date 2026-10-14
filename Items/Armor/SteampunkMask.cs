@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class SteampunkMask : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+4 Minion capacity");
-        }
 
         public override void SetDefaults()
         {

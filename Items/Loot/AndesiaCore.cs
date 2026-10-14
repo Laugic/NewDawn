@@ -7,11 +7,6 @@ namespace NewDawn.Items.Loot
 {
     public class AndesiaCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Core of Dusk");
-            // Tooltip.SetDefault("For Honor!");
-        }
 
         public override void SetDefaults()
         {

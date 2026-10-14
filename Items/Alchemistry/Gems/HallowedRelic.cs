@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class HallowedRelic : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("You feel Blessed");
-        }
 
         public override void SetDefaults()
         {

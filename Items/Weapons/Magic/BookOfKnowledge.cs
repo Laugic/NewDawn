@@ -10,10 +10,8 @@ namespace NewDawn.Items.Weapons.Magic
 	{
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Book of Knowledge");
-            // Tooltip.SetDefault("'Rain Lightning upon them'");
 			Item.staff[Item.type] = true; 
-		}
+}
 
 		public override void SetDefaults()
 		{

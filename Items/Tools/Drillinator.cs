@@ -7,11 +7,6 @@ namespace NewDawn.Items.Tools
 {
     public class Drillinator : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Chariot");
-            // Tooltip.SetDefault("'To the sun.'");
-        }
 
         public override void SetDefaults()
         {

@@ -10,9 +10,7 @@ namespace NewDawn.Items.Equipables
         public override void SetStaticDefaults()
         {
             NewDawnVars.DashBoots.Add(Item.type);
-            // DisplayName.SetDefault("Devilrush Boots");
-            // Tooltip.SetDefault("Allows the wearer to dash in any direction\nIncreased jump height");
-        }
+}
 
         public override void SetDefaults()
         {

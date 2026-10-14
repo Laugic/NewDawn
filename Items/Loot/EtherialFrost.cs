@@ -5,11 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialFrost : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Byfrost");
-            // Tooltip.SetDefault("Attacks inflict 'Frostbite'");
-        }
 
         public override void SetDefaults()
         {

@@ -6,10 +6,6 @@ namespace NewDawn.Items.Materials
 {
     public class Shadowflame : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Accursed Heat");
-        }
         public override void SetDefaults()
         {
             Item.width = 30;

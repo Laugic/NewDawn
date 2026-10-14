@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class UltraManaRelic : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+120 Mana");
-        }
 
         public override void SetDefaults()
         {

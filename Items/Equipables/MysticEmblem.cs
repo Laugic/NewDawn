@@ -5,10 +5,6 @@ namespace NewDawn.Items.Equipables
 {
     public class MysticEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+15% mystic damage");
-        }
 
         public override void SetDefaults()
         {

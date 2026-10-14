@@ -11,8 +11,6 @@
 //    {
 //        public override void SetStaticDefaults()
 //        {
-//            // DisplayName.SetDefault("Fungon's Wand");
-//            // Tooltip.SetDefault("Unleash the glow");
 //            Item.staff[Item.type] = true;
 //            Item.useStyle = ItemUseStyleID.Shoot;
 //        }

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Slushball : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Slushball");
-            // Tooltip.SetDefault("Inflicts 'Slushie', which makes enemies take more damage from snowballs that aren't Slushballs");
-        }
 
         public override void SetDefaults()
         {

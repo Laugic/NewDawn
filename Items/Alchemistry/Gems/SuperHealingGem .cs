@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class SuperHealingGem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+200 Max Life \nGives constant Potion Sickness");
-        }
 
         public override void SetDefaults()
         {

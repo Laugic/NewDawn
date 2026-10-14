@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class ForceInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("8% increased damage\n+1 max minion\nIncreases knockback by 33%");
-        }
 
         public override void SetDefaults()
         {

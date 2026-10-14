@@ -15,10 +15,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Orion's Gate");
-            // Tooltip.SetDefault("'Open the path to the stars'\nIllusion inflicts 'Cosmic Disarray', which drains life and makes enemies take more damage.\nFires different projectiles based on Mysticism\nConsuming enemies increases the Gate's power.");
             Item.staff[Item.type] = true;
-        }
+}
         
         public override void SetMysticDefaults()
         {

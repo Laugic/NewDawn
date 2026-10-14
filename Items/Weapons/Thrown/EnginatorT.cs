@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class EnginatorT : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Enginator");
-            // Tooltip.SetDefault("CHOO CHOO");
-        }
         public override void SetDefaults()
         {
             Item.damage = 110;

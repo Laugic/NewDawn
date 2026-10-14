@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class HolyBlade : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Blade of The Holy Knight");
-            // Tooltip.SetDefault("'Call down the sky'");
-        }
         public override void SetDefaults()
         {
             Item.damage = 600;

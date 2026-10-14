@@ -6,11 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Bloat : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bloat");
-            // Tooltip.SetDefault("+100% Max Life. You cannot go above 50% of your Max Life.");
-        }
 
         public override void SetDefaults()
         {

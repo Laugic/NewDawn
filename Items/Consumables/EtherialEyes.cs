@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialEyes : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons the Twins");
-        }
 
         public override void SetDefaults()
 		{

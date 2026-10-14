@@ -15,9 +15,7 @@ namespace NewDawn.Items.Equipables
         {
             NewDawnVars.DashBoots.Add(Item.type);
             NewDawnVars.RocketBoots.Add(Item.type);
-            // DisplayName.SetDefault("Shadowarp Flameboots");
-            // Tooltip.SetDefault("Shadow speed, shadow flight, and shadow dash\nDominion over liquids and fire\nLeave a trail of Shadowflame");
-        }
+}
 
         public override void SetDefaults()
         {

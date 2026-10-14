@@ -12,10 +12,6 @@ namespace NewDawn.Items.Equipables
         int trail = 0;
         int dashDir = 0;
 
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Allows the wearer to dash\nReduced cooldown between dashes\nIncreased movement speed");
-        }
 
         public override void SetDefaults()
         {

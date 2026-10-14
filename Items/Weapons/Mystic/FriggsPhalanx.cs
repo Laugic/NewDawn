@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Frigg's Phalanx");
-            // Tooltip.SetDefault("'The swarm cometh'");
 			Item.staff[Item.type] = true;
-		}
+}
 
         public override void SetMysticDefaults()
 		{

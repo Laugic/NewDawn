@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class NightOwlCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases night vision");
-        }
 
         public override void CustomDefaults()
         {

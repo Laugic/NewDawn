@@ -7,10 +7,6 @@ namespace NewDawn.Items.Tools
 {
 	public class FrostburnPickaxe : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("'The best of both worlds'");
-		}
 
 		public override void SetDefaults()
 		{

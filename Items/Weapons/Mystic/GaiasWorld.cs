@@ -12,10 +12,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Gaia's World");
-            // Tooltip.SetDefault("The World is in your hands");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override string GetExtraTooltip()
         {

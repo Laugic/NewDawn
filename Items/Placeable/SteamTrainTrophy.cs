@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class SteamTrainTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Steam Train Trophy");
-        }
 
         public override void SetDefaults()
         {

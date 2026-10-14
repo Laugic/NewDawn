@@ -6,11 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class TheDarkOfOld : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Dark of Old");
-            // Tooltip.SetDefault("+25 Potentia");
-        }
 
         public override void SetDefaults()
         {

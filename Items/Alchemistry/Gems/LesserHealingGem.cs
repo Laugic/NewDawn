@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class LesserHealingGem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+50 Max Life \nGives constant Potion Sickness");
-        }
 
         public override void SetDefaults()
         {

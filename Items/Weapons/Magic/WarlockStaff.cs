@@ -13,10 +13,8 @@ namespace NewDawn.Items.Weapons.Magic
         private int reloadMax = 12;
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Staff of The Enlightened Warlock");
-            // Tooltip.SetDefault("Ion Blast");
 			Item.staff[Item.type] = true;
-		}
+}
 
 		public override void SetDefaults()
 		{

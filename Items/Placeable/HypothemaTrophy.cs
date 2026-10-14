@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class HypothemaTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Hypothema Trophy");
-        }
 
         public override void SetDefaults()
         {

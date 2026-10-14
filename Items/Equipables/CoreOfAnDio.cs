@@ -8,11 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class CoreOfAnDio : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Sands of Time");
-            // Tooltip.SetDefault("You are immune to Time Stop");
-        }
 
         public override void SetDefaults()
         {

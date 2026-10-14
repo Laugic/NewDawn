@@ -12,11 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EmblemOfEtheria : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Emblem of Etheria");
-            // Tooltip.SetDefault("Calls Etheria\n\'This seems like a terrible idea.\'");
-        }
 
         public override void SetDefaults()
 		{

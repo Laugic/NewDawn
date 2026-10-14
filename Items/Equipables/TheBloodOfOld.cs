@@ -6,11 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class TheBloodOfOld : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Blood of Old");
-            // Tooltip.SetDefault("Increased life regen\n+10% mystic damage");
-        }
 
         public override void SetDefaults()
         {

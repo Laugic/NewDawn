@@ -11,10 +11,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class ObsidiumHeadguard : NewDawnItem
 	{
-        public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("+15% Melee Damage");
-		}
 
 		public override void SetDefaults()
 		{

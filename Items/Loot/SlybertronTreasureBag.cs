@@ -8,10 +8,6 @@ namespace NewDawn.Items.Loot
 {
     public class SlybertronTreasureBag : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
         public override void SetDefaults()
         {
             Item.width = 32;

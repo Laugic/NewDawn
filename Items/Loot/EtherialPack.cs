@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialPack : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Honey provides triple the normal regen, 15 defense, and +15% damage while in the Etherial");
-        }
 
         public override void SetDefaults()
         {

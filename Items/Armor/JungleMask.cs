@@ -9,10 +9,8 @@ namespace NewDawn.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Jungle Hood");
-            // Tooltip.SetDefault("Mystic damage increased by 12%\n+100% Mystic Duration");
             ArmorIDs.Head.Sets.DrawHead[Item.headSlot] = false;
-        }
+}
 
         public override void SetDefaults()
         {

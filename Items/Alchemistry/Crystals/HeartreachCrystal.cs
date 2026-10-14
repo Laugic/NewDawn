@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class HeartreachCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases pickup range for life hearts");
-        }
 
         public override void CustomDefaults()
         {

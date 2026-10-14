@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class CoreOfMysticism : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Core of Mysticism");
-            // Tooltip.SetDefault("+15% Mystic Damage\n+50 Potentia");
-        }
 
         public override void SetDefaults()
         {

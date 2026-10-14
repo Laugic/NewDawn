@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class ForbiddenAxe : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Forgotten Axe");
-            // Tooltip.SetDefault("'From the dunes'");
-        }
         public override void SetDefaults()
         {
             Item.damage = 20;

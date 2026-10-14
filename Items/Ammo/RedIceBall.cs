@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class RedIceBall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Crimchunk");
-            // Tooltip.SetDefault("The crimson ice is much heavier, and more damaging.");
-        }
 
         public override void SetDefaults()
         {

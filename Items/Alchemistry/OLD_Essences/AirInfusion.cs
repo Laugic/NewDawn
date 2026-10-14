@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class AirInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("20% increased movement speed and running speed\nDouble tap to dash\nJump higher and fall slower");
-        }
 
         public override void SetDefaults()
         {

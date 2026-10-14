@@ -9,10 +9,6 @@ namespace NewDawn.Items.Materials
     {
         int _time = 0;
         int _sec = 15;
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The gels will mesh together over time");
-        }
         public override void SetDefaults()
         {
             _time = 0;

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Shbl : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Shbl");
-            // Tooltip.SetDefault("'Shbl'");
-        }
 
         public override void SetDefaults()
         {

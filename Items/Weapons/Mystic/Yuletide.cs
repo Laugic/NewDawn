@@ -15,10 +15,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Yuletide");
-            // Tooltip.SetDefault("'Holiday Cheer'\nIllusion inflicts 'Frostburn'\nFires different projectiles based on Mysticism");
 			Item.staff[Item.type] = true;
-		}
+}
 
 		public override void SetMysticDefaults()
 		{

@@ -7,11 +7,6 @@ namespace NewDawn.Items.Ammo
 {
     public class AntiIceball : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Anti-Iceball");
-            // Tooltip.SetDefault("Reverse gravity");
-        }
 
         public override void SetDefaults()
         {

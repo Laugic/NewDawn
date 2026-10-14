@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class Lycoris : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Plants of hell'");
-        }
 
         public override void SetDefaults()
         {

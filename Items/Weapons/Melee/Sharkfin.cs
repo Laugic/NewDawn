@@ -8,10 +8,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     class Sharkfin : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Crystal barrage'");
-        }
 
         public override void SetDefaults()
         {

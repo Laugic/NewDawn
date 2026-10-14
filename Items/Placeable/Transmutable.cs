@@ -6,11 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class Transmutable : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Transmutable");
-            // Tooltip.SetDefault("For basic metal transmutations");
-        }
 
         public override void SetDefaults()
         {

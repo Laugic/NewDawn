@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class AncientShroud : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Blood Shroud");
-            // Tooltip.SetDefault("Increased life regen\nIncreased Mystic Damage for a time after taking damage");
-        }
 
         public override void SetDefaults()
         {

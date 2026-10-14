@@ -8,11 +8,6 @@ namespace NewDawn.Items.Consumables.Potions
 {
     public class GreaterMysticaPotion : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Greater Potentia Potion");
-            // Tooltip.SetDefault("Restores all Potentias to full capacity\nDoes not remove Overflow\nOverflow is increased by 10% while the Mysticality debuff is active");
-        }
         public override void SetDefaults()
         {
             Item.width = 24;

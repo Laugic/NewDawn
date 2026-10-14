@@ -12,11 +12,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
     public class UltimateCall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Call of the Ultimate Leader");
-            // Tooltip.SetDefault("Conjur the cosmos to fight for you.");
-        }
 
         public override void SetDefaults()
         {

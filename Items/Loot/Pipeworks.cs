@@ -6,10 +6,6 @@ namespace NewDawn.Items.Loot
 {
     public class Pipeworks : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+15% Throwing damage \n+25% Throwing Velocity");
-        }
 
         public override void SetDefaults()
         {

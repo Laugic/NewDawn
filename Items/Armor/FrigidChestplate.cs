@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Body)]
     public class FrigidChestplate : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Melee Speed and Range Crit Chance");
-        }
 
         public override void SetDefaults()
         {

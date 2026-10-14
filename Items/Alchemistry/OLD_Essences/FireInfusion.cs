@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class FireInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("8% increased critical strike chance\nGrants immunity to fire and lava\nAttacks set enemies on fire");
-        }
 
         public override void SetDefaults()
         {

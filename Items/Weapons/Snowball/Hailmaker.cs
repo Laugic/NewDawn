@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Hailmaker : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Hailmaker");
-            // Tooltip.SetDefault("Rains snowballs from snowballs");
-        }
 
         public override void SetDefaults()
         {

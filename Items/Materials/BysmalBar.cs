@@ -8,10 +8,6 @@ namespace NewDawn.Items.Materials
 {
     public class BysmalBar : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Tangibly intangible'");
-        }
         public override void SetDefaults()
         {
             Item.width = 30;

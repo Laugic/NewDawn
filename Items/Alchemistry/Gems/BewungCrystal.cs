@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class BewungCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Movement Crystal");
-            // Tooltip.SetDefault("Slows falling speed \n+25% Movement speed");
-        }
 
         public override void SetDefaults()
         {

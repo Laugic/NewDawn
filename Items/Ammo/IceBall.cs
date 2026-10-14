@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class IceBall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Iceball");
-            // Tooltip.SetDefault("A heavier, but more damaging snowball");
-        }
 
         public override void SetDefaults()
         {

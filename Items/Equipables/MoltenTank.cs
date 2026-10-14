@@ -8,10 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class MoltenTank : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+33% Mystic Duration");
-        }
 
         public override void SetDefaults()
         {

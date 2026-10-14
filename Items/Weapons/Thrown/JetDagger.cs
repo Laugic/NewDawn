@@ -7,11 +7,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class JetDagger : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Jet Dagger");
-            // Tooltip.SetDefault("'Return to sender'");
-        }
         public override void SetDefaults()
         {
             Item.damage = 100;

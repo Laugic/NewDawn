@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class RagnarTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ragnar Trophy");
-        }
 
         public override void SetDefaults()
         {

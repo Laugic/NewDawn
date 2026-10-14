@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SupremeSummonerEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% minion damage");
-        }
 
         public override void SetDefaults()
         {

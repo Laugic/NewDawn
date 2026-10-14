@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialMonitor : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons the Annihilator");
-        }
 
         public override void SetDefaults()
 		{

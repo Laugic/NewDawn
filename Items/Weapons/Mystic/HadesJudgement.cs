@@ -15,11 +15,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
     public class HadesJudgement : MysticItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Hades' Judgement");
-            // Tooltip.SetDefault("Cleanse your sins");
-        }
 
         public override string GetExtraTooltip()
         {

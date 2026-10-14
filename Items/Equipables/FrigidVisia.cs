@@ -8,10 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class FrigidVisia : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+25% Mystic Duration\n+15% Illusion Damage\n+50 Vis");
-        }
 
         public override void SetDefaults()
         {

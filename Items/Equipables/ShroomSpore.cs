@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class ShroomSpore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Spore Cloud");
-            // Tooltip.SetDefault("Overflow attacks shoot spores on hit");
-        }
 
         public override void SetDefaults()
         {

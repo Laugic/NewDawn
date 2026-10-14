@@ -8,11 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Crystillium : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Crystillium");
-            // Tooltip.SetDefault("+10% Overflow\nOverflow attacks shoot crystal shards");
-        }
 
         public override void SetDefaults()
         {

@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Avalanche : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("50% chance not to consume ammo\n'Look out below!'");
-        }
 
         public override void SetDefaults()
         {

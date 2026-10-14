@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class EarthEssence : Essence
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The essence of Sturdiness and Nature");
-        }
 
         public override void GetEffectAtIndex(Player player, AbstractStorageItem item, int index)
         {

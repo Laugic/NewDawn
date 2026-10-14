@@ -9,11 +9,6 @@ namespace NewDawn.Items.Consumables.Potions
 {
     public class MysticaPotion : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Potentia Potion");
-            // Tooltip.SetDefault("Restores all Potentias to full capacity, but removes Overflow");
-        }
         public override void SetDefaults()
         {
             Item.width = 24;

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialConjurationCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Justice");
-            // Tooltip.SetDefault("Taking damage in the Etherial heals you for that damage instead once every 90 seconds.");
-        }
 
         public override void SetDefaults()
         {

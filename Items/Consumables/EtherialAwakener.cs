@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialAwakener : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Dioritus");
-        }
 
         public override void SetDefaults()
 		{

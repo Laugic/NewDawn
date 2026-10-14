@@ -10,10 +10,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Sandstorm in a Book");
-            // Tooltip.SetDefault("Don't try to read it");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

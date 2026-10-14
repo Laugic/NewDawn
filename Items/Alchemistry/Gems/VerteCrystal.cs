@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class VerteCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Harmony Crystal");
-            // Tooltip.SetDefault("Decreased enemy spawn rate\nTake less damage from cold sources\n+1 Max Minion");
-        }
 
         public override void SetDefaults()
         {

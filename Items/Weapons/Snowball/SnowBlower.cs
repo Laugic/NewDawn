@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class SnowBlower : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Blows a barrge of brrs\nShoots an additional stream of frostballs");
-        }
 
         public override void SetDefaults()
         {

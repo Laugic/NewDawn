@@ -15,9 +15,7 @@ namespace NewDawn.Items.Equipables
         {
             NewDawnVars.DashBoots.Add(Item.type);
             NewDawnVars.RocketBoots.Add(Item.type);
-            // DisplayName.SetDefault("Hallowarp Lightboots");
-            // Tooltip.SetDefault("Hyper speed and hyper dash\nDominion over liquids and the sky\nLeave a trail of Crystallite while moving");
-        }
+}
 
         public override void SetDefaults()
         {

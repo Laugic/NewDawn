@@ -11,10 +11,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class ObsidiumHelmet : NewDawnItem
 	{
-        public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("+15% Mystic Damage");
-		}
 
 		public override void SetDefaults()
 		{

@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialGlobe : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Allows the use of Etherial accessories outside the Etherial.");
-        }
 
         public override void SetDefaults()
         {

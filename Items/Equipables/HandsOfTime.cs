@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class HandsOfTime : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Hands of Time");
-            // Tooltip.SetDefault("Increases the duration of Time Stop");
-        }
 
         public override void SetDefaults()
         {

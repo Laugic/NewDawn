@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SupremeEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //DisplayName.SetDefault("Cog of Knowledge");
-            // Tooltip.SetDefault("'The power of all'\nIncreases damage by 20%");
-        }
 
         public override void SetDefaults()
         {

@@ -10,11 +10,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class SpineChiller : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Spine Chiller");
-            // Tooltip.SetDefault("Shoots down in an area around your cursor\n80% chance not to consume ammo");
-        }
 
         public override void SetDefaults()
         {

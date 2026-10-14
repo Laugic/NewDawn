@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class FrigidHelmet : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Melee and Ranged Damage");
-        }
 
         public override void SetDefaults()
         {

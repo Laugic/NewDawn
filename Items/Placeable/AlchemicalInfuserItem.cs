@@ -9,11 +9,6 @@ namespace NewDawn.Items.Placeable
 {
     public class AlchemicalInfuserItem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Alchemical Infuser");
-            // Tooltip.SetDefault("Infuses Potions into Gems");
-        }
 
         public override void SetDefaults()
         {

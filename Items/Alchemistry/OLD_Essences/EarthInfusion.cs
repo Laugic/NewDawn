@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class EarthInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("6 defense\nGrants immunity to knockback\n+25% mining and building speed");
-        }
 
         public override void SetDefaults()
         {

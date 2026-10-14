@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class TwinSnokes : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Twin Snokes");
-            // Tooltip.SetDefault("'Double-headed dragon'");
-        }
         public override void SetDefaults()
         {
             Item.damage = 38;

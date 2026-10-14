@@ -7,11 +7,6 @@ namespace NewDawn.Items.Loot
     [AutoloadEquip(EquipType.Wings)]
     public class Etheramind : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ascension");
-            // Tooltip.SetDefault("'Rule from above'");
-        }
 
         public override void SetDefaults()
         {

@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables.Buffs
 {
     public class Soul : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Restores Potentia and gives the Reaper buff.");
-        }
 
         public override void SetDefaults()
         {

@@ -9,11 +9,6 @@ namespace NewDawn.Items.Tools
 {
     public class Debugger : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Debugger");
-            // Tooltip.SetDefault("'A debug tool'");
-        }
 
 		public override void SetDefaults()
 		{

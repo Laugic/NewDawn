@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class SteampunkBoots : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Insulated- Immune to 'Steamy'\n+10% Movement Speed");
-		}
 
 		public override void SetDefaults()
 		{

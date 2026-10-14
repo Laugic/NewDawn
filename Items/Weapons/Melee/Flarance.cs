@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     class Flarance : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Eruptions fly forth'\nProjectiles become stronger as you consume Obsidium Hearts");
-        }
 
         public override void SetDefaults()
         {

@@ -7,11 +7,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class ShroomPants : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Shroom Stalk");
-            // Tooltip.SetDefault("+10% Movement Speed");
-		}
 
 		public override void SetDefaults()
 		{

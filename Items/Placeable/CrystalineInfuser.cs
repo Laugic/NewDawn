@@ -9,11 +9,6 @@ namespace NewDawn.Items.Placeable
 {
     public class CrystalineInfuser : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Crystalline Infuser");
-            // Tooltip.SetDefault("Combines Gems into Crystals");
-        }
 
         public override void SetDefaults()
         {

@@ -8,8 +8,6 @@
 //    {
 //        public override void SetStaticDefaults()
 //        {
-//            // DisplayName.SetDefault("Pitdrop Key");
-//            // Tooltip.SetDefault("Enter the Pitdrop");
 //        }
 
 //        public override void SetDefaults()

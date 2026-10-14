@@ -12,10 +12,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Freya's Fley");
-            // Tooltip.SetDefault("Spores of the gods");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override string GetExtraTooltip()
         {

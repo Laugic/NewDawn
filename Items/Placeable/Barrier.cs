@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class Barrier : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("An invisible block");
-        }
 
         public override void SetDefaults()
         {

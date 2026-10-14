@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialGel : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Super Jump Boost & Super Speed Boost while in the Etherial");
-        }
 
         public override void SetDefaults()
         {

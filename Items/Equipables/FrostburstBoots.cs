@@ -9,8 +9,7 @@ namespace NewDawn.Items.Equipables
         public override void SetStaticDefaults()
         {
             NewDawnVars.RocketBoots.Add(Item.type);
-            // Tooltip.SetDefault("Allows flight, super fast running, and extra mobility on ice\nGrants the ability to double jump\nIncreases jump height and negates fall damage\n15% increased movement speed");
-        }
+}
 
         public override void SetDefaults()
         {

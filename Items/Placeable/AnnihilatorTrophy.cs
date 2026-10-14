@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class AnnihilatorTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Annihilator Trophy");
-        }
 
         public override void SetDefaults()
         {

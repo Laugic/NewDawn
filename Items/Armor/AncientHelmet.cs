@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class AncientHelmet : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increased Max Run Speed and Jump Height");
-        }
 
         public override void SetDefaults()
         {

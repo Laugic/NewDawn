@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class AquaflameWaders : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Dominion over liquids and fire\nLeave a trail of True Fire as you move");
-        }
 
         public override void SetDefaults()
         {

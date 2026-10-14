@@ -6,10 +6,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialEssence : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("From the world beyond.");
-        }
 
         public override void SetDefaults()
         {

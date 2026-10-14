@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class BysmalMask : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Damage \n+10% Additional Damage when in the Etherial");
-        }
 
         public override void SetDefaults()
         {

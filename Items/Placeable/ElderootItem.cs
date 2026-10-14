@@ -6,11 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ElderootItem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Elderoot");
-            // Tooltip.SetDefault("'Roots of ice'");
-        }
 
         public override void SetDefaults()
         {

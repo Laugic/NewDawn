@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Snobbler : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Snobbler");
-            // Tooltip.SetDefault("Shoots a burst of snowballs");
-        }
         public override void SetDefaults()
         {
             Item.damage = 11;

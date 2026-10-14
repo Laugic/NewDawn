@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class LightInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Shows the location of treasure and ore\nEmits light and increases night vision\nShows the location of creatures and danger sources");
-        }
 
         public override void SetDefaults()
         {

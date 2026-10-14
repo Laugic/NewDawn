@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class PinkIceBall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Pearlfrost Ball");
-            // Tooltip.SetDefault("The hallowed ice is much lighter, and able to fly much farther.");
-        }
 
         public override void SetDefaults()
         {

@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class BysmalBlade : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'A chill like no other' \nInflicts 'Frostbite'.\nWhile in the Etherial after defeating Etheria, increased size and swing speed");
-        }
 
         public override void SetDefaults()
         {

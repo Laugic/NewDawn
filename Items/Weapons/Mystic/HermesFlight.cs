@@ -12,10 +12,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Hermes' Flight");
-            // Tooltip.SetDefault("Weild the power of Hermes");
 			Item.staff[Item.type] = true;
-		}
+}
 
 		public override void SetMysticDefaults()
 		{

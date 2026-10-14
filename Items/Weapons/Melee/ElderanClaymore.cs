@@ -13,11 +13,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class ElderanClaymore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Elderan Claymore");
-            // Tooltip.SetDefault("'The ancient crystals slot together quite nicely.'");
-        }
 
         public override void SetDefaults()
         {

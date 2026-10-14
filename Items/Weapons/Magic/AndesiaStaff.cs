@@ -13,10 +13,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Staff of Honor");
-            // Tooltip.SetDefault("Right click to place \n'Onto War!'");
             Item.staff[Item.type] = true;
-        }
+}
         public override void SetDefaults()
         {
             Item.damage = 50;

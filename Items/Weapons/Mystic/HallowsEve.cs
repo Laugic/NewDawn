@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Hallow's Eve");
-             // Tooltip.SetDefault("'The spirits of the darkness are bent to your will'");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetMysticDefaults()
 		{

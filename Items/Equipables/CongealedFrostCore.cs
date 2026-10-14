@@ -6,11 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class CongealedFrostCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Congealed Frost Core");
-            // Tooltip.SetDefault("+10% Melee and Ranged damage\n+50% Snowball damage\n'Sometimes, an Ice Golem's Heart is extra cold'");
-        }
 
         public override void SetDefaults()
         {

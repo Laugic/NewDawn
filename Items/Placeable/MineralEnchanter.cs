@@ -5,10 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class MineralEnchanter : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Combines Crystals into Stones");
-        }
 
         public override void SetDefaults()
         {

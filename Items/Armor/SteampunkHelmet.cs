@@ -8,11 +8,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class SteampunkHelmet : NewDawnItem
 	{
-public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Steampunk Hat");
-            // Tooltip.SetDefault("+20% Mystic Damage");
-		}
 
 		public override void SetDefaults()
 		{

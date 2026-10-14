@@ -4,11 +4,6 @@ namespace NewDawn.Items.Placeable
 {
     public class LavaGemItem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Lava Gem");
-            // Tooltip.SetDefault("Grows on Obsidium Rock\n'Molten Candy'");
-        }
 
         public override void SetDefaults()
         {

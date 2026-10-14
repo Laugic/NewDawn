@@ -6,10 +6,6 @@ namespace NewDawn.Items.Materials
 {
     public class NullEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

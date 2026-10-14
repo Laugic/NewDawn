@@ -9,10 +9,6 @@ namespace NewDawn.Items.Ammo
 {
 	public class BrassArrow : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Redirects itself on collision.");
-		}
 
 		public override void SetDefaults()
 		{

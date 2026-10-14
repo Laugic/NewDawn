@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class CalmingCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Decreases enemy spawn rate");
-        }
 
         public override void CustomDefaults()
         {

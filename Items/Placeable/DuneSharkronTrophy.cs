@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class DuneSharkronTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Dune Sharkron Trophy");
-        }
 
         public override void SetDefaults()
         {

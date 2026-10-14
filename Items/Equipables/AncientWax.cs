@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class AncientWax : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases your minion capacity ");
-        }
 
         public override void SetDefaults()
         {

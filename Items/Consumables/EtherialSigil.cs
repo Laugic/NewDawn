@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialSigil : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Moon Lord");
-        }
         public override void SetDefaults()
 		{
 			Item.width = 16;

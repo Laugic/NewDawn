@@ -10,11 +10,6 @@ namespace NewDawn.Items.Useables
 {
     public class BysmalKey : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bysmal Key");
-            // Tooltip.SetDefault("Prevent Bysmal Armor from cycling in new Bonuses until toggled on again.");
-        }
 
         public override void SetDefaults()
         {

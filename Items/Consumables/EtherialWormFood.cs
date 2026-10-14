@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialWormFood : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons the Eater of Worlds");
-        }
 
         public override void SetDefaults()
 		{

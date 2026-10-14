@@ -17,10 +17,6 @@ namespace NewDawn.Items.Weapons.Mystic
     public class ThorsHammer : MysticItem
     {
         bool IllusionCharged { get; set; }
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Thor's Hammer");
-        }
 
         public override void SetMysticDefaults()
         {

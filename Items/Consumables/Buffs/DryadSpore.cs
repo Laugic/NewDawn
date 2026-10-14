@@ -10,10 +10,6 @@ namespace NewDawn.Items.Consumables.Buffs
 {
     public class DryadSpore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Gives Dryad's Blessing'");
-        }
 
         public override void SetDefaults()
         {

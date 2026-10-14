@@ -13,10 +13,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
     public class TheMessenger : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons the rulers of the caverns to fight for you.");
-        }
 
         public override void SetDefaults()
         {

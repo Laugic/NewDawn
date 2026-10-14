@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class DioritusBlade : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Blade of Glory");
-            // Tooltip.SetDefault("Right click to throw \n'Into Battle!'");
-        }
         public override void SetDefaults()
         {
             Item.damage = 50;

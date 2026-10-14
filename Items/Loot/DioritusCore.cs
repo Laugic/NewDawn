@@ -7,11 +7,6 @@ namespace NewDawn.Items.Loot
 {
     public class DioritusCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Core of Dawn");
-            // Tooltip.SetDefault("For Glory!");
-        }
 
         public override void SetDefaults()
         {

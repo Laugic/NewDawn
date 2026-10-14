@@ -14,11 +14,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Body)]
     public class BysmalChestguard : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bysmal Chestguard");
-            // Tooltip.SetDefault("(20 Defense, +20 Defense when in the Etherial)");
-        }
 
         public override void SetDefaults()
         {

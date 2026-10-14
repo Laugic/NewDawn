@@ -10,11 +10,6 @@ namespace NewDawn.Items.Equipables
 {
     public class FaeryInABottle : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Faery in a Bottle");
-            // Tooltip.SetDefault("Automatically switch Mysticism when you run out of the current Potentia");
-        }
 
         public override void SetDefaults()
         {

@@ -15,11 +15,6 @@ namespace NewDawn.Items.Equipables
         int justJumped = 0;
         int counter = 0;
         int trail = 0;
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Eruption");
-            // Tooltip.SetDefault("Grants an Eruption Jump\nMake hidden to prevent fireballs from spawning");
-        }
 
         public override void SetDefaults()
         {

@@ -9,11 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Thermaltite : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Thermalite");
-            // Tooltip.SetDefault("Overflow attacks shoot Thermalite Bolts");
-        }
 
         public override void SetDefaults()
         {

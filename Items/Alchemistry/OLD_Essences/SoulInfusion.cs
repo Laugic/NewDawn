@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class SoulInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+40 maximum life\nIncreases life and mana regeneration\nHearts heal an additional 20 life upon pickup");
-        }
 
         public override void SetDefaults()
         {

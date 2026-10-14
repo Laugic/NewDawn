@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialMechanicalSkull : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Skeletron Prime");
-        }
 
         public override void SetDefaults()
 		{

@@ -11,11 +11,6 @@ namespace NewDawn.Items.Consumables
 {
     public class EtherialCell : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //DisplayName.SetDefault("Etherial Crown");
-            // Tooltip.SetDefault("Summons Golem");
-        }
 
         public override void SetDefaults()
         {

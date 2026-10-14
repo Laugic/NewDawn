@@ -10,10 +10,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
     public class AgnesInferno : MysticItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Agnes' Inferno");
-        }
 
         public override void SetMysticDefaults()
         {

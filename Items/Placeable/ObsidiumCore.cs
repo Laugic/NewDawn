@@ -5,10 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ObsidiumCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Grows Life Crystals over time");
-        }
 
         public override void SetDefaults()
         {

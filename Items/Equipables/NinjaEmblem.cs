@@ -6,10 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class NinjaEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+15% throwing damage");
-        }
 
         public override void SetDefaults()
         {

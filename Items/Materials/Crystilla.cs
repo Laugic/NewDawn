@@ -5,10 +5,6 @@ namespace NewDawn.Items.Materials
 {
     public class Crystilla : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("An ancient gemstone");
-        }
 
         public override void SetDefaults()
         {

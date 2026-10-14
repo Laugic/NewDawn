@@ -7,10 +7,6 @@ namespace NewDawn.Items.Consumables.Potions
 {
 	public class JumpBoostPotion : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases jump height\n5 minute duration");
-        }
         public override void SetDefaults()
 		{
 			Item.width = 24;

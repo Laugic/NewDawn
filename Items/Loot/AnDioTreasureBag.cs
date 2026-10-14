@@ -9,11 +9,6 @@ namespace NewDawn.Items.Loot
 {
     public class AnDioTreasureBag : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Treasure Bag");
-            // Tooltip.SetDefault("");
-        }
         public override void SetDefaults()
         {
             Item.width = 32;

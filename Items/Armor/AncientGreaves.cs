@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Legs)]
     public class AncientGreaves : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Innate Sandstorm in a Bottle\n+15% Movement Speed");
-        }
 
         public override void SetDefaults()
         {

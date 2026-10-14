@@ -12,11 +12,6 @@ namespace NewDawn.Items.Weapons.Range
 {
 	public class BysmalBlaster : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bysmal Blaster");
-            // Tooltip.SetDefault("'Blast them to another dimension'\n50% chance to not consume ammo\nWhile in the Etherial after defeating Etheria, shoots shotgun blasts twice as often");
-		}
 
         private int reload = 0;
         private int reloadMax = 2;

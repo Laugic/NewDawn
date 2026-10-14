@@ -13,11 +13,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
 	public class EtheriasTrick : MysticItem
     {
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Etheria's Trick");
-            // Tooltip.SetDefault("'A dimension in your hands'");
-        }
 
 		public override void SetMysticDefaults()
 		{

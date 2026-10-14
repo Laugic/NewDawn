@@ -9,10 +9,6 @@ namespace NewDawn.Items.Loot
 {
     public class DuneSharkronTreasureBag : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
         public override void SetDefaults()
         {
             Item.width = 44;

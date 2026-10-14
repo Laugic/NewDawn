@@ -9,10 +9,8 @@ namespace NewDawn.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Shroom Cap");
-            // Tooltip.SetDefault("+8% Mystic Damage");
             ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true;
-        }
+}
 
         public override void SetDefaults()
         {

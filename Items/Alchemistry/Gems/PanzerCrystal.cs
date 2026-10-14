@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class PanzerCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Tank Crystal");
-            // Tooltip.SetDefault("+10% Damage reduction \n Attackers take damage");
-        }
 
         public override void SetDefaults()
         {

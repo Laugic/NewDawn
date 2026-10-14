@@ -10,11 +10,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SpyritInABottle : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Spyrit in a Bottle");
-            // Tooltip.SetDefault("Automatically switch Mysticism when you run out of the current Potentia,\nor one of your Potentias is at Max Overflow");
-        }
 
         public override void SetDefaults()
         {

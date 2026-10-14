@@ -12,10 +12,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
     public class PoseidonsTide : MysticItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Poseidon's Tide");
-        }
 
         public override void SetMysticDefaults()
         {

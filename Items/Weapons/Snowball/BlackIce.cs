@@ -7,11 +7,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class BlackIce : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Black Ice");
-            // Tooltip.SetDefault("Fires faster in extreme heat\nFires more accurately in extreme cold\n50% chance not to consume ammo\n'They won't see it coming'");
-        }
 
         public override void SetDefaults()
         {

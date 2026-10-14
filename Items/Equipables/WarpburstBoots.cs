@@ -11,9 +11,7 @@ namespace NewDawn.Items.Equipables
         public override void SetStaticDefaults()
         {
             NewDawnVars.DashBoots.Add(Item.type);
-            // DisplayName.SetDefault("Warpburst Boots");
-            // Tooltip.SetDefault("Allows the wearer to dash\nIncreased jump height and movement speed\nCan dash multiple times in the air\nBecome immune for a time while dashing");
-        }
+}
 
         public override void SetDefaults()
         {

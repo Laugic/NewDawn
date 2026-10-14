@@ -6,11 +6,6 @@ namespace NewDawn.Items.Equipables
 {
     public class AncientCarapace : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ancient Carapace");
-            // Tooltip.SetDefault("Restore Potentia upon taking damage");
-        }
 
         public override void SetDefaults()
         {

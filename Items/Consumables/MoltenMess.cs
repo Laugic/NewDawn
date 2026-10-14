@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class MoltenMess : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Ragnar\n\'Chilled Lava.\' \nGuardian of the Obsidium.");
-        }
 
 
         public override void SetDefaults()

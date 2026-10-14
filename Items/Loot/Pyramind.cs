@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class Pyramind : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases your minion capacity\n+40 Mana\nIncreased Potentia Regen");
-        }
 
         public override void SetDefaults()
         {

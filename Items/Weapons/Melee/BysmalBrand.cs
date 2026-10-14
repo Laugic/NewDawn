@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class BysmalBrand : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Borealis");
-            // Tooltip.SetDefault("'The great frost comes'\nWhile in the Etherial after defeating Etheria, Borealis projectiles spawn twice as many Bysmal Blasts on hit");
-        }
 
         public override void SetDefaults()
         {

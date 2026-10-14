@@ -12,10 +12,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
 	public class Eruptor : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'For Fury'");
-		}
         public int numShots = 1;
 		public override void SetDefaults()
 		{

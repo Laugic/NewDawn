@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialTank : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("CHOO CHOO! While in the etherial, the faster you move, the higher your damage.\nColliding with an enemy deals your movement speed * 500 in damage.\nGreatly increases Movement Speed.");
-        }
 
         public override void SetDefaults()
         {

@@ -8,11 +8,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Frostball : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Frostball");
-            // Tooltip.SetDefault("Bounces off of enemies\nInflicts 'Frostburn'");
-        }
 
         public override void SetDefaults()
         {

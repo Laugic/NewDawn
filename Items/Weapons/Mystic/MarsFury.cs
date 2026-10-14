@@ -13,11 +13,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
 	public class MarsFury : MysticItem
     {
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Mars' Fury");
-            // Tooltip.SetDefault("A Furious War\nIllusion inflicts 'Furious', which deals damage over time and\nmakes enemies shoot fireballs when hit\nFires different projectiles based on Mysticism");
-        }
 
 		public override void SetMysticDefaults()
 		{

@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
     public class AncientAwakener : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Dioritus\n\'The rulers of the caverns are fearsome foes\'");
-        }
 
         public override void SetDefaults()
         {

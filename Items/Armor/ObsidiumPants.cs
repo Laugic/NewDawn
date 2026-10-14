@@ -11,10 +11,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class ObsidiumPants : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Provides waterwalking and free movement in liquids \n+10% Movement Speed");
-		}
 
 		public override void SetDefaults()
 		{

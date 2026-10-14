@@ -11,11 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialBulb : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //DisplayName.SetDefault("Etherial Crown");
-            // Tooltip.SetDefault("Summons Plantera");
-        }
 
         public override void SetDefaults()
 		{

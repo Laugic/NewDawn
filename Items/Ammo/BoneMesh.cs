@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class BoneMesh : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bone Mesh");
-            // Tooltip.SetDefault("Extractinated bones!\nFragment on impact");
-        }
 
         public override void SetDefaults()
         {

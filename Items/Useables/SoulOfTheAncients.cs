@@ -8,11 +8,6 @@ namespace NewDawn.Items.Useables
 {
     public class SoulOfTheAncients : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Soul of the Ancients");
-            // Tooltip.SetDefault("Seal away a part of your Soul.\nUsing this item prevents you from unleashing Mystic Bursts, but increases Mystic Damage by 5%.");
-        }
 
         public override void SetDefaults()
         {

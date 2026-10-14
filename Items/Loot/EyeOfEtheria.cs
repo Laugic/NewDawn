@@ -5,11 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EyeOfEtheria : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Eye of Etheria");
-            // Tooltip.SetDefault("Allows you to see all creatures, no matter which dimension you are in.");
-        }
 
         public override void SetDefaults()
         {

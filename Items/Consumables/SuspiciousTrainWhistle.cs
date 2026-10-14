@@ -11,11 +11,6 @@ namespace NewDawn.Items.Consumables
 {
     public class SuspiciousTrainWhistle : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Suspicious Steam Whistle");
-            // Tooltip.SetDefault("Summons Steam Train");
-        }
 
         public override void SetDefaults()
         {

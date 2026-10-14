@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Loki's Staff");
-            // Tooltip.SetDefault("'Many tricks up his sleeve'");
             Item.staff[Item.type] = true; 
-        }
+}
 
 		public override void SetMysticDefaults()
 		{

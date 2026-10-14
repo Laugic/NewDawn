@@ -8,11 +8,6 @@ namespace NewDawn.Items.Useables
 {
     public class SteampunkWatch : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Steampunk Watch");
-            // Tooltip.SetDefault("You tell the time.");
-        }
 
         public override void SetDefaults()
         {

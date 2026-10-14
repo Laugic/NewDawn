@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class Antarctica : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Antarctica");
-            // Tooltip.SetDefault("'A blizzard hails from above'\nWhen in the Etherial after defeating Etheria, rain down more Hail,\nand stay stuck in enemies for twice as long.");
-        }
         public override void SetDefaults()
         {
             Item.damage = 150;

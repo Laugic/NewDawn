@@ -5,10 +5,6 @@ namespace NewDawn.Items.Materials
 {
 	public class ChilledBar : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Very Cold");
-        }
         public override void SetDefaults()
 		{
 			Item.width = 30;

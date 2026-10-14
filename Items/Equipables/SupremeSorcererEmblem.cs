@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SupremeSorcererEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% magic damage");
-        }
 
         public override void SetDefaults()
         {

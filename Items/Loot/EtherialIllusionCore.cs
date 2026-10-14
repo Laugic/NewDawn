@@ -6,11 +6,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialIllusionCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Mechanical Rage");
-            // Tooltip.SetDefault("In the Etherial, deal more damage the lower your life is");
-        }
 
         public override void SetDefaults()
         {

@@ -12,10 +12,6 @@ namespace NewDawn.Items.Consumables
 {
     public class EtherialMesh : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Hypothema");
-        }
 
         public override void SetDefaults()
         {

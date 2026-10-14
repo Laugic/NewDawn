@@ -7,10 +7,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ObsidiumOre : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

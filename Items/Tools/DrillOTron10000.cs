@@ -6,11 +6,6 @@ namespace NewDawn.Items.Tools
 {
 	public class DrillOTron10000 : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Drillinator");
-            // Tooltip.SetDefault("'To the moon.'");
-		}
 
         public override void SetDefaults()
         {

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Spiritball : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Spiritball");
-            // Tooltip.SetDefault("Flies back towards you");
-        }
 
         public override void SetDefaults()
         {

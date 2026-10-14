@@ -7,10 +7,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class ObsidiumHeart : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases the strength of Obsidium weapons\nIncreases your Max Potentia by 10\nCan be used 5 times\nGrown on Magma Shards");
-        }
         public override void SetDefaults()
         {
             Item.width = 28;

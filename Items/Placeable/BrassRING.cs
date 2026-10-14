@@ -8,12 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class BrassRING : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Brass R.I.N.G.");
-            /* Tooltip.SetDefault("It's a 'Rotation Inertia Negator of Gravity'\nBoosts you upwards."+
-                "\nFlying through the R.I.N.G's is not advised, as your wings will override the boost."); */
-        }
 
         public override void SetDefaults()
         {

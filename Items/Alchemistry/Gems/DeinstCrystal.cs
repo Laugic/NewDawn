@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class DeinstCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Manipulation Crystal");
-            // Tooltip.SetDefault("Increases placement speed and +1 range \n+25% Mining speed");
-        }
 
         public override void SetDefaults()
         {

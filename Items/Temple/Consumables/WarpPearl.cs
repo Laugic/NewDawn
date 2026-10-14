@@ -8,10 +8,6 @@ namespace NewDawn.Items.Temple.Consumables
 {
     public class WarpPearl : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Teleports you to where it lands");
-        }
 
         public override void SetDefaults()
         {

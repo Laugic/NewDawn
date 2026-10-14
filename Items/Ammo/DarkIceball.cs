@@ -7,11 +7,6 @@ namespace NewDawn.Items.Ammo
 {
     public class DarkIceball : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Dark Iceball");
-            // Tooltip.SetDefault("Pierces enemies");
-        }
 
         public override void SetDefaults()
         {

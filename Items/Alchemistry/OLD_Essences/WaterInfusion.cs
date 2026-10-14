@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class WaterInfusion : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("15% increased fishing power and detects hooked fish\nEnemies spawn less and target you less\nAllows you to swim and breathe underwater");
-        }
 
         public override void SetDefaults()
         {

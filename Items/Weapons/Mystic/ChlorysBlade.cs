@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
     public class ChlorysBlade : MysticItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Chlorys's Blade");
-        }
 
         public override void SetMysticDefaults()
         {

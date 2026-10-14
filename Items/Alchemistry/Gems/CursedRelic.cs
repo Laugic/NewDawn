@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class CursedRelic : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Cursed? \nMastery of violence");
-        }
 
         public override void SetDefaults()
         {

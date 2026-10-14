@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Clockface : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Clockface");
-            // Tooltip.SetDefault("Reduces the cooldown between Time Stops");
-        }
 
         public override void SetDefaults()
         {

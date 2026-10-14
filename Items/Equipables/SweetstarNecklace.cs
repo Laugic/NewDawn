@@ -7,7 +7,6 @@
 //    {
 //        public override void SetStaticDefaults()
 //        {
-//            // Tooltip.SetDefault("Increased invincibility time and movement speed after taking damage \nRelease stars and bees after taking damage");
 //        }
 
 //        public override void SetDefaults()

@@ -9,10 +9,6 @@ namespace NewDawn.Items.Loot
 {
     public class ObsidiumChunk : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Pulsing with heat\nRight Click to open");
-        }
 
         public override void SetDefaults()
         {

@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Ancient Staff");
-            // Tooltip.SetDefault("'Crystilla Rain'");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

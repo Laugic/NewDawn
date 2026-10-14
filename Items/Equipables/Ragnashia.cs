@@ -5,11 +5,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Ragnashia : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ragnashia");
-            // Tooltip.SetDefault("+5% Crit Chance\nSet nearby enemies ablaze");
-        }
 
         public override void SetDefaults()
         {

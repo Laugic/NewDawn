@@ -12,9 +12,7 @@ namespace NewDawn.Items.Equipables
         {
             NewDawnVars.DashBoots.Add(Item.type);
             NewDawnVars.RocketBoots.Add(Item.type);
-            // DisplayName.SetDefault("Frostwarp Boots");
-            // Tooltip.SetDefault("Allows the wearer to dash, fly, and run super fast\nGrants the ability to double jump\nNegates fall damage\n20% Increased movement speed\nCan dash multiple times in the air\nBecome immune for a time while dashing");
-        }
+}
 
         public override void SetDefaults()
         {

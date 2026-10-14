@@ -11,11 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialVooDooDoll : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Etherial VooDoo Doll");
-            // Tooltip.SetDefault("Summons the Wall of Flesh in the Etherial");
-        }
 
         public override void SetDefaults()
 		{

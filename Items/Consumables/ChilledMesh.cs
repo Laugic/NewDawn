@@ -12,11 +12,6 @@ namespace NewDawn.Items.Consumables
 {
     public class ChilledMesh : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Innocent Child");
-            // Tooltip.SetDefault("Summons Hypothema\n'What are you doing to him?'");
-        }
 
         public override void SetDefaults()
         {

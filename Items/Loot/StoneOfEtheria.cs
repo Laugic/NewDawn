@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class StoneOfEtheria : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Your defense is added to your Max Life. Greatly increased Life Regen and +20 Defense while in the Etherial");
-        }
 
         public override void SetDefaults()
         {

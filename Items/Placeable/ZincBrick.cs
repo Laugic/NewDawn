@@ -5,10 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ZincBrick : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //Tooltip.SetDefault("A crucial component of Brass");
-        }
 
         public override void SetDefaults()
         {

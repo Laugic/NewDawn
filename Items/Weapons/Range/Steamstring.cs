@@ -14,10 +14,6 @@ namespace NewDawn.Items.Weapons.Range
         //public bool steam = true;
         //public int steamTier = 1;
         //public int steamCost = 60;
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("'Steaming Frenzy' \nTurns wooden arrows into Brass Arrows & fires an additional Brass Arrow\n33% chance to not consume ammo");
-		}
 
 		public override void SetDefaults()
         {

@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ObsidiumBrick : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //Tooltip.SetDefault("Grows Lava Gems over time");
-        }
 
         public override void SetDefaults()
         {

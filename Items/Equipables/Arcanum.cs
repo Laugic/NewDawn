@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Arcanum : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Arcanum");
-            // Tooltip.SetDefault("+40 mana\n+15% Overflow");
-        }
 
         public override void SetDefaults()
         {

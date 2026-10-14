@@ -6,10 +6,6 @@ namespace NewDawn.Items.Loot
     public class MagmaticCluster : NewDawnItem
     {
 
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'A Titan's Soul'");
-        }
         public override void SetDefaults()
         {
             Item.width = 22;

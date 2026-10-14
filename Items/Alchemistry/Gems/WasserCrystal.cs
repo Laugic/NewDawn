@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class WasserCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Aqua Crystal");
-            // Tooltip.SetDefault("Mastery of water");
-        }
 
         public override void SetDefaults()
         {

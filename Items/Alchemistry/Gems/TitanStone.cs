@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class TitanStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Damage reduction \n+10% Damage and critical strike chance \n Attackers take damage \nSet your enemies ablaze");
-        }
 
         public override void SetDefaults()
         {

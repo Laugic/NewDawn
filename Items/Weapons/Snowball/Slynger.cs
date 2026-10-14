@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Slynger : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Slynger");
-            // Tooltip.SetDefault("Slyngs snowballs");
-        }
 
         public override void SetDefaults()
         {

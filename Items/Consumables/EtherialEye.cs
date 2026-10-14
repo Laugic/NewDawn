@@ -10,11 +10,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialEye : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //DisplayName.SetDefault("Etherial Crown");
-            // Tooltip.SetDefault("Summons the Eye of Cthulhu");
-        }
 
         public override void SetDefaults()
 		{

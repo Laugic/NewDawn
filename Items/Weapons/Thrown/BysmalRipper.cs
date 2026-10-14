@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class BysmalRipper : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bysmal Ripper");
-            // Tooltip.SetDefault("'Tear through dimensions'\nWhen in the Etherial after defeating Etheria, create an extra shadow on enemy hits.");
-        }
         public override void SetDefaults()
         {
             Item.damage = 150;

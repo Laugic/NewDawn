@@ -7,11 +7,6 @@ namespace NewDawn.Items.Loot
 {
     public class DarkShard : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Magma Shard");
-            // Tooltip.SetDefault("Grows Obsidium Hearts over time when placed");
-        }
 
         public override void SetDefaults()
         {

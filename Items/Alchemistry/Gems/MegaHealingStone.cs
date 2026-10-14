@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class MegaHealingStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+350 Max Life \nGives constant Potion Sickness");
-        }
 
         public override void SetDefaults()
         {

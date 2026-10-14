@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class SichtCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Sight Crystal");
-            // Tooltip.SetDefault("'I see all.'");
-        }
 
         public override void SetDefaults()
         {

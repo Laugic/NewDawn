@@ -10,10 +10,6 @@ namespace NewDawn.Items.Equipables
 {
     public class DestructionCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Destruction Damage\n+50 Lux");
-        }
 
         public override void SetDefaults()
         {

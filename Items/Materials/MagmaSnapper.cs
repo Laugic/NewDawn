@@ -5,10 +5,6 @@ namespace NewDawn.Items.Materials
 {
     public class MagmaSnapper : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Don't get your hand too close.'");
-        }
 
         public override void SetDefaults()
         {

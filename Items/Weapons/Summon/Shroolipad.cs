@@ -12,10 +12,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
     public class Shroolipad : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons a Shroolicopter to fight for you.");
-        }
 
         public override void SetDefaults()
         {

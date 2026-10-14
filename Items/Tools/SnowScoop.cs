@@ -8,11 +8,6 @@ namespace NewDawn.Items.Tools
 {
     public class SnowScoop : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Scoop Mk II");
-            // Tooltip.SetDefault("Gathers snowballs from blocks");
-        }
         public override void SetDefaults()
         {
             Item.damage = 4;

@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
     [AutoloadEquip(EquipType.Face)]
     public class ObsidiumLily : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Obsidium Lily");
-            // Tooltip.SetDefault("You are immune to contact damage from enemies that\nare at max life and have less defense than you\n'A calming aura'");
-        }
 
         public override void SetDefaults()
         {

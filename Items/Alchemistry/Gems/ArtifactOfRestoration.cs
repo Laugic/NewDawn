@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class ArtifactOfRestoration : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+600 Max Life \n+160 Mana \nGives constant Potion Sickness");
-        }
 
         public override void SetDefaults()
         {

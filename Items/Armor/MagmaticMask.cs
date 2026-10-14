@@ -10,10 +10,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class MagmaticMask : NewDawnItem
 	{
-        public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("+15% Mystic and Throwing Damage");
-		}
 
 		public override void SetDefaults()
 		{

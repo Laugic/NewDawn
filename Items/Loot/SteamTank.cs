@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class SteamTank : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Steam speed!\n+15% Overflow Capacity and Damage");
-        }
 
         public override void SetDefaults()
         {

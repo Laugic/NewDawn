@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class EtheriaTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Etheria Trophy");
-        }
 
         public override void SetDefaults()
         {

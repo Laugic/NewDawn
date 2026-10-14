@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialSkull : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("After taking damage, your damage is boosted by the percentage of your health that was taken for 10 seconds.\nIf this buff is still active when damage is taken again, the boost is stacked.");
-        }
 
         public override void SetDefaults()
         {

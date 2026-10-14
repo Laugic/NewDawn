@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class AbsoluteZero : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("66% chance not to consume ammo\n'I am beneath you, but nothing is beneath me'");
-        }
 
         public override void SetDefaults()
         {

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class ReichCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Rogue Crystal");
-            // Tooltip.SetDefault("+10% Ranged damage\n20% Chance to not use ammo\nIncreased Enemy Spawns");
-        }
 
         public override void SetDefaults()
         {

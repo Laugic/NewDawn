@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialWorm : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons the Destroyer");
-        }
 
         public override void SetDefaults()
 		{

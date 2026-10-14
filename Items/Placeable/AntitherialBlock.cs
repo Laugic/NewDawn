@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class AntitherialBlock : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

@@ -13,11 +13,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Snowtillery : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Snowtillery");
-            // Tooltip.SetDefault("Shoots snow rockets that push the player as well");
-        }
 
         public override void SetDefaults()
         {

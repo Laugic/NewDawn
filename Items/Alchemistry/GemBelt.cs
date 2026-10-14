@@ -15,10 +15,6 @@ namespace NewDawn.Items.Alchemistry
         //PREVENT RIGHT CLICKING TO EQUIP CUZ IT BREAKS STUFF
         public override Item[] Items { get; set; } = new Item[3];
 
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Can hold multiple Potion Crystals");
-        }
 
         public override void SetDefaults()
         {

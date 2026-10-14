@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class TheSnowflake : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Snowflake");
-            // Tooltip.SetDefault("");
-        }
         public override void SetDefaults()
         {
             Item.damage = 30;           

@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class TempleEntrance : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Temple Entrance");
-            // Tooltip.SetDefault("How did you get this");
-        }
 
         public override void SetDefaults()
         {

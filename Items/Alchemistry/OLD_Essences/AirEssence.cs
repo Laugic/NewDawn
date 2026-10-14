@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class AirEssence : Essence
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The essence of Speed and Potential");
-        }
 
         public override void GetEffectAtIndex(Player player, AbstractStorageItem item, int index)
         {

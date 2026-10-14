@@ -8,11 +8,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Bloodbolt : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bloodbolt");
-            // Tooltip.SetDefault("Heavy, but high damage");
-        }
 
         public override void SetDefaults()
         {

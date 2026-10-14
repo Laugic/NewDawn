@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Legs)]
     public class FrigidLeggings : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Immunity to Frostburn, Chilled, and Frozen\n+10% Movement Speed");
-        }
 
         public override void SetDefaults()
         {

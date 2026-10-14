@@ -11,10 +11,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class ObsidiumHeadgear : NewDawnItem
 	{
-        public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("+15% Ranged Damage");
-		}
 
 		public override void SetDefaults()
 		{

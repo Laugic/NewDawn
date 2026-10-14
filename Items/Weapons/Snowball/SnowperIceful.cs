@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class SnowperIceful : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Shoots a powerful, high velocity snowball");
-        }
 
         public override void SetDefaults()
         {

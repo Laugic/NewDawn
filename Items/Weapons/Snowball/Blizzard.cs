@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Blizzard : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("50% chance not to consume ammo");
-        }
 
         public override void SetDefaults()
         {

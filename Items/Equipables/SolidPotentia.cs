@@ -9,11 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SolidPotentia : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Solid Potentia");
-            // Tooltip.SetDefault("+50 Potentia");
-        }
 
         public override void SetDefaults()
         {

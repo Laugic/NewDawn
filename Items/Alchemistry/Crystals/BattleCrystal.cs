@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class BattleCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases enemy spawn rate");
-        }
 
         public override void CustomDefaults()
         {

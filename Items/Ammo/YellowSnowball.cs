@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class YellowSnowball : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Yellow Snowball");
-            // Tooltip.SetDefault("Homes in on enemies as it falls");
-        }
 
         public override void SetDefaults()
         {

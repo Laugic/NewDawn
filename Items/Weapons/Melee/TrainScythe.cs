@@ -11,10 +11,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
 	public class TrainScythe : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("CHOO CHOO! \nInflicts 'Steamy'");
-		}
 
 		public override void SetDefaults()
 		{

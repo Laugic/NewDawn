@@ -10,10 +10,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class FrostThrower : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Fires a stream of frost");
-        }
 
         public override void SetDefaults()
         {

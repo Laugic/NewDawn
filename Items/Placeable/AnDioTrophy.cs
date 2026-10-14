@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class AnDioTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("AnDio Trophy");
-        }
 
         public override void SetDefaults()
         {

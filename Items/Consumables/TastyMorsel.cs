@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class TastyMorsel : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Dune Sharkron in the desert \n\'Mmm... Looks delicious.\'");
-        }
 
         public override void SetDefaults()
 		{

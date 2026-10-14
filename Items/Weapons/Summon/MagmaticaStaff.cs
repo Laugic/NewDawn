@@ -13,10 +13,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
     public class MagmaticaStaff : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons a Magmatic Core to fight for you\nDeals more damage for each Obsidium Heart you consume");
-        }
 
         public override void SetDefaults()
         {

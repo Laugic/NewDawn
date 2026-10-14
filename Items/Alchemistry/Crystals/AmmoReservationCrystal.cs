@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class AmmoReservationCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("20% chance not to consume ammo");
-        }
 
         public override void CustomDefaults()
         {

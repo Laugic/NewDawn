@@ -6,11 +6,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialDestructionCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Destruction");
-            // Tooltip.SetDefault("Your global damage modifier is applied to your defense while in the Etherial");
-        }
 
         public override void SetDefaults()
         {

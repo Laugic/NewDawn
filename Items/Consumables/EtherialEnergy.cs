@@ -5,10 +5,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class EtherialEnergy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Imbues your body with Etherial energy");
-        }
 
         public override void SetDefaults()
 		{

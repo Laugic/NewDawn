@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class EtherialScarf : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("While in the etherial, prevent a hit of lethal damage once every minute. \n20% Damage Reduction");
-        }
 
         public override void SetDefaults()
         {

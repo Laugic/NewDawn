@@ -9,10 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class ConjurationCore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Conjuration Damage\n+50 Mundus");
-        }
 
         public override void SetDefaults()
         {

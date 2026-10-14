@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class PurpleIceBall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ebonchunk");
-            // Tooltip.SetDefault("The corrupt ice is much thicker, and even able to bounce.");
-        }
 
         public override void SetDefaults()
         {

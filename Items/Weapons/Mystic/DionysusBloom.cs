@@ -15,10 +15,8 @@ namespace NewDawn.Items.Weapons.Mystic
         public int damage = 0;
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Dionysus' Bloom");
-            // Tooltip.SetDefault("'Grow his strength' \nIllusion inflicts 'Venom'\nFires different projectiles based on Mysticism");
             Item.staff[Item.type] = true;
-        }
+}
         
         public override void SetMysticDefaults()
 		{

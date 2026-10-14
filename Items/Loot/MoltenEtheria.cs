@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class MoltenEtheria : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("After submerging in Lava in the Etherial, greatly increased attack stats and mobility.\n+25% Max Life.");
-        }
 
         public override void SetDefaults()
         {

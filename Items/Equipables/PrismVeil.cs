@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class PrismVeil : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% Mystic Burst Damage\nDecreased Mystic Burst Cooldown\nIncreased Movement Speed while Mystic Burst is on Cooldown\nBecome immune for a time after Mystic Bursts");
-        }
 
         public override void SetDefaults()
         {

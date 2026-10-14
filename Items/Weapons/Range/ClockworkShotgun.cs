@@ -10,10 +10,6 @@ namespace NewDawn.Items.Weapons.Range
 {
     public class ClockworkShotgun : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("33% chance to not consume ammo\nOccasionally turns normal bullets into more damaging High Velocity bullets");
-        }
         
         private float theta = 0f;
         private float rotSp = (float)Math.PI / 4;

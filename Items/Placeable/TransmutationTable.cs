@@ -6,10 +6,6 @@ namespace NewDawn.Items.Placeable
 {
     public class TransmutationTable : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Transmutes items of equal value");
-        }
 
         public override void SetDefaults()
         {

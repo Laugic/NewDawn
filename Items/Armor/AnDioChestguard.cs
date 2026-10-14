@@ -10,11 +10,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Body)]
     public class AnDioChestguard : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("AnDio Chestguard");
-            // Tooltip.SetDefault("Decreased cooldown between Time Stops\nYou are immune to Time Stop");
-        }
 
         public override void SetDefaults()
         {

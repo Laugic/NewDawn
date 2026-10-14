@@ -10,10 +10,6 @@ namespace NewDawn.Items.Weapons.Range
 {
 	public class ObsidiumGreatbow : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("'Molten Frenzy'\n20% chance to not consume ammo\nBecomes stronger as you consume Obsidium Hearts");
-		}
 
 		public override void SetDefaults()
         {

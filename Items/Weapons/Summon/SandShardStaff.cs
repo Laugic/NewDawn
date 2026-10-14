@@ -13,10 +13,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
     public class SandShardStaff : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons a Sandy Shark to fight for you.");
-        }
 
         public override void SetDefaults()
         {

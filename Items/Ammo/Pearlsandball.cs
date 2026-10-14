@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Pearlsandball : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Pearlsandball");
-            // Tooltip.SetDefault("Dense and fast");
-        }
 
         public override void SetDefaults()
         {

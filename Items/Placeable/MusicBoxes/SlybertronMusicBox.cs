@@ -7,11 +7,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class SlybertronMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Slybertron)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

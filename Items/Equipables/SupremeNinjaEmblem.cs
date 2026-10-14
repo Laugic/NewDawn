@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SupremeNinjaEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% throwing damage");
-        }
 
         public override void SetDefaults()
         {

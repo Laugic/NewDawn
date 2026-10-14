@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Head)]
 	public class SteampunkHeadgear : NewDawnItem
 	{
-public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% Throwing Damage");
-		}
 
 		public override void SetDefaults()
 		{

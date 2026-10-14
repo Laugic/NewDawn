@@ -24,10 +24,6 @@ namespace NewDawn.Items.Alchemistry
 
         public static Condition Infusion = new Condition("Infused in Infusion Crystal", () => false);
 
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

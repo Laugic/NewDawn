@@ -7,11 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class AngelnCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Fishing Crystal");
-            // Tooltip.SetDefault("Improved fishing skills");
-        }
 
         public override void SetDefaults()
         {

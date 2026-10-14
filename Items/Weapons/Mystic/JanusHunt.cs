@@ -12,11 +12,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
     public class JanusHunt : MysticItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Janus's Hunt");
-            // Tooltip.SetDefault("'Stalking through the sands'");
-        }
 
         public override void SetMysticDefaults()
         {

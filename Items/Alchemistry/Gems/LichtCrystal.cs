@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class LichtCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Light Crystal");
-            // Tooltip.SetDefault("Increases Light Vision");
-        }
 
         public override void SetDefaults()
         {

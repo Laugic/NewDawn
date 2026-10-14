@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class MachtCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Attack Crystal");
-            // Tooltip.SetDefault("+10% Damage and critical strike chance \nSet your enemies ablaze");
-        }
 
         public override void SetDefaults()
         {

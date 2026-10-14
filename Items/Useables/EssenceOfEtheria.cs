@@ -8,11 +8,6 @@ namespace NewDawn.Items.Useables
 {
     public class EssenceOfEtheria : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The High Priestess");
-            // Tooltip.SetDefault("Allows you to enter and leave the Etherial at will, as long as no powerful creatures are present to stop you. \nCan place shadows of itself, which can be wired to enter the Etherial. \nAn odd number of wires need to be connected, or it will immediately switch back.");
-        }
 
         public override void SetDefaults()
         {

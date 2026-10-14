@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class YellowIceBall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Yellow Snowball");
-            // Tooltip.SetDefault("The yellow snow just wants to be eaten.\n'Looks tasty'");
-        }
 
         public override void SetDefaults()
         {

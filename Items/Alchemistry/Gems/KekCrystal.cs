@@ -6,11 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class KekCrystal : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Mage Crystal");
-            // Tooltip.SetDefault("Increases knockback, magic damage, and mana regen");
-        }
 
         public override void SetDefaults()
         {

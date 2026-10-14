@@ -8,11 +8,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class Aurora : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Aurora");
-            // Tooltip.SetDefault("'Chill them into submission'");
-        }
 
         public override void SetDefaults()
         {

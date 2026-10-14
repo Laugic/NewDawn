@@ -6,10 +6,6 @@ namespace NewDawn.Items.Loot
     public class RoyalIce : NewDawnItem
     {
 
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'A Queen's Tear'");
-        }
         public override void SetDefaults()
         {
             Item.width = 22;

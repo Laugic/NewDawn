@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class AquaStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Mastery of liquids");
-        }
 
         public override void SetDefaults()
         {

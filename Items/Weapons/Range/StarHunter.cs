@@ -10,11 +10,6 @@ namespace NewDawn.Items.Weapons.Range
 {
 	public class StarHunter : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bow of The Star Hunter");
-            // Tooltip.SetDefault("Shoot a supernova\n50% chance to not consume ammo");
-		}
 
         private int reload = 0;
         private int reloadMax = 8;

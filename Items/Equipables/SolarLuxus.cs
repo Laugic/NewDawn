@@ -8,10 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SolarLuxus : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+15% Mystic Damage\n+15% Destruction Damage\n+50 Lux");
-        }
 
         public override void SetDefaults()
         {

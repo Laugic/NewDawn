@@ -9,10 +9,6 @@ namespace NewDawn.Items.Loot
 {
     public class HypothemaTreasureBag : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
         public override void SetDefaults()
         {
             Item.width = 30;

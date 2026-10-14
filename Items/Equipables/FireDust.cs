@@ -5,11 +5,6 @@ namespace NewDawn.Items.Equipables
 {
     public class FireDust : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Fire Dust");
-            // Tooltip.SetDefault("All attacks inflict 'On Fire!'");
-        }
 
         public override void SetDefaults()
         {

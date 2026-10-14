@@ -4,11 +4,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class GreatShadowMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Surface Obsidium)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

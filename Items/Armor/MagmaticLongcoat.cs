@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class MagmaticLongcoat : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Immunity to lava, 'On Fire!', and 'Burning'\n+10% Throwing critical strike chance");
-		}
 
 		public override void SetDefaults()
 		{

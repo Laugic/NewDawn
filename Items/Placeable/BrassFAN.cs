@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class BrassFAN : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Brass F.A.N.");
-            // Tooltip.SetDefault("It's a 'Fast Acceleration Node'\nBoosts you horizontally");
-        }
 
         public override void SetDefaults()
         {

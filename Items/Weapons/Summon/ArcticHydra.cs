@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Summon
 {
     public class ArcticHydra : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Arctic Hydra Staff");
-            // Tooltip.SetDefault("'The beast of many Heads'\nWhen in the Etherial after defeating Etheria, Double Damage and Aggro range.");
-        }
 
         public override void SetDefaults()
         {

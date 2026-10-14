@@ -10,9 +10,7 @@ namespace NewDawn.Items.Equipables
         public override void SetStaticDefaults()
         {
             NewDawnVars.DashBoots.Add(Item.type);
-            // DisplayName.SetDefault("Ebonfoot Boots");
-            // Tooltip.SetDefault("Allows the wearer to dash");
-        }
+}
 
         public override void SetDefaults()
         {

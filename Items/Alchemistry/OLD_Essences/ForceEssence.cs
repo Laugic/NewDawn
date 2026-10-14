@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class ForceEssence : Essence
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The essence of Magnitude and Energy");
-        }
 
         public override void GetEffectAtIndex(Player player, AbstractStorageItem item, int index)
         {

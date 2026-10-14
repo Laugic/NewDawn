@@ -8,11 +8,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class ShroomChest : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Shroom Amalgam");
-            // Tooltip.SetDefault("+20% Overflow");
-		}
 
 		public override void SetDefaults()
 		{

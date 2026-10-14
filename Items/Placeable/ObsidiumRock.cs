@@ -5,11 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ObsidiumRock : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Basalt");
-            // Tooltip.SetDefault("Grows Lava Gems over time");
-        }
 
         public override void SetDefaults()
         {

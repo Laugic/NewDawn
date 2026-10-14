@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Body)]
     public class AncientArmor : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Your damage increases based on your Movement Speed.");
-        }
 
         public override void SetDefaults()
         {

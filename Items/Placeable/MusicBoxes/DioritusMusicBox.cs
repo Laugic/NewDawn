@@ -6,11 +6,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class DioritusMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Dioritus)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

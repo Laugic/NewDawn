@@ -7,10 +7,6 @@ namespace NewDawn.Items.Tools
 {
 	public class ObsidiumPickaxe : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("'It's molten inside'");
-		}
 
 		public override void SetDefaults()
 		{

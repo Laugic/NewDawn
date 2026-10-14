@@ -10,13 +10,11 @@ namespace NewDawn.Items.Weapons.Melee
 	{
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Obsidium Yoyo");
-            // Tooltip.SetDefault("");
-            
+
 			ItemID.Sets.Yoyo[Item.type] = true;
 			ItemID.Sets.GamepadExtraRange[Item.type] = 15;
 			ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
-		}
+}
 
 		public override void SetDefaults()
 		{

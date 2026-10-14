@@ -13,10 +13,7 @@ namespace NewDawn.Items.Weapons.Mystic
     {
 		public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Zeus' Bolt");
-            /* Tooltip.SetDefault("''"
-							+ "\nIllusion inflicts ''"
-							+ "\nFires different projectiles based on Mysticism"); */
+
             Item.staff[Item.type] = true;
         }
 

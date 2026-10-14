@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class TheBlessing : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The Blessing");
-            // Tooltip.SetDefault("Converts some snowballs into blessedballs");
-        }
         public override void SetDefaults()
         {
             Item.damage = 28;

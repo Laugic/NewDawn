@@ -9,11 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class RuneOfEruption : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Rune of Eruption");
-            // Tooltip.SetDefault("+20% Overflow damage and velocity\nIncreased movement and jump speed when on Overflow");
-        }
 
         public override void SetDefaults()
         {

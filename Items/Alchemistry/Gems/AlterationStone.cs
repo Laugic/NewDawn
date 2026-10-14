@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class AlterationStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Mastery of land and air");
-        }
 
         public override void SetDefaults()
         {

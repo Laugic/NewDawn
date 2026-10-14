@@ -11,9 +11,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("'Volcanic Eruption'\nBecomes more powerful as you consume Obsidium Hearts");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

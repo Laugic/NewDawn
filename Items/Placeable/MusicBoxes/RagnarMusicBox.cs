@@ -7,11 +7,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class RagnarMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Ragnar)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

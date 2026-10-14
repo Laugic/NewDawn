@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Shadowshot : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Shadowshot");
-            // Tooltip.SetDefault("High pierce and bounce");
-        }
 
         public override void SetDefaults()
         {

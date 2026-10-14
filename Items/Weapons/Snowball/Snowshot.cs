@@ -7,10 +7,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Snowshot : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Snowshot");
-        }
 
         public override void SetDefaults()
         {

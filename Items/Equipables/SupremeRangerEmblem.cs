@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SupremeRangerEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% ranged damage");
-        }
 
         public override void SetDefaults()
         {

@@ -8,10 +8,6 @@ namespace NewDawn.Items.Armor
     [AutoloadEquip(EquipType.Head)]
     public class ShroomiteHood : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("15% increased snowball damage\n5% increased ranged critical strike chance");
-        }
 
         public override void SetDefaults()
         {

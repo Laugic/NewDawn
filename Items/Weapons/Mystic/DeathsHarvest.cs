@@ -13,10 +13,6 @@ namespace NewDawn.Items.Weapons.Mystic
     public class DeathsHarvest : MysticItem
     {
         bool IllusionCharged { get; set; }
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Death's Harvest");
-        }
 
         public override void SetMysticDefaults()
         {

@@ -9,11 +9,6 @@ namespace NewDawn.Items.Placeable
 {
     class ElderockItem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Elderock");
-            // Tooltip.SetDefault("'Frosted gemstones'");
-        }
 
         public override void SetDefaults()
         {

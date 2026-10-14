@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Bysmal Wand");
-            // Tooltip.SetDefault("'Frigid Breeze'\nWhen in the Etherial after defeating Etheria, shoot an additional blast.");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

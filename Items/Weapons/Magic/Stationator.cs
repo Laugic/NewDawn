@@ -10,9 +10,8 @@ namespace NewDawn.Items.Weapons.Magic
 	{
 		public override void SetStaticDefaults()
 		{
-			// Tooltip.SetDefault("'Here they come'");
 			Item.staff[Item.type] = true;
-		}
+}
 
 		public override void SetDefaults()
 		{

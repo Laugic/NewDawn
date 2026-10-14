@@ -9,10 +9,6 @@ namespace NewDawn.Items.Weapons.Range
 {
 	public class Geodizer : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'For Fury'");
-		}
         public int numShots = 1;
 		public override void SetDefaults()
 		{

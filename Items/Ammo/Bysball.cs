@@ -8,11 +8,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Bysball : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Bysball");
-            // Tooltip.SetDefault("Dimension warping snowballs");
-        }
 
         public override void SetDefaults()
         {

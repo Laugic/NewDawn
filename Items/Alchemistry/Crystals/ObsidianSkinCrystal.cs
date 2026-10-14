@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class ObsidianSkinCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Provides immunity to fire and lava");
-        }
 
         public override void CustomDefaults()
         {

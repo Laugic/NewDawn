@@ -7,11 +7,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class DuneSharkronMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Dune Sharkron)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

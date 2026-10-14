@@ -10,10 +10,6 @@ namespace NewDawn.Items.Consumables.Buffs
 {
     public class TimeCapsule : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Reduces debuff duration & increases buff duration");
-        }
 
         public override void SetDefaults()
         {

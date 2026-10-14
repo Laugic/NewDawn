@@ -7,11 +7,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class AnDioMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (AnDio)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

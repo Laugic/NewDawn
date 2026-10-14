@@ -4,10 +4,6 @@ namespace NewDawn.Items.Materials
 {
 	public class Gear : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Like a Cog, but better.'");
-        }
         public override void SetDefaults()
 		{
 			Item.width = 38;

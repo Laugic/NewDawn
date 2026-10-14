@@ -7,11 +7,6 @@ namespace NewDawn.Items.Placeable
 {
     public class CrystallizerItem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Crystallizer");
-            // Tooltip.SetDefault("Crystallize magical liquids");
-        }
 
         public override void SetDefaults()
         {

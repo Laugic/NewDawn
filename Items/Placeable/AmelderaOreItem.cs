@@ -10,10 +10,8 @@ namespace NewDawn.Items.Placeable
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Ameldera Ore");
-            // Tooltip.SetDefault("Can be used in the Extractinator");
             ItemID.Sets.ExtractinatorMode[Item.type] = Item.type;
-        }
+}
 
         public override void SetDefaults()
         {

@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class AggressionStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+10% Ranged damage \n20% Chance to not use ammo \nIncreases knockback, magic damage, and mana regen \nIncreased Enemy Spawns");
-        }
 
         public override void SetDefaults()
         {

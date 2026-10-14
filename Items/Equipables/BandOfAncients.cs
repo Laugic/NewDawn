@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class BandOfAncients : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Band of Ancients");
-            // Tooltip.SetDefault("+40 Mana");
-        }
 
         public override void SetDefaults()
         {

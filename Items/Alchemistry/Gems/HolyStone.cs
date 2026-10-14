@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class HolyStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Decreased enemy spawn rate \nTake less damage from cold sources \nIncreases heart pickup range \nIncreases life regeneration \n+1 Max Minion \nIncreases max life by 20% \nEquip in last slot for maximum effectiveness");
-        }
 
         public override void SetDefaults()
         {

@@ -13,10 +13,8 @@ namespace NewDawn.Items.Weapons.Magic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Blitzfrieg");
-            // Tooltip.SetDefault("'Cold Lightning'\nWhen in the Etherial after defeating Etheria, create twice as much branch Lightning.");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

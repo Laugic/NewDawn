@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Mystic
 {
     public class GreatGladius : MysticItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Gladius of The Great Moldyrian");
-            // Tooltip.SetDefault("Praise the gods\nIlusion inflicts 'Daybroken'\nAttacks differently projectiles based on Mysticism");
-        }
 
         public override void SetMysticDefaults()
         {

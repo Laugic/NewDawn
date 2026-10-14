@@ -11,11 +11,6 @@ namespace NewDawn.Items.Consumables
 {
     public class EtherialBone : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //DisplayName.SetDefault("Etherial Crown");
-            // Tooltip.SetDefault("Summons Skeletron");
-        }
 
         public override void SetDefaults()
         {

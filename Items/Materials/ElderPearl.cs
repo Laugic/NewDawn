@@ -5,10 +5,6 @@ namespace NewDawn.Items.Materials
 {
     public class ElderPearl : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'It's emitting a calming energy.'");
-        }
 
         public override void SetDefaults()
         {

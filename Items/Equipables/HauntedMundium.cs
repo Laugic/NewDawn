@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class HauntedMundium : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+25% Overflow Capacity\n+15% Conjuration Damage\n+50Mundus");
-        }
 
         public override void SetDefaults()
         {

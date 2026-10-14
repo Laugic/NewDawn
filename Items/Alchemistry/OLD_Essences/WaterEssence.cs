@@ -5,10 +5,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class WaterEssence : Essence
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The essence of Sea and Calm");
-        }
 
         public override void GetEffectAtIndex(Player player, AbstractStorageItem item, int index)
         {

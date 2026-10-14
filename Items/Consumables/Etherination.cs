@@ -11,10 +11,6 @@ namespace NewDawn.Items.Consumables
 {
 	public class Etherination : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Summons Queen Bee");
-        }
 
         public override void SetDefaults()
 		{

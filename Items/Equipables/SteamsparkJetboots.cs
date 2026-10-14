@@ -17,8 +17,7 @@ namespace NewDawn.Items.Equipables
         {
             NewDawnVars.DashBoots.Add(Item.type);
             NewDawnVars.RocketBoots.Add(Item.type);
-            // Tooltip.SetDefault("Steam speed!\nDominion over liquids and the sky\nLeave a trail of Steam");
-        }
+}
 
         public override void SetDefaults()
         {

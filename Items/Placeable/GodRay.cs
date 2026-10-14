@@ -4,10 +4,6 @@ namespace NewDawn.Items.Placeable
 {
     public class GodRay : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Solid divinity'");
-        }
 
         public override void SetDefaults()
         {

@@ -8,10 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class SlybertronTrophy : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Slybertron Trophy");
-        }
 
         public override void SetDefaults()
         {

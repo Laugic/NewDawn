@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Wavesnow : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Wavesnowball");
-            // Tooltip.SetDefault("'Wiggle'");
-        }
 
         public override void SetDefaults()
         {

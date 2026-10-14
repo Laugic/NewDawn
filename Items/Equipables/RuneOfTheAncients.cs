@@ -8,11 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class RuneOfTheAncients : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Rune of the Ancients");
-            // Tooltip.SetDefault("+15% Overflow damage and velocity\nIncreased movement speed when on Overflow");
-        }
 
         public override void SetDefaults()
         {

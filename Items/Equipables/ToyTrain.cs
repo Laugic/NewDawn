@@ -9,11 +9,6 @@ namespace NewDawn.Items.Equipables
 {
     public class ToyTrain : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// DisplayName.SetDefault("Miniature Train Whistle");
-			// Tooltip.SetDefault("Summons a Toy Train that follows you");
-		}
 
 		public override void SetDefaults()
         {

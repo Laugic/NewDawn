@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ObsidiumPlant : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Brimlin");
-            // Tooltip.SetDefault("'Plants of hell'\nGrows on Lycoris");
-        }
 
         public override void SetDefaults()
         {

@@ -8,10 +8,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class BrassClaymore : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Inflicts 'Steamy'");
-        }
 
         public override void SetDefaults()
         {

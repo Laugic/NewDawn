@@ -8,10 +8,6 @@ namespace NewDawn.Items.Tools
 {
     public class FrigidPickaxe : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Slow and steady'");
-        }
 
         public override void SetDefaults()
         {

@@ -5,10 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class ObsidiumBrickWall : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            //Tooltip.SetDefault("Grows Lava Gems over time");
-        }
 
         public override void SetDefaults()
         {

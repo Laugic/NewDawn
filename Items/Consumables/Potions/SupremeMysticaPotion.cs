@@ -8,11 +8,6 @@ namespace NewDawn.Items.Consumables.Potions
 {
     public class SupremeMysticaPotion : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Super Potentia Potion");
-            // Tooltip.SetDefault("Restores all Potentias to full capacity\nRestores Overflow to half capacity\nOverflow is increased by 20% while the Mysticality debuff is active");
-        }
         public override void SetDefaults()
         {
             Item.width = 24;

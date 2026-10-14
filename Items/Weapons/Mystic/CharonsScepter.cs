@@ -14,10 +14,8 @@ namespace NewDawn.Items.Weapons.Mystic
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Charon's Scepter");
-            // Tooltip.SetDefault("Pay the toll");
             Item.staff[Item.type] = true;
-        }
+}
 
         public override void SetMysticDefaults()
         {

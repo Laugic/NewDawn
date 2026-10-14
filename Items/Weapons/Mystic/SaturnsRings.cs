@@ -12,11 +12,6 @@ namespace NewDawn.Items.Weapons.Mystic
     public class SaturnsRings : MysticItem
     {
         int charge = 0;
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Saturn's Rings");
-            // Tooltip.SetDefault("'The majesty of Space'");
-        }
         
         public override void SetMysticDefaults()
         {

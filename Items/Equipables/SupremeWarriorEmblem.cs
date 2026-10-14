@@ -7,10 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class SupremeWarriorEmblem : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+20% melee damage");
-        }
 
         public override void SetDefaults()
         {

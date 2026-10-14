@@ -11,10 +11,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Body)]
 	public class ObsidiumLongcoat : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("Immunity to lava, 'On Fire!', and 'Burning'");
-		}
 
 		public override void SetDefaults()
 		{

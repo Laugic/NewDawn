@@ -8,11 +8,6 @@ namespace NewDawn.Items.Useables
 {
     public class ZaWarudoWatch : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The World");
-            // Tooltip.SetDefault("'ZA WARUDO!'");
-        }
 
         public override void SetDefaults()
         {

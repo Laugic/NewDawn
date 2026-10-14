@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class Etherworks : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Attacks in the Etherial inflict 'Steamified', dealing damage over time, making enemies take more damage, and explode into cogs on death.");
-        }
 
         public override void SetDefaults()
         {

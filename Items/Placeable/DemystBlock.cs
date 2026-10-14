@@ -8,8 +8,6 @@
 //    {
 //        public override void SetStaticDefaults()
 //        {
-//            // DisplayName.SetDefault("Demyst Block");
-//            // Tooltip.SetDefault("When placed, right click or activate with wire to break Potion Crystals placed above into Essences\nDemystifying!");
 //        }
 
 //        public override void SetDefaults()

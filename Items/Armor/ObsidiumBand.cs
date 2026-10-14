@@ -12,9 +12,8 @@ namespace NewDawn.Items.Armor
     {
         public override void SetStaticDefaults()
         {
-            // Tooltip.SetDefault("+15% Throwing Damage");
             ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true;
-        }
+}
 
         public override void SetDefaults()
         {

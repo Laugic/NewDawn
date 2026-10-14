@@ -11,13 +11,11 @@ namespace NewDawn.Items.Weapons.Melee
     {
         public override void SetStaticDefaults()
         {
-            // DisplayName.SetDefault("Geariken");
-            // Tooltip.SetDefault("Don't prick yourself!");
 
             ItemID.Sets.Yoyo[Item.type] = true;
             ItemID.Sets.GamepadExtraRange[Item.type] = 19;
             ItemID.Sets.GamepadSmartQuickReach[Item.type] = true;
-        }
+}
 
         public override void SetDefaults()
         {

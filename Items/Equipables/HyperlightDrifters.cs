@@ -13,8 +13,7 @@ namespace NewDawn.Items.Equipables
         {
             NewDawnVars.DashBoots.Add(Item.type);
             NewDawnVars.RocketBoots.Add(Item.type);
-            // Tooltip.SetDefault("Light speed and light dash\nDominion over everything\nLeave a Cosmic trail\n+10% Damage");
-        }
+}
 
         public override void SetDefaults()
         {

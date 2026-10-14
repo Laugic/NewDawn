@@ -7,10 +7,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class Mariana : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'To the depths'\nStriking enemies makes them emit bubbles!\nEnemies explode into bubbles on death, spreading the bubbles.");
-        }
 
         public override void SetDefaults()
         {

@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Sootball : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Sootball");
-            // Tooltip.SetDefault("Sets enemies on fire");
-        }
 
         public override void SetDefaults()
         {

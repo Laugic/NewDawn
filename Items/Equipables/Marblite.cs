@@ -8,11 +8,6 @@ namespace NewDawn.Items.Equipables
 {
     public class Marblite : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Marblite");
-            // Tooltip.SetDefault("+10% Mystic Damage\nGet 'For Honor' and 'For Glory' when switching Mysticism.");
-        }
 
         public override void SetDefaults()
         {

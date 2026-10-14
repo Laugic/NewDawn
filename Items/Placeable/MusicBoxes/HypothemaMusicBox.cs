@@ -7,11 +7,6 @@ namespace NewDawn.Items.Placeable.MusicBoxes
 {
     public class HypothemaMusicBox : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Music Box (Hypothema)");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

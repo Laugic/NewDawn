@@ -7,11 +7,6 @@ namespace NewDawn.Items.Accessories
 {
     public class IceCrown : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ice Crown");
-            // Tooltip.SetDefault("7% increased melee and ranged critical strike chance\n7% increased snowball damage\n'The authority of the snow'");
-        }
 
         public override void SetDefaults()
         {

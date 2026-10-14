@@ -5,10 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class Radiata : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Roots of hell'");
-        }
 
         public override void SetDefaults()
         {

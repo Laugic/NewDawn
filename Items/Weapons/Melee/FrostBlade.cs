@@ -11,10 +11,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class FrostBlade : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Frostular Fragments");
-        }
 
         public override void SetDefaults()
         {

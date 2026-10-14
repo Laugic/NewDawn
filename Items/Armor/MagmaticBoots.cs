@@ -9,10 +9,6 @@ namespace NewDawn.Items.Armor
 	[AutoloadEquip(EquipType.Legs)]
 	public class MagmaticBoots : NewDawnItem
 	{
-		public override void SetStaticDefaults()
-		{
-			// Tooltip.SetDefault("+100% Mystic Duration\n+50%Throwing Velocity\n+15% Movement Speed\nProvides waterwalking and free movement in liquids");
-		}
 
 		public override void SetDefaults()
 		{

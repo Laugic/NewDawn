@@ -6,10 +6,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class ArtifactOfEnhancement : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Mastery of all");
-        }
 
         public override void SetDefaults()
         {

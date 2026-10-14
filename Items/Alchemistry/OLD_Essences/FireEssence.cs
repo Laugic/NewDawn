@@ -8,10 +8,6 @@ namespace NewDawn.Items.Alchemistry.OLD_Essences
 {
     public class FireEssence : Essence
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("The essence of Heat and Power");
-        }
 
         public override void GetEffectAtIndex(Player player, AbstractStorageItem item, int index)
         {

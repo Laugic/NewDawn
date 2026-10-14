@@ -7,11 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class SightStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Vision Stone");
-            // Tooltip.SetDefault("Mastery of light");
-        }
 
         public override void SetDefaults()
         {

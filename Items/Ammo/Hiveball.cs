@@ -6,11 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class Hiveball : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Hiveball");
-            // Tooltip.SetDefault("'Beeball'");
-        }
 
         public override void SetDefaults()
         {

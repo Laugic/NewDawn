@@ -7,11 +7,6 @@ namespace NewDawn.Items.Weapons.Snowball
 {
     public class Slinger : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Slinger");
-            // Tooltip.SetDefault("Slings snowballs");
-        }
         public override void SetDefaults()
         {
             Item.damage = 25;

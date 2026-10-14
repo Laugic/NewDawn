@@ -6,11 +6,6 @@ namespace NewDawn.Items.Loot
 {
     public class TheWorldOfEtheria : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("The World of Etheria");
-            // Tooltip.SetDefault("Your projectiles are immune to Time Stop when in the Etherial");
-        }
 
         public override void SetDefaults()
         {

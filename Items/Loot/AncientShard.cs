@@ -5,11 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class AncientShard : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ancient Shard");
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {

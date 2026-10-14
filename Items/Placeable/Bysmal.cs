@@ -5,10 +5,6 @@ namespace NewDawn.Items.Placeable
 {
     public class Bysmal : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("'Painful to even touch'");
-        }
 
         public override void SetDefaults()
         {

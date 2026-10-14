@@ -6,11 +6,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class ChakramOfTheViciousAssassin : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Chakram of The Vicious Assassin");
-            // Tooltip.SetDefault("'Surround and eliminate'");
-        }
         public override void SetDefaults()
         {
             Item.damage = 320;           

@@ -9,11 +9,6 @@ namespace NewDawn.Items.Weapons.Melee
 {
     public class EnginatorM : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Enginator");
-            // Tooltip.SetDefault("CHOO CHOO");
-        }
         public override void SetDefaults()
         {
             Item.damage = 110;

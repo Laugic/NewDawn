@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class AncientNecklace : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Ancient Necklace");
-            // Tooltip.SetDefault("Increases life and mana regeneration");
-        }
 
         public override void SetDefaults()
         {

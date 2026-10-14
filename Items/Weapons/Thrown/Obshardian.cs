@@ -10,10 +10,6 @@ namespace NewDawn.Items.Weapons.Thrown
 {
     public class Obshardian : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Shoots faster and pierces more as you consume Obsidium Hearts");
-        }
         public override void SetDefaults()
         {
             Item.damage = 34;           

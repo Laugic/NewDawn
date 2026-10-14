@@ -7,11 +7,6 @@ namespace NewDawn.Items.Equipables
 {
     public class FatherTime : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Father Time");
-            // Tooltip.SetDefault("+15% Increased Damage while time is stopped\nReduces cooldown between Time Stops\nIncreases Duration of Time Stop\n'Mastery of Time'");
-        }
 
         public override void SetDefaults()
         {

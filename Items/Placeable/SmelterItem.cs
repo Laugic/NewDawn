@@ -8,11 +8,6 @@ namespace NewDawn.Items.Placeable
 {
     public class SmelterItem : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Smelter");
-            // Tooltip.SetDefault("Melts items you place inside");
-        }
 
         public override void SetDefaults()
         {

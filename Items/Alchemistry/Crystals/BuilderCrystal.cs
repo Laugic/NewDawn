@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class BuilderCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Increases placement speed and range");
-        }
 
         public override void CustomDefaults()
         {

@@ -9,9 +9,8 @@ namespace NewDawn.Items.Weapons.Magic
 	{
 		public override void SetStaticDefaults()
 		{
-			// Tooltip.SetDefault("'Zap them to dust'");
 			Item.staff[Item.type] = true;
-		}
+}
 
 		public override void SetDefaults()
 		{

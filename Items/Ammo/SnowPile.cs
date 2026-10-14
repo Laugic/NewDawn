@@ -6,10 +6,6 @@ namespace NewDawn.Items.Ammo
 {
     public class SnowPile : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Endless Snow Pile");
-        }
 
         public override void SetDefaults()
         {

@@ -7,10 +7,6 @@ namespace NewDawn.Items.Alchemistry.Gems
 {
     public class MegaManaStone : ModItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("+100 Mana");
-        }
 
         public override void SetDefaults()
         {

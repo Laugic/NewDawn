@@ -5,11 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class CogOfKnowledge : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Cog of Knowledge");
-            // Tooltip.SetDefault("Increases your max number of minions by 2");
-        }
 
         public override void SetDefaults()
         {

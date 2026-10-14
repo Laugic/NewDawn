@@ -5,11 +5,6 @@ namespace NewDawn.Items.Equipables
 {
     public class CrystalizedMagma : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Crystallized Magma");
-            // Tooltip.SetDefault("Leave a trail of fire as you run");
-        }
 
         public override void SetDefaults()
         {

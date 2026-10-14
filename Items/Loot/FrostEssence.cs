@@ -5,11 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class FrostEssence : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // DisplayName.SetDefault("Frosted Flake");
-            // Tooltip.SetDefault("Attacks inflict 'Frostburn'\n+25% Snowball Damage");
-        }
 
         public override void SetDefaults()
         {

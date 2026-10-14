@@ -9,10 +9,6 @@ namespace NewDawn.Items.Alchemistry.Crystals
 {
     public class FlipperCrystal : PotionCrystal
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("Allows you to swim and grants better mobility in liquids");
-        }
 
         public override void CustomDefaults()
         {

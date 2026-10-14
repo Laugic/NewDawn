@@ -5,10 +5,6 @@ namespace NewDawn.Items.Loot
 {
     public class SteamBar : NewDawnItem
     {
-        public override void SetStaticDefaults()
-        {
-            // Tooltip.SetDefault("");
-        }
 
         public override void SetDefaults()
         {
