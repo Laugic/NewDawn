@@ -4,7 +4,6 @@ using System.Collections.Generic;
 using System.IO;
 using Terraria;
 using Terraria.GameContent.Generation;
-using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.ModLoader.IO;
 using Terraria.WorldBuilding;
@@ -228,6 +227,29 @@ namespace NewDawn
             {
                 GenerateObsidiumStructures(xO, yO);
             }));
+
+            if (NewDawn.RemoveCrackedDungeonBricks)
+            {
+                int genIndex3 = tasks.FindIndex(genpass => genpass.Name.Equals("Micro Biomes"));
+                tasks.Insert(genIndex3 + 3, new PassLegacy("Removing Cracked Dungeon Bricks", delegate
+                {
+                    RemoveCrackedDungeonBricks();
+                }));
+            }
+        }
+
+        private void RemoveCrackedDungeonBricks()
+        {
+            for (int x = 0; x < Main.maxTilesX; x++)
+            {
+                for (int y = 0; y < Main.maxTilesY; y++)
+                {
+                    if ((Main.tile[x, y] != null && Main.tile[x, y].TileType == TileID.CrackedBlueDungeonBrick) || Main.tile[x, y].TileType == TileID.CrackedGreenDungeonBrick || Main.tile[x, y].TileType == TileID.CrackedPinkDungeonBrick)
+                    {
+                        WorldGen.KillTile(x, y);
+                    }
+                }
+            }
         }
 
         private void PlaceTile(int x, int y, int tileType)

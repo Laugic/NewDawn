@@ -2,9 +2,7 @@
 using System;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.Graphics.Shaders;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Equipables
@@ -66,10 +64,20 @@ namespace NewDawn.Items.Equipables
             {
                 if (rocketAccel < RocketAccelMax)
                     rocketAccel += RocketAccel;
-                if (player.velocity.Y > -RocketSpeedMax)
-                    player.velocity.Y -= rocketAccel;
-                if (player.velocity.Y > 0)
-                    player.velocity.Y *= .8f;
+                if (player.gravDir == 1)
+                {
+                    if (player.velocity.Y > -RocketSpeedMax)
+                        player.velocity.Y -= rocketAccel;
+                    if (player.velocity.Y > 0)
+                        player.velocity.Y *= .8f;
+                }
+                else
+                {
+                    if (player.velocity.Y < RocketSpeedMax)
+                        player.velocity.Y += rocketAccel;
+                    if (player.velocity.Y < 0)
+                        player.velocity.Y *= .8f;
+                }
                 RocketDust(player);
                 rocketBootTime++;
                 player.fallStart = (int)player.position.Y / 16;
@@ -169,7 +177,7 @@ namespace NewDawn.Items.Equipables
                     {
                         dashCooldown = VDashCooldownMax;
                         trail = TrailLength;
-                        player.velocity.Y = 2 * DashSpeed;
+                        player.velocity.Y = player.gravDir * 2 * DashSpeed;
                         player.GetModPlayer<NewDawnPlayer>().DustBurst(DustType, 30);
                         dashDir = 0;
                         if (!hideVisual)
@@ -197,7 +205,7 @@ namespace NewDawn.Items.Equipables
                     {
                         dashCooldown = VDashCooldownMax;
                         trail = TrailLength;
-                        player.velocity.Y = -DashSpeed;
+                        player.velocity.Y = player.gravDir * -DashSpeed;
                         player.GetModPlayer<NewDawnPlayer>().DustBurst(DustType, 30);
                         dashDir = 0;
                         if (!hideVisual)
@@ -243,7 +251,7 @@ namespace NewDawn.Items.Equipables
             {
                 jumpTrail++;
                 Dust.NewDust(new Vector2(player.position.X, player.position.Y), player.width, player.height, DustType);
-                player.velocity.Y = -JumpSpeed;
+                player.velocity.Y = player.gravDir * -JumpSpeed;
             }
             if (jumpTrail > JumpDur || player.releaseJump)
                 jumpTrail = 0;
@@ -269,7 +277,7 @@ namespace NewDawn.Items.Equipables
 
         private void Jump(Player player, bool hideVisual)
         {
-            player.velocity.Y = -JumpSpeed;
+            player.velocity.Y = player.gravDir * -JumpSpeed;
             usedJump = true;
             jumpTrail++;
             player.fallStart = (int)player.position.Y / 16;

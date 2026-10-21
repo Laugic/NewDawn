@@ -3,8 +3,6 @@ using NewDawn.Dusts;
 using NewDawn.Projectiles.Mystic.Burst;
 using System;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Equipables
@@ -41,7 +39,7 @@ namespace NewDawn.Items.Equipables
             {
                 trail++;
                 Dust.NewDust(new Vector2(player.position.X, player.position.Y), player.width, player.height, ModContent.DustType<Magma>());
-                player.velocity.Y = -12;
+                player.velocity.Y = player.gravDir * -12;
             }
             if (trail > 25 || player.releaseJump)
                 trail = 0;
@@ -67,7 +65,7 @@ namespace NewDawn.Items.Equipables
 
         private void Jump(Player player, bool hideVisual)
         {
-            player.velocity.Y = -12;
+            player.velocity.Y = player.gravDir * -12;
             usedJump = true;
             trail++;
             player.fallStart = (int)player.position.Y / 16;

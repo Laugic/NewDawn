@@ -116,6 +116,12 @@ namespace NewDawn.Control
             recipe.AddRecipeGroup(RecipeGroupID.IronBar, 30);
             recipe.AddTile(TileID.Anvils);
             recipe.Register();
+
+            recipe = Recipe.Create(ItemID.TatteredCloth, 2);
+            recipe.AddIngredient(ModContent.ItemType<Vitasilk>(), 2);
+            recipe.AddRecipeGroup(EvilBar, 1);
+            recipe.AddTile(TileID.DemonAltar);
+            recipe.Register();
         }
     }
 }

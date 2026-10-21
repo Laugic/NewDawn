@@ -1,4 +1,5 @@
 using Microsoft.Xna.Framework;
+using NewDawn.Biomes;
 using NewDawn.Buffs;
 using NewDawn.Dusts;
 using NewDawn.Items.Equipables;
@@ -93,7 +94,7 @@ namespace NewDawn
 
 
         //Music
-        public bool zoneObsidium;
+        public bool zoneObsidium => Player.InModBiome<ObsidiumBiome>();
         public bool zoneAmeldera;
         public bool etherialMusic;
 
@@ -246,7 +247,7 @@ namespace NewDawn
         {
 
 
-            if (zoneObsidium && attempt.inLava && Player.HeldItem.type == ItemID.HotlineFishingHook)
+            if (zoneObsidium && attempt.inLava && (Player.HeldItem.type == ItemID.HotlineFishingHook || Player.accLavaFishing))
             {
                 if (Main.rand.Next(3) == 0)
                 {

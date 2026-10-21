@@ -16,6 +16,7 @@ namespace NewDawn
         internal static ModKeybind toggleMystic, toggleSoulStoneV, toggleSoulStoneM, quickMystica, soulStoneAbility, restockNearby;
 
         public static int zaWarudo = 0;
+        public static bool RemoveCrackedDungeonBricks => ModContent.GetInstance<EnigmaConfig>().RemoveCrackedDungeonBricks;
 
         public static SoundStyle CreateSoundStyle(string path)
         {

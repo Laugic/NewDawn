@@ -1,7 +1,5 @@
 ﻿using NewDawn.UI;
 using System.ComponentModel;
-using Terraria;
-using Terraria.ModLoader;
 using Terraria.ModLoader.Config;
 
 namespace NewDawn
@@ -21,11 +19,16 @@ namespace NewDawn
         [DefaultValue(true)]
         public bool MysticSound = true;
 
+        [Label("Remove Cracked Dungeon Bricks")]
+        [DefaultValue(true)]
+        public bool RemoveCrackedDungeonBricks = true;
+
         public EnigmaConfig()
         {
             MysticUIType = 0;
             MysticUIAnimated = true;
             MysticSound = true;
+            RemoveCrackedDungeonBricks = true;
         }
 
         public override void OnChanged()

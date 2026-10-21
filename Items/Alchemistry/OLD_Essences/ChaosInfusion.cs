@@ -1,37 +1,37 @@
-﻿using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
+﻿//using Terraria;
+//using Terraria.ID;
+//using Terraria.ModLoader;
 
-namespace NewDawn.Items.Alchemistry.OLD_Essences
-{
-    public class ChaosInfusion : ModItem
-    {
+//namespace NewDawn.Items.Alchemistry.OLD_Essences
+//{
+//    public class ChaosInfusion : ModItem
+//    {
 
-        public override void SetDefaults()
-        {
-            Item.width = 32;
-            Item.height = 32;
-            Item.value = Item.sellPrice(silver: 50);
-            Item.rare = ItemRarityID.Orange;
-            Item.maxStack = 1;
-            Item.accessory = true;
-            Item.hasVanityEffects = true;
-        }
+//        public override void SetDefaults()
+//        {
+//            Item.width = 32;
+//            Item.height = 32;
+//            Item.value = Item.sellPrice(silver: 50);
+//            Item.rare = ItemRarityID.Orange;
+//            Item.maxStack = 1;
+//            Item.accessory = true;
+//            Item.hasVanityEffects = true;
+//        }
 
-        public override void UpdateEquip(Player player)
-        {
-            player.statManaMax2 += 40;
-            player.enemySpawns = true;
-            player.aggro += 5;
-            player.ammoCost80 = true;
-        }
+//        public override void UpdateEquip(Player player)
+//        {
+//            player.statManaMax2 += 40;
+//            player.enemySpawns = true;
+//            player.aggro += 5;
+//            player.ammoCost80 = true;
+//        }
 
-        public override void AddRecipes()
-        {
-            Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ModContent.ItemType<ChaosEssence>(), 3);
-            recipe.AddCondition(InfusionCrystal.Infusion);
-            recipe.Register();
-        }
-    }
-}
+//        public override void AddRecipes()
+//        {
+//            Recipe recipe = CreateRecipe();
+//            recipe.AddIngredient(ModContent.ItemType<ChaosEssence>(), 3);
+//            recipe.AddCondition(InfusionCrystal.Infusion);
+//            recipe.Register();
+//        }
+//    }
+//}

@@ -5,10 +5,8 @@ using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
 using Terraria.GameContent;
 using Terraria.Graphics.CameraModifiers;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Hypothema
@@ -97,8 +95,7 @@ namespace NewDawn.NPCs.Hypothema
             NPC.lavaImmune = true;
             NPC.noGravity = true;
             NPC.noTileCollide = true;
-            NPC.npcSlots = 10f; // Take up open spawn slots, preventing random NPCs from spawning during the fight
-            //Music = Mod.GetSoundSlot(SoundType.Music, "Sounds/Music/Hypothema");
+            NPC.npcSlots = 10f;
             PrevAIPhase = CurrentPhase = AIPhase.RainChase;
             HealthPhase = 1;
             FrameDelay = 0;
@@ -127,12 +124,6 @@ namespace NewDawn.NPCs.Hypothema
             if (!Main.dedServ)
             {
                 Music = MusicLoader.GetMusicSlot(Mod, "Sounds/Music/Hypothema");
-
-                // If you would like to play alternate music when the otherworld soundtrack enabled, use this logic.
-                if (!Main.swapMusic == Main.drunkWorld && !Main.remixWorld)
-                {
-                    Music = MusicID.OtherworldlyBoss1;
-                }
 
                 AnimFrames = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/Hypothema_Frames");
                 CloudFront = (Texture2D)ModContent.Request<Texture2D>(GetType().Namespace.Replace('.', '/') + "/HypothemaCloud");
@@ -337,7 +328,7 @@ namespace NewDawn.NPCs.Hypothema
             }
 
             int i = Main.rand.Next(NextStationaryAttacks.Count);
-            CurrentPhase = NextStationaryAttacks[i];
+            CurrentPhase = NextStationaryAttacks[i]; // out of range??
             NextStationaryAttacks.RemoveAt(i);
         }
         #endregion

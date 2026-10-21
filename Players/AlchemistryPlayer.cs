@@ -4,7 +4,6 @@ using NewDawn.Items.Alchemistry.Essences;
 using System;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Players
@@ -71,7 +70,7 @@ namespace NewDawn.Players
 
         public override bool PreKill(double damage, int hitDirection, bool pvp, ref bool playSound, ref bool genDust, ref PlayerDeathReason damageSource)
         {
-            if (Player.statLifeMax2 >= 100)
+            if (Player.statLifeMax2 >= 100 && Vita)
             {
                 FatalityCharges++;
                 UpdateFatalityLife();

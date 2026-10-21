@@ -151,11 +151,7 @@ Items: {
 
 	ArcaneShard: {
 		DisplayName: Arcane Shard
-		Tooltip:
-			'''
-			'A shard of magic'
-			Held by monsters in the dungeon
-			'''
+		Tooltip: A shard of magic
 	}
 
 	ArcheryCrystal: {
@@ -557,7 +553,7 @@ Items: {
 	}
 
 	LavaGem: {
-		DisplayName: Lava Gem
+		DisplayName: Lava Crystal
 		Tooltip:
 			'''
 			'Crystallized magma'
@@ -2667,7 +2663,7 @@ Items: {
 		DisplayName: Lava Gem
 		Tooltip:
 			'''
-			Grows on Obsidium Rock
+			Grows on Basalt
 			'Molten Candy'
 			'''
 	}
@@ -4851,6 +4847,11 @@ Configs: {
 
 		MysticSound: {
 			Label: Mystic Change Sound
+			Tooltip: ""
+		}
+
+		RemoveCrackedDungeonBricks: {
+			Label: Remove Cracked Dungeon Bricks
 			Tooltip: ""
 		}
 	}

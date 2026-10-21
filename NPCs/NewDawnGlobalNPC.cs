@@ -5,9 +5,6 @@ using NewDawn.Items.Materials;
 using NewDawn.Items.Weapons.Snowball;
 using NewDawn.Projectiles.Mystic.Fungon;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs
@@ -54,20 +51,14 @@ namespace NewDawn.NPCs
             }
         }
 
-        public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
+        public override void ModifyShop(NPCShop shop)
         {
-            var wadidget = new Wagidget();
-            if (npc.type == NPCID.GoblinTinkerer)
+            if (shop.NpcType == NPCID.GoblinTinkerer)
             {
-                int i = 0;
-                bool found = false;
-                while (i < items.Length && !found)
-                {
-                    if (items[i].stack == 0)
-                        items[i].SetDefaults(ModContent.ItemType<Wagidget>());
-                }
+                shop.Add(ModContent.ItemType<Wagidget>());
             }
         }
+
         public override void OnKill(NPC npc)
         {
             GetWeaponAndAccDrops(npc);
@@ -76,14 +67,12 @@ namespace NewDawn.NPCs
 
         private void GetMaterialDrops(NPC npc)
         {
-            //if (Main.player[npc.FindClosestPlayer()].ZoneSnow && Main.rand.NextBool(20))
-            //    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<Frostpetal>(), 1);
 
-            if (Main.player[npc.FindClosestPlayer()].ZoneUnderworldHeight && Main.rand.NextBool(40))
-                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LavaGem>(), 1);
+            //if (Main.player[npc.FindClosestPlayer()].ZoneUnderworldHeight && Main.rand.NextBool(40))
+            //    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LavaGem>(), 1);
 
-            if (Main.player[npc.FindClosestPlayer()].ZoneDungeon && Main.rand.NextBool(10))
-                Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ArcaneShard>(), Main.rand.Next(2, 4));
+            //if (Main.player[npc.FindClosestPlayer()].ZoneDungeon && Main.rand.NextBool(10))
+            //    Item.NewItem(npc.GetSource_Loot(), (int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<ArcaneShard>(), Main.rand.Next(2, 4));
         }
 
         private void GetWeaponAndAccDrops(NPC npc)

@@ -1,6 +1,5 @@
-﻿using System;
+﻿using NewDawn.Items.Placeable;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Materials
@@ -15,6 +14,15 @@ namespace NewDawn.Items.Materials
             Item.value = Item.sellPrice(silver: 5);
             Item.rare = ItemRarityID.Blue;
             Item.maxStack = 999;
+        }
+
+        public override void AddRecipes()
+        {
+            Recipe recipe = CreateRecipe(2);
+            recipe.AddIngredient(ItemID.ManaCrystal, 1);
+            recipe.AddIngredient(ModContent.ItemType<Fissionite>(), 4);
+            recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
+            recipe.Register();
         }
     }
 }

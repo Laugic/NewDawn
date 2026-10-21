@@ -1,7 +1,6 @@
-using NewDawn.Items.Materials;
+using NewDawn.Items.Alchemistry.Essences;
 using NewDawn.Tiles;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Placeable
@@ -35,24 +34,24 @@ namespace NewDawn.Items.Placeable
             if (Item.stack % 4 == 3)
                 Item.createTile = ModContent.TileType<ObsidiumPlantMine>();
         }
-        
+
         public override void AddRecipes()
         {
             Recipe recipe = Recipe.Create(ItemID.LifeCrystal);
             recipe.AddTile(TileID.Hellforge);
             recipe.AddIngredient(this);
             recipe.AddIngredient(ModContent.ItemType<LavaGemItem>(), 4);
-            recipe.AddIngredient(ModContent.ItemType<ObsidiumOre>(), 8);
+            recipe.AddIngredient(ModContent.ItemType<VitaEssence>(), 2);
             recipe.AddIngredient(ItemID.Ruby, 2);
             recipe.Register();
 
-            recipe = Recipe.Create(ItemID.LifeCrystal);
-            recipe.AddTile(TileID.Hellforge);
-            recipe.AddIngredient(this);
-            recipe.AddIngredient(ModContent.ItemType<LavaGemItem>(), 4);
-            recipe.AddIngredient(ItemID.Hellstone, 8);
-            recipe.AddIngredient(ItemID.Ruby, 2);
-            recipe.Register();
+            //recipe = Recipe.Create(ItemID.LifeCrystal);
+            //recipe.AddTile(TileID.Hellforge);
+            //recipe.AddIngredient(this);
+            //recipe.AddIngredient(ModContent.ItemType<LavaGemItem>(), 4);
+            //recipe.AddIngredient(ItemID.Hellstone, 8);
+            //recipe.AddIngredient(ItemID.Ruby, 2);
+            //recipe.Register();
         }
     }
 }
