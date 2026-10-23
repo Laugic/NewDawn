@@ -253,8 +253,8 @@ namespace NewDawn.UI
 
         public static void Update()
         {
-            UpdateIdle();
             UpdateType();
+            UpdateIdle();
             if (MysticUIType < 2)
                 UpdateRotations();
             else
@@ -275,14 +275,14 @@ namespace NewDawn.UI
         {
             switch (MysticUIType)
             {
-                case 1:
-                    CenterPos = TOPCIRCLE;
+                case 1: //TOP CIRCLE
+                    CenterPos = new Vector2(Main.screenWidth / 2, 100 / Main.UIScale);
                     break;
-                case 2:
-                    CenterPos = TOPSTACK;
+                case 2: //TOP STACK 
+                    CenterPos = new Vector2(Main.screenWidth / 2, 30 / Main.UIScale);
                     break;
-                default:
-                    CenterPos = CENTER;
+                default: //CENTER
+                    CenterPos = new Vector2(Main.screenWidth / 2, Main.screenHeight / 2);
                     break;
             }
         }
@@ -309,8 +309,8 @@ namespace NewDawn.UI
                 rotationGoal -= fullTurn;
                 rotation -= fullTurn;
             }
-            float offsetX = 0.6f;
-            float offsetY = 0.15f;
+            float offsetX = -.5f;
+            float offsetY = -.3f;
             TopPosBase.X = ((CenterPos.X + ((float)Math.Cos(rotation + (3f / 2f * Math.PI)) * 100)) / Main.UIScale) + (BAR_WIDTH * offsetX);
             TopPosBase.Y = ((CenterPos.Y + ((float)Math.Sin(rotation + (3f / 2f * Math.PI)) * 100) + 25) / Main.UIScale) + (BAR_WIDTH * offsetY);
             MidPosBase.X = ((CenterPos.X + ((float)Math.Cos(rotation + (5f / 6f * Math.PI)) * 100)) / Main.UIScale) + (BAR_WIDTH * offsetX);

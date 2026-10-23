@@ -1,9 +1,6 @@
-using Terraria;
-using Terraria.GameContent.ItemDropRules;
-using Terraria.ID;
-using Terraria.ModLoader;
-using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Items.Loot
 {
@@ -31,9 +28,9 @@ namespace NewDawn.Items.Loot
 
         public override void ModifyItemLoot(ItemLoot itemLoot)
         {
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FrostShard>(), 1, 2, 3));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FrostShard>(), 1, 3, 4));
             itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<FrostEssence>()));
-            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChilledBar>(), 1, 22, 35));
+            itemLoot.Add(ItemDropRule.Common(ModContent.ItemType<ChilledBar>(), 1, 12, 24));
             itemLoot.Add(ItemDropRule.OneFromOptionsNotScalingWithLuck(
                 1,
                 ItemID.IceBoomerang,

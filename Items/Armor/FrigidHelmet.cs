@@ -1,6 +1,6 @@
+using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Armor
@@ -44,6 +44,7 @@ namespace NewDawn.Items.Armor
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ModContent.ItemType<ChilledBar>(), 12);
+            recipe.AddIngredient(ModContent.ItemType<FrostShard>(), 1);
             recipe.AddTile(16);
             recipe.Register();
         }

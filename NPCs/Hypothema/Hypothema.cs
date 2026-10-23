@@ -16,8 +16,7 @@ namespace NewDawn.NPCs.Hypothema
     {
         #region Initializations
         public int despawn = 0;
-        static int NPC_WIDTH = 194, CLOUD_HEIGHT = 66,
-            INITIALIZE = 0, TRANSITION = 1, FOLLOW = 2, STEWARD = 3, SLOW = 4, SNOWBOMB = 5, SHOTGUN = 6, SMASH = 7, UPSHOOT = 8, DASH = 9, HATTHROW = 10, GUNTWIRL = 11, CLOUDS = 12;
+        static int NPC_WIDTH = 194, CLOUD_HEIGHT = 66;
         public enum AIPhase
         {
             RainChase,
@@ -31,6 +30,7 @@ namespace NewDawn.NPCs.Hypothema
             Dash2,
             DirectChase2,
             RapidDash2,
+            ShootChase,
             FlyHigh,
             SpinCycle,
             DashIntoAttack,
@@ -39,15 +39,15 @@ namespace NewDawn.NPCs.Hypothema
             BoobombSpray,
             GrabGuns
         }
-        private List<int> Attacks;
-        private List<int> NextAttacks;
+        //private List<int> Attacks;
+        //private List<int> NextAttacks;
         public int HealthPhase { get; set; } = 1;
         private AIPhase PrevAttackPhase { get; set; }
         private AIPhase PrevAIPhase { get; set; }
         public AIPhase CurrentPhase { get; set; }
         private List<AIPhase> Phase1MovementAttacks = new List<AIPhase> { AIPhase.ShotgunDash, AIPhase.HatThrow, AIPhase.DashChase },
             Phase1StationaryAttacks = new List<AIPhase> { AIPhase.Steward, AIPhase.Boobomb, AIPhase.Stomp },
-            Phase2MovementAttacks = new List<AIPhase> { AIPhase.RapidDash2, AIPhase.FlyHigh, AIPhase.SpinCycle },
+            Phase2MovementAttacks = new List<AIPhase> { AIPhase.ShootChase, AIPhase.FlyHigh, AIPhase.SpinCycle },
             Phase2StationaryAttacks = new List<AIPhase> { AIPhase.DoubleSteward, AIPhase.UpwardSpray, AIPhase.BoobombSpray },
             NextMovementAttacks = new List<AIPhase>(),
             NextStationaryAttacks = new List<AIPhase>();
@@ -105,8 +105,8 @@ namespace NewDawn.NPCs.Hypothema
             Tracker = 0;
             Speed = 2;
             AttackBool = false;
-            Attacks = new List<int> { STEWARD, SMASH, DASH, FOLLOW, CLOUDS };
-            NextAttacks = new List<int>();
+            //Attacks = new List<int> { STEWARD, SMASH, DASH, FOLLOW, CLOUDS };
+            //NextAttacks = new List<int>();
             NextMovementAttacks = new List<AIPhase>();
             NextStationaryAttacks = new List<AIPhase>();
             NextMovementAttacks.AddRange(Phase1MovementAttacks);
@@ -148,7 +148,7 @@ namespace NewDawn.NPCs.Hypothema
         #endregion
 
         #region Phase Control Methods
-        private void PhaseChange()
+        private void PhaseChange(bool skipPhaseSelect = false)
         {
             Offset = Vector2.Zero;
             NPC.ai[0] = 0;
@@ -156,7 +156,8 @@ namespace NewDawn.NPCs.Hypothema
             NPC.ai[2] = 0;
             AttackBool = false;
             CloudAlpha = 0;
-            GetNextPhase();
+            if (!skipPhaseSelect)
+                GetNextPhase();
         }
 
         private void RunAI()
@@ -195,6 +196,9 @@ namespace NewDawn.NPCs.Hypothema
                     break;
                 case AIPhase.RapidDash2:
                     RapidDash();
+                    break;
+                case AIPhase.ShootChase:
+                    ShootChase();
                     break;
                 case AIPhase.FlyHigh:
                     FlyHigh();
@@ -251,27 +255,17 @@ namespace NewDawn.NPCs.Hypothema
                     if (CurrentPhase == AIPhase.RainChase2)
                     {
                         PrevAIPhase = CurrentPhase;
-                        CurrentPhase = AIPhase.DirectChase2;
-                    }
-                    else if (CurrentPhase == AIPhase.DirectChase2)
-                    {
-                        PrevAIPhase = CurrentPhase;
-                        CurrentPhase = AIPhase.Dash2;
-                    }
-                    else if (CurrentPhase == AIPhase.Dash2)
-                    {
-                        PrevAIPhase = CurrentPhase;
                         GetMovementAttack();
                     }
                     else if (Phase2MovementAttacks.Contains(CurrentPhase))
                     {
                         PrevAIPhase = CurrentPhase;
-                        CurrentPhase = AIPhase.DashIntoAttack;
+                        GetStationaryAttack();
                     }
-                    else if (CurrentPhase == AIPhase.DashIntoAttack)
+                    else if (Phase2StationaryAttacks.Contains(CurrentPhase))
                     {
                         PrevAIPhase = CurrentPhase;
-                        GetStationaryAttack();
+                        CurrentPhase = AIPhase.RainChase2;
                     }
                     else
                     {
@@ -313,7 +307,7 @@ namespace NewDawn.NPCs.Hypothema
 
         private void GetStationaryAttack()
         {
-            if (NextStationaryAttacks.Count > 0)
+            if (NextStationaryAttacks.Count == 0)
             {
                 if (HealthPhase == 1)
                 {
@@ -339,19 +333,31 @@ namespace NewDawn.NPCs.Hypothema
             if (Offset == Vector2.Zero)
             {
                 if (NPC.Center.X < Main.player[NPC.target].Center.X)
-                    Offset = new Vector2(600, -500);
+                    Offset = new Vector2(600, -400);
                 else
-                    Offset = new Vector2(-600, -500);
+                    Offset = new Vector2(-600, -400);
             }
             if ((TargetPos.X < Main.player[NPC.target].Center.X && NPC.Center.X < TargetPos.X) ||
                 (TargetPos.X > Main.player[NPC.target].Center.X && NPC.Center.X > TargetPos.X))
+            {
                 Offset.X *= -1;
+                NPC.ai[1]++;
+                NPC.ai[0] = 0;
+            }
             TargetPos = Main.player[NPC.target].Center + Offset;
             RainSnow();
-
-            MoveTowardsAtSpeed(TargetPos, Speed);
             NPC.ai[0]++;
-            if (NPC.ai[0] > 2 * 60)
+            if (NPC.ai[2] < NPC.ai[0] && NPC.ai[2] < 3 * 60)
+                NPC.ai[2]++;
+            else
+                NPC.ai[2]--;
+
+            var tempVector = new Vector2((int)NPC.ai[2], 0);
+            if (Offset.X < 0)
+                tempVector.X *= -1;
+            var mult = Math.Min(NPC.ai[2] / 60f, 3);
+            MoveTowards(TargetPos + tempVector, Speed * mult, 0.3f);
+            if (NPC.ai[1] > 1)
                 PhaseChange();
         }
 
@@ -360,19 +366,32 @@ namespace NewDawn.NPCs.Hypothema
             if (Offset == Vector2.Zero)
             {
                 if (NPC.Center.X < Main.player[NPC.target].Center.X)
-                    Offset = new Vector2(500, -200);
+                    Offset = new Vector2(400, -200);
                 else
-                    Offset = new Vector2(-500, -200);
+                    Offset = new Vector2(-400, -200);
                 AttackBool = false; //AttackBool tracks if shotgun is being fired
                 NPC.ai[0] = 0;
                 NPC.ai[1] = 0;
                 NPC.ai[2] = 0;
             }
             FacePlayer();
-            TargetPos = Main.player[NPC.target].Center + Offset;
-            MoveTowardsAtSpeed(TargetPos, Speed * 2);
 
-            NPC.ai[0]++;
+            if (NPC.ai[0] > 0)
+            {
+                Slow();
+                NPC.ai[0]++;
+            }
+            else
+            {
+                TargetPos = Main.player[NPC.target].Center + Offset;
+                MoveTowards(TargetPos, Speed * 3, 0.3f);
+
+                if ((TargetPos.X < Main.player[NPC.target].Center.X && NPC.Center.X < TargetPos.X) ||
+                    (TargetPos.X > Main.player[NPC.target].Center.X && NPC.Center.X > TargetPos.X))
+                    NPC.ai[0]++;
+            }
+
+
             if (NPC.ai[0] > 30)
                 AttackBool = true;
             if (NPC.ai[0] == 45 + 30)
@@ -395,16 +414,19 @@ namespace NewDawn.NPCs.Hypothema
                 AttackBool = false;
                 NPC.ai[0] = 0;
                 NPC.ai[1]++;
-                if (NPC.ai[1] > 5)
+                if (NPC.ai[1] > 3)
                     PhaseChange();
             }
+            if (Main.expertMode)
+                RainSnow();
         }
 
         private void HatThrow()
         {
             FacePlayer();
+
             NPC.ai[0]++;
-            if (NPC.ai[0] < 4.5f * 60)
+            if (NPC.ai[0] < 3f * 60)
             {
                 Slow();
                 if (NPC.ai[0] >= 18 && !AttackBool)
@@ -416,14 +438,17 @@ namespace NewDawn.NPCs.Hypothema
                     NPC.ai[1] = Projectile.NewProjectile(entitySource, newPos, new Vector2(0, 0), ModContent.ProjectileType<HatSpin>(), NPC.damage / 4, 6f, NPC.target, 0, NPC.whoAmI);
                 }
             }
-            else if (NPC.ai[0] < 7 * 60)
+            else if (NPC.ai[0] < 8 * 60)
             {
                 if (Main.projectile[(int)NPC.ai[1]].type != ModContent.ProjectileType<HatSpin>() || !Main.projectile[(int)NPC.ai[1]].active)
                     PhaseChange();
                 else
                 {
-                    TargetPos = Main.player[NPC.target].Center;// - (Main.projectile[(int)NPC.ai[1]].Center - Main.player[NPC.target].Center);
-                    MoveTowards(TargetPos, Speed, MathHelper.ToRadians(2f));
+                    Offset = new Vector2(Main.player[NPC.target].velocity.X * 30, -400);
+                    TargetPos = Main.player[NPC.target].Center + Offset;
+                    MoveTowardsAtSpeed(TargetPos, Speed * 3);
+                    RainSnow();
+                    FacePlayer();
                 }
             }
             else
@@ -447,23 +472,20 @@ namespace NewDawn.NPCs.Hypothema
         private void DashChase()
         {
             NPC.ai[0]++;
-            NPC.ai[1]--;
-            if (NPC.ai[1] < 0)
-            {
-                NPC.ai[1] = 150;
-                TargetPos = Main.player[NPC.target].Center;
-            }
-            if (NPC.ai[1] < 60)
-            {
-                TargetPos += NPC.velocity;
-                WakeOfSnow();
-                MoveTowards(TargetPos, Speed * 3, MathHelper.ToRadians(1f));
-            }
+            TargetPos = Main.player[NPC.target].Center;
+            if (Main.expertMode)
+                TargetPos += Main.player[NPC.target].velocity * 10;
+
+            if ((NPC.Center + NPC.velocity - TargetPos).Length() > (NPC.Center - NPC.velocity - TargetPos).Length() && (NPC.Center - TargetPos).Length() > 200)
+                NPC.ai[1] -= 0.1f;
             else
-            {
-                TargetPos = Main.player[NPC.target].Center;
-                MoveTowards(TargetPos, Speed, MathHelper.ToRadians(2f));
-            }
+                NPC.ai[1] += 0.025f;
+            NPC.ai[1] = MathHelper.Clamp(NPC.ai[1], 2, 5);
+            MoveTowards(TargetPos, Speed * NPC.ai[1], MathHelper.ToRadians((NPC.Center - TargetPos).Length() / 120 / NPC.ai[1]));
+            RainSnow();
+            if (Main.expertMode)
+                RainSnow();
+
             if (NPC.ai[0] > 12 * 60)
                 PhaseChange();
         }
@@ -504,12 +526,16 @@ namespace NewDawn.NPCs.Hypothema
         {
             TargetPos = Main.player[NPC.target].Center;
             TargetPos.Y -= 200;
-            NPC.ai[0]++;
-            if (NPC.ai[0] < 90)
-                MoveTowardsAtSpeed(TargetPos, Speed * 2);
+            if ((NPC.Center - TargetPos).Length() > 30 && NPC.ai[0] == 0)
+            {
+                MoveTowardsAtSpeed(TargetPos, Speed * 3f);
+            }
             else
+            {
                 Slow();
-            if (NPC.ai[0] == 90 + 36)
+                NPC.ai[0]++;
+            }
+            if (NPC.ai[0] == 30 + 36)
             {
                 var newPos = NPC.Center;
                 newPos.Y -= 20;
@@ -519,15 +545,21 @@ namespace NewDawn.NPCs.Hypothema
                 newPos.X += 80;
                 Projectile.NewProjectile(entitySource, newPos, new Vector2(2 + (Main.rand.NextFloat() * 4), -1 - Main.rand.NextFloat()), ModContent.ProjectileType<Snowbomb>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
             }
-            if (NPC.ai[0] >= (2 * 60) + 30)
+            if (NPC.ai[0] >= (1 * 60) + 30)
                 PhaseChange();
+            RainSnow();
         }
 
         private void Stomp()
         {
-            NPC.ai[0]++;
-            if (NPC.ai[0] > 2 * 60)
+            if (NPC.ai[0] == 0)
             {
+                Offset = new Vector2(0, -400);
+                MoveTowardsAtSpeed(Main.player[NPC.target].Center + Offset, Speed * 3);
+            }
+            if ((NPC.Center - TargetPos).Length() < 20 || NPC.ai[0] > 0)
+            {
+                NPC.ai[0]++;
                 if (!AttackBool)
                     CloudAlpha += .04f;
                 if (CloudAlpha >= 1)
@@ -575,15 +607,22 @@ namespace NewDawn.NPCs.Hypothema
             {
                 TargetPos = Main.player[NPC.target].Center;
                 TargetPos.Y -= 400;
-                MoveTowardsAtSpeed(TargetPos, Speed * 2);
+                MoveTowardsAtSpeed(TargetPos, Speed * 3);
             }
-            if (NPC.ai[1] > 2 * 60 || NPC.ai[0] > 5 * 60)
+            if (AttackBool)
+                NPC.ai[2]++;
+            if (NPC.ai[2] > 60)
             {
                 PhaseChange();
                 NPC.noTileCollide = true;
                 NPC.collideX = false;
                 NPC.collideY = false;
             }
+
+            if (Math.Abs(NPC.Center.X - Main.player[NPC.target].Center.X) < 6)
+                NPC.spriteDirection = -1;
+            else
+                FacePlayer();
         }
 
         private void RainChase2()
@@ -591,21 +630,51 @@ namespace NewDawn.NPCs.Hypothema
             if (Offset == Vector2.Zero)
             {
                 if (NPC.Center.X < Main.player[NPC.target].Center.X)
-                    Offset = new Vector2(400, -200);
+                    Offset = new Vector2(600, -400);
                 else
-                    Offset = new Vector2(-400, -200);
-                NPC.ai[1] = Main.rand.Next(90) + 90;
+                    Offset = new Vector2(-600, -400);
+                Tracker = 0;
             }
             if ((TargetPos.X < Main.player[NPC.target].Center.X && NPC.Center.X < TargetPos.X) ||
                 (TargetPos.X > Main.player[NPC.target].Center.X && NPC.Center.X > TargetPos.X))
+            {
                 Offset.X *= -1;
+                NPC.ai[1]++;
+                NPC.ai[0] = 0;
+            }
             TargetPos = Main.player[NPC.target].Center + Offset;
+            //RainSnow();
             RainSnow();
-            RainSnow();
-
-            MoveTowardsAtSpeed(TargetPos, Speed * 2);
             NPC.ai[0]++;
-            if (NPC.ai[0] > NPC.ai[1])
+            Tracker++;
+            if (NPC.ai[2] < NPC.ai[0] && NPC.ai[2] < 3 * 60)
+                NPC.ai[2]++;
+            else
+                NPC.ai[2]--;
+
+            if (NPC.ai[0] % 3 == 0 && Tracker < 3 * 60)
+            {
+                NPC.ai[1]++;
+                switch (NPC.ai[1] % 4)
+                {
+                    case 1:
+                        ShootUp(-NPC.spriteDirection * 28);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        ShootUp(NPC.spriteDirection * 28);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            var tempVector = new Vector2((int)NPC.ai[2], 0);
+            if (Offset.X < 0)
+                tempVector.X *= -1;
+            var mult = Math.Min(NPC.ai[2] / 50f, 4);
+            MoveTowards(TargetPos + tempVector, Speed * mult, 0.3f);
+            if (NPC.ai[1] > 1 || Tracker > 4 * 60)
                 PhaseChange();
         }
 
@@ -618,6 +687,46 @@ namespace NewDawn.NPCs.Hypothema
             WakeOfSnow();
             NPC.ai[0]++;
             if (NPC.ai[0] > 60)
+                PhaseChange();
+        }
+
+        private void ShootChase()
+        {
+            if (Offset == Vector2.Zero)
+            {
+                if (NPC.Center.Y < Main.player[NPC.target].Center.Y)
+                    Offset = new Vector2(0, -200);
+                else
+                    Offset = new Vector2(0, 200);
+            }
+            NPC.ai[0]++;
+            if (NPC.ai[0] % 120 == 0)
+            {
+                Offset.Y *= -1;
+            }
+            if (NPC.ai[0] % 3 == 0)
+            {
+                NPC.ai[1]++;
+                switch (NPC.ai[1] % 4)
+                {
+                    case 1:
+                        ShootUp(-NPC.spriteDirection * 28);
+                        break;
+                    case 2:
+                        break;
+                    case 3:
+                        ShootUp(NPC.spriteDirection * 28);
+                        break;
+                    default:
+                        break;
+                }
+            }
+            TargetPos = Main.player[NPC.target].Center + Offset;
+            //RainSnow();
+            if (Main.expertMode)
+                RainSnow();
+            MoveTowards(TargetPos, Speed * 1.5f, .03f);
+            if (NPC.ai[0] > 8 * 60)
                 PhaseChange();
         }
 
@@ -651,17 +760,23 @@ namespace NewDawn.NPCs.Hypothema
         {
             TargetPos = Main.player[NPC.target].Center;
             TargetPos.Y -= 1000;
-            NPC.ai[0]++;
-            if (NPC.ai[0] == 180)
-                TriggerScreenshake(15, 3);//TODO: add sfx indicator
-            if (NPC.ai[0] < 180)
+
+            if ((NPC.Center - TargetPos).Length() > 20 && NPC.ai[0] == 0)
             {
                 RainSnow();
                 RainSnow();
                 MoveTowardsAtSpeed(TargetPos, Speed * 3);
             }
-            else
+            else if (NPC.ai[0] == 0)
             {
+                TriggerScreenshake(15, 5);
+                SoundEngine.PlaySound(SoundID.Roar, NPC.Center);
+                NPC.ai[0]++;
+            }
+
+            if (NPC.ai[0] > 0)
+            {
+                NPC.ai[0]++;
                 if (!AttackBool)
                     CloudAlpha += .04f;
                 if (CloudAlpha >= 1)
@@ -711,18 +826,30 @@ namespace NewDawn.NPCs.Hypothema
                     }
                 }
                 else
+                {
                     Slow();
+                    NPC.spriteDirection = 1;
+                }
                 if (AttackBool)
                     CloudAlpha = Math.Max(CloudAlpha - .02f, 0);
             }
 
-            if (NPC.ai[1] > 2 * 60 || NPC.ai[0] > 7 * 60)
+            if (AttackBool)
+                NPC.ai[2]++;
+
+            if (NPC.ai[2] > 60)
             {
                 PhaseChange();
                 NPC.noTileCollide = true;
                 NPC.collideX = false;
                 NPC.collideY = false;
             }
+
+
+            if (Math.Abs(NPC.Center.X - Main.player[NPC.target].Center.X) < 6)
+                NPC.spriteDirection = -1;
+            else
+                FacePlayer();
         }
 
         private void SpinCycle()
@@ -737,7 +864,7 @@ namespace NewDawn.NPCs.Hypothema
             if (NPC.ai[0] > 4 && NPC.ai[0] < 8 * 60)
             {
                 AttackBool = true;
-                if (NPC.ai[0] % 4 == 0 && Main.netMode != 1)
+                if (NPC.ai[0] % 6 == 0 && Main.netMode != 1)
                 {
                     var theta = Main.rand.NextDouble() * 2 * Math.PI;
                     float mag = 9 + (Main.rand.NextFloat() * 3);
@@ -760,7 +887,11 @@ namespace NewDawn.NPCs.Hypothema
 
         private void DashIntoAttack()
         {
-            //TODO: Add SFX and VFX to indicate dash is coming
+            if (NPC.ai[0] == 0)
+            {
+                SoundEngine.PlaySound(SoundID.Roar, NPC.Center);
+                TriggerScreenshake(15, 5);
+            }
             NPC.ai[0]++;
             if (NPC.ai[0] == 60)
                 TargetPos = Main.player[NPC.target].Center;
@@ -781,7 +912,8 @@ namespace NewDawn.NPCs.Hypothema
         {
             NPC.ai[0]++;
             Slow();
-            var dist = 120;
+            Slow();
+            var dist = 160;
             var newPos = NPC.Center;
             newPos.Y -= dist;
             Offset.X = -50;
@@ -821,48 +953,91 @@ namespace NewDawn.NPCs.Hypothema
 
         private void UpwardSpray()
         {
-            TargetPos = Main.player[NPC.target].Center;
-            TargetPos.Y -= 200;
-            MoveTowardsAtSpeed(TargetPos, Speed * 2);
+            if (Offset == Vector2.Zero)
+            {
+                if (NPC.Center.X < Main.player[NPC.target].Center.X)
+                    Offset = new Vector2(400, -300);
+                else
+                    Offset = new Vector2(-400, -300);
+                SoundEngine.PlaySound(SoundID.NPCDeath15, NPC.Center);
+                var entitySource = new EntitySource_Parent(this.Entity);
+                NPC.NewNPC(entitySource, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<MiniHypo>());
+            }
+
             NPC.ai[0]++;
+            if (!AttackBool)
+            {
+                TargetPos = Main.player[NPC.target].Center + Offset;
+                TargetPos.Y -= 100;
+                MoveTowardsAtSpeed(TargetPos, Speed * 2);
+            }
+            //else
+            //{
+            //    var yOffsetGoal = Main.player[NPC.target].Center.Y - 300;
+            //    if (NPC.Center.Y > yOffsetGoal)
+            //        TargetPos = new Vector2(Main.player[NPC.target].Center.X, yOffsetGoal);
+            //    else
+            //        TargetPos = Main.player[NPC.target].Center + Offset;
+            //    TargetPos.X = NPC.Center.X;
+            //    MoveTowardsAtSpeed(TargetPos, Speed * 2);
+            //    FacePlayer();
+            //}
+
+            if ((NPC.Center - TargetPos).Length() < 16 && !AttackBool)
+            {
+                AttackBool = true;
+                SoundEngine.PlaySound(SoundID.NPCDeath15, NPC.Center);
+                var entitySource = new EntitySource_Parent(this.Entity);
+                NPC.NewNPC(entitySource, (int)NPC.Center.X, (int)NPC.Center.Y, ModContent.NPCType<MiniHypo>());
+            }
+            //Slow();
             if (NPC.ai[0] % 3 == 0)
             {
                 NPC.ai[1]++;
                 switch (NPC.ai[1] % 4)
                 {
                     case 1:
-                        ShootUp(-NPC.spriteDirection * 28);
+                        ShootUp(-NPC.spriteDirection * 28, true);
                         break;
                     case 2:
                         break;
                     case 3:
-                        ShootUp(NPC.spriteDirection * 28);
+                        ShootUp(NPC.spriteDirection * 28, true);
                         break;
                     default:
                         break;
                 }
             }
-            if (NPC.ai[0] > 4 * 60)
+
+            RainSnow();
+            if (Main.expertMode)
+                RainSnow();
+
+            if (NPC.ai[0] > 8 * 60)
                 PhaseChange();
         }
 
         private void BoobombSpray()
         {
             TargetPos = Main.player[NPC.target].Center;
-            TargetPos.Y -= 200;
-            NPC.ai[0]++;
-            if (NPC.ai[0] < 90)
-                MoveTowardsAtSpeed(TargetPos, Speed * 2);
+            TargetPos.Y -= 250;
+            if ((NPC.Center - TargetPos).Length() > 30 && NPC.ai[0] == 0)
+            {
+                MoveTowardsAtSpeed(TargetPos, Speed * 2.5f);
+            }
             else
+            {
                 Slow();
-            if (NPC.ai[0] == 90)
+                NPC.ai[0]++;
+            }
+            if (NPC.ai[0] == 30)
             {
                 Offset.X = -30;
                 var entitySource = new EntitySource_Parent(this.Entity);
                 Projectile.NewProjectile(entitySource, NPC.Center + Offset, new Vector2(6 * NPC.spriteDirection, -6), ModContent.ProjectileType<ShotgunYeet>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
                 Projectile.NewProjectile(entitySource, NPC.Center - Offset, new Vector2(-6 * NPC.spriteDirection, -6), ModContent.ProjectileType<ShotgunYeet>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
             }
-            if (NPC.ai[0] == 90 + 36)
+            if (NPC.ai[0] == 30 + 36)
             {
                 var newPos = NPC.Center;
                 newPos.Y -= 20;
@@ -876,11 +1051,13 @@ namespace NewDawn.NPCs.Hypothema
                 Projectile.NewProjectile(entitySource, newPos, new Vector2(3, -3), ModContent.ProjectileType<Snowbomb>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
                 Projectile.NewProjectile(entitySource, newPos, new Vector2(4, -2), ModContent.ProjectileType<Snowbomb>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
             }
-            if (NPC.ai[0] >= (2 * 60) + 30)
+            if (NPC.ai[0] >= (1 * 60) + 30)
             {
                 NPC.ai[0] = 0;
                 CurrentPhase = AIPhase.GrabGuns;
+                PhaseChange(true);
             }
+            RainSnow();
         }
 
         private void GrabGuns()
@@ -921,350 +1098,34 @@ namespace NewDawn.NPCs.Hypothema
                 Projectile.NewProjectile(entitySource, new Vector2(NPC.position.X, NPC.Center.Y + 80), new Vector2(0, -.5f), ModContent.ProjectileType<SnowCloud>(), NPC.damage / 4, 8, NPC.target, 0, NPC.whoAmI);
             }
         }
-        private void ShootUp(float xShift)
+        private void ShootUp(float xShift, bool seeking = false)
         {
-            var theta = (Math.PI * 1.333) + (Main.rand.NextDouble() * Math.PI / 3);
-            float mag = 6 + (Main.rand.NextFloat() * 3);
             var newPos = NPC.Center;
             newPos.Y -= 110;
             newPos.X += xShift;
             SoundEngine.PlaySound(SoundID.Item11, NPC.Center);
             var entitySource = new EntitySource_Parent(this.Entity);
-            Projectile.NewProjectile(entitySource, newPos, new Vector2((float)Math.Cos(theta) * mag, (float)Math.Sin(theta) * mag), ModContent.ProjectileType<Snowball>(), NPC.damage / 4, 7);
-        }
-        #endregion
+            if (seeking)
+            {
+                var player = Main.player[NPC.target];
+                var toPlayer = player.Center - newPos;
 
-        #region OLDAttackAIs
-        /*
-        private void GunTwirlAI()
-        {
-            Slow();
-            NPC.ai[0]++;
-            if (NPC.ai[0] > 4 && NPC.ai[0] < 2 * 60)
-            {
-                AttackBool = true;
-                if (NPC.ai[0] % 2 == 0 && Main.netMode != 1)
-                {
-                    var theta = Main.rand.NextDouble() * 2 * Math.PI;
-                    float mag = 9 + (Main.rand.NextFloat() * 3);
-                    var newPos = NPC.Center;
-                    newPos.X -= ((NPC.ai[0] % 4 == 0 ? -1 : 1) * 66 * NPC.spriteDirection) - (50 * (float)Math.Cos(theta));
-                    newPos.Y -= 36 - (50 * (float)Math.Sin(theta));
-
-                    var entitySource = new EntitySource_Parent(this.Entity);
-                    Projectile.NewProjectile(entitySource, newPos, new Vector2((float)Math.Cos(theta) * mag, (float)Math.Sin(theta) * mag), ModContent.ProjectileType<Snowball>(), NPC.damage / 4, 7);
-                }
-            }
-            else
-            {
-                NPC.ai[1]++;
-                AttackBool = false;
-            }
-            if (NPC.ai[0] > (2 * 60) + 12)
-                Transition();
-        }
-
-        private void HatThrowAI()
-        {
-            Slow();
-            NPC.ai[0]++;
-            if (NPC.ai[0] == 3 * 6)
-            {
-                var newPos = NPC.Center;
-                newPos.X -= 80 * NPC.spriteDirection;
-                var entitySource = new EntitySource_Parent(this.Entity);
-                NPC.ai[1] = Projectile.NewProjectile(entitySource, newPos, new Vector2(0, 0), ModContent.ProjectileType<HatSpin>(), NPC.damage / 4, 6f, NPC.target, 0, NPC.whoAmI);
-            }
-            if (NPC.ai[0] > 3 * 60 && (Main.projectile[(int)NPC.ai[1]].type != ModContent.ProjectileType<HatSpin>() || !Main.projectile[(int)NPC.ai[1]].active))
-                Transition();
-        }
-
-        private void DashAI()
-        {
-            NPC.ai[0]++;
-            if (NPC.ai[0] == 1)
-                AttackBool = Main.rand.NextBool();
-            if (NPC.ai[0] < 90)
-            {
-                MoveTowardsAtSpeed(TargetPos, Speed * 2);
-                TargetPos = Main.player[NPC.target].Center;
-                TargetPos.X += 600 * (AttackBool ? 1 : -1);
-            }
-            else if (NPC.ai[0] < 105)
-                Slow();
-            else if (NPC.ai[0] == 105)
-            {
-                AttackBool = NPC.Center.X < Main.player[NPC.target].Center.X;
-                NPC.velocity.Y = 0;
-            }
-            if (NPC.ai[0] >= 105)
-                NPC.velocity.X = AttackBool ? Speed * 4 : -Speed * 4;
-            if (NPC.ai[0] >= 105 && Main.rand.Next(4) == 0 && Main.netMode != 1)
-            {
-                var theta = (Main.rand.NextDouble() * Math.PI) + Math.PI;
+                var theta = (Math.PI * 1.25) + (Main.rand.NextDouble() * Math.PI / 4);
                 float mag = 6 + (Main.rand.NextFloat() * 3);
-                var entitySource = new EntitySource_Parent(this.Entity);
-                Projectile.NewProjectile(entitySource, NPC.Center, new Vector2((float)Math.Cos(theta) * mag, (float)Math.Sin(theta) * mag), ModContent.ProjectileType<Snowball>(), NPC.damage / 4, 7);
-            }
-            if (NPC.ai[0] > 3 * 60)
-                Transition();
-        }
-
-        private void UpshootAI()
-        {
-            TargetPos = Main.player[NPC.target].Center;
-            TargetPos.Y -= 200;
-            MoveTowardsAtSpeed(TargetPos, Speed);
-            NPC.ai[0]++;
-            if (NPC.ai[0] % 3 == 0)
-            {
-                NPC.ai[1]++;
-                switch (NPC.ai[1] % 4)
-                {
-                    case 1:
-                        ShootUp(-NPC.spriteDirection * 28);
-                        break;
-                    case 2:
-                        break;
-                    case 3:
-                        ShootUp(NPC.spriteDirection * 28);
-                        break;
-                    default:
-                        break;
-                }
-            }
-            if (NPC.ai[0] > 3 * 60)
-                Transition();
-        }
-
-
-        private void SmashAI()
-        {
-            NPC.ai[0]++;
-            if (NPC.ai[0] > 2 * 60)
-            {
-                CloudAlpha += .04f;
-                if (CloudAlpha >= 1)
-                {
-                    CloudAlpha = 1;
-                    bool floored = false;
-                    NPC.ai[1]++;
-                    if (NPC.ai[1] == 1)
-                        NPC.velocity.Y = .5f;
-                    if (NPC.velocity.Y > 0)
-                        NPC.velocity.Y = Math.Min(NPC.velocity.Y + .5f, 16);
-                    NPC.noTileCollide = false;
-                    NPC.collideX = false;
-                    NPC.collideY = true;
-                    if (NPC.velocity.Y == 0)
-                        floored = true;
-
-                    NPC.velocity.X = 0;
-
-                    if (floored)
-                    {
-                        if (!AttackBool)
-                        {
-                            AttackBool = true;
-                            for (int k = 0; k < (Main.expertMode ? 20 : 10); k++)
-                            {
-                                var theta = Main.rand.NextDouble() * Math.PI;
-                                float mag = -5 - (Main.rand.NextFloat() * 3);
-                                var newPos = NPC.Center;
-                                newPos.Y += (NPC.height / 2) - 8;
-                                var entitySource = new EntitySource_Parent(this.Entity);
-                                Projectile.NewProjectile(entitySource, newPos, new Vector2((float)Math.Cos(theta) * mag, (float)Math.Sin(theta) * mag), ModContent.ProjectileType<Snowball>(), NPC.damage / 4, 7);
-                            }
-                        }
-                        NPC.velocity.Y = 0;
-                    }
-                }
-                else
-                    Slow();
+                mag /= 3f;
+                var shootVel = new Vector2((float)Math.Cos(theta) * mag, (float)Math.Sin(theta) * mag);
+                shootVel.Y -= 4;
+                shootVel.X -= toPlayer.X / (2 * shootVel.Y / SnowballNoSlow.Gravity);
+                Projectile.NewProjectile(entitySource, newPos, shootVel, ModContent.ProjectileType<SnowballNoSlow>(), NPC.damage / 4, 7, NPC.target);
             }
             else
             {
-                TargetPos = Main.player[NPC.target].Center;
-                TargetPos.Y -= 400;
-                MoveTowardsAtSpeed(TargetPos, Speed * 2);
-            }
-            if (NPC.ai[1] > 2 * 60 || NPC.ai[0] > 5 * 60)
-            {
-                Transition();
-                NPC.noTileCollide = true;
-                NPC.collideX = false;
-                NPC.collideY = false;
+                var theta = (Math.PI * 1.333) + (Main.rand.NextDouble() * Math.PI / 3);
+                float mag = 6 + (Main.rand.NextFloat() * 3);
+                var randomVel = new Vector2((float)Math.Cos(theta) * mag, (float)Math.Sin(theta) * mag);
+                Projectile.NewProjectile(entitySource, newPos, randomVel, ModContent.ProjectileType<Snowball>(), NPC.damage / 4, 7);
             }
         }
-
-        private void ShotgunAI()
-        {
-            TargetPos = Main.player[NPC.target].Center;
-            MoveTowardsAtSpeed(TargetPos, Speed);
-            NPC.ai[0]++;
-            if (NPC.ai[0] == 45)
-            {
-                var newPos = NPC.Center;
-                newPos.X -= 80 * NPC.spriteDirection;
-                SoundEngine.PlaySound(SoundID.Item36, NPC.Center);
-                var entitySource = new EntitySource_Parent(this.Entity);
-                Projectile.NewProjectile(entitySource, newPos, new Vector2(6 * NPC.spriteDirection, -6), ModContent.ProjectileType<ShotgunYeet>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
-                for (int i = 0; i < 12; i++)
-                {
-                    var theta = (Math.PI * .67) + (Main.rand.NextDouble() * Math.PI / 2);
-                    float mag = 8 + (Main.rand.NextFloat() * 6);
-                    Projectile.NewProjectile(entitySource, newPos, new Vector2((float)Math.Cos(theta) * mag * NPC.spriteDirection, (float)Math.Sin(theta) * mag / 2), ModContent.ProjectileType<Snowball>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
-                }
-            }
-            if (NPC.ai[0] > 60)
-                Transition();
-        }
-
-        private void SnowbombAI()
-        {
-            TargetPos = Main.player[NPC.target].Center;
-            TargetPos.Y -= 200;
-            MoveTowardsAtSpeed(TargetPos, Speed);
-            NPC.ai[0]++;
-            if (NPC.ai[0] == 45)
-            {
-                var newPos = NPC.Center;
-                newPos.Y -= 20;
-                newPos.X -= 40;
-                var entitySource = new EntitySource_Parent(this.Entity);
-                Projectile.NewProjectile(entitySource, newPos, new Vector2(-2 + (Main.rand.NextFloat() * 4), -1 - Main.rand.NextFloat()), ModContent.ProjectileType<Snowbomb>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
-                newPos.X += 80;
-                Projectile.NewProjectile(entitySource, newPos, new Vector2(-2 + (Main.rand.NextFloat() * 4), -1 - Main.rand.NextFloat()), ModContent.ProjectileType<Snowbomb>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
-            }
-            if (NPC.ai[0] > 72)
-                Transition();
-        }
-
-        private void StewardAI()
-        {
-            NPC.ai[0]++;
-            Slow();
-            var dist = 120;
-            var newPos = NPC.Center;
-            newPos.Y -= dist;
-
-            if (NPC.ai[0] == 15)
-            {
-                var entitySource = new EntitySource_Parent(this.Entity);
-                Tracker = Projectile.NewProjectile(entitySource, newPos, new Vector2(), ModContent.ProjectileType<Steward>(), NPC.damage / 4, 8f, 0, NPC.whoAmI);
-                Main.projectile[Tracker].scale = 1f / (2 * 60f);
-            }
-            if (NPC.ai[0] > 15)
-                Main.projectile[Tracker].scale += 1f / (2 * 60f);
-            if (NPC.ai[0] < (1 * 60) + 30)
-            {
-                var theta = Math.PI * 2 * Main.rand.NextDouble();
-                var dustShift = new Vector2((float)Math.Cos(theta), (float)Math.Sin(theta));
-                int dust = Dust.NewDust(newPos + (dustShift * dist), 0, 0, ModContent.DustType<SnowAccumulateDust>(), 0, 0, 0, default, 1);
-                Main.dust[dust].velocity = new Vector2(dustShift.X * -2, dustShift.Y * -2);
-            }
-            if (NPC.ai[0] > 2 * 60)
-            {
-                Main.projectile[Tracker].scale = 1;
-                Transition();
-            }
-        }
-        private void Transition()
-        {
-            PrevAttackPhase = CurrentPhase;
-            //AIPhase = CurrentPhase.GrabGuns;
-            NPC.ai[0] = NPC.ai[1] = 0;
-            AttackBool = false;
-        }
-        #endregion
-
-        #region OLDMovementAIs
-
-        //private int GetAnger()
-        //{
-        //    float threshold = Main.expertMode ? 0.5f : 0.4f;
-        //    int anger = NPC.life < NPC.lifeMax * threshold ? 1 : 0;
-        //    anger += NPC.life < NPC.lifeMax * threshold / 2f ? 1 : 0;
-        //    return anger;
-        //}
-
-        private void FollowAI()
-        {
-            NPC.ai[0]++;
-            TargetPos = Main.player[NPC.target].Center;
-            MoveTowardsAtSpeed(TargetPos, Speed);
-            if (NPC.ai[0] > 2 * 60)
-                Transition();
-        }
-
-        private void TransitionAI()
-        {
-            TargetPos = Main.player[NPC.target].Center;
-            if (Vector2.Distance(NPC.Center, Main.player[NPC.target].Center) > 300)
-                TargetPos.Y -= 200;
-            MoveTowardsAtSpeed(TargetPos, Speed);
-            NPC.ai[0]++;
-            if (CloudAlpha > 0)
-                CloudAlpha = Math.Max(0, CloudAlpha - .04f);
-            if ((NPC.ai[0] > 2 * 60 && Main.rand.Next(60) == 0) || NPC.ai[0] > 4 * 60)
-            {
-                NPC.ai[0] = 0;
-                CloudAlpha = 0;
-                FrameDelay = 0;
-                //AIPhase = GetNextAI();
-            }
-        }
-
-        private int GetNextAI()
-        {
-            return FOLLOW;
-            int nextAttack;
-            if (Vector2.Distance(NPC.Center, Main.player[NPC.target].Center) > 1200)
-                return STEWARD;
-            if (NextAttacks.Count == 0)
-            {
-                for (int i = 0; i < Attacks.Count; i++)
-                    NextAttacks.Add(Attacks[i]);
-                if (Angry)
-                {
-                    NextAttacks.Add(UPSHOOT);
-                    NextAttacks.Add(GUNTWIRL);
-                }
-                else
-                {
-                    NextAttacks.Add(SNOWBOMB);
-                    NextAttacks.Add(SHOTGUN);
-                    NextAttacks.Add(HATTHROW);
-                }
-            }
-            int pos = Main.rand.Next(NextAttacks.Count);
-            //if (NextAttacks[pos] == PrevAIPhase && NextAttacks.Count > 1)
-            {
-                pos++;
-                if (pos >= NextAttacks.Count)
-                    pos = 0;
-            }
-            if (NextAttacks.Contains(CLOUDS))
-                pos = NextAttacks.IndexOf(CLOUDS);
-            if (NextAttacks.Count > 0)
-            {
-                nextAttack = NextAttacks[pos];
-                NextAttacks.RemoveAt(pos);
-                return nextAttack;
-            }
-            return STEWARD;
-        }
-
-        private void SpawnClouds()
-        {
-            if (Main.netMode != 1)
-            {
-                var entitySource = new EntitySource_Parent(this.Entity);
-                Projectile.NewProjectile(entitySource, new Vector2(NPC.position.X - 2000, NPC.Center.Y + 80), new Vector2(0, -.5f), ModContent.ProjectileType<SnowCloud>(), NPC.damage / 4, 8, NPC.target, 0, NPC.whoAmI);
-                Projectile.NewProjectile(entitySource, new Vector2(NPC.position.X + 2000, NPC.Center.Y + 80), new Vector2(0, -.5f), ModContent.ProjectileType<SnowCloud>(), NPC.damage / 4, 8, NPC.target, 0, NPC.whoAmI);
-                Projectile.NewProjectile(entitySource, new Vector2(NPC.position.X, NPC.Center.Y + 80), new Vector2(0, -.5f), ModContent.ProjectileType<SnowCloud>(), NPC.damage / 4, 8, NPC.target, 0, NPC.whoAmI);
-            }
-        }*/
         #endregion
 
         private void SetBaseSpeed()
@@ -1277,6 +1138,8 @@ namespace NewDawn.NPCs.Hypothema
             Vector2 newVel = Vector2.Normalize(targetPos - NPC.Center);
             newVel *= Math.Min(Vector2.Distance(NPC.Center, targetPos) / 4, mag);
             NPC.velocity = newVel;
+            if (Math.Abs(NPC.velocity.X) < .001f)
+                NPC.velocity.X = 0.001f * Math.Sign(NPC.velocity.X);
         }
 
         private void MoveTowards(Vector2 targetPos, float speed, float turnPower)
@@ -1322,7 +1185,7 @@ namespace NewDawn.NPCs.Hypothema
 
         private void FacePlayer()
         {
-            NPC.spriteDirection = NPC.Center.X < Main.player[NPC.target].Center.X ? -1 : 1;
+            NPC.spriteDirection = (NPC.Center.X < Main.player[NPC.target].Center.X - 6) ? -1 : 1;
         }
         //private bool MoveTowardsAtSpeed(Vector2 targetPos, float mag)
         //{
@@ -1338,6 +1201,7 @@ namespace NewDawn.NPCs.Hypothema
         private void Slow()
         {
             NPC.velocity *= .95f;
+            FacePlayer();
         }
 
         #region MiscMethods
@@ -1362,9 +1226,9 @@ namespace NewDawn.NPCs.Hypothema
                 FrameDelay = 0;
                 HealthPhase = 0;
                 CurrentPhase = AIPhase.GrabGuns;
+                PhaseChange(true);
                 NPC.ai[0] = 0;
                 NPC.ai[0] = 1;
-                NextAttacks.Clear();
             }
         }
 
@@ -1546,7 +1410,7 @@ namespace NewDawn.NPCs.Hypothema
 
                 return true;
             }
-            if (CurrentPhase == AIPhase.UpwardSpray)
+            if (CurrentPhase == AIPhase.UpwardSpray || CurrentPhase == AIPhase.ShootChase)
             {
                 int frameCount = 4;
 
@@ -1567,12 +1431,12 @@ namespace NewDawn.NPCs.Hypothema
                     return true;
                 return false;
             }
-            if ((CurrentPhase == AIPhase.Boobomb || CurrentPhase == AIPhase.BoobombSpray) && NPC.ai[0] > 90)
+            if ((CurrentPhase == AIPhase.Boobomb || CurrentPhase == AIPhase.BoobombSpray) && NPC.ai[0] > 30)
             {
                 int frameCount = 10;
                 float animRate = 6;
 
-                float frame = NPC.ai[0] - 90;
+                float frame = NPC.ai[0] - 30;
                 //if (frame > animRate * 5)
                 //{
                 //    frame = animRate * 5;

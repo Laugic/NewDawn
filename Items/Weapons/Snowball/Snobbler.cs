@@ -1,8 +1,7 @@
 using Microsoft.Xna.Framework;
-using NewDawn.Control;
+using NewDawn.Items.Materials;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Weapons.Snowball
@@ -56,9 +55,7 @@ namespace NewDawn.Items.Weapons.Snowball
         {
             Recipe recipe = CreateRecipe();
             recipe.AddIngredient(ItemID.Boomstick);
-            recipe.AddRecipeGroup(RecipeManager.EvilBar, 12);
-            recipe.AddIngredient(ItemID.SnowBlock, 20);
-            recipe.AddIngredient(ItemID.IceBlock, 20);
+            recipe.AddIngredient(ModContent.ItemType<ChilledBar>(), 12);
             recipe.AddTile(TileID.IceMachine);
             recipe.Register();
         }

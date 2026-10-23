@@ -42,7 +42,7 @@ namespace NewDawn.NPCs.Hypothema
             if (Main.npc[(int)Projectile.ai[1]].type == ModContent.NPCType<Hypothema>() && Main.npc[(int)Projectile.ai[1]].active)
             {
                 int counter = (int)Main.npc[(int)Projectile.ai[1]].ai[0];
-                if (counter < 5 * 60)
+                if (counter < (7 * 60) - 18)
                 {
                     MoveTowardsAtSpeed(Main.player[Projectile.owner].Center, 6);
                     Projectile.velocity.Y *= .9f;
@@ -57,6 +57,14 @@ namespace NewDawn.NPCs.Hypothema
                     }
                 }
             }
+            if (Main.npc[(int)Projectile.ai[1]].active && Main.npc[(int)Projectile.ai[1]].ModNPC is Hypothema hypothema && hypothema.CurrentPhase != Hypothema.AIPhase.HatThrow)
+                Projectile.Kill();
+        }
+
+        public override void OnHitPlayer(Player target, Player.HurtInfo info)
+        {
+            if (Main.npc[(int)Projectile.ai[1]].active && Main.npc[(int)Projectile.ai[1]].ModNPC is Hypothema hypothema && hypothema.CurrentPhase == Hypothema.AIPhase.HatThrow)
+                Main.npc[(int)Projectile.ai[1]].ai[0] += 8 * 60;
         }
 
         private void MoveTowardsAtSpeed(Vector2 targetPos, float mag)

@@ -2,8 +2,6 @@
 using NewDawn.Dusts;
 using Terraria;
 using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.NPCs.Hypothema
@@ -18,7 +16,7 @@ namespace NewDawn.NPCs.Hypothema
             Projectile.height = 80;
             Projectile.friendly = false;
             Projectile.hostile = true;
-            Projectile.timeLeft = 14 * 60;
+            Projectile.timeLeft = 10 * 60;
         }
 
         public override void AI()
@@ -66,11 +64,14 @@ namespace NewDawn.NPCs.Hypothema
         public override void OnKill(int timeLeft)
         {
             SoundEngine.PlaySound(SoundID.NPCDeath15, Projectile.Center);
-            var entitySource = new EntitySource_Parent(this.Entity);
-            NPC.NewNPC(entitySource, (int)Projectile.Center.X, (int)Projectile.Center.Y, ModContent.NPCType<MiniHypo>());
             for (int k = 0; k < 25; k++)
             {
                 Dust.NewDust(Projectile.position + Projectile.velocity, Projectile.width, Projectile.height, ModContent.DustType<SnowCloudDust>(), Projectile.oldVelocity.X * 0.5f, Projectile.oldVelocity.Y * 0.5f);
+            }
+            if (Main.npc[(int)Projectile.ai[0]].active && Main.npc[(int)Projectile.ai[0]].ModNPC is Hypothema hypothema && hypothema.HealthPhase == 1)
+            {
+                var entitySource = new EntitySource_Parent(this.Entity);
+                NPC.NewNPC(entitySource, (int)Projectile.Center.X, (int)Projectile.Center.Y, ModContent.NPCType<MiniHypo>());
             }
         }
 

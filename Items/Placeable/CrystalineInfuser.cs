@@ -1,8 +1,6 @@
-using NewDawn.Items.Consumables;
 using NewDawn.Items.Loot;
 using NewDawn.Items.Materials;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Placeable
@@ -30,10 +28,10 @@ namespace NewDawn.Items.Placeable
         {
             Recipe recipe = CreateRecipe();
             recipe.AddTile(ModContent.TileType<Tiles.LaugicalWorkbench>());
-            recipe.AddIngredient(Mod, nameof(ObsidiumBar), 8);
+            recipe.AddIngredient(ModContent.ItemType<ObsidiumBar>(), 8);
+            recipe.AddIngredient(ModContent.ItemType<ChilledBar>(), 8);
             recipe.AddIngredient(ModContent.ItemType<LavaGemItem>(), 8);
-            recipe.AddIngredient(ModContent.ItemType<DarkShard>(), 2);
-            recipe.AddIngredient(ModContent.ItemType<ObsidiumHeart>(), 1);
+            recipe.AddIngredient(ModContent.ItemType<FrostShard>(), 1);
             recipe.Register();
         }
     }

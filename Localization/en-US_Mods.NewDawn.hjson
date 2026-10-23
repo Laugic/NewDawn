@@ -2555,7 +2555,7 @@ Items: {
 	}
 
 	CrystalineInfuser: {
-		DisplayName: Crystalline Infuser
+		DisplayName: Crystaline Infuser
 		Tooltip: Combines Gems into Crystals
 	}
 
@@ -4125,6 +4125,7 @@ Projectiles: {
 	BysmalDrillProjectile.DisplayName: Bysmal Drill Projectile
 	DrillinatorProjectile.DisplayName: Drillinator Projectile
 	DrillOTron10000Projectile.DisplayName: Drill O Tron10000 Projectile
+	SnowballNoSlow.DisplayName: Snowball No Slow
 }
 
 Tiles: {

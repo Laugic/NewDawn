@@ -1,8 +1,8 @@
 using Microsoft.Xna.Framework;
+using NewDawn.Items.Materials;
 using NewDawn.Projectiles.Ranged;
 using Terraria;
 using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Weapons.Snowball
@@ -27,14 +27,14 @@ namespace NewDawn.Items.Weapons.Snowball
             Item.useAmmo = AmmoID.Snowball;
             Item.shoot = ProjectileID.SnowBallFriendly;
 
-            
+
             Item.useTime = Item.useAnimation = 17;
             //Item.reuseDelay = 15;
         }
 
         public override bool CanConsumeAmmo(Item ammo, Player player)
         {
-            if (player.armor[0].type == ItemID.MeteorHelmet && player.armor[1].type == ItemID.MeteorSuit && player.armor[2].type == ItemID.MeteorLeggings )
+            if (player.armor[0].type == ItemID.MeteorHelmet && player.armor[1].type == ItemID.MeteorSuit && player.armor[2].type == ItemID.MeteorLeggings)
                 return false;
             return base.CanConsumeAmmo(ammo, player);
         }
@@ -62,7 +62,8 @@ namespace NewDawn.Items.Weapons.Snowball
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
-            recipe.AddIngredient(ItemID.MeteoriteBar, 20);
+            recipe.AddIngredient(ItemID.MeteoriteBar, 12);
+            recipe.AddIngredient(ModContent.ItemType<ChilledBar>(), 8);
             recipe.AddTile(TileID.IceMachine);
             recipe.Register();
         }
