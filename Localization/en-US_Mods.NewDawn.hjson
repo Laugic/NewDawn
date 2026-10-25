@@ -3749,6 +3749,15 @@ Items: {
 		DisplayName: Aqua Crystal
 		Tooltip: Mastery of water
 	}
+
+	FlawlessMedallion: {
+		DisplayName: Flawless Medallion
+		Tooltip:
+			'''
+			Copies the Set Bonus of full armor sets when slotted in its inventory
+			Right click or use item to open inventory
+			'''
+	}
 }
 
 Projectiles: {
