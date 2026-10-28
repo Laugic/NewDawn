@@ -728,6 +728,11 @@ Items: {
 			15% increased snowball damage
 			5% increased ranged critical strike chance
 			'''
+		SetBonus:
+			'''
+			Not moving puts you in stealth,
+			increasing ranged ability and reducing chance for enemies to target you
+			'''
 	}
 
 	Slinger: {
@@ -1137,7 +1142,8 @@ Items: {
 		DisplayName: Yellow Snowball
 		Tooltip:
 			'''
-			The yellow snow just wants to be eaten.
+			Homes in on the mouse position
+			The yellow snow just wants to be eaten
 			'Looks tasty'
 			'''
 	}
@@ -1159,6 +1165,7 @@ Items: {
 	AncientHelmet: {
 		DisplayName: Ancient Helmet
 		Tooltip: Increased Max Run Speed and Jump Height
+		SetBonus: Increased Max Minions, Mana, and Potentia
 	}
 
 	AndesiaLeggings: {
@@ -1178,6 +1185,11 @@ Items: {
 			Decreased cooldown between Time Stops
 			You are immune to Time Stop
 			'''
+		SetBonus:
+			'''
+			Automatically stop time after taking a hit below 25% life
+			You are immune while Time is Stopped
+			'''
 	}
 
 	AnDioChestplate: {
@@ -1187,6 +1199,7 @@ Items: {
 			Increased duration of Time Stop
 			You are immune to Time Stop
 			'''
+		SetBonus: Deal increased damage while Time is Stopped
 	}
 
 	BysmalBoots: {
@@ -1229,6 +1242,12 @@ Items: {
 	FrigidHelmet: {
 		DisplayName: Frigid Helmet
 		Tooltip: +10% Melee and Ranged Damage
+		SetBonus:
+			'''
+			+4 Defense
+			+25% Snowball Damage
+			Unleash Ice Shards when struck
+			'''
 	}
 
 	FrigidLeggings: {
@@ -1246,6 +1265,11 @@ Items: {
 			'''
 			Mystic damage increased by 12%
 			+100% Mystic Duration
+			'''
+		SetBonus:
+			'''
+			Your Max Mana is added to your Potentias
+			Increased Mana and Potentia regen
 			'''
 	}
 
@@ -1272,31 +1296,65 @@ Items: {
 	MagmaticMask: {
 		DisplayName: Magmatic Mask
 		Tooltip: +15% Mystic and Throwing Damage
+		SetBonus:
+			'''
+			Eruption & Magmatic Mystic Bursts
+			+25% Mystic Burst Damage & Decreased Mystic Burst cooldown
+			+15% Throwing Crit Chance
+			Attacks inflict 'On Fire!'
+			Increased stats after being submerged in Lava
+			'''
 	}
 
 	ObsidiumBand: {
 		DisplayName: Obsidium Band
 		Tooltip: +15% Throwing Damage
+		SetBonus:
+			'''
+			+33% Throwing Velocity
+			+4 Defense
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	ObsidiumHat: {
 		DisplayName: Obsidium Hat
 		Tooltip: +15% Magic Damage
+		SetBonus:
+			'''
+			+60 Max Mana
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	ObsidiumHeadgear: {
 		DisplayName: Obsidium Headgear
 		Tooltip: +15% Ranged Damage
+		SetBonus:
+			'''
+			+10% Ranged Crit Chance
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	ObsidiumHeadguard: {
 		DisplayName: Obsidium Headguard
 		Tooltip: +15% Melee Damage
+		SetBonus:
+			'''
+			+10% Damage Reduction
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	ObsidiumHelmet: {
 		DisplayName: Obsidium Helmet
 		Tooltip: +15% Mystic Damage
+		SetBonus:
+			'''
+			Increased Mystic damage for a time after swapping Mysticisms
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	ObsidiumLongcoat: {
@@ -1307,6 +1365,11 @@ Items: {
 	ObsidiumMask: {
 		DisplayName: Obsidium Mask
 		Tooltip: +15% Summoning Damage
+		SetBonus:
+			'''
+			+3 Max Minions
+			Attacks inflict 'On Fire!'
+			'''
 	}
 
 	ObsidiumPants: {
@@ -1326,6 +1389,11 @@ Items: {
 	ShroomHelmet: {
 		DisplayName: Shroom Cap
 		Tooltip: +8% Mystic Damage
+		SetBonus:
+			'''
+			Overflow attacks shoot Spores from your head
+			Overflow slowly refills over time when at max Potentia
+			'''
 	}
 
 	ShroomPants: {
@@ -1345,11 +1413,23 @@ Items: {
 	SteampunkHeadgear: {
 		DisplayName: Steampunk Headgear
 		Tooltip: +20% Throwing Damage
+		SetBonus:
+			'''
+			+33% Throwing Velocity
+			Attacks inflict 'Steamy!'
+			'''
 	}
 
 	SteampunkHelmet: {
 		DisplayName: Steampunk Hat
 		Tooltip: +20% Mystic Damage
+		SetBonus:
+			'''
+			+200% Mystic Duration
+			Switching Mysticisms unleashes a burst of Steam
+			Decreased Mystic Burst cooldown
+			Attacks inflict 'Steamy!', which makes enemies take more damage
+			'''
 	}
 
 	SteampunkJacket: {
@@ -1360,6 +1440,11 @@ Items: {
 	SteampunkMask: {
 		DisplayName: Steampunk Mask
 		Tooltip: +4 Minion capacity
+		SetBonus:
+			'''
+			+18% Minion damage
+			Attacks inflict 'Steamy!'
+			'''
 	}
 
 	AncientAwakener: {
@@ -3757,6 +3842,11 @@ Items: {
 			Copies the Set Bonus of full armor sets when slotted in its inventory
 			Right click or use item to open inventory
 			'''
+	}
+
+	DungeonCrackinator: {
+		DisplayName: Dungeon Crackinator
+		Tooltip: Removes all Cracked Dungeon Bricks from the world
 	}
 }
 

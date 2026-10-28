@@ -20,6 +20,7 @@ namespace NewDawn.Players
         public override void ResetEffects()
         {
             Vita = false;
+            Ignis = false;
             BonusHealFromHearts = 0;
             base.ResetEffects();
         }

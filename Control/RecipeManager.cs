@@ -9,7 +9,7 @@ namespace NewDawn.Control
     public class RecipeManager : ModSystem
     {
         // A place to store the recipe group so we can easily use it later
-        public static RecipeGroup EvilBar, EvilMaterial, AdamBar, TitaniumBars, Mythril, LargeGems, GoldBars, ColoredBalloon, Emblems, DungeonTables, SilverBars;
+        public static RecipeGroup EvilBar, EvilMaterial, AdamBar, TitaniumBars, Mythril, LargeGems, GoldBars, ColoredBalloon, Emblems, DungeonTables, DungeonBricks, SilverBars;
 
         public override void Unload()
         {
@@ -23,6 +23,7 @@ namespace NewDawn.Control
             ColoredBalloon = null;
             Emblems = null;
             DungeonTables = null;
+            DungeonBricks = null;
             SilverBars = null;
         }
 
@@ -78,6 +79,10 @@ namespace NewDawn.Control
             DungeonTables = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.BlueDungeonTable)}",
                 ItemID.BlueDungeonTable, ItemID.GreenDungeonTable, ItemID.PinkDungeonTable);
             RecipeGroup.RegisterGroup($"NewDawn:DungeonTables", DungeonTables);
+
+            DungeonBricks = new RecipeGroup(() => $"{Language.GetTextValue("LegacyMisc.37")} {Lang.GetItemNameValue(ItemID.AncientBlueDungeonBrick)}",
+                ItemID.BlueBrick, ItemID.GreenBrick, ItemID.PinkBrick);
+            RecipeGroup.RegisterGroup($"NewDawn:DungeonBricks", DungeonBricks);
 
             // Add an item to an existing Terraria recipeGroup
             //RecipeGroup.recipeGroups[RecipeGroupID.Snails].ValidItems.Add(ModContent.ItemType<Items.ExampleCritter>());

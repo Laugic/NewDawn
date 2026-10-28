@@ -1,10 +1,9 @@
 using Microsoft.Xna.Framework;
 using NewDawn.Items.Alchemistry.Crystals;
-using NewDawn.Items.Materials;
 using NewDawn.Items.Tools;
 using System.Collections.Generic;
+using System.Linq;
 using Terraria;
-using Terraria.DataStructures;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
 
@@ -19,7 +18,6 @@ namespace NewDawn.Tiles.Alchemistry
             Main.tileLighted[Type] = true;
             Main.tileFrameImportant[Type] = true;
 
-            RegisterItemDrop(ModContent.ItemType<Frostpetal>());
 
             AddMapEntry(new Color(220, 220, 220));
             TileObjectData.newTile.CopyFrom(TileObjectData.StyleOnTable1x1);
@@ -49,17 +47,23 @@ namespace NewDawn.Tiles.Alchemistry
 
         public virtual void GetEssences(int i, int j) { }
 
-        public void GetEssencesFromTile(int i, int j)
+        public bool GetEssencesFromTile(int i, int j)
         {
             var modTile = ModContent.GetModTile(Main.tile[i, j].TileType);
-            if (modTile != null && modTile is CrystalTile c && ModContent.GetModItem(c.ItemDrop) is PotionCrystal)
-            {
-                CheckEssences(ModContent.GetModItem(c.ItemDrop), i, j);
-            }
+            if (modTile is not CrystalTile)
+                return false;
+
+            Item crystal = modTile.GetItemDrops(i, j)
+                .FirstOrDefault(item => ModContent.GetModItem(item.type) is PotionCrystal);
+
+            if (crystal == null || crystal.IsAir || ModContent.GetModItem(crystal.type) is not ModItem modItem)
+                return false;
+
+            return CheckEssences(modItem, i, j);
         }
 
 
-        private void CheckEssences(ModItem crystal, int x, int y)
+        private bool CheckEssences(ModItem crystal, int x, int y)
         {
             //Collapse Items into list of items with stacks
             List<int> results = new List<int>();
@@ -86,6 +90,8 @@ namespace NewDawn.Tiles.Alchemistry
                     Item.NewItem(new EntitySource_TileBreak(x, y), x * 16, y * 16, 16, 16, item);
                 }
             }
+
+            return results.Count > 0;
         }
 
         public override void MouseOver(int i, int j)

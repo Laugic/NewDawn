@@ -1,5 +1,5 @@
-using NewDawn.Dusts;
 using Microsoft.Xna.Framework;
+using NewDawn.Dusts;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -35,11 +35,6 @@ namespace NewDawn.Tiles
         public override void SetDrawPositions(int i, int j, ref int width, ref int offsetY, ref int height, ref short tileFrameX, ref short tileFrameY)
         {
             offsetY = 4;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 32, 32, ModContent.ItemType<Items.Placeable.LavaGemItem>(), Main.rand.Next(3, 6));
         }
 
         public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)

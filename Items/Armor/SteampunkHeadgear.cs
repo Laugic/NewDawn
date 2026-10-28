@@ -31,7 +31,7 @@ namespace NewDawn.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "+33% Throwing Velocity, \nAttacks inflict 'Steamy!' ";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             modPlayer.Steamified = true;
             player.ThrownVelocity += .33f;

@@ -23,7 +23,7 @@ namespace NewDawn.Items.Loot
 			refItem.SetDefaults(ItemID.SoulofSight);
 			Item.width = refItem.width;
 			Item.height = refItem.height;
-			Item.maxStack = 999;
+			Item.maxStack = 9999;
 			Item.value = 40000;
 			Item.rare = ItemRarityID.Orange;
             Item.scale *= 1.5f;

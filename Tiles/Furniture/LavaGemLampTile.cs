@@ -1,9 +1,7 @@
-﻿using NewDawn.Items.Placeable.Furniture;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
 using Terraria.Enums;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -33,15 +31,10 @@ namespace NewDawn.Tiles.Furniture
             AddToArray(ref TileID.Sets.RoomNeeds.CountsAsTorch);
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 48, ModContent.ItemType<LavaGemLamp>());
-        }
-
         public override void HitWire(int i, int j)
         {
             Tile tile = Main.tile[i, j];
-            int topY = j - tile.TileFrameY / 18 % 3;
+            int topY = j - (tile.TileFrameY / 18 % 3);
             short frameAdjustment = (short)(tile.TileFrameX > 0 ? -18 : 18);
             Main.tile[i, topY].TileFrameX += frameAdjustment;
             Main.tile[i, topY + 1].TileFrameX += frameAdjustment;

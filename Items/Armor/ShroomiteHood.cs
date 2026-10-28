@@ -33,7 +33,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             player.shroomiteStealth = true;
-            player.setBonus = "Not moving puts you in stealth,\nincreasing ranged ability and reducing chance for enemies to target you";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
         }
 
         public override void AddRecipes()

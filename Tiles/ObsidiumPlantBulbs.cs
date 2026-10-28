@@ -1,5 +1,4 @@
 ﻿using NewDawn.Dusts;
-using NewDawn.Items.Placeable;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -54,11 +53,6 @@ namespace NewDawn.Tiles
             r = .2f;
             g = 0.08f;
             b = 0.0f;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 64, ModContent.ItemType<ObsidiumPlant>());
         }
     }
 }

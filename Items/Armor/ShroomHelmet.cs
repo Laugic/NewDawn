@@ -1,5 +1,4 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Armor
@@ -10,7 +9,7 @@ namespace NewDawn.Items.Armor
         public override void SetStaticDefaults()
         {
             ArmorIDs.Head.Sets.DrawFullHair[Item.headSlot] = true;
-}
+        }
 
         public override void SetDefaults()
         {
@@ -36,9 +35,9 @@ namespace NewDawn.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-        global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
+            global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "Overflow attacks shoot Spores from your head\nOverflow slowly accrues over time";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             mysticPlayer.ShroomOverflow = 2;
 
             if (mysticPlayer.MysticHold > 0)

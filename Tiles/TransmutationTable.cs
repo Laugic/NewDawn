@@ -53,21 +53,16 @@ namespace NewDawn.Tiles
         {
             //Main.NewText(frame.ToString(), 250, 250, 0);
             frameCounter++;
-			if (frameCounter > 45)
-			{
-				frameCounter = 0;
-				frame++;
-				if (frame > 1)
-				{
-					frame = 0;
-				}
-			}
-            
-        }
+            if (frameCounter > 45)
+            {
+                frameCounter = 0;
+                frame++;
+                if (frame > 1)
+                {
+                    frame = 0;
+                }
+            }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 64, ModContent.ItemType<Items.Placeable.TransmutationTable>());
         }
     }
 }

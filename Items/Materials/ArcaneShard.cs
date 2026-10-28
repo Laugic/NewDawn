@@ -13,14 +13,14 @@ namespace NewDawn.Items.Materials
             Item.height = 28;
             Item.value = Item.sellPrice(silver: 5);
             Item.rare = ItemRarityID.Blue;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
         }
 
         public override void AddRecipes()
         {
-            Recipe recipe = CreateRecipe(2);
+            Recipe recipe = CreateRecipe(5);
             recipe.AddIngredient(ItemID.ManaCrystal, 1);
-            recipe.AddIngredient(ModContent.ItemType<Fissionite>(), 4);
+            recipe.AddIngredient(ModContent.ItemType<Fissionite>(), 10);
             recipe.AddTile(ModContent.TileType<Tiles.Crystallizer>());
             recipe.Register();
         }

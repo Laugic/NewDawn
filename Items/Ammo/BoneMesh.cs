@@ -1,5 +1,4 @@
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Ammo
@@ -13,7 +12,7 @@ namespace NewDawn.Items.Ammo
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 7f;
             Item.value = 0;
@@ -22,7 +21,7 @@ namespace NewDawn.Items.Ammo
             Item.shootSpeed = 14f;
             Item.ammo = AmmoID.Snowball;
         }
-        
+
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe(30);

@@ -34,7 +34,7 @@ namespace NewDawn.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "Deal increased damage while Time is Stopped";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
 
             if (NewDawn.zaWarudo > 0)
                 player.GetDamage(DamageClass.Generic) += .25f;

@@ -36,7 +36,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "Automatically stop time after taking a hit below 25% life\nYou are immune while Time is Stopped";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             if (NewDawn.zaWarudo > 0)
             {
                 player.immune = true;

@@ -1,7 +1,6 @@
-using Terraria.ModLoader;
-using Terraria;
-using Terraria.ID;
 using NewDawn.Items.Placeable;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Items.Materials
 {
@@ -12,7 +11,7 @@ namespace NewDawn.Items.Materials
         {
             Item.width = 30;
             Item.height = 24;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;
@@ -21,7 +20,7 @@ namespace NewDawn.Items.Materials
             Item.value = Item.sellPrice(silver: 36);
             Item.rare = ItemRarityID.Green;
         }
-        
+
         public override void AddRecipes()
         {
             Recipe recipe = CreateRecipe();
@@ -30,6 +29,6 @@ namespace NewDawn.Items.Materials
             recipe.AddTile(TileID.Hellforge);
             recipe.Register();
         }
-        
+
     }
 }

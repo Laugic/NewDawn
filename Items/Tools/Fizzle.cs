@@ -66,11 +66,8 @@ namespace NewDawn.Items.Tools
             ushort tileType = tile.TileType;
 
             var modTile = ModContent.GetModTile(tileType);
-            if (modTile is not null and CrystalTile)
-                ((CrystalTile)modTile).GetEssencesFromTile(x, y);
-
-            //if (!extracted)
-            //    return false;
+            if (modTile is not CrystalTile crystalTile || !crystalTile.GetEssencesFromTile(x, y))
+                return false;
 
             // Destroy the block WITHOUT normal tile drops.
             WorldGen.KillTile(

@@ -1,16 +1,6 @@
 using Microsoft.Xna.Framework;
-using NewDawn.Abstracts;
-using NewDawn.Items.Alchemistry;
-using NewDawn.Items.Alchemistry.Crystals;
-using NewDawn.Items.Placeable;
-using NewDawn.TileEntities;
-using SubworldLibrary;
 using Terraria;
-using Terraria.DataStructures;
-using Terraria.GameContent.Tile_Entities;
-using Terraria.ID;
 using Terraria.Localization;
-using Terraria.ModLoader;
 using Terraria.ObjectData;
 
 namespace NewDawn.Tiles
@@ -43,11 +33,6 @@ namespace NewDawn.Tiles
         public override void NumDust(int i, int j, bool fail, ref int num)
         {
             num = fail ? 1 : 3;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 3, 4, ModContent.ItemType<SmelterItem>());
         }
     }
 }

@@ -12,7 +12,7 @@ namespace NewDawn.Items.Alchemistry.Essences
             Item.height = 30;
             Item.value = Item.sellPrice(silver: 25);
             Item.rare = ItemRarityID.Green;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
         }
     }
 }

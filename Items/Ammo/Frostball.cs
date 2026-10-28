@@ -1,7 +1,6 @@
 using NewDawn.Items.Loot;
 using NewDawn.Projectiles.Ranged;
 using Terraria;
-using Terraria.ID;
 using Terraria.ModLoader;
 
 namespace NewDawn.Items.Ammo
@@ -15,7 +14,7 @@ namespace NewDawn.Items.Ammo
             Item.DamageType = DamageClass.Ranged;
             Item.width = 8;
             Item.height = 8;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.knockBack = 7f;
             Item.value = 0;

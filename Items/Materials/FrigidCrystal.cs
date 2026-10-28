@@ -12,7 +12,7 @@ namespace NewDawn.Items.Materials
             Item.height = 40;
             Item.value = Item.sellPrice(gold: 1);
             Item.rare = ItemRarityID.Blue;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
         }
     }
 }

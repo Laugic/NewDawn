@@ -1,5 +1,5 @@
-using NewDawn.Dusts;
 using Microsoft.Xna.Framework;
+using NewDawn.Dusts;
 using Terraria;
 using Terraria.Localization;
 using Terraria.ModLoader;
@@ -28,11 +28,6 @@ namespace NewDawn.Tiles
         public override void NumDust(int i, int j, bool fail, ref int num)
         {
             num = fail ? 1 : 3;
-        }
-
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 112, 64, ModContent.ItemType<Items.Placeable.BrassRING>());
         }
     }
 }

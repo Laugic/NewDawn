@@ -40,7 +40,7 @@ namespace NewDawn.Items.Armor
         {
         global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "Increased Mystic damage for a time after swapping Mysticisms\nAttacks inflict 'On Fire!'";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Obsidium = true;
             mysticPlayer.MysticObsidiumSwitch = true;
         }

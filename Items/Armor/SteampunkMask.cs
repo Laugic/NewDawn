@@ -38,7 +38,7 @@ namespace NewDawn.Items.Armor
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             modPlayer.Steamified = true;
-            player.setBonus = "+18% Minion damage \nAttacks inflict 'Steamy!' ";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             player.GetDamage(DamageClass.Summon) += 0.18f;
         }
 

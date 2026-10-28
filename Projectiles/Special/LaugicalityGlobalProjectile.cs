@@ -1,11 +1,9 @@
 using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using NewDawn.NPCs;
-using Microsoft.Xna.Framework.Graphics;
 using NewDawn.Buffs;
+using NewDawn.NPCs;
 using NewDawn.Projectiles.Plague;
+using Terraria;
+using Terraria.ModLoader;
 
 namespace NewDawn.Projectiles.Special
 {
@@ -23,7 +21,7 @@ namespace NewDawn.Projectiles.Special
         public float yTemp = 0;
         public bool zImmune = false;
         public bool frozen = false;
-        bool _justSpawned = false;
+        bool _justSpawned = false, ProjectilePreTimeStop = false;
 
         public override void SetDefaults(Projectile projectile)
         {
@@ -56,7 +54,7 @@ namespace NewDawn.Projectiles.Special
             if (bitherial)
             {
                 if (modPlayer.etherial)
-                    projectile.damage = eDmg  + 25;
+                    projectile.damage = eDmg + 25;
                 else
                     projectile.damage = eDmg;
                 return true;
@@ -107,7 +105,7 @@ namespace NewDawn.Projectiles.Special
         {
             if (eDmg == 0)
                 eDmg = projectile.damage;
-            
+
             if (bitherial)
             {
                 if (Main.player.Length < projectile.owner && NewDawnPlayer.Get(Main.player[projectile.owner]).etherial)
@@ -197,7 +195,7 @@ namespace NewDawn.Projectiles.Special
                 }
             }*/
 
-            /*bool zProjImmune = false;
+            bool zProjImmune = false;
 
             Player projOwner = Main.player[projectile.owner];
             zProjImmune = NewDawnPlayer.Get(projOwner).zProjImmune;
@@ -206,7 +204,7 @@ namespace NewDawn.Projectiles.Special
                 zProjImmune = false;
             if (NewDawnVars.ezProjectiles.Contains(projectile.type) && NewDawnWorld.downedEtheria)
                 zImmune = true;
-            if (NewDawn.zaWarudo > 0 && zProjImmune == false && zImmune == false)
+            if (NewDawn.zaWarudo > 0 && zProjImmune == false && zImmune == false && ProjectilePreTimeStop)
             {
                 projectile.timeLeft++;
                 if (!frozen)
@@ -247,14 +245,19 @@ namespace NewDawn.Projectiles.Special
                     oldVx = 0f;
                     oldVy = 0f;
                 }
-                return true;
-            }*/
+                ProjectilePreTimeStop = true;
+            }
             return true;
         }
-        
+
+        public override void PostAI(Projectile projectile)
+        {
+
+        }
+
         private void EtherialSpawn(Projectile projectile)
         {
-            if(NewDawnWorld.downedEtheria)
+            if (NewDawnWorld.downedEtheria)
             {
                 if (projectile.type == ProjectileID.Cthulunado)
                     projectile.timeLeft *= 2;
@@ -283,56 +286,56 @@ namespace NewDawn.Projectiles.Special
             {
                 if (modPlayer.Obsidium)
                 {
-                    target.AddBuff(24, (int)(3 * 60 + 60 * rand), false);
+                    target.AddBuff(24, (int)((3 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.Frost)
                 {
-                    target.AddBuff(BuffID.Frostburn, (int)(3 * 60 + 60 * rand), false);
+                    target.AddBuff(BuffID.Frostburn, (int)((3 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.Poison)
                 {
-                    target.AddBuff(BuffID.Poisoned, (int)(3 * 60 + 60 * rand), false);
+                    target.AddBuff(BuffID.Poisoned, (int)((3 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.SkeletonPrime)
                 {
-                    target.AddBuff(39, (int)(4 * 60 + 60 * rand), false);
+                    target.AddBuff(39, (int)((4 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.Doucheron)
                 {
-                    target.AddBuff(70, (int)(4 * 60 + 60 * rand), false);
+                    target.AddBuff(70, (int)((4 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.QueenBee)
                 {
-                    target.AddBuff(20, (int)(4 * 60 + 60 * rand), false);
+                    target.AddBuff(20, (int)((4 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.CursedFlame)
                 {
-                    target.AddBuff(BuffID.CursedInferno, (int)(4 * 60 + 60 * rand), false);
+                    target.AddBuff(BuffID.CursedInferno, (int)((4 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.Steamified)
                 {
-                    target.AddBuff(ModContent.BuffType<Steamy>(), (int)(3 * 60 + 60 * rand), false);
+                    target.AddBuff(ModContent.BuffType<Steamy>(), (int)((3 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.Lovestruck)
                 {
-                    target.AddBuff(ModContent.BuffType<Lovestruck>(), (int)(4 * 60 + 60 * rand), false);
+                    target.AddBuff(ModContent.BuffType<Lovestruck>(), (int)((4 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.Slimey)
                 {
-                    target.AddBuff(ModContent.BuffType<Slimed>(), (int)(3 * 60 + 60 * rand), false);
+                    target.AddBuff(ModContent.BuffType<Slimed>(), (int)((3 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.JunglePlague && projectile.type != ModContent.ProjectileType<JunglePlagueSpore>())
                 {
-                    target.AddBuff(ModContent.BuffType<JunglePlagueBuff>(), (int)(3 * 60 + 60 * rand), false);
-                    target.AddBuff(BuffID.Poisoned, (int)(3 * 60 + 60 * rand), false);
+                    target.AddBuff(ModContent.BuffType<JunglePlagueBuff>(), (int)((3 * 60) + (60 * rand)), false);
+                    target.AddBuff(BuffID.Poisoned, (int)((3 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.EtherialFrost && (NewDawnWorld.downedEtheria || modPlayer.Etherable > 0))
                 {
-                    target.AddBuff(ModContent.BuffType<Frostbite>(), (int)(12 * 60 + 60 * rand), false);
+                    target.AddBuff(ModContent.BuffType<Frostbite>(), (int)((12 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.EtherialPipes && (NewDawnWorld.downedEtheria || modPlayer.Etherable > 0))
                 {
-                    target.AddBuff(ModContent.BuffType<Steamified>(), (int)((12 * 60 + 60 * rand)), false);
+                    target.AddBuff(ModContent.BuffType<Steamified>(), (int)((12 * 60) + (60 * rand)), false);
                 }
                 if (modPlayer.EtherCog && (NewDawnWorld.downedEtheria || modPlayer.Etherable > 0))
                 {
@@ -363,7 +366,7 @@ namespace NewDawn.Projectiles.Special
 
         public override void OnHitPlayer(Projectile projectile, Player target, Player.HurtInfo info)
         {
-            if(projectile.type == ProjectileID.PhantasmalDeathray && NewDawnWorld.downedEtheria)
+            if (projectile.type == ProjectileID.PhantasmalDeathray && NewDawnWorld.downedEtheria)
             {
                 target.AddBuff(ModContent.BuffType<TrueCurse>(), 5 * 60);
             }

@@ -2,8 +2,8 @@
 using NewDawn.Dusts;
 using NewDawn.Items.Placeable.Furniture;
 using Terraria;
+using Terraria.GameContent;
 using Terraria.GameContent.ObjectInteractions;
-using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.ObjectData;
@@ -40,11 +40,6 @@ namespace NewDawn.Tiles.Furniture
             num = 1;
         }
 
-        public override void KillMultiTile(int i, int j, int frameX, int frameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 64, 32, ModContent.ItemType<ObsidiumBed>());
-        }
-
         public override bool RightClick(int i, int j)
         {
             Player player = Main.LocalPlayer;
@@ -56,16 +51,27 @@ namespace NewDawn.Tiles.Furniture
             {
                 spawnY--;
             }
-            player.FindSpawn();
-            if (player.SpawnX == spawnX && player.SpawnY == spawnY)
+            if (!Player.IsHoveringOverABottomSideOfABed(i, j))
             {
-                player.RemoveSpawn();
-                Main.NewText("Spawn point removed!", 255, 240, 20);
+                if (player.IsWithinSnappngRangeToTile(i, j, PlayerSleepingHelper.BedSleepingMaxDistance))
+                {
+                    player.GamepadEnableGrappleCooldown();
+                    player.sleeping.StartSleeping(player, i, j);
+                }
             }
-            else if (Player.CheckSpawn(spawnX, spawnY))
+            else
             {
-                player.ChangeSpawn(spawnX, spawnY);
-                Main.NewText("Spawn point set!", 255, 240, 20);
+                player.FindSpawn();
+                if (player.SpawnX == spawnX && player.SpawnY == spawnY)
+                {
+                    player.RemoveSpawn();
+                    Main.NewText("Spawn point removed!", 255, 240, 20);
+                }
+                else if (Player.CheckSpawn(spawnX, spawnY))
+                {
+                    player.ChangeSpawn(spawnX, spawnY);
+                    Main.NewText("Spawn point set!", 255, 240, 20);
+                }
             }
             return true;
         }

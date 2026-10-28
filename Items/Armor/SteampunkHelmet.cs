@@ -33,7 +33,7 @@ namespace NewDawn.Items.Armor
 
         public override void UpdateArmorSet(Player player)
         {
-            player.setBonus = "+200% Mystic Duration\nSwitching Mysticisms unleashes a burst of Steam\nDecreased Mystic Burst cooldown\nAttacks inflict 'Steamy!', which makes enemies take more damage";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             modPlayer.Steamified = true;

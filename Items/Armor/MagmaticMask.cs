@@ -30,7 +30,7 @@ namespace NewDawn.Items.Armor
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
-            player.setBonus = "Eruption & Magmatic Mystic Bursts\n+25% Mystic Burst Damage & Decreased Mystic Burst cooldown\n+15%Throwing Crit Chance\nAttacks inflict 'On Fire!'\nIncreased stats after being submerged in Lava";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Obsidium = true;
             mysticPlayer.Magmatic = true;
             mysticPlayer.MysticObsidiumSwitch = true;

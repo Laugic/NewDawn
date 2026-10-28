@@ -14,7 +14,7 @@ namespace NewDawn.Items.Alchemistry.Crystals
             Item.value = Item.sellPrice(silver: 50);
             Item.rare = ItemRarityID.Green;
             Item.accessory = true;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
 
             Item.useTime = Item.useAnimation = 15;
             Item.useStyle = ItemUseStyleID.Swing;
@@ -41,7 +41,7 @@ namespace NewDawn.Items.Alchemistry.Crystals
             if (Item.prefix != 0)
                 Item.maxStack = 1;
             else
-                Item.maxStack = 99;
+                Item.maxStack = 9999;
         }
 
         /*

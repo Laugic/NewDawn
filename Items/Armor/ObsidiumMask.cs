@@ -38,7 +38,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "+3 Max Minions \nAttacks inflict 'On Fire!' ";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Obsidium = true;
             player.maxMinions += 3;
         }

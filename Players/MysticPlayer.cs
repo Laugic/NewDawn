@@ -234,17 +234,17 @@ namespace NewDawn.Players
 
         public int GetMaxLux()
         {
-            return (int)LuxMax; //TODO: Add permanent boosts
+            return (int)(LuxMax + LuxMaxPermaBoost);
         }
 
         public int GetMaxVis()
         {
-            return (int)VisMax; //TODO: Add permanent boosts
+            return (int)(VisMax + VisMaxPermaBoost);
         }
 
         public int GetMaxMundus()
         {
-            return (int)MundusMax; //TODO: Add permanent boosts
+            return (int)(MundusMax + MundusMaxPermaBoost);
         }
 
         public bool IsHoldingMystic()

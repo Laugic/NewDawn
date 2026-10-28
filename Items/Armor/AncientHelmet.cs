@@ -35,7 +35,7 @@ namespace NewDawn.Items.Armor
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
             global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
-            player.setBonus = "Increased Max Minions, Mana, and Potentia";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             mysticPlayer.LuxMax += 40;
             mysticPlayer.VisMax += 40;
             mysticPlayer.MundusMax += 40;

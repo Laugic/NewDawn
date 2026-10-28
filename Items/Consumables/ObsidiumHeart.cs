@@ -11,7 +11,7 @@ namespace NewDawn.Items.Consumables
         {
             Item.width = 28;
 			Item.height = 28;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
             Item.value = Item.sellPrice(gold: 1);
             Item.rare = ItemRarityID.Orange;
 			Item.useAnimation = 45;

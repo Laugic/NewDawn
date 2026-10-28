@@ -37,7 +37,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "+10% Damage Reduction\nAttacks inflict 'On Fire!' ";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Obsidium = true;
             player.endurance += 0.1f;
         }

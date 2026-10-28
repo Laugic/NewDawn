@@ -40,7 +40,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "+33% Throwing Velocity \n+4 Defense \nAttacks inflict 'On Fire!' ";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Obsidium = true;
 
             player.ThrownVelocity += .33f;

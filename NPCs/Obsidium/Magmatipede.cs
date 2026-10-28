@@ -16,8 +16,8 @@ namespace NewDawn.NPCs.Obsidium
         public override void SetDefaults()
         {
             NPC.CloneDefaults(NPCID.DiggerHead);
-            NPC.width = 94;
-            NPC.height = 94;
+            NPC.width = 88;
+            NPC.height = 88;
             NPC.damage = 40;
             NPC.defense = 10;
             NPC.lifeMax = 800;
@@ -64,8 +64,8 @@ namespace NewDawn.NPCs.Obsidium
         public override void SetDefaults()
         {
             NPC.CloneDefaults(NPCID.DiggerBody);
-            NPC.width = 94;
-            NPC.height = 94;
+            NPC.width = 88;
+            NPC.height = 88;
             NPC.damage = 25;
             NPC.defense = 30;
             NPC.lifeMax = 100;
@@ -84,8 +84,8 @@ namespace NewDawn.NPCs.Obsidium
         public override void SetDefaults()
         {
             NPC.CloneDefaults(NPCID.DiggerTail);
-            NPC.width = 94;
-            NPC.height = 94;
+            NPC.width = 88;
+            NPC.height = 88;
             NPC.damage = 30;
             NPC.defense = 26;
             NPC.lifeMax = 800;
@@ -113,8 +113,8 @@ namespace NewDawn.NPCs.Obsidium
 
         public override void Init()
         {
-            minLength = 6;
-            maxLength = 8;
+            minLength = 5;
+            maxLength = 7;
             tailType = ModContent.NPCType<MagmatipedeTail>();
             bodyType = ModContent.NPCType<MagmatipedeBody>();
             headType = ModContent.NPCType<MagmatipedeHead>();

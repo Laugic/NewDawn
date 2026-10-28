@@ -11,7 +11,7 @@ namespace NewDawn.Items.Placeable
         {
             Item.width = 24;
             Item.height = 24;
-            Item.maxStack = 999;
+            Item.maxStack = 9999;
             Item.useTurn = true;
             Item.autoReuse = true;
             Item.useAnimation = 15;

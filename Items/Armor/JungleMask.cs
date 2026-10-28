@@ -40,7 +40,7 @@ namespace NewDawn.Items.Armor
         {
         global::NewDawn.Players.MysticPlayer mysticPlayer = player.GetModPlayer<global::NewDawn.Players.MysticPlayer>();
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "Your Max Mana is added to your Potentias\nIncreased Mana and Potentia regen";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             mysticPlayer.LuxMax += player.statManaMax2 / 3;
             mysticPlayer.VisMax += player.statManaMax2 / 3;
             mysticPlayer.MundusMax += player.statManaMax2 / 3;

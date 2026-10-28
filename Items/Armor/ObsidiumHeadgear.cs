@@ -38,7 +38,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "+10% Ranged Crit Chance \nAttacks inflict 'On Fire!' ";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Obsidium = true;
             player.GetCritChance(DamageClass.Ranged) += 10;
         }

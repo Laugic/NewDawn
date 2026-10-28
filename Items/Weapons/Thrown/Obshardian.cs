@@ -27,7 +27,7 @@ namespace NewDawn.Items.Weapons.Thrown
             Item.shoot = ModContent.ProjectileType<ObshardianP>();  
             Item.shootSpeed = 16f;     
             Item.useTurn = true;
-            Item.maxStack = 999;       
+            Item.maxStack = 9999;       
             Item.consumable = true;  
             Item.noUseGraphic = true;
 

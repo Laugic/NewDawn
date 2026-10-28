@@ -33,7 +33,7 @@ namespace NewDawn.Items.Armor
         public override void UpdateArmorSet(Player player)
         {
             NewDawnPlayer modPlayer = NewDawnPlayer.Get(player);
-            player.setBonus = "+4 Defense\n+25% Snowball Damage\nUnleash Ice Shards when struck";
+            player.setBonus = this.GetLocalization("SetBonus").Value;
             modPlayer.Frigid = true;
             modPlayer.SnowDamage += .25f;
             player.statDefense += 4;

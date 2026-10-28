@@ -10,7 +10,7 @@ namespace NewDawn.Items.Materials
         {
             Item.width = 30;
             Item.height = 30;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
             Item.rare = ItemRarityID.Orange;
             Item.value = Item.sellPrice(silver: 12);
         }
